@@ -1,0 +1,140 @@
+-- ----------------------------------------------------------------------------- --
+--  1. Beispiel) MATCH Klausel
+-- ----------------------------------------------------------------------------- --
+
+a) Welche U-Bahn Linien fahren in Wien
+
+   Knoten: :Station
+   Kanten: r:SUBWAY
+
+   Ausgabe: r.code
+
+
+   CQL: match (n:Station{state: "Wien"})-[r:SUBWAY]->(:Station) return distinct r.code order by r.code
+
+
+
+b) Geben Sie alle Stationen der U4 bzw. U6 aus
+
+   Knoten: t:Station
+   Kanten: :SUBWAY
+
+   Ausgabe: t.name
+
+
+   CQL: match (n:Station)-[r:SUBWAY]->(:Station) where r.code in ["U4", "U6"] return distinct n.name
+
+
+
+c) Geben Sie alle Stationen aus, die von der U2 und der U4
+   angefahren werden.
+
+   Knoten: t:Station
+   Kanten: :SUBWAY
+
+   Ausgabe: t.name
+
+
+   CQL: match (:Station)-[r:SUBWAY{code:"U2"}]->(n:Station)<-[t:SUBWAY{code:"U4"}]-(:Station) return distinct n.name
+
+
+
+d) Welche Stationen sind bis zu 2 Haltestellen von Spittelau
+   entfernt?
+
+   Hinweis: Spittelau selbst sollte nicht im Ergebnis enthalten sein.
+
+   Knoten: t:Station
+   Kanten:
+
+   Ausgabe: t.name
+
+
+   CQL: match (n:Station{name:"Spittelau"})-[:SUBWAY|REGIONAL_EXPRESS|EXPRESSWAY*1..2]->(m:Station) where n.name <> m.name return distinct m.name
+
+
+-- ----------------------------------------------------------------------------- --
+--  2. Beispiel) Aggregatfunktionen
+-- ----------------------------------------------------------------------------- --
+a) Geben Sie für jede U-Bahn Linie, die Anzahl der Stationen aus.
+
+   Knoten: s:Station
+   Kanten: r:SUBWAY
+
+   Ausgabe: r.code, count(s)
+
+
+   CQL: match (s:Station)-[r:SUBWAY]-(:Station) return r.code, count(r)
+
+
+
+b) Geben Sie für jede U-Bahn Line, die Länge der Strecke aus.
+   Geben Sie zusätzlich an wie lange es dauert von einem
+   Ende der U Bahn bis zum anderen Ende der U Bahn zu fahren
+   und wieder zurück.
+
+   Knoten: :Station
+   Kanten: r:SUBWAY
+
+
+   CQL: match (s:Station)-[r:SUBWAY]->(:Station) return r.code, round(sum(r.length)), round(sum(r.time)*2)
+
+
+
+-- ----------------------------------------------------------------------------- --
+--  3. Beispiel) WITH
+-- ----------------------------------------------------------------------------- --
+
+a) Geben Sie für jede U4 Station die Anzahl der Anbindungen an.
+
+   Knoten: s:Station
+   Kanten: :SUBWAY
+
+   Ausgabe: s.name, CONNECTIONS
+
+
+   CQL: 
+MATCH (s:Station)-[r:SUBWAY {code:"U4"}]->(s2:Station)
+MATCH (s)-[t]->(:Station)
+WITH s.name AS NAME, count(distinct t) AS CONNECTIONS
+RETURN NAME, CONNECTIONS
+Order by CONNECTIONS DESC
+
+
+b) Welche U4 Station liegt auf den meisten U-Bahnlinien.
+
+   Knoten: s:Station
+   Kanten: :SUBWAY
+
+   Ausgabe: s.name
+
+
+   CQL: 
+MATCH (s:Station)-[r:SUBWAY {code:"U4"}]->(:Station)
+MATCH (s)-[t:SUBWAY]->(:Station)
+WITH s.name as NAME, count(distinct t) as CONNECTIONS
+WITH MAX(CONNECTIONS) AS MAX_CONNECTIONS
+MATCH (s:Station)-[r:SUBWAY {code:"U4"}]->(:Station)
+MATCH (s)-[t:SUBWAY]->(:Station)
+WITH s.name as NAME, count(distinct t) as CONNECTIONS, MAX_CONNECTIONS
+WHERE CONNECTIONS = MAX_CONNECTIONS
+RETURN NAME, CONNECTIONS
+
+
+
+c) Welche der U-Bahn Linien hat die längste Gesamtsrecke?
+
+   Knoten: s:Station, m:Metroline
+   Kanten: CONNECTED, CONTAINS
+
+   Ausgabe: m
+
+
+   CQL:
+MATCH (s:Station)-[t:SUBWAY]->(:Station)
+WITH t.code as CODE, sum(t.length) AS TOTAL_LENGTH
+WITH max(TOTAL_LENGTH) AS MAX_TOTAL_LENGTH
+MATCH (s:Station)-[t:SUBWAY]->(:Station)
+WITH t.code as CODE, sum(t.length) AS TOTAL_LENGTH, MAX_TOTAL_LENGTH
+WHERE TOTAL_LENGTH = MAX_TOTAL_LENGTH
+RETURN CODE, TOTAL_LENGTH

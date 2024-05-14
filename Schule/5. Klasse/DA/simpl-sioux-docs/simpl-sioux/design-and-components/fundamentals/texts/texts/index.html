@@ -1,0 +1,3725 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="SiMPL Core Team">
+      
+      
+        <link rel="canonical" href="https://simpl.code.siemens.io/simpl/design-and-components/fundamentals/texts/texts/">
+      
+      <link rel="icon" href="../../../../_src/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Texts - SiMPL SIOUX Documentation</title>
+      
+    
+    
+
+  
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+  <link rel="stylesheet" href="../../../../assets/stylesheets/code-main.css" />
+
+
+    
+    
+  
+    
+
+    <link rel="preload" href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg" as="image"/>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/ui-icons/3.2.1/Siemens-Web-Icons_3-2-1.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/ui-icons/3.2.1/Siemens-Web-Icons_3-2-1.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/professional/6.0/SiemensSans_Prof_Roman.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/professional/6.0/SiemensSans_Prof_Bold.woff" as="font" type="font/woff" crossorigin>
+
+    <style>:root{--md-text-font-family:"Siemens Sans Roman";--md-code-font-family:"monospace"}</style>
+  
+
+    
+    
+      <link rel="stylesheet" href="../../../../_src/tabsets.css">
+    
+      <link rel="stylesheet" href="../../../../_src/fixes.css">
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!--
+  A collection of functions used from within some partials to allow the usage
+  of state saved in local or session storage, e.g. to model preferences.
+-->
+<script>
+
+  /* Prepend the base path to the given key to ensure uniqueness */
+  function __prefix(key) {
+    var prefix = new URL("../../../..", location)
+    return prefix.pathname + "." + key
+  }
+
+  /* Fetch the given key from the given storage */
+  function __get(key, storage = localStorage) {
+    return JSON.parse(storage.getItem(__prefix(key)))
+  }
+</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="index.html#texts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+  <input
+    class="md-toggle"
+    data-md-toggle="main-nav"
+    type="checkbox"
+    id="main-nav-toggle"
+    autocomplete="off"
+  />
+  <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Application header -->
+  <nav class="main-nav">
+    <div class="main-nav__inner-holder" id="siemens-header-container">
+      <a href="https://simpl.code.siemens.io/simpl/"
+         class="logo">
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<svg class="logo__mobile"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 80 16">
+  <image x="0"
+         y="0"
+         width="100px"
+         height="20px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg"/>
+</svg>
+<svg class="logo__mobile__white"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 80 16">
+  <image x="0"
+         y="0"
+         width="100px"
+         height="20px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-white-rgb.svg"/>
+</svg>
+<svg class="logo__desktop"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 264 42">
+  <image x="0"
+         y="0"
+         width="264px"
+         height="42px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg"/>
+</svg>
+      </a>
+      
+        <!-- print a nav item, mark it as active if required and
+add the url to item_urls to remember an item has been printed -->
+
+
+<!-- traverse the navigation tree to find the first child of top_nav_item with a url
+or print top_nav_item if it has a url -->
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/" title="Home"
+    
+      >
+    
+  Home
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/introduction/" title="Documentation"
+    
+      >
+    
+  Documentation
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+      
+  <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" title="Web"
+    
+      class="main-nav--active">
+    
+  Web
+  </a>
+  <!-- remember the found page url -->
+  
+
+    
+  <!-- output the item if it has a url -->
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/mobile-ui-components/" title="Mobile"
+    
+      >
+    
+  Mobile
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/icons/" title="Icons"
+    
+      >
+    
+  Icons
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/community/overview/" title="Community"
+    
+      >
+    
+  Community
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+      
+      <a style="display: none;"></a>
+    </div>
+
+    
+      <label for="main-nav-toggle">
+  <hr>
+  <hr>
+  <hr>
+</label>
+    
+  </nav>
+  <div class="md-header__topic">
+    <!-- this is needed to hook in the version selector -->
+  </div>
+
+
+<!-- Top-level navigation -->
+<nav class="md-header-nav md-grid">
+  <div class="md-flex">
+
+    <!-- Link to home -->
+    <div class="md-flex__cell md-flex__cell--shrink">
+      <a href="https://simpl.code.siemens.io/simpl/"
+         title="SiMPL SIOUX Documentation"
+         class="md-header-nav__button md-logo">
+        <img src="../../../../index.html"
+             width="24" height="24" alt="Siemens" />
+      </a>
+    </div>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer"></label>
+
+    <!-- Header title -->
+    <div class="md-flex__cell md-flex__cell--stretch">
+      <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+      
+        
+          <span class="md-header-nav__topic">
+            SiMPL SIOUX Documentation
+          </span>
+          <span class="md-header-nav__topic">
+            Texts
+          </span>
+        
+      
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="md-tabbar-search-container">
+
+  
+  
+    <label class="md-tabbar-search-container__title" for="__drawer">
+      
+          
+            
+          
+            
+          
+            
+              Web
+            
+          
+            
+          
+            
+          
+            
+          
+      
+    </label>
+    <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+  
+  
+    <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Hack: unset variable, as we're using it recursively in tabs-item.html -->
+
+
+<!-- Tabs with outline -->
+<nav
+  class="md-tabs"
+  aria-label="Tabs"
+  data-md-component="tabs"
+>
+  <div class="md-tabs__inner">
+    <ul class="md-tabs__list">
+      
+        
+          
+        
+          
+        
+          
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl-siemens-brand/" class="md-tabs__link">
+      Siemens Brand
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl-element/" class="md-tabs__link">
+      Element
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+    
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  
+  
+
+  <!-- Recurse, if the first item has further nested items -->
+  
+    <li class="md-tabs__item">
+      <a href="../../../../index.html" class="md-tabs__link md-tabs__link--active">
+          SiOUX
+        </a>
+    </li>
+  
+
+  <!-- Main navigation item -->
+
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+    </ul>
+  </div>
+</nav>
+  
+  <div class="md-tabbar-search-container__search">
+    
+      
+        <label class="md-icon md-icon--search md-header-nav__button"
+               for="__search"></label>
+
+        <!-- Search interface -->
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <label class="md-search-close__icon md-icon" for="__search">
+      </label>
+      <input
+        type="text"
+        class="md-search__input"
+        name="query"
+        aria-label="Search"
+        placeholder="Search"
+        autocapitalize="off"
+        autocorrect="off"
+        autocomplete="off"
+        spellcheck="false"
+        data-md-component="search-query"
+        data-md-state="active"
+        required
+      />
+      <label class="md-search__icon md-icon" for="__search">
+      </label>
+      <button
+        type="reset"
+        class="md-search__icon md-icon"
+        aria-label="Clear"
+        tabindex="-1"
+      ></button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <!-- Site language selector -->
+    
+  </div>
+</div>
+
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+
+<!-- Main navigation -->
+<nav
+  class="md-nav md-nav--primary md-nav--lifted"
+  aria-label="Navigation"
+  data-md-level="0"
+>
+
+  <!-- Render item list -->
+  <ul class="md-nav__list" data-md-scrollfix>
+  
+    
+      
+    
+      
+    
+      
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl-siemens-brand/" class="md-nav__link">
+        Siemens Brand
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl-element/" class="md-nav__link">
+        Element
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          SiOUX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SiOUX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          SiOUX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-documentation/GettingStarted/index.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Design" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_1">
+          UX Design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UX Design" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          UX Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ux-design/user-research/index.html" class="md-nav__link">
+        User Research
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ux-design/requirements-engineering/index.html" class="md-nav__link">
+        Requirement Engineering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ux-design/user-interface-design/index.html" class="md-nav__link">
+        User Interface Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ux-design/user-interface-evaluation/index.html" class="md-nav__link">
+        User Interface Evaluation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_2">
+          Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fundamentals" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../charts/charts/index.html" class="md-nav__link">
+        Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../colors/colors/index.html" class="md-nav__link">
+        Colors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elevation/elevation/index.html" class="md-nav__link">
+        Elevations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../iconography/iconography/index.html" class="md-nav__link">
+        Iconography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interaction/gestures-multi-touch/index.html" class="md-nav__link">
+        Interaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../layout-and-spacing/layout-and-spacing/index.html" class="md-nav__link">
+        Layout and Spacing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../states/states/index.html" class="md-nav__link">
+        States
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Texts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Texts
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#general" title="General"
+      class="md-nav__link md-nav__link--primary">
+    General
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#usage" title="Usage"
+      class="md-nav__link md-nav__link--primary">
+    Usage
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#title-case-and-sentence-style" title="Title Case and Sentence Style"
+      class="md-nav__link md-nav__link--primary">
+    Title Case and Sentence Style
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#title-case" title="Title Case"
+      class="md-nav__link md-nav__link--primary">
+    Title Case
+  </a>
+
+  <!-- Render nested item list -->
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#usage-of-title-case-in-other-languages" title="Usage of Title Case in Other Languages"
+      class="md-nav__link">
+    Usage of Title Case in Other Languages
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#sentence-style" title="Sentence-style"
+      class="md-nav__link md-nav__link--primary">
+    Sentence-style
+  </a>
+
+  <!-- Render nested item list -->
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#style-usage" title="Style Usage"
+      class="md-nav__link">
+    Style Usage
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#wording" title="Wording"
+      class="md-nav__link md-nav__link--primary">
+    Wording
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#phrasing-templates" title="Phrasing Templates"
+      class="md-nav__link md-nav__link--primary">
+    Phrasing Templates
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../typography/typography/index.html" class="md-nav__link">
+        Typography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guidance/user-guidance/index.html" class="md-nav__link">
+        User Guidance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/about/about/index.html" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/badge/badge/index.html" class="md-nav__link">
+        Badge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/banner/banner/index.html" class="md-nav__link">
+        Banner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/breadcrumb/breadcrumb/index.html" class="md-nav__link">
+        Breadcrumb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/button/button/index.html" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/card/card/index.html" class="md-nav__link">
+        Card
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/checkbox/checkbox/index.html" class="md-nav__link">
+        Checkbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/chip/chip/index.html" class="md-nav__link">
+        Chip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/date-picker/date-picker/index.html" class="md-nav__link">
+        Date Picker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/date-range-picker/date-range-picker/index.html" class="md-nav__link">
+        Date Range Picker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/dialog/dialog/index.html" class="md-nav__link">
+        Dialog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/drop-down-menu/drop-down-menu/index.html" class="md-nav__link">
+        Drop Down Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/exposed-dropdown-menu/exposed-dropdown-menu/index.html" class="md-nav__link">
+        Exposed Drop Down Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/expansion-panel/expansion-panel/index.html" class="md-nav__link">
+        Expansion Panel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/fab/fab/index.html" class="md-nav__link">
+        Floating Action Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/hyperlink/hyperlink/index.html" class="md-nav__link">
+        Hyperlink
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/list/list/index.html" class="md-nav__link">
+        List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/log-in/log-in/index.html" class="md-nav__link">
+        Log In
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/maps/maps/index.html" class="md-nav__link">
+        Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/message/message/index.html" class="md-nav__link">
+        Message Box
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/navigation-drawer/navigation-drawer/index.html" class="md-nav__link">
+        Navigation Drawer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/progress-indicator/progress-indicator/index.html" class="md-nav__link">
+        Progress Indicator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/radio-button/radio-button/index.html" class="md-nav__link">
+        Radio Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/selection-control/selection-controls/index.html" class="md-nav__link">
+        Selection Controls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/side-sheet/side-sheet/index.html" class="md-nav__link">
+        Side Sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/slider/slider/index.html" class="md-nav__link">
+        Slider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/snackbar/snackbar/index.html" class="md-nav__link">
+        Snackbar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/switch/switch/index.html" class="md-nav__link">
+        Switch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/table/table/index.html" class="md-nav__link">
+        Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/tabs/tabs/index.html" class="md-nav__link">
+        Tabs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/text-field/text-field/index.html" class="md-nav__link">
+        Text Field
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/toggle-button/toggle-button/index.html" class="md-nav__link">
+        Toggle Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/toolbar/toolbar/index.html" class="md-nav__link">
+        Toolbar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/tooltip/tooltip/index.html" class="md-nav__link">
+        Tooltip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/tree/tree/index.html" class="md-nav__link">
+        Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../components/wizard/wizard/index.html" class="md-nav__link">
+        Wizard
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../responsive-design/responsive-design/index.html" class="md-nav__link">
+        Responsive Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          UI Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UI Patterns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          UI Patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/asset-management/asset-management/index.html" class="md-nav__link">
+        Asset Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/search-and-filter/filter/index.html" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/search-and-filter/searching-and-finding/index.html" class="md-nav__link">
+        Searching and Finding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/map/viewing-assets-on-map/index.html" class="md-nav__link">
+        Viewing Assets on Map
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Web Reference Architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web Reference Architecture" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web Reference Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/introduction/introduction/index.html" class="md-nav__link">
+        Web UI Design Principles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/introduction/problems-scalability-front-end/index.html" class="md-nav__link">
+        Problems of scalability in front-end
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/introduction/software-architecture/index.html" class="md-nav__link">
+        Architecture and Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_4" type="checkbox" id="__nav_4_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_4">
+          Layers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Layers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Layers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/highlevel-abstraction-layers/index.html" class="md-nav__link">
+        High Level Abstraction Layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/presentation-layer/index.html" class="md-nav__link">
+        Presentation Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/abstraction-layer/index.html" class="md-nav__link">
+        Abstraction Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/core-layer/index.html" class="md-nav__link">
+        Core
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_5" type="checkbox" id="__nav_4_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_5">
+          Abstraction Strategies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Abstraction Strategies" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Abstraction Strategies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/abstraction-interface/index.html" class="md-nav__link">
+        Abstraction Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/state-changes/index.html" class="md-nav__link">
+        State Change Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/synchronization-strategy/index.html" class="md-nav__link">
+        Synchronization Strategy Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/caching/index.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_6" type="checkbox" id="__nav_4_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_6">
+          Data and States
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data and States" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data and States
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/dataflow/index.html" class="md-nav__link">
+        Unidirectional data flow
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_7" type="checkbox" id="__nav_4_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_7">
+          Modular design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modular design" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Modular design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/modular-design/index.html" class="md-nav__link">
+        WEB UI App Module Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/lazy-module-loading/index.html" class="md-nav__link">
+        Lazy Module Loading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/module-directory-structure/index.html" class="md-nav__link">
+        Module directory structure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_8" type="checkbox" id="__nav_4_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_8">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/smart-dumb-components/index.html" class="md-nav__link">
+        Smart- and Dump components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/smart-dump-components-useful-distinction/index.html" class="md-nav__link">
+        Smart vs Dump Components Useful Distinction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_9" type="checkbox" id="__nav_4_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_9">
+          Epilogue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Epilogue" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Epilogue
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../reference-architecture/ui-web-architecture-reference/summary/index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Best Practices and Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Best Practices and Patterns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Best Practices and Patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_1" type="checkbox" id="__nav_4_8_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8_1">
+          Patterns And Practice
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Patterns And Practice" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          Patterns And Practice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/create-feature-routing-module-feature-modules/index.html" class="md-nav__link">
+        Feature Routing Module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/lazy-load-modules/index.html" class="md-nav__link">
+        Module Lazy Loading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/pwa/index.html" class="md-nav__link">
+        Progressive Web App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/electron/index.html" class="md-nav__link">
+        Electron Cross Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/loosely-coupling-feature-modules/index.html" class="md-nav__link">
+        Loosely coupling Feature Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/app-shared-module/index.html" class="md-nav__link">
+        Shared Module of an App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/app-core-module/index.html" class="md-nav__link">
+        Core Module of an App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/test/index.html" class="md-nav__link">
+        Test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../best-practices-and-patterns/clean-up-subscriptions/index.html" class="md-nav__link">
+        Clean up Subscriptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assets-and-templates/assets-and-templates/index.html" class="md-nav__link">
+        Design Assets and Templates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+      
+    
+      
+    
+      
+    
+      
+    
+  
+  
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#general" title="General"
+      class="md-nav__link md-nav__link--primary">
+    General
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#usage" title="Usage"
+      class="md-nav__link md-nav__link--primary">
+    Usage
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#title-case-and-sentence-style" title="Title Case and Sentence Style"
+      class="md-nav__link md-nav__link--primary">
+    Title Case and Sentence Style
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#title-case" title="Title Case"
+      class="md-nav__link md-nav__link--primary">
+    Title Case
+  </a>
+
+  <!-- Render nested item list -->
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#usage-of-title-case-in-other-languages" title="Usage of Title Case in Other Languages"
+      class="md-nav__link">
+    Usage of Title Case in Other Languages
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#sentence-style" title="Sentence-style"
+      class="md-nav__link md-nav__link--primary">
+    Sentence-style
+  </a>
+
+  <!-- Render nested item list -->
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#style-usage" title="Style Usage"
+      class="md-nav__link">
+    Style Usage
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#wording" title="Wording"
+      class="md-nav__link md-nav__link--primary">
+    Wording
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#phrasing-templates" title="Phrasing Templates"
+      class="md-nav__link md-nav__link--primary">
+    Phrasing Templates
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+  
+                
+                  <a href="https://code.siemens.com/simpl/simpl-sioux/blob/main/docs/design-and-components/fundamentals/texts/texts.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="texts">Texts</h1>
+<div role="tablist" class="tabs" markdown="0">
+  <button role="tab" aria-selected="true" aria-controls="panel-general">General</button>
+  <button role="tab" aria-selected="false" aria-controls="panel-title-case-and-sentence-style">Title Case and Sentence Style</button>
+  <button role="tab" aria-selected="false" aria-controls="panel-wording">Wording</button>
+  <button role="tab" aria-selected="false" aria-controls="panel-phrasing-templates">Phrasing Templates</button>
+</div>
+<section id="panel-general" role="tabpanel">
+<h2 class="tab-anchor" id="general">General</h2>
+<h2 id="usage">Usage</h2>
+<ul>
+<li>Use a clear and simple sentence structure.</li>
+<li>Use complete sentences.</li>
+<li>Use a full stop for complete sentences<ul>
+<li>Positive example: Saves the file as a template.</li>
+<li>Negative example: Save As.</li>
+</ul>
+</li>
+<li>Verbs should not be used as nouns.</li>
+<li>Use present tense, if possible.</li>
+<li>Avoid the passive voice when the subject is known.</li>
+<li>Use the imperative in procedures to make clear who has to act.</li>
+</ul>
+<p>Correct example &amp; incorrect example</p>
+<p><img alt="alt text" src="../pics/general-imperative.png" title="use imperative" /></p>
+<ul>
+<li>All generated texts like paths shall be language independent or English.</li>
+<li>Avoid redundancy. Do not give the same or very similar information to the user several times (e.g. in core text and message text).</li>
+<li>User for all titles "Title Case" and otherwise "Sentence style" (refer to the corresponding tab for details).</li>
+</ul>
+<blockquote>
+<p><strong>Exception:</strong> component or product names: first letter is always capitalized</p>
+</blockquote>
+<ul>
+<li>Avoid phrasing that blames the user or implies user error.</li>
+</ul>
+<p><img alt="alt text" src="../pics/general-avoid-blaming.png" title="avoid blaming" /></p>
+<ul>
+<li>Use gerund ("-ing" form) in a progress-indication window to show that a process is running. Use an ellipsis [ ] at the end of the sentence.</li>
+</ul>
+<p><img alt="alt text" src="../pics/general-gerund.png" title="use gerund" /></p>
+<ul>
+<li>End with a period.</li>
+</ul>
+<p><img alt="alt text" src="../pics/general-period.png" title="end with period" /></p>
+<ul>
+<li>Do not use exclamation marks.</li>
+<li>Questions have to be finished with an interrogation mark.</li>
+<li>Use quotation marks around object names, except for fully qualified file paths, URLs, and domain names.</li>
+<li>To indicate both singular and plural do not use parentheses t Use the <em>plural</em> form instead:</li>
+</ul>
+<p><strong>Positive example</strong>: The configuration data are stored for {PLACEHOLDER} devices.</p>
+<p><strong>Negative example</strong>: The configuration data are stored for {PLACEHOLDER} device(s).</p>
+</section>
+<section hidden="hidden" id="panel-title-case-and-sentence-style" role="tabpanel">
+<h2 class="tab-anchor" id="title-case-and-sentence-style">Title Case and Sentence Style</h2>
+<p>In SiOUX according to American documentation headlines and titles in English language follow the so called Title Case while for all other user interface texts sentence style is used. <br>
+The reason for this is that the correct capitalization ensures the readability.
+The capitalization of the words visually separates the headline from the other content,
+which helps the reader to know where an article (or a section of it) begins.
+Additionally the uppercased wording alerts the reader to the premise of the piece, which can be especially important when readers skim.</p>
+<h2 id="title-case">Title Case</h2>
+<p>In Title, all the <strong>major words</strong> of the title are capitalized.
+The following words are always lowercase in titles except when they are the first or last word: the, a, an, but, for, or, nor, to, and as.
+In general, do not capitalize prepositions or phrasal prepositions in titles.
+For example: Headline case is applied in this headline. <em>“Affordable Housing Development Stymied by Regulations.”</em></p>
+<h3 id="usage-of-title-case-in-other-languages">Usage of Title Case in Other Languages</h3>
+<p>In German and other languages there are no extra rules for capitalization of titles. This means: Titles are capitalized exactly according to the same rules as any other German text.</p>
+<h2 id="sentence-style">Sentence-style</h2>
+<p>In sentence style, only the <strong>first word</strong> of the title is capitalized, and all proper names. The sentence style follows the same rules as you would use for writing a sentence.</p>
+<h3 id="style-usage">Style Usage</h3>
+<p>Title Case and Sentence style are used as follows:</p>
+<p><strong>Examples:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Sentence Style Used For:</strong></th>
+<th><strong>Headline Style Used For:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descriptions</td>
+<td>Headers of views</td>
+</tr>
+<tr>
+<td>Buttons</td>
+<td>Tables</td>
+</tr>
+<tr>
+<td>Legends</td>
+<td>Table columns/rows</td>
+</tr>
+<tr>
+<td>Axis description</td>
+<td>Diagram title</td>
+</tr>
+<tr>
+<td></td>
+<td>Items in Navigation Drawer</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Example</th>
+<th>Title Case</th>
+<th>Sentence Style</th>
+<th>Additional Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Menu</td>
+<td><img alt="Menu" src="../pics/menu.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Toolbar</td>
+<td><img alt="Toolbar" src="../pics/toolbar.png" /></td>
+<td>x</td>
+<td></td>
+<td>e.g. grid information</td>
+</tr>
+<tr>
+<td>Navigation drawer (entries)</td>
+<td><img alt="Navigation Drawer" src="../pics/NavigationDrawer.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Button</td>
+<td><img alt="Button" src="../pics/Button.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Toggle Button</td>
+<td><img alt="Toggle Button" src="../pics/ToggleButton.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Chips</td>
+<td><img alt="Chips" src="../pics/Chips.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Text field</td>
+<td><img alt="Text Field" src="../pics/TextField.png" /></td>
+<td></td>
+<td>x</td>
+<td>Klaus Wölflick: Title case. Google is inconclusive: <img alt="Text Field" src="../pics/TextField1.png" /></td>
+</tr>
+<tr>
+<td>Auto complete</td>
+<td><img alt="Autocomplete" src="../pics/Autocomplete.png" /></td>
+<td></td>
+<td>x</td>
+<td><img alt="Autocomplete" src="../pics/Autocomplete1.png" /></td>
+</tr>
+<tr>
+<td>Radio button (text)</td>
+<td><img alt="Radio Button" src="../pics/RadioButton.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Checkbox (text)</td>
+<td><img alt="Checkbox" src="../pics/Checkbox.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Date picker</td>
+<td><img alt="Date picker" src="../pics/Datepicker.png" /></td>
+<td></td>
+<td>x</td>
+<td>Should be consistent with text field, autocomplete. However, text is not pulled up.</td>
+</tr>
+<tr>
+<td>Text next to switch</td>
+<td><img alt="Text Next to Switch" src="../pics/TextNextToSwitch.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Title, subtitle</td>
+<td><img alt="Title" src="../pics/Title.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Expansion panel (header)</td>
+<td><img alt="Expansion Panel" src="../pics/ExpansionPanel.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>List (header)</td>
+<td><img alt="List" src="../pics/List.png" /></td>
+<td>x</td>
+<td></td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>List (entries)</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td>Google sometimes like this; sometimes like that</td>
+</tr>
+<tr>
+<td>Tab (name)</td>
+<td><img alt="Tab Name" src="../pics/TabName.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Table (header)</td>
+<td><img alt="Table Header" src="../pics/TableHeader.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Wizard (step name)</td>
+<td><img alt="Wizard" src="../pics/Wizard.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Dialog/Message Box (title)</td>
+<td><img alt="Dialog Message Box" src="../pics/Dialog_MB.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Snackbar (content)</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Tooltip</td>
+<td><img alt="Tooltip" src="../pics/Tooltip.png" /></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Chart (title)</td>
+<td><img alt="ChartTitle" src="../pics/ChartTitle.png" /></td>
+<td>x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Axis (name)</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr>
+<td>Chart (legend items)</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section hidden="hidden" id="panel-wording" role="tabpanel">
+<h2 class="tab-anchor" id="wording">Wording</h2>
+<p>Some important Do´s and Don´ts, but never all rules</p>
+<ul>
+<li>Avoid using unnecessary technical jargon or system-oriented information. Use short and plain words whenever possible.</li>
+<li>Use everyday words and avoid words you would not say to someone else in person.</li>
+<li>Be precise. Use specific verbs and choose object names and labels that clearly communicate and differentiate what the object does.</li>
+<li>Keep command text short without sacrificing clarity (no more than 2-4 words, no articels).</li>
+<li>For similar situations consistent words and phrasing have to be used (Double-D rule: differences are difficult).</li>
+<li>Use positive phrasing. Avoid the use of negatives and do not use double negatives.</li>
+<li>Describe the consequent state, not the current state (e.g. Play / Pause button in a player).</li>
+<li>Avoid fillers and standard phrases.</li>
+<li>Avoid noun-adjective confusion. There might be confusion between adjective and noun.
+  You hyphenate some combined words if they form an adjective, but not if they form a noun, for example single line is a noun whereas single-line in single-line editor is an adjective.</li>
+<li>Avoid using vague or generic command names (e.g. OK vs. submit)</li>
+<li>Use verbs for commands that initiate an action of submit information (e.g. print, sign in).</li>
+<li>Use adjectives for commands that trigger a change in the state of the system / appearance of an element (reflect how the element will change, e.g. b = bold, i = italic in Word)</li>
+<li>Include ellipses ("...") in command text to indicate when more information will be required (e.g. open ...)</li>
+<li>Avoid using the camel and pascal notation to abbreviate terms (e.g. use "Option button" instead of "optionButton" or "OptionButton").</li>
+<li>Avoid abbreviations: Abbreviations are often internally known but unknown to the user.
+  Therefore, avoid abbreviations: If the space is limited, abbreviate the terms.
+  Abbreviate the terms the way that the meaning is apparent. This means a word should only be abbreviated as much as necessary.
+  Use tooltips to provide the long form of the abbreviation.</li>
+<li>Abbreviate units of measurement when they are accompanied by a numeric value. Always place one space between a number and a unit.</li>
+</ul>
+</section>
+<section hidden="hidden" id="panel-phrasing-templates" role="tabpanel">
+<h2 class="tab-anchor" id="phrasing-templates">Phrasing Templates</h2>
+<ul>
+<li>Avoid camel notation/pascal notation to abbreviate terms.</li>
+</ul>
+<p>Correct/incorrect Example</p>
+<ul>
+<li>When possible, state messages, that require a choice as questions that permit "Yes" or "No" as an answer.</li>
+</ul>
+<p>Correct example</p>
+<ul>
+<li>If a problem occurs try to state the problem, its cause (if possible) and offer direct support.</li>
+<li>A problem may have one out of several possible reasons. In this case state the possible reasons, connected by "or".
+  Allocate an individual line for each reason and each "or". Avoid mapping more than three reasons in one message.</li>
+<li>Keep the view of the customer in mind: Compose messages as specific as possible. E.g. in message boxes the user isn't interested in a description of the technical reason for the problem but in a solution.</li>
+</ul>
+<p>Correct/incorrect Example</p>
+<ul>
+<li>The information given should be as short, though complete as possible. Give only necessary background information.
+  Especially in message box message texts should not exceed two to three lines.
+  If there are still details missing provide a help button that opens a help window.</li>
+</ul>
+<p>Questions:</p>
+<ul>
+<li>Do you want to <perform action>?</li>
+<li>Are you sure you want to <perform action>?</li>
+<li>Do you want to continue to <perform action>?</li>
+<li>Do you want to save the changes to the current project?</li>
+</ul>
+<!-- ## Translation --- -->
+</section>
+                
+              
+  
+  
+    
+  
+  <h2>Any questions left?</h2>
+  <p class="md-community-button">
+    <a href="https://www.yammer.com/siemenscrosscollaboration/#/threads/inGroup?feedId=2951962624" class="button" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+      Ask the community
+    </a>
+  </p>
+
+
+
+<hr>
+<p>
+  <em>
+    
+      Except where otherwise noted, content on this site is licensed under the
+      <a href="https://code.siemens.com/simpl/simpl/blob/master/LICENSE.md">
+        The Siemens Inner Source License - 1.1
+      </a>.
+    
+  </em>
+</p>
+
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+
+  <!-- AsyncAPI integration -->
+  
+
+  <!-- OpenAPI integration -->
+  
+
+  <!-- Mermaid integration -->
+  
+
+  
+<div class="siemensFooter">
+  <nav class="siemensFooter__links">
+    
+      <a class="siemensFooter__linksItem" href="https://www.yammer.com/siemenscrosscollaboration/#/threads/inGroup?feedId=2951962624" target="_blank">Yammer</a>
+    
+      <a class="siemensFooter__linksItem" href="https://teams.microsoft.com/l/channel/19%3ae8fc7360327a46d49ec85dcdefce72ca%40thread.skype/General" target="_blank">Teams</a>
+    
+      <a class="siemensFooter__linksItem" href="https://code.siemens.com/simpl" target="_blank">SiMPL@code</a>
+    
+      <a class="siemensFooter__linksItem" href="https://code.siemens.com/simpl-labs" target="_blank">SiMPL-Labs@code</a>
+    
+  </nav>
+  <p class="siemensFooter__legal">
+    &copy; Siemens 2016-2022
+    <span>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/corporate_info" target="_blank">Corporate Information</a>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/privacy" target="_blank">Privacy Policy</a>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/corp/en/index/terms_of_use.htm" target="_blank">Terms of Use</a>
+    </span>
+  </p>
+</div>
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+  <nav
+    class="md-footer__inner md-grid"
+    aria-label="Footer"
+  >
+
+    <!-- Link to previous page -->
+    
+    <a
+      href="../../states/states/index.html"
+      class="md-footer__link md-footer__link--prev"
+      rel="prev"
+    >
+      <div class="md-footer__button md-icon md-icon--arrow-back"></div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+          States
+        </div>
+      </div>
+    </a>
+    
+
+    <!-- Link to next page -->
+    
+    <a
+      href="../../typography/typography/index.html"
+      class="md-footer__link md-footer__link--next"
+      rel="next"
+    >
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+          Typography
+        </div>
+      </div>
+      <div class="md-footer__button md-icon md-icon--arrow-forward"></div>
+    </a>
+    
+  </nav>
+  
+
+  <div id="siemens-footer-container"></div>
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        
+        <div class="md-footer-copyright__highlight">
+          &copy; Siemens 2016-2022
+        </div>
+        
+        Made with
+        <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+        >
+          Material for MkDocs
+        </a>
+        
+      </div>
+
+      <!-- Social links -->
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tertiary", "page.toc"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../../../../_src/analytics.js"></script>
+      
+        <script src="../../../../_src/tabsets.js"></script>
+      
+    
+  </body>
+</html>

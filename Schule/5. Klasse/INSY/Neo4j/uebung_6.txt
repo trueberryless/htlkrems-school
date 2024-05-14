@@ -1,0 +1,107 @@
+ -- ----------------------------------------------------------------------------- --
+--  1. Beispiel) GDS - Graph Data Science
+-- ----------------------------------------------------------------------------- --
+
+a) Finden Sie die schnellste Verbindung zwischen Wien Meidling und Stephansplatz.
+
+match (n:Station)
+optional match (n)-[r:SUBWAY|TRAMWAY|EXPRESSWAY|REGIONAL_EXPRESS]->(m:Station)
+WITH gds.graph.project(
+    "viennagraph",
+    n,m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .time }
+    }
+) as g
+RETURN g
+
+match (n:Station {name: "Wien Meidling"}), (m:Station {name: "Stephansplatz"})
+CALL gds.shortestPath.dijkstra.stream(
+    "viennagraph", {
+        sourceNode: n,
+        targetNode: m,
+        relationshipWeightProperty: "time"
+    }
+)
+YIELD path, totalCost
+RETURN [i in nodes(path) | i.name], totalCost
+
+
+b) Finden Sie jene 5 wichtigsten Stationen anhand der Länge zwischen den Stationen. Vergleichen Sie das Ergebnis mit dem Unterschied nach der Zeit. Versuchen Sie dies zu verstehen.
+
+CALL gds.graph.drop("viennagraph")
+
+MATCH (n:Station)
+OPTIONAL MATCH (n)-[r]->(m:Station)
+WITH gds.graph.project(
+    "viennagraph",
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .length }
+    }
+) as g
+RETURN g
+
+CALL gds.betweenness.stream(
+    "viennagraph",
+    {
+        relationshipWeightProperty: "length"
+    }
+) 
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) as node, score
+RETURN node.name, score
+ORDER BY score desc
+LIMIT 5
+
+
+CALL gds.graph.drop("viennagraph")
+
+CALL gds.betweenness.stream(
+    "viennagraph",
+    {
+        relationshipWeightProperty: "time"
+    }
+) 
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) as node, score
+RETURN node.name, score
+ORDER BY score desc
+LIMIT 5
+
+CALL gds.betweenness.stream(
+    "viennagraph",
+    {
+        relationshipWeightProperty: "time"
+    }
+) 
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) as node, score
+RETURN node.name, score
+ORDER BY score desc
+LIMIT 5
+
+
+c) Überprüfe den Artikel, importiere das Stackoverflow Modell und schau dir das Stackoverflow Modell an:
+https://neo4j.com/docs/apoc/current/import/load-json/?utm_medium=ppc&utm_source=bing&utm_campaign=*NA+-+Search+-+Graph+Algorithms&utm_adgroup=*NA+-+Search+-+Graph+Algorithms+-+Graph+Algorithm&utm_term=graph+algorithms#load-json-examples-stackoverflow
+https://api.stackexchange.com/docs/questions
+
+Versuche die den body_markdown in deinen Antworten zu ergänzen.
+Versuche die Votes bei den Antworten zu ergänzen.
+Gibt es eine Möglichkeit die Relationships mit einem Weight zu versehen?
+
+
+
+d) Importiere das Stackoverflow Modell von Github (data/stackoverflow-50.dump) in eine Neo4j DB.
+https://github.com/neo4j-graph-examples/stackoverflow/tree/main
+
+
+
+e) Finde im Stackoverflow Modell die entsprechenden Communities basierend auf den Tags und den Fragen .
+Gib die Communities und die dazugehörigen Tags/Fragen als Liste aus.
+
+
+f) Finde die Top 10 User mit den meisten Reputation Points.

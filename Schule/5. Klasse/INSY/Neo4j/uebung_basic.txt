@@ -1,0 +1,183 @@
+ 
+(Kein Betreff)
+Dipl.-Ing. Panhofer Paul, MSc, BSc
+Dipl.-Ing. Panhofer Paul, MSc, BSc
+
+-- -------------------------------------------------------------------------- --
+-- Grundlagen - MATCH, RETURN Klauseln
+-- -------------------------------------------------------------------------- --
+-- Alle Knoten eines Graphen auslesen.
+-- Ausgabe: Knoten
+
+match (n) return n;
+
+-- Lesen Sie alle Knoten des Typ Movie aus.
+-- Ausgabe: Knoten
+
+match(m:Movie) return m;
+
+-- Lesen Sie alle Movie Knoten die für das Property title
+-- den Wert "The Matrix" gesetzt haben.
+-- Ausgabe: Knoten
+
+match(m:Movie{title:"The Matrix"}) return m;
+match(m:Movie) where m.title="The Matrix" return m;
+
+-- Lesen Sie alle Movie Knoten die für das Property title
+-- den Wert "The Matrix" gesetzt haben.
+-- Ausgabe: properties der Ergebnisknoten
+
+match(m:Movie{title:"The Matrix"}) return properties(m);
+match(m:Movie) where m.title="The Matrix" return properties(m);
+
+-- Lesen Sie alle Knoten aus die entweder den Typ :Person
+-- oder :Movie haben.
+-- Ausgabe: Knoten
+
+match (m:Movie|Person) return m;
+
+-- Lesen Sie alle Personen Knoten aus.
+-- Ausgabe: Property name
+
+match (p:Person) return p.name;
+
+-- --------------------------------------------------------------------------- --
+-- Grundlagen - WHERE Klauseln
+-- --------------------------------------------------------------------------- --
+-- Lesen Sie alle Person Knoten aus für die eine Property
+-- name existiert.
+-- Ausgabe: Property name
+
+match (p:Person) where p.name <> "" return p.name;
+match (p:Person) where p.name is not null return p.name;
+
+-- -------------------------------------------------------------------------- --
+-- Grundlagen - Relationen
+-- -------------------------------------------------------------------------- --
+-- Lesen Sie alle Personen (Person) Knoten aus, die eine Relation
+-- zu einem Movie (Movie) Knoten haben.
+-- Ausgabe: Property name
+
+match (p:Person)--(:Movie) return p;
+match (p:Person)<-->(:Movie) return p;
+
+-- Geben Sie die Namen aller Schauspieler aus.
+-- Hinweis: Ein Schaupieler ist eine Person die eine Relation zum
+-- zu einem Movie Knoten vom Typ ACTED_IN hat.
+-- Ausgabe: Property name
+
+match (p:Person)-[:ACTED_IN]-(:Movie) return distinct p.name;
+
+-- Finden sie alle Filme die von derselben Person produziert (:PRODUCED)
+-- und gedreht (:DIRECTED) wurden.
+-- Ausgabe: Knoten
+
+match (m:Movie)-[:PRODUCED]-(n:Person) 
+match (m)-[:DIRECTED]-(n)
+return distinct m;
+
+match (p:Person)-[:PRODUCED]-(m:Movie)-[:DIRECTED]-(p) return distinct m
+
+-- In welcher Art hat Tom Cruise in Filmen mitgewirkt (Typen der Relationen)
+-- Ausgabe: Typ der Relationen
+
+match (:Person{name:"Tom Cruise"})-[r]-(m:Movie)
+return distinct type(r);
+
+-- Geben Sie alle Relationen aus die für einen den Film "The Matrix" definiert
+-- sind
+-- Ausgabe Typ der Relationen
+
+match (:Movie{title:"The Matrix"})-[r]-()
+return collect(distinct type(r));
+
+-- -------------------------------------------------------------------------- --
+-- Grundlagen - Aggregatfunktionen
+-- -------------------------------------------------------------------------- --
+-- Ermitteln Sie wieviel Darsteller [r:ACTED_IN] Knoten im Graph existieren.
+-- Ausgabe: Wert
+
+match (p:Person)-[:ACTED_IN]-(:Movie) return count(p);
+
+-- Ermitteln Sie wieviele Darsteller [r:ACTED_IN] Knoten im Film (:Movie)
+-- "The Matrix" mitgewirkt haben
+-- Ausgabe: Wert
+
+match (p:Person)-[:ACTED_IN]-(:Movie{title: "The Matrix"}) return count(p);
+
+-- Ermitteln Sie für jeden Film (m:Movie) die Anzahl der Darsteller.
+-- Ausgabe: m.title, actor_count
+
+match (p:Person)-[:ACTED_IN]-(m:Movie) return distinct m.title as TITLE, count(distinct p) as ACTOR;
+
+-- Ermitteln Sie für jedes gespeicherte Jahr die Anzahl der Filme
+-- die in diesem Jahr erschienen sind.
+-- Ausgabe: year, MOVIE_COUNT
+
+match (m:Movie) return m.released as YEAR, count(m) as AMOUNT order by AMOUNT desc;
+
+-- Geben Sie für jeden Film (m:Movie) die Namen der Darsteller gesammelt
+-- in einem Array aus.
+-- Ausgabe: m.title, [..] (Actornames)
+
+match (m:Movie)-[:ACTED_IN]-(p:Person) return m.title as TITLE, collect(p.name) as ACTORS;
+
+-- Geben Sie für jeden Film (m:Movie) das mittlere Rating (p:Person)-[r:REVIEWED]->(m:Movie) aus.
+-- Hinweis: r.rating
+-- Ausgabe m.title, AVG_RATING
+
+match (m:Movie)-[r:REVIEWED]-(:Person) return m.title as TITLE, avg(r.rating) as AVG_RATING order by AVG_RATING desc;
+
+-- -------------------------------------------------------------------------- --
+-- Grundlagen - Listenoperatoren
+-- -------------------------------------------------------------------------- --
+-- Geben Sie für jeden Film (m:Movie) seine Ratings (p:Person)-[r:REVIEWED]->(m:Movie) aus.
+-- Ratingwerte die kleiner sind als 60 sollen nicht berücksichtigt werden.
+-- Hinweis: r.rating
+-- Ausgabe m.title, RATINGS, RATINGS_COUNT
+
+-- Hinweis: filter [i in [collection] where <condition> ]
+
+match (m:Movie)-[r:REVIEWED]-(:Person) 
+return m.title as TITLE, [i in collect(r.rating) where i >= 60] as RATING, size([i in collect(r.rating) where i >= 60]) as SIZE;
+
+-- Geben Sie für jeden Film (m:Movie) seine Ratings (p:Person)-[r:REVIEWED]->(m:Movie) aus.
+-- Ratingwerte die kleiner sind als 60 sollen nicht berücksichtigt werden. Adaptieren
+-- Sie zusätzlich das Ratingsystem dahingehend das nur Werte zwischen 0 und 5 angegeben
+-- werden.
+
+-- Hinweis: r.rating
+-- Ausgabe m.title, RATINGS
+
+-- Hinweis: map      [i in [collection] | <operation> ]
+            reduce   reduce(i=0, age in [collection] | i + age)
+
+match (m:Movie)-[r:REVIEWED]-(:Person) 
+return m.title as TITLE, [j in [i in collect(r.rating) where i >= 60] | j / 20] as RATING;
+
+-- -------------------------------------------------------------------------- --
+-- Grundlagen - WITH Klausel
+-- -------------------------------------------------------------------------- --
+-- Finden Sie den Film mit dem höchsten Rating.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

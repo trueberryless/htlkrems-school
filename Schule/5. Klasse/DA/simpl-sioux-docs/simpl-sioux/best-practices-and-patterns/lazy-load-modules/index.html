@@ -1,0 +1,3139 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="SiMPL Core Team">
+      
+      
+        <link rel="canonical" href="https://simpl.code.siemens.io/simpl/best-practices-and-patterns/lazy-load-modules/">
+      
+      <link rel="icon" href="../../_src/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Module Lazy Loading - SiMPL SIOUX Documentation</title>
+      
+    
+    
+
+  
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+  <link rel="stylesheet" href="../../assets/stylesheets/code-main.css" />
+
+
+    
+    
+  
+    
+
+    <link rel="preload" href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg" as="image"/>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/ui-icons/3.2.1/Siemens-Web-Icons_3-2-1.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/ui-icons/3.2.1/Siemens-Web-Icons_3-2-1.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/professional/6.0/SiemensSans_Prof_Roman.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="https://cdn.siemens-web.com/fonts/professional/6.0/SiemensSans_Prof_Bold.woff" as="font" type="font/woff" crossorigin>
+
+    <style>:root{--md-text-font-family:"Siemens Sans Roman";--md-code-font-family:"monospace"}</style>
+  
+
+    
+    
+      <link rel="stylesheet" href="../../_src/tabsets.css">
+    
+      <link rel="stylesheet" href="../../_src/fixes.css">
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!--
+  A collection of functions used from within some partials to allow the usage
+  of state saved in local or session storage, e.g. to model preferences.
+-->
+<script>
+
+  /* Prepend the base path to the given key to ensure uniqueness */
+  function __prefix(key) {
+    var prefix = new URL("../..", location)
+    return prefix.pathname + "." + key
+  }
+
+  /* Fetch the given key from the given storage */
+  function __get(key, storage = localStorage) {
+    return JSON.parse(storage.getItem(__prefix(key)))
+  }
+</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="index.html#manually-lazy-load-modules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+  <input
+    class="md-toggle"
+    data-md-toggle="main-nav"
+    type="checkbox"
+    id="main-nav-toggle"
+    autocomplete="off"
+  />
+  <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+
+  <!-- Application header -->
+  <nav class="main-nav">
+    <div class="main-nav__inner-holder" id="siemens-header-container">
+      <a href="https://simpl.code.siemens.io/simpl/"
+         class="logo">
+        <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<svg class="logo__mobile"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 80 16">
+  <image x="0"
+         y="0"
+         width="100px"
+         height="20px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg"/>
+</svg>
+<svg class="logo__mobile__white"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 80 16">
+  <image x="0"
+         y="0"
+         width="100px"
+         height="20px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-white-rgb.svg"/>
+</svg>
+<svg class="logo__desktop"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 264 42">
+  <image x="0"
+         y="0"
+         width="264px"
+         height="42px"
+         xlink:href="https://cdn.siemens-web.com/images/logo-collection/2.0/sie-logo-petrol-rgb.svg"/>
+</svg>
+      </a>
+      
+        <!-- print a nav item, mark it as active if required and
+add the url to item_urls to remember an item has been printed -->
+
+
+<!-- traverse the navigation tree to find the first child of top_nav_item with a url
+or print top_nav_item if it has a url -->
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/" title="Home"
+    
+      >
+    
+  Home
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/introduction/" title="Documentation"
+    
+      >
+    
+  Documentation
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+      
+  <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" title="Web"
+    
+      class="main-nav--active">
+    
+  Web
+  </a>
+  <!-- remember the found page url -->
+  
+
+    
+  <!-- output the item if it has a url -->
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/mobile-ui-components/" title="Mobile"
+    
+      >
+    
+  Mobile
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/icons/" title="Icons"
+    
+      >
+    
+  Icons
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+  
+  <!-- check the top_nav_items children for a url -->
+  
+    
+  <a href="https://simpl.code.siemens.io/simpl/community/overview/" title="Community"
+    
+      >
+    
+  Community
+  </a>
+  <!-- remember the found page url -->
+  
+
+  
+
+      
+      <a style="display: none;"></a>
+    </div>
+
+    
+      <label for="main-nav-toggle">
+  <hr>
+  <hr>
+  <hr>
+</label>
+    
+  </nav>
+  <div class="md-header__topic">
+    <!-- this is needed to hook in the version selector -->
+  </div>
+
+
+<!-- Top-level navigation -->
+<nav class="md-header-nav md-grid">
+  <div class="md-flex">
+
+    <!-- Link to home -->
+    <div class="md-flex__cell md-flex__cell--shrink">
+      <a href="https://simpl.code.siemens.io/simpl/"
+         title="SiMPL SIOUX Documentation"
+         class="md-header-nav__button md-logo">
+        <img src="../../index.html"
+             width="24" height="24" alt="Siemens" />
+      </a>
+    </div>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer"></label>
+
+    <!-- Header title -->
+    <div class="md-flex__cell md-flex__cell--stretch">
+      <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+      
+        
+          <span class="md-header-nav__topic">
+            SiMPL SIOUX Documentation
+          </span>
+          <span class="md-header-nav__topic">
+            Module Lazy Loading
+          </span>
+        
+      
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="md-tabbar-search-container">
+
+  
+  
+    <label class="md-tabbar-search-container__title" for="__drawer">
+      
+          
+            
+          
+            
+          
+            
+              Web
+            
+          
+            
+          
+            
+          
+            
+          
+      
+    </label>
+    <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+  
+  
+    <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Hack: unset variable, as we're using it recursively in tabs-item.html -->
+
+
+<!-- Tabs with outline -->
+<nav
+  class="md-tabs"
+  aria-label="Tabs"
+  data-md-component="tabs"
+>
+  <div class="md-tabs__inner">
+    <ul class="md-tabs__list">
+      
+        
+          
+        
+          
+        
+          
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" class="md-tabs__link">
+      Overview
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl-siemens-brand/" class="md-tabs__link">
+      Siemens Brand
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  <li class="md-tabs__item">
+    <a href="https://simpl.code.siemens.io/simpl-element/" class="md-tabs__link">
+      Element
+    </a>
+  </li>
+
+            
+              <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to state -->
+
+  
+  
+    
+  
+
+
+<!-- Main navigation item with nested items -->
+
+  
+  
+
+  <!-- Recurse, if the first item has further nested items -->
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link md-tabs__link--active">
+          SiOUX
+        </a>
+    </li>
+  
+
+  <!-- Main navigation item -->
+
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+    </ul>
+  </div>
+</nav>
+  
+  <div class="md-tabbar-search-container__search">
+    
+      
+        <label class="md-icon md-icon--search md-header-nav__button"
+               for="__search"></label>
+
+        <!-- Search interface -->
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+
+
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <label class="md-search-close__icon md-icon" for="__search">
+      </label>
+      <input
+        type="text"
+        class="md-search__input"
+        name="query"
+        aria-label="Search"
+        placeholder="Search"
+        autocapitalize="off"
+        autocorrect="off"
+        autocomplete="off"
+        spellcheck="false"
+        data-md-component="search-query"
+        data-md-state="active"
+        required
+      />
+      <label class="md-search__icon md-icon" for="__search">
+      </label>
+      <button
+        type="reset"
+        class="md-search__icon md-icon"
+        aria-label="Clear"
+        tabindex="-1"
+      ></button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    <!-- Site language selector -->
+    
+  </div>
+</div>
+
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+
+<!-- Main navigation -->
+<nav
+  class="md-nav md-nav--primary md-nav--lifted"
+  aria-label="Navigation"
+  data-md-level="0"
+>
+
+  <!-- Render item list -->
+  <ul class="md-nav__list" data-md-scrollfix>
+  
+    
+      
+    
+      
+    
+      
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl/web-ui-components/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl-siemens-brand/" class="md-nav__link">
+        Siemens Brand
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://simpl.code.siemens.io/simpl-element/" class="md-nav__link">
+        Element
+      </a>
+    </li>
+  
+
+        
+          
+          
+          
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          SiOUX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SiOUX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          SiOUX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer-documentation/GettingStarted/index.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          Design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Design" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_1" type="checkbox" id="__nav_4_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_1">
+          UX Design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UX Design" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          UX Design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/ux-design/user-research/index.html" class="md-nav__link">
+        User Research
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/ux-design/requirements-engineering/index.html" class="md-nav__link">
+        Requirement Engineering
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/ux-design/user-interface-design/index.html" class="md-nav__link">
+        User Interface Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/ux-design/user-interface-evaluation/index.html" class="md-nav__link">
+        User Interface Evaluation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3_2" type="checkbox" id="__nav_4_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3_2">
+          Fundamentals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Fundamentals" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Fundamentals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/charts/charts/index.html" class="md-nav__link">
+        Charts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/colors/colors/index.html" class="md-nav__link">
+        Colors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/elevation/elevation/index.html" class="md-nav__link">
+        Elevations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/iconography/iconography/index.html" class="md-nav__link">
+        Iconography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/interaction/gestures-multi-touch/index.html" class="md-nav__link">
+        Interaction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/layout-and-spacing/layout-and-spacing/index.html" class="md-nav__link">
+        Layout and Spacing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/states/states/index.html" class="md-nav__link">
+        States
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/texts/texts/index.html" class="md-nav__link">
+        Texts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/typography/typography/index.html" class="md-nav__link">
+        Typography
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/fundamentals/user-guidance/user-guidance/index.html" class="md-nav__link">
+        User Guidance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/index.html" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/about/about/index.html" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/badge/badge/index.html" class="md-nav__link">
+        Badge
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/banner/banner/index.html" class="md-nav__link">
+        Banner
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/breadcrumb/breadcrumb/index.html" class="md-nav__link">
+        Breadcrumb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/button/button/index.html" class="md-nav__link">
+        Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/card/card/index.html" class="md-nav__link">
+        Card
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/checkbox/checkbox/index.html" class="md-nav__link">
+        Checkbox
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/chip/chip/index.html" class="md-nav__link">
+        Chip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/date-picker/date-picker/index.html" class="md-nav__link">
+        Date Picker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/date-range-picker/date-range-picker/index.html" class="md-nav__link">
+        Date Range Picker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/dialog/dialog/index.html" class="md-nav__link">
+        Dialog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/drop-down-menu/drop-down-menu/index.html" class="md-nav__link">
+        Drop Down Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/exposed-dropdown-menu/exposed-dropdown-menu/index.html" class="md-nav__link">
+        Exposed Drop Down Menu
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/expansion-panel/expansion-panel/index.html" class="md-nav__link">
+        Expansion Panel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/fab/fab/index.html" class="md-nav__link">
+        Floating Action Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/hyperlink/hyperlink/index.html" class="md-nav__link">
+        Hyperlink
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/list/list/index.html" class="md-nav__link">
+        List
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/log-in/log-in/index.html" class="md-nav__link">
+        Log In
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/maps/maps/index.html" class="md-nav__link">
+        Maps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/message/message/index.html" class="md-nav__link">
+        Message Box
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/navigation-drawer/navigation-drawer/index.html" class="md-nav__link">
+        Navigation Drawer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/progress-indicator/progress-indicator/index.html" class="md-nav__link">
+        Progress Indicator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/radio-button/radio-button/index.html" class="md-nav__link">
+        Radio Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/selection-control/selection-controls/index.html" class="md-nav__link">
+        Selection Controls
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/side-sheet/side-sheet/index.html" class="md-nav__link">
+        Side Sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/slider/slider/index.html" class="md-nav__link">
+        Slider
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/snackbar/snackbar/index.html" class="md-nav__link">
+        Snackbar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/switch/switch/index.html" class="md-nav__link">
+        Switch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/table/table/index.html" class="md-nav__link">
+        Table
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/tabs/tabs/index.html" class="md-nav__link">
+        Tabs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/text-field/text-field/index.html" class="md-nav__link">
+        Text Field
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/toggle-button/toggle-button/index.html" class="md-nav__link">
+        Toggle Button
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/toolbar/toolbar/index.html" class="md-nav__link">
+        Toolbar
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/tooltip/tooltip/index.html" class="md-nav__link">
+        Tooltip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/tree/tree/index.html" class="md-nav__link">
+        Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/components/wizard/wizard/index.html" class="md-nav__link">
+        Wizard
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../responsive-design/responsive-design/index.html" class="md-nav__link">
+        Responsive Design
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          UI Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="UI Patterns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          UI Patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/tasks/asset-management/asset-management/index.html" class="md-nav__link">
+        Asset Management
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/tasks/search-and-filter/filter/index.html" class="md-nav__link">
+        Filter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/tasks/search-and-filter/searching-and-finding/index.html" class="md-nav__link">
+        Searching and Finding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/tasks/map/viewing-assets-on-map/index.html" class="md-nav__link">
+        Viewing Assets on Map
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7" type="checkbox" id="__nav_4_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7">
+          Web Reference Architecture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Web Reference Architecture" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Web Reference Architecture
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/introduction/introduction/index.html" class="md-nav__link">
+        Web UI Design Principles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/introduction/problems-scalability-front-end/index.html" class="md-nav__link">
+        Problems of scalability in front-end
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/introduction/software-architecture/index.html" class="md-nav__link">
+        Architecture and Implementation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_4" type="checkbox" id="__nav_4_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_4">
+          Layers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Layers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Layers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/highlevel-abstraction-layers/index.html" class="md-nav__link">
+        High Level Abstraction Layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/presentation-layer/index.html" class="md-nav__link">
+        Presentation Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/abstraction-layer/index.html" class="md-nav__link">
+        Abstraction Layer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/core-layer/index.html" class="md-nav__link">
+        Core
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_5" type="checkbox" id="__nav_4_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_5">
+          Abstraction Strategies
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Abstraction Strategies" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Abstraction Strategies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/abstraction-interface/index.html" class="md-nav__link">
+        Abstraction Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/state-changes/index.html" class="md-nav__link">
+        State Change Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/synchronization-strategy/index.html" class="md-nav__link">
+        Synchronization Strategy Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/caching/index.html" class="md-nav__link">
+        Caching
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_6" type="checkbox" id="__nav_4_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_6">
+          Data and States
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data and States" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data and States
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/dataflow/index.html" class="md-nav__link">
+        Unidirectional data flow
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_7" type="checkbox" id="__nav_4_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_7">
+          Modular design
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Modular design" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Modular design
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/modular-design/index.html" class="md-nav__link">
+        WEB UI App Module Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/lazy-module-loading/index.html" class="md-nav__link">
+        Lazy Module Loading
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/module-directory-structure/index.html" class="md-nav__link">
+        Module directory structure
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_8" type="checkbox" id="__nav_4_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_8">
+          Components
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Components" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Components
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/smart-dumb-components/index.html" class="md-nav__link">
+        Smart- and Dump components
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/smart-dump-components-useful-distinction/index.html" class="md-nav__link">
+        Smart vs Dump Components Useful Distinction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_7_9" type="checkbox" id="__nav_4_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7_9">
+          Epilogue
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Epilogue" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Epilogue
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/ui-web-architecture-reference/summary/index.html" class="md-nav__link">
+        Summary
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8" type="checkbox" id="__nav_4_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8">
+          Best Practices and Patterns
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Best Practices and Patterns" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          Best Practices and Patterns
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_8_1" type="checkbox" id="__nav_4_8_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8_1">
+          Patterns And Practice
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Patterns And Practice" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          Patterns And Practice
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-feature-routing-module-feature-modules/index.html" class="md-nav__link">
+        Feature Routing Module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Module Lazy Loading
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Module Lazy Loading
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-1-lazy-load-modules-via-routes" title="Way 1 - Lazy-load modules via routes"
+      class="md-nav__link md-nav__link--primary">
+    Way 1 - Lazy-load modules via routes
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-2-manual-lazy-loading-of-modules" title="Way 2 – Manual Lazy-loading of modules"
+      class="md-nav__link md-nav__link--primary">
+    Way 2 – Manual Lazy-loading of modules
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-3-manual-lazy-loading-of-components-only-by-ivy" title="Way 3 – Manual Lazy-loading of components (only by IVY)"
+      class="md-nav__link md-nav__link--primary">
+    Way 3 – Manual Lazy-loading of components (only by IVY)
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pwa/index.html" class="md-nav__link">
+        Progressive Web App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electron/index.html" class="md-nav__link">
+        Electron Cross Platform
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../loosely-coupling-feature-modules/index.html" class="md-nav__link">
+        Loosely coupling Feature Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-shared-module/index.html" class="md-nav__link">
+        Shared Module of an App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-core-module/index.html" class="md-nav__link">
+        Core Module of an App
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/index.html" class="md-nav__link">
+        Test
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../clean-up-subscriptions/index.html" class="md-nav__link">
+        Clean up Subscriptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design-and-components/assets-and-templates/assets-and-templates/index.html" class="md-nav__link">
+        Design Assets and Templates
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+        
+      
+    
+      
+    
+      
+    
+      
+    
+  
+  
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-1-lazy-load-modules-via-routes" title="Way 1 - Lazy-load modules via routes"
+      class="md-nav__link md-nav__link--primary">
+    Way 1 - Lazy-load modules via routes
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-2-manual-lazy-loading-of-modules" title="Way 2 – Manual Lazy-loading of modules"
+      class="md-nav__link md-nav__link--primary">
+    Way 2 – Manual Lazy-loading of modules
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+        <!--
+  Copyright (c) 2016-2018 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Table of contents item -->
+<li class="md-nav__item">
+  <a href="index.html#way-3-manual-lazy-loading-of-components-only-by-ivy" title="Way 3 – Manual Lazy-loading of components (only by IVY)"
+      class="md-nav__link md-nav__link--primary">
+    Way 3 – Manual Lazy-loading of components (only by IVY)
+  </a>
+
+  <!-- Render nested item list -->
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+
+  
+                
+                  <a href="https://code.siemens.com/simpl/simpl-sioux/blob/main/docs/best-practices-and-patterns/lazy-load-modules.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="manually-lazy-load-modules">Manually Lazy Load Modules</h1>
+<p>Each Feature Module that will not be needed for the bootstrap an starting an App should be loadable by manual
+lazy loading. See also: <a href="https://dev.to/binarysort/manually-lazy-load-components-in-angular-8-ffi">https://dev.to/binarysort/manually-lazy-load-components-in-angular-8-ffi</a></p>
+<p><strong>Why?</strong></p>
+<p>Single-page applications tend to be fast once loaded but initial loading time often suffers. This is because of a
+huge amount of javascript that needs to be downloaded and interpreted by the browser to boot up the Javascript app.
+To deal with this we need to reduce the size of the main javascript bundle necessary to boot the app (for angular
+apps <em>main.js</em>). This can be achieved with lazy loading. We don't load unused bits (modules) and load them on demand.</p>
+<p><strong>What is Lazy Loading?</strong></p>
+<p>Lazy loading or "On-demand loading" is a programming practice where we delay the loading of an object until its
+needed. In simple terms, you put off doing something which is not required now.
+For example, we have settings area in our app which users rarely visit. Until necessary, we do not want
+to load the JavaScript corresponding to the settings area. At the latest, when the user clicks on the
+corresponding menu item,
+we can fetch the Javascript file (module) and load up that section of our app.
+For this to work, our compiled code for that settings area must be isolated in a dedicated Javascript file, so that
+we can fetch it at runtime when needed. This sounds complex. Thankfully, Angular provides this func-tionality
+and does all the file bundling for us.</p>
+<h2 id="way-1-lazy-load-modules-via-routes">Way 1 - Lazy-load modules via routes</h2>
+<p>In Angular, the most basic unit is a module. A module is a mechanism to group components, directives,
+pipes andservices that are related. So, modules are necessary for Angular to know which dependencies are
+required and which components are used in the template. Therefore, <strong>the most basic unit that can be
+lazy-loaded in Angular is a</strong>module**, and with the module come the bundled components that we are
+interested in.</p>
+<p>The easiest way to lazy-load modules is via routes:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="kd">const</span> <span class="nx">routes</span>: <span class="kt">Routes</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="2 "></span>  <span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;home&#39;</span><span class="p">,</span> <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="s1">&#39;./home/home.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">HomeModule</span><span class="p">)</span>
+<span class="linenos" data-linenos="4 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">];</span>
+</code></pre></div>
+<p>The <em>loadChildren</em> property takes a function that returns a promise using the browser's built-in syntax for lazy
+loading code using dynamic imports <em>import('...')</em>.</p>
+<p>But we want more control over lazy loading, and not just with routes. We want to open a dialog, and lazy load its containing component just when a user opens that specific dialog.</p>
+<h2 id="way-2-manual-lazy-loading-of-modules">Way 2 – Manual Lazy-loading of modules</h2>
+<p>Since Angular 8 the browser's built-in dynamic imports import('...') is used:</p>
+<blockquote>
+<p>Dynamic import() introduces a new function-like form of import that caters to those use cases. import
+(moduleSpecifier) returns a promise for the module namespace ob-ject of the requested module, which is created
+after fetching, instantiating, and evaluating all of the module’s dependencies, as well as the module itself.</p>
+</blockquote>
+<p>In simple terms, dynamic <em>import()</em> enables async loading of JS Modules. So, we don't have to worry about
+creating a dedicated JS bundle for our module, dynamic <em>import()</em> feature will take care of it.</p>
+<p>First define an <em>entry</em> property to the start component in the module that should be lazy-loaded.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">@NgModule</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">JsonViewerComponent</span><span class="p">,</span> <span class="nx">JsonEditorComponent</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nx">entryComponents</span><span class="o">:</span> <span class="p">[</span><span class="nx">JsonViewerComponent</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nx">exports</span><span class="o">:</span> <span class="p">[</span><span class="nx">JsonViewerComponent</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nx">CommonModule</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="err">…</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="p">],</span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nx">JsonViewerFacade</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span><span class="err">…</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="p">]</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">})</span>
+<span class="linenos" data-linenos="14 "></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">JsonViewerModule</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="c1">// Define entry property to access entry component in loader service</span>
+<span class="linenos" data-linenos="16 "></span>  <span class="k">static</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">JsonViewerComponent</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Second, we need to define our lazy widgets. Therefore we create a file maned <em>lazy-widgets.ts</em> in <em>SharedModule</em>
+of the app.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span> <span class="p">{</span> <span class="nx">NgModuleFactory</span><span class="p">,</span> <span class="nx">Type</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nx">ex</span><span class="o">-</span><span class="nx">port</span> <span class="kd">const</span> <span class="nx">lazyWidgets</span><span class="o">:</span> <span class="p">{</span> <span class="nx">path</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">NgModuleFactory</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Type</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;&gt;</span> <span class="p">}[]</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nx">path</span><span class="o">:</span> <span class="s1">&#39;json-viewer-module&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nx">loadChildren</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="k">import</span><span class="p">(</span><span class="s1">&#39;./json-viewer/json-viewer.module&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">m</span> <span class="p">=&gt;</span> <span class="nx">m</span><span class="p">.</span><span class="nx">JsonViewerModule</span><span class="p">)</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">];</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">export</span> <span class="kd">function</span> <span class="nx">lazyArrayToObj</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="linenos" data-linenos="12 "></span>  <span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">w</span> <span class="k">of</span> <span class="nx">lazyWidgets</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nx">result</span><span class="p">[</span><span class="nx">w</span><span class="p">.</span><span class="nx">path</span><span class="p">]</span> <span class="o">=</span> <span class="nx">w</span><span class="p">.</span><span class="nx">loadChildren</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="p">}</span>
+</code></pre></div>
+<p><em>export const lazyWidgets</em> will create a dedicated JS bundle for a lazy module. Each module that should be
+lazy loadable must be defined here with own <em>path</em> element.
+The function <em>lazyArrayToObj()</em> will work as a factory for injecting lazy widget array in the main module.
+It is a helper function. Additionally we define the injection token to inject lazy widgets in the service by an
+own file named <em>tokens.ts</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="k">import</span> <span class="p">{</span> <span class="nx">InjectionToken</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="k">export</span> <span class="kd">const</span> <span class="nx">LAZY_WIDGETS</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">InjectionToken</span><span class="o">&lt;</span><span class="p">{</span> <span class="p">[</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">]</span><span class="o">:</span> <span class="kt">string</span> <span class="p">}</span><span class="o">&gt;</span><span class="p">(</span><span class="s1">&#39;LAZY_WIDGETS&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>The third step is to define the hard of the manual lazy loading process by defining it in an own file named
+<em>lazy-loader.service.ts</em>.</p>
+<p>LazyLoaderService loads the module with dynamic <em>import()</em>. If it's compiled ahead of time then we just take it as
+it is. If we are using <em>JIT</em> mode we have to compile it. After, we inject all the dependencies in the module.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nx">im</span><span class="o">-</span><span class="nx">port</span> <span class="p">{</span> <span class="nx">Injectable</span><span class="p">,</span> <span class="nx">Injector</span><span class="p">,</span> <span class="nx">Compiler</span><span class="p">,</span> <span class="nx">Inject</span><span class="p">,</span> <span class="nx">NgModuleFactory</span><span class="p">,</span> <span class="nx">Type</span><span class="p">,</span> <span class="nx">ViewContainerRef</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@angular/core&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">import</span> <span class="p">{</span> <span class="nx">LAZY_WIDGETS</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./tokens&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="kd">@Injectable</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="nx">providedIn</span><span class="o">:</span> <span class="s1">&#39;root&#39;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">})</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">LazyLoaderService</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>  <span class="kr">constructor</span><span class="p">(</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="k">private</span> <span class="nx">injector</span>: <span class="kt">Injector</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="k">private</span> <span class="nx">compiler</span>: <span class="kt">Compiler</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="kd">@Inject</span><span class="p">(</span><span class="nx">LAZY_WIDGETS</span><span class="p">)</span> <span class="k">private</span> <span class="nx">lazyWidgets</span><span class="o">:</span> <span class="p">{</span> <span class="p">[</span><span class="nx">key</span>: <span class="kt">string</span><span class="p">]</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">NgModuleFactory</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Type</span><span class="o">&lt;</span><span class="nx">any</span><span class="o">&gt;&gt;</span> <span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>  <span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>  <span class="k">async</span> <span class="nx">load</span><span class="p">(</span><span class="nx">name</span>: <span class="kt">string</span><span class="p">,</span> <span class="nx">container</span>: <span class="kt">ViewContainerRef</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="kd">const</span> <span class="nx">tempModule</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">lazyWidgets</span><span class="c">&lt;!--</span> <span class="nx">markdownlint</span><span class="o">-</span><span class="nx">disable</span> <span class="nx">MD042</span> <span class="o">--&gt;</span><span class="p">[</span><span class="nx">name</span><span class="p">]</span><span class="c">&lt;!--</span> <span class="nx">markdownlint</span><span class="o">-</span><span class="nx">disable</span> <span class="nx">MD042</span> <span class="o">--&gt;</span><span class="p">();</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="kd">let</span> <span class="kr">module</span><span class="nx">Factory</span><span class="p">;</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">tempModule</span> <span class="ow">instanceof</span> <span class="nx">NgModuleFactory</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span>      <span class="c1">// For AOT</span>
+<span class="linenos" data-linenos="22 "></span>      <span class="kr">module</span><span class="nx">Factory</span> <span class="o">=</span> <span class="nx">tempModule</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>      <span class="c1">// For JIT</span>
+<span class="linenos" data-linenos="25 "></span>      <span class="kr">module</span><span class="nx">Factory</span> <span class="o">=</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">compiler</span><span class="p">.</span><span class="nx">compileModuleAsync</span><span class="p">(</span><span class="nx">tempModule</span><span class="p">);</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span>    <span class="kd">const</span> <span class="nx">entryComponent</span> <span class="o">=</span> <span class="p">(</span><span class="kr">module</span><span class="nx">Factory.moduleType</span> <span class="kr">as</span> <span class="nx">any</span><span class="p">).</span><span class="nx">entry</span><span class="p">;</span>
+<span class="linenos" data-linenos="29 "></span>    <span class="kd">const</span> <span class="kr">module</span><span class="nx">Ref</span> <span class="o">=</span> <span class="kr">module</span><span class="nx">Factory.create</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">injector</span><span class="p">);</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span>    <span class="kd">const</span> <span class="nx">compFactory</span> <span class="o">=</span> <span class="kr">module</span><span class="nx">Ref.componentFactoryResolver.resolveComponentFactory</span><span class="p">(</span><span class="nx">entryComponent</span><span class="p">);</span>
+<span class="linenos" data-linenos="32 "></span>
+<span class="linenos" data-linenos="33 "></span>    <span class="nx">container</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">(</span><span class="nx">compFactory</span><span class="p">);</span>
+<span class="linenos" data-linenos="34 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="35 "></span><span class="p">}</span>
+</code></pre></div>
+<p>The last step is to load the component into view we must instantiate the component dynamically.
+This can bedone with <em>componentFactoryResolver</em>. After resolving the entry component, we just load it
+inside the container.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="kd">@NgModule</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="nx">declarations</span><span class="o">:</span> <span class="p">[</span><span class="nx">HomeComponent</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nx">entryComponents</span><span class="o">:</span> <span class="p">[</span><span class="nx">HomeComponent</span><span class="p">],</span>
+<span class="linenos" data-linenos=" 4 "></span>  <span class="nx">imports</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nx">HomeRoutingModule</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nx">SharedModule</span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="p">],</span>
+<span class="linenos" data-linenos=" 8 "></span>  <span class="nx">providers</span><span class="o">:</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nx">HomeFacade</span><span class="p">,</span> <span class="nx">LazyLoaderService</span><span class="p">,</span> <span class="p">{</span> <span class="nx">provide</span>: <span class="kt">LAZY_WIDGETS</span><span class="p">,</span> <span class="nx">useFactory</span>: <span class="kt">lazyArrayToObj</span> <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="p">]</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">})</span>
+<span class="linenos" data-linenos="12 "></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">HomeModule</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+<p>That's it, just call the <em>LazyLoaderService</em> and manually load <em>LazyComponent</em> into the view.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">export</span> <span class="kd">class</span> <span class="nx">HomeComponent</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="kd">@ViewChild</span><span class="p">(</span><span class="s1">&#39;container&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">read</span>: <span class="kt">ViewContainerRef</span><span class="p">,</span> <span class="nx">static</span>: <span class="kt">false</span> <span class="p">})</span>
+<span class="linenos" data-linenos=" 3 "></span>  <span class="nx">container</span>: <span class="kt">ViewContainerRef</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="kr">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">lazyLoader</span>: <span class="kt">LazyLoaderService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">loadLazy</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">this</span><span class="p">.</span><span class="nx">lazyLoader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;json-viewer-module&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">container</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span>  <span class="p">}}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="o">&lt;</span><span class="nx">button</span> <span class="p">(</span><span class="nx">click</span><span class="p">)</span><span class="o">=</span><span class="s2">&quot;loadLazy()&quot;</span><span class="o">&gt;</span><span class="nx">Load</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="o">&lt;</span><span class="nx">ng</span><span class="o">-</span><span class="nx">container</span> <span class="err">#</span><span class="nx">container</span><span class="o">&gt;&lt;</span><span class="err">/ng- container &gt;</span>
+</code></pre></div>
+<h2 id="way-3-manual-lazy-loading-of-components-only-by-ivy">Way 3 – Manual Lazy-loading of components (only by IVY)</h2>
+<p>With the Angular 2nd edition version 8 it is possible to load components dynamically during runtime into the
+Browser DOM via <em>ComponentFactoryResolver</em></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="err">…</span>
+<span class="linenos" data-linenos=" 2 "></span>  <span class="kr">constructor</span><span class="p">(</span><span class="k">private</span> <span class="nx">componentFactoryResolver</span>: <span class="kt">ComponentFactoryResolver</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span>              <span class="k">private</span> <span class="nx">mediaMatcher</span>: <span class="kt">MediaMatcher</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="k">this</span><span class="p">.</span><span class="nx">onResize</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 5 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>  <span class="nx">loadMasterComponent</span><span class="p">(</span><span class="nx">index</span>: <span class="kt">number</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="kd">const</span> <span class="nx">dynviewItem</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">masterViews</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>    <span class="kd">const</span> <span class="nx">componentFactory</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">componentFactoryResolver</span><span class="p">.</span><span class="nx">resolveComponentFactory</span><span class="p">(</span><span class="nx">dynviewItem</span><span class="p">.</span><span class="nx">component</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>    <span class="kd">const</span> <span class="nx">viewContainerRef</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">dynviewMaster</span><span class="p">.</span><span class="nx">viewContainerRef</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nx">viewContainerRef</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>    <span class="kd">const</span> <span class="nx">componentRef</span> <span class="o">=</span> <span class="nx">viewContainerRef</span><span class="p">.</span><span class="nx">createComponent</span><span class="p">(</span><span class="nx">componentFactory</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">(</span><span class="o">&lt;</span><span class="nx">DynViewComponent</span><span class="o">&gt;</span><span class="nx">componentRef</span><span class="p">.</span><span class="nx">instance</span><span class="p">).</span><span class="nx">masterDetailLayoutComponent</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span>  <span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span><span class="err">…</span>
+</code></pre></div>
+                
+              
+  
+  
+    
+  
+  <h2>Any questions left?</h2>
+  <p class="md-community-button">
+    <a href="https://www.yammer.com/siemenscrosscollaboration/#/threads/inGroup?feedId=2951962624" class="button" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+      Ask the community
+    </a>
+  </p>
+
+
+
+<hr>
+<p>
+  <em>
+    
+      Except where otherwise noted, content on this site is licensed under the
+      <a href="https://code.siemens.com/simpl/simpl/blob/master/LICENSE.md">
+        The Siemens Inner Source License - 1.1
+      </a>.
+    
+  </em>
+</p>
+
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+
+  <!-- AsyncAPI integration -->
+  
+
+  <!-- OpenAPI integration -->
+  
+
+  <!-- Mermaid integration -->
+  
+
+  
+<div class="siemensFooter">
+  <nav class="siemensFooter__links">
+    
+      <a class="siemensFooter__linksItem" href="https://www.yammer.com/siemenscrosscollaboration/#/threads/inGroup?feedId=2951962624" target="_blank">Yammer</a>
+    
+      <a class="siemensFooter__linksItem" href="https://teams.microsoft.com/l/channel/19%3ae8fc7360327a46d49ec85dcdefce72ca%40thread.skype/General" target="_blank">Teams</a>
+    
+      <a class="siemensFooter__linksItem" href="https://code.siemens.com/simpl" target="_blank">SiMPL@code</a>
+    
+      <a class="siemensFooter__linksItem" href="https://code.siemens.com/simpl-labs" target="_blank">SiMPL-Labs@code</a>
+    
+  </nav>
+  <p class="siemensFooter__legal">
+    &copy; Siemens 2016-2022
+    <span>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/corporate_info" target="_blank">Corporate Information</a>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/privacy" target="_blank">Privacy Policy</a>
+      <a class="siemensFooter__legalLink" href="http://www.siemens.com/corp/en/index/terms_of_use.htm" target="_blank">Terms of Use</a>
+    </span>
+  </p>
+</div>
+<!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+  <nav
+    class="md-footer__inner md-grid"
+    aria-label="Footer"
+  >
+
+    <!-- Link to previous page -->
+    
+    <a
+      href="../create-feature-routing-module-feature-modules/index.html"
+      class="md-footer__link md-footer__link--prev"
+      rel="prev"
+    >
+      <div class="md-footer__button md-icon md-icon--arrow-back"></div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+          Feature Routing Module
+        </div>
+      </div>
+    </a>
+    
+
+    <!-- Link to next page -->
+    
+    <a
+      href="../pwa/index.html"
+      class="md-footer__link md-footer__link--next"
+      rel="next"
+    >
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+          Progressive Web App
+        </div>
+      </div>
+      <div class="md-footer__button md-icon md-icon--arrow-forward"></div>
+    </a>
+    
+  </nav>
+  
+
+  <div id="siemens-footer-container"></div>
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Copyright and theme information -->
+      <div class="md-footer-copyright">
+        
+        <div class="md-footer-copyright__highlight">
+          &copy; Siemens 2016-2022
+        </div>
+        
+        Made with
+        <a
+          href="https://squidfunk.github.io/mkdocs-material/"
+          target="_blank" rel="noopener"
+        >
+          Material for MkDocs
+        </a>
+        
+      </div>
+
+      <!-- Social links -->
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tertiary", "page.toc"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../../_src/analytics.js"></script>
+      
+        <script src="../../_src/tabsets.js"></script>
+      
+    
+  </body>
+</html>

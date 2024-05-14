@@ -1,0 +1,107 @@
+-- ----------------------------------------------------------------------------- --
+--  1. Beispiel) Cypher Abfragen, APOC Funktionen
+-- ----------------------------------------------------------------------------- --
+a) Wieviele Bezirke sind für das Wiener Verkehrsnetz abgebildet?
+
+CQL: MATCH (s:Station {state: "Wien"})
+RETURN size(collect(distinct s.plz))
+
+
+b) Vergleichen Sie die Liste der Wiener Bezirke des Graphen mit folgender Liste. Welche
+   der im Graphen gegebenen Bezirke finden sich nicht in der Liste?
+
+
+   ["Innere Stadt", "Leopoldstadt", "Landstraße", "Wieden", "Margareten", "Mariahilf",
+    "Neubau", "Josefstadt", "Alsergrund", "Simmering", "Meidling",
+    "Hietzing", "Penzing", "Rudolfsheim-Fünfhaus", "Ottakring", "Währing",
+    "Döbling", "Brigittenau", "Floridsdorf", "Donaustadt", "Liesing", "Shibuya", "Shinjuku"]
+
+
+      CQL :
+      WITH ["Innere Stadt", "Leopoldstadt", "Landstraße", "Wieden", "Margareten", "Mariahilf",
+    "Neubau", "Josefstadt", "Alsergrund", "Simmering", "Meidling",
+    "Hietzing", "Penzing", "Rudolfsheim-Fünfhaus", "Ottakring", "Währing",
+    "Döbling", "Brigittenau", "Floridsdorf", "Donaustadt", "Liesing", "Shibuya", "Shinjuku"] AS MIXED_LIST
+MATCH (s:Station {state: "Wien"})
+WITH collect(distinct s.district) AS DISTRICT_LIST, MIXED_LIST
+RETURN apoc.coll.subtract(MIXED_LIST, DISTRICT_LIST)
+
+
+
+c) Geben Sie für folgende Wiener Bezirke die Zahl an Stationen an.
+
+    ["Innere Stadt", "Leopoldstadt", "Landstraße", "Wieden", "Margareten", "Mariahilf",
+     "Döbling", "Brigittenau", "Floridsdorf", "Donaustadt", "Liesing"]
+
+
+   Ausgabe:  [{"item": "Floridsdorf","count": 6}, {"item": "Donaustadt","count": 16}, ...]
+
+
+
+   CQL:
+   match (n:Station{state:"Wien"})
+with n.district as DISTRICT, size(collect(distinct n.name)) as STATION_COUNT, ["Innere Stadt", "Leopoldstadt", "Landstraße", "Wieden", "Margareten", "Mariahilf",
+     "Döbling", "Brigittenau", "Floridsdorf", "Donaustadt", "Liesing"] as WANTED
+where DISTRICT in WANTED
+unwind range(1, STATION_COUNT) as r
+return apoc.coll.frequencies(collect(DISTRICT)) as freq
+
+
+-- ----------------------------------------------------------------------------- --
+--  2. Beispiel) Cypher Abfragen, APOC Funktionen
+-- ----------------------------------------------------------------------------- --
+a) Berechnenen Sie alle möglichen Permutationen der Elemente des folgenden
+   Arrays.
+
+   Hinweis: Sie können davon ausgehen dass jedes Element im Array nur einmal vorkommt.
+
+   z.B.: [1,4,5,7] -> [[1,4,5,7],[1,5,4,7],[1,7,5,4], [7,5,4,1], ....]
+
+
+
+   CQL: WITH [1,4,5,7] as data
+UNWIND range(1, size(data)) as r
+with collect(data) as data
+with apoc.coll.flatten(data) as data
+with apoc.coll.combinations(data, 4) as data
+with [d in data where apoc.coll.different(d)] as data
+with apoc.coll.toSet(data) as data
+return data
+
+
+-- ----------------------------------------------------------------------------- --
+--  3. Beispiel) Cypher Abfragen, APOC Funktionen
+-- ----------------------------------------------------------------------------- --
+a) Folgende Stationen stellen die 20 wichtigsten Knotenpunkte im Wiener Verkehrsnetz
+   dar. Geben Sie für jeden Bezirk an wieviele der angegebenen Stationen im entsprechendem
+   Bezirk liegen. Sortieren Sie die Ausgabe sortiert nach der Zahl absteigend.
+
+
+   ["Wien Hauptbahnhof", "Wien Meidling", "Praterstern", "Heiligenstadt", "Handelskai", "Matzleinsdorfer Platz", "Volkstheater", "Westbahnhof", "Michelbeuern AKH", "Traisengasse", "Karlsplatz", "Floridsdorf", "Staglgasse", "Mariahilfer Straße, Geibelgasse", "Rennweg", "Schottenring", "Rustengasse", "Quartier Belvedere", "Rathaus", "Wien Mitte"]
+
+
+
+   CQL:
+
+match (n:Station)
+where n.name in ["Wien Hauptbahnhof", "Wien Meidling", "Praterstern", "Heiligenstadt", "Handelskai", "Matzleinsdorfer Platz", "Volkstheater", "Westbahnhof", "Michelbeuern AKH", "Traisengasse", "Karlsplatz", "Floridsdorf", "Staglgasse", "Mariahilfer Straße, Geibelgasse", "Rennweg", "Schottenring", "Rustengasse", "Quartier Belvedere", "Rathaus", "Wien Mitte"]
+return n.district, count(n) as stations
+order by stations desc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

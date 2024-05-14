@@ -1,0 +1,206 @@
+-- ----------------------------------------------------------------------------- --
+--  1. Beispiel) Pathfinding
+-- ----------------------------------------------------------------------------- --
+
+a) Über welche Knoten führt der kürzeste Weg von der Seestadt nach Heiligenstadt.
+   Beschränken Sie sich auf die UBahn als Transportmittel.
+
+   Knoten: s:Station
+   Kanten:
+
+   Ausgabe: [s.name, ..., s_n.name]
+
+
+   CQL:
+
+   CALL gds.graph.drop("viennatraffic", false)
+yield graphName
+
+    CALL gds.graph.project.cypher(
+              "viennatraffic",
+              "MATCH (s:Station) RETURN id(s) AS id, labels(s) AS labels",
+              "MATCH (s:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|TRAIN]->(t:Station)
+               RETURN id(s) AS source,
+                      id(t) as target,
+                      type(r) as type,
+                      coalesce(r.length, 0) as length,
+                      coalesce(r.time, 0) as time"
+       )
+       YIELD graphName as graph,
+             nodeCount as nodes,
+             relationshipCount as rel
+       RETURN graph, nodes, rel;
+   
+MATCH (A:Station {name: "Seestadt"})
+MATCH (E:Station {name: "Heiligenstadt"})
+CALL gds.shortestPath.dijkstra.stream(
+    "viennatraffic", {
+        sourceNode: A,
+        targetNode: E,
+        relationshipWeightProperty: "length",
+        relationshipTypes: ["SUBWAY"]
+    }
+)
+YIELD nodeIds, totalCost
+RETURN [id in nodeIds | gds.util.asNode(id).name] as name;
+
+
+
+b) Aufgrund eines Rohrbruchs ist es nicht möglich die Station Schottenring
+   anzufahren. Berechnen Sie eine alternative kürzeste Route von Heiligenstadt
+   in die Seestadt.
+
+   Knoten: s:Station
+   Kanten:
+
+   Ausgabe: [s.name, ..., s_n.name]
+
+   CQL:
+
+CALL gds.graph.drop("viennatraffic", false)
+yield graphName;
+CALL gds.graph.project.cypher(
+    "viennatraffic",
+    "MATCH (s:Station) WHERE s.name <> 'Schottenring' RETURN id(s) AS id, labels(s) AS labels",
+    "MATCH (s:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|TRAIN]->(t:Station)
+    RETURN id(s) AS source,
+            id(t) as target,
+            type(r) as type,
+            coalesce(r.length, 0) as length,
+            coalesce(r.time, 0) as time",
+    {
+        validateRelationships: false
+    }
+)
+YIELD graphName as graph,
+        nodeCount as nodes,
+        relationshipCount as rel
+RETURN graph, nodes, rel;
+
+       
+MATCH (A:Station {name: "Seestadt"})
+MATCH (E:Station {name: "Heiligenstadt"})
+CALL gds.shortestPath.dijkstra.stream(
+    "viennatraffic", {
+        sourceNode: A,
+        targetNode: E,
+        relationshipWeightProperty: "length",
+        relationshipTypes: ["SUBWAY"]
+    }
+)
+YIELD nodeIds, totalCost
+RETURN [id in nodeIds | gds.util.asNode(id).name] as name;
+
+
+-- ----------------------------------------------------------------------------- --
+--  2. Beispiel) Pathfinding
+-- ----------------------------------------------------------------------------- --
+a) Über welche Knoten führt der kürzeste Weg von der Seestadt nach Heiligenstadt.
+
+   Knoten: :Station
+   Kanten: :SUBWAY, :EXPRESSWAY, :TRAM, :TRAIN
+
+
+   Ausgabe:
+   [
+      {source: "Heiligenstadt", target: "Spittelau", type: "SUBWAY", code: "U4"},
+      {source: "Spittelau",     target: "Friedensbrücke", type: "SUBWAY", code: "U4"}
+      ...
+   ]
+
+
+   CQL:
+
+CALL gds.graph.drop("viennagraph");
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAMWAY|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .length }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+
+MATCH (n:Station { name: "Seestadt" }), (m:Station { name: "Heiligenstadt" })
+CALL gds.shortestPath.dijkstra.stream(
+    'viennagraph',
+    {
+        sourceNode: n,
+        targetNode: m,
+        relationshipWeightProperty: 'length'
+    }
+)
+YIELD path
+WITH nodes(path) as nodes
+UNWIND apoc.coll.pairs(nodes) as node_pairs
+WITH node_pairs[0] as n, node_pairs[1] as m
+MATCH (n)-[r]->(m)
+WITH n, m, min(r.length) as min_length, collect(r) as r_list
+WITH n, m, [i in r_list where i.length = min_length] as r_list
+UNWIND r_list as r
+RETURN n.name as source, m.name as target, type(r) as type, r.code as code;
+
+
+
+-- ----------------------------------------------------------------------------- --
+--  3. Beispiel) Pathfinding
+-- ----------------------------------------------------------------------------- --
+a) Finden Sie alle U-Bahnstationen die maximal 10 Minuten vom Karlsplatz entfernt
+   sind.
+
+   Knoten: :Station
+   Kanten: :SUBWAY
+
+
+   Ausgabe:   "Karlsplatz", ["Stephansplatz", "Kettenbrückengasse", "Stadtpark", ...]
+
+
+   CQL:
+
+CALL gds.graph.drop("viennagraph");
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAMWAY|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .time }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+   
+MATCH (A:Station {name: "Karlsplatz"})
+CALL gds.allShortestPaths.dijkstra.stream(
+    "viennatraffic", {
+        sourceNode: A,
+        relationshipWeightProperty: "time",
+        relationshipTypes: ["SUBWAY"]
+    }
+)
+YIELD targetNode, totalCost
+WITH gds.util.asNode(targetNode).name as targetNode, round(totalCost/60, 3) as totalCost
+WHERE totalCost <= 10*60 and targetNode <> "Karlsplatz"
+RETURN *;
+
+---- oder ----
+
+MATCH (A:Station {name: "Karlsplatz"})
+CALL gds.allShortestPaths.dijkstra.stream(
+    "viennatraffic", {
+        sourceNode: A,
+        relationshipWeightProperty: "time",
+        relationshipTypes: ["SUBWAY"]
+    }
+)
+YIELD sourceNode, targetNode, totalCost
+WHERE totalCost <= 10*60 and sourceNode <> targetNode
+WITH gds.util.asNode(sourceNode).name as sourceNode, gds.util.asNode(targetNode).name as targetNode, round(totalCost/60, 3) as totalCost
+RETURN sourceNode, collect(targetNode);

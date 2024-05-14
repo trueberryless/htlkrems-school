@@ -1,0 +1,227 @@
+ -- ----------------------------------------------------------------------------- --
+--  1. Beispiel) GDS - Graph Data Science
+-- ----------------------------------------------------------------------------- --
+
+a) Die Stadt Wien wurde als Austragungsort für ein zukünftiges sportliches
+   Großereignis ausgewählt.
+
+   Identifizieren Sie alle Stationen, die heuristisch gesehen am stärksten
+   frequentiert werden.
+
+
+   CQL:
+
+
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .time }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+
+   CALL gds.betweenness.stream("viennagraph", {
+            relationshipWeightProperty: "time"
+        })
+        YIELD nodeId, score
+        RETURN gds.util.asNode(nodeId).name AS name, score
+        ORDER BY score desc
+        LIMIT 10
+        
+   CALL gds.betweenness.stream("viennagraph", {
+        })
+        YIELD nodeId, score
+        RETURN gds.util.asNode(nodeId).name AS name, score
+        ORDER BY score desc
+        LIMIT 10
+
+
+
+
+b) Finden Sie jene 10 Stationen die am stärksten frequentiert werden.
+   Geben Sie für jede Line aus, wieviele der gesuchten Stationen jene anfährt.
+
+   Ordnen Sie das Ergebnis absteigend nach der Zahl der Hubstationen.
+
+
+   CQL:
+
+CALL gds.graph.drop("viennagraph", false)
+yield graphName;
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .time }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+
+   CALL gds.betweenness.stream("viennagraph", {
+        })
+        YIELD nodeId, score
+        WITH gds.util.asNode(nodeId) AS node, score
+        ORDER BY score desc
+        LIMIT 10
+        MATCH (node)-[r]->(m:Station)
+        RETURN r.code, count(distinct node) as station_count
+        ORDER BY station_count desc
+
+
+
+
+
+c) Finden Sie jene 10 Stationen, die als wichtigste Knotenpunkte im Netz identifiziert
+   werden können. Wie weit sind die Knotenpunkte im Durchschnitt voneinander entfernt?
+
+
+   CQL:
+
+CALL gds.graph.drop("viennagraph", false)
+yield graphName;
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .time, .length }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+
+
+CALL gds.betweenness.stream("viennagraph", {
+        })
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) AS node, score
+ORDER BY score desc
+LIMIT 10
+WITH collect(node) as nodes
+WITH apoc.coll.combinations(nodes, 2) as pairs
+UNWIND pairs as pair
+CALL gds.shortestPath.dijkstra.stream(
+    "viennagraph", {
+        sourceNode: pair[0],
+        targetNode: pair[1],
+        relationshipWeightProperty: "length"
+    }
+)
+YIELD totalCost as totalCosts
+RETURN avg(totalCosts);
+
+
+-- ----------------------------------------------------------------------------- --
+--  2. Beispiel) GDS - Graph Data Science
+-- ----------------------------------------------------------------------------- --
+Berechnen Sie eine Liste der 20 am stärksten frequentierten Stationen im Wiener Verkehrsnetz.
+Geben Sie für jeden Bezirk an wieviele der angegebenen Stationen im entsprechendem
+Bezirk liegen. Sortieren Sie die Ausgabe sortiert nach der Zahl absteigend.
+
+
+CQL:
+
+CALL gds.degree.stream("viennagraph")
+YIELD nodeId, score
+WITH nodeId, score
+ORDER BY score desc
+WITH collect(gds.util.asNode(nodeId))[0..20] as nodes
+UNWIND nodes as node
+RETURN node.district as DISTRICT, count(distinct node) as NODE_COUNT
+ORDER BY NODE_COUNT desc
+
+
+
+-- ----------------------------------------------------------------------------- --
+--  3. Beispiel) GDS - Graph Data Science (Maturalevel)
+-- ----------------------------------------------------------------------------- --
+Für eine Stadtrundfahrt in Wien möchte eine Touristengruppe eine Reihe von Orten
+besuchen, die sich in der Nähe folgender Stationen befinden. Finden Sie
+eine kürzeste Route die alle gewünschten Punkte miteinander verbindet.
+
+Stationen: Wien Hauptbahnhof, Praterstern, Rathaus, Karlsplatz
+
+
+a) Berechnen Sie für alle möglichen Permutationen der Stationenliste die Länge
+   der Strecke. Sortieren Sie das Ergebnis nach den Kosten aufsteigend.
+
+
+
+
+   Ausgabe:
+
+   [["Praterstern", "Karlsplatz"], ["Karlsplatz", "Rathaus"], ["Rathaus", "Wien Hauptbahnhof"]], 16.72
+
+
+   Lösung:
+
+   [["Praterstern", "Rathaus"], ["Rathaus", "Karlsplatz"], ["Karlsplatz", "Wien Hauptbahnhof"]], 14.76
+
+   
+MATCH (n:Station)
+WHERE n.name in ["Wien Hauptbahnhof", "Praterstern", "Rathaus", "Karlsplatz"]
+WITH collect(n) as n
+UNWIND range(1, size(n)) as r
+WITH collect(n) as n
+WITH apoc.coll.flatten(n) as n
+WITH apoc.coll.combinations(n, 4) as n
+with [i in n where apoc.coll.different(i)] as n
+RETURN [i in n | [j in i | j.name]]
+
+MATCH (n:Station)
+OPTIONAL MATCH (n:Station)-[r:SUBWAY|EXPRESSWAY|TRAM|REGIONAL_EXPRESS]-(m:Station)
+WITH gds.graph.project(
+    'viennagraph',
+    n,
+    m,
+    {
+        relationshipType: type(r),
+        relationshipProperties: r { .length }
+    }
+) AS g
+RETURN g.graphName as GRAPH_NAME, g.nodeCount as NODE_COUNT, g.relationshipCount as RELATIONSHIP_COUNT;
+
+MATCH (n:Station)
+WHERE n.name in ["Wien Hauptbahnhof", "Praterstern", "Rathaus", "Karlsplatz"]
+WITH collect(n) as nodes
+WITH apoc.coll.combinations(nodes, 2) as pairs
+UNWIND pairs as pair
+CALL gds.shortestPath.dijkstra.stream(
+    "viennagraph", {
+        sourceNode: pair[0],
+        targetNode: pair[1],
+        relationshipWeightProperty: "length"
+    }
+)
+YIELD nodeIds, totalCost
+WITH gds.util.asNodes(nodeIds) as nodes, totalCost
+WITH [node in nodes where node = nodes[0] or node = nodes[size(nodes) - 1]] as nodes, totalCost
+WITH { nodes: [node in nodes | node.name], totalCost: totalCost } as costs
+WITH collect(costs) as costs
+MATCH (n:Station)
+WHERE n.name in ["Wien Hauptbahnhof", "Praterstern", "Rathaus", "Karlsplatz"]
+WITH *, collect(n) as n, costs
+UNWIND range(1, size(n)) as r
+WITH collect(n) as n, costs
+WITH apoc.coll.flatten(n) as n, costs
+WITH apoc.coll.combinations(n, 4) as n, costs
+WITH [i in n where apoc.coll.different(i)] as n, costs
+UNWIND n as nodes
+WITH apoc.coll.pairsMin(nodes) as nodes, costs
+WITH [cost in costs where cost.nodes in [i in nodes | [j in i | j.name]]] as costs, nodes
+RETURN [i in nodes | [j in i | j.name]] as tour, reduce(i=0, cost in costs | i + cost.totalCost) as length
+ORDER BY length
