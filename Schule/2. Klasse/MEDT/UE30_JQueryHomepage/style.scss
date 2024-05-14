@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body {
+    height: 100vh;
+    padding: 10vh;
+    padding-top: 5vh;
+    font-family: 'Poppins', sans-serif;
+
+    & .middle {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    & #bigdiv {
+        position: absolute;
+        top: 32vh;
+        left: 50vw;
+        margin-top: 20px;
+        width: 40%;
+        height: 40%;
+        background: darkorange;
+        color: white;
+        font-size: 30px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        & div {
+            text-align: center;
+            font-weight: 800;
+            padding: 0 50px;
+        }
+    }
+
+    & .configuration {
+
+        & div {
+            margin: 20px 20px 0 0;
+            display: flex; 
+            
+            & div {
+                width: 50px;
+                height: 50px;
+                border: 2px solid black;
+                border-radius: 20%;
+            }       
+        }
+
+        
+
+        & .background {
+            & #b-red {
+                background: red;
+            }
+            & #b-green {
+                background: green;
+            }
+            & #b-blue {
+                background: darkorange;
+            }
+        }
+
+        & .foreground {
+            & #f-white {
+                background: white;
+            }
+            & #f-red {
+                background: red;
+            }
+            & #f-green {
+                background: green;
+            }
+            & #f-blue {
+                background: blue;
+            }
+            & #f-black {
+                background: black;
+            }
+        }
+
+        & .size div span {
+            padding: 12px;
+            pointer-events: none;
+        }
+
+        & h4 {
+            position: absolute;
+            left: 40vw;
+            direction: rtl;
+            transform: translateX(-100%);
+            color: #595f6e;
+            font-weight: 550;
+        }
+
+        & h4:nth-of-type(1) {
+            top: calc(45vh);
+        }
+
+        & h4:nth-of-type(2) {
+            top: calc(55vh);
+        }
+
+        & h4:nth-of-type(3) {
+            top: calc(65vh);
+        }
+    }
+}
+
+// ---------------------------   Sonstiges   --------------------------- //
+
+.form {
+    margin-top: 20vh;
+    width: 40%;
+    position: relative;
+    height: 60px;
+    overflow: hidden;
+}
+
+.form input {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    color: #2b2c2c;
+    padding-top: 10px;
+    border: none;
+    outline: none;
+}
+
+.form label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 2px solid black;
+}
+
+.form label::after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -2px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-out;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease-out;
+}
+
+.form input:focus + .label-name .content-name, 
+    .form input:valid + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+
+.form input:focus + .label-name::after, 
+    .form input:valid + .label-name::after {
+        transform: translateX(0%);
+}

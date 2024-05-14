@@ -1,0 +1,209 @@
+* {
+    /* color: yellow; */
+    /* box-sizing: border-box; */
+}
+@font-face {font-family: myCalculator; src: url('digital.ttf'); }
+body {
+    background-color: rgb(228, 121, 46);
+}
+
+#c_container {
+
+    margin: 4vh auto;
+    width: 33vh;
+    height:53vh;
+
+    background-image: url('pics/0024-Casio500.png');
+    background-repeat: no-repeat;
+  /*background-position: center; */
+    background-size: 33vh 53vh;
+    
+    border: 0.1vh solid rgb(82, 82, 82);
+    border-radius: 0.5vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+/* #c_frame {
+    margin: 0vh auto;
+    width: 33vh;
+    height:53vh;
+    /*background-color: rgb(90, 85, 85);
+    border-radius: 1vw;
+    border-width: 1vw;
+    border-radius: 10px;
+    
+       
+    border-left: #aaa;
+    border-bottom: #555;
+    border-right: #555;
+   
+} */
+#c_head {
+    margin: 0vh auto;
+    width: 33vh;
+    height:18vh;
+    background-color: black;
+    border-radius: 0.5vh 0.5vh 0 0;
+
+}
+#c_solarcell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.c_solarcellpic {
+    padding-top:3vh;
+    width:22vh;
+    flex:1;
+}
+.c_titlepic {
+    width:20vh;
+    padding-top:0.6vh;
+    padding-left:1.4vw;
+}
+
+#c_displayframe {
+    margin: 0vh auto;
+    width:28vh;
+    height:6vh;
+    /* border: 1px solid yellow;*/
+    background-color: rgb(233, 233, 233);
+    border-radius: 0.6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#c_displaylcd {
+    
+    width:22vh;
+    max-height:4vh;
+    border: 1px solid rgb(152, 153, 152);
+    border-radius: 0.6vh;
+    flex:1;
+    font-family: myCalculator;
+    font-size: 4vh;
+    color: rgb(33, 34, 33);
+    background-color: rgb(199, 223, 207);
+    text-align: right;
+    padding-left:1vh;
+    padding-right: 1vh;
+    box-shadow: inset 0px 0px 0.7vh rgba(0,0,0,0.9);
+    
+
+}
+
+#c_solarlogo {
+    margin: 0vh auto;
+    /* width: 33vh; */
+    height:5vh;
+    background-color: rgb(224, 223, 223);
+}
+.c_solarlogopic {
+    width:10vh;
+    padding-top:1vh;
+    padding-left:1.4vw;
+}
+
+
+#c_tastatur {
+    box-sizing: border-box;
+    width:33vh;
+    height: 30vh;
+    /* border: 1px solid rgb(43, 255, 0);*/
+    background-color: rgb(243, 243, 243);  
+    padding-left: 0vh;
+    border-radius: 0 0 0.5vh 0.5vh;;
+
+}
+
+#c_key-grid {
+    box-sizing: border-box;
+    width: 33vh;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 6; 
+    /* background-color: #21f372;  */
+    padding-left: 1.5vh; 
+  }
+
+  #c_key1 {
+    grid-column: 1 / span 4;
+  }
+  
+  #c_keyplus {
+    width: 4.5vh;
+    height: 8.2vh;
+    grid-row: 5 / span 2;
+    /* grid-row-start: 5;
+    grid-row-end: 6; */
+    grid-column-start: 5;
+    grid-column-end: 5; 
+    background-color: rgb(241, 239, 217);
+
+  }
+
+  button {
+    width: 4.5vh;
+    height: 3.4vh;
+    margin-top:    0vh; 
+    margin-right:  0vh; 
+    margin-bottom: 1.45vh;
+    margin-left:   0vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.8vh;
+    background-color: rgb(241, 239, 217);
+    border: 0.3vh solid rgb(80, 80, 80);
+    border-radius: 0.4vh;
+    box-shadow: 0 0.2vw 0.3vw 0 rgba(0, 0, 0, 0.4), inset 0px 0px 0.5vh rgba(224, 224, 224, 0.7);  
+  }
+
+  /* .c_key {
+      width: 4vh;
+      
+      
+  } */
+  #c_0div {
+    box-sizing: border-box;
+    grid-column: 1 / span 2;
+   
+  }
+  #c_0 {
+    width: 8vh;
+    margin-left: 2vh;
+    
+    color:white;
+    background-color: rgb(19, 19, 19);
+    margin-right:0;    
+    /* grid-column-start: 1;
+    grid-column-end: 2; */
+    
+  }
+
+  #c_keyprozent {
+    width: 4.5vh;
+    height: 3vh; 
+    margin-top:0.2vh;
+    /* margin:0vh 0.2vh 1.3vh 1vh; */
+    /* grid-column-start: 1;
+    grid-column-end: 2; */
+  }
+  
+  .c_orange {
+    color:white;
+    background-color: rgb(250, 120, 33);    
+  }
+
+  .c_blue {
+    color:white;
+    background-color: rgb(31, 62, 109);    
+  }
+
+  .c_black {
+    color:white;
+    background-color: rgb(19, 19, 19);    
+  }

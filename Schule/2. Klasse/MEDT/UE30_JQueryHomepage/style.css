@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  height: 100vh;
+  padding: 10vh;
+  padding-top: 5vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+body .middle {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body #bigdiv {
+  position: absolute;
+  top: 32vh;
+  left: 50vw;
+  margin-top: 20px;
+  width: 40%;
+  height: 40%;
+  background: darkorange;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body #bigdiv div {
+  text-align: center;
+  font-weight: 800;
+  padding: 0 50px;
+}
+
+body .configuration div {
+  margin: 20px 20px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .configuration div div {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 20%;
+}
+
+body .configuration .background #b-red {
+  background: red;
+}
+
+body .configuration .background #b-green {
+  background: green;
+}
+
+body .configuration .background #b-blue {
+  background: darkorange;
+}
+
+body .configuration .foreground #f-white {
+  background: white;
+}
+
+body .configuration .foreground #f-red {
+  background: red;
+}
+
+body .configuration .foreground #f-green {
+  background: green;
+}
+
+body .configuration .foreground #f-blue {
+  background: blue;
+}
+
+body .configuration .foreground #f-black {
+  background: black;
+}
+
+body .configuration .size div span {
+  padding: 12px;
+  pointer-events: none;
+}
+
+body .configuration h4 {
+  position: absolute;
+  left: 40vw;
+  direction: rtl;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  color: #595f6e;
+  font-weight: 550;
+}
+
+body .configuration h4:nth-of-type(1) {
+  top: calc(45vh);
+}
+
+body .configuration h4:nth-of-type(2) {
+  top: calc(55vh);
+}
+
+body .configuration h4:nth-of-type(3) {
+  top: calc(65vh);
+}
+
+.form {
+  margin-top: 20vh;
+  width: 40%;
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+}
+
+.form input {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  color: #2b2c2c;
+  padding-top: 10px;
+  border: none;
+  outline: none;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 2px solid black;
+}
+
+.form label::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  bottom: -2px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #5fa8d3;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+/*# sourceMappingURL=style.css.map */
