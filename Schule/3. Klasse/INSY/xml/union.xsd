@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="element">
+        <xs:union> 
+            <!-- entweder 1 oder 0 oder string mit Länge zwischen 5 und 10 Zeichen -->
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:minLength value="5"></xs:minLength>
+                    <xs:maxLength value="10"></xs:maxLength>
+                </xs:restriction>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:int">
+                    <xs:enumeration value="0"></xs:enumeration>
+                    <xs:enumeration value="1"></xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+    <xs:element name="element" type="element"></xs:element>
+    <xs:element name="root"></xs:element>
+</xs:schema>

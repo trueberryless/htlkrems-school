@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="element">
+        <xs:list>
+            <xs:annotation>
+                <xs:appinfo>My first annotation</xs:appinfo>
+                <xs:documentation xml:lang="de">Das ist eine simple Dokumentation dieser Annotation.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:int"></xs:restriction>
+            </xs:simpleType>            
+        </xs:list>
+    </xs:simpleType>
+
+    <xs:element name="element" type="element"></xs:element>
+    <xs:element name="root"></xs:element>
+</xs:schema>

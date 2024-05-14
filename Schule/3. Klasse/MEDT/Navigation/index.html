@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Wheel</title>
+
+    <style>
+        body {
+            height: 100vh;
+            background: #36A541;
+            overflow: hidden;
+        }
+
+        #rotate {
+            position: absolute;
+            top: 10vh;
+            left: calc(50vw - 40vh);
+            transform: rotate(0);
+            height: 80vh;
+            user-select: none;
+        }
+
+        #pfeil {
+            position: absolute;
+            top: 50%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body id="body">
+    <img src="img/Wheel.svg" alt="Wheel" id="rotate">
+    <img src="img/pfeil.svg" alt="Pfeil" id="pfeil">
+
+    <script>
+        const body = document.getElementById("body");
+        (function() {
+        var init, rotate, start, stop,
+            active = false,
+            angle = 0,
+            rotation = 0,
+            startAngle = 0,
+            center = {
+            x: 0,
+            y: 0
+            },
+            R2D = 180 / Math.PI,
+            rot = document.getElementById('rotate');
+
+        init = function() {
+            rot.addEventListener("mousedown", start, false);
+            $(document).bind('mousemove', function(event) {
+            if (active === true) {
+                event.preventDefault();
+                rotate(event);
+            }
+            });
+            $(document).bind('mouseup', function(event) {
+                event.preventDefault();
+                stop(event);
+            });
+        };
+
+        start = function(e) {
+            e.preventDefault();
+            var bb = this.getBoundingClientRect(),
+            t = bb.top,
+            l = bb.left,
+            h = bb.height,
+            w = bb.width,
+            x, y;
+            center = {
+            x: l + (w / 2),
+            y: t + (h / 2)
+            };
+            x = e.clientX - center.x;
+            y = e.clientY - center.y;
+            startAngle = R2D * Math.atan2(y, x);
+            return active = true;
+        };
+
+        rotate = function(e) {
+            e.preventDefault();
+            var x = e.clientX - center.x,
+            y = e.clientY - center.y,
+            d = R2D * Math.atan2(y, x);
+            rotation = d - startAngle;
+            return rot.style.webkitTransform = "rotate(" + (angle + rotation) + "deg)";
+        };
+
+        stop = function() {
+            angle += rotation;
+            angle = angle % 360;
+            console.log(angle);
+            if(angle <= 24 && angle > -21 || angle <= -336 && angle > -360 || angle <= 339 && angle > 360)
+                body.style.background = "#36A541";
+            else if(angle <= -21 && angle > -66 || angle <= 339 && angle > 293)
+                body.style.background = "#FAFF00";
+            else if(angle <= -66 && angle > -113 || angle <= 293 && angle > 245)
+                body.style.background = "#AD00FF";
+            else if(angle <= -113 && angle > -156 || angle <= 245 && angle > 203)
+                body.style.background = "#FF7A00";
+            else if(angle <= -156 && angle > -201 || angle <= 203 && angle > 158)
+                body.style.background = "#FA00FF";
+            else if(angle <= -201 && angle > -246 || angle <= 158 && angle > 113)
+                body.style.background = "#0029FF";
+            else if(angle <= -246 && angle > -292 || angle <= 113 && angle > 67)
+                body.style.background = "#FF0000";
+            else
+                body.style.background = "#904040";
+            return active = false;
+        };
+
+        init();
+
+        }).call(this);
+    </script>
+</body>
+</html>
