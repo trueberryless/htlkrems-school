@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="orders" type="ordersType"/>
+  <xs:complexType name="customerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="address"/>
+      <xs:element type="xs:string" name="email"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="
+                    Monitor
+                "/>
+            <xs:enumeration value="
+                    Computer
+                "/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="quantity">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="
+                    High
+                "/>
+            <xs:enumeration value="
+                    Medium
+                "/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="price">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="
+                    13.50
+                "/>
+            <xs:enumeration value="
+                    4.40
+                "/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="itemsType">
+    <xs:sequence>
+      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orderType">
+    <xs:sequence>
+      <xs:element type="customerType" name="customer"/>
+      <xs:element type="xs:string" name="total-amount"/>
+      <xs:element type="itemsType" name="items"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id"/>
+  </xs:complexType>
+  <xs:complexType name="ordersType">
+    <xs:sequence>
+      <xs:element type="orderType" name="order"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

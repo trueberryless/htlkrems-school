@@ -1,0 +1,200 @@
+-- -------------------------------------------------------------------------------------- --
+--   XSLT Grundlagen: XSLT Transformationsprozess
+-- -------------------------------------------------------------------------------------- --
+
+ I) XSLT ist eine Bibliothek zur Änderung der Struktur von XML Dokumenten. Der Transfromations-
+ prozess umfasst dabei 3 Schritte:
+
+
+ INPUT    ->     PROZESS    ->    OUTPUT
+
+ a.xml    ->     p.xsl      ->    b.xml
+
+
+
+ II) Der Transformationsprozess wird durch eine xsl Datei beschrieben. XSL Dateien bestehen
+ aus einer Reihe von Templates. Templates sind für die Verarbeitung von Element Knoten ver-
+ wortlich. Das match Attribut legt fest welcher Elementknoten mit welchem Template verar-
+ beitet werden kann. Das match Attribut erwartet dabei
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+
+    <xsl:output method="xml" indent="yes"/>
+
+
+    <xsl:template match="...">
+       ...
+       ...
+    </xsl:template>
+
+
+    <xsl:template match="...">
+       ...
+       ...
+    </xsl:template>
+
+
+    <xsl:template match="...">
+       ...
+       ...
+    </xsl:template>
+
+
+ </xsl:stylesheet>
+
+
+
+ III) Der durch eine xsl Datei beschriebene Transformationsprozess umfasst 2 Schritte.
+
+      1) Es wird ein Knoten aus dem Kontext geladen (Der Knoten wird dabei aus dem
+         Kontext entfernt).
+
+      2) Der XSLT Prozessor lädt ein Template mit dem das Element verarbeitet werden
+         kann und führt es aus. Nach der Verarbeitung des Templates wird Schritt 1
+         ausgeführt solange bis der Kontext leer ist.
+
+
+ Kontext: Der Kontext ist ein Speicherbereich des XSLT Transformationsprozesses in den
+          Elementknoten zur Verarbeitung geladen werden. Am Anfang des Transformations-
+          prozesses befindet sich der Wurzelkonten im Kontext.
+
+
+
+-- -------------------------------------------------------------------------------------- --
+--   XSLT Grundlagen: XSLT Befehle
+-- -------------------------------------------------------------------------------------- --
+
+ XSLT Template werden zur Verarbeitung von Elementknoten verwendet. Ein XSLT Template
+ wird dabei als freie Abfolge von XSLT Befehlen definiert. XSLT Befehle werden 3
+ unterschiedlichen Kategorien zugeordnet.
+
+
+ *)  OUTPUT INSTRUCTIONS: Befehle zum Ändern der vom XSLT Prozessors erzeugten XML Datei:
+
+
+                          <xsl:element>   -> Legt einen Elementknotens in der Ausgabedatei.
+
+                                             Hinweis: Es kann auch direkt ein XML Tag verwendet
+                                             werden um ein Element in der Ausgabedatei anzulegen.
+
+
+                          <xsl:attribute> -> Legt einen Attributkonten in der Ausgabedatei an.
+
+                          <xsl:text>      -> Legt einen Textknoten in der Ausgabedatei an.
+
+                          <xsl:value-of>  -> Ermittelt den Wert des Textknotens eines Elmentknotens
+                                             bzw. Attributknoten und schreibt ihn in die Ausgabedatei.
+
+                          <xsl:copy-of>   -> Kopiert einen Elmentknoten aus der Eingabedatei in die
+                                             Ausgabedatei
+
+
+
+ *)  KONTEXT INSTRUCTIONS: Befehle zum Ändern des Inhalts des Kontext:
+
+                          <xsl:template>       -> Definiert in welcher Form Knoten aus dem Kontext
+                                                  verarbeitet werden sollen.
+
+                          <xsl:apply-Templates> -> Lädt neue Knoten in den Kontext
+
+                          <xsl:param>          -> Definiert eine Konstante im Kontext
+
+                          <xsl:with-param>     -> Definiert Konstante für Elementknoten die in den
+                                                  Kontext geschrieben werden
+
+
+ *)  PROCESSING INSTRUCTIONS: Befehle zur iterativen Verarbeitung:
+
+                              <xsl:variable>
+                              <xsl:if>
+                              <xsl:choose>
+                              <xsl:for-each>
+
+
+
+-- -------------------------------------------------------------------------------------- --
+--   1.Beispiel: XSLT Grundlagen
+-- -------------------------------------------------------------------------------------- --
+
+ INPUT:    greeting.xml
+ PROZESS:  greeting.xsl
+ OUTPUT:   hallo.xml
+
+
+ <!--     greeting.xml     -->
+
+ <?xml version="1.0" encoding="utf-8"?>
+ <greeting>Hello World!<greeting>
+
+
+
+ <!--     greeting.xsl      -->
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+
+      <!-- Definiert welches Datenformat die OUTPUT Date hat -->
+      <xsl:output method="xml" indent="yes"/>
+
+      <!-- Template zum Verarbeiten des Wurzelknotens -->
+      <!-- Der Wurzelkonten wird aus dem Kontext entfernt und das Template ausgeführt -->
+      <xsl:template match="/">
+
+          <!-- Der process Element Knoten wird in die Ausgabedatei geschrieben -->
+          <!-- Als Kurzform kann direkt <process> geschrieben werden           -->
+          <xsl:element name="process">
+
+               <!-- Der greeting Knoten der INPUT Datei wird in den Kontext geladen -->
+               <!-- Der XSLT Prozessor sucht nach einem Template mit der der Knoten verarbeitet werden kann -->
+
+               <xsl:apply-Templates select="greeting"/>
+          </xsl:element>
+
+      <xsl:template>
+
+
+      <!-- Das Template wird geladen um greeting Elmente aus dem Kontext zu verarbeiten. Das greeting Element
+           wird anschließend aus dem Kontext entfernt. Ist der Kontext leer beendet der Prozessor seine
+           Verarbeitung -->
+      <xsl:template match="greeting">
+           <!-- Ermittelt den Wert des Textknotens des <greeting> Elementknotens und schreibt ihn in die Ausgabe -->
+           <xsl:value-of select="."/>
+      </xsl:template>
+
+
+</xsl:stylesheet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+# Zusammenfassung
+
+-   österreichische Gruppierungen des Realismus
+-   Literatur charakterisiert:
+    -   Ahnung vom Zerfall der alten Ordnungen
+    -   Ende der Monarchie
+    -   großes Empfinden
+    -   Sympathie für arme Menschen
+    -   Polemik gegen unehrenhaften Adel
+    -   Skepsis gegenüber Änderung ungerechter Verhältnisse
+-   Semmering: Tunnel, Viadukte, Schluchte
+    -   heftige Bauarbeiten
+    -   Steinklopfer am schlechtesten bezahlte Arbeit
+-   "Die Steinklopfer" - _Ferdinand von Saar_ (1874) berichtet von zwei armen Arbeitern (Ploretariar)
+    -   ungewöhnlich; Ausnahme
+    -   der Aufseher: bestimmt **ALLES**
+    -   Georg fieberkrank, wird gekündigt
+    -   Tertschka wird sozial abhängig und sexuell bedrängt
+    -   gemeinsam nach "Krain", doch Aufseher sperrt Tertschka in seine Hütte ein
+    -   Aufseher stürzt sich auf Georg, dieser schägt mit Hammer zurück auf Brust; Aufseher taumelt röchelnd zu Boden
+    -   Gericht: ein Jahr schwerer Kerker
+    -   doch Richter begeistert von inniger Liebe zw. Georg und Tertschka -> beschafft den beiden ein einsames Bahnwärterhaus im südsteirischen Ehrenhausen mit einem Feld - mit Mais und Gemüse bepflanzt
+-   einerseits Vorwurf gegen Saar: zufällige Tat des Militärrichters allein kann Verhältnisse nicht ändern
+-   andererseits Lob von anderen Autoren wegen Befassung mit Arbeitern

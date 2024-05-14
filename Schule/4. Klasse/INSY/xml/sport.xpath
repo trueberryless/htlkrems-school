@@ -1,0 +1,62 @@
+ Geben Sie für die folgenden Aufgaben die entsprechenden XPath Lokalisierungspfade an.
+ Verwenden Sie die sport.xml Datei als Ausgangspunkt.
+
+
+ Hinweis: Die sport.xml Datei beschreibt einen Katalog von Sportarten.
+
+
+          * Sportarten: Sportarten sind Elemente die keine anderen Elemente
+            enthalten.
+
+          * Katalogeinträge: Katalogeinträge sind keine Sportarten. Sie sind
+                             daran zu erkennen dass Sie andere Elemente ent-
+                             halten.
+
+          * 2 Sportarten befinden sich im selben Katalog wenn sie sich zumin-
+            destens einen Katalogeintrag teilen - <sports> ausgenommen.
+
+
+ -- --------------------------------------------------------------------- --
+ -- 1.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Sportart Konten.
+
+//*[not(*)]
+
+
+ -- --------------------------------------------------------------------- --
+ -- 2.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Katalogeinträge denen die Sportart <super-g> zugeordnet
+ ist.
+
+//*[descendant::super-g]
+//super-g/ancestor::*
+
+
+ -- --------------------------------------------------------------------- --
+ -- 3.Beispiel) XPath - Kurzform     (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Wieviel Katalogeinträge befinden sich im gesamten Katalog
+
+count(//*[*])
+
+ -- --------------------------------------------------------------------- --
+ -- 4.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Sommersportarten die keine Ballspiele sind.
+
+//summer-sports//descendant::*[not(descendant::*)][not(ancestor::ball-games)]
+
+ -- --------------------------------------------------------------------- --
+ -- 5.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Sportarten die nicht im selben Katalog wie <ski-run>
+ befinden.
+
+//*[not(*)][not(ancestor::*[not(self::sports)]/descendant::ski-run)]
+//descendant::*[not(descendant::*)][not(parent::*=//descendant::ski-run//parent::*)]
+
+
+
+

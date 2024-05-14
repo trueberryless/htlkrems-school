@@ -1,0 +1,105 @@
+ -- -------------------------------------------------------------------------------------- --
+ --   1.Beispiel: XSLT Grundlagen - Kontextverarbeitung
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, zur Transformation der euro.xml Datei. Die Ausgabedatei
+ hat folgende Struktur (team.xml) Datei wird im Beispiel definiert.
+
+ Befehle:
+
+    <xsl:template> : Mit einem Template wird definiert in welcher Form die im
+                     match Attribut definierten Elemente verarbeitet werden
+                     sollen.
+
+
+    <xsl:apply-templates> : Mit der apply-templates Anweisung können neue Knoten
+                            in den Kontext geschrieben werden
+
+
+    <xsl:attribute> : Integriert ein neues Attribut in das Element das gegenwärtig
+                      in die Ausgabedatei geschrieben wird.
+
+
+ INPUT:    euro.xml
+ PROZESS:  team.xsl
+ OUTPUT:   team.xml
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <teams>
+    <team id="FRA">
+        <player>Laurent Koscielny</player>
+        <player>Djibril Sidibe</player>
+        <player>Antoine Griezmann</player>
+        <player>Olivier Giroud</player>
+        <player>Nabil Fekir</player>
+        ...
+     </team>
+     <team id="SPA">
+        <player>Jordi Alba</player>
+        <player>Dani Carvajal</player>
+        <player>Sergio Ramos</player>
+        <player>Alberto Moreno</player>
+        ...
+     </team>
+     <team id="GER">
+        <player>Jerome Boateng</player>
+        <player>Marcel Halstenberg</player>
+        <player>Mats Hummels</player>
+        ...
+     </team>
+       ...
+     <team id="IRL">
+        <player>Daren Randolph</player>
+        <player>Keiren Westwood</player>
+        <player>Alex Pearce</player>
+        <player>Jonny Hayes</player>
+        <player>Harry Arter</player>
+        ...
+     </team>
+ </teams>
+
+
+  -- -------------------------------------------------------------------------------------- --
+ --   2.Beispiel: XSLT Grundlagen   - Parameter
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, zur Transformation der euro.xml Datei. Die Ausgabedatei
+ hat folgende Struktur (club.xml) Datei wird im Beispiel definiert.
+
+ Befehle:
+
+     <xsl:param> : Mit der xml:param Anweisung kann lokal (in einem Template) oder
+                   global (im Stylesheet) eine Konstante definiert werden
+
+
+ INPUT:    euro.xml
+ PROZESS:  club.xsl
+ OUTPUT:   club.xml
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <clubs>
+     <club id="Arsenal London" playercount="1">
+         <player code="FRA">L. Koscielny</player>
+     </club>
+     <club id="AS Monaco" playercount="2">
+         <player code="FRA">D. Sidibe</player>
+         <player code="PLA">K. Glik</player>
+     </club>
+     <club id="Atletico Madrid" playercount="1">
+         <player code="FRA">A. Griezmann</player>
+     </club>
+     <club id="FC Barcelona" playercount="4">
+         <player code="SPA">J. Alba</player>
+         <player code="SPA">A. Iniesta</player>
+         <player code="SPA">D. Villa</player>
+         <player code="GER">J. Boateng</player>
+     </club>
+     <club id="Real Madrid" playercount="6">
+         <player code="SPA">D. Carvajal</player>
+         <player code="SPA">S. Ramos</player>
+         <player code="SPA">M. Asensio</player>
+         <player code="SPA">L. Vazquez</player>
+         <player code="SPA">L. Vazquez</player>
+         <player code="SPA">L. Vazquez</player>
+     </club>
+     ...
+ </clubs>

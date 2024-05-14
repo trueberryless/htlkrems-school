@@ -1,0 +1,28 @@
+WITH SUBPROJECT_DATA AS (SELECT P.PROJECT_ID,
+                                AVG(FOCUS_RESEARCH)   AS AVG_APPLIED_RESEARCH,
+                                AVG(APPLIED_RESEARCH) AS AVG_FOCUS_RESEARCH
+                         FROM PROJECTS_BT P
+                                  JOIN SUBPROJECTS ON P.PROJECT_ID = SUBPROJECTS.PROJECT_ID
+                         GROUP BY P.PROJECT_ID),
+     RESEARCH_FUNDINGS AS (SELECT PROJECT_ID,
+                                  CASE
+                                      WHEN (RFP.IS_EU_SPONSORED + RFP.IS_FWF_SPONSORED + RFP.IS_FFG_SPONSORED) = 3
+                                          THEN 'SUPER SPONSORED'
+                                      WHEN (RFP.IS_EU_SPONSORED + RFP.IS_FWF_SPONSORED + RFP.IS_FFG_SPONSORED) = 2
+                                          THEN 'GOOD SPONSORED'
+                                      WHEN (RFP.IS_EU_SPONSORED + RFP.IS_FWF_SPONSORED + RFP.IS_FFG_SPONSORED) = 1
+                                          THEN 'SPONSORED'
+                                      ELSE 'NOT SPONSORED' END AS SPONSORED,
+                                  IS_EU_SPONSORED
+                           FROM RESEARCH_FUNDING_PROJECTS RFP)
+
+SELECT P.PROJECT_ID                        AS PROJECT_ID,
+       P.DESCRIPTION                       AS DESCRIPTION,
+       RF.IS_EU_SPONSORED                  AS IS_EU_SPONSORED,
+       COALESCE(S.AVG_APPLIED_RESEARCH, 0) AS AVG_APPLIED_RESEARCH,
+       COALESCE(S.AVG_FOCUS_RESEARCH, 0)   AS AVG_FOCUS_RESEARCH,
+       RF.SPONSORED                        AS SPONSORED
+FROM PROJECTS_BT P
+         JOIN RESEARCH_FUNDINGS RF ON P.PROJECT_ID = RF.PROJECT_ID
+         LEFT JOIN SUBPROJECT_DATA S
+                   ON P.PROJECT_ID = S.PROJECT_ID;

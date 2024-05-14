@@ -1,0 +1,54 @@
+ -- -------------------------------------------------------------------------------------- --
+ --   1.Beispiel: XSLT Grundlagen - Kontextparameter
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, zur Transformation der euro.xml Datei. Die Ausgabedatei
+ hat folgende Struktur (position.xml) Datei wird im Beispiel definiert.
+
+ Befehle:
+
+    <xsl:with-param> : Ordnet Kontextelementen eine Konstante zu.
+
+
+ INPUT:    euro.xml
+ PROZESS:  position.xsl
+ OUTPUT:   position.xml
+
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <positions>
+     <position id="defense">
+        <team code="FRA">
+            <player>Laurent Koscielny</player>
+            <player>Djibril Sidibe</player>
+        </team>
+        <team code="SPA">
+            <player>Jordi Alba</player>
+            <player>Dani Carvajal</player>
+             ...
+        </team>
+           ...
+    </position>
+    <position id="playground">
+        <team code="FRA"/>
+        <team code="SPA">
+            <player>Marco Asensio</player>
+            <player>Andres Iniesta</player>
+            <player>David Silva</player>
+        </team>
+        <team code="GER">
+            <player>Julian Brandt</player>
+            <player>Emre Can</player>
+            <player></player>
+        </team>
+         ...
+     </position>
+     <position id="attack">
+        <team code="FRA">
+            <player>Antoine Griezmann</player>
+            <player>Nabil Fekir</player>
+            <player>Florian Thauvin</player>
+            <player>Alexnadre Lacazette</player>
+        </team>
+        ...
+     </position>
+ </positions>

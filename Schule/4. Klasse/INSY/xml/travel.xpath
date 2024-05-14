@@ -1,0 +1,42 @@
+ -- --------------------------------------------------------------------- --
+ -- 1.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie die Namen aller Sommercamps die bereits gebucht worden sind.
+
+//summercamp[@id=//booking/@campid]/name
+
+ -- --------------------------------------------------------------------- --
+ -- 2.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie die Namen aller Camps die bereits gebucht worden sind.
+
+//sportcamps/*[@id=//booking/@campid]/name
+
+ -- --------------------------------------------------------------------- --
+ -- 3.Beispiel) XPath - Kurzform     (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Sportcamps fuer die ein Buchungsdatum bekannt ist.
+
+//sportcamps/*[@id=//booking[@date]/@campid]
+
+ Hinweis: Um zu prüfen ob ein Element existiert wird im Prädikat auf den
+          Namen des Elements geprüft.
+
+          z.B.: Prüfung ob Buchungsdatum bekannt ist -> [@date]
+
+
+
+ -- --------------------------------------------------------------------- --
+ -- 4.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Adressieren Sie alle Sportcamps fuer die kein Buchungsdatum bekannt ist.
+
+//sportcamps/*[@id=//booking[not(@date)]/@campid]
+
+ -- --------------------------------------------------------------------- --
+ -- 5.Beispiel) XPath - Kurzform    (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Wieviele Buchungen gibt es die einem Wintercamp zugeordnet sind?
+
+count(//booking[@campid=//wintercamp/@id])
+

@@ -1,0 +1,81 @@
+ Errata:
+
+ * Mitarbeiter: Als Mitarbeiter werden <person> Knoten bezeichnet.
+
+ * Leiter: Leiter sind Mitarbeiter die ein <head> Element enthalten.
+
+ * Kollegen: Als Kollegen werden alle <person> Knoten bezeichnet, die
+             im selben <department> Knoten eingebettet sind wie die
+             gewünschte Person.
+
+ * Abteilung: Als Abteilungen werden <department> Elemente bezeichnet, für
+              die nicht in einem anderen <department> Element eingebettet
+              sind
+
+ * Teilabteilungen: Als Teilabteilung werden <department> Elemente bezeichnet,
+                    die in andere <department> Elemente eingebettet sind.
+
+
+
+ -- --------------------------------------------------------------------- --
+ -- 1.Beispiel) XPath                                              (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ Wieviele Personen arbeiten im Unternehmen?
+
+ Hinweis: Als Mitarbeiter werden <person> Knoten bezeichnet.
+
+count(//person)
+
+  -- --------------------------------------------------------------------- --
+  -- 2.Beispiel) XPath                                              (1.Punkt)
+  -- --------------------------------------------------------------------- --
+  Geben Sie die <last-name> Knoten aller Leiter aus.
+
+  Hinweis: Leiter sind Mitarbeiter die ein <head> Element enthalten.
+
+//person[head]/last-name
+
+
+ -- --------------------------------------------------------------------- --
+ -- 3.Beispiel) XPath                                              (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ -- Adressieren Sie alle Kollegen von Gustaf Verfeggy.
+
+ -- Hinweis: Als Kollegen werden alle <person> Knoten bezeichnet, die im selben
+             <department> Knoten eingebettet sind wie die gewünschte Person.
+
+//stuff[descendant::last-name[text()="Verfeggy"]]/person[not(last-name[text()="Verfeggy"])]
+
+  -- --------------------------------------------------------------------- --
+  -- 4.Beispiel) XPath                                              (1.Punkt)
+  -- --------------------------------------------------------------------- --
+  -- Geben Sie die Namen aller Abteilungen und Teilabteilungen aus denen
+  -- Gustaf Verfeggy zugeordnet wird.
+
+
+   * Abteilung: Als Abteilungen werden <department> Elemente bezeichnet, für
+                die nicht in einem anderen <department> Element eingebettet
+                sind
+
+   * Teilabteilungen: Als Teilabteilung werden <department> Elemente bezeichnet,
+                      die in andere <department> Elemente eingebettet sind.
+
+
+//departments[descendant::last-name/text()='Verfeggy']
+
+ -- --------------------------------------------------------------------- --
+ -- 5.Beispiel) XPath                                              (1.Punkt)
+ -- --------------------------------------------------------------------- --
+ -- Wählen Sie den Namen (<name>) der Abteilung aus, in denen Gustaf
+ -- Verfeggy beschäftigt ist.
+
+ -- Hinweis: Geben Sie nur den Namen der Abteilung aus, nicht der Teilabteilungen
+
+
+//department[child::stuff/child::person/child::last-name/text()='Verfeggy']/child::name/text()
+
+
+
+
+
+
