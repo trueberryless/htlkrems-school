@@ -1,0 +1,859 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 4  Vererbung, Polymorphie und Interfaces">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 4  Vererbung, Polymorphie und Interfaces">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 4  Vererbung, Polymorphie und Interfaces</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="04_003.html">
+      <link rel="next" href="1997_04_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_04_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_04_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393" class="navnav">4 Vererbung, Polymorphie und Interfaces</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_001.html#dodtpb39b352a-c380-4194-9086-ec49fc9045d4" class="navnav">4.1 Die Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4" class="navnav">4.1.1 Basisklassen und abgeleitete Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0" class="navnav">4.1.2 Die Ableitung einer Klasse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtpcb1fa25e-1244-43a7-8339-5638dce130db" class="navnav">4.1.3 Klassen, die nicht abgeleitet werden können</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp21097f61-d850-47cc-b369-c626d6bd4ee9" class="navnav">4.1.4 Konstruktoren in abgeleiteten Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtpfce7a289-dd48-4185-9349-62af9ac7f68b" class="navnav">4.1.5 Der Zugriffsmodifizierer »protected«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp1c86b6a7-0dd3-4a4a-b4e4-7189be1cf120" class="navnav">4.1.6 Die Konstruktorverkettung in der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_002.html#dodtp48ce1621-adbd-4e05-8975-5a0cc38a376a" class="navnav">4.2 Der Problemfall geerbter Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtp597628cc-9425-44ce-b09d-1ea27f52c744" class="navnav">4.2.1 Geerbte Methoden mit »new« verdecken</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtpe17ade14-fcf1-49db-bd2d-0fde07ac1d84" class="navnav">4.2.2 Abstrakte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtpc8300b22-1ba9-45ab-8aab-6d7dc58954e7" class="navnav">4.2.3 Virtuelle Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_003.html#dodtp4c233a44-da0a-47ad-a609-aa7472338561" class="navnav">4.3 Typumwandlung und Typuntersuchung von Objektvariablen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp5d2380cc-7049-4f0f-82ff-73e0fdee276a" class="navnav">4.3.1 Die implizite Typumwandlung von Objektreferenzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp4feec18f-acaf-44f6-9709-b38d299b28c8" class="navnav">4.3.2 Die explizite Typumwandlung von Objektreferenzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp88f54f27-c765-4fc9-bfd7-5c3f42e6b089" class="navnav">4.3.3 Typuntersuchung mit dem »is«-Operator</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp87d220db-6686-4ea1-8ed3-23881910462d" class="navnav">4.3.4 Typumwandlung mit dem »as«-Operator</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_004.html#dodtpe80f90c9-39aa-433e-94b9-86cd3538acfb" class="navh">4.4 Polymorphie</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f" class="navh">4.4.1 Die »klassische« Methodenimplementierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtp174b6608-c108-4e8c-8b0e-30482977e11d" class="navh">4.4.2 Abstrakte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtpdaee6645-690b-4856-b485-f0fda30ad114" class="navh">4.4.3 Virtuelle Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_005.html#dodtp97127ecd-ebc8-476f-9005-fa2947fc504c" class="navnav">4.5 Weitere Gesichtspunkte der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp25b5dce4-4d37-447d-9a6b-ac1241299211" class="navnav">4.5.1 Versiegelte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtpfd75a6e6-2e94-41c5-8b8a-2ff86fb21c51" class="navnav">4.5.2 Überladen einer Basisklassenmethode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp34707172-aab9-41bd-82a5-c2e40038a6ca" class="navnav">4.5.3 Statische Member und Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp1e5728e7-792f-422f-8b84-9d926e90891b" class="navnav">4.5.4 Geerbte Methoden ausblenden?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_006.html#dodtp62bc2525-5244-4212-a412-ab2227c967aa" class="navnav">4.6 Das Projekt »GeometricObjectsSolution« ergänzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_006.html#dodtp058bf84a-764f-4d26-9324-bbb50306b215" class="navnav">4.6.1 Die Klasse »GeometricObject«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_007.html#dodtp9b4d9fda-7884-42d1-ad43-74a80ba14d9d" class="navnav">4.7 Eingebettete Klassen (Nested Classes)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_008.html#dodtpb69e3663-544c-4d13-a23a-6031dbfdf8df" class="navnav">4.8 Interfaces (Schnittstellen)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp4efa077f-0196-4440-bd5f-c12ccfbeaecb" class="navnav">4.8.1 Einführung in die Schnittstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp00171ed7-19d6-4946-b2fd-c29314725655" class="navnav">4.8.2 Die Schnittstellendefinition</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtpb84c1fe8-ce59-4334-a3f2-6287c53e549d" class="navnav">4.8.3 Die Schnittstellenimplementierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp6a7cb643-df8d-4fea-8f05-889a784c3dac" class="navnav">4.8.4 Die Interpretation der Schnittstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtpaaa9046d-e755-4084-88a5-7c65b9f10167" class="navnav">4.8.5 Änderungen am Projekt »GeometricObjects«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_009.html#dodtp474a4423-984d-4fb6-bf29-bb979a35d611" class="navnav">4.9 Das Zerstören von Objekten &#8211; der »Garbage Collector«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtpd0d03b7b-ef8f-4711-bd32-81bd61392c7b" class="navnav">4.9.1 Die Arbeitsweise des Garbage Collectors</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp1705ec63-8a73-420d-9ce7-b2a429ae49e9" class="navnav">4.9.2 Expliziter Aufruf des Garbage Collectors</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp0c56dd86-f7fd-45d3-b422-bd397f3ad2b8" class="navnav">4.9.3 Der Destruktor</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtpbcff0975-384e-4183-b63c-7871310d8fdc" class="navnav">4.9.4 Die »IDisposable«-Schnittstelle</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp52f2c7a8-1275-4f06-8a24-fed11c84fcc6" class="navnav">4.9.5 Die Ergänzungen in den Klassen »Circle« und »Rectangle«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe80f90c9-39aa-433e-94b9-86cd3538acfb" name="dodtpe80f90c9-39aa-433e-94b9-86cd3538acfb"></a><h2 class="t2"><span class="cfett">4.4    </span><span class="cfett"> Polymorphie</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Abschnitt 4.2 haben Sie erfahren, dass die Methode <span class="clisting">Starten</span> in der Klasse <span class="clisting">Luftfahrzeug</span> unterschiedlich bereitgestellt werden kann. Es ist nun an der Zeit, darauf einzugehen,
+                                                      welche Konsequenzen die drei Varianten haben. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu schreiben wir in der <span class="clisting">Main</span>-Methode zunächst Programmcode, mit dem abstrakt, virtuell und klassisch implementierte
+                                                      Methoden getestet werden sollen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  Luftfahrzeug[] arr = new Luftfahrzeug[4];<br xmlns="">  arr[0] = new Flugzeug();<br xmlns="">  arr[1] = new Hubschrauber();<br xmlns="">  arr[2] = new Hubschrauber();<br xmlns="">  arr[3] = new Flugzeug();<br xmlns="">  foreach(Luftfahrzeug temp in arr) {<br xmlns="">    temp.Starten();           <br xmlns="">  }<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.15  </span>Code, um die Methode »Starten« zu testen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird ein Array vom Typ <span class="clisting">Luftfahrzeug</span> deklariert. Jedes Array-Element ist vom Typ <span class="clisting">Luftfahrzeug</span>. Weil die Klassen <span class="clisting">Flugzeug</span> und <span class="clisting">Hubschrauber</span><span class="ckursiv"> </span>von diesem Typ abgeleitet sind, kann jedem Array-Element nach der Regel der impliziten
+                                                      Konvertierung auch die Referenz auf ein Objekt vom Typ der beiden Subklassen zugewiesen
+                                                      werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">arr[0] = new Flugzeug();<br xmlns="">arr[1] = new Hubschrauber();<br xmlns="">[...]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Danach wird innerhalb einer <span class="clisting">foreach</span>-Schleife auf alle Array-Elemente die Methode <span class="clisting">Starten</span> aufgerufen. Die Laufvariable ist vom Typ <span class="clisting">Luftfahrzeug</span>, also vom Typ der Basisklasse. In der Schleife wird auf diese Referenz die <span class="clisting">Starten</span>-Methode aufgerufen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f" name="dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f"></a><h3 class="t3"><span class="cfett">4.4.1    </span><span class="cfett"> Die »klassische« Methodenimplementierung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp174b6608-c108-4e8c-8b0e-30482977e11d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe80f90c9-39aa-433e-94b9-86cd3538acfb"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen an dieser Stelle zunächst die klassische Methodenimplementierung in der
+                                                      Basisklasse testen. Die beiden ableitenden Klassen sollen die geerbte Methode <span class="clisting">Starten</span> mit dem Modifizierer <span class="clisting">new</span> überdecken:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Luftfahrzeug </span>{<br></br><span class="clistingfett">  public void Starten() </span>{<br xmlns="">    Console.WriteLine("Das Luftfahrzeug startet.");<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">public class Flugzeug : Luftfahrzeug </span>{<br></br>  <span class="clistingfett">public new void Starten() </span>{<br xmlns="">    Console.WriteLine("Das Flugzeug startet.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.16  </span>Testen der in der abgeleiteten Klasse überdeckenden Methode 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Starten wir die Anwendung, wird die folgende Ausgabe viermal im Konsolenfenster angezeigt:</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">Das Luftfahrzeug startet.</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis ist zwar nicht spektakulär, hat aber weitreichende Konsequenzen. Wir
+                                                      müssen uns nämlich die Frage stellen, ob die Ausgabe das ist, was wir erreichen wollten.
+                                                      Vermutlich nicht, denn eigentlich sollte doch jeweils die typspezifische Methode <span class="clisting">Starten</span> in der abgeleiteten Klasse ausgeführt werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ursächliche Problem ist das statische Binden des Methodenaufrufs an die Basisklasse.
+                                                      Statisches Binden heißt, dass die auszuführende Operation bereits zur Kompilierzeit
+                                                      festgelegt wird. Der Compiler stellt fest, von welchem Typ das Objekt ist, auf dem
+                                                      die Methode aufgerufen wird, und erzeugt den entsprechenden Code. Statisches Binden
+                                                      führt dazu, dass die Methode der Basisklasse aufgerufen wird, obwohl eigentlich die
+                                                      »neue« Methode in der abgeleiteten Klasse erforderlich wäre.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Beispiel macht deutlich, welchen Nebeneffekt das Überdecken einer Methode mit
+                                                      dem Modifizierer <span class="clisting">new</span> haben kann: Der Compiler betrachtet das Objekt, als wäre es vom Typ der Basisklasse,
+                                                      und ruft die unter Umständen aus logischer Sicht sogar fehlerhafte Methode in der
+                                                      Basisklasse auf.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp174b6608-c108-4e8c-8b0e-30482977e11d" name="dodtp174b6608-c108-4e8c-8b0e-30482977e11d"></a><h3 class="t3"><span class="cfett">4.4.2    </span><span class="cfett"> Abstrakte Methoden</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdaee6645-690b-4856-b485-f0fda30ad114"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun ändern wir den Programmcode in der Basisklasse <span class="clisting">Luftfahrzeug</span> und stellen die Methode <span class="clisting">Starten</span> als abstrakte Methode zur Verfügung. Die ableitenden Klassen erfüllen die Vertragsbedingung
+                                                      und überschreiben die geerbte Methode mit <span class="clisting">override</span>. Am Programmcode in <span class="clisting">Main</span> nehmen wir keine Änderungen vor.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public abstract class Luftfahrzeug</span><span class="cfett"> </span>{<br xmlns="">  <span class="clistingfett">public abstract void Starten();</span><br xmlns="">}<br></br><span class="clistingfett">public class Flugzeug : Luftfahrzeug</span><span class="cfett"> </span>{<br xmlns="">  <span class="clistingfett">public override void Starten()</span><span class="cfett"> </span>{<br xmlns="">    Console.WriteLine("Das Flugzeug startet.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.17  </span>Testen der überschreibenden Methode
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein anschließender Start der Anwendung bringt ein ganz anderes Ergebnis als im ersten
+                                                      Versuch:
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">Das Flugzeug startet.<br xmlns="">Der Hubschrauber startet.<br xmlns="">Der Hubschrauber startet.<br xmlns="">Das Flugzeug startet.</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tatsächlich werden nun die typspezifischen Methoden aufgerufen. </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anscheinend ist die Laufvariable <span class="ckursiv">temp</span> der <span class="clisting">foreach</span>-Schleife in der Lage, zu entscheiden, welche Methode anzuwenden ist. Dieses Verhalten
+                                                      unterscheidet sich gravierend von dem, was wir im Zusammenhang mit den mit <span class="clisting">new</span> ausgestatteten, überdeckenden Methoden zuvor gesehen haben. Die Bindung des Methodenaufrufs
+                                                      kann nicht statisch sein, sie erfolgt dynamisch zur Laufzeit.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Fähigkeit, auf einer Basisklassenreferenz die typspezifische Methode aufzurufen,
+                                                      wird als <span class="cfett">Polymorphie</span> bezeichnet und ist neben der Kapselung und der Vererbung die dritte Säule der objektorientierten
+                                                      Programmierung. Polymorphie bezeichnet ein Konzept der Objektorientierung, das besagt,
+                                                      dass Objekte bei gleichen Methodenaufrufen unterschiedlich reagieren können. Dabei
+                                                      können Objekte verschiedener Typen unter einem gemeinsamen Oberbegriff (d. h. einer
+                                                      gemeinsamen Basis) betrachtet werden. Die Polymorphie sorgt dafür, dass der Methodenaufruf
+                                                      automatisch bei der richtigen, also typspezifischen Methode landet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Polymorphie arbeitet mit dynamischer Bindung. Der Aufrufcode wird nicht zur Kompilierzeit
+                                                      erzeugt, sondern erst zur Laufzeit der Anwendung, wenn die konkreten Typinformationen
+                                                      vorliegen. Im Gegensatz dazu legt die statische Bindung die auszuführende Operation
+                                                      wie gezeigt bereits zur Kompilierzeit fest.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpdaee6645-690b-4856-b485-f0fda30ad114" name="dodtpdaee6645-690b-4856-b485-f0fda30ad114"></a><h3 class="t3"><span class="cfett">4.4.3    </span><span class="cfett"> Virtuelle Methoden</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp4a4c7f6d-b5b8-4c9a-bb1b-e8c6a29fc8f1"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp174b6608-c108-4e8c-8b0e-30482977e11d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Überschreibt eine Methode eine geerbte abstrakte Methode, zeigt die überschreibende
+                                                      Methode ausnahmslos immer polymorphes Verhalten. Wird in einer Basisklasse eine Methode
+                                                      »klassisch« implementiert und in der ableitenden Klasse durch eine Neuimplementierung
+                                                      mit <span class="clisting">new</span> verdeckt, kann die verdeckende Methode niemals polymorph sein. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht erahnen Sie an dieser Stelle schon, wozu virtuelle Methoden dienen. Erinnern
+                                                      wir uns: Eine Methode gilt als virtuell, wenn sie in der Basisklasse voll implementiert
+                                                      und mit dem Modifizierer <span class="clisting">virtual</span> signiert ist, wie im folgenden Listing noch einmal gezeigt wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Luftfahrzeug </span>{<br></br><span class="clistingfett">  public virtual void Starten() </span>{<br xmlns="">    Console.WriteLine("Das Luftfahrzeug startet.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.18  </span>Virtuelle Methode in der Basisklasse
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen eine virtuelle Methode als ein Angebot der Basisklasse an die ableitenden
+                                                      Klassen verstehen. Es ist das Angebot, die geerbte Methode entweder so zu erben, wie
+                                                      sie in der Basisklasse implementiert ist, sie bei Bedarf polymorph zu überschreiben
+                                                      oder eventuell auch einfach nur (nichtpolymorph) zu überdecken.
+                                                   </p>
+                                                   <h4 class="t4"> Polymorphes Überschreiben einer virtuellen Methode</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchte die ableitende Klasse die geerbte Methode neu implementieren und soll die Methode
+                                                      polymorphes Verhalten zeigen, muss die überschreibende Methode mit dem Modifizierer
+                                                      <span class="clisting">override</span> signiert werden, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class Flugzeug : Luftfahrzeug {<br xmlns="">  public override void Starten() {<br xmlns="">    Console.WriteLine("Das Flugzeug startet.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.19  </span>Polymorphes Überschreiben einer geerbten virtuellen Methode
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis des Aufrufs von <span class="clisting">Starten</span> auf eine Basisklassenreferenz ist identisch mit dem Aufruf einer abstrakten Methode:
+                                                      Es wird die typspezifische Methode ausgeführt. An dieser Stelle lässt sich sofort
+                                                      schlussfolgern, dass der Modifizierer <span class="clisting">override</span> grundsätzlich immer Polymorphie signalisiert.
+                                                   </p>
+                                                   <h4 class="t4"> Nicht-polymorphes Überdecken einer virtuellen Methode</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Soll eine ableitende Klasse eine geerbte virtuelle Methode nichtpolymorph überschreiben,
+                                                      kommt der Modifizierer <span class="clisting">new</span> ins Spiel:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class Flugzeug : Luftfahrzeug {<br xmlns="">  public new void Starten() {<br xmlns="">    Console.WriteLine("Das Flugzeug startet.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.20  </span>Nicht-polymorphes Überschreiben einer geerbten virtuellen Methode
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die mit <span class="clisting">new</span> neu implementierte virtuelle Methode zeigt kein polymorphes Verhalten, wenn wir die
+                                                      Testanwendung starten. Auch hier können wir unter Berücksichtigung des Verdeckens
+                                                      klassisch implementierter Methoden sagen, dass im Zusammenhang mit dem Modifizierer
+                                                      <span class="clisting">new</span> niemals polymorphes Verhalten eintritt.
+                                                   </p>
+                                                   <h4 class="t4"> Weiter gehende Betrachtungen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es ist möglich, innerhalb einer Vererbungskette ein gemischtes Verhalten von Ausblendung
+                                                      und Überschreibung vorzusehen, wie das folgende Codefragment zeigt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class Luftfahrzeug {<br xmlns="">  public virtual void Starten() { }<br xmlns="">}<br></br>public class Flugzeug : Luftfahrzeug {<br xmlns="">  public override void Starten () { [...] }<br xmlns="">}<br></br>public class Segelflugzeug : Flugzeug {<br xmlns="">  public new void Starten() { [...] }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.21  </span>Überschreiben und Ausblenden in einer Vererbungskette
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Luftfahrzeug</span> bietet die virtuelle Methode <span class="clisting">Starten</span> an, und die abgeleitete Klasse <span class="clisting">Flugzeug</span> überschreibt diese mit <span class="clisting">override</span> polymorph. Die nächste Ableitung in <span class="clisting">Segelflugzeug</span> überdeckt jedoch nur noch mit <span class="clisting">new</span><span class="clisting"><a class="indexterm" id="dodtp5d3c39d1-bc93-4b81-9b92-3b8c7ee8a14c"></a></span>. Wenn Sie nun nach der Zuweisung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Luftfahrzeug lfzg = new Segelflugzeug();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">auf der Referenz <span class="ckursiv">lfzg</span> die Methode <span class="clisting">Starten</span> aufrufen, wird die Methode <span class="clisting">Starten</span> in <span class="clisting">Flugzeug</span> ausgeführt, da diese die aus <span class="clisting">Luftfahrzeug</span> geerbte Methode polymorph überschreibt. <span class="clisting">Starten</span> zeigt aber in der Klasse <span class="clisting">Segelflugzeug</span> wegen des Modifikators <span class="clisting">new</span> kein polymorphes Verhalten mehr.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Überschreiben einer mit <span class="clisting">new</span> überdeckenden Methode mit <span class="clisting">override</span> ist hingegen nicht möglich, wie das folgende Codefragment zeigt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class Flugzeug : Luftfahrzeug {<br xmlns="">  public new void Starten() { [...] }<br xmlns="">}<br></br>public class Segelflugzeug : Flugzeug {<br xmlns="">  public override void Starten () { [...] }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.22  </span>Fehlerhaftes Überschreiben und Ausblenden in einer Vererbungskette
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein einmal verloren gegangenes polymorphes Verhalten kann nicht mehr reaktiviert werden.</p>
+                                                   <h4 class="t4"> Zusammenfassende Anmerkungen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um polymorphes Verhalten einer Methode zu ermöglichen, muss sie in der Basisklasse
+                                                      als <span class="clisting">virtual</span> definiert sein. Virtuelle Methoden haben immer einen Anweisungsblock und stellen
+                                                      ein Angebot an die ableitenden Klassen dar: Entweder wird die Methode einfach nur
+                                                      geerbt, oder sie wird in der ableitenden Klasse neu implementiert. Zur Umsetzung des
+                                                      zuletzt angeführten Falls gibt es wiederum zwei Möglichkeiten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Wird in der abgeleiteten Klasse die geerbte Methode mit dem Schlüsselwort <span class="clisting">override</span><span class="clisting"><a class="indexterm" id="dodtpc37be781-0374-4d48-819e-233de1a3d401"></a></span> implementiert, wird die ursprüngliche Methode überschrieben &#8211; die abgeleitete Klasse
+                                                         akzeptiert das Angebot der Basisklasse. Ein Aufruf an eine Referenz der Basisklasse
+                                                         wird polymorph an den sich tatsächlich dahinter verbergenden Typ weitergeleitet.
+                                                      </li>
+                                                      <li class="pgp">In der abgeleiteten Klasse wird eine virtuelle Methode mit dem Modifizierer <span class="clisting">new</span> ausgeblendet. Dann verdeckt die Subklassenmethode die geerbte Implementierung der
+                                                         Basisklasse und zeigt kein polymorphes Verhalten.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine statische Methode kann nicht virtuell sein. Ebenso ist eine Kombination des Schlüsselworts
+                                                      <span class="clisting">virtual</span> mit <span class="clisting">abstract</span> oder <span class="clisting">override</span> nicht zulässig. Hinter der Definition einer virtuellen Methode verbirgt sich die
+                                                      Absicht, polymorphes Verhalten zu ermöglichen. Daher ergibt es auch keinen Sinn, ein
+                                                      privates Klassenmitglied <span class="clisting">virtual</span> zu deklarieren &#8211; es kommt zu einem Kompilierfehler. <span class="clisting">new</span> und <span class="clisting">override</span> schließen sich gegenseitig aus.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Entwickeln Sie eine ableitbare Klasse, sollten Sie grundsätzlich immer an die ableitenden
+                                                         Klassen denken. Polymorphie gehört zu den fundamentalen Prinzipien des objektorientierten
+                                                         Ansatzes. Methoden, die in abgeleiteten Klassen neu implementiert werden müssen, werden
+                                                         vermutlich immer polymorph überschrieben. Vergessen Sie daher die Angabe des Modifizierers
+                                                         <span class="clisting">virtual</span> in keiner Methode &#8211; es sei denn, Sie haben handfeste Gründe, polymorphe Aufrufe bereits
+                                                         im Ansatz zu unterbinden. 
+                                                      </p>
+                                                      <p class="pbstandard">Andererseits sollte man sich beim Einsatz von <span class="clisting">virtual</span> auch darüber bewusst sein, dass die Laufzeitumgebung beim polymorphen Aufruf einer
+                                                         Methode dynamisch nach der typspezifischen Methode suchen muss, was natürlich zu Lasten
+                                                         der Performance geht. Man sollte folglich nicht prinzipiell <span class="clisting">virtual</span> mit dem Gießkannenprinzip auf alle Methoden verteilen, sondern sich auch über den
+                                                         erwähnten Nachteil im Klaren sein. 
+                                                      </p>
+                                                   </div>
+                                                   <h4 class="t4"> Die Methode »ToString()« der Klasse »Object« überschreiben</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">Object</span> ist die Basis aller .NET-Typen und vererbt jeder Klasse eine Reihe elementarer Methoden.
+                                                      Dazu gehört auch <span class="clisting">ToString</span><span class="cfett"><a class="indexterm" id="dodtp4afb5f83-301d-4220-84f0-d0612d797282"></a><a class="indexterm" id="dodtpd75fc886-921f-4cc4-82fb-97c81737de9f"></a></span>. Diese Methode ist als virtuelle Methode definiert und ermöglicht daher polymorphes
+                                                      Überschreiben. <span class="clisting">ToString</span> liefert per Vorgabe den kompletten Typbezeichner des aktuellen Objekts als Zeichenfolge
+                                                      an den Aufrufer zurück, wird aber von vielen Klassen des .NET Frameworks überschrieben.
+                                                      Aufgerufen auf einen <span class="clisting">int</span> liefert <span class="clisting">ToString</span> beispielsweise den von der <span class="clisting">int</span>-Variablen beschriebenen Wert als Zeichenfolge. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen das Angebot der Methode <span class="clisting">ToString</span> wahrnehmen und sie in der Klasse <span class="clisting">Circle</span> ebenfalls polymorph überschreiben. Der Aufruf der Methode soll dem Aufrufer typspezifische
+                                                      Angaben liefern.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Circle </span>{<br xmlns="">  [...]<br></br>  public override string ToString() {<br xmlns="">    return "Circle, R=" + Radius + ",Fläche=" + GetArea();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.23  </span>Überschreiben der geerbten Methode »Object.ToString()«
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs04_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="4  Vererbung, Polymorphie und Interfaces"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_04_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_04_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

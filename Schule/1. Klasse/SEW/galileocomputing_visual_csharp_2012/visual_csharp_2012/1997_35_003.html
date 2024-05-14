@@ -1,0 +1,973 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 35  ADO.NET &#8211; Aktualisieren der Datenbank">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 35  ADO.NET &#8211; Aktualisieren der Datenbank">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 35  ADO.NET &#8211; Aktualisieren der Datenbank</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="35_002.html">
+      <link rel="next" href="1997_35_004.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_35_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_35_004.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332" class="navnav">35 ADO.NET &#8211; Aktualisieren der Datenbank</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_001.html#dodtpfe133832-ca67-4d3a-8baa-b8380c216093" class="navnav">35.1 Aktualisieren mit dem »CommandBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp11837306-232b-460a-a45f-26076a944d9b" class="navnav">35.1.1 Die von »SqlCommandBuilder« generierten Aktualisierungsstatements</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp3b4d6b04-3215-4edf-a4bb-8b57c73153c3" class="navnav">35.1.2 Konfliktsteuerung in einer Mehrbenutzerumgebung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtpb2034c8d-dcf6-4b2c-bd52-c45ec4750a31" class="navnav">35.1.3 Die Eigenschaft »ConflictOption« des »SqlCommandBuilders«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp720c4fda-20a8-43ca-a633-1aa27a0ac906" class="navnav">35.1.4 Die Eigenschaft »SetAllValues«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_002.html#dodtp92ec7315-8023-480a-ad54-e5df65d73802" class="navnav">35.2 Manuell gesteuerte Aktualisierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_002.html#dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0" class="navnav">35.2.1 Eigene Aktualisierungslogik</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_002.html#dodtpa1bba101-e7bd-4e6f-9b86-128a81d9944d" class="navnav">35.2.2 Das Beispielprogramm</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_003.html#dodtpc0ec01b5-5b37-4833-8c32-7bc44c0a7531" class="navh">35.3 Konfliktanalyse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_003.html#dodtpeba88095-0e56-4e4d-9767-643d15fed310" class="navh">35.3.1 Den Benutzer über fehlgeschlagene Aktualisierungen informieren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_003.html#dodtp85fe1afc-36fa-460c-9701-acf3a61afadc" class="navh">35.3.2 Konfliktverursachende Datenzeilen bei der Datenbank abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_004.html#dodtpd82eda3c-2b16-4e8c-a8bd-1bb60ff3cd11" class="navnav">35.4 Neue Autoinkrementwerte abrufen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc0ec01b5-5b37-4833-8c32-7bc44c0a7531" name="dodtpc0ec01b5-5b37-4833-8c32-7bc44c0a7531"></a><h2 class="t2"><span class="cfett">35.3    </span><span class="cfett"> Konfliktanalyse</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpeba88095-0e56-4e4d-9767-643d15fed310"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Stehen mehrere Datenzeilen zur Aktualisierung an, wird der <span class="clisting">DataAdapter</span> versuchen, eine nach der anderen an die Datenbank zu senden. Wie im letzten Beispielprogramm
+                                                      zu sehen war, wird der <span class="clisting">DataAdapter</span> eine <span class="clisting">DBConcurrencyException</span><span class="clisting"><a class="indexterm" id="dodtpb40e2d7c-021f-4320-b840-aa3b3dde93dd"></a></span> auslösen und die verbleibenden Änderungen nicht mehr an die Datenbank schicken. Das
+                                                      ist das Standardverhalten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können den <span class="clisting">DataAdapter</span> anweisen, nach einem etwaigen Konflikt seine Aufgabe fortzusetzen und die verbleibenden
+                                                      Änderungen zu übermitteln. Dazu setzen Sie seine Eigenschaft <span class="clisting">ContinueUpdateOnError</span><span class="clisting"><a class="indexterm" id="dodtpd095f41f-91ef-48ed-836b-ba1ceb0cf6ac"></a>=true</span>. Eine Exception wird in diesem Fall nicht ausgelöst. Stattdessen stehen Ihnen zwei
+                                                      andere Optionen zur Verfügung, mit den aufgetretenen Konflikten umzugehen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie informieren den Benutzer lediglich, welche Datenzeilen nicht aktualisiert werden
+                                                         konnten. 
+                                                      </li>
+                                                      <li class="pgp">Sie implementieren über die reine Information des fehlgeschlagenen Aktualisierungsversuchs
+                                                         hinaus auch eine Konfliktlösung. Dazu benötigt der Benutzer alle zur Verfügung stehenden
+                                                         Informationen, unter anderem auch diejenige, wie der neue aktuelle Inhalt der konfliktverursachenden
+                                                         Datenzeile in der Datenbank ist. 
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beide Szenarien wollen wir uns nun ansehen.</p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpeba88095-0e56-4e4d-9767-643d15fed310" name="dodtpeba88095-0e56-4e4d-9767-643d15fed310"></a><h3 class="t3"><span class="cfett">35.3.1    </span><span class="cfett"> Den Benutzer über fehlgeschlagene Aktualisierungen informieren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp85fe1afc-36fa-460c-9701-acf3a61afadc"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc0ec01b5-5b37-4833-8c32-7bc44c0a7531"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Legen Sie vor dem Aufruf der Update-Methode die Eigenschaft <span class="clisting">ContinueUpdateOnError</span> auf <span class="clisting">true</span> fest, verursacht ein fehlgeschlagener Aktualisierungsversuch keine Ausnahme mehr.
+                                                      Stattdessen wird die Eigenschaft <span class="clisting">HasErrors</span> des entsprechenden <span class="clisting">DataRow</span>-Objekts auf <span class="clisting">true</span> gesetzt, ebenso die gleichnamige Eigenschaft des <span class="clisting">DataSets</span> und der <span class="clisting">DataTable</span>. Eine <span class="clisting">DataRow</span> hat eine Eigenschaft <span class="clisting">RowError</span>. Diese enthält nach dem misslungenen Versuch eine Fehlermeldung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Beispielprogramm wird der Einsatz der Eigenschaften <span class="clisting">ContinueUpdateOnError</span>, <span class="clisting">HasErrors</span> und <span class="clisting">RowError</span> gezeigt. Das Beispielprogramm setzt dasjenige des vorhergehenden Abschnitts fort
+                                                      und ergänzt nur noch die notwendigen Passagen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 35\HasErrorsSample</span><br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  [...]<br></br>  // Simulation eines Konflikts<br></br>  Console.Write("Konflikt simulieren ...");<br xmlns="">  Console.ReadLine();<br></br>  // Datenbank aktualisieren<br></br>  da.ContinueUpdateOnError = true;<br xmlns="">  da.Update(ds);<br xmlns="">  if (ds.HasErrors) {<br xmlns="">    string text = "Folgende Zeilen konnten nicht aktualisiert werden:";<br xmlns="">    foreach (DataRow row in ds.Tables[0].Rows)<br xmlns="">      if (row.HasErrors) {<br xmlns="">        Console.WriteLine(text);<br xmlns="">        Console.WriteLine("ID: {0}, Fehler: {1}", row["ProductID"], row.RowError);<br xmlns="">      }<br xmlns="">  }<br xmlns="">  else<br xmlns="">    Console.WriteLine("Die Aktualisierung war erfolgreich.");<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.5  </span>Code des Beispielprogramms »HasErrorsSample«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem Aufruf von <span class="clisting">Update</span> auf den <span class="clisting">DataAdapter</span> wird zuerst mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if (ds.HasErrors<a class="indexterm" id="dodtp6057e576-e5bb-4829-865e-aeaefd8931bb"></a>)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">das <span class="clisting">DataSet</span> dahingehend untersucht, ob tatsächlich ein Konflikt vorliegt. <span class="clisting">HasErrors</span> ist <span class="clisting">false</span>, wenn die Datenbank die Änderungen angenommen hat. <span class="clisting">true</span> signalisiert hingegen, dass wir alle Datenzeilen in der Tabelle des <span class="clisting">DataSets</span> durchlaufen müssen, um die konfliktverursachenden Zeilen zu finden. Der Code wird
+                                                      fündig, wenn er auf eine Datenzeile mit <span class="clisting">HasErrors=true</span> trifft.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">foreach (DataRow row in ds.Tables[0].Rows)<br xmlns="">  if (row.HasErrors) {<br xmlns="">   [...]<br xmlns="">  }<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt können wir reagieren. Im einfachsten Fall lassen wir uns zumindest die ID des
+                                                      betreffenden »Übeltäters« ausgeben &#8211; so wie in diesem Beispiel. Sie können die Information
+                                                      natürlich auch dazu benutzen, dem Benutzer die Möglichkeit zu geben, die Konfliktursache
+                                                      zu beseitigen, denn der Verursacher ist ermittelt.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp85fe1afc-36fa-460c-9701-acf3a61afadc" name="dodtp85fe1afc-36fa-460c-9701-acf3a61afadc"></a><h3 class="t3"><span class="cfett">35.3.2    </span><span class="cfett"> Konfliktverursachende Datenzeilen bei der Datenbank abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpeba88095-0e56-4e4d-9767-643d15fed310"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Meist genügt es nicht, nur zu wissen, wer Konfliktverursacher ist. Es wird darüber
+                                                      hinaus auch eine Lösung angestrebt. Dies bedarf aber einer genaueren Analyse der Umstände,
+                                                      die zu einem Konflikt führen können. Dabei sind vier Situationen zu beachten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Ein Anwender versucht, eine Datenzeile mit einem neuen Primärschlüssel hinzuzufügen,
+                                                         der bereits in der Tabelle existiert.
+                                                      </li>
+                                                      <li class="pgp">Ein Anwender versucht, einen Datensatz zu ändern, den ein zweiter Benutzer zuvor geändert
+                                                         hat.
+                                                      </li>
+                                                      <li class="pgp">Es wird versucht, eine Datenzeile zu ändern, die zwischenzeitlich gelöscht worden
+                                                         ist.
+                                                      </li>
+                                                      <li class="pgp">Es wird versucht, eine Datenzeile zu löschen, die bereits gelöscht ist. In der Regel
+                                                         wird man aber diesem Konflikt keine Beachtung schenken müssen.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird versucht, einen bereits vorhandenen Primärschlüssel für einen neuen Datensatz
+                                                      ein zweites Mal zu vergeben, scheint die Lösung des Problems noch recht einfach zu
+                                                      sein: Es muss nur ein anderer Primärschlüssel vergeben werden. Aber das könnte eine
+                                                      falsche Entscheidung sein. Können Sie denn sicherstellen, dass nicht zwei Anwender
+                                                      versuchen, den gleichen Datensatz zur Tabelle hinzuzufügen? Falls Sie diese Situation
+                                                      nicht berücksichtigen, liegen im schlimmsten Fall zwei identische Datensätze vor.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine präzise Konfliktlösung der beiden anderen relevanten Konflikte zu ermöglichen,
+                                                      fehlen uns Informationen, die nur in der Datenbank zu finden sind. Was wir brauchen,
+                                                      ist eine neue Originalversion der konfliktverursachenden Datenzeile.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">DataAdapter</span> hilft uns an dieser Stelle weiter. Er löst nämlich für jede zu aktualisierende Datenzeile
+                                                      zwei Ereignisse aus, wenn anstehende Änderungen über die Methode <span class="clisting">Update</span> an die Datenbank übermittelt werden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">RowUpdating</span></li>
+                                                      <li class="pgp"><a class="indexterm" id="dodtp255a8051-b1a6-4f37-b8a4-3849ccd79a0b"></a><span class="clisting">RowUpdated</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting"><a class="indexterm" id="dodtp64e3f6b8-3234-42c9-a004-d5823aeefa37"></a></span><span class="clisting">RowUpdating</span> wird ausgelöst, bevor eine Zeile übermittelt wird, <span class="clisting">RowUpdated</span> tritt unmittelbar nach der Übermittlung auf. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für unsere Lösung interessiert uns natürlich nur das Ereignis <span class="clisting">RowUpdated</span>, dessen zweiter Parameter vom Typ <span class="clisting">SqlRowUpdatedEventArgs</span> uns mit allen Informationen versorgt, die wir zur Konfliktanalyse und der anschließenden
+                                                      Konfliktlösung benötigen. In Tabelle 35.2 sind die Eigenschaften des <span class="clisting">EventsArgs</span>-Parameters des <span class="clisting">RowUpdated</span>-Ereignisses aufgeführt.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 35.2  </span>Die Eigenschaften des »SqlRowUpdatedEventArgs«<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9979a0eb-c77c-48b4-b2dd-48dd260b02f4"></a>-Objekts
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Eigenschaft
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Command</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft das beim Aufruf von <span class="clisting">Update</span> ausgeführte <span class="clisting">SqlCommand</span> ab.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Errors</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft alle Fehler ab, die während der Ausführung generiert wurden.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">RecordsAffected</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft die Anzahl der durch die Ausführung der SQL-Anweisung geänderten, eingefügten
+                                                                  oder gelöschten Zeilen ab.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Row</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft die durch ein <span class="clisting">Update</span> gesendete <span class="clisting">DataRow</span> ab.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">StatementType</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft den Typ der ausgeführten SQL-Anweisung ab.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Status</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft einen Wert der Enumeration <span class="clisting">UpdateStatus</span> ab oder legt diesen fest.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">TableMapping</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft das durch ein <span class="clisting">Update</span> gesendete <span class="clisting">DataTableMapping</span> ab.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Vollständigkeit halber folgt jetzt auch noch die Tabelle mit den Membern der Enumeration
+                                                      <span class="clisting">UpdateStatus</span>, die von der Eigenschaft <span class="clisting">Status</span> des <span class="clisting">SqlRowUpdatedEventArgs</span>-Objekts offengelegt wird.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 35.3  </span>Die Member der Enumeration »UpdateStatus«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Continue</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der <span class="clisting">DataAdapter</span> soll mit der Verarbeitung von Zeilen fortfahren.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ErrorsOccured</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Ereignishandler meldet, dass die Aktualisierung als Fehler behandelt werden soll.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">SkipAllRemainingRows</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die aktuelle Zeile und alle restlichen Zeilen sollen nicht aktualisiert werden.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">SkipCurrentRow</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die aktuelle Zeile soll nicht aktualisiert werden.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpde535885-0d57-41eb-b7f5-9e8115aab40b"></a>Wie können wir nun das Ereignis zu unserem Nutzen einsetzen?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gilt zunächst herauszufinden, ob das Update einer Datenzeile zu einem Konflikt
+                                                      geführt hat. Hierzu prüfen wir, ob die Eigenschaft <span class="clisting">Status</span> des <span class="clisting">SqlRowUpdatedEventArgs</span>-Objekts den Enumerationswert <span class="clisting">UpdateStatus.ErrorsOccured</span> aufweist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">private void da_RowUpdated(object sender, SqlRowUpdatedEventArgs e)</span> {<br xmlns="">  if (e.Status == UpdateStatus.ErrorsOccurred) {<br xmlns="">    [...]<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.6  </span>Prüfen, ob ein Fehler beim Aktualisieren aufgetreten ist
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um zu einer Konfliktlösung zu kommen, werden die konfliktverursachenden Datenzeilen
+                                                      in ihrer neuen, aktuellen Originalversion aus der Datenbank benötigt. Deshalb wird
+                                                      innerhalb des Ereignishandlers eine erneute Abfrage an die Datenbank geschickt und
+                                                      der Primärschlüssel der konfliktverursachenden Datenzeile als Filter benutzt. Da uns
+                                                      das <span class="clisting">EventArgs</span>-Objekt in seiner Eigenschaft <span class="clisting">Row</span> die Referenz auf die entsprechende Datenzeile mitteilt, stellt das kein Problem dar.
+                                                      
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sinnvollerweise stellt man ein eigenes <span class="clisting">DataSet</span>-Objekt für alle abgefragten Datenzeilen zur Verfügung (hier: <span class="ckursiv">dsConflict</span>), ebenso einen separaten <span class="clisting">SqlDataAdapter</span> (hier: <span class="ckursiv">daConflict</span>). Der Aufruf der <span class="clisting">Fill</span>-Methode bewirkt, dass entweder genau eine Datenzeile das Ergebnis des Aufrufs bildet
+                                                      oder keine. Die <span class="clisting">Fill</span>-Methode teilt uns über ihren Rückgabewert die Anzahl der Datensätze mit, die die
+                                                      Ergebnismenge bilden. Der Rückgabewert ist ganz entscheidend, um festzustellen, welche
+                                                      Ursache der Konflikt hat. Sehen wir uns nun zuerst das entsprechende Codefragment
+                                                      zu dem Gesagten an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataSet dsConflict = new DataSet();<br xmlns="">SqlDataAdapter daConflict = new SqlDataAdapter();<br></br>[...]<br></br><span class="clistingfett">private void da_RowUpdated(object sender, SqlRowUpdatedEventArgs e)</span> {<br xmlns="">  if (e.Status == UpdateStatus.ErrorsOccurred) {<br xmlns="">    SqlCommand cmdConflict = new SqlCommand();<br xmlns="">    string sql = "SELECT ProductID, ProductName, UnitPrice, " + <br xmlns="">                 "UnitsInStock FROM Products WHERE ProductID = " + <br xmlns="">                  e.Row["ProductID"];<br xmlns="">    cmdConflict = new SqlCommand();<br xmlns="">    cmdConflict.Connection = con;<br xmlns="">    cmdConflict.CommandText = sql;<br xmlns="">    daConflict.SelectCommand = cmdConflict;<br xmlns="">    int result = daConflict.Fill(dsConflict);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.7  </span>Abrufen der konfliktverursachenden Datenzeile aus der Datenbank
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich können beim Aktualisieren einer Datenzeile zwei verschiedene Exceptions
+                                                      auftreten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">SqlException</span></li>
+                                                      <li class="pgp"><span class="clisting">DBConcurrencyException</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting"><a class="indexterm" id="dodtp11cde617-a13d-45a2-9505-9a399b4948c5"></a></span><span class="clisting">SqlException</span> beschreibt Ausnahmen, die der SQL Server zurückgibt. Das wäre beispielsweise der
+                                                      Fall, wenn ein Datensatz mit einem Primärschlüssel hinzugefügt wird, der in der Tabelle
+                                                      bereits existiert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">DBConcurrencyException</span> hingegen wird ausgelöst, wenn eine Parallelitätsverletzung vorliegt. Das ist der
+                                                      Fall, wenn die Anzahl der aktualisierten Datenzeilen 0 ist. Um festzustellen, welche
+                                                      Ausnahme ausgelöst worden ist, brauchen Sie nur den in der Eigenschaft <span class="clisting">Errors</span> des <span class="clisting">SqlRowUpdatedEventArgs</span>-Objekts enthaltenen Ausnahmetyp zu untersuchen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if (e.Errors.GetType() == typeof(SqlException)) {<br xmlns="">  [...]<br xmlns="">}<br xmlns="">else if (e.Errors.GetType() == typeof(DBConcurrencyException)) {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anschließend kommt es zur Auswertung der Anzahl der Datensätze, die in der Variablen
+                                                      <span class="ckursiv">result</span> stehen. Es kann sich nur um die Zahl 0 oder 1 handeln, woraus weitere Rückschlüsse
+                                                      gezogen werden können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Betrachten wir zuerst den Fall, dass <span class="clisting">Errors</span> ein <span class="clisting">SqlException</span>-Objekt enthält.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if (e.Errors.GetType() == typeof(SqlException)) {<br xmlns="">  if (result == 1)<br xmlns="">    Console.WriteLine("Der PS existiert bereits.");<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist in diesem Fall der Inhalt von <span class="ckursiv">result</span> 1, handelt es sich um den Versuch, einen neuen Datensatz mit einem Primärschlüssel
+                                                      hinzuzufügen, wobei der Primärschlüssel in der Originaltabelle bereits vergeben ist.
+                                                      Beschreibt <span class="ckursiv">result</span> die Zahl 0, liegt ein anderer Datenbankfehler vor.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Handelt es sich um den Ausnahmetyp <span class="clisting">DBConcurrencyException</span>, wurde der Versuch, die Änderung an einer Datenzeile in die Originaltabelle zu schreiben,
+                                                      abgelehnt. Die Parallelitätsverletzung kann zwei Ursachen haben:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Ein anderer Anwender hat den Datensatz zwischenzeitlich geändert. Der Inhalt der Variablen
+                                                         <span class="ckursiv">result</span> muss in diesem Fall die Zahl 1 sein. Mit anderen Worten: Der Datensatz existiert
+                                                         noch.
+                                                      </li>
+                                                      <li class="pgp">Wird der Inhalt von <span class="ckursiv">result</span> mit der Zahl 0 beschrieben, wurde der Datensatz von einem anderen Anwender gelöscht.
+                                                         Der entsprechende Primärschlüssel existiert nicht mehr.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">else if</span>-Zweig muss demnach wie folgt codiert werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">else if (e.Errors.GetType() == typeof(DBConcurrencyException)) {<br></br>  // ist Anzahl=1 -&gt; anderer Benutzer hat DS geändert<br></br>  if (result == 1)<br xmlns="">    Console.WriteLine("Ein anderer User hat den Datensatz geändert.");<br xmlns="">  else<br xmlns="">    Console.WriteLine("Datensatz existiert nicht in der Datenbank.");<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Beispielprogramm zeigt den Code im Zusammenhang. Ausgangspunkt sei wieder
+                                                      das Beispielprogramm <span class="ckursiv">ManuelleAktualisierung</span>, das entsprechend ergänzt wird. Neben der Implementierung des Ereignishandlers des
+                                                      <span class="clisting">RowUpdated</span>-Ereignisses wird nach der Aktualisierung auch das <span class="clisting">DataSet</span> mit allen konfliktverursachenden Datenzeilen abgefragt und ausgegeben. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: .. \Kapitel 35\KonfliktAnalyse</span><br></br><span class="clistingfett">class Program </span>{<br xmlns="">  static DataSet dsConflict = new DataSet();<br xmlns="">  static SqlDataAdapter daConflict = new SqlDataAdapter();<br xmlns="">  static SqlConnection con = new SqlConnection();<br></br>  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    [...]<br></br>    // Datenbank aktualisieren<br></br>    da.ContinueUpdateOnError = true;<br xmlns="">    da.RowUpdated += new SqlRowUpdatedEventHandler(da_RowUpdated);<br xmlns="">    da.Update(ds);<br></br>    // Konflikt-DataSet abrufen<br></br>    if (dsConflict.Tables.Count &gt; 0) {<br xmlns="">      Console.WriteLine("\n{0,-5}{1,-35}{2,-12}{3}", <br xmlns="">                        "ID", "ProductName", "UnitPrice", "UnitsInStock");<br xmlns="">      Console.WriteLine(new string('-', 65));<br xmlns="">      foreach (DataRow item in dsConflict.Tables[0].Rows)<br xmlns="">        Console.WriteLine("{0,-5}{1,-35}{2,-12}{3}", <br xmlns="">                          item["ProductID"], item["ProductName"], <br xmlns="">                          item["UnitPrice"], item["UnitsInStock"]);<br xmlns="">    }            <br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  <span class="clistingfett">static void da_RowUpdated(object sender, SqlRowUpdatedEventArgs e)</span> {<br xmlns="">    if (e.Status == UpdateStatus.ErrorsOccurred) {<br xmlns="">      SqlCommand cmdConflict = new SqlCommand();<br xmlns="">      string sql = "SELECT ProductID, ProductName, UnitPrice, UnitsInStock FROM <br xmlns="">                   Products WHERE ProductID = " + e.Row["ProductID"];<br xmlns="">      cmdConflict = new SqlCommand();<br xmlns="">      cmdConflict.Connection = con;<br xmlns="">      cmdConflict.CommandText = sql;<br xmlns="">      daConflict.SelectCommand = cmdConflict;<br xmlns="">      int result = daConflict.Fill(dsConflict);<br xmlns="">      if (e.Errors.GetType() == typeof(SqlException)) {<br></br>        // Prüfen, ob es einen DS mit einem bestimmten PS gibt<br></br>        if (result == 1)<br xmlns="">          Console.WriteLine("Der PS existiert bereits.");<br xmlns="">      }<br xmlns="">      else if (e.Errors.GetType() == typeof(DBConcurrencyException)) {<br></br>        // ist Anzahl=1 -&gt; anderer Benutzer hat DS geändert<br></br>        if (result == 1)<br xmlns="">          Console.WriteLine("Ein anderer User hat den Datensatz geändert.");<br xmlns="">        else<br xmlns="">          Console.WriteLine("Datensatz existiert nicht in der Datenbank.");<br xmlns="">      }<br xmlns="">    }<br></br>  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.8  </span>Analyse bei einem Konflikt
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs35_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="35  ADO.NET &#8211; Aktualisieren der Datenbank"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_35_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_35_004.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

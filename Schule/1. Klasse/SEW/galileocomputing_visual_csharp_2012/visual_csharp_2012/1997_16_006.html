@@ -1,0 +1,1998 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 16  Einige wichtige .NET-Klassen">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="16_005.html">
+      <link rel="next" href="1997_17_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_16_005.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_17_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5" class="navnav">16 Einige wichtige .NET-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_001.html#dodtp2450680c-ac9d-48da-81ea-6672f80715f7" class="navnav">16.1 Die Klasse »Object«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp6f1413c9-418e-47cf-83de-ec5739505f68" class="navnav">16.1.1 Referenzvergleiche mit »Equals« und »ReferenceEquals«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" class="navnav">16.1.2 »ToString« und »GetType«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" class="navnav">16.1.3 Die Methode »MemberwiseClone« und das Problem des Klonens</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_002.html#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" class="navnav">16.2 Die Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" class="navnav">16.2.1 Das Erzeugen eines Strings</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" class="navnav">16.2.2 Die Eigenschaften von »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp9869302a-a81f-476a-862b-31ff55711cc8" class="navnav">16.2.3 Die Methoden der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp8a6e62fc-2274-4607-885a-765ccab87be8" class="navnav">16.2.4 Zusammenfassung der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_003.html#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" class="navnav">16.3 Die Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" class="navnav">16.3.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" class="navnav">16.3.2 Die Kapazität eines »StringBuilder«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" class="navnav">16.3.3 Die Konstruktoren der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" class="navnav">16.3.4 Die Eigenschaften der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp439ff604-4457-439b-b552-95ef23a2d92e" class="navnav">16.3.5 Die Methoden der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp64c689f2-4f33-4e60-919a-03c308002a13" class="navnav">16.3.6 Allgemeine Anmerkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_004.html#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" class="navnav">16.4 Der Typ »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" class="navnav">16.4.1 Die Zeitspanne »Tick«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtp615f8ac3-1362-4523-84f4-fa23473b674b" class="navnav">16.4.2 Die Konstruktoren von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" class="navnav">16.4.3 Die Eigenschaften von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" class="navnav">16.4.4 Die Methoden der Klasse »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_005.html#dodtpb26830f8-1fa0-4b0b-b86d-a20949a22f00" class="navnav">16.5 Die Klasse »TimeSpan«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_006.html#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" class="navh">16.6 Ausgabeformatierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" class="navh">16.6.1 Formatierung mit der Methode »String.Format«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" class="navh">16.6.2 Formatierung mit der Methode »ToString«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" class="navh">16.6.3 Benutzerdefinierte Formatierung</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" name="dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e"></a><h2 class="t2"><span class="cfett">16.6    </span><span class="cfett"> Ausgabeformatierung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc8ed11db-9b0f-4e13-970a-a2359b435945"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Formatierung einer Ausgabe stehen Ihnen zwei Möglichkeiten zur Verfügung:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">die statische Methode <span class="clisting">Format</span><span class="clisting"><a class="indexterm" id="dodtp409c0367-d310-4c06-8151-2fe041e0c7bd"></a></span> der Klasse <span class="clisting">String</span></li>
+                                                      <li class="pgp">die Methode <span class="clisting">ToString</span> der Schnittstelle <span class="clisting">IFormatable</span><span class="clisting"><a class="indexterm" id="dodtp6a0ba590-4995-4f25-8623-ba8641f4d4ba"></a></span></li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" name="dodtp35f96cd1-76ce-4d70-a690-b3014e930f80"></a><h3 class="t3"><span class="cfett">16.6.1    </span><span class="cfett"> Formatierung mit der Methode »String.Format«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp065622ae-b9ec-4fb3-82e0-3ba5d75a189e"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Rufen wir uns zuerst in Erinnerung, wie die Ausgabe der Methode <span class="clisting">DateTime.Now</span><span class="cfett"> </span>an der Konsole lautet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(DateTime.Now.ToString());<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es wird das Datum einschließlich der Uhrzeit angezeigt:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">17.09.2003 20:51:56<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der <span class="clisting">Format</span>-Methode können wir eine andere, individuell passendere Ausgabe erzwingen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(String.Format("{0:F}", DateTime.Now));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit würde die Anzeige lauten:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Mittwoch, 17. September 2003 20:51:56<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es bietet sich auch die Möglichkeit an, mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(String.Format("{0:D}", DateTime.Now));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">auf die Zeitangabe ganz zu verzichten.</p>
+                                                   <h4 class="t4"> Formatierungsvarianten</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die einfachsten Varianten der überladenen <span class="clisting">Format</span>-Methode lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static string Format(string format, object arg);<br></br>public static string Format(string format, params object[] args);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der erste Parameter beschreibt eine Zeichenfolge mit einem oder mehreren Formatierungsausdrücken,
+                                                      die in geschweiften Klammern angegeben werden. Dem zweiten Parameter werden die zu
+                                                      formatierenden Objekte übergeben. Die Syntax erinnert sofort an die Formatierungen
+                                                      der Methode <span class="clisting">Console.WriteLine</span>, die sich tatsächlich intern der <span class="clisting">Format</span>-Methode bedient.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unter den weiteren vier Überladungen ist eine besonders hervorzuheben, mit der festgelegt
+                                                      werden kann, welche Sprache bzw. Kultur für die Formatierung verwendet werden soll:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static string Format(IFormatProvider provider,<br></br>                            string format, params object[] args);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Parameter erwartet die Methode <span class="clisting">String.Format</span> nun ein Objekt, das die Schnittstelle <span class="clisting">IFormatProvider</span><span class="clisting"><a class="indexterm" id="dodtp999dc65c-1b90-4181-ab35-1526228b693c"></a></span> implementiert. Im .NET Framework sind das drei Klassen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">CultureInfo</span><span class="clisting"><a class="indexterm" id="dodtp1cf5ada5-3693-4bdb-889c-98cadec88399"></a><a class="indexterm" id="dodtpc8759158-a07a-4eca-9a22-132de9f56c81"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">DateTimeFormatInfo</span><span class="clisting"><a class="indexterm" id="dodtpdda582e2-347d-4034-930f-d4fca50f467b"></a><a class="indexterm" id="dodtp26bcc1c2-826f-42fd-992f-1e0e38598485"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">NumberFormatInfo</span><span class="clisting"><a class="indexterm" id="dodtp41ff40d4-a582-4abe-acb8-742e96ecb406"></a><a class="indexterm" id="dodtp86c19ab6-0bc4-4c26-90e6-b094d6326a24"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Klassen gehören alle zum Namespace <span class="clisting">System.Globalization</span>.<span class="cfett"> </span>Die Klasse <span class="clisting">CultureInfo</span> stellt Informationen über eine bestimmte Kultur bereit, einschließlich des Schriftsystems
+                                                      sowie des verwendeten Kalenders. <span class="clisting">DateTimeFormatInfo</span> definiert die Anzeige von Datum und Uhrzeit und <span class="clisting">NumberFormatInfo</span> die Darstellung numerischer Werte &#8211; immer abhängig von der jeweiligen Kultur.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um beispielsweise das aktuelle Systemdatum in italienischer Sprache auszugeben, müssen
+                                                      Sie nur ein entsprechendes <span class="clisting">CultureInfo</span>-Objekt bereitstellen, das die italienische Kultur beschreibt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CultureInfo culture = new CultureInfo("it-IT");<br></br>// Ausgabe: sabato 20 settembre 2003<br></br>Console.WriteLine(String.Format(culture, "{0:D}", DateTime.Now));<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.30  </span>Datumsausgabe in Italienisch
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit den Eigenschaften <span class="clisting">DateTimeFormat</span> und <span class="clisting">NumberFormat</span> der Klasse <span class="clisting">CultureInfo</span> kann das Ausgabeformat der spezifischen Kultur abgefragt und sogar neu festgelegt
+                                                      werden. Dazu veröffentlichen die beiden Klassen <span class="clisting">DateTimeFormatInfo</span> und <span class="clisting">NumberFormatInfo</span> eine größere Anzahl Eigenschaften. Wie Sie das Dezimaltrennzeichen einer gegebenen
+                                                      Kultur abweichend vom Standard spezifisch festlegen können, zeigt das folgende Codefragment:
+                                                      
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double dbl = 12.25;<br xmlns="">CultureInfo culture = new CultureInfo("de-DE");<br xmlns="">NumberFormatInfo nfi = culture.NumberFormat;<br xmlns="">nfi.NumberDecimalSeparator = "*";<br xmlns="">Console.WriteLine(String.Format(culture, "{0}", dbl));<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.31  </span>Individuelles Dezimaltrennzeichen festlegen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es wird zuerst ein <span class="clisting">CultureInfo</span>-Objekt erzeugt, das mit <span class="clisting">de-DE</span> die deutsche Kultur beschreibt. Über dessen Eigenschaft <span class="clisting">NumberFormat</span> wird die dazu entsprechende Referenz auf <span class="clisting">NumberFormatInfo</span> ermittelt. Der Eigenschaft <span class="clisting">NumberDecimalSeparator</span> wird anschließend das Zeichen »<span class="clisting">*</span>« als neues Dezimaltrennzeichen zugewiesen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es kann sich als nützlich erweisen, ein kulturunabhängiges Format zur Verfügung zu
+                                                      stellen. Dieses erhalten Sie mit der statischen Eigenschaft <span class="clisting">InvariantCulture</span> der Klasse <span class="clisting">CultureInfo</span>. Das zurückgegebene <span class="clisting">CultureInfo</span>-Objekt ist der englischen Sprache zugeordnet, ohne dabei landesspezifische Unterschiede
+                                                      zu berücksichtigen.
+                                                   </p>
+                                                   <h4 class="t4"> Standardformatzeichen der Klasse »NumberFormatInfo«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Tabelle 16.8 sind die Standardformatzeichen für die einzelnen Standardmuster der
+                                                      <span class="clisting">NumberFormatInfo</span>-Klasse aufgeführt. Teilweise können die Standardmuster auch durch Eigenschaften verändert
+                                                      werden. Genauere Informationen dazu entnehmen Sie bitte der .NET-Dokumentation zu
+                                                      der Klasse.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.8  </span>Formatzeichen der Methode »String.Format<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd5a5c99e-67e1-4eaa-95c8-33037b368385"></a>«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Formatzeichen
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">C</span> oder <span class="clisting">c</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ausgabe im Währungsformat (einschließlich des Währungssymbols der aktuellen Ländereinstellung)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">D</span> oder <span class="clisting">d</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Wird nur von ganzzahligen Datentypen unterstützt. Durch das Anhängen einer Zahl kann
+                                                                  spezifiziert werden, wie viele Stellen die auszugebende Zahlenfolge aufweisen soll.
+                                                                  Fehlende Ziffern werden mit Nullen aufgefüllt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">E</span> oder <span class="clisting">e</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ausgabe im Exponentialformat</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">F</span> oder <span class="clisting">f</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Hängt an das Ende einer Zahl Dezimalstellen an. Die Anzahl der Nachkommastellen kann
+                                                                  hinter dem Formatspezifizierer angegeben werden. Der Standard sind zwei Stellen.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">G</span> oder <span class="clisting">g</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Allgemein formatierte Ausgabe</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">N</span> oder <span class="clisting">n</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Ausgabe erfolgt im Format <span class="clisting">ddd.ddd.ddd,dd</span>.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">P</span> oder <span class="clisting">p</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ausgabe als Prozentzahl</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">R</span> oder <span class="clisting">r</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Roundtrip-Format. Es wird sichergestellt, dass ein Zurückkonvertieren nicht zu Genauigkeitsverlusten
+                                                                  führt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">X</span> oder <span class="clisting">x</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ausgabe als Hexadezimalzahl (ausschließlich für Ganzzahlenformate)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Standardformatzeichen der Klasse »DateTimeFormatInfo«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd3bbedd9-169c-42a2-97d5-64d60417e774"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Tabelle 16.9 sind die wichtigsten Standardmuster zur Formatierung von Datum und
+                                                      Uhrzeit aufgezählt. Maßgeblich sind auch hier die Einstellungen unter <span class="ckursiv">Ländereinstellung</span>. Wie schon bei den Standardformatmustern der Klasse <span class="clisting">NumberFormatInfo</span> können Sie über Eigenschaften einige der Standardmuster nach eigenen Vorstellungen
+                                                      ändern. Weitere Informationen entnehmen Sie auch hier der .NET-Dokumentation.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.9  </span>Formatcodes für Datum und Uhrzeit
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Formatzeichen
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">d</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kurzes Datum (22.09.2003)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">D</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Langes Datum (Montag, 22. September 2003)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">f</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Langes Datum, inklusive Zeitangabe </p>
+                                                               
+                                                               
+                                                               <p class="tabellentext">(Montag, 22. September 2003 22:30)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">F</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Langes Datum, inklusive langer Zeitangabe</p>
+                                                               
+                                                               
+                                                               <p class="tabellentext">(Montag, 22. September 2003 22:30:45)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">g</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kurzes Datum, inklusive Zeitangabe</p>
+                                                               
+                                                               
+                                                               <p class="tabellentext">(22.09.2003 22:30)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">G</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kurzes Datum, inklusive langer Zeitangabe</p>
+                                                               
+                                                               
+                                                               <p class="tabellentext">(22.09.2003 22:30:45)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">M</span> oder <span class="clisting">m</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Tag und Monat (22 September)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">R</span> oder <span class="clisting">r</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Datum nach dem Muster des RFC1123</p>
+                                                               
+                                                               
+                                                               <p class="tabellentext">(Mon, 22 Sep 2003 22:30:45 GMT)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">t</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kurze Zeitangabe (22:30)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">T</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Lange Zeitangabe (22:30:45)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Y</span> oder <span class="clisting">y</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Monat und Jahr (September 2003)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu zwei Beispiele:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Ausgabe: Dienstag, 23. September 2003 12:12:55<br></br>string date = String.Format("{0:F}", DateTime.Now) <br></br>// Ausgabe: 23 September<br></br>string date = String.Format("{0:M}", DateTime.Now) <br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" name="dodtpaea254df-a16d-489c-b882-6b628f6d4ca3"></a><h3 class="t3"><span class="cfett">16.6.2    </span><span class="cfett"> Formatierung mit der Methode »ToString«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp6af741a1-a491-4638-baae-c4fca2517650"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp73aaa8d8-ee38-445d-95f4-71c612a47e2b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Von der Klasse <span class="clisting">Object</span> erbt jede .NET-Klasse die parameterlose Methode <span class="clisting">ToString</span>. Darüber hinaus werden sowohl von den numerischen Typen als auch von der Klasse <span class="clisting">String</span> Überladungen angeboten, die direkt auf dem zu formatierenden Wert aufgerufen werden.
+                                                      Sie können sich zum Beispiel mit 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">float d = 0.01985F;<br xmlns="">Console.WriteLine(d.ToString("P"));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">die <span class="clisting">float</span>-Zahl als Prozentzahl oder mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">float d = 123.505F;<br xmlns="">Console.WriteLine(d.ToString("E"));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">im Exponentialformat ausgeben lassen. Auch hier wird die Einstellung der aktuellen
+                                                      Kultur berücksichtigt. Sie können als Formatierungszeichenfolge alle Formatzeichen
+                                                      angeben, die in den Tabellen 16.8 und 16.9 aufgeführt sind. Die geschweiften Klammern
+                                                      sind nicht erforderlich. Um landesspezifische Ausgaben zu ermöglichen, können Sie
+                                                      auch ein <span class="clisting">IFormatProvider</span>-Objekt übergeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public virtual string ToString(IFormatProvider);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass die verschiedenen Datentypen unterschiedlich viele Überladungen
+                                                      von <span class="clisting">ToString</span> zur Verfügung stellen. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" name="dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd"></a><h3 class="t3"><span class="cfett">16.6.3    </span><span class="cfett"> Benutzerdefinierte Formatierung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa4abde35-ef0b-4491-8924-c4415eb134b7"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Zahlen und Zeichenfolgen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Über die vordefinierten Formate hinaus können Sie auch eigene Formatierungen festlegen.
+                                                      Dazu wird Ihnen von .NET eine Reihe von Formatzeichen bereitgestellt, um die Ausgabe
+                                                      von Ganz- und Dezimalzahlen sowie Zeichenfolgen nach eigenen Vorstellungen zu beeinflussen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.10  </span>Formatzeichen für benutzerdefinierte Zahlen- und Zeichenformate
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Formatzeichen
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">0</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zahl 0 dient als Platzhalter für eine Zahl. Nichtsignifikante Nullen <br xmlns="">werden durch die Zahl 0 dargestellt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">#</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zahl 0 dient als Platzhalter für eine Zahl. Nichtsignifikante Nullen werden durch
+                                                                  Leerzeichen dargestellt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">.</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das erste '.'-Zeichen in der Formatzeichenfolge bestimmt die Position des Dezimaltrennzeichens
+                                                                  im formatierten Wert.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">,</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Dient als Tausendertrennung. Jedes Auftreten des Zeichens bewirkt eine Division durch
+                                                                  1000. 
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">%</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Zeichen bewirkt die Multiplikation mit 100. Das Prozentzeichen wird angehängt.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">E0</span>, <span class="clisting">E+0</span>, <span class="clisting">E-0</span>, <span class="clisting"><br xmlns="">e0</span>, <span class="clisting">e+0</span>, <span class="clisting">e-0</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Codes bewirken die Exponentialdarstellung einer Zahl. Mit <span class="clisting">E+0</span> und <span class="clisting">e+0</span> wird das positive Vorzeichen immer angezeigt, mit allen anderen immer nur das negative.
+                                                                  Die Anzahl der Nullen bestimmt die Mindestanzahl von Ziffern des Exponenten.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">\</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das folgende Zeichen in der Formatzeichenfolge wird als Escape-Sequenz interpretiert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">"ABC"</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die in Anführungszeichen stehenden Zeichen werden direkt in die Ergebniszeichenfolge
+                                                                  kopiert.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachfolgend wird an einigen Beispielen gezeigt, wie die Formatzeichen eingesetzt werden
+                                                      und zu welchem Ergebnis die Anweisungen führen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double value = 12345.67890;<br xmlns="">string text = value.ToString("000");    // Ausgabe: 12346<br xmlns="">text = value.ToString("0000000");       // Ausgabe: 00123456<br xmlns="">text = value.ToString("###");           // Ausgabe: 12346<br xmlns="">text = value.ToString("#,#####");       // Ausgabe: 12.346<br xmlns="">text = value.ToString("#.##");          // Ausgabe: 12345,68<br xmlns="">text = value.ToString("#.#####");       // Ausgabe: 12345,6789<br xmlns="">text = value.ToString("000e+000");      // Ausgabe: 123e+002<br xmlns="">text = value.ToString("0%");            // Ausgabe: 1234568%<br></pre></div>
+                                                   <h4 class="t4"> Datums- und Zeitangaben</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie wollen, können Sie mit vordefinierten Codes eigene Mustervorgaben zur Darstellung
+                                                      des Datums und der Uhrzeit festlegen. Die Codes werden von der Klasse <span class="clisting">DateTimeFormat</span><span class="clisting">Info</span> bereitgestellt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Ausgabe: Sep.2004.12<br></br>string text = DateTime.Now.ToString("MMM/yyyy/dd"); <br></br>// Ausgabe: 09:22:30<br></br>string text = DateTime.Now.ToString("HH:mm:ss");<br></pre></div>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.11  </span>Formatzeichen für be<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8fd4bcf7-097d-49c8-b25a-2b81b4a692f4"></a>nutzerdefinierte Datums- und Zeitformate
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Formatmuster
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">d</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Monatstag ohne führende 0 (1&#8211;31)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">dd</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Monatstag mit führender 0 (01&#8211;31)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ddd</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Abkürzung des Wochentags (Mon)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">dddd</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vollständiger Name des Wochentags (Montag)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">M</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Monat ohne führende 0 (1&#8211;12)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MM</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Monat mit führender 0 (01&#8211;12)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MMM</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Abkürzung des Monatsnamens (Jan)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MMMM</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vollständiger Monatsname (Januar)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">y</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Zweistellige Jahreszahl ohne führende 0 (3)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">yy</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Zweistellige Jahreszahl mit führender 0 (03)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">yyyy</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vollständige Jahreszahl (2003)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">gg</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Angabe der Zeitära</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">h</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stundenangabe in 12-Stunden-Schreibweise ohne führende 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">hh</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stundenangabe in 12-Stunden-Schreibweise mit führender 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">H</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stundenangabe in 24-Stunden-Schreibweise ohne führende 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">HH</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stundenangabe in 24-Stunden-Schreibweise mit führender 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">m</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Minutenangabe ohne führende 0 (0&#8211;59)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">mm</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Minutenangabe mit führender 0 (00&#8211;59)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">s</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Sekundenangabe ohne führende 0 (0&#8211;59)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ss</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Sekundenangabe mit führender 0 (00&#8211;59)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">f&#8211;ffffff</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Angabe von Sekundenbruchteilen</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">t</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das erste Zeichen des AM/PM-Kennzeichners (A entspricht AM, <br xmlns="">P entspricht PM)
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">tt</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">AM oder PM</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">z</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Zeitzonenangabe ("+" oder "&#8211;", gefolgt von der Stundenangabe; ohne führende 0)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">zz</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Zeitzonenangabe ("+" oder "&#8211;", gefolgt von der Stundenangabe; mit führender 0)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">zzz</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vierstellige Zeitzonenangabe</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">/</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Es wird das Standardtrennzeichen für Datumsangaben eingesetzt.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">:</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Es wird das Standardtrennzeichen für Zeitangaben eingesetzt.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs16_006.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="16  Einige wichtige .NET-Klassen"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_16_005.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_17_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

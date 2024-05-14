@@ -1,0 +1,633 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 5  Delegates und Ereignisse">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="05_002.html">
+      <link rel="next" href="1997_06_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_05_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_06_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9" class="navnav">5 Delegates und Ereignisse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_001.html#dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7" class="navnav">5.1 Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a" class="navnav">5.1.1 Einführung in das Prinzip der Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497" class="navnav">5.1.2 Verwendung von Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe" class="navnav">5.1.3 Vereinfachter Delegatenaufruf</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpc31b034c-07a3-4c58-8260-f33ec088cf36" class="navnav">5.1.4 Multicast-Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f" class="navnav">5.1.5 Anonyme Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp74c90309-8ac2-437f-896f-f54302b446da" class="navnav">5.1.6 Kovarianz und Kontravarianz mit Delegaten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_002.html#dodtp862ac49c-9839-46c9-850d-2187b2b5aee9" class="navnav">5.2 Ereignisse eines Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913" class="navnav">5.2.1 Ereignisse bereitstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551" class="navnav">5.2.2 Die Reaktion auf ein ausgelöstes Ereignis</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp6685bec8-c443-40b3-8566-04ffdffdc34b" class="navnav">5.2.3 Allgemeine Betrachtungen der Ereignishandler-Registrierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpdf1e7607-4a32-4927-8690-cc25cf355434" class="navnav">5.2.4 Wenn der Ereignisempfänger ein Ereignis nicht behandelt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd" class="navnav">5.2.5 Ereignisse mit Übergabeparameter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a" class="navnav">5.2.6 Ereignisse in der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp3df38965-fb82-4fac-b5fa-eabbed68c969" class="navnav">5.2.7 Hinter die Kulissen des Schlüsselworts »event« geblickt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62" class="navnav">5.2.8 Die Schnittstelle »INotifyPropertyChanged«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_003.html#dodtpfe69f646-b065-465b-9512-ba9c7c960744" class="navh">5.3 Änderungen im Projekt »GeometricObjects«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d" class="navh">5.3.1 Überarbeitung des Events »InvalidMeasure«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtp7278828c-3908-4580-8b26-4571c1e93e70" class="navh">5.3.2 Weitere Ereignisse</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpfe69f646-b065-465b-9512-ba9c7c960744" name="dodtpfe69f646-b065-465b-9512-ba9c7c960744"></a><h2 class="t2"><span class="cfett">5.3    </span><span class="cfett"> Änderungen im Projekt »GeometricObjects«</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772188"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d" name="dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d"></a><h3 class="t3"><span class="cfett">5.3.1    </span><span class="cfett"> Überarbeitung des Events »InvalidMeasure«</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772189"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp7278828c-3908-4580-8b26-4571c1e93e70"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfe69f646-b065-465b-9512-ba9c7c960744"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In <span class="querverweis"><a href="1997_05_002.html#rxz1771983">Abschnitt 5.2</a></span> wurde das Ereignis <span class="clisting">InvalidMeasure</span> in der Klasse <span class="clisting">Circle</span> eingeführt. Eine inakzeptable Wertzuweisung kann natürlich auch die beiden Eigenschaften
+                                                      <span class="clisting">Length</span> und <span class="clisting">Width</span> der Klasse <span class="clisting">Rectangle</span> betreffen. Wir sollten daher das Ereignis in der Basisklasse <span class="clisting">GeometricObject</span> bereitstellen, einschließlich der entsprechenden <span class="clisting">OnXxx</span>-Methode.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun könnte es natürlich sein, dass den Benutzer einer der von <span class="clisting">GeometricObject</span> abgeleiteten Klassen interessiert, welche Eigenschaft von der Ablehnung der Zuweisung
+                                                      betroffen ist. Um auch diese Information zu liefern, wollen wir die Klasse <span class="clisting">InvalidMeasureEventArgs</span> um eine Eigenschaft vom Typ <span class="clisting">string</span> ergänzen, in der der Bezeichner der betroffenen Eigenschaft angegeben wird. Falls
+                                                      der Name der fehlerverursachenden Eigenschaft nicht ausdrücklich namentlich angegeben
+                                                      oder <span class="clisting">null</span> übergeben wird, soll bei einer Auswertung von <span class="clisting">PropertyName</span> die Ausgabe <span class="clisting">[unknown]</span> erfolgen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach diesen Vorgaben sieht der Code in der Klasse <span class="clisting">InvalidMeasureEventArgs</span> wie folgt aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class InvalidMeasureEventArgs : EventArgs </span>{<br></br>  // Felder<br></br>  private int _InvalidMeasure;<br xmlns="">  private string _PropertyName;<br></br>  // Eigenschaften<br></br>  public int InvalidMeasure {<br xmlns="">    get { return _InvalidMeasure; }<br xmlns="">  }<br></br>  public string PropertyName {<br xmlns="">    get { return _PropertyName; }<br xmlns="">  }<br></br>  // Konstruktor<br></br>  public InvalidMeasureEventArgs(int invalidMeasure, string propertyName) {<br xmlns="">    _InvalidMeasure = invalidMeasure;<br xmlns="">    if (propertyName == "" || propertyName == null)<br xmlns="">      _PropertyName = "[unknown]";<br xmlns="">    else <br xmlns="">      _PropertyName = propertyName;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.27  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772201"></a>Die Definition der Klasse »InvalidMeasureEventArgs«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Natürlich müssen Sie diese Erweiterung auch in den Eigenschaften <span class="clisting">Radius</span>, <span class="clisting">Width</span> und <span class="clisting">Length</span> berücksichtigen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp7278828c-3908-4580-8b26-4571c1e93e70" name="dodtp7278828c-3908-4580-8b26-4571c1e93e70"></a><h3 class="t3"><span class="cfett">5.3.2    </span><span class="cfett"> Weitere Ereignisse</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772203"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Das Ereignis InvalidMeasure</span> ist eher untypisch, weil es im Fehlerfall ausgelöst wird (später werden wir diese
+                                                      Stelle im Programm auch noch viel besser codieren). Nun wollen wir unser Projekt auch
+                                                      um zwei sehr typische Ereignisse erweitern, die in der Methode <span class="clisting">Move</span> ausgelöst werden sollen. Es sind die Ereignisse <span class="clisting">Moving</span> (wird ausgelöst vor der eigentlichen Verschiebung) und <span class="clisting">Moved</span> (wird ausgelöst nach erfolgter Verschiebung). Solche Ereignispärchen treten häufig
+                                                      im .NET Framework auf und entsprechen in ihrem Verhalten immer demselben Muster. Werden
+                                                      die <span class="clisting">Xxxing</span>-Ereignisse abonniert, besteht die Möglichkeit, die eingeleitete Operation im buchstäblich
+                                                      letzten Moment doch noch abzubrechen. Üblicherweise stellt das <span class="clisting">EventArgs</span>-Objekt dieser Ereignisse dazu eine Eigenschaft namens <span class="clisting">Cancel</span> bereit, die in der Ereignisquelle nach der Eventauslösung ausgewertet werden muss.
+                                                      Zum Abbrechen der Operation muss der Ereignisempfänger <span class="clisting">Cancel</span> nur auf <span class="clisting">true</span> setzen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class MovingEventArgs : EventArgs</span><br xmlns="">{<br xmlns="">  public bool Cancel { get; set; }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.28  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772206"></a>Die Klasse »MovingEventArgs«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">MovingEventArgs</span> ist sehr einfach implementiert. Da die Eigenschaft <span class="clisting">Cancel</span> im Ereignishandler unter Umständen einen neuen Wert erhält, der ausgewertet werden
+                                                      muss, genügt uns die einfache Deklaration einer booleschen Variablen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">Moved</span>-Ereignis, das nach der Verschiebeoperation ausgelöst wird, dient nur dazu, dem Benutzer
+                                                      die Möglichkeit zu eröffnen, nach der Verschiebung nach eigenem Ermessen zusätzliche
+                                                      Operationen zu codieren. Das <span class="clisting">EventArgs</span>-Objekt soll selbst keine weiteren, zusätzlichen Daten bereitstellen. Daher können
+                                                      wir direkt auf die Klasse <span class="clisting">EventArgs</span> zurückgreifen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit diesen Überlegungen lassen sich die beiden notwendigen Delegates beschreiben.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate void MovingEventHandler(Object sender, MovingEventArgs e);<br></br>public delegate void MovedEventHandler(Object sender, EventArgs e);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.29  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772212"></a>Zusätzliche Delegaten im Projekt »GeometricObjects«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Klasse <span class="clisting">GeometricObject</span> ist die <span class="clisting">Move</span>-Methode definiert, in der die beiden Ereignisse <span class="clisting">Moving</span> und <span class="clisting">Moved</span> ausgelöst werden sollen. Folglich gilt es, in dieser Klasse die beiden Ereignisse
+                                                      zu definieren. Dazu gehören auch die entsprechenden geschützten Methoden, die die
+                                                      Ereignisauslösung kapseln.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Move</span> wird um den Code ergänzt, der prüft, ob der Anwender die eingeleitete Verschiebung
+                                                      des Bezugspunktes abbrechen möchte. Dazu wird die Eigenschaft <span class="clisting">Cancel</span> des <span class="clisting">MovingEventArgs</span>-Objekts untersucht. Hat der Benutzer mit <span class="clisting">true</span> kundgetan, doch nicht zu verschieben, wird <span class="clisting">Move</span> mit <span class="clisting">return</span> beendet. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public abstract class GeometricObject</span> {<br></br>  // Ereignisse<br></br>  public event MovingEventHandler Moving;<br xmlns="">  public event MovedEventHandler Moved;<br></br>  // Geschützte Methoden<br></br>  <span class="clistingfett">protected virtual void OnMoving(MovingEventArgs e)</span>{<br xmlns="">    if (Moving != null)<br xmlns="">      Moving(this, e);<br></br>  }<br></br><span class="clistingfett">  protected virtual void OnMoved(EventArgs e)</span>{<br xmlns="">    if (Moved != null)<br xmlns="">      Moved(this, e);<br xmlns="">  }<br></br><span class="clistingfett">  public virtual void Move(double dx, double dy)</span>{<br></br>    // Moving-Ereignis<br></br>    MovingEventArgs e = new MovingEventArgs();<br xmlns="">    OnMoving(e);<br xmlns="">    if (e.Cancel == true) return;<br xmlns="">    XCoordinate += dx;<br xmlns="">    YCoordinate += dy;<br></br>    // Moved-Ereignis<br></br>    OnMoved(new EventArgs());<br xmlns="">  }<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.30  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772227"></a>Ergänzung der Klasse »GeometricObject«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit sind wir aber noch nicht fertig. Wir müssen uns noch einmal die Überladung der
+                                                      Methode <span class="clisting">Move</span> in <span class="clisting">Circle</span> genau ansehen, die momentan immer noch wie folgt implementiert ist:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public virtual void Move(double dx, double dy, int dRadius)<br xmlns="">{<br xmlns="">  Move(dx, dy);<br xmlns="">  Radius += dRadius;<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Aufruf von <span class="clisting">Move</span> in der ersten Anweisung könnte die eingeleitete Verschiebung noch abgebrochen werden.
+                                                      Das wird auch gemacht, aber nur halbherzig. Denn die Bezugskoordinaten werden zwar
+                                                      in X- und Y-Richtung nicht verschoben, aber der Radius wird trotzdem geändert, weil
+                                                      die zweite Anweisung in der dreifach parametrisierten <span class="clisting">Move</span>-Methode keine Kenntnis vom Abbruch der Operation bekommt. Besser wäre es stattdessen,
+                                                      den Aufruf der zweifach parametrisierten Methode durch die vollständige Implementierung
+                                                      zu ersetzen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual void Move(double dx, double dy, int dRadius) </span>{<br xmlns="">  MovingEventArgs e = new MovingEventArgs();<br></br>  // Moving-Ereignis auslösen<br></br>  OnMoving(e);<br xmlns="">  if (e.Cancel == true) return;<br xmlns="">  XCoordinate += dx;<br xmlns="">  YCoordinate += dy;<br xmlns="">  Radius += dRadius;<br></br>  // Moved-Ereignis auslösen<br></br>  OnMoved(new EventArgs());<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.31  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772236"></a>Änderung der überladenen »Move«-Methode
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In gleicher Weise muss auch die vierfach parametrisierte <span class="clisting">Move</span>-Methode in <span class="clisting">Rectangle</span> angepasst werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Sie finden den kompletten Code des überarbeiteten Beispiels auf der Buch-DVD unter
+                                                         <span class="ckursiv"><br xmlns="">\Beispiele\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825"><span class="ckursiv">Kapitel 5</span></a></span><span class="ckursiv">\GeometricObjectsSolution_6</span>.
+                                                      </p>
+                                                   </div><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs05_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="5  Delegates und Ereignisse"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_05_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_06_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

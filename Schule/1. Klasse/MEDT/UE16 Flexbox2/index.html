@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Flexbox 3</title>
+        <style>
+            .flex-container{
+                display: flex;
+            }
+            .center{
+                text-align: center;
+                padding: 3px;
+            }
+            .space-between{
+                justify-content: space-between;
+            }
+            .inline{
+                display: inline;
+            }
+            .block{
+                display: block;
+            }
+            .margin{
+                margin: 10px;
+            }
+            .grün{
+                background-color: #93c940;
+            }
+            .border{
+                border: 1px solid black;
+                border-radius: 5px;
+            }
+            .flex-basis1{
+                flex-basis: 10%;
+            }
+            .flex-height1{
+                padding: 15px 0px 15px 0px;
+            }
+            .flex-height2{
+                height: 60px;
+            }
+            .flex-height3{
+                height: 70px;
+            }
+            .flex-height4{
+                height: 90px;
+            }
+            .flex-basis2{
+                flex-basis: 35%;
+            }
+            .flex-basis3{
+                flex-basis: 50%;
+            }
+            .align-itmes1{
+                align-self: flex-end;
+            }
+            .align-itmes2{
+                align-self: center;
+            }
+            .align-itmes3{
+                align-self: flex-start;
+            }
+            .border2{
+                border: 1px solid #93c940;
+            }
+            .width1{
+                width: 30%;
+            }
+            .width2{
+                width: 70%;
+            }
+        </style><!-- border-radius rundet die Ecken ab (ich mag das)-->
+    </head>
+    <body>
+        <h1>Flexbox 3</h1>
+        <div class="flex-container border space-between">
+            <div class="center inline grün border margin flex-basis1 flex-height1 align-itmes3"><!-- justify-content: space-between; sorgt dafür, dass zwischen den Elementen gleicher Abstand ist und die Elemente bis an den Rand gehen-->
+                <b>1</b>
+            </div>
+            <div class="center inline grün border margin flex-basis2 align-itmes1 flex-height2"><!-- align-self: flex-end; sorgt dafür, dass dieses eine Element unten am flex-container haftet-->
+                <b>2</b>
+            </div>
+            <div class="center inline grün border margin flex-basis1 flex-height3"><!-- flex-basis: 10%; sorgt dafür, dass dieses Element so breit ist, wie 10% des gesamten Flex-containers, dies muss nicht stimmen, wenn die Prozent insgesamt nicht 100% ergeben, weil der Browser das dann umrechnet-->
+                <b>3</b>
+            </div>
+            <div class="center inline grün border margin flex-basis3 align-itmes2 flex-height1"><!--die height sorgt dafür, dass dieses Element eine bestimmte Höhe hat. Der gesamte Block mit dieser Höhe wird dann mit align-self-center; in die Mitte verschoben, sodass die Mitte des gesamten Elements gleich der Mitte des Flex-containers entspricht-->
+                <b>4</b>
+            </div>
+            <div class="center inline grün border margin flex-basis1 flex-height4"><!-- grün sorgt dafür, dass der Hintergrund grün ist-->
+                <b>5</b>
+            </div>
+        </div>
+        <br>
+        <div>
+            <div class="border2">
+                Kopfbereich
+            </div>
+            <div class="flex-container border2">
+                <span class="inline border2 width1">
+                Navigation
+                </span>
+                <span class="inline border2 width2">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </span>
+            </div>
+
+            <div class="border2">
+                Fußbereich
+            </div>
+        </div>
+    </body>
+</html>

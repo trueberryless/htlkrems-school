@@ -1,0 +1,954 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 4  Vererbung, Polymorphie und Interfaces">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 4  Vererbung, Polymorphie und Interfaces">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 4  Vererbung, Polymorphie und Interfaces</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="03_011.html">
+      <link rel="next" href="1997_04_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_03_011.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_04_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393" class="navh">4 Vererbung, Polymorphie und Interfaces</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_001.html#dodtpb39b352a-c380-4194-9086-ec49fc9045d4" class="navh">4.1 Die Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4" class="navh">4.1.1 Basisklassen und abgeleitete Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0" class="navh">4.1.2 Die Ableitung einer Klasse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtpcb1fa25e-1244-43a7-8339-5638dce130db" class="navh">4.1.3 Klassen, die nicht abgeleitet werden können</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp21097f61-d850-47cc-b369-c626d6bd4ee9" class="navh">4.1.4 Konstruktoren in abgeleiteten Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtpfce7a289-dd48-4185-9349-62af9ac7f68b" class="navh">4.1.5 Der Zugriffsmodifizierer »protected«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_001.html#dodtp1c86b6a7-0dd3-4a4a-b4e4-7189be1cf120" class="navh">4.1.6 Die Konstruktorverkettung in der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_002.html#dodtp48ce1621-adbd-4e05-8975-5a0cc38a376a" class="navnav">4.2 Der Problemfall geerbter Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtp597628cc-9425-44ce-b09d-1ea27f52c744" class="navnav">4.2.1 Geerbte Methoden mit »new« verdecken</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtpe17ade14-fcf1-49db-bd2d-0fde07ac1d84" class="navnav">4.2.2 Abstrakte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_002.html#dodtpc8300b22-1ba9-45ab-8aab-6d7dc58954e7" class="navnav">4.2.3 Virtuelle Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_003.html#dodtp4c233a44-da0a-47ad-a609-aa7472338561" class="navnav">4.3 Typumwandlung und Typuntersuchung von Objektvariablen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp5d2380cc-7049-4f0f-82ff-73e0fdee276a" class="navnav">4.3.1 Die implizite Typumwandlung von Objektreferenzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp4feec18f-acaf-44f6-9709-b38d299b28c8" class="navnav">4.3.2 Die explizite Typumwandlung von Objektreferenzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp88f54f27-c765-4fc9-bfd7-5c3f42e6b089" class="navnav">4.3.3 Typuntersuchung mit dem »is«-Operator</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_003.html#dodtp87d220db-6686-4ea1-8ed3-23881910462d" class="navnav">4.3.4 Typumwandlung mit dem »as«-Operator</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_004.html#dodtpe80f90c9-39aa-433e-94b9-86cd3538acfb" class="navnav">4.4 Polymorphie</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtpe3a8024c-81c4-42ed-970f-f820e4031a5f" class="navnav">4.4.1 Die »klassische« Methodenimplementierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtp174b6608-c108-4e8c-8b0e-30482977e11d" class="navnav">4.4.2 Abstrakte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_004.html#dodtpdaee6645-690b-4856-b485-f0fda30ad114" class="navnav">4.4.3 Virtuelle Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_005.html#dodtp97127ecd-ebc8-476f-9005-fa2947fc504c" class="navnav">4.5 Weitere Gesichtspunkte der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp25b5dce4-4d37-447d-9a6b-ac1241299211" class="navnav">4.5.1 Versiegelte Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtpfd75a6e6-2e94-41c5-8b8a-2ff86fb21c51" class="navnav">4.5.2 Überladen einer Basisklassenmethode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp34707172-aab9-41bd-82a5-c2e40038a6ca" class="navnav">4.5.3 Statische Member und Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_005.html#dodtp1e5728e7-792f-422f-8b84-9d926e90891b" class="navnav">4.5.4 Geerbte Methoden ausblenden?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_006.html#dodtp62bc2525-5244-4212-a412-ab2227c967aa" class="navnav">4.6 Das Projekt »GeometricObjectsSolution« ergänzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_006.html#dodtp058bf84a-764f-4d26-9324-bbb50306b215" class="navnav">4.6.1 Die Klasse »GeometricObject«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_007.html#dodtp9b4d9fda-7884-42d1-ad43-74a80ba14d9d" class="navnav">4.7 Eingebettete Klassen (Nested Classes)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_008.html#dodtpb69e3663-544c-4d13-a23a-6031dbfdf8df" class="navnav">4.8 Interfaces (Schnittstellen)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp4efa077f-0196-4440-bd5f-c12ccfbeaecb" class="navnav">4.8.1 Einführung in die Schnittstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp00171ed7-19d6-4946-b2fd-c29314725655" class="navnav">4.8.2 Die Schnittstellendefinition</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtpb84c1fe8-ce59-4334-a3f2-6287c53e549d" class="navnav">4.8.3 Die Schnittstellenimplementierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtp6a7cb643-df8d-4fea-8f05-889a784c3dac" class="navnav">4.8.4 Die Interpretation der Schnittstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_008.html#dodtpaaa9046d-e755-4084-88a5-7c65b9f10167" class="navnav">4.8.5 Änderungen am Projekt »GeometricObjects«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_04_009.html#dodtp474a4423-984d-4fb6-bf29-bb979a35d611" class="navnav">4.9 Das Zerstören von Objekten &#8211; der »Garbage Collector«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtpd0d03b7b-ef8f-4711-bd32-81bd61392c7b" class="navnav">4.9.1 Die Arbeitsweise des Garbage Collectors</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp1705ec63-8a73-420d-9ce7-b2a429ae49e9" class="navnav">4.9.2 Expliziter Aufruf des Garbage Collectors</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp0c56dd86-f7fd-45d3-b422-bd397f3ad2b8" class="navnav">4.9.3 Der Destruktor</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtpbcff0975-384e-4183-b63c-7871310d8fdc" class="navnav">4.9.4 Die »IDisposable«-Schnittstelle</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_04_009.html#dodtp52f2c7a8-1275-4f06-8a24-fed11c84fcc6" class="navnav">4.9.5 Die Ergänzungen in den Klassen »Circle« und »Rectangle«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393" name="dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393"></a><h1 class="t1"><span class="cfett">4 </span><span class="cfett"> Vererbung, Polymorphie und Interfaces</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb39b352a-c380-4194-9086-ec49fc9045d4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpb39b352a-c380-4194-9086-ec49fc9045d4" name="dodtpb39b352a-c380-4194-9086-ec49fc9045d4"></a><h2 class="t2"><span class="cfett">4.1    </span><span class="cfett"> Die Vererbung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die objektorientierte Programmierung baut auf drei Säulen auf: Datenkapselung, Vererbung
+                                                      und Polymorphie. Viele Entwickler sprechen sogar von vier Säulen, weil sie die Klassendefinition
+                                                      mit einbeziehen. Über Letzteres lässt sich trefflich diskutieren, da eine Klassendefinition
+                                                      selbst wieder das Fundament der anderen drei Säulen ist. Aber wie dem auch sei, zwei
+                                                      Säulen bleiben für uns noch übrig, nämlich die Vererbung und die Polymorphie. Beiden
+                                                      wollen wir uns in diesem Kapitel widmen.<a class="indexterm" id="dodtp7fe036a6-2b20-4d47-aede-df740de1b574"></a></p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4" name="dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4"></a><h3 class="t3"><span class="cfett">4.1.1    </span><span class="cfett"> Basisklassen und abgeleitete Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb39b352a-c380-4194-9086-ec49fc9045d4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Welche Fähigkeit würden Sie von einem <span class="clisting">Circle</span>-Objekt neben den bereits implementierten Fähigkeiten noch erwarten? Wahrscheinlich
+                                                      eine ganz wesentliche, nämlich die Fähigkeit, sich in einer beliebigen grafikfähigen
+                                                      Komponente visualisieren zu können. Bisher fehlt dazu noch eine passende Methode.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">Circle</span> soll jedoch von uns als abgeschlossen betrachtet werden. Damit simulieren wir zwei
+                                                      Ausgangssituationen, die in der täglichen Praxis häufig auftreten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die Implementierung einer Klasse, wie beispielsweise <span class="clisting">Circle</span>, ist für viele Anwendungsfälle völlig ausreichend. Eine Ergänzung der Memberliste
+                                                         würde nicht allgemeinen, sondern nur speziellen Zusatzanforderungen genügen.
+                                                      </li>
+                                                      <li class="pgp">Die Klasse liegt im kompilierten Zustand vor. Damit besteht auch keine Möglichkeit,
+                                                         den Quellcode der Klasse um weitere Fähigkeiten zu ergänzen.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie kann das Problem gelöst werden, eine Klasse um zusätzliche Fähigkeiten zu erweitern,
+                                                      damit sie weiter gehenden Anforderungen gewachsen ist?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Antwort ist sehr einfach und lautet: Es muss eine weitere Klasse entwickelt werden.
+                                                      Diese soll im weiteren Verlauf <span class="clisting">GraphicCircle</span><span class="ckursiv"> </span>heißen. Die zusätzliche Klasse soll einerseits alle Fähigkeiten der Klasse <span class="clisting">Circle</span> haben und darüber hinaus auch noch eine Methode namens <span class="clisting">Draw</span>, um das Objekt zu zeichnen. Mit der <span class="cfett">Vererbung</span>, einer der eingangs erwähnten Säulen der objektorientierten Programmierung, ist die
+                                                      Lösung sehr einfach zu realisieren.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Klasse, die ihre Member als Erbgut einer abgeleiteten Klasse zur Verfügung stellt,
+                                                      wird als <span class="cfett">Basisklasse</span> bezeichnet. Die erbende Klasse ist die <span class="cfett">Subklasse </span>oder einfach nur die<span class="cfett"> abgeleitete Klasse</span>. Dem Grundprinzip der Vererbung folgend, verfügen abgeleitete Klassen normalerweise
+                                                      über mehr Funktionalitäten als ihre Basisklasse.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zwei Klassen, die miteinander in einer Vererbungsbeziehung stehen, werden, wie in
+                                                      Abbildung 4.1 gezeigt, durch einen Beziehungspfeil von der abgeleiteten Klasse in
+                                                      Richtung der Basisklasse dargestellt.
+                                                   </p>
+                                                   <p><a href="bilder/04_01.png" rel="lightbox" title="Die Vererbungsbeziehung zwischen den Klassen »Circle« und »GraphicCircle«    "><img class="bild" border="1" src="bilderklein/klein04_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 4.1  </span>Die Vererbungsbeziehung zwischen den Klassen »Circle« und »GraphicCircle«    
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Vererbungslinie ist nicht zwangsläufig mit dem Ableiten einer Klasse aus einer
+                                                      Basisklasse beendet. Eine Subklasse kann ihrerseits selbst zur Basisklasse mutieren,
+                                                      wenn sie selbst abgeleitet wird. Es ist auch möglich, von einer Klasse mehrere Subklassen
+                                                      abzuleiten, die dann untereinander beziehungslos sind. Am Ende kann dadurch eine nahezu
+                                                      beliebig tiefe und weit verzweigte Vererbungshierarchie entstehen, die einer Baumstruktur
+                                                      ähnelt. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jeder Baum hat einen Stamm. Genauso sind auch alle Klassen von .NET auf eine allen
+                                                      gemeinsame Klasse zurückzuführen: <span class="clisting">Object</span>. Diese Klasse ist die einzige in der .NET-Klassenbibliothek, die selbst keine Basisklasse
+                                                      hat. Geben Sie bei einer Klassendefinition keine Basisklasse explizit an, ist <span class="clisting">Object</span><span class="clisting"><a class="indexterm" id="dodtp2c17af9e-8e25-4fa5-94fc-0029b944d65d"></a></span> immer die direkte Basisklasse. Deshalb finden Sie in der IntelliSense-Hilfe auch
+                                                      immer die Methoden <span class="clisting">Equals</span>, <span class="clisting">GetType</span>, <span class="clisting">ToString</span> und <span class="clisting">GetHashCode</span>, die aus <span class="clisting">Object</span> geerbt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Prinzipiell wird in der Objektorientierung zwischen der <span class="cfett">Einfach- </span>und der <span class="cfett">Mehrfachvererbung</span><span class="cfett"><a class="indexterm" id="dodtp42901149-0b48-4a34-be10-7b81920f58f6"></a></span> unterschieden. Bei der einfachen Vererbung hat eine Klasse nur eine direkte Basisklasse,
+                                                      bei der Mehrfachvererbung können es mehrere sein. Eine Klassenhierarchie, die auf
+                                                      Mehrfachvererbung basiert, ist komplex und kann unter Umständen zu unerwarteten Nebeneffekten
+                                                      führen. Um solchen Konflikten aus dem Weg zu gehen, wird die Mehrfachvererbung von
+                                                      .NET nicht unterstützt. Damit werden einerseits zwar bewusst Einschränkungen in Kauf
+                                                      genommen, die aber andererseits durch die Schnittstellen (<span class="clisting">interfaces</span>) nahezu gleichwertig ersetzt werden. Das Thema der Interfaces wird uns später in
+                                                      diesem Kapitel noch beschäftigen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0" name="dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0"></a><h3 class="t3"><span class="cfett">4.1.2    </span><span class="cfett"> Die Ableitung einer Klasse</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcb1fa25e-1244-43a7-8339-5638dce130db"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2b34f83b-42d9-4027-9127-c364dc7e92a4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenden wir uns nun wieder unserem Beispiel zu, und ergänzen wir das Projekt <span class="clisting">GeometricObjectsSolution</span> um die Klasse <span class="clisting">GraphicCircle</span>, die die Klasse <span class="clisting">Circle</span> ableiten soll. Zudem soll <span class="clisting">GraphicCircle</span> um die typspezifische Methode <span class="clisting">Draw</span> erweitert werden. Die Ableitung wird in der neuen Klassendefinition durch einen Doppelpunkt
+                                                      und die sich daran anschließende Bekanntgabe der Basisklasse zum Ausdruck gebracht:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class GraphicCircle : Circle </span><br xmlns="">{<span class="clistingfett"><br xmlns="">  public void Draw() </span>{<br xmlns="">    Console.WriteLine("Der Kreis wird gezeichnet");<br xmlns="">  }<br xmlns="">} <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.1  </span>Die Definition der abgeleiteten Klasse »GraphicCircle«
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wir wollen an dieser Stelle das Kreisobjekt nicht wirklich zeichnen, sondern nur stellvertretend
+                                                         eine Zeichenfolge an der Konsole ausgeben.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Konsequenz der Vererbung können Sie zu diesem Zeitpunkt bereits sehen, wenn Sie
+                                                      ein Objekt des Typs <span class="clisting">GraphicCircle</span> mit 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">GraphicCircle gCircle = new GraphicCircle();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">erzeugen und danach die Punktnotation auf den Objektverweis anwenden: In der IntelliSense-Hilfe
+                                                      werden neben der neuen Methode <span class="clisting">Draw</span> alle öffentlichen Mitglieder der Klasse <span class="clisting">Circle</span> angezeigt, obwohl diese in der abgeleiteten Klasse nicht definiert sind (siehe Abbildung
+                                                      4.2). Natürlich fehlen auch nicht die aus <span class="clisting">Object</span> geerbten Methoden, die ebenfalls über die »Zwischenstation« <span class="clisting">Circle</span> zu Mitgliedern der Klasse <span class="clisting">GraphicCircle</span> werden.
+                                                   </p>
+                                                   <p><a href="bilder/04_02.png" rel="lightbox" title="Die von der Klasse »Circle« geerbten Fähigkeiten"><img class="bild" border="1" src="bilderklein/klein04_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 4.2  </span>Die von der Klasse »Circle« geerbten Fähigkeiten
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Tatsache, dass ein Objekt vom Typ <span class="clisting">GraphicCircle</span> alle Komponenten der Klasse <span class="clisting">Circle</span> offenlegt, lässt unweigerlich den Schluss zu, dass das Objekt einer abgeleiteten
+                                                      Klasse auch gleichzeitig ein Objekt der Basisklasse sein muss. Zwischen den beiden
+                                                      in der Vererbungshierarchie in Beziehung stehenden Klassen existiert eine Beziehung,
+                                                      die als <span class="cfett">Ist-ein(e)-Beziehung</span><span class="cfett"><a class="indexterm" id="dodtp9b249132-4b6c-4061-a78c-9b39f1280b22"></a></span> bezeichnet wird. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Ein Objekt vom Typ einer abgeleiteten Klasse ist gleichzeitig auch <span class="cfett">immer</span> ein Objekt vom Typ seiner Basisklasse. 
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das bedeutet konsequenterweise, dass ein Objekt vom Typ <span class="clisting">GraphicCircle</span> gleichzeitig auch ein Objekt vom Typ <span class="clisting">Object</span> ist &#8211; so wie auch ein <span class="clisting">Circle</span>-Objekt vom Typ <span class="clisting">Object</span> ist. Letztendlich ist alles im .NET Framework vom Typ <span class="clisting">Object</span>. Eine weitere wichtige Schlussfolgerung kann ebenfalls daraus gezogen werden: In
+                                                      Richtung der Basisklassen werden die Objekte immer allgemeiner, in Richtung der abgeleiteten
+                                                      Klassen immer spezialisierter.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Aussage, dass es sich bei der Vererbung um die codierte Darstellung einer <span class="ckursiv">Ist-ein(e)-Beziehung</span> handelt, sollten Sie sich sehr gut einprägen. Es hilft dabei, Vererbungshierarchien sinnvoll und realitätsnah umzusetzen. Sie werden dann sicher nicht auf die Idee kommen, aus einem Elefanten eine Mücke abzuleiten, nur weil der Elefant vier Beine hat und eine Mücke sechs. Sie würden in dem Sinne zwar aus einer Mücke einen Elefanten machen, aber eine Mücke ist nicht gleichzeitig ein Elefant ...
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcb1fa25e-1244-43a7-8339-5638dce130db" name="dodtpcb1fa25e-1244-43a7-8339-5638dce130db"></a><h3 class="t3"><span class="cfett">4.1.3    </span><span class="cfett"> Klassen, die nicht abgeleitet werden können</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp21097f61-d850-47cc-b369-c626d6bd4ee9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp247c05e5-bf06-483d-a4b2-0ab5ee05d5d0"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Klassen, die als »sealed« definiert sind</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Klassen, die abgeleitet werden, vererben den abgeleiteten Klassen ihre Eigenschaften
+                                                      und Methoden. Es kommt aber immer wieder vor, dass die weitere Ableitung einer Klasse
+                                                      keinen Sinn ergibt oder sogar strikt unterbunden werden muss, weil die von der Klasse
+                                                      zur Verfügung gestellten Dienste als endgültig betrachtet werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um sicherzustellen, dass eine Klasse nicht weiter abgeleitet werden kann, wird die
+                                                      Klassendefinition um den Modifizierer <span class="clisting">sealed</span><span class="clisting"><a class="indexterm" id="dodtp61a976b1-8d59-482f-bdd2-b339b9e12208"></a></span> ergänzt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public sealed class GraphicCircle </span>{[...]}<br></pre></div>
+                                                   <h4 class="t4"> Statische Klassen und Vererbung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben <span class="clisting">sealed</span>-Klassen sind auch statische Klassen nicht vererbungsfähig. Darüber hinaus dürfen
+                                                      statische Klassen auch nicht aus einer beliebigen Klasse abgeleitet werden. Die einzig
+                                                      mögliche Basisklasse ist <span class="clisting">Object</span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp21097f61-d850-47cc-b369-c626d6bd4ee9" name="dodtp21097f61-d850-47cc-b369-c626d6bd4ee9"></a><h3 class="t3"><span class="cfett">4.1.4    </span><span class="cfett"> Konstruktoren in abgeleiteten Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa1db8480-a537-4bfc-8459-6941331306b2"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfce7a289-dd48-4185-9349-62af9ac7f68b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpaa8f8d83-c2a0-450e-ab64-6c0ecd8b5578"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der Erzeugung des Objekts einer abgeleiteten Klasse gelten dieselben Regeln wie
+                                                      beim Erzeugen des Objekts einer Basisklasse:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Es wird generell ein Konstruktor aufgerufen. </li>
+                                                      <li class="pgp">Der Subklassenkonstruktor darf überladen werden.</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Konstruktoren werden grundsätzlich nicht von der Basisklasse an die Subklasse weitervererbt.
+                                                      Daher müssen alle erforderlichen bzw. gewünschten Konstruktoren in der abgeleiteten
+                                                      Klasse definiert werden. Das gilt auch für den statischen Initialisierer. Abgesehen
+                                                      vom impliziten, parameterlosen Standardkonstruktor
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public GraphicCircle(){}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ist die Klasse <span class="clisting">GraphicCircle</span> daher noch ohne weiteren Konstruktor. Um dem Anspruch zu genügen, einem <span class="clisting">Circle</span>-Objekt auch hinsichtlich der Instanziierbarkeit gleichwertig zu sein, benötigen wir
+                                                      insgesamt drei Konstruktoren, die in der Lage sind, entweder den Radius oder den Radius
+                                                      samt den beiden Bezugspunktkoordinaten entgegenzunehmen. Außerdem müssen wir berücksichtigen,
+                                                      dass Objekte vom Typ <span class="clisting">GraphicCircle</span> gleichzeitig Objekte vom Typ <span class="clisting">Circle</span> sind. Die logische Konsequenz ist, den Objektzähler mit jedem neuen <span class="clisting">GraphicCircle</span>-Objekt zu erhöhen. Mit diesen Vorgaben, die identisch mit denen in der Basisklasse
+                                                      sind, sieht der erste und, wie Sie noch sehen werden, etwas blauäugige und sogar naive
+                                                      Entwurf der Erstellungsroutinen in der Klasse <span class="clisting">GraphicCircle</span> zunächst wie in Listing 4.2 gezeigt aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class GraphicCircle : Circle </span>{<br></br>  <span class="clistingfett">public GraphicCircle() : this(0, 0, 0) </span>{ }<br></br><span class="clistingfett">  public GraphicCircle(int radius) : this(radius, 0, 0) </span>{ }<br></br><span class="clistingfett">  public GraphicCircle(int radius, double x, double y) </span>{<br xmlns="">    Radius = radius;<br xmlns="">    XCoordinate = x;<br xmlns="">    YCoordinate = y;<br xmlns="">    Circle._CountCircles++;<br xmlns="">  }<br xmlns="">} <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.2  </span>Erste Idee der Konstruktorüberladung in »GraphicCircle«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Versuch, diesen Programmcode zu kompilieren, endet jedoch in einem Fiasko, denn
+                                                      der C#-Compiler kann das Feld <span class="clisting">_CountCircles</span> nicht erkennen und verweigert deswegen die Kompilierung. Der Grund hierfür ist recht
+                                                      einfach: Das Feld ist in der Basisklasse <span class="clisting">Circle private</span> deklariert. Private Member sind aber grundsätzlich nur in der Klasse sichtbar, in
+                                                      der sie deklariert sind. Obwohl aus objektorientierter Sicht ein Objekt vom Typ <span class="clisting">GraphicCircle</span> auch gleichzeitig ein Objekt vom Typ <span class="clisting">Circle</span> ist, kann die strikte Kapselung einer privaten Variablen durch die Vererbung nicht
+                                                      aufgebrochen werden. Nur der Code in der Klasse <span class="clisting">Circle</span> hat Zugriff auf die in dieser Klasse definierten privaten Klassenmitglieder.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpfce7a289-dd48-4185-9349-62af9ac7f68b" name="dodtpfce7a289-dd48-4185-9349-62af9ac7f68b"></a><h3 class="t3"><span class="cfett">4.1.5    </span><span class="cfett"> Der Zugriffsmodifizierer »protected«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc8ca829a-94d3-4e94-b00c-d9c227a7ff24"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1c86b6a7-0dd3-4a4a-b4e4-7189be1cf120"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp21097f61-d850-47cc-b369-c626d6bd4ee9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einen Ausweg aus diesem Dilemma, ein Klassenmitglied einerseits gegen den unbefugten
+                                                      Zugriff von außen zu schützen, es aber andererseits in einer abgeleiteten Klasse sichtbar
+                                                      zu machen, bietet der Zugriffsmodifizierer <span class="clisting">protected</span><span class="cfett"><a class="indexterm" id="dodtpbf106ac7-5276-4607-875b-085039db1d2c"></a></span>. Member, die als <span class="clisting">protected</span> deklariert sind, verhalten sich ähnlich wie <span class="clisting">private</span><span class="clisting"><a class="indexterm" id="dodtp6542d5c8-5d23-407e-a8ee-3cbb322a19ff"></a></span> deklarierte: Sie verhindern den unzulässigen Zugriff von außerhalb, garantieren jedoch
+                                                      andererseits, dass in einer abgeleiteten Klasse direkt darauf zugegriffen werden kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Erkenntnis führt zu einem Umdenken bei der Implementierung einer Klasse: Muss
+                                                      davon ausgegangen werden, dass die Klasse als Basisklasse ihre Dienste zur Verfügung
+                                                      stellt, sind alle privaten Member, die einer abgeleiteten Klasse zur Verfügung stehen
+                                                      sollen, <span class="clisting">protected</span> zu deklarieren. Daher müssen (oder besser »sollten« &#8211; siehe dazu auch die Anmerkung
+                                                      weiter unten) wir in der Klasse <span class="clisting">Circle</span> noch folgende Änderungen vornehmen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Änderung der privaten Felder in der Klasse Circle <br></br>protected int _Radius;<br xmlns="">protected static int _CountCircles;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erst jetzt vererbt die Klasse <span class="clisting">Circle</span> alle Member an die Ableitung <span class="clisting">GraphicCircle</span>, und der C#-Compiler wird keinen Fehler mehr melden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Selbstverständlich könnte man an dieser Stelle auch argumentieren, dass der Modifikator
+                                                         <span class="clisting">private</span> eines Feldes aus der Überlegung heraus gesetzt worden ist, mögliche unzulässige Werte
+                                                         von vornherein zu unterbinden und &#8211; zumindest im Fall unseres Radius &#8211; den Zugang
+                                                         nur über <span class="clisting">get</span> und <span class="clisting">set</span> der Eigenschaftsmethode zu erzwingen. Andererseits kann man dem auch entgegenhalten,
+                                                         dass man bei der Bereitstellung einer ableitbaren Klasse nicht weiß, welche Intention
+                                                         hinter der Ableitung eine wichtige Rolle spielt. Mit dieser Argumentation ist eine
+                                                         »Aufweichung« des gekapselten Zugriffs durch <span class="clisting">protected</span> durchaus vertretbar. In einer so geführten Diskussion muss dann aber auch noch ein
+                                                         weiterer Gesichtspunkt angeführt werden: Die Eigenschaftsmethode kann in einer ableitbaren
+                                                         Klasse auch neu implementiert werden. Darauf kommen wir später in diesem Kapitel noch
+                                                         zu sprechen. 
+                                                      </p>
+                                                      <p class="pbstandard">Was also ist zu tun? <span class="clisting">private</span> oder <span class="clisting">protected</span>? Eine allgemeingültige Antwort gibt es nicht. Im Einzelfall müssen Sie selbst entscheiden,
+                                                         welchen Zugriffsmodifikator Sie für das Feld benutzen. Einfacher gestaltet sich die
+                                                         Diskussion nur hinsichtlich der Methoden. Wenn Sie den Zugriff aus einer abgeleiteten
+                                                         Klasse heraus auf eine Methode nicht wünschen, muss sie <span class="clisting">private</span> definiert werden, ansonsten <span class="clisting">protected</span>.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1c86b6a7-0dd3-4a4a-b4e4-7189be1cf120" name="dodtp1c86b6a7-0dd3-4a4a-b4e4-7189be1cf120"></a><h3 class="t3"><span class="cfett">4.1.6    </span><span class="cfett"> Die Konstruktorverkettung in der Vererbung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8938d26d-2224-4fec-ac62-22e9e93ed633"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpce9537b4-233f-4509-84a8-6218b129b35f"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfce7a289-dd48-4185-9349-62af9ac7f68b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen nun die Implementierung in <span class="clisting">Main</span> testen, indem wir ein Objekt des Typs <span class="clisting">GraphicCircle</span> erzeugen und uns den Stand des Objektzählers, der von der <span class="clisting">Circle</span>-Klasse geerbt wird, an der Konsole ausgeben lassen. Der Code dazu lautet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  GraphicCircle gc = new GraphicCircle();<br xmlns="">  Console.WriteLine("Anzahl der Kreise = {0}", GraphicCircle.CountCircles);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.3  </span>Testen der Konstruktoren von »GraphicCircle« mit unerwartetem Resultat
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Völlig unerwartet werden wir mit folgender Situation konfrontiert: Mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Anzahl der Kreise = 2<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird uns suggeriert, wir hätten zwei Kreisobjekte erzeugt, obwohl wir doch tatsächlich
+                                                      nur einmal den <span class="clisting">new</span>-Operator benutzt haben und sich folgerichtig auch nur ein konkretes Objekt im Speicher
+                                                      befinden kann. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis ist falsch und beruht auf der bisher noch nicht berücksichtigten Aufrufverkettung
+                                                      zwischen den Sub- und Basisklassenkonstruktoren. Konstruktoren werden bekanntlich
+                                                      nicht vererbt und müssen deshalb &#8211; falls erforderlich &#8211; in jeder abgeleiteten Klasse
+                                                      neu definiert werden. Dennoch kommt den Konstruktoren der Basisklasse eine entscheidende
+                                                      Bedeutung zu. Bei der Initialisierung eines Subklassenobjekts wird nämlich in jedem
+                                                      Fall zuerst ein Basisklassenkonstruktor aufgerufen. Es kommt zu einer Top-down-Verkettung
+                                                      der Konstruktoren, angefangen bei der obersten Basisklasse (<span class="clisting">Object</span>) bis hinunter zu der Klasse, deren Konstruktor aufgerufen wurde (siehe Abbildung
+                                                      4.3).
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Verkettung der Konstruktoraufrufe dient dazu, zunächst die geerbten Komponenten
+                                                      der Basisklasse zu initialisieren. Erst danach wird der Konstruktor der direkten Subklasse
+                                                      ausgeführt, der eigene Initialisierungen vornehmen kann und gegebenenfalls auch die
+                                                      Vorinitialisierung der geerbten Komponenten an die spezifischen Bedürfnisse der abgeleiteten
+                                                      Klasse anpasst. Standardmäßig wird dabei immer zuerst der parameterlose Konstruktor
+                                                      der Basisklasse aufgerufen.
+                                                   </p>
+                                                   <p><a href="bilder/04_03.png" rel="lightbox" title="Die Verkettung der Konstruktoraufrufe in einer Vererbungshierarchie"><img class="bild" border="1" src="bilderklein/klein04_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 4.3  </span>Die Verkettung der Konstruktoraufrufe in einer Vererbungshierarchie
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Konstruktorverkettung hat maßgeblichen Einfluss auf die Modellierung einer Klasse,
+                                                      die parametrisierte Konstruktoren enthält. Eine »konstruktorlose« Klasse hat grundsätzlich
+                                                      immer einen impliziten, parameterlosen Konstruktor. Ergänzt man jedoch eine Klasse
+                                                      um einen parametrisierten Konstruktor, existiert der implizite, parameterlose nicht
+                                                      mehr. Wird nun das Objekt einer abgeleiteten Klasse erzeugt, kommt es zum Aufruf des
+                                                      parameterlosen Konstruktors der Basisklasse. Wird dieser durch parametrisierte Konstruktoren
+                                                      überschrieben und nicht explizit codiert, meldet der Compiler einen Fehler.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sollten sich dessen bewusst sein, wenn Sie eine ableitbare Klasse entwickeln und
+                                                      parametrisierte Konstruktoren hinzufügen. Das Problem ist sehr einfach zu lösen, indem
+                                                      Sie einen parameterlosen Konstruktor in der Basisklasse definieren.
+                                                   </p>
+                                                   <h4 class="t4"> Die Konstruktorverkettung mit »base« steuern</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun erklärt sich auch das scheinbar unsinnige Ergebnis des Objektzählers im vorhergehenden
+                                                      Abschnitt, der bei der Instanziierung eines Objekts vom Typ <span class="clisting">GraphicCircle</span> behauptete, zwei Kreisobjekte würden vorliegen, obwohl es nachweislich nur ein einziges
+                                                      sein konnte. Durch die Konstruktorverkettung wird zunächst der parameterlose Konstruktor
+                                                      der Basisklasse <span class="clisting">Circle</span> aufgerufen, danach der der Klasse <span class="clisting">GraphicCircle</span>. In beiden wird der Objektzähler erhöht, was letztendlich zu einem falschen Zählerstand
+                                                      führt. Die Ursache des Problems ist die Duplizität der Implementierung der beiden
+                                                      parameterlosen Konstruktoren, nämlich in <span class="clisting">Circle</span><span class="ckursiv">:</span></p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public Circle(...) {<br xmlns="">  [...]<br xmlns="">  Circle._CountCircles++;<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">und in der von <span class="clisting">Circle</span> abgeleiteten Klasse <span class="clisting">GraphicCircle</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public GraphicCircle(...) {<br xmlns="">  [...]<br xmlns="">  Circle._CountCircles++;<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Betrachten wir noch einmal die Implementierung der Konstruktoren in <span class="clisting">GraphicCircle</span>: Alle Konstruktoraufrufe werden derzeit mit <span class="clisting">this</span><span class="clisting"><a class="indexterm" id="dodtp4406fb62-7743-4772-b638-706891ffcd88"></a></span> an den Konstruktor mit den meisten Parametern weitergeleitet. Bei der Erzeugung eines
+                                                      <span class="clisting">GraphicCircle</span>-Objekts wird zudem standardmäßig der parameterlose der Klasse <span class="clisting">Circle</span> aufgerufen, der den Aufruf seinerseits intern an den dreifach parametrisierten in
+                                                      dieser Klasse weiterleitet. Außerdem entspricht der Code in den Konstruktoren von
+                                                      <span class="clisting">GraphicCircle</span> exakt dem Code in den gleich parametrisierten Konstruktoren in <span class="clisting">Circle</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Optimal wäre es, anstelle des klassenintern weiterleitenden <span class="clisting">this</span>-Aufrufs in <span class="clisting">GraphicCircle</span> den Aufruf direkt an den gleich parametrisierten Konstruktor der Basisklasse <span class="clisting">Circle</span> zu delegieren. Dabei müssten die dem Konstruktor übergebenen Argumente an den gleich
+                                                      parametrisierten Konstruktor der Basisklasse weitergeleitet werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">C# bietet eine solche Möglichkeit mit dem Schlüsselwort <span class="clisting">base</span> an. Mit <span class="clisting">base</span> kann der Konstruktoraufruf einer Klasse an einen bestimmten Konstruktor der direkten
+                                                      Basisklasse umgeleitet werden. <span class="clisting">base</span> wird dabei genauso wie <span class="clisting">this</span> eingesetzt, das heißt, Sie können <span class="clisting">base</span> Argumente übergeben, um einen bestimmten Konstruktor in der Basis anzusteuern.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das objektorientierte Paradigma schreibt vor, dass aus einer abgeleiteten Klasse heraus
+                                                      mittels Aufrufverkettung zuerst immer ein Konstruktor der Basisklasse ausgeführt werden
+                                                      muss. Per Vorgabe ist das bekanntermaßen der parameterlose. Mit <span class="clisting">base</span> können wir die implizite, standardmäßige Konstruktorverkettung durch eine explizite
+                                                      ersetzen und die Steuerung selbst übernehmen: Es kommt zu keinem weiteren impliziten
+                                                      Aufruf des parameterlosen Basisklassenkonstruktors mehr.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unserem Beispiel der Klasse <span class="clisting">Circle</span> bietet es sich sogar an, sofort den dreifach parametrisierten Konstruktor der Basis
+                                                      aufzurufen. Sehen wir uns nun die überarbeitete Fassung der <span class="clisting">GraphicCircle</span>-Konstruktoren an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public GraphicCircle : <span class="clistingfett">base(0, 0, 0)</span> { }<br></br>public GraphicCircle(int radius) : <span class="clistingfett">base(radius, 0, 0)</span> { }<br></br>public GraphicCircle(int radius, double x, double y) <span class="clistingfett">: base(radius, x, y)</span>{ }<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.4  </span>Die endgültige Version der Konstruktoren in »GraphicCircle«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Schreiben wir jetzt eine Testroutine, z. B.:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">GraphicCircle gCircle = new GraphicCircle();<br xmlns="">Console.WriteLine("Anzahl der Kreise = {0}", GraphicCircle.CountCircles);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt wird die Ausgabe des Objektzählers tatsächlich den korrekten Stand wiedergeben.</p>
+                                                   <h4 class="t4"> Der Zugriff auf die Member der Basisklasse mit »base«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">base</span> kann nicht nur die Konstruktorverkettung explizit gesteuert werden. Sie können dieses
+                                                      Schlüsselwort auch dazu benutzen, um innerhalb einer abgeleiteten Klasse auf Member
+                                                      der Basisklasse zuzugreifen, solange sie nicht <span class="clisting">private</span> deklariert sind. Dabei gilt, dass die Methode der Basisklasse, auf die zugegriffen
+                                                      wird, durchaus eine von dieser Klasse selbst geerbte Methode sein kann, also aus Sicht
+                                                      der <span class="clisting">base</span>-implementierenden Subklasse aus einer indirekten Basisklasse stammt, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class BaseClass</span> {<br xmlns="">  <span class="clistingfett">public void DoSomething()</span> {<br xmlns="">    Console.WriteLine("In 'BaseClass.DoSomething()'");<br xmlns="">   }<br xmlns="">}<br></br><span class="clistingfett">class SubClass1 : BaseClass</span> {} <br></br><span class="clistingfett">class SubClass2 : SubClass1</span> {<br xmlns="">  public void BaseTest() {<br xmlns="">    base.DoSomething();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 4.5  </span>Methodenaufruf in der direkten Basisklasse
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein umgeleiteter Aufruf an eine indirekte Basisklasse mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// unzulässiger Aufruf<br></br>base.base.DoSomething();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ist nicht gestattet. Handelt es sich bei der über <span class="clisting">base</span> aufgerufenen Methode um eine parametrisierte, müssen den Parametern die entsprechenden
+                                                      Argumente übergeben werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">ba</span><span class="clisting"><a class="indexterm" id="dodtpc7814c56-1fec-46f1-8e2d-c290a871611e"></a>se</span> ist eine implizite Referenz und als solche an eine konkrete Instanz gebunden. Das
+                                                      bedeutet konsequenterweise, dass dieses Schlüsselwort nicht zum Aufruf von statischen
+                                                      Methoden verwendet werden kann.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs04_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="4  Vererbung, Polymorphie und Interfaces"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_03_011.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_04_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,623 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 37  Einführung in das ADO.NET Entity Framework">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 37  Einführung in das ADO.NET Entity Framework">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 37  Einführung in das ADO.NET Entity Framework</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="37_003.html">
+      <link rel="next" href="1997_37_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_37_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_37_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a" class="navnav">37 Einführung in das ADO.NET Entity Framework</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_001.html#dodtp84ebc805-0e5c-41c7-aa74-e9eac617f220" class="navnav">37.1 Kritische Betrachtung von ADO.NET</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_002.html#dodtpe6ffa70a-790d-4f1f-920a-4f84c7709eb5" class="navnav">37.2 Ein erstes Entity Data Model (EDM) erstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_003.html#dodtpa2ed48ad-776f-4dc2-9733-99992a378c0c" class="navnav">37.3 Das Entity Data Model im Designer</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_003.html#dodtp7e6f5d92-8717-48e2-a980-8a80d7b1af95" class="navnav">37.3.1 Die übergeordneten Eigenschaften einer Entität</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_003.html#dodtp2448859d-fe4a-459c-8595-89040d017d5b" class="navnav">37.3.2 Eigenschaften eines Entitätsobjekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_003.html#dodtp51f5aaf2-804c-4851-a9ff-1ec683f2cdb4" class="navnav">37.3.3 Assoziationen im Entity Data Model</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_003.html#dodtp317325a1-c037-4638-87e5-9719ba4325da" class="navnav">37.3.4 Der Kontext der Entitäten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_004.html#dodtpa78e7bf8-abb5-45ab-a40b-bb2b364611b1" class="navh">37.4 Der Aufbau des Entity Data Models</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_005.html#dodtp4560987b-f327-4e4a-8819-9ed1c3e17a14" class="navnav">37.5 Die Klassen des Entity Data Models (EDM)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_005.html#dodtp5b3a22ec-04c0-4604-844f-a15b7b3471b4" class="navnav">37.5.1 Die Entitätsklassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_005.html#dodtpebd962c7-17c3-4177-bbdc-a3365b6c062c" class="navnav">37.5.2 Der ObjectContext</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_37_006.html#dodtpf9a1aa88-29db-44ab-a889-e07eafd50458" class="navnav">37.6 Die Architektur des Entity Frameworks</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_006.html#dodtp925cd396-9349-4443-a9f1-8fc1e32793dc" class="navnav">37.6.1 Object Services</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_37_006.html#dodtp061be7c2-9f9c-48a6-8e80-f880ab656502" class="navnav">37.6.2 Die Schichten des Entity Frameworks</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpa78e7bf8-abb5-45ab-a40b-bb2b364611b1" name="dodtpa78e7bf8-abb5-45ab-a40b-bb2b364611b1"></a><h2 class="t2"><span class="cfett">37.4    </span><span class="cfett"> Der Aufbau des Entity Data Models</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Entity Data Model können Sie sich auch als Bindeglied zwischen der Datenbank und
+                                                      Ihrem Programmcode vorstellen. Nachdem wir uns im letzten Abschnitt den visualisierten
+                                                      Teil des EDM angesehen haben, wollen wir nun ein wenig hinter die Kulissen sehen,
+                                                      um die Zusammenhänge besser zu verstehen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da ein Doppelklick auf die EDMX-Datei nur dazu führt, dass die Designansicht geöffnet
+                                                      wird, wollen wir diese Datei nun auf andere Weise öffnen. Dazu markieren Sie die EDMX-Datei
+                                                      im <span class="ckursiv">Projektmappen-Explorer</span> und öffnen mit der rechten Maustaste das Kontextmenü. Wählen Sie hier <span class="cscreenelement">Öffnen mit</span> ... Aus der Ihnen angebotenen Liste von Tools sollten Sie die Option <span class="cscreenelement">XML Editor</span> auswählen. Sollte in diesem Moment die EDMX-Datei in der Designansicht noch geöffnet
+                                                      sein, werden Sie noch darauf hingewiesen und gefragt, ob die geöffnete Datei geschlossen
+                                                      werden soll. Sie können das bestätigen. In Visual Studio werden Ihnen daraufhin gewissermaßen
+                                                      die »Rohdaten« des Entity Data Models im XML-Format angezeigt. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Moment hinterlässt die Datei einen verwirrenden Eindruck. Aber bei genauer
+                                                      Betrachtung gliedert sich die Datei in zwei Hauptabschnitte: ein Abschnitt <span class="clisting">Runtime</span>, der Laufzeitinformationen enthält, und ein Abschnitt <span class="clisting">Designer</span>, der Informationen für die Darstellung in der Design-Ansicht enthält. Der Abschnitt
+                                                      <span class="clisting">Runtime</span> seinerseits beschreibt drei untergeordnete Abschnitte:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">CSDL</span><span class="cfett"><a class="indexterm" id="dodtp91980aef-6ac0-4b5d-86f8-8dc35632e10d"></a> (Conceptual Schema Definition<a class="indexterm" id="dodtpfe5865d0-d4a9-4a9f-babf-b03e2a6f8fa3"></a> Language)</span>: Dieser Abschnitt beherbergt das konzeptionelle Modell und beschreibt somit die Schicht,
+                                                         gegen die Sie Ihren Programmcode schreiben.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">SSDL</span><span class="cfett"><a class="indexterm" id="dodtpe0dcd3a2-0838-4948-baa2-272645bb1537"></a> (Storage Schema Definition<a class="indexterm" id="dodtp03c946a5-ad32-4c95-a8b2-ee754ff1ba9a"></a> Language)</span>: Diese Schicht beschreibt das Schema der Datenbank.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">MSL</span><span class="cfett"><a class="indexterm" id="dodtp6e4614b2-ae99-412b-98fc-997e165a442b"></a> (Mapping Specification<a class="indexterm" id="dodtpf2d72809-3226-40a2-bc26-51e7cb343e9f"></a> Language)</span>: Diese Schicht bildet das konzeptionelle Modell (CSDL) auf das Schema der Datenbank
+                                                         (SSDL) ab.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Abbildung 37.10 sind die Hauptabschnitte im zusammengeklappten Zustand dargestellt.</p>
+                                                   <p><a href="bilder/37_10.png" rel="lightbox" title="XML-Struktur des Entity Data Models (EDM)"><img class="bild" border="1" src="bilderklein/klein37_10.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 37.10  </span>XML-Struktur des Entity Data Models (EDM)
+                                                   </p>
+                                                   <h4 class="t4"> Der Abschnitt SSDL (Store Schema Definition Language)</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Abschnitt, der häufig auch als <span class="cfett">physikalisches Modell</span> oder <span class="cfett">Speichermodell</span> bezeichnet wird, bildet die Daten der Datenquelle durch XML ab. Diese Sektion wird
+                                                      durch das <span class="clisting">&lt;Schema&gt;</span>-Element beschrieben, das mit <span class="clisting">&lt;EntityContainer&gt;</span>, <span class="clisting">&lt;EntityType&gt;</span> und <span class="clisting">&lt;Association&gt;</span> weiter aufgegliedert wird. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben dem <span class="clisting">Namespace</span>-Attribut werden im <span class="clisting">&lt;Schema&gt;</span>-Element auch die Attribute <span class="clisting">Provider</span> und <span class="clisting">ProviderManifestToken</span> angeführt. Die letztgenannten Attribute geben an, über welchen Provider die Verbindung
+                                                      zur Datenbank aufgenommen wird, sowie deren Version.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">&lt;EntityContainer&gt;</span>-Element beschreibt die Struktur der zugrunde liegenden Datenquelle und gliedert sich
+                                                      selbst in die beiden untergeordneten Elemente <span class="clisting">&lt;EntitySet&gt;</span> und <span class="clisting">&lt;AssociationSet&gt;</span>. <span class="clisting">EntitySet</span> stellt eine Tabelle der Datenbank dar, <span class="clisting">AssociationSet</span> die Beziehung zwischen den Tabellen des aktuellen Entity Data Models. Sehen wir uns
+                                                      zunächst den Abschnitt an, der die Tabelle <span class="ckursiv">Categories</span> beschreibt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;EntityType Name="Categories"&gt;<br xmlns="">  &lt;Key&gt;<br xmlns="">    &lt;PropertyRef Name="CategoryID" /&gt;<br xmlns="">  &lt;/Key&gt;<br xmlns="">  &lt;Property Name="CategoryID" Type="int" Nullable="false" <br xmlns="">            StoreGeneratedPattern="Identity" /&gt;<br xmlns="">  &lt;Property Name="CategoryName" Type="nvarchar" Nullable="false" <br xmlns="">            MaxLength="15" /&gt;<br xmlns="">  &lt;Property Name="Description" Type="ntext" /&gt;<br xmlns="">  &lt;Property Name="Picture" Type="image" /&gt;<br xmlns="">&lt;/EntityType&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir können erkennen, dass jede Spalte der Tabelle hinsichtlich des Namens, des Datentyps
+                                                      und ihrer Einschränkungen durch Attribute des <span class="clisting">&lt;Property&gt;</span>-Elements angegeben ist. Bei den Datentypangaben handelt es sich um die datenbankspezifischen,
+                                                      in unserem Fall um die des SQL Servers. Die Primärschlüsselfelder sind durch das <span class="clisting">&lt;Key&gt;</span>-Element namentlich aufgeführt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">&lt;Association&gt;</span>-Element definiert die Beziehungen zwischen den in unserem Entity Data Model enthaltenen
+                                                      Tabellen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Association Name="FK_Products_Categories"&gt;<br xmlns="">  &lt;End Role="Categories" Type="NorthwindModel.Store.Categories" <br xmlns="">                         Multiplicity="0..1" /&gt;<br xmlns="">  &lt;End Role="Products" Type="NorthwindModel.Store.Products" <br xmlns="">                       Multiplicity="*" /&gt;<br xmlns="">  &lt;ReferentialConstraint&gt;<br xmlns="">    &lt;Principal Role="Categories"&gt;<br xmlns="">      &lt;PropertyRef Name="CategoryID" /&gt;<br xmlns="">    &lt;/Principal&gt;<br xmlns="">    &lt;Dependent Role="Products"&gt;<br xmlns="">      &lt;PropertyRef Name="CategoryID" /&gt;<br xmlns="">    &lt;/Dependent&gt;<br xmlns="">  &lt;/ReferentialConstraint&gt;<br xmlns="">&lt;/Association&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Beziehung zwischen zwei Tabellen hat zwei Endpunkte. Diese werden, ergänzt um
+                                                      die Angabe der Multiplizität, zuerst angegeben. <span class="clisting">&lt;ReferentialConstraint&gt;</span> definiert die Charakteristik der referenziellen Einschränkung: Die Tabelle <span class="ckursiv">Products</span> ist die abhängige (engl.: dependent) Seite, also die Detailtabelle, die Tabelle <span class="ckursiv">Categories</span> die Mastertabelle. In beiden Tabellen lauten die Spalten, zwischen denen die referenzielle
+                                                      Einschränkung definiert ist, <span class="clisting">CategoryID</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Immer dann, wenn Daten zur Datenbank gesendet werden, wird das Entity Framework mit
+                                                      Hilfe des Abschnitts <span class="clisting">&lt;ReferentialConstraint&gt;</span> prüfen, ob gegen die referenzielle Einschränkung verstoßen wird. Sollte das der Fall
+                                                      sein, werden die Daten nicht gesendet.
+                                                   </p>
+                                                   <h4 class="t4"> Der Abschnitt CSDL (Conceptual Schema Definition Language)</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Abschnitt CSDL stellt das konzeptionelle Schema dar und beschreibt die Schicht,
+                                                      gegen die Sie später programmieren werden. Natürlich werden Sie nicht die XML-Elemente
+                                                      mit dem Code ansprechen, vielmehr dient dieses Schema dem Assistenten dazu, daraus
+                                                      Klassen zu generieren. Diese werden wir uns weiter unten noch ansehen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der CSDL-Abschnitt der EDMX-Datei ähnelt sehr stark dem SSDL-Abschnitt. Er enthält
+                                                      ein <span class="clisting">&lt;EntityContainer&gt;</span>-Element, für jede abgebildete Tabelle ein <span class="clisting">&lt;EntityType&gt;</span>-Element und ein Element <span class="clisting">&lt;Association&gt;</span>, um die referenziellen Einschränkungen der Tabellen zu definieren. Dennoch sind einige
+                                                      Unterschiede durchaus erwähnenswert. Beispielsweise bezieht sich der Datentyp in den
+                                                      spaltenbeschreibenden <span class="clisting">&lt;Property&gt;</span>-Elementen nicht mehr auf datenbankspezifische Typen, sondern bildet die Datentypen
+                                                      des .NET Frameworks ab. Einen weiteren wesentlichen Unterschied stellen wir bei den
+                                                      Eigenschaften fest, die Zeichenfolgen beschreiben. Hier werden zusätzliche Attribute
+                                                      angegeben, um zum Beispiel die Länge einer Zeichenfolge festzulegen. Zu den Eigenschaften
+                                                      gesellt sich zudem ein Element <span class="clisting">&lt;NavigationProperty&gt;</span>. Dieses beschreibt, wie zwischen den an einer Beziehung beteiligten Entitäten navigiert
+                                                      wird. Das folgende Codefragment zeigt den Abschnitt <span class="clisting">&lt;EntityType&gt;</span> der Entität <span class="ckursiv">Category</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;EntityType Name="Category"&gt;<br xmlns="">  &lt;Key&gt;<br xmlns="">    &lt;PropertyRef Name="CategoryID" /&gt;<br xmlns="">  &lt;/Key&gt;<br xmlns="">  &lt;Property Name="CategoryID" Type="Int32" Nullable="false" <br xmlns="">            annotation:StoreGeneratedPattern="Identity" /&gt;<br xmlns="">  &lt;Property Name="CategoryName" Type="String" Nullable="false" <br xmlns="">            MaxLength="15" Unicode="true" FixedLength="false" /&gt;<br xmlns="">  &lt;Property Name="Description" Type="String" MaxLength="Max" Unicode="true" <br xmlns="">            FixedLength="false" /&gt;<br xmlns="">  &lt;Property Name="Picture" Type="Binary" MaxLength="Max" <br xmlns="">            FixedLength="false" /&gt;<br xmlns="">  &lt;NavigationProperty Name="Products" <br xmlns="">                      Relationship="NorthwindModel.FK_Products_Categories" <br xmlns="">                      FromRole="Categories" ToRole="Products" /&gt;<br xmlns="">&lt;/EntityType&gt;<br></pre></div>
+                                                   <h4 class="t4"> Der Abschnitt MSL (Mapping Specification Language)</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die beiden zuvor beschriebenen Abschnitte SSDL und CSDL müssen zueinander in Beziehung
+                                                      gesetzt werden. Diese Aufgabe übernimmt die dritte Schicht im Entity Data Model. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Mapping-Sektion der EDMX-Datei lässt sich in einem separaten Fenster visualisieren.
+                                                      Markieren Sie dazu in der Design-Ansicht des Entity Data Models eine Entität, und
+                                                      wählen Sie im Kontextmenü die Option <span class="cscreenelement">Tabellenmapping</span>. Die Mappinginformationen der entsprechenden Entität werden danach im Fenster <span class="cscreenelement">Mappingdetails </span>angezeigt (siehe Abbildung 37.11).
+                                                   </p>
+                                                   <p><a href="bilder/37_11.png" rel="lightbox" title="Mappingdetails der Entität »Product«"><img class="bild" border="1" src="bilderklein/klein37_11.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 37.11  </span>Mappingdetails der Entität »Product«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Abbildung zeigt, wie die Entität <span class="clisting">Product</span> auf die Tabelle <span class="ckursiv">Products</span> der SSDL abgebildet wird. Es ist zu erkennen, dass es sich um 1:1-Mapping zwischen
+                                                      der konzeptionellen und der Speicherschicht handelt. In der Liste <span class="ckursiv">Spaltenmappings</span> sind auf der linken Seite die Spalten der Speicherschicht angegeben, auf der rechten
+                                                      die entsprechenden Eigenschaften im konzeptionellen Modell. Das ist daran zu erkennen,
+                                                      dass links Datentypen des SQL Servers angegeben sind, auf der rechten Seite die Entsprechungen
+                                                      im .NET Framework. 
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs37_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="37  Einführung in das ADO.NET Entity Framework"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_37_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_37_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

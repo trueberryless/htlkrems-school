@@ -1,0 +1,1371 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 31  ADO.NET &#8211; Verbindungsorientierte Objekte">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 31  ADO.NET &#8211; Verbindungsorientierte Objekte">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 31  ADO.NET &#8211; Verbindungsorientierte Objekte</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="31_002.html">
+      <link rel="next" href="1997_32_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_31_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_32_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151" class="navnav">31 ADO.NET &#8211; Verbindungsorientierte Objekte</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_31_001.html#dodtp86cff4f5-5cb2-4496-92a2-5e3411f0f647" class="navnav">31.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_31_002.html#dodtpfb2e0d58-70c0-415a-8bd4-8e0017007970" class="navnav">31.2 Die Datenprovider</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_31_003.html#dodtpeafe711b-9530-4d73-a154-0e5811675bc5" class="navh">31.3 Die Verbindung zu einer Datenbank herstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtpab17edd4-6327-4394-90a3-a142ffece3d9" class="navh">31.3.1 Das Connection-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtp2cdbfd41-93e8-447c-99ad-3a0597fc0a83" class="navh">31.3.2 Die Verbindungszeichenfolge</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtpf1b53702-f966-45b8-a271-535fec4639d4" class="navh">31.3.3 Die Verbindung mit einer SQL Server-Instanz aufbauen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtpba859150-ebb4-44f2-b5af-b39cfacf1991" class="navh">31.3.4 Öffnen und Schließen einer Verbindung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtpda826620-2ae6-4081-a249-8b04842d4090" class="navh">31.3.5 Das Verbindungspooling</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtp247fb4d5-8e99-48a3-80e8-e12117665bca" class="navh">31.3.6 Die Ereignisse eines »Connection«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtpdd31809e-e638-4ddb-bbe7-4c71db12ddcc" class="navh">31.3.7 Verbindungszeichenfolgen aus einer Konfigurationsdatei abrufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_31_003.html#dodtp58110ec1-7b45-4818-8ffd-bc913f442b95" class="navh">31.3.8 Verbindungen mit dem OleDb-Datenprovider</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpeafe711b-9530-4d73-a154-0e5811675bc5" name="dodtpeafe711b-9530-4d73-a154-0e5811675bc5"></a><h2 class="t2"><span class="cfett">31.3    </span><span class="cfett"> Die Verbindung zu einer Datenbank herstellen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpab17edd4-6327-4394-90a3-a142ffece3d9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpab17edd4-6327-4394-90a3-a142ffece3d9" name="dodtpab17edd4-6327-4394-90a3-a142ffece3d9"></a><h3 class="t3"><span class="cfett">31.3.1    </span><span class="cfett"> Das Connection-Objekt</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2cdbfd41-93e8-447c-99ad-3a0597fc0a83"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpeafe711b-9530-4d73-a154-0e5811675bc5"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die erste Entscheidung, die Sie treffen müssen, ist die des Datenproviders. Oben wurden
+                                                      die entscheidenden Kriterien erörtert, die die Wahl beeinflussen. Für die einzelnen
+                                                      Klassen jedes .NET-Datenproviders ist ein separater Namespace in der .NET-Klassenbibliothek
+                                                      vorgesehen. Da wir als Datenquelle den SQL Server 2008 benutzen, bietet sich der Einsatz
+                                                      des SqlClient-Datenproviders an. Daher sollten Sie mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System.Data.SqlClient;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">den entsprechenden Namespace zuerst bekannt geben.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Verbindung zu einer Datenbank wird durch ein <span class="clisting">Connection</span>-Objekt beschrieben. Um präzise zu sein, gibt es die Klasse <span class="clisting">Connection</span> unter ADO.NET nicht. Stattdessen wird, abhängig vom verwendeten .NET-Datenprovider,
+                                                      ein Präfix vorangestellt. Benutzen Sie den SqlClient-Datenprovider, heißt die Klasse
+                                                      <span class="clisting">SqlConnection</span><span class="clisting"><a class="indexterm" id="dodtp8154637a-3811-4daa-86cd-04640b121061"></a></span>, beim OleDb-Datenprovider <span class="clisting">OleDbConnection</span>. Der Einfachheit halber wird aber im Folgenden oft einfach nur vom <span class="clisting">Connection</span>-Objekt die Rede sein. Damit wird die Allgemeingültigkeit dieses Typs unterstrichen,
+                                                      denn wie Sie in den folgenden Abschnitten noch sehen werden, unterscheiden sich die
+                                                      providerspezifischen <span class="clisting">Connection</span>-Objekte nur geringfügig.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um auf eine Datenquelle wie Microsoft SQL Server 2008 zuzugreifen, werden mehrere
+                                                      Informationen benötigt:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">der Name des Rechners, auf dem die SQL Server-Instanz läuft</li>
+                                                      <li class="pgp">der Name der Datenbank, deren Dateninformationen ausgewertet oder manipuliert werden
+                                                         sollen
+                                                      </li>
+                                                      <li class="pgp">die Anmeldeinformationen, mit denen sich der Anwender authentifiziert</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Verbindungsinformationen werden nach einem bestimmten Muster in einer Zeichenfolge
+                                                      zusammengefasst, die als <span class="cfett">Verbindungszeichenfolge</span><span class="cfett"><a class="indexterm" id="dodtp3e853230-550a-4794-a019-b847f7ed1ca6"></a></span> bezeichnet wird. Grundsätzlich haben Sie drei Möglichkeiten, die Verbindungsinformationen
+                                                      zu einer Datenquelle anzugeben:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie rufen den parameterlosen Konstruktor der <span class="clisting">Connection</span>-Klasse auf und übergeben dem erzeugten Objekt die Verbindungsinformationen.
+                                                      </li>
+                                                      <li class="pgp">Sie rufen einen parametrisierten Konstruktor auf.</li>
+                                                      <li class="pgp">Sie benutzen die Klasse <span class="clisting">SqlConnectionStringBuilder</span>.
+                                                      </li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp2cdbfd41-93e8-447c-99ad-3a0597fc0a83" name="dodtp2cdbfd41-93e8-447c-99ad-3a0597fc0a83"></a><h3 class="t3"><span class="cfett">31.3.2    </span><span class="cfett"> Die Verbindungszeichenfolge</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf1b53702-f966-45b8-a271-535fec4639d4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpab17edd4-6327-4394-90a3-a142ffece3d9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpc2d0fc2a-6b2f-461e-97fb-69b1aff7dedb"></a>Sehen wir uns zuerst den parameterlosen Konstruktor an.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit erzeugen wir bereits das Verbindungsobjekt, das aber noch sehr »dumm« ist, da
+                                                      ihm sämtliche Informationen fehlen, die zum Aufbau einer Verbindung zu einer Datenquelle
+                                                      notwendig sind. Diese müssen der Eigenschaft <span class="clisting">ConnectionString</span> des <span class="clisting">Connection</span>-Objekts zugewiesen werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection();<br xmlns="">con.ConnectionString = "&lt;Verbindungszeichenfolge&gt;";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der parametrisierte Konstruktor gestattet es, die Verbindungszeichenfolge direkt als
+                                                      Argument zu übergeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection("&lt;Verbindungszeichenfolge&gt;");<br></pre></div>
+                                                   <h4 class="t4"> Die Werte der Verbindungszeichenfolge</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Informationen, die zum Aufbau einer Verbindung zu einer Datenquelle erforderlich
+                                                      sind, werden in der Verbindungszeichenfolge beschrieben. Eine Verbindungszeichenfolge
+                                                      besteht aus einer Reihe von Attributen (bzw. Schlüsseln), denen Werte zugewiesen werden.
+                                                      Die Attribute sind untereinander durch ein Semikolon getrennt. Die allgemeine Syntax
+                                                      lässt sich wie folgt beschreiben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strCon = "Attribut1=Wert1;Attribut2=Wert2;Attribut3=Wert3;...";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Bezeichner der einzelnen Attribute sind festgelegt und hängen vom verwendeten
+                                                      .NET-Datenprovider ab. In der folgenden Tabelle sind die Bezeichner des SqlClient-Datenproviders
+                                                      aufgeführt. Groß-/Kleinschreibung spielt dabei ebenso wenig eine Rolle wie die Reihenfolge
+                                                      der Attribute. Beachten Sie, dass es meistens mehrere Attributbezeichner gibt, die
+                                                      gleichwertig eingesetzt werden können.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 31.1  </span>Attribute der Verbindungszeichenfolge des SQL-Datenproviders
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Schlüssel
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Connect Timeout,</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Connection Timeout</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Dieser Schlüssel beschreibt die Zeitdauer in Sekunden, die auf eine Verbindung zum
+                                                                  Server gewartet werden soll, bevor der Versuch abgebrochen und ein Fehler generiert
+                                                                  wird. Der Standardwert beträgt 15 Sekunden.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Data Source</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Server</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Address</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Addr</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Network Address</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Entweder der Name oder die Netzwerkadresse der Instanz des SQL Servers, mit dem eine
+                                                                  Verbindung hergestellt werden soll.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Initial Catalog</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Database</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Hier wird der Name der Datenbank angegeben.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Integrated Security</span></p>
+                                                               
+                                                               
+                                                               <p class="tabellentext"><span class="clisting">Trusted_Connection</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Bei <span class="clisting">false</span> werden die Benutzer-ID und das Passwort für die Verbindung angegeben. Bei <span class="clisting">true</span> werden die aktuellen Anmeldeinformationen des Windows-Kontos für die Authentifizierung
+                                                                  verwendet. Gültige Werte sind <span class="clisting">true</span>, <span class="clisting">false</span>, <span class="clisting">yes</span>, <span class="clisting">no</span> und <span class="clisting">sspi</span>, das äquivalent mit <span class="clisting">true</span> ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Packet Size</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gibt die Größe der Netzwerkpakete in Byte an, die zum Kommunizieren mit einer Instanz
+                                                                  von SQL Server verwendet werden. Die Standardgröße eines Pakets beträgt 8192 Byte,
+                                                                  kann aber zwischen 512 und 32767 variieren.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Password, Pwd</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Passwort für das SQL Server-Konto.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">User ID</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das SQL Server-Anmeldekonto.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Workstation ID</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Name des Computers, der mit dem SQL Server eine Verbindung aufbauen möchte.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf1b53702-f966-45b8-a271-535fec4639d4" name="dodtpf1b53702-f966-45b8-a271-535fec4639d4"></a><h3 class="t3"><span class="cfett">31.3.3    </span><span class="cfett"> Die Verbindung mit einer SQL Server-Instanz aufbauen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpba859150-ebb4-44f2-b5af-b39cfacf1991"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf38318f4-96a0-482b-81fe-92a45deca642"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Befindet sich der SQL Server auf dem lokalen Rechner und beabsichtigen Sie, die Beispieldatenbank
+                                                      <span class="ckursiv">Northwind</span> zu öffnen, könnte die Verbindungszeichenfolge wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection();<br xmlns="">con.ConnectionString = "Data Source=(local);" +<br xmlns="">                       "Initial Catalog=Northwind;" +<br xmlns="">                       "Integrated Security=sspi";<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.1  </span>Beispiel einer Verbindungszeichenfolge
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Data Source</span> beschreibt den Rechner, auf dem sich die laufende SQL Server-Instanz befindet. Hier
+                                                      können Sie den Rechnernamen und eine TCP/IP-Adresse eintragen. Handelt es sich dabei
+                                                      um den lokalen Rechner, dürfen Sie anstatt des Rechnernamens auch <span class="ckursiv">(local)</span>, <span class="ckursiv">localhost</span> oder einfach nur einen Punkt angeben &#8211; die beiden Letztgenannten allerdings ohne
+                                                      runde Klammern.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auf einem Computer können durchaus mehrere Instanzen von SQL Server installiert sein.
+                                                      Das Codefragment oben greift auf die sogenannte Standardinstanz zu. Möchten Sie auf
+                                                      eine andere, benannte Instanz zugreifen, geben Sie zuerst den Rechnernamen und darauf
+                                                      folgend einen Backslash (\) an. Dahinter folgt die Angabe der SQL Server-Instanz.
+                                                      Möchten Sie sich beispielsweise mit der Instanz SQLExpress auf der lokalen Maschine
+                                                      verbinden, sieht das <span class="clisting">Data Source</span>-Attribut wie folgt aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Data Source=.\\SQLExpress<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier sind zwei Backslashes notwendig, da C# einen einfachen Backslash als Escape-Sequenz
+                                                      interpretiert. Alternativ können Sie auch vor der Zeichenfolge das Zeichen @ setzen.
+                                                      Hinter <span class="clisting">Initial Catalog</span> ist die Datenbank angegeben, zum Schluss folgen noch Informationen zur Authentifizierung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Gleichwertig können Sie auch dem parametrisierten Konstruktor des <span class="clisting">Connection</span>-Objekts die Verbindungszeichenfolge übergeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;" +<br xmlns="">                                       "Initial Catalog=Northwind;" +<br xmlns="">                                       "Integrated Security=sspi");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.2  </span>Nutzen des überladenen Konstruktors von »SqlConnection«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen nicht unbedingt alle Attribute verwenden. Das Attribut <span class="clisting">Packet Size</span> wird hier beispielsweise nicht benutzt. Somit werden alle Daten auf der Verbindung
+                                                      in 8192 Byte großen Paketen verschickt. Müssen große Datenmengen vom Server geladen
+                                                      werden, zum Beispiel Bilder, können größere Pakete die Leistung durchaus deutlich
+                                                      steigern.
+                                                   </p>
+                                                   <h4 class="t4"> Die Authentifizierung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Soll die Verbindung zu einer Datenbank aufgebaut werden, muss sich der Anwender bei
+                                                      der Datenbank authentifizieren. Das <span class="clisting">Connection</span>-Objekt benutzt hierfür die Authentifizierungsinformationen, die in der Verbindungszeichenfolge
+                                                      enthalten sind. Diese werden vom Datenbankserver überprüft.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">SQL Server kennt zwei Verfahren zur Authentifizierung:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">Die integrierte Windows-Authentifizierung</span><br xmlns="">Zur Authentifizierung benutzt SQL Server das Authentifizierungssystem von Windows (NT/2000/XP/2003/Vista/Windows 7 ...). Mit Ausnahme der Benutzer mit administrativen Rechten muss der Datenbankadministrator für jeden anderen Benutzer eine entsprechende Datenbankanmeldung definieren.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">Die SQL Server-Authentifizierung</span><br xmlns="">Diese basiert auf der internen Benutzerliste, die von SQL Server verwaltet wird. Die
+                                                         Liste beinhaltet keine Windows-Benutzer. Stattdessen werden Benutzer mit Hilfe des
+                                                         SQL Server Management Studios erstellt und konfiguriert. Den Benutzern werden die
+                                                         gewünschten Berechtigungen für die entsprechende Datenbank eingerichtet. (Hinweis:
+                                                         Bei der SQL Server Express Edition ist nur die Windows-Authentifizierung möglich.)
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Authentifizierungsart können Sie bereits bei der Installation von SQL Server festlegen.
+                                                      Per Vorgabe ist die SQL Server-Authentifizierung deaktiviert. Sie können aber auch
+                                                      einen gemischten Modus aus beiden Authentifizierungen wählen. Eine nachträgliche Änderung
+                                                      der Server-Authentifizierung erfolgt im SQL Server Management Studio. Markieren Sie
+                                                      hierzu die SQL Server-Instanz, öffnen Sie über deren Kontextmenü die Eigenschaftsliste,
+                                                      und wählen Sie den Reiter <span class="cscreenelement">Sicherheit</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der integrierten Windows-Authentifizierung müssen weder Benutzername noch Passwort
+                                                      explizit gesendet werden. Mit der Angabe von <span class="clisting">Integrated Security=sspi</span> verwendet das System automatisch das Windows-Benutzerkonto des aktuellen Users bestehend
+                                                      aus Benutzername und Passwort und reicht es an SQL Server weiter. Vorausgesetzt, der
+                                                      Kontoinhaber hat ausreichende Rechte, kann damit die Verbindung zur Datenbank hergestellt
+                                                      werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die SQL Server-Authentifizierung setzt voraus, dass der Administrator des SQL Servers
+                                                      ein Benutzerkonto mit Passwort eingerichtet hat. Sowohl der Benutzername als auch
+                                                      das Passwort müssen bei diesem Authentifizierungsverfahren in der Verbindungszeichenfolge
+                                                      stehen, beispielsweise folgendermaßen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection();<br xmlns="">con.ConnectionString<a class="indexterm" id="dodtpda303a8e-9405-4d48-ad5a-cc1540e91e30"></a> = "Data Source=DBServer;" +<br xmlns="">                       "Initial Catalog=Northwind;" +<br xmlns="">                       "User ID=Testuser;" +<br xmlns="">                       "Password=26gf28";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">SQL Server führt die Authentifizierung durch, indem er überprüft, ob ein Benutzerkonto
+                                                      mit diesem Namen eingerichtet ist und ob das angegebene Passwort stimmt. Falls die
+                                                      übermittelten Anmeldeinformationen falsch sind, misslingt die Authentifizierung, und
+                                                      der Benutzer erhält eine Fehlermeldung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es ist grundsätzlich nicht empfehlenswert, die Daten zur Benutzer-Authentifizierung
+                                                      statisch in der Verbindungszeichenfolge zu speichern. Besser ist es, in einem Dialog
+                                                      den Anwender zur Eingabe von Benutzernamen und Passwort aufzufordern und mit diesen
+                                                      Informationen zur Laufzeit die Verbindungszeichenfolge zu bilden.
+                                                   </p>
+                                                   <h4 class="t4"> Änderung des Passwortes bei der SQL Server-Authentifizierung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der SQL Server-Authentifizierung bilden Benutzername und Passwort eine Einheit,
+                                                      die den Zugriff auf Datenressourcen ermöglicht. Seit ADO.NET 2.0 und auch nur im Zusammenspiel
+                                                      mit SQL Server 2008 kann der Benutzer sein Passwort ändern, ohne dass der Datenbankadministrator
+                                                      eingreifen muss. Hier hilft die statische Methode <span class="clisting">ChangePassword</span><span class="clisting"><a class="indexterm" id="dodtpa64112a9-6a91-4252-8953-1ec5fa2c2ae3"></a></span> der Klasse <span class="clisting">SqlConnection</span> weiter. Vorausgesetzt, es wurde zuvor mit bekannten Verbindungsinformationen die
+                                                      Verbindung zu der Datenbank geöffnet, kann unter vorheriger Angabe der alten Authentifizierungsinformationen
+                                                      (Benutzername und Passwort) im zweiten Argument das neue Passwort übermittelt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection();<br xmlns="">con.ConnectionString = "Data Source=DBServer;" +<br xmlns="">                       "Initial Catalog=Northwind;" +<br xmlns="">                       "User ID=Testuser;" +<br xmlns="">                       "Password=26gf28";<br xmlns="">con.Open();<br xmlns="">SqlConnection.ChangePassword("User ID=Testuser;PWD=26gf28",<br xmlns="">                             "4711password");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Technik bietet sich auch an, wenn das alte Passwort abgelaufen ist.</p>
+                                                   <h4 class="t4"> Verbindungszeichenfolgen mit dem »SqlConnectionStringBuilder«-Objekt</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fordern Sie den Anwender dazu auf, seine Authentifizierungsinformationen bestehend
+                                                      aus Benutzername und Passwort in einem Dialog einzutragen, besteht die Gefahr, dass
+                                                      »böse Buben« im Log-in- oder Passwortfeld zusätzliche Parameter eintragen. Im Extremfall
+                                                      kann dies zu Sicherheitsproblemen führen, die als SQL-Injection bekannt sind. Abgesehen
+                                                      von böswilligen Eingriffen könnte der Anwender aber auch Zeichen gewählt haben, die
+                                                      in der Verbindungszeichenfolge eine besondere Bedeutung haben, beispielsweise »<span class="clisting">;</span>« oder »<span class="clisting">=</span>«. Die Eingabe dieser Zeichen würde zu einer Fehlermeldung führen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um diesen Problemen aus dem Wege zu gehen, benutzen Sie die Klasse <span class="clisting">SqlConnectionStringBuilder</span>. Diese Klasse stellt für alle Attribute der Verbindungszeichenfolge Eigenschaften
+                                                      zur Verfügung, denen Sie nur noch die passenden Werte zuweisen müssen. Das Ergebnis
+                                                      wird der Eigenschaft <span class="clisting">ConnectionString</span> des <span class="clisting">SqlConnectionStringBuilder</span>-Objekts zugeführt. Sie müssen diese Eigenschaft am Ende nur noch dem Konstruktoraufruf
+                                                      von <span class="clisting">SqlConnection</span> übergeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnectionStringBuilder conBuilder =<br xmlns="">           new SqlConnectionStringBuilder();<br xmlns="">conBuilder.DataSource = ".\\sqlexpress";<br xmlns="">conBuilder.InitialCatalog = "Northwind";<br xmlns="">conBuilder.IntegratedSecurity = true;<br xmlns="">SqlConnection con = new SqlConnection(conBuilder.ConnectionString);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.3  </span>Verbindungszeichenfolge mit »SqlConnectionStringBuilder« erzeugen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen Sie sich die erzeugte Verbindungszeichenfolge im Befehlsfenster ausgeben, wird
+                                                      Folgendes angezeigt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Data Source=.\sqlexpress;Initial Catalog=Northwind;Integrated Security=True<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpba859150-ebb4-44f2-b5af-b39cfacf1991" name="dodtpba859150-ebb4-44f2-b5af-b39cfacf1991"></a><h3 class="t3"><span class="cfett">31.3.4    </span><span class="cfett"> Öffnen und Schließen einer Verbindung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpda826620-2ae6-4081-a249-8b04842d4090"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdc79f341-288d-4963-ab85-85287a3c19c0"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Die Verbindung öffnen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpeb70c8d7-49ae-44fd-8fa3-998ef91ef850"></a>Das Instanziieren der Klasse <span class="clisting">SqlConnection</span> und das Bekanntgeben der Verbindungszeichenfolge sind noch nicht ausreichend, um
+                                                      die Verbindung zu einer Datenbank zu öffnen und auf die in ihr enthaltenen Daten zuzugreifen.
+                                                      Dazu muss noch die Methode <span class="clisting">Open</span> auf das <span class="clisting">Connection</span>-Objekt aufgerufen werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection(@"Data Source=.\sqlexpress;" +<br xmlns="">                                       "Initial Catalog=Northwind;" +<br xmlns="">                                       "Integrated Security=True");<br xmlns="">con.Open<a class="indexterm" id="dodtp85443a7f-4655-435a-a09a-ac741070ec3a"></a>();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.4  </span>Öffnen einer Datenbankverbindung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weist die Verbindungszeichenfolge keinen Fehler auf, können Sie nun auf die Daten
+                                                      von <span class="ckursiv">Northwind</span> zugreifen. Es gibt allerdings eine Reihe potenzieller Fehlerquellen, die zu einem
+                                                      Laufzeitfehler beim Verbindungsaufbau führen können:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Ein Fehler befindet sich in der Verbindungszeichenfolge.</li>
+                                                      <li class="pgp">Der Anwender hat keine Zugriffsrechte auf die Datenbank.</li>
+                                                      <li class="pgp">Der SQL Server ist nicht gestartet.</li>
+                                                      <li class="pgp">Der Rechner, auf dem die SQL Server-Instanz läuft, ist im Netzwerk nicht erreichbar.</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sollten daher das Öffnen einer Datenbankverbindung immer in einen Fehlerbehandlungsblock
+                                                      einschließen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">try {<br xmlns="">  SqlConnection con = new SqlConnection(...);<br xmlns="">  con.Open();<br xmlns="">}<br xmlns="">catch(Exception e) {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.5  </span>Einbetten in eine Fehlerbehandlung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wenn in diesem Buch in den folgenden Codebeispielen auf die Fehlerbehandlung verzichtet
+                                                         wird, liegt es daran, dass der Programmcode übersichtlich bleiben soll.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Versuchen Sie, ein bereits geöffnetes <span class="clisting">SqlConnection</span>-Objekt ein zweites Mal zu öffnen, wird die Ausnahme <span class="clisting">InvalidOperationException</span><span class="clisting"><a class="indexterm" id="dodtp8e96d698-01eb-47a1-a5ec-986302855a7d"></a></span> ausgelöst. Sollten Sie sich über den Zustand der Verbindung nicht im Klaren sein,
+                                                      können Sie sie mit der Eigenschaft <span class="clisting">State</span><span class="clisting"><a class="indexterm" id="dodtp4d92a2ad-be7b-4df8-b955-9d165a812fe5"></a></span> abfragen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if(con.State == ConnectionState.Closed) con.Open();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Obwohl die Enumeration <span class="clisting">ConnectionState</span><span class="clisting"><a class="indexterm" id="dodtp3075d484-735c-4654-9cd8-e6d03ac6aae2"></a></span> insgesamt sechs verschiedene Zustände beschreibt, sind aktuell nur zwei, nämlich
+                                                      <span class="clisting">Closed</span><span class="clisting"><a class="indexterm" id="dodtpa2533e6a-97e3-4c89-94f7-17c79d936732"></a></span> und <span class="clisting">Open</span>, abfragbar. Alle anderen sind für zukünftige Versionen reserviert.
+                                                   </p>
+                                                   <h4 class="t4"> Die Verbindung schließen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpc6c0b93d-c4f5-4be7-99b1-242f386739d9"></a>Man könnte der Meinung sein, dass eine geöffnete Verbindung geschlossen wird, wenn
+                                                      das <span class="clisting">Connection</span>-Objekt aufgegeben wird. Das wäre zum Beispiel der Fall, wenn die Referenz des <span class="clisting">Connection</span>-Objekts auf <span class="clisting">null</span> gesetzt wird oder die Objektvariable ihren Gültigkeitsbereich verlässt. Das stimmt
+                                                      aber nur aus Sicht des zugreifenden Prozesses, denn tatsächlich werden auch auf dem
+                                                      Datenbankserver Ressourcen für die Verbindung reserviert, die nicht freigegeben werden,
+                                                      wenn das <span class="clisting">Connection</span>-Objekt nur aufgegeben, aber noch nicht vom Garbage Collector bereinigt wird. Stellen
+                                                      Sie sich dazu vor, Sie hätten den folgenden Code in einer Methode programmiert:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection(...);<br xmlns="">con.Open();<br xmlns="">[...]<br xmlns="">con = null;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">SqlConnection</span>-Objekt wird erzeugt und nach dem Öffnen der Verbindung durch Setzen von <span class="clisting">null</span> aufgegeben. Mit dem Öffnen werden auch Ressourcen auf dem SQL Server für die Verbindung
+                                                      reserviert. Obwohl das clientseitige Objekt nach dem Verlassen des Handlers <span class="clisting">null</span> ist, nimmt der Datenbankserver von dieser Tatsache keine Notiz. Er wird weiterhin
+                                                      die Verbindung als geöffnet betrachten. Sie können das sehr schön sehen, wenn Sie
+                                                      im SQL Server Management Studio das Tool <span class="ckursiv">SQL Server Profiler</span> öffnen und eine Ablaufverfolgung starten. Erst nach dem Schließen der Anwendung wird
+                                                      die Verbindung seitens der Datenbank geschlossen (siehe Abbildung 31.1).
+                                                   </p>
+                                                   <p><a href="bilder/31_01.png" rel="lightbox" title="Die Ablaufverfolgung im Tool SQL Server Profiler"><img class="bild" border="1" src="bilderklein/klein31_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 31.1  </span>Die Ablaufverfolgung im Tool SQL Server Profiler
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sollten daher immer so schnell wie möglich eine geöffnete Verbindung durch Aufruf
+                                                      der <span class="clisting">Close</span>-Methode auf das <span class="clisting">Connection</span>-Objekt wieder schließen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">con.Open();<br xmlns="">[...]<br xmlns="">con.Close();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unserem Beispiel mit der Schaltfläche wurde zu keinem Zeitpunkt <span class="clisting">Close</span> aufgerufen. Dass dennoch spätestens beim Beenden der Anwendung die Datenbankressourcen
+                                                      für die Verbindungen freigegeben werden, liegt daran, dass der Garbage Collector mit
+                                                      dem Schließen der Windows-Anwendung implizit die <span class="clisting">Close</span>-Methode aufruft. Der Aufruf von <span class="clisting">Close</span> auf eine geschlossene Verbindung löst übrigens keine Ausnahme aus.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Möglichkeiten zum Schließen einer Datenbankverbindung sind damit aber noch nicht
+                                                      ausgeschöpft. Sie können auch die Methode <span class="clisting">Dispose</span> des <span class="clisting">SqlConnection</span>-Objekts aufrufen, die ihrerseits implizit <span class="clisting">Close</span> aufruft. Sie sollten sich aber darüber bewusst sein, dass das Verbindungsobjekt damit
+                                                      endgültig aus dem Speicher entfernt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kurzlebige Ressourcen können auch innerhalb eines <span class="clisting">using</span>-Blocks geöffnet werden, so auch das <span class="clisting">SqlConnection</span>-Objekt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using(SqlConnection con = new SqlConnection())<br xmlns="">{<br xmlns="">  [...]<br xmlns="">  con.Open();<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">using</span> stellt sicher, dass die <span class="clisting">Dispose</span>-Methode am Ende des Blocks aufgerufen wird, selbst wenn eine Ausnahme auftritt, die
+                                                      nicht behandelt wird.
+                                                   </p>
+                                                   <h4 class="t4"> Die Dauer des Verbindungsaufbaus</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig wird 15 Sekunden lang versucht, die Verbindung aufzubauen. Verstreicht
+                                                      diese Zeit, ohne dass der Datenbankserver erreicht wird, wird eine Ausnahme ausgelöst.
+                                                      Äußere Umstände wie die Netzwerk- oder Serverbelastung können dazu führen, dass diese
+                                                      Zeitspanne unter Berücksichtigung aller Umstände zu knapp bemessen ist. In der Verbindungszeichenfolge
+                                                      kann daher mit Hilfe des Attributs <span class="clisting">Connect Timeout</span><span class="clisting"><a class="indexterm" id="dodtp29bf9ddc-6185-4f8d-b670-c8327e4818f7"></a></span> (bzw. <span class="clisting">Connection Timeout</span>) eine andere Zeitspanne eingestellt werden. Die Angabe erfolgt in Sekunden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection("Data Source=localhost;" +<br xmlns="">     "Initial Catalog=Northwind;" +<br xmlns="">     "Connect Timeout=30;" +<br xmlns="">     "Integrated Security=true");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.6  </span>Dauer für den Versuch des Verbindungsaufbaus festlegen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">SqlConnection</span>-Objekt verfügt auch über eine Eigenschaft <span class="clisting">ConnectionTimeout</span>, die allerdings schreibgeschützt ist. Ihr kann daher auch keine vom Standard abweichende
+                                                      Zeitspanne zugewiesen werden. Somit verbleibt Ihnen nur, eine etwaige Änderung der
+                                                      Standardvorgabe über die Verbindungszeichenfolge vorzunehmen.
+                                                   </p>
+                                                   <h4 class="t4"> Wie lange sollte eine Verbindung geöffnet bleiben?</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich sollte eine Verbindung so schnell wie möglich wieder geschlossen werden,
+                                                      um die dafür beanspruchten Ressourcen eines Datenbankservers möglichst gering zu halten.
+                                                      Im Zusammenhang mit mehrschichtigen Anwendungen (ASP.NET, Web Services), bei denen
+                                                      man davon ausgehen kann, dass zu einem gegebenen Zeitpunkt sehr viele User gleichzeitig
+                                                      Dateninformationen bearbeiten wollen, ist diese Grundregel immer zu beherzigen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas anders könnte die Argumentation ausfallen, wenn es sich bei dem Client um ein
+                                                      Windows-Programm handelt, aus dem heraus die Datenbank direkt ohne Zwischenschaltung
+                                                      einer weiteren Schicht auf die Datenressourcen zugreift. Nehmen wir an, dass zur Laufzeit
+                                                      des Programms immer wieder Daten abgerufen und geändert werden und nicht sehr viele
+                                                      Anwender gleichzeitig dieses Programm einsetzen. Sie haben dann die Wahl, sich zwischen
+                                                      zwei Strategien zu entscheiden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie lassen die Verbindung offen. Damit beansprucht das Programm während der gesamten
+                                                         Laufzeit den Datenbankserver, ist jedoch hinsichtlich der Performance optimal ausgerüstet.
+                                                      </li>
+                                                      <li class="pgp">Sie öffnen die Verbindung nur, wenn Sie Befehle gegen die Datenbank absetzen, und
+                                                         schließen die Verbindung anschließend umgehend. Die Datenbank ist dann nicht so belastet
+                                                         wie bei einer permanent geöffneten Verbindung, Sie bezahlen diesen Vorteil aber mit
+                                                         einem Performanceverlust.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An dieser Stelle sei bereits darauf hingewiesen, dass einige ADO.NET-Objekte Ihnen
+                                                      nur eine eingeschränkte Entscheidungsfreiheit zugestehen. Hier sei die <span class="clisting">Fill</span>-Methode des <span class="clisting">SqlDataAdapter</span>-Objekts exemplarisch angeführt, die Sie später noch kennenlernen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es kann keinen auf alle denkbaren Einsatzfälle projizierbaren Tipp geben, um Ihnen
+                                                      die Entscheidung abzunehmen. Zu viele Kriterien können dafür entscheidend sein. Wenn
+                                                      Sie keine Entscheidungstendenz erkennen können, sollten Sie das Verhalten von Anwendung
+                                                      und Datenbankserver zumindest in einer simulierten Realumgebung einfach testen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpda826620-2ae6-4081-a249-8b04842d4090" name="dodtpda826620-2ae6-4081-a249-8b04842d4090"></a><h3 class="t3"><span class="cfett">31.3.5    </span><span class="cfett"> Das Verbindungspooling</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp247fb4d5-8e99-48a3-80e8-e12117665bca"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa0bfda9e-fb9f-430c-a3d8-520e2d1708e4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp5acb8f22-9f21-41e1-b740-c15d23310a7e"></a>Stellen Sie sich eine Datenbank im Internet vor. Es könnte sich dabei beispielsweise
+                                                      um eine Datenbank handeln, in der die Angebote eines Touristikunternehmens enthalten
+                                                      sind. Man kann davon ausgehen, dass sich innerhalb einer kurzen Zeitspanne mehrere
+                                                      Anwender über die Angebote des Touristikunternehmens informieren wollen. Das ständige
+                                                      Auf- und Abbauen der Verbindungen ist jedoch nachteilig, denn mit jedem Aufbau und
+                                                      Abbau einer physischen Verbindung werden die Ressourcen belastet, was zu einer schlechteren
+                                                      Antwortzeit des Datenbankservers führt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die Leistung von Datenbankanwendungen zu verbessern, unterstützt ADO.NET das Konzept
+                                                      der Verbindungspools. Eben wurde noch gesagt, dass mit dem Aufruf der Methode <span class="clisting">Close</span> die Verbindung zu der Datenbank geschlossen wird. Wollen wir präzise sein, stimmt
+                                                      diese Aussage nicht (wenn man von den Standardeinstellungen ausgeht). <span class="clisting">Close</span> bewirkt lediglich, dass die Verbindung in einen Pool geschoben wird. Die physische
+                                                      Verbindung bleibt auch dann bestehen, wenn das <span class="clisting">SqlConnection</span>-Objekt aufgegeben wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Verbindungspool beherbergt nur Verbindungen, die exakt dieselbe Verbindungszeichenfolge
+                                                      aufweisen. Unterscheidet sich diese, wird ein neuer, zusätzlicher Pool eröffnet. Versucht
+                                                      ein Client, die Verbindung mit einer Datenbank herzustellen, werden zunächst alle
+                                                      vorhandenen Pools daraufhin untersucht, ob es nicht bereits einen Pool mit einer passenden
+                                                      Verbindung gibt. Wenn ja, wird sie dem anrufenden Client zugeordnet, wenn nicht, wird
+                                                      die angeforderte Verbindung neu erstellt. Der Client bearbeitet auf dieser Verbindung
+                                                      die Daten und kann sie am Ende mit <span class="clisting">Close</span> wieder aufgeben. In jedem Fall wird die Verbindung danach einem Pool zugeführt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Verbindungspool beherbergt nur Datenbankverbindungen, deren Verbindungszeichenfolge
+                                                      identisch ist. Für jeden Client, der nicht aus einem vorhandenen Verbindungspool versorgt
+                                                      werden kann, wird eine neue Verbindung erstellt. Bei stark frequentierten Datenbanken
+                                                      würde das auf die Dauer zu einem inakzeptablen Anwachsen des Pools führen. Daher wird
+                                                      eine Verbindung aus dem Pool gelöscht, wenn sie eine bestimmte Zeit lang nicht mehr
+                                                      aktiviert worden ist. Standardmäßig ist das nach ca. fünf Minuten der Fall.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ADO.NET gestattet es Ihnen, das Poolen der Verbindungen zu steuern. Sie können sowohl
+                                                      die maximale als auch die minimale Poolgröße festlegen, gepoolte Verbindungen manuell
+                                                      freigeben und das Verbindungspooling sogar deaktivieren.
+                                                   </p>
+                                                   <h4 class="t4"> Beispiel für ein Verbindungspooling</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns das Poolen jetzt an einem Beispiel verdeutlichen. Dazu wird im folgenden
+                                                      Code eine Verbindung zehnmal angefordert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 31\VerbindungsPooling</span><br></br><span class="clistingfett">class Program {</span><br></br> <span class="clistingfett"> static void Main(string[] args) {</span><br xmlns="">    SqlConnection con = new SqlConnection( ... );<br></br>    // Verbindung 10-mal öffnen und schließen<br></br>    for (int i = 0; i &lt; 10; i++) {<br xmlns="">      con.Open();<br xmlns="">      con.Close();<br xmlns="">      Thread.Sleep(100);<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.7  </span>Testen des Verbindungspoolings
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weiter oben in diesem Kapitel haben wir bereits das Tool <span class="ckursiv">SQL Server Profiler</span> aus dem SQL Server Management Studio eingesetzt, um uns von den Auswirkungen der
+                                                      Methode <span class="clisting">Close</span> zu überzeugen. Natürlich spielte auch bei diesen Beispielen das Verbindungspooling
+                                                      eine Rolle, musste aber zum grundlegenden Verständnis der <span class="clisting">Close</span>-Methode noch nicht berücksichtigt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun verwenden wir den Profiler, um das Poolen von Verbindungen zu erleben. In Abbildung
+                                                      31.2 sehen Sie die Aufzeichnung nach dem Ausführen des Beispielprogramms <span class="ckursiv">Verbindungspooling</span>. Beachten Sie, dass im Code zwar zehnmal eine Verbindung aufgebaut wird, aber dennoch
+                                                      nur ein Log-in- und ein abschließendes Log-out-Ereignis auftritt. Dies geschieht,
+                                                      weil jede Verbindung nach dem Öffnen und dem darauf folgenden Schließen mit <span class="clisting">Close</span> zwar aus Sicht des Clients geschlossen wird, tatsächlich jedoch in einen Pool wandert,
+                                                      aus dem sie bei jedem weiteren Schleifendurchlauf mit <span class="clisting">Open</span> wieder in Anspruch genommen wird.
+                                                   </p>
+                                                   <p><a href="bilder/31_02.png" rel="lightbox" title="Das Ablaufverfolgungsprotokoll des SQL Server Profilers beim Poolen"><img class="bild" border="1" src="bilderklein/klein31_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 31.2  </span>Das Ablaufverfolgungsprotokoll des SQL Server Profilers beim Poolen
+                                                   </p>
+                                                   <h4 class="t4"> Deaktivieren des Verbindungspoolings</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig ist das Pooling aktiviert. Um es zu deaktivieren, ergänzen Sie die Verbindungszeichenfolge
+                                                      wie folgt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection(" ...;Pooling=False");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erzeugen Sie die Verbindungszeichenfolge mit einem <span class="clisting">SqlConnectionStringBuilder</span>-Objekt, so legen Sie dessen Eigenschaft <span class="clisting">Pooling</span> auf <span class="clisting">False</span> fest.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In <span class="ckursiv">SQL Server Profiler</span> kann der Effekt, den das Abschalten des Poolings nach sich zieht, wieder anschaulich
+                                                      beobachtet werden. Für jedes Verbindungsgesuch wird ein Log-in- und ein Log-out-Ereignis
+                                                      protokolliert. Abbildung 31.3 zeigt das Protokoll des Beispiels <span class="ckursiv">Verbindungspooling</span>, nun jedoch mit ausgeschaltetem Pooling.
+                                                   </p>
+                                                   <h4 class="t4"> Beeinflussen der Verbindungspoolgröße</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sowohl die Maximalgröße als auch die Minimalgröße eines Verbindungspools lassen sich
+                                                      steuern. Per Vorgabe ist die Minimalgröße auf 0 festgelegt, die Maximalgröße auf 100
+                                                      gepoolte Verbindungen.
+                                                   </p>
+                                                   <p><a href="bilder/31_03.png" rel="lightbox" title="Das Ablaufverfolgungsprotokoll des SQL Server Profilers, wenn das Poolen abgeschaltet ist"><img class="bild" border="1" src="bilderklein/klein31_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 31.3  </span>Das Ablaufverfolgungsprotokoll des SQL Server Profilers, wenn das Poolen abgeschaltet
+                                                      ist
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Betrachten wir zuerst die Minimalgröße etwas genauer. Fordert ein Client eine Verbindung
+                                                      an, die sich in keinem Pool befindet, und ist die Minimalgröße auf zehn Verbindungen
+                                                      festgelegt, werden über die angeforderte Verbindung hinaus neun weitere geöffnet und
+                                                      im Pool abgelegt. Es gibt dann also mindestens zehn Verbindungen im Pool. Diese bedienen
+                                                      eventuell anfordernde Clients. Sind mehr Verbindungen notwendig, wird der Pool vergrößert,
+                                                      aber die Mindestanzahl wird nicht mehr unterschritten, auch wenn zeitweise keine Verbindung
+                                                      mehr benötigt wird. Die Lebensdauer von ca. fünf Minuten, die ansonsten für gepoolte
+                                                      Verbindungen gilt, betrifft nicht die zehn Verbindungen, die zur Sicherung der Mindestpoolgröße
+                                                      erforderlich sind.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Festlegung der Maximalpoolgröße gewährleistet, dass ein Datenbankserver zu Spitzenzeiten
+                                                      nicht überstrapaziert wird. Zu einem gegebenen Zeitpunkt könnte der Pool ausgeschöpft
+                                                      sein, weil alle darin enthaltenen Verbindungen aktiv von Clients beansprucht werden.
+                                                      Kommt es dann zu einem weiteren Verbindungsgesuch, wird versucht, für die Zeitspanne,
+                                                      die in <span class="clisting">Connect Timeout</span> festgelegt ist, dem anfordernden Client eine Verbindung bereitzustellen. Gelingt
+                                                      das nicht innerhalb der Zeitspanne, wird eine Exception (<span class="clisting">InvalidOperationException</span>) ausgelöst.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Festlegung der minimalen und maximalen Verbindungspoolgröße dienen uns wieder
+                                                      zwei Attribute in der Verbindungszeichenfolge: <span class="clisting">Min Pool Size</span> und <span class="clisting">Max Pool Size</span>. Passend dazu werden von einem <span class="clisting">SqlConnectionStringBuilder</span>-Objekt die beiden Eigenschaften <span class="clisting">MinPoolSize</span> und <span class="clisting">MaxPoolSize</span> angeboten.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection con = new SqlConnection("...;Min Pool Size=5; Max Pool Size=200");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.8  </span>Das Verbindungspooling beeinflussen
+                                                   </p>
+                                                   <h4 class="t4"> Freigabe gepoolter Verbindungen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Gepoolte Verbindungen können mit den beiden statischen Methoden <span class="clisting">ClearPool</span> und <span class="clisting">ClearAllPools</span> freigegeben werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">ClearPool</span> erwartet als Argument ein <span class="clisting">SqlConnection</span>-Objekt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlConnection.ClearPool(con);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">Connection</span>-Objekt ist notwendig, weil die Methode daraus die Verbindungszeichenfolge bezieht,
+                                                      um zu wissen, in welchem Verbindungspool die Verbindungen aufgegeben werden sollen.
+                                                      Dabei handelt es sich nur um die freien Verbindungen und nicht um die, die in diesem
+                                                      Moment aktiv sind, also von anderen Clients beansprucht werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">ClearAllPools</span> definiert keinen Parameter. Sie löscht alle freien Verbindungen in den Verbindungspools.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp247fb4d5-8e99-48a3-80e8-e12117665bca" name="dodtp247fb4d5-8e99-48a3-80e8-e12117665bca"></a><h3 class="t3"><span class="cfett">31.3.6    </span><span class="cfett"> Die Ereignisse eines »Connection«-Objekts</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdd31809e-e638-4ddb-bbe7-4c71db12ddcc"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp37a2d243-0264-49b0-8d97-31b97d0a8f78"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">InfoMessage</span> und <span class="clisting">StateChange</span> besitzt das <span class="clisting">SqlConnection</span>-Objekt nur zwei Ereignisse.
+                                                   </p>
+                                                   <h4 class="t4"> Das Ereignis »InfoMessage«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpf6aa3ced-a0ab-4546-86de-41acac40295f"></a>Bei auftretenden Problemen gibt SQL Server eine Informationsmeldung an den Aufrufer
+                                                      zurück, die das Problem beschreibt. Ein Problem kann mehr oder weniger schwerwiegend
+                                                      sein. Um das genauer zu beschreiben, unterscheidet der SQL Server Fehler in ihrem
+                                                      Schweregrad und definiert dazu 25 Stufen. Die Schweregrade 0 bis 10 stehen ausschließlich
+                                                      für Informationsmeldungen zur Verfügung. Fehler der Schweregrade 11 bis 16 kann ein
+                                                      Anwender selbst beheben, ab Schweregrad 17 muss der Datenbankadministrator aktiv werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">InfoMessage</span>-Ereignis wird ausgelöst, wenn vom SQL Server eine Meldung mit einem Schweregrad von
+                                                      10 oder weniger zurückgegeben wird. Im folgenden Beispiel wird die Anweisung <span class="clisting">PRINT</span> an den SQL Server geschickt. Die hinter <span class="clisting">PRINT</span> angeführte Zeichenfolge wird von der Datenbank als Informationsquelle an den Client
+                                                      gesendet, was zur Auslösung des <span class="clisting">InfoMessage</span>-Ereignisses führt. Die Servermeldung wird der Eigenschaft <span class="clisting">Message</span> des <span class="clisting">Args</span>-Objekts entnommen. Wenn Sie sich den Programmcode dieses Beispiels ansehen, sollten
+                                                      Sie die Anweisungen nach dem Öffnen der Verbindung ignorieren, da Sie die dazu notwendigen
+                                                      Informationen erst im nächsten Kapitel erhalten.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 31\InfoMessageEvent</span><br></br><span class="clistingfett">class Program</span> {<br></br> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection();<br xmlns="">    con.ConnectionString = "...";<br xmlns="">    con.InfoMessage += new SqlInfoMessageEventHandler(con_InfoMessage);<br xmlns="">    con.Open();<br xmlns="">    SqlCommand cmd = con.CreateCommand();<br xmlns="">    cmd.CommandText = "PRINT 'Informationsmeldung'";<br xmlns="">    cmd.ExecuteNonQuery();<br xmlns="">    con.Close();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br> <span class="clistingfett"> static void con_InfoMessage(object obj,SqlInfoMessageEventArgs e)</span> {<br xmlns="">    Console.WriteLine("Meldung vom Server: {0}", e.Message);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.9  </span>Das Ereignis »InfoMessage« behandeln
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">InfoMessage</span>-Ereignis wird normalerweise nur bei Informations- und Warnmeldungen des Servers ausgelöst.
+                                                      Bei einem tatsächlichen Fehler wird eine Ausnahme ausgelöst. Das könnte im Zusammenhang
+                                                      mit den Methoden <span class="clisting">ExecuteNonQuery</span> oder <span class="clisting">ExecuteReader</span>, die wir in Kapitel 32 behandeln, der Fall sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wollen Sie die Verarbeitung der restlichen Anweisungen unabhängig von den vom Server
+                                                      erzeugten Fehlern dennoch fortsetzen, legen Sie die <span class="clisting">FireInfoMessageEventOnUserErrors</span>-Eigenschaft des <span class="clisting">SqlConnection</span>-Objekts auf <span class="clisting">true</span> fest. Bei dieser Vorgehensweise wird beim Auftreten von Fehlern von der Verbindung
+                                                      das <span class="clisting">InfoMessage</span>-Ereignis ausgelöst, anstatt eine Ausnahme auszulösen und die Verarbeitung zu unterbrechen.
+                                                   </p>
+                                                   <h4 class="t4"> Das Ereignis »StateChange«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp622617df-c5df-41f9-baf1-2c5fd364eae6"></a>Das Ereignis <span class="clisting">StateChange</span> tritt auf, wenn sich die <span class="clisting">State</span>-Eigenschaft ändert. Im Ereignishandler können Sie die Eigenschaften <span class="clisting">OriginalState</span> und <span class="clisting">CurrentState</span> des <span class="clisting">Args</span>-Objekts auswerten, um den alten und neuen Zustand der Verbindung zu überprüfen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 31\StateChangeEvent</span><br></br><span class="clistingfett">class Program</span> {<br></br> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection();<br xmlns="">    con.ConnectionString = "...";<br xmlns="">    con.StateChange += new StateChangeEventHandler(con_StateChange);<br xmlns="">    con.Open();<br xmlns="">    con.Close();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br> <span class="clistingfett"> static void con_StateChange(object obj,StateChangeEventArgs e)</span> {<br xmlns="">    Console.Write("Zustand: von {0}", e.OriginalState.ToString());<br xmlns="">    Console.WriteLine(" nach {0}", e.CurrentState.ToString());<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.10  </span>Das Ereignis »StateChange« behandeln
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpdd31809e-e638-4ddb-bbe7-4c71db12ddcc" name="dodtpdd31809e-e638-4ddb-bbe7-4c71db12ddcc"></a><h3 class="t3"><span class="cfett">31.3.7    </span><span class="cfett"> Verbindungszeichenfolgen aus einer Konfigurationsdatei abrufen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp58110ec1-7b45-4818-8ffd-bc913f442b95"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd6235dcb-a144-44ce-abd0-1891e20d4af8"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher haben wir die Verbindungszeichenfolgen immer im Code geschrieben (und werden
+                                                      es in diesem Buch auch weiter tun). Das spiegelt die Anforderungen in der täglichen
+                                                      Praxis nicht wider, denn Sie werden nur selten eine Datenbankanwendung entwickeln,
+                                                      die unter Einbeziehung der Produktionsserverdatenbank getestet wird. Stattdessen werden
+                                                      Sie bestenfalls mit einer Kopie der Datenbank arbeiten, die sich auf einem anderen
+                                                      Rechner befindet und somit eine andere Verbindungszeichenfolge erfordert als die Produktionsdatenbank.
+                                                      Nach dem bisherigen Kenntnisstand bedeutet dies, dass Sie nach dem erfolgreichen Testen
+                                                      und vor Auslieferung und Installation der Anwendung die Verbindungsinformationen abschließend
+                                                      ändern und noch einmal kompilieren müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch ein anderes typisches Szenario ist denkbar: Die Produktionsdatenbank wird »verschoben«,
+                                                      beispielsweise auf einem anderen Rechner installiert, oder der Rechner, auf dem die
+                                                      Datenbank installiert ist, erhält eine andere TCP/IP-Adresse. Auch hier muss die Anwendung
+                                                      neu kompiliert werden, um mit der neuen Verbindungszeichenfolge den Zugriff auf die
+                                                      Dateninformationen zu gewährleisten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine gute Lösung ist es, die Verbindungszeichenfolge isoliert zu betrachten. .NET
+                                                      bietet mit den Konfigurationsdateien dazu die passende Lösung an. Konfigurationsdateien
+                                                      gibt es auf mehreren Ebenen: beispielsweise die Maschinenkonfigurationsdatei für eine
+                                                      lokale Maschine oder die Anwendungskonfigurationsdatei für ein bestimmtes Programm.
+                                                      Konfigurationsdateien werden, soweit vorhanden, vor dem Starten einer .NET-Anwendung
+                                                      ausgewertet. Verbindungszeichenfolgen lassen sich in Konfigurationsdateien hinterlegen.
+                                                      Der Vorteil dabei ist, dass eine Verbindungszeichenfolge ohne Neukompilierung der
+                                                      Anwendung geändert werden kann, sogar mit jedem einfachen Texteditor, denn Konfigurationsdateien
+                                                      sind XML-Dateien.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An einem Beispiel möchte ich Ihnen zeigen, wie Sie nicht nur eine Anwendungskonfigurationsdatei
+                                                      hinsichtlich der Verbindungszeichenfolge auswerten können, sondern auch, wie Sie mittels
+                                                      Programmcode in die Konfigurationsdatei schreiben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 31\ConnectionStringAppConfig</span><br></br>...<br xmlns="">using System.Configuration;<br></br>namespace ConnectionstringInKonfdatei {<br xmlns=""> <span class="clistingfett"> class Program</span> {<br></br>   <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">      ConnectionStringSettings setting =<br xmlns="">          ConfigurationManager.ConnectionStrings["SQL2008"];<br></br>      // Prüfen, ob es in der Konfigurationsdatei einen<br></br>      // Eintrag &#8216;SQL2008&#8217; gibt<br></br>      if (setting == null) {<br xmlns="">        setting = new ConnectionStringSettings();<br xmlns="">        setting.Name = "SQL2008";<br xmlns="">        setting.ConnectionString =<br xmlns="">            @"Data Source=.\sqlexpress;Initial Catalog=Northwind;" +<br xmlns="">            "Integrated Security=true";<br xmlns="">        Configuration config = ConfigurationManager.OpenExeConfiguration<br xmlns="">                                     (ConfigurationUserLevel.None);<br xmlns="">        config.ConnectionStrings.ConnectionStrings.Add(setting);<br xmlns="">        config.Save();<br xmlns="">      }<br xmlns="">      SqlConnection con = new SqlConnection(setting.ConnectionString);<br xmlns="">      con.Open();<br xmlns="">      Console.WriteLine("Verbindung geöffnet");<br xmlns="">      con.Close();<br xmlns="">      Console.ReadLine();<br xmlns="">    }<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.11  </span>Schreiben und Auswerten der Anwendungskonfigurationsdatei
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie bitte, dass Sie die Bibliothek <span class="ckursiv">System.Configuration.dll</span> unter <span class="cscreenelement">Verweise</span> einbinden müssen. Im Code wird zuerst überprüft, ob es in der Anwendungskonfigurationsdatei
+                                                      einen Eintrag namens <span class="ckursiv">SQL2008</span> gibt. Wenn nicht, wird er angelegt und eine Verbindungszeichenfolge definiert. Sollte
+                                                      es noch keine Anwendungskonfigurationsdatei geben, wird diese im Code erzeugt. Danach
+                                                      wird der entsprechende Eintrag aus der Konfigurationsdatei als Argument dem <span class="clisting">SqlConnection</span>-Konstruktoraufruf übergeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun sollten wir uns auch noch die Anwendungskonfigurationsdatei ansehen.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;?xml version="1.0" encoding="utf-8"?&gt;<br xmlns="">  &lt;configuration&gt;<br xmlns="">    &lt;connectionStrings&gt;<br xmlns="">      &lt;add name="SQL2008"<br xmlns="">             connectionString="Data Source=wsak\\SQL2008;<br xmlns="">                               Initial Catalog=Northwind;<br xmlns="">                               Integrated Security=sspi" /&gt;<br xmlns="">    &lt;/connectionStrings&gt;<br xmlns="">&lt;/configuration&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.12  </span>Verbindungszeichenfolge in einer Anwendungskonfigurationsdatei
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anwendungskonfigurationsdateien werden standardmäßig im Verzeichnis der ausführbaren
+                                                      Programmdatei (<span class="ckursiv">exe</span>-Datei) gespeichert. Der Dateibezeichner lautet genauso wie der Dateibezeichner der
+                                                      ausführbaren Datei, ergänzt um .<span class="ckursiv">config</span>. Innerhalb des Stammelements <span class="clisting">&lt;configuration&gt;</span> können eine Vielzahl auswertbarer untergeordneter Elemente definiert werden, zu denen
+                                                      auch <span class="clisting">&lt;connectionStrings&gt;</span> zählt. Jeder Eintrag einer Verbindungszeichenfolge wird mit dem Element <span class="clisting">&lt;add&gt;</span> eingeleitet, das sich <span class="clisting">&lt;connectionStrings&gt;</span> unterordnet. <span class="clisting">&lt;add&gt;</span> definiert drei Attribute, von denen zwei zwingend angegeben werden müssen: <span class="clisting">connectionString</span> und <span class="clisting">name</span>. Das dritte, <span class="clisting">providerName</span>, ist optional und hat die Standardeinstellung <span class="ckursiv">System.Data.SqlClient</span>. Es gestattet, den Datenprovider für die beschriebene Verbindungszeichenfolge festzulegen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ändert sich im laufenden Betrieb die Verbindungszeichenfolge, beispielsweise wegen
+                                                      einer Änderung der TCP/IP-Adresse des Datenbankservers, passen Sie die Verbindungszeichenfolge
+                                                      in der Konfigurationsdatei entsprechend an. Eine Neukompilierung der Anwendung mit
+                                                      nachfolgender Neuverteilung ist nicht notwendig.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp58110ec1-7b45-4818-8ffd-bc913f442b95" name="dodtp58110ec1-7b45-4818-8ffd-bc913f442b95"></a><h3 class="t3"><span class="cfett">31.3.8    </span><span class="cfett"> Verbindungen mit dem OleDb-Datenprovider</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdd31809e-e638-4ddb-bbe7-4c71db12ddcc"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Gegensatz zum SqlClient-Datenprovider, der nur den Zugriff auf SQL Server ab Version
+                                                      7.0 ermöglicht, ist der OleDb-Datenprovider sehr flexibel einsetzbar. Sie können ihn
+                                                      zur Kommunikation mit dem SQL Server benutzen. Er unterstützt aber gleichzeitig auch
+                                                      alle OLE DB-Datenbanken, zu denen beispielsweise auch Oracle und Access zählen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Prinzipiell ändert sich nur wenig, wenn Sie anstelle des SqlClient-Datenproviders
+                                                      den OleDb-Provider einsetzen. Sie sollten aber daran denken, vorher den richtigen
+                                                      Namespace bekannt zu geben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System.Data.OleDb;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Aufbau einer Verbindung benötigt auch der OleDb-Provider ein <span class="clisting">Connection</span>-Objekt. Der exakte Name der Klasse lautet, angelehnt an den ausgewählten Provider,
+                                                      <span class="clisting">OleDbConnection</span>. Die Verbindungszeichenfolge wird ebenfalls entweder über den parametrisierten Konstruktor
+                                                      oder über die Eigenschaft <span class="clisting">ConnectionString</span> bereitgestellt. Die Attribute der Verbindungszeichenfolge gleichen denen des SqlClient-Datenproviders,
+                                                      werden jedoch noch um das Attribut <span class="clisting">Provider</span> ergänzt, mit dem die Datenquelle genauer zu spezifizieren ist. In Tabelle 31.1 sind
+                                                      die wichtigsten Attribute aufgeführt.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 31.2  </span>Werte des Attributs Provider (Auszug)
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Wert
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">SQLNCLI10</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der SQL Server-Datenprovider</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Microsoft.Jet.OLEDB.4.0</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Datenprovider der Jet-Datenbanken (MS Access)</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MSDAORA</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">OleDb-Datenprovider für Oracle</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Tabelle ist ein Wert für den Zugriff auf ODBC-Datenquellen nicht angegeben,
+                                                      denn für diese sollten die Klassen des Namespaces <span class="clisting">System.Data.Odbc</span> benutzt werden.
+                                                   </p>
+                                                   <h4 class="t4"> Verbindungsaufbau zu einer SQL Server-Datenbank</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Codefragment zeigt, wie eine Verbindung zur Beispieldatenbank <span class="ckursiv">Northwind</span> einer SQL Server-Instanz hergestellt wird, die sich auf dem lokalen Rechner befindet.
+                                                      Als OleDb-Provider dient der Providername SQLNCLI10. Der Authentifizierungsmodus ist
+                                                      bei diesem Codefragment die SQL Server-Authentifizierung.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strCon = @"Provider=SQLNCLI10;Data Source=.\sqlexpress;" +<br xmlns="">                "Initial Catalog=Northwind;" +<br xmlns="">                "User ID=testuser;" +<br xmlns="">                "Password=2zz6sl3";<br xmlns="">OleDbConnection con = new OleDbConnection(strCon);<br xmlns="">con.Open();<br xmlns="">[...]<br xmlns="">con.Close();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.13  </span>Verbindungszeichenfolge mit dem OleDb-Provider für SQL Server 2008
+                                                   </p>
+                                                   <h4 class="t4"> Verbindungsaufbau zu einer Access-Datenbank</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die Verbindung zu einer Access-Datenbank herzustellen, wird der spezifische Datenprovider
+                                                      <span class="ckursiv">Microsoft.ACE.OLEDB.12.0</span> benutzt. Handelt es sich um eine andere Version der Datenbank, müssen Sie nur die
+                                                      die Version beschreibenden Ziffern austauschen. Die Verbindungszeichenfolge sieht
+                                                      etwas anders aus als die, mit der die Verbindung zum SQL Server hergestellt wird.
+                                                      Hinter dem Attribut <span class="clisting">Data Source</span> wird nun nicht mehr der Rechnername angegeben, sondern der Pfad zur <span class="ckursiv">mdb</span>-Datei, da es sich um eine dateibasierte Datenbank handelt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">OleDbConnection con = new OleDbConnection();<br xmlns="">con.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +<br xmlns="">                        "Data Source=C:\NWIND.mdb";<br xmlns="">con.Open();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 31.14  </span>Verbindungszeichenfolge mit dem OleDb-Provider für Access 2007/2010
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die Verbindung genauer zu beschreiben, steht eine Reihe weiterer Schlüsselwörter
+                                                      zur Verfügung. Sie können diese der <span class="ckursiv">Microsoft Data Access SDK</span> entnehmen.
+                                                   </p>
+                                                   <h4 class="t4"> Authentifizierung mit dem OleDb-Provider</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der OleDb-Datenprovider bietet für SQL Server eine weitere interessante Möglichkeit
+                                                      zur Authentifizierung des Anwenders. Dazu muss weder der Benutzername noch das Passwort
+                                                      in der Verbindungszeichenfolge angegeben werden. Ergänzen Sie diese vielmehr um <span class="clisting">prompt=prompt</span>, also beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">con.ConnectionString = "Provider= SQLNCLI10;Data Source=(local);" +<br xmlns="">   "Initial Catalog=Northwind;prompt=prompt";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Verbindungsaufbau mit der Methode <span class="clisting">Open</span> wird daraufhin ein Dialog geöffnet, wie in Abbildung 31.4 gezeigt.
+                                                   </p>
+                                                   <p><a href="bilder/31_04.png" rel="lightbox" title="Anmeldedialog des OleDb-Datenproviders"><img class="bild" border="1" src="bilderklein/klein31_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 31.4  </span>Anmeldedialog des OleDb-Datenproviders
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beabsichtigt der Anwender, sich über sein aktuelles Windows-Benutzerkonto zu authentifizieren,
+                                                      wird die Auswahlbox <span class="cscreenelement">Vertrauenswürdige Verbindung verwenden</span> gewählt. Soll die Verbindung über die spezifische SQL Server-Authentifizierung hergestellt
+                                                      werden, muss der Anwender den entsprechenden Benutzernamen und das dazu passende Passwort
+                                                      eingeben.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs31_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="31  ADO.NET &#8211; Verbindungsorientierte Objekte"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_31_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_32_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

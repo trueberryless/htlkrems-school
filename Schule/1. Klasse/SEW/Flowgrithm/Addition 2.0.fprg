@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="F.SCHNEIDER"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-09-10 11:04:28 AM"/>
+        <attribute name="created" value="Ri5TQ0hORUlERVI7Q09XLU8tMTg7MjAxOS0wOS0xMDsxMDoxNjowNCBBTTsyNTQ3"/>
+        <attribute name="edited" value="Ri5TQ0hORUlERVI7Q09XLU8tMTg7MjAxOS0wOS0xMDsxMTowNDoyOCBBTTsxOzI2NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="z1, z2, erg, Rest" type="Integer" array="False" size=""/>
+            <declare name="op" type="String" array="False" size=""/>
+            <assign variable="op" expression="&quot;&quot;"/>
+            <assign variable="Rest" expression="0"/>
+            <assign variable="erg" expression="0"/>
+            <output expression="&quot;Geben Sie eine Zahl ein!&quot;" newline="True"/>
+            <input variable="z1"/>
+            <output expression="&quot;+, -, * oder / ?&quot;" newline="True"/>
+            <input variable="op"/>
+            <output expression="&quot;Geben Sie eine zweite Zahl ein!&quot;" newline="True"/>
+            <input variable="z2"/>
+            <if expression="op=&quot;/&quot;">
+                <then>
+                    <assign variable="erg" expression="z1/z2"/>
+                    <assign variable="Rest" expression="z1-erg*z2"/>
+                    <output expression="z1 &amp; &quot; &quot; &amp; op &amp; &quot; &quot; &amp; z2 &amp; &quot; = &quot; &amp; erg &amp; &quot;; &quot;&amp;Rest&amp; &quot; Rest&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="op=&quot;+&quot;">
+                        <then>
+                            <assign variable="erg" expression="z1+z2"/>
+                            <output expression="z1 &amp; &quot; &quot; &amp; op &amp; &quot; &quot; &amp; z2 &amp; &quot; = &quot; &amp; erg" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="op=&quot;-&quot;">
+                                <then>
+                                    <assign variable="erg" expression="z1-z2"/>
+                                    <output expression="z1 &amp; &quot; &quot; &amp; op &amp; &quot; &quot; &amp; z2 &amp; &quot; = &quot; &amp; erg" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="op=&quot;*&quot;">
+                                        <then>
+                                            <assign variable="erg" expression="z1*z2"/>
+                                            <output expression="z1 &amp; &quot; &quot; &amp; op &amp; &quot; &quot; &amp; z2 &amp; &quot; = &quot; &amp; erg" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;ung&#252;ltige Rechenoperation!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

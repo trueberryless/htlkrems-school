@@ -1,0 +1,773 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 32  ADO.NET &#8211; Das Command-Objekt">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 32  ADO.NET &#8211; Das Command-Objekt">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 32  ADO.NET &#8211; Das Command-Objekt</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="32_003.html">
+      <link rel="next" href="1997_32_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_32_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_32_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d" class="navnav">32 ADO.NET &#8211; Das Command-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_001.html#dodtp6ae286cd-0229-42af-a45b-b4ca78223ff6" class="navnav">32.1 Die Datenbankabfrage</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_002.html#dodtpd5648227-9fae-46d8-baf5-73b8d36240b6" class="navnav">32.2 Das SqlCommand-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtpc06ccb0e-6975-4d47-9a3e-a6feba32ec26" class="navnav">32.2.1 Erzeugen eines SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtpa4b03ad3-3d1b-4c41-a22e-7ab0cea25a78" class="navnav">32.2.2 Die Methode »CreateCommand« des Connection-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtp80339cb5-c129-4bcc-bbe0-7ac6e18a5f55" class="navnav">32.2.3 Ausführen des SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtp41d098d5-8397-4152-b5aa-a12e8a6f58b8" class="navnav">32.2.4 Die Eigenschaft »CommandTimeout« des SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_003.html#dodtp48f78384-ecf6-4995-9155-1b4cb0e58879" class="navnav">32.3 Aktionsabfragen absetzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp2ce3e9f7-bd8a-43ce-9ed4-653e624ddf51" class="navnav">32.3.1 Datensätze hinzufügen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp196a1d93-272a-48a4-b305-a0e0ee16c6dc" class="navnav">32.3.2 Datensätze löschen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp75dd092c-5864-429b-acaa-1db18c24a6d9" class="navnav">32.3.3 Datensätze ändern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtpe1f41d4b-db20-4fd7-898f-950d06263569" class="navnav">32.3.4 Abfragen, die genau ein Ergebnis liefern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_004.html#dodtp09887bcc-e95b-4db2-bd2d-f8469031e1f3" class="navh">32.4 Das SqlDataReader-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp6882cc3d-f783-430e-ab94-e0407918fcec" class="navh">32.4.1 Datensätze einlesen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4" class="navh">32.4.2 Schließen des SqlDataReader-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d" class="navh">32.4.3 MARS (Multiple Active Resultsets)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp18f564c0-462e-40e8-b964-fd5333536216" class="navh">32.4.4 Batchabfragen mit »NextResult« durchlaufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp5bce5631-8ad2-4d00-abb6-f26926c0f469" class="navh">32.4.5 Das Schema eines SqlDataReader-Objekts untersuchen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_005.html#dodtp36a65484-5a09-4c30-8b79-6ad0b96fd635" class="navnav">32.5 Parametrisierte Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525" class="navnav">32.5.1 Parametrisierte Abfragen mit dem SqlClient-Datenprovider</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp291b6b14-3467-490d-b58c-8319dfeb7a89" class="navnav">32.5.2 Die Klasse »SqlParameter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp55d1b3ff-4fa4-4802-ae13-f3cd77b93f39" class="navnav">32.5.3 Asynchrone Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp05c465fc-74be-457b-b385-3cb4173fd089" class="navnav">32.5.4 Gespeicherte Prozeduren (Stored Procedures)</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp09887bcc-e95b-4db2-bd2d-f8469031e1f3" name="dodtp09887bcc-e95b-4db2-bd2d-f8469031e1f3"></a><h2 class="t2"><span class="cfett">32.4    </span><span class="cfett"> Das SqlDataReader-Objekt</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb01e79ea-4d52-4c80-b7ae-0df112bcacb2"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6882cc3d-f783-430e-ab94-e0407918fcec"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Methode <span class="clisting">ExecuteNonQuery</span> des <span class="clisting">SqlCommand</span>-Objekts können Sie Datensätze in der Originaldatenbank manipulieren und mit <span class="clisting">ExecuteScalar</span> ein einzelnes Abfrageergebnis abrufen. Möchte man sich die Datensätze einer Tabelle
+                                                      in einer Anwendung anzeigen lassen, wird die Methode <span class="clisting">ExecuteReader</span> des <span class="clisting">SqlCommand</span>-Objekts aufgerufen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Rückgabewert des Methodenaufrufs ist ein Objekt vom Typ <span class="clisting">SqlDataReader</span>. Dieses ähnelt den anderen <span class="clisting">Reader</span>-Objekten des .NET Frameworks (<span class="clisting">TextReader</span>, <span class="clisting">StreamReader</span> usw.). Ein <span class="clisting">SqlDataReader</span>-Objekt liest aus einer Ergebnisliste, die schreibgeschützt ist und sich in einem
+                                                      serverseitigen Puffer befindet, also auf der Seite der Datenbank. Sie sollten daher
+                                                      beherzigen, die Ergebnisliste so schnell wie möglich abzurufen, damit die beanspruchten
+                                                      Ressourcen wieder freigegeben werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In einer von einem <span class="clisting">SqlDataReader</span>-Objekt bereitgestellten Datensatzliste kann immer nur zum folgenden Datensatz navigiert
+                                                      werden. Eine beliebige Navigation in der Ergebnisliste ist nicht möglich und ebenso
+                                                      wenig das Ändern der gelieferten Daten. Damit hat ein <span class="clisting">SqlDataReader</span> nur eine sehr eingeschränkte Funktionalität. Dieses Manko wird andererseits durch
+                                                      die sehr gute Performance wettgemacht &#8211; das ist die Stärke des <span class="clisting">SqlDataReaders</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Erzeugen eines <span class="clisting">DataReader</span>-Objekts funktioniert nur über den Aufruf der Methode <span class="clisting">ExecuteReader</span> auf die <span class="clisting">SqlCommand</span>-Referenz, denn die Klasse <span class="clisting">SqlDataReader</span> weist keinen öffentlichen Konstruktor auf.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlDataReader reader = cmd.ExecuteReader();<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp6882cc3d-f783-430e-ab94-e0407918fcec" name="dodtp6882cc3d-f783-430e-ab94-e0407918fcec"></a><h3 class="t3"><span class="cfett">32.4.1    </span><span class="cfett"> Datensätze einlesen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp09887bcc-e95b-4db2-bd2d-f8469031e1f3"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Beispielprogramm wird ein <span class="clisting">SqlDataReader</span> dazu benutzt, alle Artikel zusammen mit ihrem Preis nach dem Preis sortiert auszugeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\DataReaderSample</span><br></br>static void Main(string[] args) {<br xmlns="">  SqlConnection con = new SqlConnection("...");<br xmlns="">  string strSQL = "SELECT ProductName, Unitprice " +<br xmlns="">                  "FROM Products " +<br xmlns="">                  "ORDER BY[UnitPrice]";<br xmlns="">  SqlCommand cmd = new SqlCommand(strSQL, con);<br xmlns="">  con.Open();<br xmlns="">  SqlDataReader reader = cmd.ExecuteReader();    <br xmlns="">  while (reader.Read())<br xmlns="">    Console.WriteLine("{0,-35}{1}",<br xmlns="">        reader["ProductName"], reader["UnitPrice"]);<br xmlns="">  reader.Close();<br xmlns="">  con.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.6  </span>Daten abrufen mit »ExecuteReader«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird die Zeichenfolge des SELECT-Statements definiert, die im nächsten Schritt
+                                                      zusammen mit der Referenz auf das <span class="clisting">SqlConnection</span>-Objekt dazu dient, ein <span class="clisting">SqlCommand</span>-Objekt zu erzeugen. Auf das <span class="clisting">SqlCommand</span>-Objekt wird nach dem Öffnen der Verbindung die Methode <span class="clisting">ExecuteReader</span><span class="clisting"><a class="indexterm" id="dodtp67f24bb2-f406-4bf7-bb2d-862aed2a22d8"></a></span> ausgeführt. Der Rückgabewert wird in der Objektvariablen <span class="ckursiv">reader</span> vom Typ <span class="clisting">SqlDataReader</span> gespeichert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">SqlDataReader</span> liefert alle Datensätze, die der Reihe nach durchlaufen werden müssen. Um auf die
+                                                      Datensätze zuzugreifen, gibt es nur eine Möglichkeit: die Methode <span class="clisting">Read</span> des <span class="clisting">DataReader</span>-Objekts. Jeder Aufruf von <span class="clisting">Read</span> legt die Position des <span class="clisting">SqlDataReaders</span> neu fest. Die Ausgangsposition vor dem ersten <span class="clisting">Read</span>-Aufruf ist vor dem ersten Datensatz. Nach dem Aufruf von <span class="clisting">Read</span> ist der Rückgabewert <span class="clisting">true</span>, falls noch eine weitere Datenzeile abgerufen werden kann. Ist der Rückgabewert <span class="clisting">false</span>, ist kein weiterer Datensatz mehr verfügbar. Damit eignet sich <span class="clisting">Read</span>, um die Datensatzliste in einer <span class="clisting">while</span>-Schleife zu durchlaufen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beabsichtigen Sie, wiederholt die Datensätze im <span class="clisting">SqlDataReader</span> auszuwerten, müssen Sie die Methode <span class="clisting">ExecuteReader</span> erneut aufrufen.
+                                                   </p>
+                                                   <h4 class="t4"> Auswerten der einzelnen Spalten in DataReader</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">Read</span> wird die Position des <span class="clisting">SqlDataReaders</span> auf die folgende Datenzeile verschoben. In unserem Beispiel hat jede Datenzeile zwei
+                                                      Feldinformationen, nämlich die der Spalten <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitPrice</span>. Die einzelnen Spalten einer Abfrage werden in einer Auflistung geführt, auf die
+                                                      über den Index des <span class="clisting">SqlDataReader</span>-Objekts zugegriffen werden kann:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">reader[0]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können auch den Spaltenbezeichner angeben, also:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">reader["ProductName"]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Angaben sind gleichwertig. Bezüglich der Performance gibt es jedoch einen Unterschied.
+                                                      Geben Sie den Spaltennamen an, muss das <span class="clisting">SqlDataReader</span>-Objekt zuerst die Spalte in der Auflistung suchen &#8211; und das bei jeder Datenzeile.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">while (reader.Read())<br xmlns="">  Console.WriteLine("{0,-35}{1}", reader["ProductName"], reader["UnitPrice"]);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die Leistung Ihrer Anwendung zu steigern, sollten Sie daher den Index der betreffenden
+                                                      Spalte angeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">while(reader.Read())<br xmlns="">  Console.WriteLine("{0,-35}{1}",reader[0], reader[1]);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist Ihnen nur der Spaltenbezeichner, jedoch nicht der dazugehörige Index bekannt,
+                                                      haben Sie mit der Methode <span class="clisting">GetOrdinal</span> der Klasse <span class="clisting">DataReader</span> unter Angabe des Spaltenbezeichners die Möglichkeit, vor dem Aufruf von <span class="clisting">Read</span> den Index zu ermitteln:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int intName = reader.GetOrdinal("ProductName");<br xmlns="">int intPrice = reader.GetOrdinal("UnitPrice");<br xmlns="">while(reader.Read())<br xmlns="">   Console.WriteLine("{0,-20}{1,-20}{2,-20}", reader[intName], reader[intPrice]);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.7  </span>Die Indizes der Spalten mit »GetOrdinal« abrufen
+                                                   </p>
+                                                   <h4 class="t4"> Spalten mit den typspezifischen Methoden abrufen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem Indexer der Methode <span class="clisting">ExecuteReader</span> werden die Spaltenwerte vom Typ <span class="clisting">Object</span> zurückgegeben. Das hat Leistungseinbußen zur Folge, weil der tatsächliche Typ erst
+                                                      in <span class="clisting">Object</span> umgewandelt werden muss. Anstatt über den Indexer die Daten auszuwerten, können Sie
+                                                      auch eine der vielen <span class="clisting">GetXxx</span>-Methoden anwenden, die für die wichtigsten .NET-Datentypen bereitgestellt werden,
+                                                      beispielsweise <span class="clisting">GetString</span>, <span class="clisting">GetInt32</span> oder <span class="clisting">GetBoolean</span>. Sie müssen nur die passende Methode aus einer (langen) Liste auswählen und beim
+                                                      Aufruf die Ordinalzahl der entsprechenden Spalte übergeben. Wählen Sie eine nicht
+                                                      typgerechte Methode aus, kommt es zur Ausnahme <span class="clisting">InvalidCastException</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlDataReader reader = cmd.ExecuteReader();<br xmlns="">while (reader.Read()) {<br xmlns="">  Console.WriteLine(reader.GetString(0));<br xmlns="">  Console.WriteLine(reader.GetString(1));<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.8  </span>Beste Performance beim Datenabruf
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch wenn der Programmieraufwand größer ist, zur Laufzeit werden Sie dafür mit einem
+                                                      besseren Leistungsverhalten belohnt.
+                                                   </p>
+                                                   <h4 class="t4"> NULL-Werte behandeln</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Spalten einer Tabelle können, soweit zugelassen, NULL-Werte enthalten. In der Tabelle
+                                                      <span class="ckursiv">Products</span> betrifft das zum Beispiel die Spalte <span class="ckursiv">UnitPrice</span>. Rufen Sie die Datenwerte über eine der typisierten Methoden ab und ist der Spaltenwert
+                                                      NULL, führt das zu einer Ausnahme.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um diesem Problem zu begegnen, können Sie mit der Methode <span class="clisting">IsDBNull</span><span class="clisting"><a class="indexterm" id="dodtp8915eb2e-cd58-453f-b453-df19efe20a7a"></a></span> des <span class="clisting">SqlDataReaders</span> prüfen, ob die entsprechende Spalte einen gültigen Wert oder NULL enthält.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlDataReader reader = cmd.ExecuteReader();<br xmlns="">while (reader.Read()) {<br xmlns="">  Console.WriteLine(reader.GetString(0));<br xmlns="">  if(! reader.IsDBNull(1))<br xmlns="">    Console.WriteLine(reader.GetString(1));<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.9  </span>NULL-Inhalte behandeln
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4" name="dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4"></a><h3 class="t3"><span class="cfett">32.4.2    </span><span class="cfett"> Schließen des SqlDataReader-Objekts</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp26050aa7-bef4-4b88-8256-3fedc6826995"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">SqlDataReader</span> blockiert standardmäßig das <span class="clisting">SqlConnection</span>-Objekt. Solange <span class="clisting">SqlDataReader</span> durch den Aufruf von <span class="clisting">ExecuteReader</span> geöffnet ist, können keine anderen Aktionen auf Basis der Verbindung durchgeführt
+                                                      werden, auch nicht das Öffnen eines zweiten <span class="clisting">SqlDataReader</span>-Objekts. Daher sollte die Sperre so schnell wie möglich mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">reader.Close();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">aufgehoben werden.</p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d" name="dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d"></a><h3 class="t3"><span class="cfett">32.4.3    </span><span class="cfett"> MARS (Multiple Active Resultsets)</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp18f564c0-462e-40e8-b964-fd5333536216"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp3e0d64ac-0e32-4ed4-a763-a49f95c33ea8"></a>Der SQL Server hat ein Feature, das es gestattet, mehrere Anforderungen auf einer
+                                                      Verbindung auszuführen. Damit wird eine Verbindung nicht mehr blockiert, wenn diese
+                                                      einem geöffneten <span class="clisting">SqlDataReader</span> zugeordnet ist. Diese Technik von SQL Server wird als <span class="ckursiv">Multiple Active Resultsets</span>, kurz MARS bezeichnet. MARS ist per Vorgabe deaktiviert und muss zuvor aktiviert
+                                                      werden, um es zu nutzen. Sie aktivieren MARS entweder durch Ergänzen der Verbindungszeichenfolge
+                                                      um
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">MultipleActiveResultSets<a class="indexterm" id="dodtp76844a70-3c30-4c01-a3fd-7945ce37102e"></a>=True;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">oder durch Setzen der gleichnamigen Eigenschaft im <span class="clisting">SqlConnectionStringBuilder</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">MARS bietet sich an, wenn auf Basis der Ergebnismenge eines <span class="clisting">SqlDataReaders</span> eine untergeordnete Tabellenabfrage gestartet werden soll. Das folgende Beispiel
+                                                      demonstriert dies. Dazu soll zu jedem Artikel auch der dazugehörige Lieferant ausgegeben
+                                                      werden. Damit stehen die beiden Tabellen <span class="ckursiv">Products</span> und <span class="ckursiv">Suppliers</span> im Mittelpunkt unserer Betrachtung, die miteinander in einer 1:n-Beziehung stehen.
+                                                      
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für jede Tabelle werden ein <span class="clisting">SqlCommand</span>-Objekt sowie ein <span class="clisting">SqlDataReader</span>-Objekt benötigt. Das erste <span class="clisting">DataReader</span>-Objekt durchläuft die Artikeltabelle. Mit der in der Spalte <span class="ckursiv">SupplierID</span> enthaltenen ID des Lieferanten wird eine untergeordnete Ergebnisliste, die der Tabelle
+                                                      <span class="ckursiv">Suppliers</span>, durchlaufen. Hier wird die ID des Lieferanten gesucht und dessen Firmenbezeichnung
+                                                      zusätzlich zum Artikel ausgegeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\MarsSample</span><br></br>static void Main(string[] args) {<br xmlns="">  SqlConnection con = new SqlConnection(<br xmlns="">                      " ...;MultipleActiveResultSets=true");<br xmlns="">  string textProducts = "SELECT ProductName, UnitsInStock, SupplierID " +<br xmlns="">                        "FROM Products";<br xmlns="">  string textSupplier = "SELECT CompanyName FROM Suppliers " +<br xmlns="">                        "WHERE SupplierID=@SupplierID";<br></br>  // SqlCommand-Objekte erzeugen<br></br>  SqlCommand cmdProducts, cmdSupplier;<br xmlns="">  cmdProducts = new SqlCommand(textProducts, con);<br xmlns="">  cmdSupplier = new SqlCommand(textSupplier, con);<br xmlns="">  SqlParameter param = cmdSupplier.Parameters.Add("@SupplierID", SqlDbType.Int);<br></br>  // Verbindung öffnen<br></br>  con.Open();<br xmlns="">  SqlDataReader readerProducts = cmdProducts.ExecuteReader();<br></br>  // Einlesen und Ausgabe der Datenzeilen an der Konsole<br></br>  while (readerProducts.Read()) {<br xmlns="">    Console.Write("{0,-35}{1,-6}",<br xmlns="">    readerProducts["ProductName"], readerProducts["UnitsInStock"]);<br xmlns="">    param.Value = readerProducts["SupplierID"];<br xmlns="">    SqlDataReader readerSupplier = cmdSupplier.ExecuteReader();<br xmlns="">    while (readerSupplier.Read()) {<br xmlns="">      Console.WriteLine(readerSupplier["Companyname"]);<br xmlns="">    }<br xmlns="">    readerSupplier.Close();<br xmlns="">    Console.WriteLine(new string('-', 80));<br xmlns="">  }<br xmlns="">  readerProducts.Close();<br xmlns="">  con.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.10  </span>Multiple Active Resultsets (MARS)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Vorteil von MARS wird in diesem Beispiel deutlich: Es genügt eine Verbindung,
+                                                      um mit den beiden <span class="clisting">SqlDataReader</span>-Objekten zu operieren. Selbstverständlich kann die dem Programmcode zugrunde liegende
+                                                      Forderung auch ohne die Nutzung von MARS erfüllt werden. Allerdings wären dazu zwei
+                                                      Verbindungen notwendig, die einen gewissen Overhead verursachen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein SQL-Statement kann eine parametrisierte Abfrage beschreiben. <span class="clisting">SqlCommand</span>-Objekte unterstützen parametrisierte Abfragen durch eine Parameterliste. Weiter unten
+                                                      werden wir uns den parametrisierten Abfragen im Detail widmen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp18f564c0-462e-40e8-b964-fd5333536216" name="dodtp18f564c0-462e-40e8-b964-fd5333536216"></a><h3 class="t3"><span class="cfett">32.4.4    </span><span class="cfett"> Batchabfragen mit »NextResult« durchlaufen</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp13ca5110-c114-4d8d-91f9-e71a3f8dc928"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5bce5631-8ad2-4d00-abb6-f26926c0f469"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Müssen Sie mehrere Abfragen hintereinander absetzen, können Sie eine Batchabfrage
+                                                      ausführen. Allerdings werden Batchabfragen nicht von allen Datenbanken unterstützt
+                                                      &#8211; der SQL Server gehört aber dazu.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir an, Sie benötigen alle Datensätze sowohl der Tabelle <span class="ckursiv">Orders</span> als auch der Tabelle <span class="ckursiv">Customers</span>. Um eine syntaktisch korrekte Batchabfrage zu formulieren, werden die beiden SELECT-Statements
+                                                      innerhalb einer Zeichenfolge durch ein Semikolon getrennt angegeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT * FROM Orders;SELECT * FROM Customers<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Vorteil einer Batchabfrage ist, dass Sie die Methode <span class="clisting">ExecuteReader</span> nicht zweimal aufrufen und nach dem ersten Aufruf den <span class="clisting">SqlDataReader</span> schließen müssen. Selbstverständlich sind Batchabfragen nicht nur auf zwei SELECT-Anweisungen
+                                                      beschränkt, es können beliebig viele festlegt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das von einer Batchabfrage gefüllte <span class="clisting">SqlDataReader</span>-Objekt enthält nach dem Aufruf der <span class="clisting">ExecuteReader</span>-Methode mehrere Ergebnislisten. Um zwischen diesen zu wechseln, verwendet man die
+                                                      Methode <span class="clisting">NextResult</span>. Die Funktionsweise ähnelt der von <span class="clisting">Read</span>. Sie liefert <span class="clisting">true</span>, wenn eine Datensatzliste durchlaufen wurde und sich noch eine weitere im <span class="clisting">DataReader</span> befindet.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">do {<br xmlns="">  while(dr.Read())<br xmlns="">    Console.WriteLine("{0}{1}{2}", dr[0], dr[1], dr[2]);<br xmlns="">  Console.WriteLine();<br xmlns="">} while(dr.NextResult());<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Überprüfung mit <span class="clisting">NextResult</span> muss in jedem Fall im Schleifenfuß erfolgen. Eine Prüfung im Schleifenkopf hätte
+                                                      zur Folge, dass die erste Datensatzliste überhaupt nicht durchlaufen wird.
+                                                   </p>
+                                                   <h4 class="t4"> Gemischte Batchabfragen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal ist es erforderlich, eine Batchabfrage zu definieren, die sich aus einer
+                                                      oder mehreren Auswahl- und Aktionsabfragen zusammensetzt. Vielleicht möchten Sie eine
+                                                      SELECT-, eine DELETE- und eine UPDATE-Abfrage in einer Batchabfrage behandeln? Kein
+                                                      Problem. Erstellen Sie eine solche Abfrage genauso wie jede andere, also beispielsweise
+                                                      mit:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT * FROM Products;<br xmlns="">UPDATE Products SET ProductName='Senfsauce' WHERE ProductName='Chai'<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In dieser Weise gemischte Abfragen rufen Sie ebenfalls mit der Methode <span class="clisting">ExecuteReader</span> auf.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp5bce5631-8ad2-4d00-abb6-f26926c0f469" name="dodtp5bce5631-8ad2-4d00-abb6-f26926c0f469"></a><h3 class="t3"><span class="cfett">32.4.5    </span><span class="cfett"> Das Schema eines SqlDataReader-Objekts untersuchen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6d147da9-7831-4cc1-b2c5-509b9fa37fe4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Haupteinsatz des <span class="clisting">SqlDataReader</span>-Objekts ist sicherlich die Abfrage von Daten. Darüber hinaus weist dieser Typ aber
+                                                      auch weitere Fähigkeiten auf. Im Einzelnen handelt es sich dabei um die folgenden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Abrufen der Schemadaten der Spalten mit der Methode <span class="clisting">GetSchemaTable</span>. Die gelieferten Informationen beschreiben unter anderem, ob eine Spalte Primärschlüsselspalte
+                                                         ist, ob sie schreibgeschützt ist, ob der Spaltenwert innerhalb der Tabelle eindeutig
+                                                         ist oder ob die Spalte einen NULL-Wert zulässt.
+                                                      </li>
+                                                      <li class="pgp">Es lässt sich der Name einer bestimmten Spalte mit der Methode <span class="clisting">GetName</span> ermitteln.
+                                                      </li>
+                                                      <li class="pgp">Die Ordinalposition einer Spalte lässt sich anhand des Spaltenbezeichners ermitteln.
+                                                         Die Methode <span class="clisting">GetOrdinal</span><span class="clisting"><a class="indexterm" id="dodtp1835fe3f-3c1e-424c-a7e9-709a3c352736"></a></span> liefert den entsprechenden Index.
+                                                      </li>
+                                                   </ul>
+                                                   <h4 class="t4"> Die Methode »GetSchemaTable«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpbc291c97-7591-4070-a7f8-e730ea58a9af"></a>Der Rückgabetyp der Methode <span class="clisting">GetSchemaTable</span> ist ein Objekt vom Typ <span class="clisting">DataTable</span>. An dieser Stelle wollen wir diesen Typ nicht weiter betrachten. Es genügt am Anfang,
+                                                      zu wissen, dass sich ein <span class="clisting">DataTable</span>-Objekt aus Datenzeilen und Spalten zusammensetzt, ähnlich einer Excel-Tabelle.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Tabelle liegt ein SELECT-Statement zugrunde, das mit <span class="clisting">ExecuteReader</span> gegen die Datenbank ausgeführt wird. <span class="clisting">ExecuteReader</span> haben wir bisher nur parameterlos kennengelernt; es akzeptiert aber auch einen Übergabeparameter
+                                                      vom Typ der Enumeration <span class="clisting">CommandBehavior</span>. Der Member <span class="clisting">CommandBehavior.SchemaOnly</span> gibt vor, dass die Abfrage nur Spalteninformationen zurückliefert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SchemaOnly);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auf die <span class="clisting">SqlDataReader</span>-Referenz kann man anschließend die Methode <span class="clisting">GetSchemaTable</span> aufrufen. Das ist vorteilhaft, denn die übermittelten Metadaten werden nun für alle
+                                                      Spalten, die im SELECT-Statement angegeben sind, in der Tabelle eingetragen. Dabei
+                                                      wird für jede im SELECT-Statement angegebene Spalte der Originaltabelle eine Datenzeile
+                                                      geschrieben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataTable table = reader.GetSchemaTable();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Spalten in der Schematabelle werden durch festgelegte Bezeichner in einer bestimmten
+                                                      Reihenfolge ausgegeben. Die erste Spalte ist immer <span class="clisting">ColumnName</span>, die zweite <span class="clisting">ColumnOrdinal</span>, die dritte <span class="clisting">ColumnSize</span>. Insgesamt werden 28 Spalten zur Auswertung bereitgestellt. Falls Sie nähere Informationen
+                                                      benötigen, sehen Sie sich in der .NET-Dokumentation die Hilfe zur Methode <span class="clisting">GetSchemaTable</span> an. Das folgende Beispiel untersucht die Spalten <span class="ckursiv">ProductID</span>, <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitsInStock</span> der Tabelle <span class="ckursiv">Products</span>. Es soll dabei genügen, nur die ersten vier Metadateninformationen zu ermitteln.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\GetSchemaTableSample</span><br></br>static void Main(string[] args) {<br xmlns="">  SqlConnection con = new SqlConnection("...");<br xmlns="">  string strSQL = "SELECT ProductID, ProductName, " +<br xmlns="">                  "UnitsInStock FROM Products";<br xmlns="">  SqlCommand cmd = new SqlCommand(strSQL, con);<br xmlns="">  con.Open();<br></br>  // Schemainformationen einlesen<br></br>  SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.SchemaOnly);<br></br>  // Schematabelle erstellen<br></br>  DataTable table = reader.GetSchemaTable();<br></br>  // Ausgabe der Schematabelle<br></br>  for(int col = 0; col &lt; 4; col++)<br xmlns="">    Console.Write("{0,-15}", table.Columns[col].ColumnName);<br xmlns="">  Console.WriteLine("\n" + new string('-', 60));<br xmlns="">  for(int i = 0; i &lt; table.Rows.Count; i++) {<br xmlns="">    for(int j = 0; j &lt; 4; j++) {<br xmlns="">      Console.Write("{0,-15}", table.Rows[i][j]);<br xmlns="">    }<br xmlns="">    Console.WriteLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.11  </span>Abrufen von Metadateninformationen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die resultierende Konsolenausgabe sehen Sie in Abbildung 32.1.</p>
+                                                   <p><a href="bilder/32_01.png" rel="lightbox" title="Ausgabe des Beispiels »GetSchemaTableSample«"><img class="bild" border="1" src="bilderklein/klein32_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.1  </span>Ausgabe des Beispiels »GetSchemaTableSample«
+                                                   </p>
+                                                   <h4 class="t4"> Ermitteln des Bezeichners einer Spalte</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchten Sie den Bezeichner einer bestimmten Spalte in der Ergebnisliste ermitteln,
+                                                      rufen Sie die Methode <span class="clisting">GetName</span><span class="clisting"><a class="indexterm" id="dodtpc44f6058-76ab-48df-878b-d0545022a142"></a></span> des <span class="clisting">SqlDataReader</span>-Objekts auf und übergeben dabei den Index der betreffenden Spalte in der Ergebnisliste.
+                                                      Der Rückgabewert ist eine Zeichenfolge.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(reader.GetName(3));<br></pre></div>
+                                                   <h4 class="t4"> Ermitteln des Index einer Spalte</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist der Index einer namentlich bekannten Spalte in der Ergebnisliste nicht bekannt,
+                                                      können Sie diesen mit <span class="clisting">GetOrdinal</span> unter Angabe des Spaltenbezeichners ermitteln.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(reader.GetOrdinal("UnitPrice"));<br></pre></div>
+                                                   <h4 class="t4"> Ermitteln des Datentyps einer Spalte</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können sowohl den .NET-Datentyp als auch den Datenbank-Datentyp eines bestimmten
+                                                      Feldes im <span class="clisting">SqlDataReader</span> abfragen. Interessieren Sie sich für den .NET-Datentyp, rufen Sie die Methode <span class="clisting">GetFieldType</span> des <span class="clisting">DataReaders</span> auf, ansonsten <span class="clisting">GetDataTypeName</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(reader.GetFieldType(4));<br xmlns="">Console.WriteLine(reader.GetDataTypeName(0));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beide Methoden erwarten den Ordinalwert der betreffenden Spalte.</p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs32_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="32  ADO.NET &#8211; Das Command-Objekt"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_32_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_32_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,603 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 41  Plain Old CLR Objects (POCOs)">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 41  Plain Old CLR Objects (POCOs)">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 41  Plain Old CLR Objects (POCOs)</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="40_002.html">
+      <link rel="next" href="1997_41_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_40_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_41_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23" class="navh">41 Plain Old CLR Objects (POCOs)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_41_001.html#dodtp15408e26-3d43-4377-a6a4-ddce7b5f62b0" class="navh">41.1 Ein erstes Projekt mit POCO-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_41_001.html#dodtp41a636b9-9857-4b20-ae1b-100276c64e7a" class="navh">41.1.1 Erstellen einfacher POCO-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_41_001.html#dodtp1c48ecf9-0266-4222-a2cd-6e082165c893" class="navh">41.1.2 Erstellen des Objektkontextes</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_41_002.html#dodtp6c8d4eac-5ba1-4fe0-b92f-785179d9d494" class="navnav">41.2 Datenabfrage mit Hilfe der POCOs</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_41_002.html#dodtp2caee6a9-76b7-4600-af90-4b5aec25c92e" class="navnav">41.2.1 In Beziehung stehende Daten laden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_41_003.html#dodtp504098e9-4f52-4003-8f42-4e361221defb" class="navnav">41.3 Änderungen verfolgen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_41_003.html#dodtpe0e4b5ae-631e-4d4e-919f-28b8c7431ae1" class="navnav">41.3.1 Die Methode »DetectChanges«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_41_003.html#dodtpf2641369-db1f-4292-98f6-d55f4805d9ad" class="navnav">41.3.2 In Beziehung stehende POCOs aktualisieren</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp160fa133-1df6-4ab9-a622-c56d87121c23" name="dodtp160fa133-1df6-4ab9-a622-c56d87121c23"></a><h1 class="t1"><span class="cfett">41 </span><span class="cfett"> Plain Old CLR Objects (POCOs)</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953814"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp15408e26-3d43-4377-a6a4-ddce7b5f62b0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Entitätsklassen, die wir bisher behandelt haben, waren von <span class="clisting">EntityObject</span> abgeleitet. Natürlich ziehen wir zahlreiche Vorteile aus dieser Tatsache, beispielsweise
+                                                      die Zustandsverfolgung im Zusammenspiel mit dem Objektkontext. Damit lassen sich zweifelsfrei
+                                                      viele Szenarien abdecken, aber eben nur viele und nicht alle. Stellen Sie sich beispielsweise
+                                                      vor, Sie möchten Entitätsobjekte über einen Webservice Clients zur Verfügung stellen,
+                                                      die nicht auf .NET basieren. Das ist mit Objekten, die von <span class="clisting">EntityObject</span> abgeleitet sind, nicht möglich.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einen Ausweg aus diesem Dilemma bieten <span class="cfett">Plain Old CLR Objects</span>, kurz POCOs oder auch Datenklassen genannt. POCOs weisen keine bestimmte Basisklasse
+                                                      auf und implementieren auch keine Interfaces. Sie beschreiben im Grunde genommen nur
+                                                      die Eigenschaften, die das Entity Data Model den Entitäten vorschreibt. Damit koppeln
+                                                      sich POCOs komplett von der Infrastruktur des Entity Frameworks ab und werden von
+                                                      diesem vollkommen unabhängig. Diese strikte Trennung führt in Konsequenz zur Unabhängigkeit
+                                                      der Datenklassen von den Anforderungen des Entity Frameworks oder auch einzig und
+                                                      allein nur zu besser wartbarem Code.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp15408e26-3d43-4377-a6a4-ddce7b5f62b0" name="dodtp15408e26-3d43-4377-a6a4-ddce7b5f62b0"></a><h2 class="t2"><span class="cfett">41.1    </span><span class="cfett"> Ein erstes Projekt mit POCO-Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953818"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp48843882-df4e-4549-9d37-3a164ea4dbc9"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp41a636b9-9857-4b20-ae1b-100276c64e7a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp160fa133-1df6-4ab9-a622-c56d87121c23"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp41a636b9-9857-4b20-ae1b-100276c64e7a" name="dodtp41a636b9-9857-4b20-ae1b-100276c64e7a"></a><h3 class="t3"><span class="cfett">41.1.1    </span><span class="cfett"> Erstellen einfacher POCO-Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953819"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1c48ecf9-0266-4222-a2cd-6e082165c893"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp15408e26-3d43-4377-a6a4-ddce7b5f62b0"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">POCO sind Datenklassen, die nicht von <span class="clisting">EntityObject</span><span class="clisting"><a class="indexterm" id="dodtp0f49a960-bb30-46ad-bbbd-13557d096052"></a></span> abgeleitet sind. Weil die Zustandsverfolgung und die Persistenz im Entity Framework
+                                                      auf der Kopplung zwischen <span class="clisting">EntityObject</span> und <span class="clisting">ObjectContext</span> basieren, sind die Datenklassen zunächst einmal verwaist. Nichtsdestotrotz, ein »Umfeld«,
+                                                      in dem die POCOs nicht nur materialisiert, sondern zu einem späteren Zeitpunkt auch
+                                                      in die Datenbank zurückgeschrieben werden können, muss dennoch bereitgestellt werden.
+                                                      Dazu ist ein Entity Data Model notwendig, in dem die Entitäten im konzeptionellen
+                                                      Modell zwar beschrieben, aber nicht &#8211; wie bisher &#8211; erzeugt werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Vorgehensweise sehen wir uns am besten in einem neuen Projekt an. Dabei sollen
+                                                      die POCO-Klassen in einer Klassenbibliothek codiert werden, das Entity Data Model
+                                                      samt dem Testcode in einer Konsolenanwendung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst legen wir ein neues Projekt vom Typ einer Konsolenanwendung an. Im ersten Schritt
+                                                      erstellen wir das EDM auf dieselbe Weise wie in allen anderen Beispielen zuvor. Das
+                                                      EDM soll auch in diesem Projekt die beiden Entitäten <span class="clisting">Product</span> und <span class="clisting">Category</span> beschreiben. Wenn das erledigt ist, folgt ein ganz wichtiger Schritt. Da wir POCO-Klassen
+                                                      bereitstellen wollen, können wir auf das automatische Erzeugen der beiden Entitäten
+                                                      und der <span class="clisting">ObjectContext</span>-Klasse verzichten. Wir erreichen das, indem wir uns im Eigenschaftsfenster von Visual
+                                                      Studio die Eigenschaften des EDM anzeigen lassen und hier die Eigenschaft <span class="clisting">Codegenerierungsstrategie</span> auf <span class="clisting">Keine</span> einstellen (siehe Abbildung 41.1). Der Vorgabewert dieser Eigenschaft lautet <span class="clisting">Standard</span>.
+                                                   </p>
+                                                   <p><a href="bilder/41_01.png" rel="lightbox" title="Unterbinden der automatischen Codeerzeugung"><img class="bild" border="1" src="bilderklein/klein41_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 41.1  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953828"></a>Unterbinden der automatischen Codeerzeugung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dieser Einstellung erreichen wir, dass zwar weiterhin die Schemadateien SSDL,
+                                                      CSDL und MSL erstellt werden, jedoch bleibt die Datei <span class="ckursiv">Northwind.Designer.cs</span> leer. Gewissermaßen zwingen wir uns mit diesem Schritt, entsprechende POCO-Klassen
+                                                      zu codieren und darüber hinaus eine eigene <span class="clisting">ObjectContext</span>-Klasse zu schreiben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen Sie uns als Nächstes die POCO-Klassen erstellen. Um die strikte Trennung der
+                                                      Datenklassen und der Clientanwendung zu verdeutlichen, fügen wir der Projektmappe
+                                                      ein neues Projekt vom Typ Klassenbibliothek hinzu. Wir geben dem neuen Projekt den
+                                                      Bezeichner <span class="ckursiv">NorthwindPOCOS</span>. Anschließend erstellen wir zwei Klassen und geben diesen die Namen <span class="clisting">Product</span> und <span class="clisting">Category</span>. Hierbei handelt es sich um das Grundgerüst der beiden POCO-Klassen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da POCO-Klassen mit dem Entity Framework zusammenarbeiten sollen, gibt es ein paar
+                                                      Regeln, die es zu beachten gilt:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">POCO-Klassen müssen <span class="clisting">public</span> sein und dürfen nicht mit <span class="clisting">sealed</span> oder <span class="clisting">abstract</span> gekennzeichnet werden.
+                                                      </li>
+                                                      <li class="pgp">Die Bezeichner der POCO-Klassen müssen mit der entsprechenden Vorgabe im Entity Data
+                                                         Model übereinstimmen.
+                                                      </li>
+                                                      <li class="pgp">POCO-Klassen müssen einen parameterlosen Konstruktor haben.</li>
+                                                      <li class="pgp">Jede Eigenschaft, die im konzeptionellen Modell beschrieben ist, muss eine gleichnamige
+                                                         Entsprechung in der POCO-Klasse haben. Das gilt auch für die Navigationseigenschaften.
+                                                      </li>
+                                                      <li class="pgp">Die Navigationseigenschaften, die eine Menge repräsentieren, müssen durch einen Datentyp
+                                                         beschrieben werden, der <span class="clisting">ICollection&lt;T&gt;</span> implementiert.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit diesen Vorgaben sehen die beiden POCO-Klassen wie in Listing 41.1 gezeigt aus.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Category </span>{<br xmlns="">  public int CategoryID { get; set; }<br xmlns="">  public string CategoryName { get; set; }<br xmlns="">  public string Description { get; set; }<br xmlns="">  public byte[] Picture { get; set; }<br xmlns="">  public ICollection&lt;Product&gt; Products { get; set; }<br xmlns="">}<br></br><span class="clistingfett">public class Product </span>{<br xmlns="">  public int ProductID { get; set; }<br xmlns="">  public string ProductName { get; set; }<br xmlns="">  public int SupplierID { get; set; }<br xmlns="">  public string QuantityPerUnit { get; set; }<br xmlns="">  public decimal UnitPrice { get; set; }<br xmlns="">  public short UnitsInStock { get; set; }<br xmlns="">  public short UnitsOnOrder { get; set; }<br xmlns="">  public short ReorderLevel { get; set; }<br xmlns="">  public bool Discontinued { get; set; }<br xmlns="">  public int CategoryID { get; set; }<br xmlns="">  public Category Category { get; set; }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 41.1  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953840"></a>Die beiden POCO-Klassen »Product« und »Category«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da die Klassen- und Eigenschaftsbezeichner denen der Entitäten und deren Eigenschaften
+                                                      entsprechen, sind unsere POCOs darauf vorbereitet, mit dem Entity Framework zu interagieren,
+                                                      ohne gleichzeitig von diesem abhängig zu sein. An dieser Stelle sei noch einmal ausdrücklich
+                                                      darauf hingewiesen, dass POCO-Klassen nicht von der Basis <span class="clisting">EntityObject</span> abgeleitet sind und damit auch keinerlei Möglichkeit haben, mit dem Objektkontext,
+                                                      den wir im nächsten Schritt noch erstellen müssen, zu kommunizieren. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Im weiteren Verlauf dieses Kapitels werden Sie erfahren, dass an POCO-Klassen manchmal
+                                                         noch weitere Anforderungen gestellt werden, um die Zustandsverwaltung des Objektkontextes
+                                                         zu unterstützen. Für den Anfang und die ersten Experimente soll aber der bisherige
+                                                         Klassencode ausreichend sein.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1c48ecf9-0266-4222-a2cd-6e082165c893" name="dodtp1c48ecf9-0266-4222-a2cd-6e082165c893"></a><h3 class="t3"><span class="cfett">41.1.2    </span><span class="cfett"> Erstellen des Objektkontextes</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953849"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp41a636b9-9857-4b20-ae1b-100276c64e7a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wollen wir POCOs, oder allgemein gesagt Datenklassen, zur Datenbearbeitung mit dem
+                                                      Entity Framework nutzen, benötigen wir in jedem Fall einen Objektkontext, der die
+                                                      Schaltzentrale des Entity Frameworks darstellt: Er ermöglicht es, Abfragen abzusetzen,
+                                                      Entitäten zu materialisieren, den Zustand der Entitäten zu verfolgen und Änderungen
+                                                      in die Datenbank zu schreiben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da wir die automatische Codeerzeugung beim Erstellen des Entity Data Models unterdrückt
+                                                      haben, müssen wir die erforderliche Klasse selbst schreiben, die natürlich von <span class="clisting">ObjectContext</span> abgeleitet werden muss. Um die strikte Trennung zu den vom Entity Framework unabhängigen
+                                                      POCO-Klassen nicht aufzubrechen, implementieren wir den Objektkontext sinnvollerweise
+                                                      in der Konsolenanwendung. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class NorthwindContext : ObjectContext</span><br xmlns="">{<br></br>  // Felder<br></br>  private ObjectSet&lt;Category&gt; _categories;<br xmlns="">  private ObjectSet&lt;Product&gt; _products;<br></br>  // Konstruktor<br></br>  <span class="clistingfett">public NorthwindContext()</span> <br xmlns="">        : base("name=NorthwindEntities", "NorthwindEntities")<br xmlns="">  {<br xmlns="">    _categories = CreateObjectSet&lt;Category&gt;();<br xmlns="">    _products = CreateObjectSet&lt;Product&gt;();<br xmlns="">  }<br></br>  // Eigenschaften<br></br>  <span class="clistingfett">public ObjectSet&lt;Category&gt; Categories</span><br xmlns="">  {<br xmlns="">    get { return _categories; }<br xmlns="">  }<br></br>  <span class="clistingfett">public ObjectSet&lt;Product&gt; Products</span><br xmlns="">  {<br xmlns="">    get { return _products; }<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 41.2  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1953860"></a>Die Klasse, die den Objektkontext beschreibt
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Konstruktor leitet den Aufruf an den Konstruktor der Basisklasse um. Dabei wird
+                                                      neben der in der Datei <span class="ckursiv">App.config</span> definierten Verbindungszeichenfolge auch der Bezeichner des Entitätscontainers übergeben.
+                                                      Die Menge aller Entitäten des EDM wird durch die schreibgeschützten Eigenschaften
+                                                      <span class="clisting">Categories</span> und <span class="clisting">Products</span> beschrieben, die beide vom Typ <span class="clisting">ObjectSet&lt;T&gt;</span> sind. Initialisiert werden die beiden Eigenschaften im Konstruktor.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit wir in der Konsolenanwendung auf die POCO-Klassen zugreifen können, muss in
+                                                      der Konsolenanwendung ein Verweis auf die Klassenbibliothek gelegt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit hätten wir bereits alle notwendigen Arbeiten erledigt: Wir haben die POCO-Klassen,
+                                                      die als vom Entity Framework unabhängige Komponenten die abgefragten Daten aufnehmen
+                                                      können, und wir haben einen Objektkontext bereitgestellt, der als Bindeglied zwischen
+                                                      den POCOs und dem Entity Framework agiert.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs41_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="41  Plain Old CLR Objects (POCOs)"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_40_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_41_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

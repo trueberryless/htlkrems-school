@@ -1,0 +1,1009 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 5  Delegates und Ereignisse">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="05_001.html">
+      <link rel="next" href="1997_05_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_05_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_05_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9" class="navnav">5 Delegates und Ereignisse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_001.html#dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7" class="navnav">5.1 Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a" class="navnav">5.1.1 Einführung in das Prinzip der Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497" class="navnav">5.1.2 Verwendung von Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe" class="navnav">5.1.3 Vereinfachter Delegatenaufruf</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpc31b034c-07a3-4c58-8260-f33ec088cf36" class="navnav">5.1.4 Multicast-Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f" class="navnav">5.1.5 Anonyme Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp74c90309-8ac2-437f-896f-f54302b446da" class="navnav">5.1.6 Kovarianz und Kontravarianz mit Delegaten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_002.html#dodtp862ac49c-9839-46c9-850d-2187b2b5aee9" class="navh">5.2 Ereignisse eines Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913" class="navh">5.2.1 Ereignisse bereitstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551" class="navh">5.2.2 Die Reaktion auf ein ausgelöstes Ereignis</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp6685bec8-c443-40b3-8566-04ffdffdc34b" class="navh">5.2.3 Allgemeine Betrachtungen der Ereignishandler-Registrierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpdf1e7607-4a32-4927-8690-cc25cf355434" class="navh">5.2.4 Wenn der Ereignisempfänger ein Ereignis nicht behandelt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd" class="navh">5.2.5 Ereignisse mit Übergabeparameter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a" class="navh">5.2.6 Ereignisse in der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp3df38965-fb82-4fac-b5fa-eabbed68c969" class="navh">5.2.7 Hinter die Kulissen des Schlüsselworts »event« geblickt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62" class="navh">5.2.8 Die Schnittstelle »INotifyPropertyChanged«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_003.html#dodtpfe69f646-b065-465b-9512-ba9c7c960744" class="navnav">5.3 Änderungen im Projekt »GeometricObjects«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d" class="navnav">5.3.1 Überarbeitung des Events »InvalidMeasure«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtp7278828c-3908-4580-8b26-4571c1e93e70" class="navnav">5.3.2 Weitere Ereignisse</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp862ac49c-9839-46c9-850d-2187b2b5aee9" name="dodtp862ac49c-9839-46c9-850d-2187b2b5aee9"></a><h2 class="t2"><span class="cfett">5.2    </span><span class="cfett"> Ereignisse eines Objekts</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771983"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf4f6016f-6184-41e8-bae6-42b3c4e2d133"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa63aa77c-0abd-42b1-9c74-3f63d26d6b3b"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein klassischer Methodenaufruf geht immer in Richtung vom Aufrufer zum Objekt, das
+                                                      daraufhin die Methode ausführt. Man könnte in diesem Fall auch von einer Client-Server-Konstellation
+                                                      sprechen, wobei der Aufrufer der Client ist, das aufgerufene Objekt der Server. Da
+                                                      der Client den Typ des Servers kennt, kann er die Methode auch namentlich angeben,
+                                                      z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class Program</span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">    Circle kreis = new Circle();<br xmlns="">    kreis.Move(-100, 200);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier ist die Klasse <span class="clisting">Program</span> der Client, das <span class="clisting">Circle</span>-Objekt der Server. Das ist so weit noch sehr einfach. Gehen wir nun einen Schritt
+                                                      weiter. Stellen wir uns vor, aus <span class="clisting">Move</span> heraus soll der Methodenaufrufer (also der Client) davon in Kenntnis gesetzt werden,
+                                                      dass die Verschiebung erfolgreich verlaufen ist. Dann müsste in der Methode <span class="clisting">Move</span> ein Methodenaufruf codiert werden, der eine Methode im Client &#8211; bezogen auf unser
+                                                      Codefragment also in der Klasse <span class="clisting">Program</span> &#8211; adressiert. Ein solcher Methodenaufruf wäre hinsichtlich der Aufrufrichtung genau
+                                                      entgegengesetzt der Richtung des klassischen Methodenaufrufs &#8211; nämlich vom Client
+                                                      zum Server. Genau das ist ein <span class="cfett">Ereignis</span>, im Englischen auch als <span class="cfett">Event</span> bezeichnet. Ein Ereignis ist somit nichts anderes als ein Methodenaufruf. Im Allgemeinen
+                                                      spricht man bei einem solchen Methodenaufruf auch vom »Auslösen eines Ereignisses«.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ereignisse spielen eine herausragende Rolle bei der Programmierung grafischer Benutzeroberflächen
+                                                      (GUIs) und lassen sich so abstrahieren, dass sie den Nachrichtenverkehr zwischen einer
+                                                      Ereignisquelle<a class="indexterm" id="dodtp651e1b6b-115a-4321-8b6c-b37e32c796e0"></a> und einem Ereignisempfänger<a class="indexterm" id="dodtp445278e3-f9f4-4b22-90ec-83a5da5dfb11"></a> beschreiben. Bezogen auf unsere Annahme würde das <span class="clisting">Circle</span>-Objekt die Ereignisquelle sein, die Klasse <span class="clisting">Program</span> der Ereignisempfänger.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun stellt sich eine Frage: Wenn die Auslösung eines Ereignisses einem Methodenaufruf
+                                                      gleichgesetzt werden kann, welche Methode im Client wird dann ausgeführt? Zunächst
+                                                      einmal können wir festhalten, dass der potenzielle Ereignisempfänger auf ein Ereignis
+                                                      nicht reagieren muss &#8211; es ist eine Option. Dann muss man weitblickend auch feststellen,
+                                                      dass es unterschiedliche Clients, also Ereignisempfänger, geben kann: Im Codefragment
+                                                      oben ist es die Klasse <span class="clisting">Program</span>, es könnte aber auch eine Klasse namens <span class="clisting">Demo</span> sein oder ein <span class="clisting">Auto</span>-Objekt oder wer auch immer. Als logische Konsequenz können wir auch nicht den Bezeichner
+                                                      der Methode kennen, die als Reaktion auf die Auslösung eines Ereignisses aufgerufen
+                                                      werden soll.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Merken Sie etwas? Hatten wir nicht eine ähnliche Situation im Zusammenhang mit dem
+                                                      Delegaten kennengelernt? Erinnern wir uns an die folgende Anweisung im Beispielprogramm
+                                                      <span class="ckursiv">SimpleDelegate</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double result = calculate(input1, input2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Variable <span class="ckursiv">calculate</span> beschreibt einen Delegaten. Zur Entwicklungszeit ist nicht bekannt, welche Methode
+                                                      zur Laufzeit bei der Ausführung dieser Anweisung aufgerufen wird: Es konnte <span class="clisting">Add</span> sein oder <span class="clisting">Subtract</span>. Im Grunde genommen kann die Situation der Variablen <span class="ckursiv">calculate</span> mit der beim Auslösen eines Ereignisses verglichen werden: Beide haben keine Kenntnis
+                                                      von der Methode, die daraufhin ausgeführt wird. Folgerichtig muss ein Ereignis ein
+                                                      Delegat sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Genug der Vorrede. Lassen Sie uns nun das Ganze an einem konkreten Beispiel erfahren.
+                                                      Es wird nicht im Zusammenhang mit der Methode <span class="clisting">Move</span> stehen (das werden wir am Ende des Kapitels aber noch machen), sondern zunächst einen
+                                                      anderen Ansatzpunkt haben.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913" name="dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913"></a><h3 class="t3"><span class="cfett">5.2.1    </span><span class="cfett"> Ereignisse bereitstellen</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771995"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp862ac49c-9839-46c9-850d-2187b2b5aee9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erinnern wir uns dazu zunächst an die aktuelle Implementierung der Eigenschaftsmethode
+                                                      <span class="clisting">Radius</span> in der <span class="clisting">Circle</span>-Klasse:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius </span>{<br xmlns="">  get{return _Radius;}<br xmlns="">  set{<br xmlns="">    if(value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else<br xmlns="">      Console.Write("Unzulässiger negativer Radius.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.7  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771998"></a>Aktuelle Implementierung der Eigenschaft »Radius« in der Klasse »Circle«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Uns interessiert nunmehr der <span class="clisting">set</span>-Accessor und dort wiederum dessen Verhalten, wenn der Eigenschaft ein negativer Wert
+                                                      übergeben wird. Nach dem derzeitigen Stand führt das zu einer Benachrichtigung an
+                                                      der Konsole. Der Code funktioniert tadellos, unterliegt jedoch einer Einschränkung:
+                                                      Der Client muss die Nachricht entgegennehmen &#8211; ob er will oder nicht. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">In der Praxis ist das Auslösen eines Ereignisses beim Auftreten eines Fehlers auch
+                                                         keine optimale Lösung, da eine Reaktion auf ein ausgelöstes Ereignis immer nur eine
+                                                         Option ist. Stattdessen sollte eine Ausnahme (Exception) »geworfen« werden, die behandelt
+                                                         werden muss. Zur Ehrenrettung unserer Idee muss an dieser Stelle aber auch festgestellt
+                                                         werden, dass es im .NET Framework Methoden gibt, die im Fehlerfall beide Alternativen
+                                                         anbieten: Entweder reagiert der Client auf ein Ereignis oder er behandelt die Exception.
+                                                         Genauso werden wir später noch die Klasse <span class="clisting">Circle</span> ergänzen, wenn wir uns in Kapitel 7 mit den Ausnahmen beschäftigen.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein weiterer schwerwiegender Nachteil des bisherigen Lösungsansatzes: In einem GUI-Projekt,
+                                                      also beispielsweise einer WinForm- oder WPF-Anwendung, wird das Konsolenfenster überhaupt
+                                                      nicht geöffnet. Unsere augenblickliche Lösung ist also vollkommen indiskutabel.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Besser wäre es, wenn das <span class="clisting">Circle</span>-Objekt stattdessen im Client eine Methode aufrufen würde, um damit zu signalisieren,
+                                                      dass die Wertübergabe nicht akzeptabel war. Mit anderen Worten: Wir wollen in dieser
+                                                      Situation ein Ereignis auslösen. Der Client kann dann als Ereignisempfänger auf das
+                                                      Ereignis reagieren. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unser Ziel sei es nun, die Anweisung</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.Write("Unzulässiger negativer Radius.");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">durch eine Ereignisauslösung zu ersetzen. Das Ereignis wollen wir <span class="clisting">InvalidMeasure</span> nennen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Programmablauf bis zu einer eventuellen Ereignisauslösung würde wie folgt aussehen:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Der Client erzeugt ein Objekt der Klasse <span class="clisting">Circle</span> und weist der Eigenschaft <span class="clisting">Radius</span> einen unzulässigen Wert zu.
+                                                      </li>
+                                                      <li class="pgp">In der Eigenschaftsmethode <span class="clisting">Radius</span> wird der übergebene Wert geprüft und im Fall der Unzulässigkeit das Ereignis <span class="clisting">InvalidMeasure</span> ausgelöst. Das hat zur Folge, dass im Client nach einer Methode gesucht wird, die
+                                                         das Ereignis behandelt, also darauf reagiert.
+                                                      </li>
+                                                      <li class="pgp">Erklärt sich der Client bereit, das Ereignis zu behandeln, wird im Client eine dem
+                                                         Ereignis zugeordnete Methode ausgeführt.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kommen wir nun zu den Details der Ereignisimplementierung in der Ereignisquelle (hier:
+                                                      <span class="clisting">Circle</span>). Jedes Ereignis muss in der Klassendefinition bekannt gegeben werden. Die allgemeine
+                                                      Syntax einer Ereignisdefinition lautet wie folgt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <div class="listing"><pre class="prettyprint">[&lt;Zugriffsmodifizierer&gt;] <span class="clistingfett">event</span> &lt;Delegate-Typ&gt; &lt;Event-Bezeichner&gt;;<br></pre></div>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dem optionalen Zugriffsmodifizierer (der Standard ist <span class="clisting">private</span>) folgt das Schlüsselwort <span class="clisting">event</span><span class="cfett"><a class="indexterm" id="dodtp24314ba2-f384-457d-be79-1a98dbf4aa9c"></a></span>, und dahinter wird der Typ des Ereignisses bekannt gegeben. Dabei handelt es sich
+                                                      immer um einen Delegaten. Weil ein Delegat den Zeiger auf eine Methode mit einer bestimmten
+                                                      Parameterliste und einem bestimmten Rückgabetyp beschreibt, wird damit gleichzeitig
+                                                      die Signatur der ereignisbehandelnden Methode im Client vorgeschrieben. Abgeschlossen
+                                                      wird die Deklaration mit dem Bezeichner des Ereignisses.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unsere Anwendung müssen wir daher noch um eine Delegatdefinition ergänzen und in der
+                                                      Klasse <span class="clisting">Circle</span> einen Event vom Typ dieses Delegaten deklarieren, um der selbst gestellten Anforderung
+                                                      zu genügen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Delegate<br></br>public delegate void InvalidMeasureEventHandler();<br></br><span class="clistingfett">public class Circle : GeometricObject, IDisposable </span>{<br></br>  // Ereignis<br></br>  public event InvalidMeasureEventHandler InvalidMeasure;<br></br>  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.8  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772022"></a>Definition des Events »InvalidMeasure« in der Klasse »Circle«
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Delegates, die den Ereignissen als Typvorgabe dienen, haben im .NET Framework per
+                                                         Konvention das Suffix <span class="clisting">EventHandler</span>. 
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ausgangspunkt unserer Überlegungen war, bei einer unzulässigen Zuweisung an die Eigenschaft
+                                                      <span class="clisting">Radius</span> eines <span class="clisting">Circle</span>-Objekts das Ereignis <span class="clisting">InvalidMeasure</span> auszulösen. Die Ereignisauslösung erfolgt, wenn die Überprüfung des Übergabewertes
+                                                      zu einer Ablehnung geführt hat. Die Ereignisauslösung selbst ist trivial, wir brauchen
+                                                      dazu nur den Namen des Ereignisses anzugeben. Diese Anweisung ersetzt in der Eigenschaft
+                                                      <span class="clisting">Radius</span> die Konsolenausgabe im <span class="clisting">else</span>-Zweig des <span class="clisting">set</span>-Accessors:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius</span> {<br xmlns="">  get {return _Radius;}<br xmlns="">  set {<br xmlns="">    if(value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else<br></br>    // Ereignis auslösen<br></br>      <span class="clistingfett">InvalidMeasure();</span><br xmlns="">  }<br xmlns="">} <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.9  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772029"></a>Ereignisauslösung in der Eigenschaft »Radius«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Übergibt der Client der Eigenschaft <span class="clisting">Radius</span> nun einen Wert, der der Bedingung 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Radius &lt; 0<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">entspricht, wird der Delegat aktiv und sucht im Aufrufer nach einer parameterlosen
+                                                      Methode ohne Rückgabewert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551" name="dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551"></a><h3 class="t3"><span class="cfett">5.2.2    </span><span class="cfett"> Die Reaktion auf ein ausgelöstes Ereignis</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772033"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6685bec8-c443-40b3-8566-04ffdffdc34b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie sich der Ereignisempfänger verhält, ob er die Ereignisauslösung ignoriert oder
+                                                      darauf reagiert, bleibt ihm selbst überlassen. Es ist eine Option, die wahrgenommen
+                                                      werden kann oder auch nicht. In Kenntnis der Tatsache, dass ein <span class="clisting">Circle</span>-Objekt ein Ereignis auslösen kann, wenn der Eigenschaft <span class="clisting">Radius</span> ein unzulässiger Wert übergeben wird, entwickeln wir zunächst eine Methode, die bei
+                                                      der Auslösung des Ereignisses <span class="clisting">InvalidMeasure</span> ausgeführt werden soll. Solche Methoden werden auch als <span class="cfett">Ereignishandler</span><span class="cfett"><a class="indexterm" id="dodtp1edd1c19-8dcd-42f3-9650-53ce9ef4532f"></a></span> bezeichnet. Da der Typ unseres Ereignisses <span class="clisting">InvalidMeasure</span> ein parameterloser Delegat ist, muss die Parameterliste unserer Methode natürlich
+                                                      leer sein.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Program </span>{<br></br>  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    Circle kreis = new Circle();<br xmlns="">    [...]<br xmlns="">  }<br></br><span class="clistingfett">  // Ereignishandler</span><br></br><span class="clistingfett">  public static void kreis_InvalidMeasure() </span><span class="cfett">{</span><br xmlns="">    Console.WriteLine("Unzulässiger negativer Radius.");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.10  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772040"></a>Bereitstellen eines Ereignishandlers
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Es ist üblich, einem Ereignishandler nach einem bestimmten Muster einen Bezeichner
+                                                         zu geben. Dabei wird zuerst der Objektname angegeben, gefolgt von einem Unterstrich
+                                                         und dem sich anschließenden Ereignisbezeichner, also
+                                                      </p>
+                                                      <p class="pbstandard"><span class="ckursiv">Objektname_Ereignisname</span></p>
+                                                      <p class="pbstandard">Sie können selbstverständlich von dieser Konvention abweichen. Die von Visual Studio
+                                                         automatisch generierten Ereignishandler folgen diesem Namensmuster.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir können dem Objekt <span class="ckursiv">kreis</span> nun einen Radius von beispielsweise »-1« zuweisen, aber die Methode <span class="clisting">kreis_InvalidMeasure</span> würde daraufhin nicht ausgeführt. (Ganz im Gegenteil sogar: Es tritt eine Ausnahme
+                                                      auf. Aber dem Phänomen widmen wir uns später noch.) Woher soll das Objekt <span class="ckursiv">kreis</span> auch wissen, welche Methode bei der Ereignisauslösung im Client ausgeführt werden
+                                                      soll? Es könnten schließlich x-beliebig viele parameterlose <span class="clisting">void</span>-Methoden im Ereignisempfänger definiert sein und prinzipiell als Ereignishandler
+                                                      in Frage kommen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um das Objekt entsprechend in Kenntnis zu setzen, müssen wir den von uns bereitgestellten
+                                                      Ereignishandler an das Ereignis <span class="clisting">InvalidMeasure</span> des Objekts binden. Dazu übergeben wir dem Ereignis des Objekts mit dem <span class="clisting">+=</span>-Operator eine Instanz des Delegates <span class="clisting">InvalidMeasureEventHandler</span> mit Angabe des Handlers:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">kreis.InvalidMeasure += new InvalidMeasureEventHandler(kreis_InvalidMeasure);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Vorgang wird als das »Abonnieren eines Ereignisses« oder auch als »Registrieren
+                                                      eines Ereignishandlers« bezeichnet. Natürlich ist auch die Kurzform
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">kreis.InvalidMeasure += kreis_InvalidMeasure;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">erlaubt. Die einzige Bedingung ist, dass die dem Konstruktor bekannt gegebene Methode
+                                                      den vom Delegaten festgelegten Kriterien hinsichtlich der Parameterliste und des Rückgabewerts
+                                                      genügt. Unser Code in <span class="clisting">Main</span> könnte nun wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public void Main(string[] args) </span>{<br xmlns="">  Circle kreis = new Circle();<br xmlns="">  kreis.InvalidMeasure +=<span class="ckursiv"> </span>kreis_InvalidMeasure;<br xmlns="">  kreis.Radius = -1;<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.11  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772052"></a>Code, um den Ereignishandler zu testen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn wir Code ausführen, der versucht, der Eigenschaft <span class="clisting">Radius</span> den ungültigen Wert »&#8211;1« zuzuweisen, wird der Client durch die Auslösung des Ereignisses
+                                                      <span class="clisting">InvalidMeasure</span> und den Aufruf des Handlers <span class="clisting">kreis_InvalidMeasure</span> über die ungültige Zuweisung benachrichtigt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Ein Tipp am Rande. Sie brauchen sich nicht die Mühe zu machen, den Delegaten des Ereignisses
+                                                         zu instanziieren und anschließend den Ereignishandler manuell anzugeben. Stattdessen
+                                                         können Sie Visual Studio 2012 die Arbeit überlassen. Achten Sie einmal darauf, dass
+                                                         Ihnen nach der Eingabe des <span class="cprogrammierelement">+=</span>-Operators angeboten wird, die <span class="ctastatur"><img align="top" src="keys/tastatur_KMO_KQ==.gif" alt="Tabulator" title="Tabulator"></img></span>-Taste zu drücken (siehe <span class="querverweis"><a href="1997_05_002.html#rxz1772060">Abbildung 5.1</a></span>). Nutzen Sie das Angebot, wird der Typ des Ereignisses automatisch instanziiert.
+                                                         Ein zweites Drücken der <span class="ctastatur"><img align="top" src="keys/tastatur_KMO_KQ==.gif" alt="Tabulator" title="Tabulator"></img></span>-Taste bewirkt das automatische Erzeugen des Ereignishandlers nach der oben beschriebenen
+                                                         Namenskonvention.
+                                                      </p>
+                                                   </div>
+                                                   <p><a href="bilder/05_01.png" rel="lightbox" title="Automatisches Erzeugen des Ereignishandlers"><img class="bild" border="1" src="bilderklein/klein05_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 5.1  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772060"></a>Automatisches Erzeugen des Ereignishandlers
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp6685bec8-c443-40b3-8566-04ffdffdc34b" name="dodtp6685bec8-c443-40b3-8566-04ffdffdc34b"></a><h3 class="t3"><span class="cfett">5.2.3    </span><span class="cfett"> Allgemeine Betrachtungen der Ereignishandler-Registrierung</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772061"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdf1e7607-4a32-4927-8690-cc25cf355434"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In <span class="querverweis"><a href="1997_05_001.html#rxz1771896">Abschnitt 5.1.4</a></span> habe ich die Multicast-Delegates und den <span class="clisting">+=</span>-Operator beschrieben. Da ein Ereignis immer vom Typ eines Delegaten ist, gelten die
+                                                      Regeln hinsichtlich der Multicast-Delegates natürlich auch für Ereignisse. So können
+                                                      Sie beispielsweise mehrere verschiedene Ereignishandler für ein Ereignis abonnieren:
+                                                      
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle();<br xmlns="">kreis.InvalidMeasure += kreis_InvalidMeasure;<br xmlns="">kreis.InvalidMeasure += RadiusError;<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.12  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772064"></a>Mehrere Ereignishandler registrieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Analog zum Binden eines Ereignishandlers mit dem <span class="clisting">+=</span>-Operator können Sie mit dem                  <span class="clisting">-=</span>-Operator diese Bindung zu jedem beliebigen Zeitpunkt wieder lösen. Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle();<br xmlns="">kreis.InvalidMeasure += kreis_InvalidMeasure;<br xmlns="">kreis.InvalidMeasure -= kreis_InvalidMeasure;<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.13  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772067"></a>Ereignishandler deregistrieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">weist das Objekt keinen registrierten Ereignishandler mehr auf. Es wird also beim
+                                                      Auslösen des Events nichts passieren.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ereignishandler sind nicht nur von einem Objekt nutzbar, sondern können von mehreren
+                                                      Objekten gleichermaßen verwendet werden. Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis1 = new Circle();<br xmlns="">Circle kreis2 = new Circle();<br xmlns="">kreis1.InvalidMeasure += kreis_InvalidMeasure;<br xmlns="">kreis2.InvalidMeasure += kreis_InvalidMeasure;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.14  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772071"></a>Bei mehreren Objekten denselben Ereignishandler registrieren 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird der Ereignishandler sowohl vom Objekt <span class="ckursiv">kreis1</span> als auch vom Objekt <span class="ckursiv">kreis2</span> benutzt. Sie können sogar noch einen Schritt weiter gehen: Der Ereignishandler ist
+                                                      natürlich auch nicht einem bestimmten Typ verpflichtet. Sie können den Ereignishandler
+                                                      für jedes x-beliebige Objekt und hier für jedes x-beliebige Ereignis verwenden &#8211; vorausgesetzt,
+                                                      der Typ des Ereignisses stimmt mit der Parameterliste und dem Rückgabewert des Ereignishandlers
+                                                      überein.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Beachten Sie bitte, dass auf ein ausgelöstes Ereignis erst nach dem Abonnieren des
+                                                         Events reagiert werden kann. In Konsequenz bedeutet das aber auch, dass das Ereignis
+                                                         <span class="clisting">InvalidMeasure</span> noch nicht behandelt werden kann, wenn wir einem Konstruktor einen negativen Wert
+                                                         für die Eigenschaft <span class="clisting">Radius</span> übergeben.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpdf1e7607-4a32-4927-8690-cc25cf355434" name="dodtpdf1e7607-4a32-4927-8690-cc25cf355434"></a><h3 class="t3"><span class="cfett">5.2.4    </span><span class="cfett"> Wenn der Ereignisempfänger ein Ereignis nicht behandelt</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772075"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6685bec8-c443-40b3-8566-04ffdffdc34b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Clientseitig muss das von einem Objekt ausgelöste Ereignis nicht zwangsläufig an einen
+                                                      Ereignishandler gebunden werden. Legt man keinen Wert darauf, kann das Ereignis auch
+                                                      unbehandelt im Sande verlaufen, es findet dann keinen Abnehmer. Sehen wir uns in der
+                                                      Klasse <span class="clisting">Circle</span> noch einmal die Eigenschaft <span class="clisting">Radius</span> mit dem Ereignisauslöser an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius</span> {<br xmlns="">  get{return _Radius;}<br xmlns="">  set{<br xmlns="">    if(value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else<br xmlns="">      InvalidMeasure();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Implementierung ist noch nicht so weit vorbereitet, dass der potenzielle Ereignisempfänger
+                                                      das Ereignis ignorieren könnte. Wenn nämlich mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle();<br xmlns="">kreis.Radius = -2;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">fälschlicherweise ein unzulässiger negativer Wert zugewiesen wird und das Ereignis
+                                                      im Ereignisempfänger nicht behandelt wird, kommt es zur Laufzeit zu einer Ausnahme
+                                                      des Typs <span class="clisting">NullReferenceException</span>, weil das Ereignis keinen Abnehmer findet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vor der Auslösung eines Events muss daher in der Ereignisquelle geprüft werden, ob
+                                                      der Ereignisempfänger überhaupt die Absicht hat, auf das Ereignis zu reagieren. Mit
+                                                      einer <span class="clisting">if</span>-Anweisung lässt sich das sehr einfach feststellen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius</span> {<br xmlns="">  get { return _Radius; }<br xmlns="">  set {<br xmlns="">    if (value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else if (InvalidMeasure != null)<br xmlns="">      InvalidMeasure();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.15  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772083"></a>Vollständiger Code zur Ereignisauslösung
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd" name="dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd"></a><h3 class="t3"><span class="cfett">5.2.5    </span><span class="cfett"> Ereignisse mit Übergabeparameter</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772084"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdf1e7607-4a32-4927-8690-cc25cf355434"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Bekanntgabe des Ereignisauslösers</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Werfen wir noch einmal einen Blick auf den Ereignishandler, der den Event <span class="clisting">InvalidMeasure</span> eines <span class="clisting">Circle</span>-Objekts behandelt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public void kreis_InvalidMeasure() </span><span class="cfett">{</span><br xmlns="">  Console.WriteLine("Unzulässiger negativer Radius.");<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einer kritischen Betrachtung kann der Code nicht standhalten, denn wir müssen erkennen,
+                                                      dass der Handler bisher nur allgemeingültig ist, da er keine Möglichkeit bietet, das
+                                                      auslösende Objekt zu identifizieren. Deshalb können wir auch nicht innerhalb des Ereignishandlers
+                                                      den Radius neu festlegen, was doch durchaus erstrebenswert wäre. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Problem ist sehr einfach zu lösen, indem der Ereignishandler einen Parameter bereitstellt,
+                                                      der die Referenz auf das ereignisauslösende Objekt beschreibt. Mit dem Parameter ist
+                                                      es dann möglich, dem Radius einen neuen Wert zuzuweisen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public void kreis_InvalidMeasure(Circle sender) </span>{<br xmlns="">  Console.Write("Unzulässiger negativer Radius. Neueingabe: ");<br xmlns="">  sender.Radius = Convert.ToInt32(Console.ReadLine());<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.16  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772091"></a>Übergabe des ereignisauslösenden Objekts an den Ereignishandler
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt ist der Ereignishandler so konstruiert, dass innerhalb des Handlers auf das
+                                                      auslösende Objekt zugegriffen werden kann. Wir nutzen den Parameter, um dem Radius
+                                                      einen neuen, dann hoffentlich akzeptablen Wert zuzuweisen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Überlegung hat auch weitere Änderungen zur Folge. Zunächst einmal muss die Definition
+                                                      des Delegates entsprechend geändert werden: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate void InvalidMeasureEventHandler(Circle sender);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.17  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772095"></a>Änderung der Delegatdefinition
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist nicht die einzige Änderung. Auch die Klasse <span class="clisting">Circle</span> muss noch angepasst werden, denn jetzt muss das Ereignis dem Ereignishandler auch
+                                                      ein Argument übergeben, mit dem die Referenz auf das auslösende Objekt beschrieben
+                                                      wird. Da sich der Code innerhalb des auslösenden Objekts befindet, kann das Objekt
+                                                      die Referenz auf sich selbst mit <span class="clisting">this</span> angeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius </span>{<br xmlns="">  get{return _Radius;}<br xmlns="">  set {<br xmlns="">    if(value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else if(InvalidMeasure != null)<br xmlns="">      InvalidMeasure(this);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.18  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772099"></a>Berücksichtigung der Delegatänderung aus <span xmlns="http://www.w3.org/1999/xhtml" class="querverweis"><a href="1997_05_002.html#rxz1772095">Listing 5.17</a></span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt haben wir einen Stand erreicht, der auch einer kritischen Analyse standhält:
+                                                      Das Ereignis <span class="clisting">InvalidMeasure</span> ist insgesamt so definiert, dass mit einem Ereignishandler mehrere <span class="clisting">Circle</span>-Objekte gleich behandelt werden können.
+                                                   </p>
+                                                   <h4 class="t4"> Ereignishandler im .NET Framework</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Obwohl wir nun im Ereignishandler das ereignisauslösende Objekt eindeutig identifizieren
+                                                      können, haben wir noch nicht den Stand erreicht, den alle Ereignishandler im .NET
+                                                      Framework haben. Denn alle Ereignishandler im .NET Framework weisen nicht nur einen,
+                                                      sondern zwei Parameter auf:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Im ersten Parameter gibt sich das auslösende Objekt bekannt.</li>
+                                                      <li class="pgp">Im zweiten Parameter werden ereignisspezifische Daten bereitgestellt. </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den ersten Parameter haben wir im letzten Abschnitt zwar schon behandelt, aber wir
+                                                      müssen noch eine kleine Nachbetrachtung anstellen. Grundsätzlich ist nämlich der erste
+                                                      Parameter immer vom Typ <span class="clisting">Object</span>. Der Grund ist recht einfach, denn die den Ereignissen zugrunde liegenden Delegates
+                                                      sollen prinzipiell mehreren unterschiedlichen Ereignissen zur Verfügung stehen, die
+                                                      auch von unterschiedlichen Typen ausgelöst werden können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In einem zweiten Parameter werden immer ereignisspezifische Daten geliefert. Wir wollen
+                                                      uns dies am Beispiel der Klasse <span class="clisting">Circle</span> verdeutlichen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem derzeitigen Entwicklungsstand können wir im Ereignishandler nicht feststellen,
+                                                      welche Zuweisung an <span class="clisting">Radius</span> nicht akzeptiert worden ist. Vielleicht möchten wir aber diese Information dem Ereignishandler
+                                                      bereitstellen, damit beispielsweise die Konsolenausgabe
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">Ein Radius von -22 ist nicht zulässig.</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ermöglicht wird. </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Bereitstellung von ereignisspezifischen Daten werden spezielle Klassen benötigt,
+                                                      die von <span class="clisting">EventArgs</span> abgeleitet sind. Damit lassen sich die Typen der zweiten Parameter auf eine gemeinsame
+                                                      Basis zurückführen. <span class="clisting">EventArgs</span> dient seinerseits selbst einigen Ereignissen als Typvorgabe (beispielsweise den <span class="clisting">Click</span>-Ereignissen). Allerdings stellt <span class="clisting">EventArgs</span> keine eigenen Daten zur Verfügung und ist daher als Dummy anzusehen, um der allgemeinen
+                                                      Konvention zu entsprechen, dass alle Ereignishandler zwei Parameter haben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unserem Beispiel könnte die Klasse für den zweiten Parameter wie folgt codiert
+                                                      sein:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class InvalidMeasureEventArgs : EventArgs <br xmlns="">{<br xmlns="">  private int _InvalidMeasure;<br></br>  public int InvalidMeasure {<br xmlns="">    get { return _InvalidMeasure; }<br xmlns="">  }<br></br>  public InvalidMeasureEventArgs(int invalidMeasure) {<br xmlns="">    _InvalidMeasure = invalidMeasure;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.19  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772115"></a>Bereitstellung einer »EventArgs«-Klasse
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Üblicherweise werden die Klassen, die als Typvorgabe für die Objekte der zweiten Parameter
+                                                         im Eventhandler dienen, mit dem Suffix <span class="clisting">EventArgs</span> ausgestattet. Häufig wird dem der Ereignisname vorangestellt.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unserem Fall wollen wir dem Ereignishandler nur den Wert des fehlgeschlagenen Zuweisungsversuchs
+                                                      mitteilen. Es reicht dazu aus, den Wert in einer schreibgeschützten Eigenschaft zu
+                                                      kapseln. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns nun alle Änderungen an, die sich aus unseren Überlegungen ergeben. Da
+                                                      wäre zunächst einmal die Anpassung des Delegaten <span class="clisting">InvalidMeasureEventHandler</span>, der nun im ersten Parameter den Typ <span class="clisting">Object</span> vorschreibt und im zweiten ein Objekt vom Typ <span class="clisting">InvalidMeasure</span><span class="clisting">EventArgs</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate void InvalidMeasureEventHandler(Object sender, <br xmlns="">                                         InvalidMeasureEventArgs e);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.20  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772121"></a>Endgültige Definition des Delegaten »InvalidMeasureEventHandler«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun müssen wir auch die Eigenschaft <span class="clisting">Radius</span> in der Klasse <span class="clisting">Circle</span> anpassen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public virtual int Radius</span> {<br xmlns="">  get { return _Radius; }<br xmlns="">  set {<br xmlns="">    if (value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else if (InvalidMeasure != null)<br xmlns="">      InvalidMeasure(this, new InvalidMeasureEventArgs(value));<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.21  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772124"></a>Berücksichtigung des Delegaten aus <span xmlns="http://www.w3.org/1999/xhtml" class="querverweis"><a href="1997_05_002.html#rxz1772121">Listing 5.20</a></span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Ereignishandler muss natürlich ebenfalls entsprechend parametrisiert werden. Er
+                                                      gestattet uns nun nicht nur, zu erfahren, welches Objekt für die Ereignisauslösung
+                                                      verantwortlich ist, sondern auch die Auswertung, welcher Wert nicht akzeptiert werden
+                                                      konnte.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbueberschrift">
+                                                         
+                                                         
+                                                         
+                                                         Anmerkung
+                                                      </p>
+                                                      <p class="pbstandard">Selbstverständlich können Sie in der <span class="clisting">EventArgs</span>-Klasse die Eigenschaft auch mit einem <span class="clisting">set</span>-Accessor ausstatten. Das könnte aber zu einer Verwirrung im Ereignishandler führen,
+                                                         sollte mit
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint">e.Radius = 10;<br></pre></div>
+                                                      <p class="pbstandard">ein neuer Wert festgelegt werden. Der Grund ist recht einfach: In der Eigenschaft
+                                                         <span class="clisting">Radius</span> der Klasse <span class="clisting">Circle</span> wird diese Zuweisung nicht ausgewertet, sie verpufft im Nirwana. Weiter
+                                                      </p>
+                                                   </div>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">unten, in <span class="querverweis"><a href="1997_05_003.html#rxz1772188">Abschnitt 5.3</a></span>, werden Sie bei der Ergänzung des Projekts <span class="ckursiv">GeometricObjectsSolution</span> einen Fall kennenlernen, bei dem der <span class="clisting">set</span>-Zweig in einer Eigenschaft des <span class="clisting">EventArgs</span>-Objekts von Bedeutung ist.
+                                                      </p>
+                                                   </div>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">void kreis_InvalidMeasure(object sender, InvalidMeasureEventArgs e)</span>{<br xmlns="">  Console.Write("Ein Radius von {0} ist nicht zulässig.", e.InvalidMeasure);<br xmlns="">  Console.Write("Neueingabe: ");<br xmlns="">  ((Circle)sender).Radius = Convert.ToDouble(Console.ReadLine());<br xmlns="">}<br></pre></div>
+                                                   <h4 class="t4"> Zusammenfassung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fassen wir an dieser Stelle noch einmal alle Erkenntnisse hinsichtlich der Ereignishandler
+                                                      im .NET Framework zusammen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Ereignishandler liefern niemals einen Wert an den Aufrufer zurück, sie sind immer
+                                                         <span class="clisting">void</span> und haben zwei Parameter.
+                                                      </li>
+                                                      <li class="pgp">Der erste Parameter ist grundsätzlich immer vom Typ <span class="clisting">Object</span>. Hier gibt sich der Auslöser des Events bekannt.
+                                                      </li>
+                                                      <li class="pgp">Der zweite Parameter ist vom Typ <span class="clisting">EventArgs</span> oder davon abgeleitet. Er stellt ereignisspezifische Daten zur Verfügung. Dieser
+                                                         Parameter hat das Suffix <span class="clisting">EventArgs</span>.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach diesen Vorgaben werden auch die Delegaten definiert, die als Typvorgabe der Ereignisse
+                                                      dienen. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a" name="dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a"></a><h3 class="t3"><span class="cfett">5.2.6    </span><span class="cfett"> Ereignisse in der Vererbung</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772137"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp3df38965-fb82-4fac-b5fa-eabbed68c969"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4c2eab55-6868-4884-bc45-fde99f3a7220"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ereignisse können nur in der Klasse ausgelöst werden, in der sie definiert sind. Mit
+                                                      anderen Worten bedeutet das auch, dass Ereignisse nicht vererbt werden. In der Klasse
+                                                      <span class="clisting">GraphicCircle</span> könnte nach dem derzeitigen Stand des Klassencodes niemals das Ereignis <span class="clisting">InvalidMeasure</span> ausgelöst werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Aus diesem Grund wird in der Klasse, in der ein Ereignis bereitgestellt wird, grundsätzlich
+                                                      eine zusätzliche Methode definiert, in der das Ereignis ausgelöst wird. Üblicherweise
+                                                      sind diese Methoden geschützt, also <span class="clisting">protected</span>. Es ist eine allgemeine Konvention im .NET Framework, dass diese Methoden, die einzig
+                                                      und allein der Ereignisauslösung dienen, mit dem Präfix »<span class="clisting">On</span>« gekennzeichnet werden, gefolgt vom Bezeichner des Events. Die <span class="clisting">OnXxx</span>-Methoden definieren in der Regel genau einen Parameter. Bei diesem handelt es sich
+                                                      in der Regel um den ereignisspezifischen <span class="clisting">EventArgs</span>-Typ.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für unser Ereignis <span class="clisting">InvalidMeasure</span> würde die Methode wie folgt aussehen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">protected virtual void OnInvalidMeasure(InvalidMeasureEventArgs e) </span>{<br xmlns="">  if (InvalidMeasure != null)<br xmlns="">    InvalidMeasure(this, e);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.22  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772142"></a>Methode, die ein Ereignis ableitenden Klassen zur Verfügung stellt
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">OnXxx</span>-Methode wird von allen abgeleiteten Klassen geerbt. Weil die Methode in der Klasse
+                                                      definiert ist, in der auch das Ereignis bereitgestellt wird, bewirkt der Aufruf dieser
+                                                      Methode in der abgeleiteten Klasse auch die Auslösung des Events. Der Modifikator
+                                                      <span class="clisting">virtual</span> gestattet zudem, in der Ableitung die geerbte Methode polymorph zu überschreiben,
+                                                      um möglicherweise typspezifische Anpassungen im Kontext der Ereignisauslösung vorzunehmen.
+                                                      Dieser Fall ist gar nicht selten im .NET Framework.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp3df38965-fb82-4fac-b5fa-eabbed68c969" name="dodtp3df38965-fb82-4fac-b5fa-eabbed68c969"></a><h3 class="t3"><span class="cfett">5.2.7    </span><span class="cfett"> Hinter die Kulissen des Schlüsselworts »event« geblickt</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772145"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8574d93a-37a9-4781-a837-c5307ecdd2d9"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Rufen wir uns zum Abschluss noch einmal in Erinnerung, wie wir ein Ereignis definieren:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public event InvalidMeasureEventHandler InvalidMeasure;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es stellt sich die Frage, warum ein Ereignis mit dem Schlüsselwort <span class="clisting">event</span> deklariert werden muss. Da ein Ereignis vom Typ eines Delegaten ist, könnte doch
+                                                      vermutlich auch auf die Angabe von <span class="clisting">event</span> verzichtet werden, also:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public InvalidMeasureEventHandler InvalidMeasure;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tatsächlich verbirgt sich hinter dem Schlüsselwort ein Mechanismus, der ähnlich wie
+                                                      eine Eigenschaft aufgebaut ist. Unser Ereignis <span class="clisting">InvalidMeasure</span> wird, zusammen mit dem <span class="clisting">event</span>-Schlüsselwort, implizit wie folgt umgesetzt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">private InvalidMeasureEventHandler _InvalidMeasure;<br></br>public event InvalidMeasureEventHandler InvalidMeasure<br xmlns="">{<br xmlns="">  add { _InvalidMeasure += value; }<br xmlns="">  remove { _InvalidMeasure -= value; }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.23  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772153"></a>Das Schlüsselwort »event« hinter den Kulissen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Durch das Schlüsselwort <span class="clisting">event</span> werden die beiden Zweige <span class="clisting">add</span> und <span class="clisting">remove</span> implizit erzeugt. Der eigentliche Delegat bleibt in einem <span class="clisting">private</span>-Feld verborgen. Nehmen wir an, wir würden auf die Angabe von <span class="clisting">event</span> verzichten. Der Code wäre dann zwar syntaktisch nicht zu beanstanden, aber er würde
+                                                      auch gestatten, die Aufrufliste mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">kreis.InvalidMeasure = null;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">zu löschen. Bei der Definition eines Ereignisses mit <span class="clisting">event</span> ist das nicht möglich, denn <span class="clisting">event</span> kapselt den direkten Zugriff.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">event</span> wird implizit ein <span class="clisting">add</span>- und ein <span class="clisting">remove</span>-Accessor bereitgestellt. Mit den beiden Operatoren »<span class="clisting">+=</span>« und »<span class="clisting">-=</span>« wird bei der Registrierung eines Ereignishandlers gesteuert, welcher der beiden
+                                                      Zweige ausgeführt werden soll. Die Entwicklungsumgebung wird einen Kompilierfehler
+                                                      ausgeben, wenn Sie stattdessen nur den einfachen Zuweisungsoperator »<span class="clisting">=</span>« benutzen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können per Programmcode ein Ereignis mit den beiden Routinen <span class="clisting">add</span> und <span class="clisting">remove</span> nachbilden. Im folgenden Beispielprogramm wird das demonstriert. In der Klasse <span class="clisting">Demo</span> ist das Ereignis <span class="clisting">OutOfCoffee</span> definiert &#8211; ohne <span class="clisting">event</span> anzugeben. Außer Ihnen die Möglichkeit zu geben, hinter die Kulissen eines Events
+                                                      zu schauen, vollbringt das Beispiel ansonsten keine besonderen Leistungen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\EventDemonstration<br></br><span class="clistingfett">class Program</span> {<br></br>  <span class="clistingfett">static void Main(string[] args</span>) {<br xmlns="">    Demo demo = new Demo();<br xmlns="">    demo.OutOfCoffee += new EventHandler(demo_OutOfCoffee);<br xmlns="">    demo.DoSomething();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  // Ereignishandler  <br></br><span class="clistingfett">static void demo_OutOfCoffee(object sender, EventArgs e) </span>{<br xmlns="">    Console.WriteLine("Im Ereignishandler von 'OutOfCoffee'");<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">class Demo</span> {<br></br>  // gekapselter Delegate<br></br>  private EventHandler _OutOfCoffee;<br></br>  // Definition des Events<br></br>  <span class="clistingfett">public event EventHandler OutOfCoffee </span>{<br xmlns="">    add { _OutOfCoffee += value; }<br xmlns="">    remove { _OutOfCoffee -= value; }<br xmlns="">  }<br></br>  // Ereignisauslösende Methode<br></br>  <span class="clistingfett">public void DoSomething()</span> {<br xmlns="">    if (_OutOfCoffee != null)<br xmlns="">      this._OutOfCoffee(this, new EventArgs());<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.24  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772171"></a>Fundamentale Implementierung eines Ereignisses
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62" name="dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62"></a><h3 class="t3"><span class="cfett">5.2.8    </span><span class="cfett"> Die Schnittstelle »INotifyPropertyChanged«</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772173"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpe4289a19-c207-4bbd-9b2d-e4d97389d5b3"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp3df38965-fb82-4fac-b5fa-eabbed68c969"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Zusammenhang mit den Ereignissen sollten wir an dieser Stelle auch eine besondere
+                                                      Schnittstelle berücksichtigen. Es handelt sich dabei um <span class="clisting">INotifyPropertyChanged</span>. Das Interface schreibt der implementierenden Klasse das Ereignis <span class="clisting">PropertyChanged</span><span class="clisting"><a class="indexterm" id="dodtp5710bff1-50a4-4a66-9a69-3c28e3e5e336"></a></span> vor. Per Vorgabe soll das Ereignis ausgelöst werden, nachdem sich eine Eigenschaft
+                                                      geändert hat, also im <span class="clisting">set</span>-Zweig. <span class="clisting">INotifyPropertyChanged</span> kommt eine besondere Bedeutung insbesondere im Zusammenhang mit neueren Technologien
+                                                      zu. In der WPF beispielsweise informiert dieser Event die datenbindenden Komponenten,
+                                                      dass die Anzeige des Eigenschaftswerts aktualisiert werden muss. Wir kommen darauf
+                                                      im Kontext dieser Thematik noch zu sprechen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Natürlich wollen wir die Schnittstelle auch in den beiden Klassen <span class="clisting">Circle</span> und <span class="clisting">Rectangle</span> benutzen, um eine Änderung an <span class="clisting">Radius</span>, <span class="clisting">Length</span> oder <span class="clisting">Width</span> zu signalisieren. Um die Schnittstelle zu implementieren, sollten wir zuerst noch
+                                                      mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System.ComponentModel;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">den Namespace bekannt geben, in dem das Interface definiert ist. Dann können wir das
+                                                      Interface problemlos implementieren und sollten auch daran denken, eine entsprechende
+                                                      <span class="clisting">OnXxx</span>-Methode bereitzustellen. Dabei ist zu berücksichtigen, dass das <span class="clisting">EventArgs</span>-Objekt einen Parameter vom Typ <span class="clisting">string</span> definiert, dem wir den Bezeichner der geänderten Eigenschaft übergeben. Das Interface
+                                                      <span class="clisting">INotifyPropertyChanged</span> wird von der Klasse <span class="clisting">GeometricObject</span> implementiert, damit die beiden abgeleiteten Klassen <span class="clisting">Circle</span> und <span class="clisting">Rectangle</span> gleichermaßen davon profitieren können.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class GeometricObject : <span class="clistingfett">INotifyPropertyChanged</span><br xmlns="">{<br></br>  // Ereignis der Schnittstelle 'INotifyPropertyChanged'    <br></br>  <span class="clistingfett">public event PropertyChangedEventHandler PropertyChanged;</span><br></br>  protected virtual void OnPropertyChanged(string propertyName)<br xmlns="">  {<br xmlns="">    if (PropertyChanged != null)<br xmlns="">      PropertyChanged(this, new PropertyChangedEventArgs(propertyName));<br xmlns="">  }<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.25  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772183"></a>Bereitstellung des Interfaces »INotifyPropertyChanged«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">So ausgerüstet, kann nun die Eigenschaft <span class="clisting">Radius</span> von diesem Ereignis profitieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public virtual int Radius {<br xmlns="">  get { return _Radius; }<br xmlns="">  set {<br xmlns="">    if (value &gt;= 0) {<br xmlns="">      _Radius = value;<br xmlns="">      OnPropertyChanged("Radius");<br xmlns="">    }<br xmlns="">    else<br xmlns="">      OnInvalidMeasure(new InvalidMeasureEventArgs(value));<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.26  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1772186"></a>Änderung der Eigenschaft »Radius« aufgrund von <span xmlns="http://www.w3.org/1999/xhtml" class="querverweis"><a href="1997_05_002.html#rxz1772183">Listing 5.25</a></span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In gleicher Weise sollten auch die Eigenschaften <span class="clisting">Length</span> und <span class="clisting">Width</span> von <span class="clisting">Rectangle</span> und <span class="clisting">XCoordinate</span> sowie <span class="clisting">YCoordinate</span> in <span class="clisting">GeometricObject</span> angepasst werden.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs05_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="5  Delegates und Ereignisse"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_05_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_05_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

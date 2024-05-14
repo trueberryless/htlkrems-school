@@ -1,0 +1,846 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 5  Delegates und Ereignisse">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 5  Delegates und Ereignisse</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="04_009.html">
+      <link rel="next" href="1997_05_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_04_009.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_05_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9" class="navh">5 Delegates und Ereignisse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_001.html#dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7" class="navh">5.1 Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a" class="navh">5.1.1 Einführung in das Prinzip der Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497" class="navh">5.1.2 Verwendung von Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe" class="navh">5.1.3 Vereinfachter Delegatenaufruf</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpc31b034c-07a3-4c58-8260-f33ec088cf36" class="navh">5.1.4 Multicast-Delegates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f" class="navh">5.1.5 Anonyme Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_001.html#dodtp74c90309-8ac2-437f-896f-f54302b446da" class="navh">5.1.6 Kovarianz und Kontravarianz mit Delegaten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_002.html#dodtp862ac49c-9839-46c9-850d-2187b2b5aee9" class="navnav">5.2 Ereignisse eines Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp04a9e60d-20f4-4824-b16d-a91fa00f3913" class="navnav">5.2.1 Ereignisse bereitstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpfaa95af0-1ea9-48d2-9267-5bc15988d551" class="navnav">5.2.2 Die Reaktion auf ein ausgelöstes Ereignis</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp6685bec8-c443-40b3-8566-04ffdffdc34b" class="navnav">5.2.3 Allgemeine Betrachtungen der Ereignishandler-Registrierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtpdf1e7607-4a32-4927-8690-cc25cf355434" class="navnav">5.2.4 Wenn der Ereignisempfänger ein Ereignis nicht behandelt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp345496d9-d98a-4f18-ba6c-990aa6b863bd" class="navnav">5.2.5 Ereignisse mit Übergabeparameter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp699fd5f3-a8fe-4701-9679-07c2ae94f45a" class="navnav">5.2.6 Ereignisse in der Vererbung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp3df38965-fb82-4fac-b5fa-eabbed68c969" class="navnav">5.2.7 Hinter die Kulissen des Schlüsselworts »event« geblickt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_002.html#dodtp775034c8-df3f-42a1-a02b-0db7e39e4b62" class="navnav">5.2.8 Die Schnittstelle »INotifyPropertyChanged«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_05_003.html#dodtpfe69f646-b065-465b-9512-ba9c7c960744" class="navnav">5.3 Änderungen im Projekt »GeometricObjects«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtpcd8de338-81d0-46eb-9c5a-05b53441c81d" class="navnav">5.3.1 Überarbeitung des Events »InvalidMeasure«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_05_003.html#dodtp7278828c-3908-4580-8b26-4571c1e93e70" class="navnav">5.3.2 Weitere Ereignisse</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9" name="dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9"></a><h1 class="t1"><span class="cfett">5 </span><span class="cfett"> Delegates und Ereignisse</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771826"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7" name="dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7"></a><h2 class="t2"><span class="cfett">5.1    </span><span class="cfett"> Delegates</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771827"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a" name="dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a"></a><h3 class="t3"><span class="cfett">5.1.1    </span><span class="cfett"> Einführung in das Prinzip der Delegates</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771828"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp61008a78-2578-47dd-b04a-4cd5ea8932b7"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">»Delegate« ist das englische Wort für »Delegierter«, also für jemanden, der einen
+                                                      Auftrag weiterleiten soll. Tatsächlich leitet ein Delegat weiter, er leitet nämlich
+                                                      einen Methodenaufruf an eine bestimmte Methode weiter. Die Technik, die sich dahinter
+                                                      verbirgt, wird in der Sprache C auch als <span class="cfett">Funktionszeiger</span> bezeichnet. Wie Sie wissen, basiert ausnahmslos alles in .NET auf Objekten. Da verwundert
+                                                      es nicht, dass auch die Funktionszeiger in ein Objekt verpackt und als <span class="cfett">Delegate</span> bezeichnet ihren Weg in die Laufzeitumgebung finden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Ein Delegate ist ein Typ, der den Zeiger auf eine Methode beschreibt. </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bevor wir uns mit den Details von Delegaten beschäftigen, wollen wir uns zunächst
+                                                      an einem einfachen Beispiel die grundsätzliche Arbeitsweise verdeutlichen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Operation, die von diesem Code ausgeführt wird, ist recht einfach: Der Anwender
+                                                      gibt zwei Zahlen an der Konsole ein und hat anschließend die Wahl, ob beide Zahlen
+                                                      addiert oder subtrahiert werden sollen. Das Resultat der Operation wird abhängig von
+                                                      der Wahl des Anwenders an der Konsole ausgegeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\SimpleDelegate<br></br>public delegate double CalculateHandler(double value1, double value2);<br></br><span class="clistingfett">class Program </span>{<span class="cfett"><br xmlns="">  </span><span class="clistingfett">static void Main(string[] args) </span>{<br></br>    // Variable vom Typ des Delegaten<br></br>    CalculateHandler calculate;<br></br>    do {<br></br>      // Eingabe der Operation<br></br>      Console.Clear();<br xmlns="">      Console.Write("Geben Sie den ersten Operanden ein: ");<br xmlns="">      double input1 = Convert.ToDouble(Console.ReadLine());<br xmlns="">      Console.Write("Geben Sie den zweiten Operanden ein: ");<br xmlns="">      double input2 = Convert.ToDouble(Console.ReadLine());<br></br>      // Wahl der Operation<br></br>      Console.Write("Operation: Addition - (A) oeder Subtraktion - (S)? ");<br xmlns="">      string wahl = Console.ReadLine().ToUpper();<br></br>      // In Abhängigkeit von der Wahl des Anwenders wird die Variable 'calculate'<br></br>      // mit einem Zeiger auf die auszuführende Methode initialisiert<br></br>      if (wahl == "A")<br xmlns="">        calculate = new CalculateHandler(Demo.Add);<br xmlns="">      else if (wahl == "S")<br xmlns="">        calculate = new CalculateHandler(Demo.Subtract);<br xmlns="">      else {<br xmlns="">        Console.Write("Ungültige Eingabe");<br xmlns="">        Console.ReadLine();<br xmlns="">        return;<br xmlns="">      }<br></br>      // Aufruf der Operation 'Add' oder 'Subtract' über den Delegaten<br></br>      double result = calculate(input1, input2);<br xmlns="">      Console.WriteLine("----------------------------------");<br xmlns="">      Console.WriteLine("Ergebnis = {0}\n\n", result);<br xmlns="">      Console.WriteLine("Zum Beenden F12 drücken.");<br xmlns="">    } while (Console.ReadKey(true).Key != ConsoleKey.F12);<br xmlns="">  }  <br></br>}<br></br><span class="clistingfett">class Demo</span> {<span class="clistingfett"><br xmlns="">  public static double Add(double x, double y) </span>{<br xmlns="">    return x + y;<br xmlns="">  }<br></br><span class="clistingfett">  public static double Subtract(double x, double y) </span>{<br xmlns="">    return x - y;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.1  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771851"></a>Das Beispielprogramm »SimpleDelegate«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Klasse <span class="clisting">Demo</span> sind zwei statische Methoden definiert, die aus <span class="clisting">Main</span> heraus aufgerufen werden und die beiden Operationen <span class="clisting">Add</span> und <span class="clisting">Subtract</span> beschreiben. Die Wahl, ob die beiden Zahlen addiert oder subtrahiert werden sollen,
+                                                      trifft der Anwender durch die Eingabe von »A« oder »S« an der Konsole. Um die Eingabe
+                                                      in Kleinschreibweise ebenfalls zu berücksichtigen, wird die Eingabe mit der Methode
+                                                      <span class="clisting">ToUpper</span> der Klasse <span class="clisting">String</span> in Großschreibweise umgewandelt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string wahl = Console.ReadLine().ToUpper();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem der Anwender seine Wahl getroffen hat, wird geprüft, wie diese ausgefallen
+                                                      ist, um entsprechend im Programmcode zu reagieren. Vermutlich hätten Sie eine solche
+                                                      Aufgabenstellung bisher wie folgt gelöst:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double result;<br xmlns="">if(wahl == "A")<br xmlns="">  result = Demo.Add(input1, input2);<br xmlns="">else if(wahl == "S")<br xmlns="">  result = Demo.Subtract(input1, input2);<br xmlns="">[...]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt keinen Zweifel daran, dass diese Implementierung natürlich auch zum richtigen
+                                                      Ergebnis führt. Das Resultat der Operation wird in den Anweisungsblöcken hinter <span class="clisting">if</span> bzw. <span class="clisting">else if</span> abgerufen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun betrachten wir die entscheidenden Anweisungen der Lösung im Beispiel <span class="ckursiv">SimpleDelegate</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if(wahl == "A")<br xmlns="">  calculate = new CalculateHandler(Demo.Add);<br xmlns="">else if(wahl == "S")<br xmlns="">  calculate = new CalculateHandler(Demo.Subtract);<br xmlns="">[...]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis der Addition bzw. Subtraktion wird nun nicht mehr in den beiden Anweisungsblöcken
+                                                      der <span class="clisting">if</span>-Struktur abgerufen, sondern außerhalb derselben mit der Anweisung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double result = calculate(input1, input2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da außerhalb der <span class="clisting">if</span>-Struktur die Wahl des Anwenders nicht bekannt sein kann, stehen wir vor der Frage,
+                                                      wie es möglich ist, die gewünschte Methode aufzurufen. Die Antwort darauf ist prinzipiell
+                                                      nicht schwierig: Wir müssen in einer Variablen die Laufzeitadresse auf die entsprechende
+                                                      Methode vorhalten, also einen Verweis konstruieren. Dieser kann später an einer beliebigen
+                                                      Stelle im Code ausgewertet werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher kennen wir Verweise nur im Zusammenhang mit Objekten. Mit Objektverweisen werden
+                                                      zusammenhängende Datenblöcke im Hauptspeicher adressiert, in denen die Zustandsdaten
+                                                      eines ganz bestimmten Objekts beschrieben werden. Ein Verweis auf Programmcode ist
+                                                      im Grunde genommen nicht anders, zeigt aber auf Bytesequenzen, die anders interpretiert
+                                                      werden müssen &#8211; nämlich als ausführbarer Programmcode. Damit ist auch klar, dass ein
+                                                      Verweis auf Code anders definiert werden muss als ein Verweis auf Datenblöcke, den
+                                                      wir bisher immer verwendet haben. Aus diesem Grund wurden in .NET die Delegates eingeführt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie oben erwähnt, kapselt ein Delegat den Zeiger auf eine Methode, beschreibt also
+                                                      eine Speicheradresse. Sehen wir uns jetzt an, wie diese Anforderung gelöst wird. Im
+                                                      Code des Beispiels <span class="ckursiv">SimpleDelegate</span> wird mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate double CalculateHandler(double value1, double value2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ein Delegat definiert. Diese Definition erinnert ein wenig an die Signatur einer Methode
+                                                      namens <span class="ckursiv">CalculateHandler</span>, die zwei Parameter vom Typ <span class="clisting">double</span> empfängt und als Rückgabewert einen <span class="clisting">double</span> liefert &#8211; nur ergänzt um das Schlüsselwort <span class="clisting">delegate</span><span class="cfett"><a class="indexterm" id="dodtpe7b7fb06-0e46-4b9c-9876-d3a8efdd172a"></a></span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Delegat-Objekt kapselt den Zeiger auf eine Methode &#8211; oder mit anderen Worten:
+                                                      Er steht für einen beliebigen Methodenaufruf. Ganz beliebig ist der Methodenaufruf
+                                                      allerdings nicht, denn jede Methode hat eine exakt definierte Parameterliste mit Parametern
+                                                      eines bestimmten Typs. Ein Delegat beschreibt einen Zeiger auf eine Methode, wobei
+                                                      die Typen der Parameterliste der Methode, auf die der Delegat zeigt, mit der Parameterliste
+                                                      der <span class="clisting">delegate</span><span class="clisting"><a class="indexterm" id="dodtp03459b6f-dfec-416a-be8d-59b9e4a70233"></a></span>-Definition übereinstimmen müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unserem Beispiel werden in der Parameterliste des Delegates <span class="clisting">CalculateHandler</span><span class="ckursiv"> </span>zwei Parameter vom Typ <span class="clisting">double</span> aufgeführt. Damit ist ein Delegat-Objekt in der Lage, jede x-beliebige Methode eines
+                                                      x-beliebigen Objekts aufzurufen &#8211; vorausgesetzt, die Methode definiert eine Parameterliste,
+                                                      die genau zwei <span class="clisting">double</span>-Argumente erwartet. Die adressierte Methode darf natürlich auch statisch sein oder
+                                                      sich in einer anderen Klasse befinden &#8211; das alles spielt keine Rolle. Die einzige
+                                                      Bedingung ist, dass die durch den Delegaten beschriebene Methode mit Programmcode
+                                                      angesprochen werden kann, also erreichbar ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben der Parameterliste spielt auch der Rückgabewert eine entscheidende Rolle. Im
+                                                      Beispiel des Delegates <span class="clisting">CalculateHandler</span><span class="ckursiv"> </span>muss die Methode in jedem Fall einen Rückgabewert vom Typ <span class="clisting">double</span> haben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nicht jede Methode hat einen Rückgabewert. Beabsichtigen Sie beispielsweise, einen
+                                                      Delegaten zu definieren, der in der Lage ist, einen Zeiger auf sämtliche Methoden
+                                                      zu beschreiben, die parameterlos sind und keinen Rückgabewert haben, sähe die Definition
+                                                      folgendermaßen aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate void MyDelegate();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können die Definition eines Delegates mit der Definition einer Klasse vergleichen,
+                                                      denn beide beschreiben einen Typ. Um ein konkretes Objekt zu erhalten, muss zuerst
+                                                      eine Variable vom Typ der Klasse deklariert werden &#8211; das ist bei einem Delegaten nicht
+                                                      anders. Im Beispiel oben dient dazu folgende Anweisung:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CalculateHandler calculate;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit ist die Variable <span class="ckursiv">calculate</span> vom Typ <span class="clisting">CalculateHandler</span> deklariert, aber noch nicht initialisiert. Mit anderen Worten: <span class="ckursiv">calculate</span> ist ein Delegat und kann auf eine Methode zeigen, die zwei <span class="clisting">double</span>-Argumente erwartet und einen <span class="clisting">double</span> als Resultat des Aufrufs zurückliefert. In diesem Moment weiß der Delegate allerdings
+                                                      noch nicht, um welche Methode es sich dabei genau handelt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Initialisierung erfolgt &#8211; analog zur Instanziierung einer Klasse &#8211; mit dem Operator
+                                                      <span class="clisting">new</span> unter Angabe des Delegattyps. Delegates haben nur einen einfach parametrisierten
+                                                      Konstruktor, der den Bezeichner der Methode erwartet, die später aufgerufen werden
+                                                      soll. In unserem Beispiel handelt es sich um
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">calculate = new CalculateHandler(Demo.Add);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">bzw. um</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">calculate = new CalculateHandler(Demo.Subtract);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt ist dem Delegate bekannt, welche Methode ausgeführt werden soll: entweder <span class="clisting">Add</span> oder <span class="clisting">Subtract</span>. Allerdings wird die Methode, auf die der Delegat in Form eines Zeigers verweist,
+                                                      noch nicht sofort ausgeführt, denn dazu bedarf es eines Anstoßes durch den Aufruf
+                                                      des Delegates:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double result = calculate(input1, input2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Aufruf erinnert an den Aufruf einer Methode, dabei wird allerdings der Methodenname
+                                                      durch die Variable vom Typ des Delegates ersetzt. In den Klammern werden die erforderlichen
+                                                      Argumente an die Methode übergeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit die Anwendung nicht schon nach der ersten Berechnung beendet wird, ist die gesamte
+                                                      Programmlogik der Methode <span class="clisting">Main</span> in einer <span class="clisting">do/while</span>-Schleife codiert. Im Schleifenfuß erfolgt eine Überprüfung, ob der Anwender die Anwendung
+                                                      beenden möchte. Dazu muss er die Taste <span class="ctastatur"><img align="top" src="keys/KEYxMik=.gif" alt="F12" title="F12"></img></span> drücken.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">do {<br></br>  // Anweisungen<br></br>} while (Console.ReadKey(true).Key != ConsoleKey.F12);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die statische Methode <span class="clisting">ReadKey</span> ruft dabei die gedrückte Zeichen- oder Funktionstaste ab. Das Übergabeargument <span class="clisting">true</span> sagt aus, dass das entsprechende Zeichen nicht in die Konsole geschrieben werden
+                                                      soll. Der Rückgabewert der Methode <span class="clisting">ReadKey</span> ist vom Typ <span class="clisting">ConsoleKeyInfo</span>. Darauf rufen wir mit der Eigenschaft <span class="clisting">Key</span> die gedrückte Taste ab, die über die Konstantenauflistung <span class="clisting">ConsoleKey</span> beschrieben wird.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497" name="dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497"></a><h3 class="t3"><span class="cfett">5.1.2    </span><span class="cfett"> Verwendung von Delegates</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771888"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8d35fc00-98a7-408d-8ce5-ff0dda392c1a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem wir uns im letzten Abschnitt mit dem Einsatz der Delegates beschäftigt haben,
+                                                      steht nunmehr die Frage im Raum, wann Delegates verwendet werden. Grundsätzlich kann
+                                                      man sagen, dass Delegates genau dann verwendet werden, wenn zur Entwicklungszeit noch
+                                                      nicht bekannt ist, wie die Methode heißt, die ausgeführt werden soll. Um es noch einmal
+                                                      zu erwähnen: Von der aufzurufenden Methode ist nur die Parameterliste und der Typ
+                                                      der Rückgabe vorgeschrieben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein typisches Verwendungsgebiet werden Sie in Kapitel 15 noch kennenlernen: Es sind
+                                                      Threads und die zu diesem Themenkomplex gehörenden asynchronen Methodenaufrufe. Aber
+                                                      insbesondere wenn Sie sich mit der Entwicklung grafischer Benutzerschnittstellen beschäftigen
+                                                      sollten (WinForm-Anwendungen, WPF-Anwendungen, ASP.NET usw.), kommen Sie an Delegaten
+                                                      nicht vorbei &#8211; obwohl Delegates hier unter dem Begriff »Ereignis« verwendet werden.
+                                                      Darüber erfahren Sie in <span class="querverweis"><a href="1997_05_002.html#rxz1771983">Abschnitt 5.2</a></span> alles Wesentliche. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe" name="dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe"></a><h3 class="t3"><span class="cfett">5.1.3    </span><span class="cfett"> Vereinfachter Delegatenaufruf</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771891"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc31b034c-07a3-4c58-8260-f33ec088cf36"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp23b3bf0e-b1e6-44b4-aa71-b320ead7c497"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt noch eine weitere Notation, um einen Delegaten zu instanziieren und ihm gleichzeitig
+                                                      die auszuführende Methode anzugeben. Diese ist etwas einfacher in der Handhabung und
+                                                      erspart uns etwas Tipparbeit. Sie können nämlich anstelle der Anweisung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CalculateHandler calculate = new CalculateHandler(Demo.Addition);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">auch wie folgt codieren:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CalculateHandler calculate = Demo.Add;<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc31b034c-07a3-4c58-8260-f33ec088cf36" name="dodtpc31b034c-07a3-4c58-8260-f33ec088cf36"></a><h3 class="t3"><span class="cfett">5.1.4    </span><span class="cfett"> Multicast-Delegates</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771896"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb8f14b39-3483-499c-9dc2-aa7ab48dddbe"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">.NET bietet die Möglichkeit, mehrere Delegates zu einem einzigen zusammenzufassen.
+                                                      Dadurch entsteht ein Delegaten-Verbund, der auch als <span class="cfett">Multicast-Delegates</span> bezeichnet wird. Der Vorteil ist, dass durch den Aufruf eines Delegates mehrere Delegates
+                                                      der Reihe ausgeführt werden können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt zwei Möglichkeiten, um aus einem Delegaten einen Multicast-Delegaten zu machen:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><a class="id" id="rxz1771899"></a>die Methode <span class="clisting">Combine</span> der Klasse <span class="clisting">Delegate</span></li>
+                                                      <li class="pgp">der <span class="clisting">+=</span>-Operator
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">Combine</span> wird selten verwendet. Vielmehr treffen Sie in der Regel auf den genannten Operator.
+                                                      Dennoch werden wir uns auch kurz mit der Methode auseinandersetzen. 
+                                                   </p>
+                                                   <h4 class="t4"> Die Methode »Combine()«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der statischen Methode <span class="clisting">Combine</span> der Klasse <span class="clisting">Delegate</span> lassen sich mehrere Delegates miteinander verknüpfen. Die Methode ist wie folgt überladen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public static Delegate Combine(Delegate[]);</span><br></br><span class="clistingfett">public static Delegate Combine(Delegate del1, Delegate del2);</span><br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können als Argument entweder ein Array vom Typ <span class="clisting">Delegate</span> übergeben oder haben die Alternative, zwei Delegates anzugeben. Der Rückgabewert
+                                                      ist in beiden Fällen vom Typ <span class="clisting">Delegate</span>. An einem Beispiel sehen wir uns das nun auch an.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\MulticastDelegateSample1<br></br>public delegate void MyDelegate();<br></br><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">    MyDelegate del = (MyDelegate)Delegate.Combine(new MyDelegate(DoSomething), <br xmlns="">                                             new MyDelegate(DoSomethingMore));<br></br>    // Multicast-Delegaten ausführen<br></br>    del();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  <span class="clistingfett">public static void DoSomething()</span> {<br xmlns="">    Console.WriteLine("In der Methode 'DoSomething'");<br xmlns="">  }<br></br>  <span class="clistingfett">public static void DoSomethingMore()</span> {<br xmlns="">    Console.WriteLine("In der Methode 'DoSomethingMore'");<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.2  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771915"></a>Das Beispielprogramm »MulticastDelegateSample1«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Klasse <span class="clisting">Program</span> sind mit <span class="clisting">DoSomething</span> und <span class="clisting">DoSomethingMore</span> zwei statische, parameterlose Methoden definiert. In <span class="clisting">Main</span> wird mit <span class="ckursiv">del</span> ein <span class="clisting">MyDelegate</span>-Objekt erzeugt. Dazu wird die Methode <span class="clisting">Combine</span> aufgerufen, und dabei werden zwei konkrete Delegates übergeben, die auf die beiden
+                                                      Methoden <span class="clisting">DoSomething</span> und <span class="clisting">DoSomethingMore</span> verweisen. Da <span class="clisting">Combine</span> eine <span class="clisting">Delegate</span>-Referenz zurückliefert, muss diese noch in den tatsächlichen Typ umgewandelt werden.
+                                                      Anschließend wird <span class="ckursiv">del</span> ausgeführt. In der Konsolenausgabe ist zu erkennen, dass beide Methoden ausgeführt
+                                                      werden. Beachten Sie dabei auch, dass dem resultierenden <span class="clisting">MyDelegate</span>-Objekt <span class="ckursiv">del</span> nicht anzusehen ist, dass es intern zwei &#8211; oder auch noch mehr &#8211; andere Delegates
+                                                      beschreibt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Angemerkt sei hier noch abschließend, dass sich mit <span class="clisting">Remove</span> ein Delegate aus der Liste auch wieder entfernen lässt. 
+                                                   </p>
+                                                   <h4 class="t4"> Der »+=«-Operator</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">Combine</span>-Methode einzusetzen, ist nicht besonders schwierig. Aber uns steht noch eine andere
+                                                      Variante zur Verfügung, die kürzer und damit wohl auch besser lesbar ist. Es handelt
+                                                      sich um den Operator »<span class="clisting">+=</span>«. Um das zu demonstrieren, soll die <span class="clisting">Main</span>-Methode des Beispielprogramms <span class="ckursiv">MulticastDelegateSample1</span> entsprechend umgeschrieben werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\MulticastDelegateSample2<br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  MyDelegate del = new MyDelegate(DoSomething);<br xmlns="">  del += new MyDelegate(DoSomethingMore);<br></br>  // Multicast-Delegaten ausführen<br></br>  del();<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.3  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771924"></a>Das Beispielprogramm »MulticastDelegateSample2«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Analog zur Methode <span class="clisting">Remove</span> lassen sich Delegaten mit dem <span class="clisting">-=</span>-Operator auch aus der Aufrufliste der Delegaten entfernen. Beachten Sie bitte unbedingt,
+                                                      dass Sie beim Hinzufügen eines weiteren Delegaten zu einem bestehenden auch wirklich
+                                                      den <span class="clisting">+=</span>-Operator verwenden. Mit dem einfachen Zuweisungsoperator würden Sie nämlich nur die
+                                                      bestehende Aufrufliste durch einen anderen Delegaten komplett ersetzen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie möchten, können Sie die Zuweisungen im Beispielprogramm <span class="ckursiv">MulticastDelegateSample2</span> auch noch kürzer schreiben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">MyDelegate del = DoSomething;<br xmlns="">del += DoSomethingMore;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ich selber bin nicht unbedingt ein Fan dieser Schreibweise, die meiner Meinung nach
+                                                      einen nicht unbedingt besser lesbaren Code produziert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f" name="dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f"></a><h3 class="t3"><span class="cfett">5.1.5    </span><span class="cfett"> Anonyme Methoden</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771930"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpba597ed3-b692-401a-8b7c-2cbc0268f259"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp74c90309-8ac2-437f-896f-f54302b446da"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpefed8675-a2f0-4e60-a5c1-3d3800fe57f8"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Delegates haben wir bisher konstruiert, indem wir den Delegate instanziiert und dem
+                                                      Konstruktor einen Methodenbezeichner übergeben haben. Das setzt voraus, dass die Methode
+                                                      im Programmcode namentlich bekannt ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es geht aber auch noch anders, wenn wir mit einer <span class="cfett">anonymen Methode</span> arbeiten. Unter einer anonymen Methode wird ein Anweisungsblock verstanden, der nicht
+                                                      über einen Methodenbezeichner namentlich aufrufbar ist. Wir wollen uns das an einem
+                                                      Beispiel ansehen und ändern dazu das Beispielprogramm <span class="ckursiv">SimpleDelegate</span> so ab, dass anstelle der Methoden <span class="clisting">Add</span> und <span class="clisting">Subtract</span> nun anonyme Methoden verwendet werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\AnonymeMethoden<br></br>public delegate double CalculateHandler(double value1, double value2);<br></br><span class="clistingfett">class Program </span>{<span class="clistingfett"><br xmlns="">  static void Main(string[] args) </span>{<br></br>    // Variable vom Typ des Delegaten<br></br>    CalculateHandler calculate;<br xmlns="">    do {<br></br>      // Eingabe der Operanden<br></br>      Console.Clear();<br xmlns="">      Console.Write("Geben Sie den ersten Operanden ein: ");<br xmlns="">      double input1 = Convert.ToDouble(Console.ReadLine());<br xmlns="">      Console.Write("Geben Sie den zweiten Operanden ein: ");<br xmlns="">      double input2 = Convert.ToDouble(Console.ReadLine());<br></br>      // Wahl der Operation<br></br>      Console.Write("Operation: Addition - (A) oder Subtraktion - (S)? ");<br xmlns="">      string wahl = Console.ReadLine().ToUpper();<br xmlns="">      if (wahl == "A")<br xmlns="">        calculate = <span class="clistingfett">delegate(double x, double y)   <br xmlns="">        {<br xmlns="">          return x + y;<br xmlns="">        };</span><br xmlns="">      else if (wahl == "S")<br xmlns="">        calculate = <span class="clistingfett">delegate(double x, double y)<br xmlns="">        {<br xmlns="">          return x - y;<br xmlns="">        };</span><br xmlns="">      else<br xmlns="">      {<br xmlns="">        Console.Write("Ungültige Eingabe");<br xmlns="">        Console.ReadLine();<br xmlns="">        return;<br xmlns="">      }<br xmlns="">      double result = calculate(input1, input2);<br xmlns="">      Console.WriteLine("----------------------------------");<br xmlns="">      Console.WriteLine("Ergebnis = {0}\n\n", result);<br xmlns="">      Console.WriteLine("Zum Beenden F12 drücken.");<br xmlns="">    } while (Console.ReadKey(true).Key != ConsoleKey.F12);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.4  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771942"></a>Das Beispielprogramm »AnonymeMethoden«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Code, der vorher noch in den Methoden <span class="clisting">Add</span> und <span class="clisting">Subtract</span> implementiert war, wird nun direkt nach der Deklaration der Variablen vom Typ des
+                                                      Delegates angegeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if (wahl == "A")<br xmlns="">  calculate = delegate(double x, double y)<br xmlns="">            {<br xmlns="">              return x + y;<br xmlns="">            };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Schlüsselwort <span class="clisting">delegate</span> dient dazu, einen Delegate zu instanziieren und das Objekt direkt mit einer anonymen
+                                                      Methode zu verbinden. Hinter <span class="clisting">delegate</span> ist die Parameterliste entsprechend der Delegate-Definition angegeben. Handelt es
+                                                      sich um eine parameterlose, anonyme Methode, bleibt die Liste leer, und man kann auf
+                                                      die Angabe der runden Klammern verzichten. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da sich der Anweisungsblock einer anonymen Methode immer innerhalb einer anderen Methode
+                                                      befindet, kann aus der anonymen Methode heraus auf jede andere Variable der umgebenden
+                                                      Methode zugegriffen werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anonyme Methoden unterliegen im Vergleich zu anderen Anweisungsblöcken nur einer Einschränkung:
+                                                      Mit den Sprunganweisungen <span class="clisting">continue</span>, <span class="clisting">break</span> und <span class="clisting">goto</span> darf innerhalb einer anonymen Methode nicht zu einer Anweisung verzweigt werden,
+                                                      die außerhalb der anonymen Methode codiert ist. Ebenfalls unzulässig ist eine Sprunganweisung
+                                                      außerhalb einer anonymen Methode, deren Ziel innerhalb einer anonymen Methode zu finden
+                                                      ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Vielleicht werden Sie sich an dieser Stelle sagen: »Brauche ich nicht. Der Code ist
+                                                         dadurch viel schlechter zu lesen und zu interpretieren«. Mit Ihrem bisherigen Kenntnisstand
+                                                         ist das nachvollziehbar. Aber den .NET-Architekten fällt immer wieder etwas Neues
+                                                         ein &#8211; auch hinsichtlich der anonymen Methoden, die mit .NET 2.0 eingeführt worden
+                                                         sind. Bei den später eingeführten Neuerungen handelt es sich um die sogenannten Lambda-Ausdrücke,
+                                                         die ich Ihnen in Kapitel 10 noch erklären werde. In diesem Zusammenhang werden wir
+                                                         uns noch einmal mit den anonymen Methoden beschäftigen.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp74c90309-8ac2-437f-896f-f54302b446da" name="dodtp74c90309-8ac2-437f-896f-f54302b446da"></a><h3 class="t3"><span class="cfett">5.1.6    </span><span class="cfett"> Kovarianz und Kontravarianz mit Delegaten</span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771950"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpba4e9a83-7a38-4291-981b-4aec2dae0d0f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Delegaten sind typsichere Methodenzeiger. Jede Methode, die der Signatur des Delegaten
+                                                      entspricht, kann dem Delegaten zugewiesen werden. Sobald der Delegate auf eine Methode
+                                                      zeigt, verhält er sich so wie die Methode.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bereits mit .NET 3.5 wurde die sogenannte Varianzunterstützung in allen Delegaten
+                                                      eingeführt. Das bedeutet, dass nicht nur Methoden, die über eine exakt übereinstimmende
+                                                      Signatur hinsichtlich der Parametertypen und des Rückgabedatentyps verfügen, einem
+                                                      Delegaten übergeben werden können, sondern auch davon abgeleitete Typen. Dabei wird
+                                                      zwischen der Kovarianz (Flexibilität hinsichtlich des Rückgabedatentyps) und der Kontravarianz
+                                                      (Flexibilität hinsichtlich der Parameterdatentypen) unterschieden. Das klingt kompliziert,
+                                                      daher wollen wir uns auch sofort entsprechende Beispiele ansehen.
+                                                   </p>
+                                                   <h4 class="t4"> Delegates und Kovarianz</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Von Kovarianz wird gesprochen, wenn der Datentyp der Rückgabe einer Methode einen
+                                                      höheren Ableitungsgrad hat als der, den der Delegate definiert. Beispielsweise hat
+                                                      in unserem Beispielprogramm <span class="ckursiv">GeometricObjects</span> die Klasse <span class="clisting">Circle</span> einen höheren Ableitungsgrad als die Klasse <span class="clisting">GeometricObject</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Beispiel demonstriert die Kovarianz. Auch hier spielen die beiden Klassen
+                                                      <span class="clisting">GeometricObject</span> und <span class="clisting">Circle</span> eine Rolle. Dabei kommt es aber nicht auf die Implementierung selbst an, so dass
+                                                      die Klassen keinen weiteren Programmcode enthalten.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\KovarianzSample<br></br>class GeometricObject  { }<br xmlns="">class Circle : GeometricObject  { }<br xmlns="">delegate GeometricObject CovarianceHandler();<br></br><span class="clistingfett">class Program </span>{<br></br>  <span class="clistingfett">static void Main(string[] args)<br xmlns="">  </span>{<br xmlns="">    CovarianceHandler handler = DoSomething;<br xmlns="">    GeometricObject geo = handler();<br xmlns="">    Console.WriteLine(geo.GetType());<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  <span class="clistingfett">public static Circle DoSomething()</span>{<br xmlns="">    return new Circle();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.5  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771962"></a>Beispiel zur Kovarianz von Delegates
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Richten Sie Ihr Augenmerk in dem Beispiel zuerst auf die Definition des Delegates,
+                                                      der eine parameterlose Methode beschreibt, der Rückgabewert vom Typ <span class="clisting">GeometricObject</span> ist:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">delegate GeometricObject CovarianceHandler();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Klasse <span class="clisting">Program</span> ist neben <span class="clisting">Main</span> mit <span class="clisting">DoSomething</span> noch eine weitere Methode definiert. Interessant ist, dass die Methode einen Rückgabewert
+                                                      vom Typ <span class="clisting">Circle</span> beschreibt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static Circle DoSomething() {<br xmlns="">  return new Circle();<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun analysieren wir noch die Anweisung</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CovarianceHandler handler = DoSomething;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Handler beschreibt ein <span class="clisting">GeometricObject</span>, die Methode <span class="clisting">DoSomething</span> liefert ein <span class="clisting">Circle</span>-Objekt, das selber ein <span class="clisting">GeometricObject</span> ist. Da die Zuweisung der Referenz eines abgeleiteten Typs an die Referenz eines
+                                                      Basistyps mit der impliziten Konvertierung möglich ist, kann <span class="clisting">DoSomething</span> dank der Kovarianz durch den beschriebenen Delegaten referenziert werden.
+                                                   </p>
+                                                   <h4 class="t4"> Kontravarianz mit Delegates</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kontravarianz ist der Kovarianz sehr ähnlich, bezieht sich aber nicht auf die Rückgabedatentypen,
+                                                      sondern auf die Datentypen der Parameter. Kontravarianz ermöglicht uns, Delegates
+                                                      zu benutzen, deren vorgeschriebener Parametertyp abgeleitet ist von dem Parametertyp
+                                                      der Methode, die der Delegate referenziert. Verständlich wird der Sachverhalt, wenn
+                                                      wir uns auch hierzu ein Beispiel ansehen, das mit den Klassen <span class="clisting">GeometricObject</span> und <span class="clisting">Circle</span> sehr ähnlich dem vorhergehenden Beispiel aufgebaut ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\</span><span class="querverweis"><a href="1997_05_001.html#rxz1771825">Kapitel 5</a></span>\KontravarianzSample<br></br>class GeometricObject { }<br xmlns="">class Circle : GeometricObject { }<br xmlns="">delegate void ContravarianceHandler(Circle circle);<br></br><span class="clistingfett">class Program</span><br xmlns="">{<br xmlns="">  <span class="clistingfett">static void Main(string[] args)</span><br xmlns="">  {<br xmlns="">    ContravarianceHandler handler = DoSomething;<br xmlns="">    handler(new Circle());                  <br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  <span class="clistingfett">public static void DoSomething(GeometricObject geoObject)</span> { }<br></br>}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 5.6  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="rxz1771979"></a>Beispiel zur Kontravarianz von Delegates
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Delegate definiert in diesem Beispiel einen Parameter vom Typ <span class="clisting">Circle</span>. Die Methode, die das Delegate-Objekt in <span class="clisting">Main</span> referenziert, beschreibt in ihrem Parameter mit <span class="clisting">GeometricObject</span> einen Basistyp von <span class="clisting">Circle</span>. Hier spiegelt sich genau das wider, was auch für alle Methoden gilt: Man kann an
+                                                      den Parameter einer Methode ein Objekt übergeben, das vom gleichen Typ ist wie der
+                                                      Parameter oder davon abgeleitet.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs05_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="5  Delegates und Ereignisse"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_04_009.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_05_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

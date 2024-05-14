@@ -1,0 +1,812 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 23  Konzepte von WPF">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 23  Konzepte von WPF">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 23  Konzepte von WPF</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="23_002.html">
+      <link rel="next" href="1997_23_004.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_23_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_23_004.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d" class="navnav">23 Konzepte von WPF</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_001.html#dodtp2bb2cbf3-621f-4211-b037-e238593a8ce2" class="navnav">23.1 Anwendungsspezifische Ressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_002.html#dodtp9cf139ea-b995-4b13-9f42-e14c0dc61883" class="navnav">23.2 Anwendungsübergreifende Ressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_002.html#dodtp986cfb7b-e861-462d-91bc-c9ace79da137" class="navnav">23.2.1 Mehrere Ressourcenwörterbücher</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_002.html#dodtpf775c057-781c-44ac-918e-32cce2954ff6" class="navnav">23.2.2 Die Suche nach einer Ressource</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_003.html#dodtp9ad104f7-d805-41f3-941a-0b53b449c80b" class="navh">23.3 Logische Ressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_003.html#dodtp607d48a6-6407-49b7-8b74-277160022f7f" class="navh">23.3.1 Statische Ressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_003.html#dodtpe377a0f5-3c7b-47e8-a05e-0f45a349a567" class="navh">23.3.2 Dynamische Ressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_003.html#dodtpf9f9f1f3-8c0e-44a0-9f5b-3e3fc4ce587d" class="navh">23.3.3 Ressourcen mit C#-Code bearbeiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_003.html#dodtp9b5ab78b-4daf-4c70-a501-a2c900767228" class="navh">23.3.4 Abrufen von Systemressourcen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_004.html#dodtpd1503389-69f4-4fc7-b121-81942f4602de" class="navnav">23.4 Styles</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_004.html#dodtp4671dd55-4091-4cfa-94cd-7c8821f6f7fc" class="navnav">23.4.1 Einfache Styles</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_004.html#dodtp16417b6d-c414-4f36-ba76-96b8554e9c71" class="navnav">23.4.2 Typisierte Styles</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_004.html#dodtp0f5c745d-88ba-4a2f-9f57-cd18e21ef71c" class="navnav">23.4.3 Erweitern von Styles</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_004.html#dodtpf139ba5d-3603-4976-86eb-45d25a2e6fb9" class="navnav">23.4.4 EventSetter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_005.html#dodtpe167ea25-9f96-4073-8ee8-ddb3bdd909a5" class="navnav">23.5 Trigger</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_005.html#dodtpe8fa50ea-e268-466c-afe0-1c6a08064588" class="navnav">23.5.1 Eigenschaftstrigger</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_005.html#dodtpf56d8e44-bee5-4cc5-a320-c5677cc107dc" class="navnav">23.5.2 Datentrigger</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_005.html#dodtp0225eaaf-6cca-4f45-aaf9-de81c68bcd88" class="navnav">23.5.3 Ereignistrigger</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_006.html#dodtpb28eb0d5-e40c-4440-a4d9-91db5d288a4f" class="navnav">23.6 Templates</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_006.html#dodtp0f817026-e14b-4e37-9803-9ac58b376f5c" class="navnav">23.6.1 Allgemeines zu »ControlTemplates«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_006.html#dodtp5cc7cadb-d6f9-45a9-acba-20ff7a3768e0" class="navnav">23.6.2 Definition innerhalb eines Styles</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_23_007.html#dodtp7aa8008a-4f75-44f9-9a8d-df617e844adc" class="navnav">23.7 Ermitteln des visuellen Elementbaums</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_007.html#dodtp8d2e5d96-347e-43ef-82ed-04224f8260ec" class="navnav">23.7.1 Das Tool »Expression Blend«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_23_007.html#dodtp20cab535-a442-4328-8f8c-f38342ed7e73" class="navnav">23.7.2 Standard-Template mit Code abfragen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9ad104f7-d805-41f3-941a-0b53b449c80b" name="dodtp9ad104f7-d805-41f3-941a-0b53b449c80b"></a><h2 class="t2"><span class="cfett">23.3    </span><span class="cfett"> Logische Ressourcen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp607d48a6-6407-49b7-8b74-277160022f7f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im letzten Abschnitt haben Sie gelernt, wo in einer WPF-Anwendung überall Ressourcen
+                                                      definiert werden können. Nun ist es Zeit, sich mit dem Thema zu beschäftigen, wie
+                                                      eine Ressource definiert wird. Wie Sie im weiteren Verlauf dieses und der folgenden
+                                                      Kapitel noch sehen werden, können Ressourcen sehr vielfältig geprägt sein. Das geht
+                                                      weit darüber hinaus, nur simple Hintergrundfarben einer Anwendung zu verallgemeinern.
+                                                      Tatsächlich ist der Einsatzbereich so weit gesteckt, dass in den <span class="clisting">Resources</span>-Abschnitten ein Großteil des XAML-Codes zu finden ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zunächst einmal wollen wir uns den als »logische Ressourcen« bezeichneten Ressourcen
+                                                      widmen. Logische Ressourcen sind Objekte, die als Ressourcen definiert sind und innerhalb
+                                                      der Anwendung referenziert werden können.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Logische Ressourcen lassen sich mit Cascading Style Sheets (CSS) vergleichen, die
+                                                      ebenfalls zentral außerhalb ihres Einsatzgebietes definiert werden. Da Sie beliebig
+                                                      viele Ressourcen festlegen können, muss jede Ressource über einen eindeutigen Schlüssel
+                                                      identifizierbar sein. Dieser wird mit dem <span class="clisting">Key</span>-Attribut beschrieben, das einem Namespace zugeordnet ist, der per Vorgabe durch <span class="clisting">x:</span> beschrieben wird. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window ...&gt;<br xmlns="">  &lt;Window.Resources&gt;<br xmlns="">    &lt;LinearGradientBrush x:Key="color"&gt;<br xmlns="">      &lt;GradientStop Color="Black" Offset="0.0" /&gt;<br xmlns="">      &lt;GradientStop Color="White" Offset="1.0" /&gt;<br xmlns="">    &lt;/LinearGradientBrush&gt;<br xmlns="">  &lt;/Window.Resources&gt;<br xmlns="">  [...]<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.5  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="Rxx72040"></a>Definition einer logischen Ressource
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Elemente, die Ressourcen referenzieren, verwenden zwei Markup-Erweiterungen:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">StaticResource</span></li>
+                                                      <li class="pgp"><span class="clisting">DynamicResource</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beispielsweise könnte man eine Schaltfläche mit der in Listing <a class="id" id=""></a> definierten Ressource wie folgt verbinden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Button Background="{StaticResource color}"&gt;Button 1&lt;/Button&gt;<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp607d48a6-6407-49b7-8b74-277160022f7f" name="dodtp607d48a6-6407-49b7-8b74-277160022f7f"></a><h3 class="t3"><span class="cfett">23.3.1    </span><span class="cfett"> Statische Ressourcen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe377a0f5-3c7b-47e8-a05e-0f45a349a567"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9ad104f7-d805-41f3-941a-0b53b449c80b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Name <span class="clisting">StaticResource</span> suggeriert im ersten Moment, dass hiermit eine Ressource statisch eingebunden wird.
+                                                      Das ist auch richtig, aber es stellt sich die Frage, was genau unter statisch zu verstehen
+                                                      ist. Zur Beantwortung hilft das folgende Beispielprogramm. In diesem ist eine Ressource
+                                                      im Abschnitt <span class="clisting">Window.Resources</span> definiert, die der Einfachheit halber nur ein <span class="clisting">SolidColorBrush</span>-Objekt beschreibt. Die Ressource wird von einem <span class="clisting">Button</span> mit <span class="clisting">StaticResource</span> referenziert. Zwei weitere Schaltflächen dienen dazu, die Ressource auf unterschiedliche
+                                                      Art und Weise zu ändern.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 23\StaticResourceSample</span><br></br>&lt;Window ...&gt;<br xmlns="">  &lt;Window.Resources&gt;<br xmlns="">    &lt;SolidColorBrush x:Key="btnBackground" Color="Yellow" /&gt;<br xmlns="">  &lt;/Window.Resources&gt;<br xmlns="">  &lt;Grid&gt;<br xmlns="">    &lt;Grid.ColumnDefinitions&gt;<br xmlns="">      &lt;ColumnDefinition/&gt;<br xmlns="">      &lt;ColumnDefinition/&gt;<br xmlns="">    &lt;/Grid.ColumnDefinitions&gt;<br xmlns="">    &lt;Button Name="button1" Margin="10" VerticalAlignment="Top" Height="40"<br xmlns="">            Background="{StaticResource btnBackground}"&gt;Button 1&lt;/Button&gt;<br xmlns="">    &lt;StackPanel Grid.Column="1"&gt;<br xmlns="">      &lt;Button Name="btnChangeColor1" Margin="5"     <br xmlns="">              Click="btnChangeColor1_Click"&gt;Ressource ändern&lt;/Button&gt;<br xmlns="">      &lt;Button Name="btnChangeColor2" Margin="5,0,5,5" <br xmlns="">              Click="btnChangeColor2_Click"&gt;Ressource erstellen&lt;/Button&gt;<br xmlns="">    &lt;/StackPanel&gt;<br xmlns="">  &lt;/Grid&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.6  </span>XAML-Code des Beispielprogramms »StaticResourceSample«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zu diesem XAML-Code gehören zwei Ereignishandler, die in der Code-Behind-Datei codiert
+                                                      sind.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">private void btnChangeColor1_Click(object sender, RoutedEventArgs e)</span> {<br xmlns="">  SolidColorBrush brush = (SolidColorBrush)FindResource("btnBackground");<br xmlns="">  brush.Color = Colors.Red;<br xmlns="">}<br></br><span class="clistingfett">private void btnChangeColor2_Click(object sender, RoutedEventArgs e)</span> {<br xmlns="">  SolidColorBrush brush = new<br xmlns="">  SolidColorBrush(Colors.Green);<br xmlns="">  this.Resources["btnBackground"] = brush;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.7  </span>Code der beiden Ereignishandler
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Ereignishandler der Schaltfläche <span class="ckursiv">btnChangeColor1</span> wird mit <span class="clisting">FindResource</span> die Referenz auf die Ressource per Schlüssel gesucht und anschließend die Farbe geändert.
+                                                      Im zweiten Ereignishandler wird ein neues Objekt vom Typ <span class="clisting">SolidColorBrush</span> erzeugt und danach an die existente Ressource <span class="ckursiv">btnBackground</span> übergeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Der Zugriff auf Ressourcen mit Programmcode (hier mit <span class="clisting">FindResource</span>) war bisher noch nicht das Thema. Dennoch sollte der C#-Code verständlich sein. 
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie werden feststellen, dass die ressourcengebundene Schaltfläche die Hintergrundfarbe
+                                                      ändert, wenn Sie auf die obere Schaltfläche klicken. Klicken Sie auf die untere, passiert
+                                                      nichts &#8211; auch keine Ausnahme. Das ist mit der Verhaltensweise von <span class="clisting">StaticResource</span> zu erklären. Die Eigenschaft, hier <span class="clisting">Background</span> der bindenden Komponente, wird an ein Objekt der Ressource <span class="clisting">SolidColorBrush</span> gebunden. Die Änderung einer Eigenschaft der Ressource (hier <span class="clisting">Color</span>) wird von der bindenden Komponente erkannt und umgesetzt. Das Klicken der unteren
+                                                      Schaltfläche hingegen hat keine Auswirkungen auf die bindende Komponente, weil im
+                                                      Programmcode ein neues Objekt erzeugt wird. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zusammenfassend muss man also feststellen, dass <span class="clisting">StaticResource</span> immer dasselbe Ressourcenobjekt referenziert, aber durchaus in der Lage ist, dessen
+                                                      Eigenschaftsänderungen umzusetzen.
+                                                   </p>
+                                                   <h4 class="t4"> Ein Sonderfall: Elemente als Ressourcen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Als Ressource kann prinzipiell jedes beliebige Objekt verwendet werden. Eine Ressource
+                                                      kann per Vorgabe auch nur einmal instanziiert werden. Jeder Zugriff, ob im XAML- oder
+                                                      im C#-Programmcode, ist ein Zugriff auf dieselbe Instanz.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Charakteristik der Ressourcen führt uns in eine Situation, die wir an dieser
+                                                      Stelle betrachten müssen. Bisher haben wir nur mit einem einfachen <span class="clisting">Brush</span>-Objekt die Ressource beschrieben. Es ist aber auch denkbar, ein Steuerelement in
+                                                      einer Ressource zu beschreiben. Im nächsten Beispiel wird dazu ein <span class="clisting">Image</span> genommen, das ein Bildchen beschreibt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 23\StaticResourceWithControl</span><br></br>&lt;Window ...&gt;<br xmlns="">  &lt;Window.Resources&gt;<br xmlns="">    &lt;Image x:Key="image" Source="smiley.jpg"  /&gt;<br xmlns="">  &lt;/Window.Resources&gt;<br xmlns="">  &lt;Grid&gt;<br xmlns="">    &lt;Grid.ColumnDefinitions&gt;<br xmlns="">      &lt;ColumnDefinition/&gt;<br xmlns="">      &lt;ColumnDefinition/&gt;<br xmlns="">    &lt;/Grid.ColumnDefinitions&gt;<br xmlns="">    &lt;Button Grid.Column="0" Content="{StaticResource image}" /&gt;<br xmlns="">    &lt;Button Grid.Column="1" Content="{StaticResource image}"/&gt;<br xmlns="">  &lt;/Grid&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.8  </span>XAML-Code des Beispielprogramms »StaticResourceWithControl«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem Start der Anwendung werden Sie feststellen, dass die Ressource nur einmal
+                                                      genutzt wird (siehe Abbildung 23.2). 
+                                                   </p>
+                                                   <p><a href="bilder/23_02.png" rel="lightbox" title="Ausgabe des Beispielprogramms »StaticResourceWithControl«"><img class="bild" border="1" src="bilderklein/klein23_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 23.2  </span>Ausgabe des Beispielprogramms »StaticResourceWithControl«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Grund ist, dass ein <span class="clisting">Image</span> Teil des Elementbaums ist und nur einmal verwendet werden kann. Die <span class="clisting">Brush</span>-Objekte, die wir vorher als Ressourcen definiert hatten, sind nicht Teil des Elementbaums
+                                                      und konnten daher von mehreren Elementen verwendet werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Lösung des Problems wird natürlich von der WPF angeboten. Per Vorgabe werden
+                                                      die Ressourcenobjekte nur einmal instanziiert. Jedes Element, das dieselbe Ressource
+                                                      referenziert, erhält dieselbe Referenz. Wird die Ressource jedoch mit dem Attribut
+                                                      <span class="clisting">x:Shared=false</span> erweitert, wird die Ressource bei jedem Zugriff instanziiert. Die Standardeinstellung
+                                                      des Attributs ist demzufolge <span class="clisting">true</span>. Ändern Sie also die Ressource wie im folgenden Listing ab:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Image x:Key="image" Source="smiley.jpg" x:Shared="false" /&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.9  </span>Ressource mehrfach instanziieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Danach wird die Anwendung die Ressource so benutzen, wie Sie es sich vorgestellt haben
+                                                      (siehe Abbildung 23.3).
+                                                   </p>
+                                                   <p><a href="bilder/23_03.png" rel="lightbox" title="Ausgabe des Beispielprogramms »StaticResourceWithControl« nach der Änderung"><img class="bild" border="1" src="bilderklein/klein23_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 23.3  </span>Ausgabe des Beispielprogramms »StaticResourceWithControl« nach der Änderung
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe377a0f5-3c7b-47e8-a05e-0f45a349a567" name="dodtpe377a0f5-3c7b-47e8-a05e-0f45a349a567"></a><h3 class="t3"><span class="cfett">23.3.2    </span><span class="cfett"> Dynamische Ressourcen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf9f9f1f3-8c0e-44a0-9f5b-3e3fc4ce587d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc47c6e5f-8926-471e-8e5a-212a09db6f72"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ganz anders als statische Ressourcen verhalten sich Ressourcen, die mit <span class="clisting">DynamicResource</span> eingebunden werden. Eine Änderung der Referenz der Ressource wird dazu führen, dass
+                                                      die bindende Komponente die neue Ressource zur Kenntnis nimmt und darauf entsprechend
+                                                      reagiert. Sie können das sehr leicht ausprobieren, wenn Sie im Beispielprogramm <span class="ckursiv">StaticResourceSample</span> die Bindung mit <span class="clisting">StaticResource</span> gegen <span class="clisting">DynamicResource</span> austauschen, also:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">&lt;Button Name="button1" Margin="10" VerticalAlignment="Top" Height="40"<br xmlns="">        Background="{DynamicResource btnBackground}"&gt;Button 1&lt;/Button&gt;<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.10  </span>Änderung im Beispielprogramm »StaticResourceSample«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt werden beide Schaltflächen genau die Verhaltensweise zeigen, die von ihnen erwartet
+                                                      wird. Weiterhin wird die Änderung der Eigenschaft <span class="clisting">Color</span> der Schaltfläche <span class="ckursiv">btnChangeColor1 </span>dazu führen, dass die bindende Schaltfläche sich aktualisiert, aber auch das Anklicken
+                                                      der unteren Schaltfläche <span class="ckursiv">btnChangeColor2 </span>führt zu dem erwarteten Erfolg.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Es mag im ersten Moment verlockend sein, immer mit <span class="clisting">DynamicResource</span> an Ressourcen zu binden. Sie sollten sich das aber genau überlegen, da jeder dynamische
+                                                         Vorgang immer zu Lasten der Performance geht. Das gilt selbstverständlich auch für
+                                                         <span class="clisting">DynamicResource</span>. Wenn Sie davon ausgehen können, dass sich die Ressource nicht ändert, sollten Sie
+                                                         daher immer mit <span class="clisting">StaticResource</span> binden.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf9f9f1f3-8c0e-44a0-9f5b-3e3fc4ce587d" name="dodtpf9f9f1f3-8c0e-44a0-9f5b-3e3fc4ce587d"></a><h3 class="t3"><span class="cfett">23.3.3    </span><span class="cfett"> Ressourcen mit C#-Code bearbeiten</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9b5ab78b-4daf-4c70-a501-a2c900767228"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe377a0f5-3c7b-47e8-a05e-0f45a349a567"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alles, was in XAML möglich ist, kann auch mit Programmcode erreicht werden. Dazu zählt
+                                                      auch die Suche nach einer Ressource und deren Anbindung an eine Eigenschaft. Im Beispielprogramm
+                                                      <span class="ckursiv">StaticResourceSample</span> wurde bereits eine Ressource mit Code geändert. Es ist nun an der Zeit, hierzu die
+                                                      entsprechenden Hintergründe zu beleuchten.
+                                                   </p>
+                                                   <h4 class="t4"> Zuweisung einer statischen Ressource</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Am einfachsten gestaltet sich der Zugriff auf eine statische Ressource, wenn sich
+                                                      die Ressource im aktuellen Fenster befindet und sie namentlich bekannt ist. Mit der
+                                                      Eigenschaft <span class="clisting">Resources</span> rufen Sie die Ressource ab und geben dabei den Namen der gesuchten Ressource an.
+                                                      Angenommen, die Ressource <span class="ckursiv">background</span> sei unter <span class="clisting">Window.Resources</span> definiert, würde die Anweisung wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">button1.Background = (Brush)Resources["background"];<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.11  </span>Ressource innerhalb des Fensters mit »Resources« lokalisieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die gefundene Ressource muss noch in den entsprechenden Typ konvertiert werden, weil
+                                                      jeder Ressourceneintrag vom Typ <span class="clisting">Object</span> ist. Da die Hintergrundfarbe einer Schaltfläche vom Typ <span class="clisting">Brush</span> ist, erfolgt die Konvertierung in der vorangehenden Anweisung in genau diesen Typ.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Befindet sich die Ressource nicht im aktuellen Fenster, eignet sich die gezeigte Anweisung
+                                                      nicht. Stattdessen muss die Ressource in der gesamten Hierarchie gesucht werden. Hierzu
+                                                      eignet sich die Methode <span class="clisting">FindResource</span>, die jedes Steuerelement hat. Sie rufen die Methode auf das Objekt auf, dem die Ressource
+                                                      zugewiesen werden soll, und übergeben als Argument den Bezeichner der Ressource. Die
+                                                      gefundene Ressource muss natürlich ebenfalls in den Datentyp der entsprechenden Eigenschaft
+                                                      konvertiert werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">button1.Background = (Brush)button1.FindResource("background");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.12  </span>Ressource mit »FindResource« lokalisieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird die angegebene Ressource nicht gefunden, ist eine Exception die Folge. Daher
+                                                      ist es in vielen Fällen vorteilhaft, alternativ die Methode <span class="clisting">TryFindResource</span> zu benutzen. Im Gegensatz zu <span class="clisting">FindResource</span> liefert <span class="clisting">TryFindResource</span> eine <span class="clisting">null</span>-Referenz, falls die Ressource nicht gefunden wird. 
+                                                   </p>
+                                                   <h4 class="t4"> Zuweisung einer dynamischen Ressource</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit den Methoden <span class="clisting">FindResource</span> und <span class="clisting">TryFindResource</span> wird die Markup-Erweiterung <span class="clisting">StaticResource</span> mittels Code beschrieben. Eine Ressource dynamisch zu binden, ist mit diesen Methoden
+                                                      nicht möglich. Zur Anbindung an eine dynamische Ressource dient die Methode <span class="clisting">SetResourceReference</span>. Die Methode hat zwei Parameter. Dem ersten wird die Abhängigkeitseigenschaft übergeben,
+                                                      die an die Ressource dynamisch gebunden werden soll, dem zweiten Parameter der Ressourcenbezeichner.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">button1.SetResourceReference(Button.BackgroundProperty, "background");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 23.13  </span>Dynamische Ressource mit »SetResourceReference« binden
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie hierbei, dass die Angabe einer Abhängigkeitseigenschaft (Dependency Property)
+                                                      erfordert, diese direkt zu benennen, in unserem Fall demnach <span class="clisting">Button.BackgroundProperty</span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9b5ab78b-4daf-4c70-a501-a2c900767228" name="dodtp9b5ab78b-4daf-4c70-a501-a2c900767228"></a><h3 class="t3"><span class="cfett">23.3.4    </span><span class="cfett"> Abrufen von Systemressourcen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpda7a764b-fdc4-4ef5-8be6-219b894a0963"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher haben wir nur benutzerdefinierte Ressourcen verwendet. Sie können aber auch
+                                                      auf Ressourcen zugreifen, die vom System bereitgestellt werden. WPF enthält im Namespace
+                                                      <span class="clisting">System.Windows</span> drei Klassen, mit denen sich bestimmte Eigenschaften des Systems auswerten lassen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">SystemParameters</span><span class="clisting"><a class="indexterm" id="dodtpac8dca7e-819b-4510-8075-f3e85a1916ca"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">SystemColors</span><span class="clisting"><a class="indexterm" id="dodtp1b0f9a73-6c83-465d-b364-a9bb305cac26"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">SystemFonts</span><span class="clisting"><a class="indexterm" id="dodtp74abe2ac-afd1-47d2-ba49-c42e4e3d22f0"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">SystemFonts</span> beschreibt Eigenschaften, die die Systemressourcen für Schriftarten verfügbar machen,
+                                                      <span class="clisting">SystemColors</span> beschreibt die vom System verwendeten Farben, und <span class="clisting">SystemParameters</span> enthält Eigenschaften, die Sie zum Abfragen von Systemeinstellungen verwenden können.
+                                                      Die drei Klassen enthalten in ihren Eigenschaften immer die aktuellen Werte des Betriebssystems,
+                                                      die von den Einstellungen in der Systemsteuerung abhängen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie sich die Dokumentation dieser Klassen ansehen, werden Sie feststellen, dass
+                                                      für jede Systemeigenschaft zwei Eigenschaften definiert sind, zum Beispiel 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">CaptionHeight</span></li>
+                                                      <li class="pgp"><span class="clisting">CaptionHeightKey</span> 
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">in der Klasse <span class="clisting">SystemParameters</span>. Doch wozu braucht man zwei ähnliche Eigenschaften?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">CaptionHeight</span> ist vom Typ <span class="clisting">double</span> und gibt die Höhe der Titelleiste in Pixeln an. <span class="clisting">CaptionHeightKey</span> hingegen ist vom Typ <span class="clisting">ResourceKey</span>. Darüber wird der Name der Systemressource gekennzeichnet, die den Wert der Eigenschaft
+                                                      zurückliefert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchten Sie auf eine Ressource statisch zugreifen, reicht die Angabe der Eigenschaft
+                                                      ohne das Suffix <span class="clisting">Key</span> vollkommen aus. In diesem Fall reagiert die Anwendung nicht auf Änderungen an den
+                                                      Systemeinstellungen. Sehen wir uns eine statische Ressourcenabfrage an. Beachten Sie,
+                                                      dass für den Zugriff auf die Systemressourcen die Markup-Erweiterung <span class="clisting">x:Static</span> vorgeschrieben ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Label Content="{StaticResource {x:Static SystemParameters.CaptionHeightKey}}" /&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Angabe der Markup-Erweiterung <span class="clisting">StaticResource</span> bewirkt, dass eine Suche nach der Ressource entlang der Hierarchie angestoßen wird.
+                                                      Das geht zu Lasten der Performance. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Mit der XAML-Markup-Erweiterung <span class="clisting">x:Static</span> greift man auf die statischen Eigenschaften, Felder oder Konstanten einer Klasse
+                                                         oder Aufzählung zu.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Besser ist es, direkt auf den Wert der Eigenschaft mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Label Content="{x:Static SystemParameters.CaptionHeight}"  /&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">zuzugreifen. Im C#-Code können Sie den Wert der Eigenschaft mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">double height = SystemParameters.CaptionHeight;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ermitteln.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei einer Änderung des Werts in der Systemsteuerung nimmt die Anwendung zur Laufzeit
+                                                      keine Notiz von der Änderung. Soll sich die Anwendung der Änderung anpassen, müssen
+                                                      Sie die Ressource mit <span class="clisting">DynamicResource</span> einbinden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Label Content="{DynamicResource {x:Static SystemParameters.CaptionHeightKey}}"/&gt;<br></pre></div>
+                                                   <h4 class="t4"> Systemressourcen anpassen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie weiter oben schon erläutert, läuft die Suche nach einer bestimmten Ressource nach
+                                                      einem vorgegebenen Schema ab. Sie beginnt im Logical Tree bei dem Element, auf dem
+                                                      die Markup-Erweiterung <span class="clisting">StaticResource</span> oder <span class="clisting">DynamicResource</span> verwendet oder die Methode <span class="clisting">FindResource</span> aufgerufen wird. Wird die Ressource nicht gefunden, wird im <span class="clisting">Application</span>-Objekt danach gesucht. Die letzte Ebene der Suche bilden die Systemressourcen, in
+                                                      denen sich die Einstellungen des Betriebssystems befinden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Suchprozess gestattet, eine »höher liegende« Ressource durch eine tiefer liegende
+                                                      zu überschreiben, denn sobald die Suche erfolgreich war, wird sie beendet. Folglich
+                                                      lassen sich auch die vorgegebenen Systemressourcen sehr einfach durch anwendungsspezifische
+                                                      ersetzen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit ist es beispielsweise sehr einfach, die Hintergrundfarbe aller Fenster einer
+                                                      Anwendung festzulegen. Verantwortlich dafür ist die Ressource <span class="clisting">WindowBrushKey</span> in der Klasse <span class="clisting">SystemColors</span>. Wünschen Sie einen roten Hintergrund bei allen Fenstern der Anwendung, ergänzen
+                                                      Sie den <span class="clisting">Resource</span>-Abschnitt der Datei <span class="ckursiv">App.xaml</span> einfach wie folgt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Application.Resources&gt;<br xmlns="">  &lt;SolidColorBrush Color="Red" x:Key="{x:Static SystemColors.WindowBrushKey}" /&gt;<br xmlns="">&lt;/Application.Resources&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einen Farbverlauf festzuschreiben ist mit der Ressource <span class="clisting">WindowBrushKey</span> nicht möglich, da der durch diese Ressource beschriebene Wert vom Typ <span class="clisting">SolidColorBrush</span> ist.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs23_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="23  Konzepte von WPF"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_23_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_23_004.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

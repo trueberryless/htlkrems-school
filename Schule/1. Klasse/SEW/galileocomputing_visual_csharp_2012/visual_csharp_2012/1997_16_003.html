@@ -1,0 +1,1057 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 16  Einige wichtige .NET-Klassen">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="16_002.html">
+      <link rel="next" href="1997_16_004.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_16_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_16_004.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5" class="navnav">16 Einige wichtige .NET-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_001.html#dodtp2450680c-ac9d-48da-81ea-6672f80715f7" class="navnav">16.1 Die Klasse »Object«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp6f1413c9-418e-47cf-83de-ec5739505f68" class="navnav">16.1.1 Referenzvergleiche mit »Equals« und »ReferenceEquals«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" class="navnav">16.1.2 »ToString« und »GetType«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" class="navnav">16.1.3 Die Methode »MemberwiseClone« und das Problem des Klonens</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_002.html#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" class="navnav">16.2 Die Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" class="navnav">16.2.1 Das Erzeugen eines Strings</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" class="navnav">16.2.2 Die Eigenschaften von »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp9869302a-a81f-476a-862b-31ff55711cc8" class="navnav">16.2.3 Die Methoden der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp8a6e62fc-2274-4607-885a-765ccab87be8" class="navnav">16.2.4 Zusammenfassung der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_003.html#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" class="navh">16.3 Die Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" class="navh">16.3.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" class="navh">16.3.2 Die Kapazität eines »StringBuilder«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" class="navh">16.3.3 Die Konstruktoren der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" class="navh">16.3.4 Die Eigenschaften der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp439ff604-4457-439b-b552-95ef23a2d92e" class="navh">16.3.5 Die Methoden der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp64c689f2-4f33-4e60-919a-03c308002a13" class="navh">16.3.6 Allgemeine Anmerkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_004.html#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" class="navnav">16.4 Der Typ »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" class="navnav">16.4.1 Die Zeitspanne »Tick«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtp615f8ac3-1362-4523-84f4-fa23473b674b" class="navnav">16.4.2 Die Konstruktoren von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" class="navnav">16.4.3 Die Eigenschaften von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" class="navnav">16.4.4 Die Methoden der Klasse »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_005.html#dodtpb26830f8-1fa0-4b0b-b86d-a20949a22f00" class="navnav">16.5 Die Klasse »TimeSpan«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_006.html#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" class="navnav">16.6 Ausgabeformatierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" class="navnav">16.6.1 Formatierung mit der Methode »String.Format«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" class="navnav">16.6.2 Formatierung mit der Methode »ToString«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" class="navnav">16.6.3 Benutzerdefinierte Formatierung</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" name="dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d"></a><h2 class="t2"><span class="cfett">16.3    </span><span class="cfett"> Die Klasse »StringBuilder«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf50e91ec-2f9d-473c-a887-f0adbc4a060d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp7ea8d8f5-3690-439c-908a-cf7123c60172"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" name="dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22"></a><h3 class="t3"><span class="cfett">16.3.1    </span><span class="cfett"> Allgemeines</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Objekte der Klasse <span class="clisting">String</span> sind unveränderlich, d. h., dass bei jeder Änderung im Speicher ein neues Objekt
+                                                      angelegt wird. Das ist sogar unabhängig davon, ob sich die Länge der Zeichenkette
+                                                      ändert. Führen Sie viele manipulierende Operationen aus, hat das Einbußen der Systemleistung
+                                                      zur Folge.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um sich einen Eindruck davon zu verschaffen, wie sehr die Effizienz bei vielen String-Operationen
+                                                      beeinträchtigt wird, sollten wir einen sehr einfachen Test machen. Dazu lassen wir
+                                                      in einer Schleife 50.000 Änderungen an einer Zeichenfolge vornehmen. Folgerichtig
+                                                      müssen auch ebenso viele neue Objekte erzeugt und, bis auf das letzte, freigegeben
+                                                      werden. Messen lässt sich die verstrichene Zeit mit einem Objekt vom Typ <span class="clisting">Stopwatch</span>. Mit der Methode <span class="clisting">Start</span> wird die Zeitmessung gestartet, mit <span class="clisting">Stop</span> beendet. Die Zeit in Millisekunden zwischen den beiden Methodenaufrufen liefert die
+                                                      Eigenschaft <span class="clisting">ElapsedMilliseconds</span>. Sie sollten nicht vergessen, den Namespace <span class="clisting">System.Diagnostics</span> mit <span class="clisting">using</span> bekannt zu geben, in dem die Klasse <span class="clisting">Stopwatch</span> definiert ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 16\String_Leistungstest</span><br></br>using System.Diagnostics;<br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  Stopwatch watch = new Stopwatch();<br xmlns="">  string text = "";<br xmlns="">  watch.Start();  <br xmlns="">  for (int i = 0; i &lt; 50000; i++)<br xmlns="">    text += "x";<br xmlns="">  watch.Stop();<br xmlns="">  Console.WriteLine("Zeit: {0}", watch.ElapsedMilliseconds);<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.19  </span>Zeitmessung einer Zeichenfolgenoperation (String)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Probieren Sie das Listing einmal aus! Auch auf einem gut ausgestatteten Rechner werden
+                                                      die Operationen eine längere Zeitspanne beanspruchen, bis das Ergebnis vorliegt. Mein
+                                                      derzeitiger Rechner gibt mir Werte im Bereich von 700 ms aus.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist natürlich unvertretbar lang, ganz abgesehen davon, dass der Speicher massiv
+                                                      belastet wird. Einen Ausweg aus diesem Dilemma bietet die Klasse <span class="clisting">StringBuilder</span>,<span class="cfett"><a class="indexterm" id="dodtp54582fbb-f1a2-423e-a649-f15eb7c28ca8"></a></span> die zum Namespace <span class="clisting">System.Text</span><span class="clisting"><a class="indexterm" id="dodtp9014e1d4-46b2-4b2d-b4c3-2e11391306d9"></a></span> gehört. <span class="clisting">StringBuilder</span>-Objekte sind dynamisch. Sie können verändert werden, ohne dass damit zwangsläufig
+                                                      Allokieren von Speicher erforderlich wird. Natürlich interessiert uns auch der Performancegewinn.
+                                                      Daher schreiben wir das Codefragment von oben so um, dass anstelle des Typs <span class="clisting">String</span> die Klasse <span class="clisting">StringBuilder</span> eingesetzt wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 16\StringBuilder_Leistungstest</span><br></br>using System.Diagnostics;<br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  Stopwatch watch = new Stopwatch();            <br xmlns="">  StringBuilder str = new StringBuilder();<br xmlns="">  watch.Start();<br xmlns="">  for (int i = 0; i &lt; 50000; i++)<br xmlns="">    str = str.Append("x");<br xmlns="">   watch.Stop();<br xmlns="">   Console.WriteLine("Zeit: {0}", watch.ElapsedMilliseconds);<br xmlns="">   Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.20  </span>Zeitmessung einer Zeichenfolgenoperation (StringBuilder)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auf meinem Rechner wird ein Wert angezeigt, der bei 1 ms liegt. Der Leistungsgewinn
+                                                      ist also mehr als deutlich und beweist, welchem Typ der Vorzug gegeben werden sollte:
+                                                      eindeutig dem <span class="clisting">StringBuilder</span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" name="dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b"></a><h3 class="t3"><span class="cfett">16.3.2    </span><span class="cfett"> Die Kapazität eines »StringBuilder«-Objekts</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen zwei Begriffe sorgfältig trennen, wenn Sie die Arbeitsweise des <span class="clisting">StringBuilders</span> verstehen wollen: die <span class="ckursiv">Kapazität</span> und die <span class="ckursiv">Länge</span> der beschriebenen Zeichenfolge. Die Kapazität beschreibt die maximale Anzahl der
+                                                      Zeichen, die ein <span class="clisting">StringBuilder</span>-Objekt aufnehmen kann. Die Kapazität wird somit immer größer sein als die Länge der
+                                                      Zeichenfolge, aber nicht umgekehrt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir dazu ein Beispiel. Wir erzeugen mit einem der Konstruktoren ein <span class="clisting">StringBuilder</span>-Objekt und weisen ihm die Zeichenfolge »Visual C#« zu:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System.Text;<br xmlns="">[...]<br xmlns="">StringBuilder strB = new StringBuilder("Visual C#");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Zeichenfolge ist neun Zeichen lang. Da wir keine explizite Aussage über die Kapazität
+                                                      getroffen haben, wird ein Objekt von der Größe der Standardkapazität erzeugt &#8211; und
+                                                      die beträgt 16 Zeichen. Weisen Sie dem <span class="clisting">StringBuilder</span>-Objekt eine Zeichenkette zu, die mehr als 16 Zeichen, jedoch weniger als 33 Zeichen
+                                                      umfasst, wird die Kapazität auf 32 Zeichen festgelegt. Beträgt die Länge des Strings
+                                                      mehr als 32 Zeichen, jedoch weniger als 65, verdoppelt sich die Kapazität von 32 auf
+                                                      64 Zeichen usw.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Werden Methoden auf dieses Objekt angewendet, die zur Folge haben, dass die Kapazitätsgrenze
+                                                      nicht überschritten wird, wird kein neuer Speicher allokiert. Die Änderungen laufen
+                                                      innerhalb der alten Speicherressourcen ab. Sollten bei einer Änderung jedoch die Kapazitätsgrenzen
+                                                      überschritten werden, wird die Kapazität des <span class="clisting">StringBuilder</span>-Objekts automatisch vergrößert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" name="dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20"></a><h3 class="t3"><span class="cfett">16.3.3    </span><span class="cfett"> Die Konstruktoren der Klasse »StringBuilder«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vornehmlich geht es bei den Konstruktoren darum, dem <span class="clisting">StringBuilder</span>-Objekt eine Initialisierungszeichenfolge zuzuweisen und die Anfangskapazität festzulegen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public StringBuilder();<br></br>public StringBuilder(int);<br></br>public StringBuilder(string);<br></br>public StringBuilder(string, int);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der Festlegung der Kapazität im Parameter vom Typ <span class="clisting">int</span> müssen Sie sich nicht an die Sprünge 16, 32, 64, 128 usw. halten, die das <span class="clisting">StringBuilder</span>-Objekt im Bedarfsfall automatisch durchführt. Theoretisch kann eine Zeichenfolge
+                                                      die Größe von 231&#8211;1 Zeichen aufnehmen. Um diesem nahezu endlosen Spiel einen Riegel vorzuschieben,
+                                                      bietet sich ein weiterer Konstruktor an, mit dem Sie die maximale Kapazitätsgrenze
+                                                      festlegen können:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public StringBuilder(int, int);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der erste Parameter erwartet die Startkapazität, der zweite die zulässige Maximalgröße.
+                                                      Wird diese zur Laufzeit überschritten, wird die Ausnahme <span class="clisting">ArgumentOutOfRangeException</span> ausgelöst.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" name="dodtpfaa85795-b24b-431d-91a8-5cd9cc075583"></a><h3 class="t3"><span class="cfett">16.3.4    </span><span class="cfett"> Die Eigenschaften der Klasse »StringBuilder«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp439ff604-4457-439b-b552-95ef23a2d92e"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Liste der Eigenschaften umfasst nur insgesamt vier Mitglieder. Mit <span class="clisting">Capacity</span><span class="clisting"><a class="indexterm" id="dodtp0b5f2134-c121-4c27-8fa1-5e8985b65213"></a><a class="indexterm" id="dodtp7b81f841-3652-4a30-880d-fd624a898801"></a></span> können Sie die aktuelle Kapazität abfragen oder neu festlegen. Verwechseln Sie <span class="clisting">Capacity</span><span class="clisting"><a class="indexterm" id="dodtp213fce95-a293-4845-865d-d2b489c038af"></a></span> nicht mit der Eigenschaft <span class="clisting">Length</span>, die die Anzahl der Zeichen der vom Objekt repräsentierten Zeichenfolge wiedergibt.
+                                                      <span class="clisting">MaxCapacity</span><span class="clisting"><a class="indexterm" id="dodtp4131aa3e-8427-4ae5-bc12-2c8116f48fe6"></a><a class="indexterm" id="dodtp5bae455a-8186-4fb2-88f1-e1a8cbc47b92"></a></span> beschreibt die maximale Kapazität. Diese Eigenschaft ist schreibgeschützt und kann
+                                                      daher nur gelesen werden. Nur über die Konstruktoren sind Sie in der Lage, Einfluss
+                                                      darauf auszuüben. Wird <span class="clisting">MaxCapacity</span><span class="clisting"><a class="indexterm" id="dodtp42daaa41-962b-409a-9336-c04919faf44f"></a></span> nicht festgelegt, gibt diese Eigenschaft die theoretische Maximalkapazität von 231&#8211;1 zurück.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die vierte und letzte Eigenschaft lautet <span class="clisting">Chars</span><span class="clisting"><a class="indexterm" id="dodtp3705857d-2846-4a3b-b76b-8c8864fabcb7"></a><a class="indexterm" id="dodtp0295d0b8-bf1b-4988-a3c4-d0fbc99819f1"></a></span><span class="cfett"> </span>und ist gleichzeitig der Indexer der <span class="clisting">StringBuilder</span>-Klasse:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public char this[int] {get; set;}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Chars</span> liefert ein Zeichen aus der gegebenen Zeichenfolge zurück, dessen Index übergeben
+                                                      wird. Um sich aus der Zeichenfolge
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">StringBuilder builder = new StringBuilder("Freitagabend");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">den fünften Buchstaben zurückgeben zu lassen, lautet die Anweisung:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">char c = builder[4];<br></pre></div>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.6  </span>Die Eigenschaften der Klasse »StringBuilder<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp0202bf14-3d2d-44bb-b264-5315d9e9ff09"></a>«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Eigenschaft
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Methode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Capacity</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert oder setzt die Kapazität des <span class="clisting">StringBuilder</span>-Objekts.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Chars</span><span class="clisting"><a class="indexterm" id="dodtp6e027d45-cfaa-4357-98a5-ff8e2dd18ace"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert das Zeichen an einer genau spezifizierten Position aus der Zeichenfolge. Diese
+                                                                  Eigenschaft ist der Indexer der Klasse.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Length</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert die Länge der Zeichenfolge.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MaxCapacity</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert die Maximalkapazität des <span class="clisting">StringBuilder</span>-Objekts.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp439ff604-4457-439b-b552-95ef23a2d92e" name="dodtp439ff604-4457-439b-b552-95ef23a2d92e"></a><h3 class="t3"><span class="cfett">16.3.5    </span><span class="cfett"> Die Methoden der Klasse »StringBuilder«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp64c689f2-4f33-4e60-919a-03c308002a13"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie sich zum ersten Mal die Liste der Methoden anschauen, werden Sie erstaunt
+                                                      sein, dass entgegen aller Erwartungen kaum mehr als eine Handvoll Operationen angeboten
+                                                      wird. Diese wollen wir uns nun ansehen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.7  </span>Methoden der Klasse »StringBuilder<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp20328d97-a9c3-4e47-b439-0d402d87c44a"></a>«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Methode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Eigenschaft
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Append</span><span class="clisting"><a class="indexterm" id="dodtpfbd04bb9-2001-45eb-acd3-11fefcaa17cd"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Hängt eine Zeichenfolge an eine bestehende <span class="clisting">StringBuilder</span>-Instanz an.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">AppendFormat</span><span class="clisting"><a class="indexterm" id="dodtp56b3657d-fd30-4ab9-90b7-d269e4174a2d"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fügt der <span class="clisting">StringBuilder</span>-Instanz eine Zeichenfolge mit Formatangaben an. Nähere Informationen zur Formatierung
+                                                                  finden Sie in Abschnitt 16.6.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">AppendLine</span><span class="clisting"><a class="indexterm" id="dodtp5a37d0bf-4ff7-44f7-8409-7787e28bfa73"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Eine Zeile hinzufügen</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CopyTo</span><span class="clisting"><a class="indexterm" id="dodtpe482fa30-c470-4df2-abd7-cd17032f38cf"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kopiert einen Teil des Objekts in ein <span class="clisting">char</span>-Array.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">EnsureCapacity</span><span class="clisting"><a class="indexterm" id="dodtp325cfd92-77ae-4631-9550-efd42f1d6721"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stellt sicher, dass die Kapazität des <span class="clisting">StringBuilder</span>-Objekts mindestens so groß wie angegeben ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Insert</span><span class="clisting"><a class="indexterm" id="dodtp21248cd1-1556-474d-b1d8-3e42dad549b2"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fügt an einer spezifizierten Position eine Zeichenfolge ein.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Remove</span><span class="clisting"><a class="indexterm" id="dodtpb076ae3d-c2a4-4be4-b85f-6f960bc5bc52"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Löscht aus einer Zeichenfolge ab einer bestimmten Position eine Zeichensequenz.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Replace</span><span class="clisting"><a class="indexterm" id="dodtpc3d828c5-5ed1-4a8a-aa15-b13851447fe7"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ersetzt in der gesamten Zeichenfolge ein Zeichen durch ein anderes.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Eine Zeichenkette einem »StringBuilder«-Objekt zuweisen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Soll einem <span class="clisting">StringBuilder</span>-Objekt eine Zeichenfolge zugewiesen werden, kommt die Methode <span class="clisting">Append</span> zum Einsatz, der aufgrund der vielen Überladungen praktisch jeder Datentyp übergeben
+                                                      werden kann:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public StringBuilder Append<a class="indexterm" id="dodtpb2821d93-1b30-4cfc-b2d0-0c7a0e2cc1b5"></a><a class="indexterm" id="dodtp61e88879-db69-47ef-b6be-a26672c31e75"></a><a class="indexterm" id="dodtp8cc4834f-f8da-4432-ab60-a9c3d7e12028"></a>(string);<br></br>public StringBuilder Append(int);<br></br>public StringBuilder Append(byte);<br></br>...<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In den meisten Fällen wird dies vermutlich eine Zeichenfolge sein, z. B.:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">builder = builder.Append("Visual Studio");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Rückgabewert der <span class="clisting">Append</span>-Methode ist die Referenz auf ein Objekt vom Typ <span class="clisting">StringBuilder</span>, das die entsprechende Zeichenfolge enthält. Sie müssen <span class="clisting">Append</span> auch aufrufen, wenn eine Referenz auf ein Objekt vom Typ <span class="clisting">StringBuilder</span> vorliegt, das noch nicht initialisiert ist. Wenn Sie <span class="clisting">Append</span> mehrfach hintereinander anwenden, wird bei jedem Aufruf der Methode eine weitere
+                                                      Zeichenfolge hinter der bestehenden angehängt. Das entspricht dem <span class="clisting">+</span>-Operator auf <span class="clisting">String</span>-Objekte.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Halten Sie sich immer vor Augen, dass ein <span class="clisting">StringBuilder</span>-Objekt keine Zeichenfolge repräsentiert &#8211; dafür dient der Datentyp <span class="clisting">string</span>. Wollen Sie sich den Inhalt eines <span class="clisting">StringBuilder</span>-Objekts von einer Methode ausgeben lassen, die den Datentyp <span class="clisting">string</span> als Übergabeparameter erwartet, müssen Sie deshalb mit der Methode <span class="clisting">ToString</span> das <span class="clisting">StringBuilder</span>-Objekt in einen <span class="clisting">string</span> konvertieren. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">StringBuilder builder = new StringBuilder();<br xmlns="">builder.Append("Hello again");<br xmlns="">Console.WriteLine(builder.ToString());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.21  </span>»StringBuilder«-Objekt als Zeichenfolge ausgeben
+                                                   </p>
+                                                   <h4 class="t4"> Eine Zeichenfolge mit »Insert« einfügen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um an einer spezifizierten Position in einer Zeichenfolge eine zusätzliche Zeichenfolge
+                                                      einzufügen, rufen Sie die <span class="clisting">Insert</span>-Methode auf. Diese ist in gleicher Weise wie <span class="clisting">Append</span> überladen, allerdings ist die Parameterliste jeweils um einen Parameter vom Typ <span class="clisting">int</span> ergänzt, der dem Index übergeben wird, ab dem die Zeichenfolge eingefügt werden soll.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">StringBuilder builder = new StringBuilder();<br xmlns="">builder = builder.Append("fällt Schnee");<br xmlns="">builder = builder.Insert<a class="indexterm" id="dodtp315f0285-4e74-4dae-af9f-3a5640391a7c"></a>(0, "Im Winter ");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.22  </span>Einfügen einer Zeichenfolge mit »Insert«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe dieses Codefragments lautet:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Im Winter fällt Schnee<br></pre></div>
+                                                   <h4 class="t4"> Aus einer Zeichenfolge löschen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Während mit <span class="clisting">Insert</span> eine Zeichenfolge eingefügt wird, kann mit <span class="clisting">Remove</span> ab einer bestimmten Position eine bestimmte Anzahl von Zeichen gelöscht werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">builder.Remove<a class="indexterm" id="dodtpad2319c1-43e9-4333-bcb9-b6303ade0571"></a>(3, 2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem ersten Parameter wird der Index beschrieben, bei dem der Löschvorgang beginnen
+                                                      soll. In unserem Beispiel beginnt er mit dem vierten Zeichen. Über den zweiten Parameter
+                                                      teilen wir die Anzahl der zu löschenden Zeichen mit. 
+                                                   </p>
+                                                   <h4 class="t4"> Ein Zeichen oder eine Zeichenfolge ersetzen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die letzte der von uns behandelten Methoden ist <span class="clisting">Replace</span>, die im Wesentlichen dieselben Möglichkeiten wie die <span class="clisting">Replace</span>-Methode der Klasse <span class="clisting">String</span> bietet.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public StringBuilder Replace<a class="indexterm" id="dodtpaf11cdd3-c655-428a-8588-c853f80aac1e"></a><a class="indexterm" id="dodtp04fd171c-99ff-4ca8-b409-543944654ced"></a><a class="indexterm" id="dodtp3b0e6707-7b95-4190-9b43-4108da37cc88"></a>(char, char);<br></br>public StringBuilder Replace(string, string);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dem ersten Parameter wird mitgeteilt, welches Zeichen bzw. welche Zeichenfolge des
+                                                      <span class="clisting">StringBuilder</span>-Objekts ersetzt werden soll, und im zweiten Parameter geben Sie an, wodurch ersetzt
+                                                      wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">StringBuilder builder = new StringBuilder();<br xmlns="">builder.Append("Ich hätte gerne ein Bier");<br xmlns="">builder = builder.Replace("ein", "drei");<br xmlns="">Console.Write("Meine Bestellung: ");<br xmlns="">Console.WriteLine(builder.ToString());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.23  </span>Ersetzen einer Teilzeichenfolge mit »Replace«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sehen, mit <span class="clisting">Replace</span> können Sie es sogar vermeiden, mangels Flüssigkeitszufuhr aufgrund einer unüberlegt
+                                                      aufgegebenen Bestellung zu verdursten.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp64c689f2-4f33-4e60-919a-03c308002a13" name="dodtp64c689f2-4f33-4e60-919a-03c308002a13"></a><h3 class="t3"><span class="cfett">16.3.6    </span><span class="cfett"> Allgemeine Anmerkungen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe8bc4e1e-3740-4be5-b445-36f5942a666c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit sind aber auch schon die Möglichkeiten der Klasse <span class="clisting">StringBuilder</span> nahezu ausgeschöpft. Es gibt keine Methoden, die das Auswerten eines Teilstrings
+                                                      ermöglichen, oder Methoden, die Teilstrings zurückliefern. Damit wird auch der doch
+                                                      recht eingeschränkte Einsatzbereich von <span class="clisting">StringBuilder</span>-Objekten deutlich. Die Klasse <span class="clisting">String</span> ist in ihren Fähigkeiten weit voraus und lässt mit ihren überladenen Methoden kaum
+                                                      Wünsche offen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">StringBuilder</span>-Objekte werden Ihnen nicht sehr oft begegnen. Die meisten Methoden in der .NET-Klassenbibliothek,
+                                                      die mit Zeichenfolgen operieren, verwenden den Typ <span class="clisting">string</span> oder Arrays vom Typ <span class="clisting">char</span>. Am ehesten sind <span class="clisting">StringBuilder</span>-Objekte dort sinnvoll einzusetzen, wo in einer Schleife bei jedem Schleifendurchlauf
+                                                      eine Operation mit der Zeichenfolge ausgeführt wird. Wenn die Kapazität des <span class="clisting">StringBuilder</span>-Objekts groß genug festgelegt worden ist, ersparen Sie sich zudem die permanente
+                                                      Neuinstanziierung von <span class="clisting">string</span>-Objekten und können so einen Beitrag zu einer besseren Performance der Anwendung
+                                                      leisten.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs16_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="16  Einige wichtige .NET-Klassen"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_16_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_16_004.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

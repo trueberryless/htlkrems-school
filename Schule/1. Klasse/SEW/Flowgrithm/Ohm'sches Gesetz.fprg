@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Felix Schneider"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-09-10 04:02:00 "/>
+        <attribute name="created" value="RmVsaXggU2NobmVpZGVyO1NVUkZBQ0UtRkVMSVg7MjAxOS0wOS0xMDsiMDI6NTE6MDkgIjszNTg5"/>
+        <attribute name="edited" value="RmVsaXggU2NobmVpZGVyO1NVUkZBQ0UtRkVMSVg7MjAxOS0wOS0xMDsiMDQ6MDI6MDAgIjsyOzM2ODc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="op, op2" type="String" array="False" size=""/>
+            <declare name="Uz, Rz, Iz, erg" type="Real" array="False" size=""/>
+            <output expression="&quot;Bitte Geben Sie entweder die Spannung U, die Stromst&#228;rke I oder den Widerstand R ein!&quot;" newline="True"/>
+            <input variable="op"/>
+            <if expression="op=&quot;U&quot;">
+                <then>
+                    <output expression="&quot;Bitte geben Sie f&#252;r U einen Wert ein!&quot;" newline="True"/>
+                    <input variable="Uz"/>
+                    <output expression="&quot;W&#228;hlen Sie eine zweite Variable! (R/I)&quot;" newline="True"/>
+                    <input variable="op2"/>
+                    <if expression="op2=&quot;I&quot;">
+                        <then>
+                            <output expression="&quot;Bitte geben Sie f&#252;r I einen Wert ein!&quot;" newline="True"/>
+                            <input variable="Iz"/>
+                            <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                            <assign variable="erg" expression="Uz/Iz"/>
+                            <output expression="&quot;R = &quot; &amp; erg &amp; &quot; Ohm&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="op2=&quot;R&quot;">
+                                <then>
+                                    <output expression="&quot;Bitte geben Sie f&#252;r R einen Wert ein!&quot;" newline="True"/>
+                                    <input variable="Rz"/>
+                                    <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                                    <assign variable="erg" expression="Uz/Rz"/>
+                                    <output expression="&quot;I = &quot; &amp; erg &amp; &quot; Ampere&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Sie m&#252;ssen mindestens eine Variable ausw&#228;hlen!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="op=&quot;I&quot;">
+                        <then>
+                            <output expression="&quot;Bitte geben Sie f&#252;r I einen Wert ein!&quot;" newline="True"/>
+                            <input variable="Iz"/>
+                            <output expression="&quot;W&#228;hlen Sie eine zweite Variable! (U/R)&quot;" newline="True"/>
+                            <input variable="op2"/>
+                            <if expression="op2=&quot;R&quot;">
+                                <then>
+                                    <output expression="&quot;Bitte geben Sie f&#252;r R einen Wert ein!&quot;" newline="True"/>
+                                    <input variable="Rz"/>
+                                    <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                                    <assign variable="erg" expression="Rz*Iz"/>
+                                    <output expression="&quot;U = &quot; &amp; erg &amp; &quot; Volt&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="op2=&quot;U&quot;">
+                                        <then>
+                                            <output expression="&quot;Bitte geben Sie f&#252;r U einen Wert ein!&quot;" newline="True"/>
+                                            <input variable="Uz"/>
+                                            <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                                            <assign variable="erg" expression="Uz/Iz"/>
+                                            <output expression="&quot;R = &quot; &amp; erg &amp; &quot; Ohm&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Sie m&#252;ssen mindestens eine Variable ausw&#228;hlen!&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="op=&quot;R&quot;">
+                                <then>
+                                    <output expression="&quot;Bitte geben Sie f&#252;r R einen Wert ein!&quot;" newline="True"/>
+                                    <input variable="Rz"/>
+                                    <output expression="&quot;W&#228;hlen Sie eine zweite Variable! (I/U)&quot;" newline="True"/>
+                                    <input variable="op2"/>
+                                    <if expression="op2=&quot;U&quot;">
+                                        <then>
+                                            <output expression="&quot;Bitte geben Sie f&#252;r U einen Wert ein!&quot;" newline="True"/>
+                                            <input variable="Uz"/>
+                                            <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                                            <assign variable="erg" expression="Uz/Rz"/>
+                                            <output expression="&quot;I = &quot; &amp; erg &amp; &quot; Ampere&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="op2=&quot;I&quot;">
+                                                <then>
+                                                    <output expression="&quot;Bitte geben Sie f&#252;r I einen Wert ein!&quot;" newline="True"/>
+                                                    <input variable="Iz"/>
+                                                    <output expression="&quot;Die letzte Variable wird mithilfe des Ohm'schen Gesetzes berechnet&quot;" newline="True"/>
+                                                    <assign variable="erg" expression="Rz*Iz"/>
+                                                    <output expression="&quot;U = &quot; &amp; erg &amp; &quot; Volt&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Sie m&#252;ssen mindestens eine Variable ausw&#228;hlen!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Sie m&#252;ssen mindestens eine Variable ausw&#228;hlen!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,605 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 35  ADO.NET &#8211; Aktualisieren der Datenbank">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 35  ADO.NET &#8211; Aktualisieren der Datenbank">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 35  ADO.NET &#8211; Aktualisieren der Datenbank</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="35_001.html">
+      <link rel="next" href="1997_35_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_35_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_35_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332" class="navnav">35 ADO.NET &#8211; Aktualisieren der Datenbank</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_001.html#dodtpfe133832-ca67-4d3a-8baa-b8380c216093" class="navnav">35.1 Aktualisieren mit dem »CommandBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp11837306-232b-460a-a45f-26076a944d9b" class="navnav">35.1.1 Die von »SqlCommandBuilder« generierten Aktualisierungsstatements</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp3b4d6b04-3215-4edf-a4bb-8b57c73153c3" class="navnav">35.1.2 Konfliktsteuerung in einer Mehrbenutzerumgebung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtpb2034c8d-dcf6-4b2c-bd52-c45ec4750a31" class="navnav">35.1.3 Die Eigenschaft »ConflictOption« des »SqlCommandBuilders«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_001.html#dodtp720c4fda-20a8-43ca-a633-1aa27a0ac906" class="navnav">35.1.4 Die Eigenschaft »SetAllValues«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_002.html#dodtp92ec7315-8023-480a-ad54-e5df65d73802" class="navh">35.2 Manuell gesteuerte Aktualisierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_002.html#dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0" class="navh">35.2.1 Eigene Aktualisierungslogik</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_002.html#dodtpa1bba101-e7bd-4e6f-9b86-128a81d9944d" class="navh">35.2.2 Das Beispielprogramm</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_003.html#dodtpc0ec01b5-5b37-4833-8c32-7bc44c0a7531" class="navnav">35.3 Konfliktanalyse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_003.html#dodtpeba88095-0e56-4e4d-9767-643d15fed310" class="navnav">35.3.1 Den Benutzer über fehlgeschlagene Aktualisierungen informieren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_35_003.html#dodtp85fe1afc-36fa-460c-9701-acf3a61afadc" class="navnav">35.3.2 Konfliktverursachende Datenzeilen bei der Datenbank abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_35_004.html#dodtpd82eda3c-2b16-4e8c-a8bd-1bb60ff3cd11" class="navnav">35.4 Neue Autoinkrementwerte abrufen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp92ec7315-8023-480a-ad54-e5df65d73802" name="dodtp92ec7315-8023-480a-ad54-e5df65d73802"></a><h2 class="t2"><span class="cfett">35.2    </span><span class="cfett"> Manuell gesteuerte Aktualisierung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit komplexen Aktualisierungsszenarien kann der <span class="clisting">SqlCommandBuilder</span> nicht umgehen. Er scheidet in solchen Fällen aus und muss durch manuellen Aktualisierungscode
+                                                      ersetzt werden. Wir können dazu durchaus auf das <span class="clisting">SqlDataAdapter</span>-Objekt und dessen <span class="clisting">Update</span>-Methode zurückgreifen. Den Aktualisierungscode, den uns in einfacheren Umgebungen
+                                                      der <span class="clisting">SqlCommandBuilder</span> zur Verfügung stellt, müssen wir allerdings selbst schreiben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich ist bei der Aktualisierung mit der <span class="clisting">Update</span>-Methode des <span class="clisting">SqlDataAdapters</span> entscheidend, dass die Eigenschaften
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">UpdateCommand</span></li>
+                                                      <li class="pgp"><span class="clisting">InsertCommand</span></li>
+                                                      <li class="pgp"><span class="clisting">DeleteCommand</span> 
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">des <span class="clisting">SqlDataAdapters</span> ein passendes <span class="clisting">SqlCommand</span>-Objekt beschreiben. Die <span class="clisting">Update</span>-Methode arbeitet im Grunde genommen sehr einfach. Sie sucht in einem <span class="clisting">DataSet</span> bzw. in der <span class="clisting">DataTable</span> nach den Datenzeilen, deren <span class="clisting">DataRowState</span> nicht <span class="clisting">Unchanged</span> ist. Trifft die Methode auf eine in welcher Weise auch immer geänderte Datenzeile,
+                                                      greift sie auf ein entsprechendes <span class="clisting">Command</span>-Objekt zurück, weist die entsprechenden Parameter zu und setzt die Änderung ab.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der entscheidende Punkt ist, dass der <span class="clisting">DataAdapter</span> sich nicht dafür interessiert, wie das <span class="clisting">Command</span>-Objekt gestaltet ist und aus welcher Quelle es stammt. Wichtig ist ihm nur, dass
+                                                      ein gültiges <span class="clisting">Command</span>-Objekt vorliegt. Damit haben wir auch schon den ersten Ansatz gefunden. Wir stellen
+                                                      eigene <span class="clisting">Command</span>-Objekte zur Verfügung, nennen wir sie <span class="ckursiv">updateCommand</span>, <span class="ckursiv">deleteCommand</span> und <span class="ckursiv">insertCommand</span>, und weisen sie den entsprechenden Eigenschaften des <span class="clisting">DataAdapters</span> zu:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;SqlDataAdapter&gt;.UpdateCommand<a class="indexterm" id="dodtpeba6009b-d91c-44a2-91a3-d369ddf52f8c"></a> = updateCommand;<br xmlns="">&lt;SqlDataAdapter&gt;.InsertCommand<a class="indexterm" id="dodtpc4a9a414-9857-4180-81d5-3db6da0bbc3b"></a> = insertCommand;<br xmlns="">&lt;SqlDataAdapter&gt;.DeleteCommand<a class="indexterm" id="dodtp85084a29-af8a-43c1-94ad-66817595a164"></a> = deleteCommand;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle drei Eigenschaften sind vom Typ <span class="clisting">SqlCommand</span>. Ein <span class="clisting">Command</span>-Objekt kennt durch seine Eigenschaft <span class="clisting">CommandText</span> das SQL-Kommando, das gegen die Datenbank abgesetzt werden soll. Damit sind alle
+                                                      Forderungen, welche die Methode <span class="clisting">Update</span> des <span class="clisting">DataAdapters</span> stellt, erfüllt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas erleichtern können wir uns das manuelle Aktualisieren, wenn wir daran denken,
+                                                      dass meistens keine besonderen Anforderungen sowohl hinsichtlich des Einfügens einer
+                                                      neuen Datenzeile als auch des Löschens einer Datenzeile gestellt werden. Hier leistet
+                                                      der <span class="clisting">SqlCommandBuilder</span> dann oft sehr gute Dienste, um das entsprechende INSERT- und DELETE-Statement zu
+                                                      erzeugen. Sie müssen in diesen Fällen nur ein <span class="clisting">SqlCommand</span>-Objekt bereitstellen, das den Aktualisierungsanforderungen an eine geänderte Datenzeile
+                                                      entspricht, und dieses der Eigenschaft <span class="clisting">UpdateCommand</span> des <span class="clisting">SqlDataAdapters</span> übergeben. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0" name="dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0"></a><h3 class="t3"><span class="cfett">35.2.1    </span><span class="cfett"> Eigene Aktualisierungslogik</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa1bba101-e7bd-4e6f-9b86-128a81d9944d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp92ec7315-8023-480a-ad54-e5df65d73802"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den folgenden Ausführungen liegt das folgende SQL-Statement zugrunde:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT ProductID, ProductName, Unitprice, UnitsInStock, Discontinued <br xmlns="">FROM Products<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns nun die Methode an, die für das Erzeugen des Kommandos zum Absetzen
+                                                      einer Datenzeilenänderung verantwortlich ist. Auch bei dieser Methode sei angenommen,
+                                                      dass zwischenzeitliche Änderungen durch andere Benutzer bei der Aktualisierung überschrieben
+                                                      werden. Dabei sei gefordert, dass etwaige Änderungen eines anderen Benutzers in der
+                                                      Spalte <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitPrice</span> nicht akzeptiert werden können und zu einem Konflikt führen sollen. Im Suchkriterium
+                                                      ist daher die Angabe des Primärschlüssels und des Originalwertes der Spalten <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitPrice</span> erforderlich.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static SqlCommand CreateUpdateCommand(SqlConnection con) </span>{<br xmlns="">  string sql = "UPDATE Products SET ProductName=@p1, UnitPrice=@p2, UnitsInStock=@p3 <br xmlns="">               WHERE ProductID=@p4 AND ProductName= @p5 AND UnitPrice=@p6";<br xmlns="">  SqlCommand cmd = new SqlCommand(sql, con);<br xmlns="">  cmd.Parameters.Add("@p1", SqlDbType.VarChar, 40, "ProductName");<br xmlns="">  cmd.Parameters.Add("@p2", SqlDbType.Money, 8, "UnitPrice");<br xmlns="">  cmd.Parameters.Add("@p3", SqlDbType.SmallInt, 2, "UnitsInStock");<br xmlns="">  cmd.Parameters.Add("@p4", SqlDbType.Int, 4, "ProductID");<br xmlns="">  SqlParameter param;<br xmlns="">  param = cmd.Parameters.Add("@p5", SqlDbType.VarChar, 40, "ProductName");<br xmlns="">  param.SourceVersion = DataRowVersion.Original;<br xmlns="">  param = cmd.Parameters.Add("@p6", SqlDbType.Money, 8, "UnitPrice");<br xmlns="">  param.SourceVersion = DataRowVersion.Original;<br xmlns="">  return cmd<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.3  </span>Manuell erstelltes UPDATE-Statement
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird der <span class="clisting">DataAdapter</span> zur Aktualisierung eingesetzt, muss jedem Parameter mitgeteilt werden, aus welcher
+                                                      Spalte der zu editierenden <span class="clisting">DataRow</span> der Wert für den betreffenden Parameter abgerufen werden soll, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cmd.Parameters.Add("@p1", SqlDbType.VarChar, 40, "ProductName");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier teilen wir dem Parameter mit, dass er den Wert aus der Spalte <span class="ckursiv">ProductName</span> beziehen soll. Standardmäßig wird der Wert aus <span class="clisting">DataRowVersion.Current</span> bezogen. Vergessen Sie die Angabe des vierten Parameters, kann der <span class="clisting">DataAdapter</span> die Datenzeile nicht an die Datenbank übermitteln. Haben Sie eine explizite Referenz
+                                                      auf den Parameter, können Sie die Spalte auch der Eigenschaft <span class="clisting">SourceColumn</span><span class="clisting"><a class="indexterm" id="dodtp581e84f1-d074-4b5d-88cb-2cc5cf37f78d"></a></span> bekannt geben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Parameter der Suchkriterien benötigen den Originalwert, um die betreffende Datenzeile
+                                                      in der Tabelle der Datenbank aufzuspüren. Damit der <span class="clisting">DataAdapter</span> die erforderlichen Werte aus <span class="clisting">DataRowVersion.Original</span> einträgt, teilen Sie das dem Parameter in seiner Eigenschaft <span class="clisting">SourceVersion</span> mit:
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">param.SourceVersion</span><span class="clisting"><a class="indexterm" id="dodtp3915cc66-dc4f-47db-9123-1dcea7d9a1a1"></a> = DataRowVersion.Original;</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das auf diese Weise in der Methode erzeugte <span class="clisting">Command</span>-Objekt wird an den Aufrufer zurückgeliefert. Wie Sie weiter oben schon gesehen haben,
+                                                      weisen wir dessen Referenz der Eigenschaft <span class="clisting">UpdateCommand</span> des <span class="clisting">DataAdapters</span> zu, der automatisch die Parameter füllt, wenn er auf eine geänderte Datenzeile trifft.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Die Primärschlüsselspalte <span class="ckursiv">ProductID</span> stellt hierbei in der Tabelle <span class="ckursiv">Products</span> einen Sonderfall dar, da sie als Autoinkrementspalte definiert ist und somit grundsätzlich
+                                                         nicht verändert werden kann. Somit entfällt für diese Spalte die Notwendigkeit, den
+                                                         Wert der Originalversion abzufragen.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpa1bba101-e7bd-4e6f-9b86-128a81d9944d" name="dodtpa1bba101-e7bd-4e6f-9b86-128a81d9944d"></a><h3 class="t3"><span class="cfett">35.2.2    </span><span class="cfett"> Das Beispielprogramm</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc762aa5d-17bd-4060-8362-0a7e699cebe0"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Planen Sie eine eigene Aktualisierungslogik, unterscheidet sich der Programmcode kaum
+                                                      von dem, den Sie auch unter Benutzung des <span class="clisting">CommandBuilders</span> schreiben würden. Wir wollen im nächsten Beispiel die Methode <span class="ckursiv">CreateUpdateCommand</span> testen und dabei auf die Dienste des <span class="clisting">SqlCommandBuilders</span> nicht vollständig verzichten. Denn wie bereits weiter oben erwähnt, können die von
+                                                      diesem Objekt erzeugten <span class="clisting">Command</span>-Objekte zum Löschen oder Hinzufügen einer Datenzeile durchaus verwendet werden, weil
+                                                      an diese Vorgänge in der Regel keine besonderen Anforderungen gestellt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 35\ManuelleAktualisierung</span><br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  SqlConnection con = new SqlConnection();<br xmlns="">  con.ConnectionString = "...";<br xmlns="">  SqlCommand cmd = new SqlCommand();<br xmlns="">  cmd.CommandText = "SELECT ProductID, ProductName, Unitprice, UnitsInStock, <br xmlns="">                    Discontinued FROM Products";<br xmlns="">  cmd.Connection = con;<br xmlns="">  DataSet ds = new DataSet();<br xmlns="">  SqlDataAdapter da = new SqlDataAdapter(cmd);<br xmlns="">  SqlCommandBuilder cmb = new SqlCommandBuilder(da);<br xmlns="">  da.UpdateCommand = CreateUpdateCommand(con);<br xmlns="">  da.FillSchema(ds, SchemaType.Source);<br xmlns="">  ds.Tables[0].Columns[0].AutoIncrementSeed = -1;<br xmlns="">  ds.Tables[0].Columns[0].AutoIncrementStep = -1;<br xmlns="">  da.Fill(ds);<br></br>  // Datenzeilen ändern<br></br>  ChangeDataRows(ds);<br></br>  // Datenzeilen hinzufügen<br></br>  AddDataRows(ds);<br></br>  // Simulation eines Konflikts<br></br>  Console.Write("Konflikt simulieren ...");<br xmlns="">  Console.ReadLine();<br></br>  // Datenbank aktualisieren<br></br>  da.Update(ds);<br xmlns="">  Console.WriteLine("Datenbank ist aktualisiert.");<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></br><span class="clistingfett">static void ChangeDataRows(DataSet ds)</span>{<br xmlns="">  ds.Tables[0].Rows[0]["ProductName"] = "Pfeffer";<br xmlns="">  ds.Tables[0].Rows[1]["Productname"] = "Salz";<br xmlns="">  ds.Tables[0].Rows[2]["Productname"] = "Banane";<br xmlns="">  ds.Tables[0].Rows[3]["Productname"] = "Orange";<br xmlns="">  ds.Tables[0].Rows[4]["Productname"] = "Mango";<br xmlns="">  ds.Tables[0].Rows[5]["UnitsInStock"] = 125;<br xmlns="">  ds.Tables[0].Rows[6]["UnitsInStock"] = 55;<br xmlns="">}<br></br><span class="clistingfett">static void AddDataRows(DataSet ds) </span>{<br xmlns="">  DataRow row1 = ds.Tables[0].NewRow();<br xmlns="">  row1["Productname"] = "Suppenhuhn";<br xmlns="">  row1["Discontinued"] = 0;<br xmlns="">  ds.Tables[0].Rows.Add(row1);<br xmlns="">  DataRow row2 = ds.Tables[0].NewRow();<br xmlns="">  row2["Productname"] = "Aachener Printe";<br xmlns="">  row2["Discontinued"] = 0;<br xmlns="">  ds.Tables[0].Rows.Add(row2);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 35.4  </span>Manuelles Aktualisieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methoden <span class="ckursiv">ChangeDataRows</span> und <span class="ckursiv">AddDataRows</span> beschreiben die an der Tabelle <span class="ckursiv">Products</span> vorgenommenen Änderungen. Es werden insgesamt sieben Datenzeilen editiert: Fünf Änderungen
+                                                      betreffen die Spalte <span class="ckursiv">ProductName</span>, zwei die Spalte <span class="ckursiv">UnitsInStock</span>. Darüber hinaus werden zwei weitere Datenzeilen zur Tabelle hinzugefügt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In <span class="clisting">Main</span> werden dem <span class="clisting">DataAdapter</span> die Aktualisierungsstatements zugewiesen. Um neue Datenzeilen hinzuzufügen, ohne
+                                                      dafür eine eigene Methode schreiben zu müssen, wird der <span class="clisting">SqlCommandBuilder</span> bemüht. Anschließend erfolgt der Aufruf der Methode <span class="ckursiv">CreateUpdateCommand</span>, um die manuelle Aktualisierungslogik editierter Datenzeilen durchzusetzen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erscheint zur Laufzeit die Meldung »Konflikt simulieren« an der Konsole, können Sie
+                                                      das Konfliktverhalten testen. Öffnen Sie dazu beispielsweise den <span class="cscreenelement">Server-Explorer,</span> und stellen Sie eine Verbindung zu der betreffenden Datenbank <span class="ckursiv">Northwind</span> her. Öffnen Sie danach die Tabelle <span class="ckursiv">Products,</span> und ändern Sie in einem der ersten fünf Datensätze den Lagerbestand. Setzen Sie danach
+                                                      die Ausführung des Beispielprogramms fort, wird am Ende die erfolgreiche Aktualisierung
+                                                      angezeigt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Änderung in der Spalte <span class="ckursiv">ProductName</span> hingegen wird bei einem solchen Test zu einer Ausnahme vom Typ <span class="clisting">DBConcurrencyException</span> führen, die einen Parallelitätskonflikt signalisiert. Das angestrebte Ziel wäre somit
+                                                      erreicht: Wir verursachen einen Konflikt, wenn zwei Anwender in der Spalte <span class="ckursiv">ProductName</span> (und natürlich auch <span class="ckursiv">UnitPrice</span>) derselben Datenzeile eine sich überschneidende Änderung vornehmen. 
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs35_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="35  ADO.NET &#8211; Aktualisieren der Datenbank"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_35_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_35_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

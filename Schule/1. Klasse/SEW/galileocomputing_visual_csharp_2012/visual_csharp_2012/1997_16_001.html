@@ -1,0 +1,910 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 16  Einige wichtige .NET-Klassen">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="15_004.html">
+      <link rel="next" href="1997_16_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_15_004.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_16_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5" class="navh">16 Einige wichtige .NET-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_001.html#dodtp2450680c-ac9d-48da-81ea-6672f80715f7" class="navh">16.1 Die Klasse »Object«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp6f1413c9-418e-47cf-83de-ec5739505f68" class="navh">16.1.1 Referenzvergleiche mit »Equals« und »ReferenceEquals«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" class="navh">16.1.2 »ToString« und »GetType«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" class="navh">16.1.3 Die Methode »MemberwiseClone« und das Problem des Klonens</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_002.html#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" class="navnav">16.2 Die Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" class="navnav">16.2.1 Das Erzeugen eines Strings</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" class="navnav">16.2.2 Die Eigenschaften von »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp9869302a-a81f-476a-862b-31ff55711cc8" class="navnav">16.2.3 Die Methoden der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp8a6e62fc-2274-4607-885a-765ccab87be8" class="navnav">16.2.4 Zusammenfassung der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_003.html#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" class="navnav">16.3 Die Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" class="navnav">16.3.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" class="navnav">16.3.2 Die Kapazität eines »StringBuilder«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" class="navnav">16.3.3 Die Konstruktoren der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" class="navnav">16.3.4 Die Eigenschaften der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp439ff604-4457-439b-b552-95ef23a2d92e" class="navnav">16.3.5 Die Methoden der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp64c689f2-4f33-4e60-919a-03c308002a13" class="navnav">16.3.6 Allgemeine Anmerkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_004.html#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" class="navnav">16.4 Der Typ »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" class="navnav">16.4.1 Die Zeitspanne »Tick«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtp615f8ac3-1362-4523-84f4-fa23473b674b" class="navnav">16.4.2 Die Konstruktoren von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" class="navnav">16.4.3 Die Eigenschaften von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" class="navnav">16.4.4 Die Methoden der Klasse »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_005.html#dodtpb26830f8-1fa0-4b0b-b86d-a20949a22f00" class="navnav">16.5 Die Klasse »TimeSpan«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_006.html#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" class="navnav">16.6 Ausgabeformatierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" class="navnav">16.6.1 Formatierung mit der Methode »String.Format«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" class="navnav">16.6.2 Formatierung mit der Methode »ToString«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" class="navnav">16.6.3 Benutzerdefinierte Formatierung</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp1488d937-efc6-48e5-ba82-1547725215a5" name="dodtp1488d937-efc6-48e5-ba82-1547725215a5"></a><h1 class="t1"><span class="cfett">16 </span><span class="cfett"> Einige wichtige .NET-Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2450680c-ac9d-48da-81ea-6672f80715f7"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp2450680c-ac9d-48da-81ea-6672f80715f7" name="dodtp2450680c-ac9d-48da-81ea-6672f80715f7"></a><h2 class="t2"><span class="cfett">16.1    </span><span class="cfett"> Die Klasse »Object«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp553f26b3-66be-4b56-8df9-2af54e09ab0a"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8476e029-a4e4-4603-a165-37e57c7ddcc1"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6f1413c9-418e-47cf-83de-ec5739505f68"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Klassen in der Klassenbibliothek des .NET Frameworks sind Mitglieder einer Klassenhierarchie,
+                                                      die sich über viele Verzweigungen in aufgabenspezifische Bereiche gliedert. Alle Klassen,
+                                                      so tief sie auch im Dickicht dieser Hierarchie stecken mögen, lassen sich aber auf
+                                                      die gemeinsame Basisklasse <span class="clisting">Object</span> zurückführen<span class="cfett"><a class="indexterm" id="dodtpc6175498-4a03-4d43-b3a4-23e1962fa1c4"></a><a class="indexterm" id="dodtpa40ba4e4-95a4-44df-9475-d1787692fa52"></a></span>. Wenn Sie eine benutzerdefinierte Klasse entwickeln, müssen Sie nicht explizit angeben,
+                                                      dass Ihre Klasse von <span class="clisting">Object</span><span class="cfett"> </span>abgeleitet ist &#8211; diese Ableitung geschieht implizit. Dass sich alle Klassen von <span class="clisting">Object</span> ableiten, hat eine ganz wesentliche Konsequenz: Jeder Typ des Systems weist ein Minimum
+                                                      gemeinsamer Verhaltensweisen auf. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Object hat nur einen parameterlosen Konstruktor und insgesamt sieben Methoden. Fünf
+                                                      dieser Methoden sind <span class="clisting">public</span> und damit öffentlich, die beiden anderen Methoden sind <span class="clisting">protected</span> und erlauben daher nur den Zugriff aus einer erbenden Klasse heraus. Sehen wir uns
+                                                      zunächst in Tabelle 16.1 alle Methoden in einem Überblick an.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.1  </span>Die Methoden der Klasse »Object<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp59db4e1d-9dff-4f03-81d8-2e346f0f6b19"></a>«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Methoden
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Equals</span><span class="clisting"><a class="indexterm" id="dodtp9ae5e4ad-ece5-49ef-b636-3f5cf85a3ae2"></a><a class="indexterm" id="dodtp26e57c1c-772c-4e9e-8cb1-479bb7ff47be"></a><a class="indexterm" id="dodtpebab065c-e216-4a67-9eff-d2a4d908a01c"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Diese Methode vergleicht zwei Objektreferenzen und liefert einen booleschen Wert zurück,
+                                                                  dem entnommen werden kann, ob die beiden Referenzen auf dasselbe Objekt zeigen.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Finalize</span><span class="clisting"><a class="indexterm" id="dodtp42237ab2-3bc1-4434-a4f5-585f414da523"></a><a class="indexterm" id="dodtpedd64504-55c9-4435-b5b7-dd4863b18bad"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Dient dazu, Ressourcen der Klasse freizugeben, wenn das Objekt zerstört wird.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">GetHashCode</span><span class="clisting"><a class="indexterm" id="dodtp283435f6-527a-40f6-8cd2-19f936292fbe"></a><a class="indexterm" id="dodtp28ca935a-2464-4d4b-bc68-1cb935991455"></a><a class="indexterm" id="dodtp8185f042-061e-4192-891c-5df693e42df8"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert einen eindeutigen numerischen Identifizierer.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">GetType</span><span class="clisting"><a class="indexterm" id="dodtp97ad3ba5-1019-4fbe-9f9b-18a6da023b7f"></a><a class="indexterm" id="dodtpe78f4c68-2283-4d34-b236-54bf637b248a"></a><a class="indexterm" id="dodtp407b8733-830d-4cdd-9fad-eaa912a63bac"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert die Referenz auf eine <span class="clisting">Type</span>-Instanz zurück, die den Typ des aktuellen Objekts beschreibt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MemberwiseClone</span><span class="clisting"><a class="indexterm" id="dodtpe6978c85-e2da-4eb9-af01-beb90fd2be8d"></a><a class="indexterm" id="dodtpb54b68d9-124e-483f-ad9c-f1be11657842"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Dupliziert die aktuelle Instanz und liefert die Referenz auf das Duplikat zurück.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ReferenceEquals</span><span class="clisting"><a class="indexterm" id="dodtp9a80229d-4172-4f7e-97cc-1aa18464b693"></a><a class="indexterm" id="dodtp51f882da-5f39-4156-95cf-0dd579e69eaf"></a><a class="indexterm" id="dodtp25c9a88a-c100-44c8-af21-62ee034b9bc6"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vergleicht zwei Objektreferenzen und liefert einen booleschen Wert zurück, dem entnommen
+                                                                  werden kann, ob die beiden Referenzen auf dasselbe Objekt zeigen.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToString</span><span class="clisting"><a class="indexterm" id="dodtp461f05fe-73ef-475c-aff8-3517f374bc1d"></a><a class="indexterm" id="dodtp729f12d5-dcde-4f89-939f-e24b308df58a"></a><a class="indexterm" id="dodtp0c8cdcb5-46b2-488a-b106-abec37c97b2c"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert den vollqualifizierten Namen einer Klasse.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp6f1413c9-418e-47cf-83de-ec5739505f68" name="dodtp6f1413c9-418e-47cf-83de-ec5739505f68"></a><h3 class="t3"><span class="cfett">16.1.1    </span><span class="cfett"> Referenzvergleiche mit »Equals« und »ReferenceEquals«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd33064c8-d4f0-4930-a959-08319d73e9e1"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpbedb27e9-07f6-4632-8213-14d1057c605b"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpaeb8bfa1-3cad-4b83-94e0-6eef6bc1d6ff"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2450680c-ac9d-48da-81ea-6672f80715f7"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die beiden Methoden <span class="clisting">Equals</span> und <span class="clisting">ReferenceEquals</span> sind sich per Definition sehr ähnlich. Es werden zwei Objektvariablen miteinander
+                                                      verglichen, um festzustellen, ob beide dasselbe Objekt im Speicher referenzieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Demo object1 = new Demo();<br xmlns="">Demo object2;<br xmlns="">object2 = object1;<br xmlns="">Console.WriteLine(Object.Equals(object1, object2));<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.1  </span>Referenzvergleich mit »Equals«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Codefragment wird die Referenz <span class="ckursiv">object1</span> der Variablen <span class="ckursiv">object2</span> zugewiesen. Beide Referenzen zeigen auf dasselbe konkrete Objekt, was der Aufruf
+                                                      der <span class="clisting">Equals</span>-Methode bestätigt: Es wird <span class="clisting">true</span> ausgegeben, was als referenzielle Identität der beiden Objektvariablen zu interpretieren
+                                                      ist. In diesem Fall können Sie sogar <span class="clisting">Equals</span> gegen <span class="clisting">ReferenceEquals</span> austauschen, am Ergebnis wird sich nichts ändern. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Equals</span> wird sowohl als Instanz- als auch als Klassenmethode angeboten. Die Instanzmethode
+                                                      ist <span class="clisting">virtual</span> gekennzeichnet und kann von jeder Klasse polymorph überschrieben werden. Die statische
+                                                      <span class="clisting">Equals</span>-Variante ist nicht überschreibbar, ebenso die ähnlich lautende Methode <span class="clisting">ReferenceEquals</span>. Damit ist auch garantiert, dass das Ergebnis des Aufrufs einer dieser beiden Methoden
+                                                      immer den Vergleich zwischen zwei Objektreferenzen liefert: Es ist <span class="clisting">true</span>, wenn beide Referenzen auf ein und dasselbe Objekt verweisen, andernfalls lautet
+                                                      das Ergebnis <span class="clisting">false</span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" name="dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc"></a><h3 class="t3"><span class="cfett">16.1.2    </span><span class="cfett"> »ToString« und »GetType«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb6244b6b-388a-4a95-9e55-d1034b7a2632"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf61dcb0d-33e6-4af8-99e7-3101cb3f551c"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp03e79975-5832-4c18-be9e-70fc30e96bc8"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc372886e-f936-444f-902b-cbce3d9b9666"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6f1413c9-418e-47cf-83de-ec5739505f68"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">ToString</span> liefert per Definition eine Zeichenfolge zurück, die den vollqualifizierten Namen
+                                                      der Klasse, also einschließlich der Angabe des Namespaces, enthält. Viele Klassen
+                                                      überschreiben diese Methode und haben somit einen abweichenden Rückgabewert. Sehen
+                                                      wir uns das an zwei Beispielen an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Visual C# 5.0 ist spitze!";<br xmlns="">Console.WriteLine(text.ToString());<br xmlns="">int value = 4711;<br xmlns="">Console.WriteLine(value.ToString());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.2  </span>Rückgabewerte der Methode »ToString« 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe lautet: </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Visual C# 5.0 ist spitze!<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">und</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">4711<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Typen <span class="clisting">String</span> und <span class="clisting">int</span> überschreiben demnach <span class="clisting">ToString</span> und liefern den Inhalt der Variablen, auf der die Methode aufgerufen worden ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">GetType</span> können Sie sich den Typ der Klasse besorgen, allerdings müssen Sie dazu die Rückgabe
+                                                      in einen String konvertieren, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int value = 10;<br xmlns="">Console.WriteLine(Convert.ToString(value.GetType()));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt wird nicht der Inhalt der Variablen <span class="ckursiv">value</span>, sondern der Datentyp ausgegeben. Sie müssen an dieser Stelle eine Konvertierung
+                                                      vornehmen, weil der Rückgabewert vom Typ <span class="clisting">Type</span> ist. Die Klasse <span class="clisting">Type</span> liefert eine Referenz auf das <span class="clisting">Type</span>-Objekt eines konkreten Objekts zurück. Dieses versetzt uns in die Lage, den Datentyp
+                                                      einer genaueren Analyse zu unterziehen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" name="dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79"></a><h3 class="t3"><span class="cfett">16.1.3    </span><span class="cfett"> Die Methode »MemberwiseClone« und das Problem des Klonens</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc8825627-129c-45b1-98d7-0f6b33d0a4ba"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb7ee95c7-0dea-4110-aa76-be09d6a7903f"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kommen wir zu einem leider etwas nebulösen Teil des .NET Frameworks. Es handelt sich
+                                                      dabei um das Klonen von Objekten. Nebulös deshalb, weil es Microsoft versäumt hat,
+                                                      exakt zu spezifizieren, ob bei den jeweiligen Klonvorgängen eine flache oder tiefe
+                                                      Kopie erzeugt werden soll.
+                                                   </p>
+                                                   <h4 class="t4"> Flache Kopien</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unter einer <span class="cfett">flachen Kopie</span> versteht man, dass nur eine einfache Kopie eines Objekts erstellt wird. Enthält das
+                                                      zu kopierende Objekt einen Verweis auf ein anderes Objekt (nennen wir es »untergeordnetes
+                                                      Objekt«), wird letzteres nicht dupliziert. Stattdessen verweist auch die Kopie auf
+                                                      dasselbe untergeordnete Objekt wie das Original. Sehen Sie dazu das folgende Listing
+                                                      an, in dem die beiden Klassen <span class="clisting">Owner</span> und <span class="clisting">Account</span> beschrieben werden. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Owner</span> {<br xmlns="">  public string Name { get; set; }<br xmlns="">  public int Alter { get; set; }<br xmlns="">}<br></br><span class="clistingfett">public class Account</span> {<br xmlns="">  public int AccountNo { get; set; }<br xmlns="">  public Owner Owner { get; set; }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.3  </span>Die Definition der Klassen »Owner« und »Account«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass die Klasse <span class="clisting">Account</span> eine Eigenschaft vom Typ <span class="clisting">Owner</span> beschreibt, einem Referenztyp. Das von dieser Eigenschaft referenzierte Objekt ist
+                                                      das oben erwähnte »untergeordnete Objekt«. Wenn wir die flache Kopie eines bestehenden
+                                                      <span class="clisting">Account</span>-Objekts erzeugen, wird zwar ein neues <span class="clisting">Account</span>-Objekt erstellt, aber die Kopie verweist in ihrer Eigenschaft <span class="clisting">Owner</span> auf dasselbe <span class="clisting">Owner</span>-Objekt wie das Original-<span class="clisting">Account</span>-Objekt. Das <span class="clisting">Owner</span>-Objekt wird bei einer flachen Kopie nicht neu erzeugt, also dupliziert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">MemberwiseClone</span> der Klasse <span class="clisting">Object</span> erstellt eine flache Kopie des aktuellen Objekts und liefert die Referenz auf die
+                                                      Kopie. Da <span class="clisting">MemberwiseClone protected</span> definiert ist, wird eine andere Methode erforderlich, um das Klon an den Aufrufer
+                                                      zurückzugeben. Lassen Sie uns eine solche Methode bereitstellen. Wir können dazu auf
+                                                      das Interface <span class="clisting">ICloneable</span> des .NET Frameworks zurückgreifen, über das die Methode <span class="clisting">Clone</span> vorgeschrieben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Account : ICloneable </span>{<br xmlns="">  public int AccountNo { get; set; }<br xmlns="">  public Owner Owner { get; set; }<br></br>  // Methode des Interfaces ICloneable<br></br>  public object Clone() {<br xmlns="">    return this.MemberwiseClone();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.4  </span>Die Klasse »Account« mit dem Interface »ICloneable«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Clone</span> ruft <span class="clisting">MemberwiseClone</span> des aktuellen Objekts auf. <span class="clisting"><a class="indexterm" id="dodtpeb01a585-04bb-42f7-b9e2-85f527089ed7"></a></span>Dabei werden alle Felder des Originals bitweise kopiert. Das betrifft sowohl die Felder,
+                                                      die auf Wertetypen basieren, als auch die Felder, die auf Referenztypen basieren.
+                                                      Das hat zur Konsequenz, dass die Eigenschaften, die Referenztypen beschreiben, nur
+                                                      die ursprüngliche Referenz in den Klon schreiben, aber kein neues Objekt erzeugen
+                                                      (siehe Abbildung 16.1).
+                                                   </p>
+                                                   <p><a href="bilder/16_01.png" rel="lightbox" title="Prinzip der »flachen Kopie«"><img class="bild" border="1" src="bilderklein/klein16_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 16.1  </span>Prinzip der »flachen Kopie«
+                                                   </p>
+                                                   <h4 class="t4"> Tiefe Kopien</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei einer <span class="cfett">tiefen Kopie</span> werden nicht nur die auf Wertetypen basierenden Felder kopiert, sondern auch die
+                                                      Felder, die auf Referenztypen basieren und damit untergeordnete Objekte beschreiben.
+                                                      Bezogen auf die Klassen in Listing 16.4 würde das bedeuten, dass beim Klonen eines
+                                                      <span class="clisting">Account</span>-Objekts auch eine Kopie des untergeordneten Objekts <span class="clisting">Owner</span> erstellt wird (siehe Abbildung 16.2). 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die unpräzise Spezifizierung des Klonens bei der Implementierung der Schnittstelle
+                                                      <span class="clisting">ICloneable</span> hat zu vielen Diskussionen geführt. Soll mit diesem Interface flach oder tief kopiert
+                                                      werden? Es gibt darüber keine allgemeingültige Aussage. Es gibt leider auch keine
+                                                      andere Schnittstelle, die eine tiefe Kopie vorschreiben würde. Da sehr viele Klassen
+                                                      des .NET Frameworks die Schnittstelle <span class="clisting">ICloneable</span> implementieren, bleibt Ihnen im Zweifelsfall nichts anderes übrig, als die entsprechende
+                                                      Dokumentation zu lesen.
+                                                   </p>
+                                                   <p><a href="bilder/16_02.png" rel="lightbox" title="Prinzip der »tiefen Kopie«"><img class="bild" border="1" src="bilderklein/klein16_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 16.2  </span>Prinzip der »tiefen Kopie«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenden wir uns wieder den beiden Klasse <span class="clisting">Owner</span> und <span class="clisting">Account</span> zu. Optimalerweise implementieren wir in beiden Klassen das Interface <span class="clisting">ICloneable</span>. Die Methode <span class="clisting">Clone</span> in der Klasse <span class="clisting">Owner</span> erzeugt intern mit <span class="clisting">MemberwiseClone</span> nur einen »einfachen« Klon von sich selbst. In <span class="clisting">Account</span> hingegen muss darüber hinaus auch noch ein Klon des Eigenschaftswertes <span class="clisting">Owner</span> erstellt werden. Erst damit ist eine tiefe Kopie eines <span class="clisting">Account</span>-Objekts gewährleistet. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Beispielprogramm ist der gesamt Code der beiden angesprochenen Klassen
+                                                      gezeigt. Zum Testen des Erfolgs des tiefen Klonens reicht es in diesem Fall völlig
+                                                      aus, in <span class="clisting">Main</span> den Hashcode des untergeordneten <span class="clisting">Owner</span>-Objekts abzufragen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 16\MemberwiseClonen</span><br></br><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    Owner owner = new Owner { Name = "Herbert Meier", Alter = 28 };<br xmlns="">    Account account = new Account { Owner = owner, AccountNo = 1 };<br></br>    // Erstellen einer tiefen Kopie<br></br>    Account copy = (Account)account.Clone();<br xmlns="">    Console.WriteLine("Hash des Originals: {0}", <br xmlns="">                       account.Owner.GetHashCode());<br xmlns="">    Console.WriteLine("Hash der Kopie:     {0}", copy.Owner.GetHashCode());<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">public class Owner : ICloneable </span>{<br xmlns="">  public string Name { get; set; }<br xmlns="">  public int Alter { get; set; }<br></br>  <span class="clistingfett">public object Clone()</span><br xmlns="">  {<br xmlns="">    return this.MemberwiseClone();<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">public class Account : ICloneable </span>{<br xmlns="">  public int AccountNo { get; set; }<br xmlns="">  public Owner Owner { get; set; }<br></br>  <span class="clistingfett">public object Clone()</span><br xmlns="">  {<br xmlns="">    Account acc = (Account)MemberwiseClone();<br xmlns="">    acc.Owner = (Owner)Owner.Clone();<br xmlns="">    return acc;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.5  </span>Erstellen einer »tiefen Kopie«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Prozess des tiefen Kopierens muss den gesamten Objektgraphen erfassen und alle
+                                                      darin beschriebenen Objekte duplizieren. Am Ende haben die geklonten Objekte keinerlei
+                                                      Bezug mehr zu ihrem Original. Eine tiefe Kopie zu erstellen ist daher nicht immer
+                                                      so einfach, wie dieses Beispielprogramm vielleicht suggerieren mag. Je nach Typ und
+                                                      je nachdem, ob untergeordnete Objekte ihrerseits selbst wieder untergeordnete Objekte
+                                                      haben, die tief kopiert werden müssen, kann das Erstellen einer tiefen Kopie sehr
+                                                      aufwendig werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Es gibt mit dem Prozess der Serialisierung noch eine andere Möglichkeit, eine tiefe
+                                                         Kopie zu erstellen. Das setzt voraus, dass die Klassen mit dem <span class="clisting">Serializable</span>-Attribut verknüpft sind. Das zu serialisierende Objekt wird einfach in einen Stream
+                                                         vom Typ <span class="clisting">MemoryStream</span> serialisiert und anschließend sofort wieder deserialisiert.
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint">public object Clone()<br xmlns="">{<br xmlns="">  MemoryStream stream = new MemoryStream();<br xmlns="">  BinaryFormatter formatter = new BinaryFormatter();<br xmlns="">  formatter.Serialize(stream, this);<br xmlns="">  stream.Position = 0;<br xmlns="">  return formatter.Deserialize(stream);<br xmlns="">}<br></pre></div>
+                                                      <p class="pbstandard">Dabei darf nicht vergessen werden, die aktuelle Position des Streams nach der Serialisierung
+                                                         auf »0« zurückzusetzen.
+                                                      </p>
+                                                   </div><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs16_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="16  Einige wichtige .NET-Klassen"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_15_004.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_16_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

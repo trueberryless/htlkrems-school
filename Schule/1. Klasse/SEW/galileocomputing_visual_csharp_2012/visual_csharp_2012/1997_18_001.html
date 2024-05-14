@@ -1,0 +1,930 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 18  Einführung in die WPF und XAML">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 18  Einführung in die WPF und XAML">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 18  Einführung in die WPF und XAML</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="17_009.html">
+      <link rel="next" href="1997_18_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_17_009.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_18_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9" class="navh">18 Einführung in die WPF und XAML</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_18_001.html#dodtp87b67918-ae6f-4976-b150-45cbf891b857" class="navh">18.1 Die Merkmale einer WPF-Anwendung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_001.html#dodtp51261950-fcf6-4aaf-9015-1e875e9352f9" class="navh">18.1.1 Anwendungstypen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_001.html#dodtp4b1998fc-d0cb-4527-9842-c148f19d8dd4" class="navh">18.1.2 Eine WPF-Anwendung und deren Dateien</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_001.html#dodtp4a69eaa9-2e88-4a90-aaee-5e14cede48be" class="navh">18.1.3 Ein erstes WPF-Beispiel</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_001.html#dodtpde916391-9b3b-4570-a912-3f023eef8348" class="navh">18.1.4 Wichtige WPF-Features</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_001.html#dodtp489ec8bb-dc5c-4f76-afe7-87a04826bc48" class="navh">18.1.5 Der logische und der visuelle Elementbaum</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_18_002.html#dodtp6caeb1db-0e00-4de8-8ee3-a8fea1d2c55e" class="navnav">18.2 XAML (Extended Application Markup Language)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtpef85fb65-659f-4e0d-824b-a36bd0bbecfe" class="navnav">18.2.1 Die Struktur einer XAML-Datei</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtpcb6b9df7-c12f-472e-a575-cabe77d0e9bf" class="navnav">18.2.2 Eigenschaften eines XAML-Elements in Attributschreibweise festlegen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtp83d82818-a9b1-49f5-94f8-d171051f7d27" class="navnav">18.2.3 Eigenschaften im Eigenschaftsfenster festlegen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtpbab7af77-5410-4a0a-85fe-8ee30c79bfb6" class="navnav">18.2.4 Die Eigenschaft-Element-Syntax</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtp72ae5525-16f6-4cb6-9e79-ae94c762cd77" class="navnav">18.2.5 Inhaltseigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtpe304b646-8a4c-4b54-8434-389bce85deab" class="navnav">18.2.6 Typkonvertierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtp095f619a-9c8b-4a2a-833b-d5f9a1cc7f38" class="navnav">18.2.7 Markup-Erweiterungen (Markup Extensions)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtp81a19b9f-4213-47b1-99cb-4dbc065ddbbf" class="navnav">18.2.8 XML-Namespaces</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_18_002.html#dodtp55f1e0c6-79a8-4af3-9bb1-224ca318e1aa" class="navnav">18.2.9 XAML-Spracherweiterungen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9" name="dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9"></a><h1 class="t1"><span class="cfett">18 </span><span class="cfett"> Einführung in die WPF und XAML</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp87b67918-ae6f-4976-b150-45cbf891b857"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Einführung von .NET 1.0 wurde eine neue Technologie zur Entwicklung von Windows-Anwendungen
+                                                      eingeführt: die WinForm-API. Im Grunde genommen war die WinForm-API keine Neuentwicklung,
+                                                      da sie die Windows-API nutzte. Trotz der Erweiterung der Windows-API wurde an der
+                                                      grundlegenden Architektur nichts verändert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unter dem Codenamen <span class="ckursiv">Avalon</span> startete Microsoft Mitte des letzten Jahrzehnts die Entwicklung einer neuen Bibliothek
+                                                      für grafische Benutzeroberflächen, die im Jahr 2006 unter dem Bezeichner <span class="ckursiv">Windows Presentation Foundation</span> (WPF) als Teil von .NET 3.0 veröffentlicht worden ist. Bereits in Visual Studio 2008
+                                                      wurde die WPF neben der traditionellen Technologie für die WinForm-API fest in die
+                                                      Entwicklungsumgebung integriert. Nach einigen Startschwierigkeiten, die nicht nur
+                                                      auf Mängel zurückzuführen sind, fand die WPF eine breite Akzeptanz in der Entwicklergemeinde
+                                                      und gehört nunmehr zur bevorzugten Technologie zur Entwicklung von Windows-Anwendungen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In den kommenden Kapiteln werden wir uns mit WPF beschäftigen. Dabei können wir nicht
+                                                      alle Aspekte und Konzepte berücksichtigen. Aber ich möchte Ihnen einen Einstieg in
+                                                      die Technologie geben und Ihnen zeigen, wie Windows-Anwendungen mit der WPF entwickelt
+                                                      werden. Sie werden feststellen, dass die Lernkurve nicht so steil ist wie bei der
+                                                      nun auf das Abstellgleis geschobenen WinForm-API.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Nach Aussagen von Microsoft wird die WinForm-API nicht mehr weiterentwickelt. Dennoch
+                                                         ist sie auch weiterhin elementarer Bestandteil in Visual Studio 2012 und wird es meiner
+                                                         Ansicht nach auch noch länger bleiben. Im Grunde genommen brauchen Sie nicht zu fürchten,
+                                                         ein neues Projekt mit der WinForm-API zu starten, aber andererseits sind Sie dann
+                                                         nicht mehr up to date und können die vielen interessanten und auch positiv zu bewertenden
+                                                         Programmiertechniken nicht nutzen. Sollten Sie in Zukunft, aus welchen Gründen auch
+                                                         immer, planen, Ihre WinForm-Anwendung auf WPF umzustellen, fangen Sie von vorne an.
+                                                         Die Frage, ob WinForms oder WPF, sollte sich somit eigentlich gar nicht stellen.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp87b67918-ae6f-4976-b150-45cbf891b857" name="dodtp87b67918-ae6f-4976-b150-45cbf891b857"></a><h2 class="t2"><span class="cfett">18.1    </span><span class="cfett"> Die Merkmale einer WPF-Anwendung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp51261950-fcf6-4aaf-9015-1e875e9352f9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Am Anfang stellt sich zuerst die Frage, welche typischen Charakteristika eine WPF-Anwendung
+                                                      auszeichnen und wo die Vorteile im Vergleich zu den WinForms zu suchen sind. Die folgende
+                                                      Liste soll diese Fragen beantworten.
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die Benutzeroberfläche wird mit einer an XML angelehnten Sprache beschrieben: mit
+                                                         <span class="cfett">XAML</span> (<span class="cfett">eXtensible Application Markup Language</span>, gesprochen <span class="ckursiv">Xemmel</span>). Dadurch wird es möglich, die Beschreibung der Benutzeroberfläche vom Code strikt
+                                                         zu trennen &#8211; ähnlich wie es mit ASP.NET bereits seit Jahren mit dem sogenannten Code-Behind-Modell
+                                                         der Fall ist. XAML ist ausgesprochen mächtig und offenbart erstaunliche Fähigkeiten.
+                                                         Zusammen mit den in WPF eingeführten Konzepten werden Sie vergleichsweise wenig Programmcode
+                                                         schreiben, sondern sich mehr auf XAML konzentrieren. Die Folge wird sein, dass der
+                                                         XAML-Code sehr umfangreich werden kann, während der reine C#-Code sich nur noch auf
+                                                         wenige Operationen beschränkt.
+                                                      </li>
+                                                      <li class="pgp">WPF-Anwendungen bieten eine umfangreiche Unterstützung von 2D- und 3D-Grafiken. Dabei
+                                                         wird die schnelle Grafikausgabe durch DirectX genutzt. Das wiederum bedeutet, dass
+                                                         die Grafikkarte zur Berechnung der grafischen Elemente herangezogen wird und nicht
+                                                         die CPU. Das führt zu einer deutlich verbesserten Performance.
+                                                      </li>
+                                                      <li class="pgp">WPF-Anwendungen bieten vielfältige Datenbindungsmöglichkeiten für die Komponenten.
+                                                         Das ist mit Sicherheit eine der stärksten Seiten der WPF. Deshalb werden wir uns mit
+                                                         dieser Thematik noch intensiv auseinandersetzen. Andererseits muss man hinsichtlich
+                                                         der Datenbindungsmöglichkeiten auch einen der großen Nachteile der WPF anführen: Die
+                                                         Unterstützung von ADO.NET lässt doch zu wünschen übrig, während das Entity Framework
+                                                         sehr gut unterstützt wird.
+                                                      </li>
+                                                      <li class="pgp">Die WPF-Ausgabe ist vektorbasiert. Das bedeutet, dass auch beim Skalieren keine hässlichen
+                                                         Pixel zu sehen sind, sondern immer ein fließender Verlauf der grafischen Darstellung.
+                                                      </li>
+                                                      <li class="pgp">WPF-Anwendungen bieten vielfältige grafische Unterstützung, z. B. für die Darstellung
+                                                         der Steuerelemente, grafische Animationen, Unterstützung von Videos, Bildern und Audio-Dateien.
+                                                      </li>
+                                                      <li class="pgp">Grundsätzlich besteht die Möglichkeit, eine Benutzeroberfläche bereitzustellen, die
+                                                         entweder in einem herkömmlichen Fenster oder im Browser angezeigt wird.
+                                                      </li>
+                                                      <li class="pgp">Im Vergleich zur WinForm-API gibt es neue Layoutoptionen durch Verschachtelung der
+                                                         Elemente. Damit bietet die WPF im Vergleich zur WinForm-API deutlich bessere Gestaltungsmöglichkeiten.
+                                                      </li>
+                                                      <li class="pgp">Nicht unerwähnt bleiben sollte auch, dass die WPF ein altes Problem der WinForms gelöst
+                                                         hat. Früher war es kaum möglich, das Fenster automatisch an die Monitorauflösung (DPI)
+                                                         anzupassen. Das konnte dazu führen, dass Randbereiche von Dialogen möglicherweise
+                                                         nicht mehr angezeigt wurden und im Extremfall einige Bedienelemente der Oberfläche
+                                                         unerreichbar waren.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die grafischen Fähigkeiten von WPF stellen alles Vergangene deutlich in den Schatten.
+                                                      Wollen Sie runde Buttons? Kein Problem. Wollen Sie runde Fenster? Ebenfalls kein Problem.
+                                                      Neben den Vorteilen der grafischen Gestaltung können auch andere Gesichtspunkte wie
+                                                      die der umfangreichen Datenbindungsmöglichkeiten die Entscheidung für die WPF und
+                                                      somit gegen die WinForm-API beeinflussen. Darüber hinaus muss bei der Entscheidungsfindung
+                                                      auch noch berücksichtigt werden, dass Microsoft die WinForm-API nicht mehr weiterverfolgt
+                                                      und voll auf WPF setzt, die inzwischen bekanntermaßen auch schon in <span class="ckursiv">Silverlight</span> eingeflossen ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die strikte Trennung von Oberflächenbeschreibung und Code gestattet es, dass die Oberfläche
+                                                      von einem Grafiker gestaltet wird, während der Entwickler den Code dazu schreibt.
+                                                      Die Oberflächenbeschreibung erfolgt in XAML, während die Programmlogik in C#, VB.NET
+                                                      oder einer anderen .NET-Sprache codiert werden kann. Übrigens gibt es von Microsoft
+                                                      mit <span class="cfett">Expression Blend</span> ein Tool, das vornehmlich für Designer gedacht ist.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp51261950-fcf6-4aaf-9015-1e875e9352f9" name="dodtp51261950-fcf6-4aaf-9015-1e875e9352f9"></a><h3 class="t3"><span class="cfett">18.1.1    </span><span class="cfett"> Anwendungstypen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4b1998fc-d0cb-4527-9842-c148f19d8dd4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp87b67918-ae6f-4976-b150-45cbf891b857"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Visual Studio 2012 bietet Ihnen im Zusammenhang mit der WPF vier verschiedene Projektvorlagen
+                                                      an:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">WPF-Anwendung</li>
+                                                      <li class="pgp">WPF-Browseranwendung</li>
+                                                      <li class="pgp">WPF-Benutzersteuerelementbibliothek</li>
+                                                      <li class="pgp">Benutzerdefinierte WPF-Steuerelemente</li>
+                                                   </ul>
+                                                   <p><a href="bilder/18_01.png" rel="lightbox" title="WPF-Projektvorlagen"><img class="bild" border="1" src="bilderklein/klein18_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 18.1  </span>WPF-Projektvorlagen
+                                                   </p>
+                                                   <h4 class="t4"> WPF-Anwendung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Anwendungstyp entspricht im Wesentlichen einer herkömmlichen Windows-Anwendung.
+                                                      Die charakteristischen Eigenschaften gleichen denen einer WinForm-Anwendung. WPF-Anwendungen
+                                                      werden in einem eigenen Fenster ausgeführt und können mit dem MS Installer (MSI) oder
+                                                      ClickOnce installiert werden. Mit beiden Installationsvarianten werden wir uns im
+                                                      letzten Kapitel dieses Buches noch beschäftigen.
+                                                   </p>
+                                                   <h4 class="t4"> WPF-Browseranwendung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Gegensatz zu WPF-Anwendungen stellen WPF-Browseranwendungen keine eigenen Fenster
+                                                      bereit &#8211; die Ausgabe erfolgt im Browser. Außerdem werden WPF-Browseranwendungen nicht
+                                                      auf der lokalen Maschine installiert, was zur Folge hat, dass es nicht möglich ist,
+                                                      einen Verweis auf die Anwendung im Startmenü zu hinterlegen.
+                                                   </p>
+                                                   <h4 class="t4"> Benutzerdefinierte WPF-Steuerelementbibliothek (User Control)</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Visual Studio 2012 stellt zwei Projektvorlagen zum Entwickeln eigener Steuerelemente
+                                                      bereit. Die Variante mit einem User Control ist die einfachere von beiden. Etwas vereinfacht
+                                                      gesagt, wird dabei ein neues Steuerelement aus mehreren bestehenden Steuerelementen
+                                                      gebildet.
+                                                   </p>
+                                                   <h4 class="t4"> WPF-Benutzersteuerelementbibliothek (Custom Control)</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Aufwand, ein Custom Control zu entwickeln, ist deutlich größer, hat aber im Vergleich
+                                                      zu den User Controls auch Vorteile. Beispielsweise kann ein Custom Control durch Templates
+                                                      angepasst werden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp4b1998fc-d0cb-4527-9842-c148f19d8dd4" name="dodtp4b1998fc-d0cb-4527-9842-c148f19d8dd4"></a><h3 class="t3"><span class="cfett">18.1.2    </span><span class="cfett"> Eine WPF-Anwendung und deren Dateien</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4a69eaa9-2e88-4a90-aaee-5e14cede48be"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp7f005034-f6f3-4801-8e28-bcedbd3f372b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen nun ein erstes Projekt vom Typ <span class="ckursiv">WPF-Anwendung</span> starten und uns zuerst die Entwicklungsumgebung ansehen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im oberen Bereich des Editors wird das Fensterdesign angezeigt, der dazu gehörige
+                                                      XAML-Code erscheint darunter. Hier gestalten Sie die Oberfläche des Fensters, indem
+                                                      Sie Steuerelemente aus dem Werkzeugkasten (auch als Toolbox tituliert), der standardmäßig
+                                                      am linken Rand angezeigt wird, in den Designer ziehen oder alternativ das gewünschte
+                                                      Steuerelement direkt in den XAML-Code schreiben. Beide Teilbereiche, der Designer
+                                                      und der XAML-Code, synchronisieren sich bei einer Änderung gegenseitig.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Werfen Sie einen Blick in den Projektmappen-Explorer (siehe <a class="id" id=""></a>). Hier finden Sie unter anderem mit <span class="ckursiv">App.xaml</span>, <span class="ckursiv">App.xaml.cs</span>, <span class="ckursiv">MainWindow.xaml</span> und <span class="ckursiv">MainWindow.xaml.cs</span> vier Dateien, die wir uns nun genauer ansehen.
+                                                   </p>
+                                                   <p><a href="bilder/18_02.png" rel="lightbox" title="Die Entwicklungsumgebung einer WPF-Anwendung"><img class="bild" border="1" src="bilderklein/klein18_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 18.2  </span><a xmlns="http://www.w3.org/1999/xhtml" class="id" id="Rxx29856"></a>Die Entwicklungsumgebung einer WPF-Anwendung
+                                                   </p>
+                                                   <h4 class="t4"> Die Datei »MainWindow.xaml«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In dieser Datei steckt der XAML-Code des Fensters, den Sie im unteren Bereich des
+                                                      Code-Editors sehen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window x:Class="WpfApplication1.MainWindow"<br xmlns="">        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"<br xmlns="">        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"<br xmlns="">        Title="MainWindow" Height="350" Width="525"&gt;<br xmlns="">  &lt;Grid&gt;<br xmlns="">  &lt;/Grid&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.1  </span>Der standardmäßig erzeugte XAML-Code eines Fensters
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der ersten Zeile wird mit <span class="clisting">x:Class="WpfApplication1.MainWindow</span> der Bezug zum C#-Code hergestellt. Danach sind mit <span class="clisting">xmlns</span> zwei Namespaces angegeben, denen mit <span class="clisting">Title</span> die Beschriftung der Titelleiste folgt. <span class="clisting">Height</span> und <span class="clisting">Width</span> geben die Ausgangsgröße des Fensters an.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Steuerelemente einer WPF-Anwendung positionieren sich innerhalb eines Layout-Containers.
+                                                      Mit <span class="clisting">Grid</span> wird sofort ein Vorschlag gemacht, den Sie aber nach eigenem Ermessen durch einen
+                                                      anderen Container ersetzen können. Die Container werden in Kapitel 19 besprochen.
+                                                   </p>
+                                                   <h4 class="t4"> Die Datei »MainWindow.xaml.cs«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">MainWindow.xaml</span> ist die Datei, in der die Oberfläche des Fensters beschrieben wird. Bei <span class="ckursiv">MainWindow.xaml.cs</span> handelt es sich um die Datei, in der Sie den Programmcode schreiben. Diese Datei
+                                                      wird auch als <span class="cfett">Code-Behind-Datei</span> bezeichnet. Wie üblich werden Sie hier die Ereignishandler implementieren, Eigenschaften
+                                                      und Felder beschreiben usw. Die Datei weist nicht viel Inhalt auf. Einzig und allein
+                                                      der parameterlose Standardkonstruktor, in dem die Methode <span class="clisting">InitializeComponent</span> aufgerufen wird, ist dort zu finden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System;<br xmlns="">[...]<br></br>namespace WpfApplication1<br xmlns="">{<br xmlns="">  public partial class MainWindow : Window<br xmlns="">  {<br xmlns="">    public MainWindow()<br xmlns="">    {<br xmlns="">      InitializeComponent();<br xmlns="">    }<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.2  </span>Der Inhalt der Datei »MainWindow.xaml.cs«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">InitializeComponent</span> lädt die für das Fenster benötigten Komponenten, die in der Datei <span class="ckursiv">MainWindow.xaml</span> definiert sind, indem die statische Methode <span class="clisting">LoadComponent</span> der Klasse <span class="clisting">Application</span> aufgerufen wird.
+                                                   </p>
+                                                   <h4 class="t4"> Die Datei »App.xaml«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch zu dieser Datei gehört eine Code-Behind-Datei, die mit dem Attribut <span class="clisting">x:Class</span> angegeben wird. Mit <span class="clisting">xmlns</span> werden hier zwei Namespaces angegeben, und das Attribut <span class="clisting">StartupUri</span><span class="clisting"><a class="indexterm" id="dodtp9d432b20-6e68-4fa2-9e48-6649cc84a824"></a></span> gibt an, mit welchem Fenster die Anwendung gestartet werden soll.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Application x:Class="WpfApplication1.App"<br xmlns="">  xmlns=http://schemas.microsoft.com/winfx/2006/xaml/presentation<br xmlns="">  xmlns:x=http://schemas.microsoft.com/winfx/2006/xaml<br xmlns="">  StartupUri="MainWindow.xaml"&gt;<br xmlns="">  &lt;Application.Resources&gt;<br xmlns="">  &lt;/Application.Resources&gt;<br xmlns="">&lt;/Application&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.3  </span>Der XAML-Code in der Datei »App.xaml«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Bereich zwischen dem einleitenden Tag <span class="clisting">&lt;Application.Resources&gt;</span> und dem ausleitenden <span class="clisting">&lt;/Application.Resources&gt;</span> können Sie anwendungsweit bekannte Ressourcen eintragen.
+                                                   </p>
+                                                   <h4 class="t4"> Die Datei »App.xaml.cs«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hierbei handelt es sich um die Code-Behind-Datei zu <span class="ckursiv">App.xaml</span>. Sie definiert die Klasse <span class="clisting">App</span>, die von <span class="clisting">Application</span> abgeleitet ist, und weist noch keinen Code auf. Die Klasse <span class="clisting">App</span> veröffentlicht Eigenschaften und löst Ereignisse aus, auf die Sie hier reagieren
+                                                      können. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System;<br xmlns="">[...]<br xmlns="">namespace WpfApplication1<br xmlns="">{<br xmlns="">  public partial class App : Application<br xmlns="">  {<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.4  </span>Der Code der Datei »App.xaml.cs«
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp4a69eaa9-2e88-4a90-aaee-5e14cede48be" name="dodtp4a69eaa9-2e88-4a90-aaee-5e14cede48be"></a><h3 class="t3"><span class="cfett">18.1.3    </span><span class="cfett"> Ein erstes WPF-Beispiel</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpde916391-9b3b-4570-a912-3f023eef8348"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcfef44cb-634a-4eab-965c-a0056dbebfe3"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein paar allgemeine Dinge rund um WPF-Anwendungen haben Sie nun erfahren. Wahrscheinlich
+                                                      sind Sie auch schon gespannt, wie die Oberfläche einer WPF-Anwendung tatsächlich aussehen
+                                                      kann. Um Ihnen ein Gefühl dafür zu vermitteln, sehen Sie sich bitte die folgende Abbildung
+                                                      18.3 einer &#8211; zugegebenermaßen &#8211; sehr einfachen Oberfläche an. Wir werden ein sehr
+                                                      ähnliches Beispiel später in diesem Buch wiederfinden. An dieser Stelle soll es nicht
+                                                      darauf ankommen, irgendwelche Details zu beschreiben, vielmehr kommt es darauf an,
+                                                      einen ersten Eindruck zu bekommen.
+                                                   </p>
+                                                   <p><a href="bilder/18_03.png" rel="lightbox" title="Eine erste, einfache WPF-Oberfläche"><img class="bild" border="1" src="bilderklein/klein18_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 18.3  </span>Eine erste, einfache WPF-Oberfläche
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Benutzeroberfläche (auch als GUI, für <span class="ckursiv">Graphical User Interface</span> bezeichnet) liegt der folgende XAML-Code zugrunde:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window x:Class="SimpleBinding.MainWindow"<br xmlns="">        xmlns=http://schemas.microsoft.com/winfx/2006/xaml/presentation<br xmlns="">        xmlns:x=http://schemas.microsoft.com/winfx/2006/xaml<br xmlns="">        Title="Einfache GUI" Height="230" Width="350"&gt;<br xmlns="">  &lt;Window.Background&gt;<br xmlns="">    &lt;LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5"&gt;<br xmlns="">      &lt;GradientStop Color="#FF606079" Offset="0" /&gt;<br xmlns="">      &lt;GradientStop Color="WhiteSmoke" Offset="1" /&gt;<br xmlns="">    &lt;/LinearGradientBrush&gt;<br xmlns="">  &lt;/Window.Background&gt;<br xmlns="">  &lt;Window.Resources&gt;<br xmlns="">    &lt;Style x:Key="style1"&gt;<br xmlns="">      &lt;Setter Property="Control.Margin" Value="10, 0, 20, 0" /&gt;<br xmlns="">      &lt;Setter Property="Control.Foreground" Value="White" /&gt;<br xmlns="">      &lt;Setter Property="Control.VerticalAlignment" Value="Center" /&gt;<br xmlns="">    &lt;/Style&gt;<br xmlns="">  &lt;/Window.Resources&gt;<br xmlns="">  &lt;Grid&gt;<br xmlns="">    &lt;Grid.RowDefinitions&gt;<br xmlns="">      &lt;RowDefinition Height="Auto" /&gt;<br xmlns="">      &lt;RowDefinition Height="Auto" /&gt;<br xmlns="">      &lt;RowDefinition Height="Auto" /&gt;<br xmlns="">      &lt;RowDefinition Height="Auto" /&gt;<br xmlns="">      &lt;RowDefinition Height="Auto" /&gt;<br xmlns="">    &lt;/Grid.RowDefinitions&gt;<br xmlns="">    &lt;Grid.ColumnDefinitions&gt;<br xmlns="">      &lt;ColumnDefinition Width="Auto" /&gt;<br xmlns="">      &lt;ColumnDefinition /&gt;<br xmlns="">    &lt;/Grid.ColumnDefinitions&gt;<br xmlns="">    &lt;StackPanel Background="Black" Grid.ColumnSpan="2"&gt;<br xmlns="">      &lt;Label Foreground="White" FontSize="16" <br xmlns="">             HorizontalAlignment="Center"&gt;Personendaten&lt;/Label&gt;<br xmlns="">    &lt;/StackPanel&gt;<br xmlns="">    &lt;Label Style="{StaticResource style1}" Grid.Row="1" &gt;Name:&lt;/Label&gt;<br xmlns="">    &lt;TextBox  Grid.Column="1" Grid.Row="1" <br xmlns="">              Text="{Binding Path=Name}" Margin="10"  /&gt;<br xmlns="">    &lt;Label Style="{StaticResource style1}" Grid.Row="2"&gt;Alter:&lt;/Label&gt;<br xmlns="">    &lt;TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Path=Alter}" <br xmlns="">             Margin="10" /&gt;<br xmlns="">    &lt;Label Style="{StaticResource style1}" Grid.Row="3"&gt;Adresse:&lt;/Label&gt;<br xmlns="">    &lt;TextBox Grid.Column="1" Grid.Row="3" <br xmlns="">             Text="{Binding Path=Adresse}" Margin="10"  /&gt;<br xmlns="">    &lt;Button Grid.Row="4" Grid.Column="1" Width="120" <br xmlns="">            HorizontalAlignment="Right" <br xmlns="">            Margin="0, 0, 10, 0"&gt;Bestätigen&lt;/Button&gt;<br xmlns="">  &lt;/Grid&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.5  </span>Der XAML-Code des Fensters aus Abbildung 18.3
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen Sie uns einen kleinen Blick auf den XAML-Code werfen, ohne dabei die Details
+                                                      genau zu beschreiben. Diese werden Sie im Laufe der folgenden Kapitel erfahren. Zudem
+                                                      sei auch angemerkt, dass dieses einfache Beispiel nicht alle Möglichkeiten der WPF
+                                                      beinhalten kann oder soll. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eingerahmt wird der gesamte XAML-Code durch das Element Window. In diesem ist alles
+                                                      im Zusammenhang mit der Darstellung des Fensters (und auch noch mehr) enthalten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Window-Element finden Sie den durch <span class="clisting">&lt;Grid&gt;...&lt;/Grid&gt;</span> eingerahmten Bereich, der die Oberfläche mit Ihren Steuerelementen enthält. Ein <span class="clisting">Window</span> kann nur exakt ein solches als Container-Control bezeichnetes Steuerelement enthalten.
+                                                      Container-Controls teilen den sogenannten Clientbereich des Fensters auf, arrangieren
+                                                      damit gewissermaßen die enthaltenen Steuerelemente. <span class="clisting">StackPanel</span>, <span class="clisting">Canvas</span> oder auch <span class="clisting">DockPanel</span> sind ebenfalls typische Vertreter solcher Container-Controls. Einige <span class="clisting">Label</span>-Controls, <span class="clisting">TextBox</span>-Controls und ein <span class="clisting">Button</span> bilden die Gesamtheit der Steuerelemente in diesem Fenster.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Sektion <span class="clisting">&lt;Window.BackGround&gt;...&lt;/Window.BackGround</span> wird der Hintergrund des Fensters festgelegt. Hier sehen Sie, dass auch im Grunde
+                                                      genommen einfache Eigenschaften (hier <span class="clisting">BackGround</span>) durch Verschachtelung zu interessanten Effekten führen können. Diese Elementverschachtelung
+                                                      beschränkt sich jedoch nicht nur auf grafische Komponenten. Auch Steuerelemente lassen
+                                                      sich in gleicher Weise verschachteln. Mit dieser Technik können Sie letztendlich Steuerelemente
+                                                      nach eigenen Vorstellungen aufbauen und ihnen eine eigene Charakteristik geben. Das
+                                                      ist übrigens mit ein Grund, weshalb die WPF im Vergleich zu der herkömmlichen WinForm-API
+                                                      mit verhältnismäßig wenig Steuerelementen auskommt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein weiterer wichtiger Abschnitt innerhalb des Fensters wird durch <span class="clisting">&lt;Window.Resources&gt;...&lt;/Window.Resources&gt;</span> beschrieben. Bei vielen WPF-Fenstern ist das der Bereich, der den meisten XAML-Code
+                                                      enthält. In unserem kleinen Beispiel wird hier nur ein sogenannter <span class="clisting">Style</span> beschrieben, der von einigen <span class="clisting">Label</span>-Steuerelementen benutzt wird, um die im <span class="clisting">Style</span> aufgeführten Eigenschaftseinstellungen gemeinsam zu nutzen. Das Prinzip erinnert
+                                                      doch sehr an die <span class="ckursiv">Cascading Style Sheets</span> (CCS) in HTML-Seiten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der XAML-Code dient aber nicht nur dazu, eine neue Art der Oberflächenbeschreibung
+                                                      zu bieten. Die Fähigkeiten gehen noch deutlich weiter. Verhaltensweisen und Techniken,
+                                                      die früher nur durch Programmcode ausgedrückt werden konnten, lassen sich mit XAML
+                                                      umsetzen. Das führt zwangsläufig dazu, dass der Code der Operationen, die im Hintergrund
+                                                      ablaufen, deutlich reduziert werden kann. Andererseits können Sie selbstverständlich
+                                                      alles das, was mit XAML ausgedrückt wird, auch mit C#-Code erreichen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wie Sie bereits an diesem einfachen Beispiel erkennen können, ist der XAML-Code relativ
+                                                         umfangreich. Ich werde daher bei vielen der folgenden Beispielprogramme nicht alle
+                                                         Einzelheiten des XAML-Codes im Detail angeben, sondern mich zumeist auf die wesentlichen
+                                                         Merkmale beschränken.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpde916391-9b3b-4570-a912-3f023eef8348" name="dodtpde916391-9b3b-4570-a912-3f023eef8348"></a><h3 class="t3"><span class="cfett">18.1.4    </span><span class="cfett"> Wichtige WPF-Features</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp489ec8bb-dc5c-4f76-afe7-87a04826bc48"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4a69eaa9-2e88-4a90-aaee-5e14cede48be"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dass die WPF-Oberflächen anders gestaltet werden als beispielsweise die GUI einer
+                                                      WinForm-Anwendung, konnten Sie im letzten Beispiel sehen. Die WPF wartet noch mit
+                                                      zahlreichen Features auf, die bisher noch keine Erwähnung fanden. Alle möchte und
+                                                      kann ich Ihnen an dieser Stelle noch nicht aufzählen, aber auf zwei muss ich an dieser
+                                                      Stelle bereits eingehen, da sie erst in einem späteren Kapitel ausführlich erörtert
+                                                      werden, die Begriffe aber bereits im Vorfeld immer wieder erwähnt werden. Dabei handelt
+                                                      es sich um die <span class="cfett">Dependency Properties</span> und die <span class="cfett">Routed Events</span>.
+                                                   </p>
+                                                   <h4 class="t4"> Dependency Properties</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Konzept der Eigenschaften haben wir in Kapitel 3 dieses Buches behandelt: Eine
+                                                      private deklarierte Variable innerhalb einer Klasse wird durch eine Property, die
+                                                      einen <span class="clisting">get</span>- und einen <span class="clisting">set</span>-Zweig enthält, veröffentlicht. Nennen wir solche Eigenschaften im weiteren Verlauf
+                                                      einfach CLR-Eigenschaften. Jedes Objekt besitzt einen Pool von Eigenschaften, bei
+                                                      gleichen Typen ist auch deren Anzahl gleich.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die WPF führt einen ganz anderen Eigenschaftstypus ein: die Dependency Properties,
+                                                      die im Deutschen auch als Abhängigkeitseigenschaften bezeichnet werden. Das Konzept
+                                                      ist ein ganz anderes. Alle Eigenschaften eines bestimmten Typs liegen in einem gemeinsam
+                                                      nutzbaren Container &#8211; zumindest solange die Dependency Property nicht von einem definierten
+                                                      Standardwert abweicht. Wird eine Abhängigkeitseigenschaft eines Objekts aber individuell
+                                                      für das Objekt festgelegt, wird die Eigenschaft zu einer objektspezifischen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dependency Properties sind mit zahlreichen eigenen Verhaltensmerkmalen ausgestattet.
+                                                      Dazu zählt beispielsweise auch, dass die Bindung an ein anderes Element voraussetzt,
+                                                      dass die bindende Eigenschaft eine Dependency Property ist. Sie finden ein solches
+                                                      Beispiel übrigens in Listing 18.5. Hier ist es unter anderem der Ausdruck <span class="clisting">Text="{Binding Path=Name}"</span> eines der <span class="clisting">Label</span>-Steuerelemente. Die Eigenschaft Text des Labels wird an ein Objekt gebunden und hier
+                                                      wiederum an dessen Eigenschaft <span class="clisting">Name</span> (das Objekt ist im XAML-Code des Listings nicht beschrieben). Da die <span class="clisting">Text</span>-Eigenschaft gebunden wird, muss sie als Abhängigkeitseigenschaft implementiert sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das sollte in diesem Moment als Information genügen. In Kapitel 26 werde ich Ihnen
+                                                      zeigen, wie Dependency Properties codiert werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Zusammenhang mit den Dependency Properties muss noch eine verwandte Eigenschaftsgruppe
+                                                      erwähnt werden: die Attached Properties (im Deutschen auch als angehängte Eigenschaften
+                                                      bezeichnet). Als angehängte Eigenschaften werden solche bezeichnet, die ein Steuerelement
+                                                      zwar hat, die aber nicht im Steuerelement selbst definiert werden, sondern in einem
+                                                      hierarchisch übergeordneten. Auch dazu findet sich in Listing 18.5 ein Beispiel. Es
+                                                      handelt sich um alle Angaben von <span class="clisting">Grid.Column</span> und <span class="clisting">Grid.Row</span>. Mit diesen Eigenschaften wird die Position des betreffenden Steuerelements im Container-Control
+                                                      beschrieben, das durch ein Grid-Element beschrieben wird. Das <span class="clisting">Grid</span> stattet mit den beiden genannten Eigenschaften alle ihm untergeordneten Controls
+                                                      aus. Würden die betroffenen Steuerelemente in einem anderen Container liegen, gäbe
+                                                      es diese beiden Eigenschaften nicht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch angehängte Eigenschaften werden in Kapitel 26 erläutert.</p>
+                                                   <h4 class="t4"> Routed Events</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Listing 18.5 ist sehr schön zu erkennen, dass XAML es ermöglicht, verschiedene
+                                                      Elemente ineinander zu verschachteln. Dieses Konzept kann in Konsequenz dazu führen,
+                                                      dass innerhalb eines <span class="clisting">Button</span>-Elements ein <span class="clisting">Label</span> positioniert ist, innerhalb dessen wiederum ein <span class="clisting">Image</span>-Element zu finden ist. Berücksichtigt man dazu noch, dass der <span class="clisting">Button</span> innerhalb einer <span class="clisting">Grid</span>-Zelle positioniert ist, die ihrerseits dem <span class="clisting">Window</span>-Element untergeordnet ist, ergibt sich die folgende Elementhierarchie:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window&gt;<br xmlns="">  &lt;Grid&gt;<br xmlns="">    &lt;Button ...&gt;  <br xmlns="">      &lt;Label ...&gt;<br xmlns="">        &lt;Image ... /&gt;<br xmlns="">      &lt;/Label&gt;<br xmlns="">    &lt;/Button&gt;<br xmlns="">  &lt;/Grid&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 18.6  </span>Verschachtelung verschiedener WPF-Elemente
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir nun an, der Anwender würde auf das <span class="clisting">Image</span>-Element klicken. Betrachten wir die Situation ganz nüchtern, müssen wir uns die Frage
+                                                      stellen, ob mit der Aktion tatsächlich das <span class="clisting">Image</span> angeklickt werden sollte oder der entsprechende <span class="clisting">Button</span>. Mit den herkömmlichen Techniken der Events ist diese Frage einfach zu beantworten,
+                                                      denn ohne besondere Maßnahmen kann nur das Image das Ereignis behandeln. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Genau an dieser Stelle kommen die Routed Events ins Spiel. Routed Events leiten die
+                                                      Ereignisse an übergeordnete Elemente weiter. Dabei kommt es zu zwei Ereignisketten:
+                                                      Zuerst werden die getunnelten Events (engl.: <span class="cfett">Tunneled Events</span>) ausgelöst, die beim <span class="clisting">Window</span> starten und über das <span class="clisting">Grid</span>, den <span class="clisting">Button</span> und das <span class="clisting">Label</span> am Ende beim <span class="clisting">Image</span> landen. Anschließend werden die Ereignisse zurückgebubbelt (engl.: <span class="cfett">Bubbled Events</span>). Diesmal geht die Ereigniskette beim <span class="clisting">Image</span> los und setzt sich über das <span class="clisting">Label</span>, den <span class="clisting">Button</span>, das <span class="clisting">Grid</span> bis zurück zum Ausgangspunkt <span class="clisting">Window</span> fort. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch den Routed Events wird in diesem Buch ein eigenes Kapitel gewidmet, in dem Sie
+                                                      mehr dazu erfahren (Kapitel 27).
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nicht alle Ereignisse in der WPF werden als Routed Events definiert. Die Gruppe der
+                                                      Ereignisse, die nur von dem Element, bei dem das Ereignis aufgetreten ist, verarbeitet
+                                                      werden, werden im Kontext der WPF als <span class="cfett">direkte Events</span> bezeichnet. Diese Ereignisse unterscheiden sich nicht von den sonst üblichen im .NET
+                                                      Framework.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Streng genommen gehören auch direkte Events zu den Routed Events, obwohl sie nicht
+                                                         geroutet werden. Dieser scheinbare Widerspruch erklärt sich aber im Laufe von Kapitel
+                                                         27.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp489ec8bb-dc5c-4f76-afe7-87a04826bc48" name="dodtp489ec8bb-dc5c-4f76-afe7-87a04826bc48"></a><h3 class="t3"><span class="cfett">18.1.5    </span><span class="cfett"> Der logische und der visuelle Elementbaum</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb79c351b-0852-4da7-a2bc-000f0f37cbaf"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp1f8811e9-f968-4482-a0e4-a0537e399f57"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfd0cb483-a24b-4c1d-bc18-4003ea51409b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erstellen Sie eine Benutzeroberfläche mit der WPF, erzeugen Sie eine Hierarchie ineinander
+                                                      verschachtelter Elemente. Dabei gibt es mit <span class="clisting">Window</span> immer ein Wurzelelement, in dem die anderen Elemente enthalten sind. Jedes Element
+                                                      kann seinerseits wieder praktisch unbegrenzt untergeordnete Elemente enthalten. Auf
+                                                      diese Weise bildet sich eine durchaus tief gehende Elementstruktur, die als <span class="cfett">Elementbaum</span><span class="cfett"><a class="indexterm" id="dodtp6020264f-ed1c-4dbf-b037-fe241f67803a"></a></span> bezeichnet wird. Aufgrund der Architektur der WPF wird zwischen zwei Baumstrukturen
+                                                      unterschieden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">logischer Elementbaum</li>
+                                                      <li class="pgp">visueller Elementbaum</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Verdeutlichung der Unterschiede zwischen den genannten beiden Elementbäumen soll
+                                                      der folgende XAML-Code dienen, der innerhalb eines <span class="clisting">Grid</span>-Controls ein <span class="clisting">Label</span>- und ein <span class="clisting">Button</span>-Steuerelement beschreibt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window x:Class="ElementTree.MainWindow" ...&gt;<br xmlns="">  &lt;Stackpanel&gt;<br xmlns="">    &lt;Label Content="Label" /&gt;<br xmlns="">    &lt;Button Content="Button" /&gt;<br xmlns="">  &lt;/Stackpanel&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="cfett">logische Elementbaum</span> wird in diesem XAML-Beispiel durch die Elemente <span class="clisting">MainWindow</span>, <span class="clisting">StackPanel</span>, <span class="clisting">Label</span> und <span class="clisting">Button</span> gebildet. Er enthält demnach alle Elemente, die in XAML bzw. im Code definiert sind.
+                                                      Grundsätzlich gehören zu einem logischen Baum weder Füllmuster noch Animationen. Jedes
+                                                      WPF-Steuerelement ist selbst durch eine mehr oder weniger große Anzahl visueller Einzelkomponenten
+                                                      aufgebaut. Zum Beispiel besitzt eine Schaltfläche kein fixes Layout, sondern setzt
+                                                      sich aus den Einzelkomponenten <span class="clisting">ButtonChrome</span> und <span class="clisting">ContentPresenter</span> zusammen. Alle Einzelkomponenten, die als Basis einer der beiden Klassen
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">System.Windows.Media.Visual</span> oder
+                                                      </li>
+                                                      <li class="pgp"><span class="clisting">System.Windows.Media.Media3D.Visual3D</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">angehören, bilden zusammen den <span class="cfett">visuellen Elementbaum</span>. Andere Elemente, beispielsweise <span class="clisting">String</span>-Objekte, gehören nicht zum visuellen Elementbaum, weil sie kein eigenes Renderverhalten
+                                                      benötigen. Zu den Elementen des visuellen Elementbaums hingegen sind die Klassen <span class="clisting">Button</span> und <span class="clisting">Label</span> zu zählen. In Abbildung 18.4 ist die Zugehörigkeit der Einzelkomponenten zu den verschiedenen
+                                                      Elementbäumen dargestellt. Die Ausgangsbasis ist hierbei der am Anfang dieses Abschnitts
+                                                      gezeigte XAML-Code.
+                                                   </p>
+                                                   <p><a href="bilder/18_04.png" rel="lightbox" title="Logischer und visueller Elementbaum"><img class="bild" border="1" src="bilderklein/klein18_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 18.4  </span>Logischer und visueller Elementbaum
+                                                   </p>
+                                                   <h4 class="t4"> Warum wird zwischen den Elementbäumen unterschieden?</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">WPF-Steuerelemente haben kein eigenes, fixes Layout. Beim Rendern wird der visuelle
+                                                      Elementbaum jeder einzelnen Komponente durchlaufen. Beispielsweise ist der Rahmen
+                                                      einer Schaltfläche zwar Bestandteil der Schaltfläche, kann aber jederzeit durch ein
+                                                      anderes Element ersetzt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Aus der letzten Aussage heraus ergeben sich vielfältige, individuelle Gestaltungsmöglichkeiten.</p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Infolgedessen kommt es aber auch zu einem Problem hinsichtlich der Auslösung von Ereignissen.
+                                                      Da der Rahmen einer Schaltfläche praktisch beliebig beschrieben werden kann, muss
+                                                      der <span class="clisting">Button</span> in der Lage sein, zu erkennen, ob er innerhalb oder außerhalb des Rahmens angeklickt
+                                                      wird. Dazu ist ein Ansatz notwendig, der sich am tatsächlichen Layout orientiert.
+                                                      In der WPF werden auch aus diesem Grund die <span class="ckursiv">Routed Events</span> beschrieben, die sich nicht am logischen, sondern am visuellen Elementbaum orientieren.
+                                                      
+                                                   </p>
+                                                   <h4 class="t4"> Elementbäume mit Code ermitteln</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können den logischen und den virtuellen Elementbaum auch mit Code ermitteln. Dazu
+                                                      stellt Ihnen die WPF mit den beiden Klassen
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">System.Windows.LogicalTreeHelper</span><span class="clisting"><a class="indexterm" id="dodtpe55765ca-3f16-4907-8497-b0e8d346cf94"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">System.Window.Media.VisualTreeHelper</span><span class="clisting"><a class="indexterm" id="dodtp586e336f-bb09-4040-855f-c1c0b5ccf86e"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">die benötigten Hilfsmittel zur Verfügung.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Ermittlung der logischen Baumstruktur dient die statische Methode <span class="clisting">GetChildren</span> der Klasse <span class="clisting">LogicalTreeHelper</span>. Die Methode erwartet als Argument ein Objekt vom Typ <span class="clisting">DependencyObject</span>, d. h., das Objekt muss von dieser Klasse abgeleitet sein. Sie übergeben der Methode
+                                                      das Objekt, dessen direkt untergeordnete Elemente Sie ermitteln möchten. Der Rückgabewert
+                                                      ist eine Liste, die in einer Schleife durchlaufen werden kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vom Ansatz her sehr ähnlich ist das Coding der Klasse <span class="clisting">VisualTreeHelper</span>. Zuerst wird mit der Methode <span class="clisting">GetChildrenCount</span><span class="clisting"><a class="indexterm" id="dodtp47846658-2197-43cf-b111-e9564218b660"></a></span> ermittelt, aus wie vielen untergeordneten Elementen sich eine Komponente zusammensetzt.
+                                                      Den Rückgabewert können Sie in einer <span class="clisting">for</span>-Schleife verwenden. Mit der Methode <span class="clisting">GetChild</span> können Sie auf ein untergeordnetes Element direkt zugreifen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Beispielprogramm soll zeigen, wie Sie beide Klassen und ihre Methoden
+                                                      einsetzen. Dazu sind mit <span class="clisting">GetLogicalTree</span><span class="clisting"><a class="indexterm" id="dodtp435e3d3b-0e60-41d3-adfb-9cd3010b9703"></a></span> und <span class="clisting">GetVisualTree</span><span class="clisting"><a class="indexterm" id="dodtpbf4437eb-d46c-40dd-a0e6-bacf7d90bf7a"></a></span> zwei Methoden codiert, die für das Auswerten des logischen bzw. virtuellen Elementbaums
+                                                      verantwortlich zeichnen. Beide schreiben die spezifische Baumstruktur mit <span class="clisting">Debug.WriteLine</span>-Anweisungen so in das Ausgabefenster, dass die Hierarchie durch Einrückungen zu erkennen
+                                                      ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 18\ElementBaeume</span><br></br><span class="clistingfett">public partial class MainWindow</span> : Window {<br></br>  <span class="clistingfett">public MainWindow()</span> {<br xmlns="">    InitializeComponent();<br xmlns="">    Debug.WriteLine("");<br xmlns="">    GetLogicalTree(0, this);<br xmlns="">  }<br></br>  <span class="clistingfett">protected override void OnContentRendered(EventArgs e) </span>{<br xmlns="">    base.OnContentRendered(e);<br xmlns="">    Debug.WriteLine("");<br xmlns="">    GetVisualTree(0, this);<br xmlns="">  }<br></br>  <span class="clistingfett">void GetLogicalTree(int depth, object obj) </span>{<br xmlns="">    Debug.WriteLine(new string('-', depth) + obj);<br xmlns="">    if (obj is DependencyObject == false) return;<br xmlns="">      foreach (object child in LogicalTreeHelper.GetChildren(<br xmlns="">                                      obj as DependencyObject))<br xmlns="">    GetLogicalTree(depth + 4, child);<br xmlns="">  }<br></br>  <span class="clistingfett">void GetVisualTree(int depth, DependencyObject obj) </span>{<br xmlns="">    Debug.WriteLine(new string('-', depth) + obj.ToString());<br xmlns="">    for (int i = 0; i &lt; VisualTreeHelper.GetChildrenCount(obj); i++)<br xmlns="">      GetVisualTree(depth + 4, VisualTreeHelper.GetChild(obj, i));<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der logische Elementbaum kann gezeichnet werden, sobald im Konstruktor das <span class="clisting">Window</span> mit der Methode <span class="clisting">InitializeComponent</span> initialisiert worden ist. Der virtuelle Elementbaum kann erst abgefragt werden, wenn
+                                                      das Fenster gerendert worden ist. Das ist der Fall bei der Auslösung des Ereignisses
+                                                      <span class="clisting">ContentRendered</span><span class="clisting"><a class="indexterm" id="dodtp55664f3a-e7e9-448a-8828-a6e415b7ffcb"></a></span>. Um das Ereignis um die Ausgabe im Ausgabefenster zu erweitern, wird die Methode
+                                                      <span class="clisting">OnContentRendered</span><span class="clisting"><a class="indexterm" id="dodtp30d891a8-f1df-4596-a3a9-561599970e57"></a></span> überschrieben. Sie können den Programmcode in jeder WPF-Anwendung einsetzen, um die
+                                                      Struktur im Fenster <span class="cscreenelement">Ausgabe</span> zu analysieren. 
+                                                   </p>
+                                                   <p><a href="bilder/18_05.png" rel="lightbox" title="Ausgabe des logischen und visuellen Elementbaums"><img class="bild" border="1" src="bilderklein/klein18_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 18.5  </span>Ausgabe des logischen und visuellen Elementbaums
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs18_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="18  Einführung in die WPF und XAML"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_17_009.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_18_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

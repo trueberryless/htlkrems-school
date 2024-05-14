@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="f.schneider"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-12-10 06:45:55 "/>
+        <attribute name="created" value="Zi5zY2huZWlkZXI7Q09XLU8tMTg7MjAxOS0xMi0xMDswOTo1Nzo1NyBBTTsyODgy"/>
+        <attribute name="edited" value="Zi5zY2huZWlkZXI7Q09XLU8tMTg7MjAxOS0xMi0xMDsxMToxOTowMSBBTTsxOzI5NzA="/>
+        <attribute name="edited" value="RmVsaXggU2NobmVpZGVyO1NVUkZBQ0UtRkVMSVg7MjAxOS0xMi0xMDsiMDY6NDU6NTUgIjsxOzM2OTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="z, i, j, r, zz, x" type="Integer" array="False" size=""/>
+            <declare name="buchstabe, alphabet, gro&#223;, sonder, zahl" type="String" array="False" size=""/>
+            <assign variable="alphabet" expression="&quot;abcdefghijklmnopqrstuvwxyz&quot;"/>
+            <assign variable="gro&#223;" expression="&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;"/>
+            <assign variable="sonder" expression="&quot;!&#167;$%&amp;/()=?*-+#_&quot;"/>
+            <assign variable="zahl" expression="&quot;0123456789&quot;"/>
+            <for variable="j" start="1" end="6" direction="inc" step="1">
+                <for variable="i" start="1" end="8" direction="inc" step="1">
+                    <assign variable="x" expression="Random(100)"/>
+                    <if expression="x &lt;= 40">
+                        <then>
+                            <comment text="klein"/>
+                            <assign variable="r" expression="Random(Len(alphabet))"/>
+                            <assign variable="buchstabe" expression="Char(alphabet,r)"/>
+                            <output expression="buchstabe" newline="False"/>
+                        </then>
+                        <else>
+                            <if expression="x &lt; 60">
+                                <then>
+                                    <comment text="gro&#223;"/>
+                                    <assign variable="r" expression="Random(Len(gro&#223;))"/>
+                                    <assign variable="buchstabe" expression="Char(gro&#223;,r)"/>
+                                    <output expression="buchstabe" newline="False"/>
+                                </then>
+                                <else>
+                                    <if expression="x &lt; 80">
+                                        <then>
+                                            <assign variable="r" expression="Random(Len(sonder))"/>
+                                            <assign variable="buchstabe" expression="Char(sonder,r)"/>
+                                            <output expression="buchstabe" newline="False"/>
+                                            <comment text="sonder"/>
+                                        </then>
+                                        <else>
+                                            <comment text="zahl"/>
+                                            <assign variable="r" expression="Random(Len(zahl))"/>
+                                            <assign variable="buchstabe" expression="Char(zahl,r)"/>
+                                            <output expression="buchstabe" newline="False"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </for>
+                <output expression="&quot;&quot;" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

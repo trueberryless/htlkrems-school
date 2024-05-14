@@ -1,0 +1,732 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 33  ADO.NET &#8211; Der SqlDataAdapter">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 33  ADO.NET &#8211; Der SqlDataAdapter">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 33  ADO.NET &#8211; Der SqlDataAdapter</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="33_003.html">
+      <link rel="next" href="1997_33_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_33_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_33_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4" class="navnav">33 ADO.NET &#8211; Der SqlDataAdapter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_33_001.html#dodtp048033b2-70a0-45c1-94eb-372ccaf96f57" class="navnav">33.1 Was ist ein DataAdapter?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_33_002.html#dodtpb6a3c706-0f70-47e7-87ae-75a24c2fc588" class="navnav">33.2 Die Konstruktoren der Klasse DataAdapter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_33_003.html#dodtpd9a111d4-c7c0-47be-a042-b0382582270e" class="navnav">33.3 Arbeiten mit dem SqlDataAdapter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp57d98f56-6879-48b7-8546-f48f59d2f27c" class="navnav">33.3.1 Die Eigenschaft »SelectCommand«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp567f4020-18d9-469f-963a-f9fd95d38fa9" class="navnav">33.3.2 Den lokalen Datenspeicher mit »Fill« füllen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp5c12f9e8-756b-4fe3-909b-d393f8330ed5" class="navnav">33.3.3 Öffnen und Schließen von Verbindungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp31ece4e3-5924-45e3-b76b-339e9d4d160c" class="navnav">33.3.4 Doppelter Aufruf der Fill-Methode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtpc5767d62-2297-4204-8830-959524eb7c2b" class="navnav">33.3.5 Mehrere DataAdapter-Objekte aufrufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp8d1ca5e9-8004-45da-ace5-a71f1d2d6963" class="navnav">33.3.6 Die Spalten- und der Tabellenbezeichner einer DataTable</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_003.html#dodtp2ce3d08d-8b32-4a2a-9181-f267f691926a" class="navnav">33.3.7 Paging mit der Fill-Methode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_33_004.html#dodtpf9233ec2-6a3a-4a81-aeab-9afdef3bac46" class="navh">33.4 Tabellenzuordnung mit der Klasse »TableMappings«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_004.html#dodtp8c896b6c-103a-4c76-9d7d-e98f055cc09b" class="navh">33.4.1 Spaltenzuordnungen in einem DataSet</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_004.html#dodtp8d30a0ff-51d3-4ac9-9b06-2233db54d121" class="navh">33.4.2 Spaltenzuordnungen einer DataTable</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_33_004.html#dodtp97c402e4-9bac-4d67-9eef-0e62dcfd2509" class="navh">33.4.3 Die Eigenschaft »MissingMappingAction« des DataAdapters</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_33_005.html#dodtp93c140db-a932-4d32-a962-7705878f2c0f" class="navnav">33.5 Das Ereignis »FillError« des SqlDataAdapters</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf9233ec2-6a3a-4a81-aeab-9afdef3bac46" name="dodtpf9233ec2-6a3a-4a81-aeab-9afdef3bac46"></a><h2 class="t2"><span class="cfett">33.4    </span><span class="cfett"> Tabellenzuordnung mit der Klasse »TableMappings«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8c896b6c-103a-4c76-9d7d-e98f055cc09b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um ein <span class="clisting">DataSet</span> mit mehreren Tabellen zu füllen, können Sie eine Batchabfrage absetzen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strSQL = "SELECT * FROM Products;" +<br xmlns="">                "SELECT * FROM Suppliers;" +<br xmlns="">                "SELECT * FROM Categories";<br></br>SqlDataAdapter da = new SqlDataAdapter(strSQL, con);<br xmlns="">DataSet ds = new DataSet();<br xmlns="">da.Fill(ds);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 33.6  </span>Absetzen einer Batchabfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">DataSet</span> beherbergt nun drei Tabellen. In jeder sind alle Datensätze der entsprechenden Originaltabellen
+                                                      <span class="ckursiv">Products</span>, <span class="ckursiv">Suppliers</span> und <span class="ckursiv">Categories</span> enthalten. Allerdings stehen wir vor der Frage: Wie können wir eine bestimmte Tabelle
+                                                      im <span class="clisting">DataSet</span> ansprechen, wenn darin mehrere Tabellen enthalten sind?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein <span class="clisting">DataSet</span> verwaltet alle in ihm enthaltenen Tabellen in einer Auflistung vom Typ <span class="clisting">DataTableCollection</span>. Die Referenz auf diese Auflistung liefert die Eigenschaft <span class="clisting">Tables</span> des <span class="clisting">DataSet</span>-Objekts.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt sollte man auch noch wissen, dass ein <span class="clisting">DataTable</span>-Objekt seinen Tabellennamen über die Eigenschaft <span class="clisting">TableName</span> preisgibt. Mit diesen Kenntnissen können wir jetzt die Namen der Tabellen im <span class="clisting">DataSet</span> abfragen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">foreach(DataTable table in ds.Tables)<br xmlns="">  Console.WriteLine(table.TableName);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe wird nicht &#8211; wie vielleicht zu vermuten wäre &#8211; <span class="ckursiv">Products</span>, <span class="ckursiv">Suppliers</span> und <span class="ckursiv">Categories</span> lauten, sondern, wie schon vorher behauptet,
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Table<br xmlns="">Table1<br xmlns="">Table2<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Zuordnung von <span class="ckursiv">Table</span> zu <span class="ckursiv">Products</span>, <span class="ckursiv">Table1</span> zu <span class="ckursiv">Suppliers</span> und <span class="ckursiv">Table2</span> zu <span class="ckursiv">Categories</span> ist aber in den meisten Fällen nicht wünschenswert. Besser geeignet wären sprechende
+                                                      Bezeichner, die zudem zur Verbesserung der Lesbarkeit des Codes beitragen. Der <span class="clisting">SqlDataAdapter</span> bietet daher einen Mechanismus, um den Tabellen im Abfrageergebnis einen anderen
+                                                      Namen zuzuordnen: die Eigenschaft <span class="clisting">TableMappings</span>, die die Referenz auf ein <span class="clisting">DataTableMappingCollection</span>-Objekt liefert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DataTableMappingCollection TableMappings{get;}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Auflistung <span class="clisting">DataTableMappingCollection</span> werden Objekte vom Typ <span class="clisting">DataTableMapping</span> verwaltet. Jedes dieser Objekte ordnet einer Tabelle im <span class="clisting">DataSet</span> einen Tabellennamen zu.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Am einfachsten ist es, mit der <span class="clisting">Add</span>-Methode die Auflistung zu füllen. Dazu wird dem ersten Parameter die Zeichenfolge
+                                                      übergeben, unter der die Tabelle per Vorgabe in das <span class="clisting">DataSet</span> gefüllt wird. Dem zweiten Parameter teilt man den gewünschten Tabellennamen mit.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DataTableMapping Add(string, string)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Codefragment zeigt, wie Sie die <span class="clisting">DataTableMappingCollection</span> des <span class="clisting">DataAdapter</span>-Objekts füllen können. Dabei wird davon ausgegangen, dass die oben angeführte Batchabfrage
+                                                      abgesetzt wird. Die Zuordnung muss vor dem Füllen des <span class="clisting">DataSets</span> mit <span class="clisting">Fill</span> erfolgen, ansonsten bleibt sie wirkungslos.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">da.TableMappings.Add("Table", "Artikel");<br xmlns="">da.TableMappings.Add("Table1", "Lieferanten");<br xmlns="">da.TableMappings.Add("Table2", "Kategorien");<br xmlns="">DataSet ds = new DataSet();<br xmlns="">da.Fill(ds);<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 33.7  </span>Beschreiben von TableMappings
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Add</span> ruft implizit den <span class="clisting">DataTableMapping</span>-Konstruktor auf. Sie können das natürlich auch selbst in die Hand nehmen, müssen
+                                                      dann aber jeder Tabelle über die Eigenschaft <span class="clisting">SourceTable</span> sagen, welchen Standardnamen sie im <span class="clisting">DataSet</span> hat, und über <span class="clisting">DataSetTable</span>, welcher Bezeichner der Tabelle neu zugeordnet werden soll. Das folgende Beispiel
+                                                      zeigt, wie der Code dazu aussieht.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataTableMapping dtm1 = new DataTableMapping();<br xmlns="">dtm1.SourceTable = "Table";<br xmlns="">dtm1.DataSetTable = "Artikel";<br xmlns="">da.TableMappings.Add((object)dtm1);<br></br>DataTableMapping dtm2 = new DataTableMapping();<br xmlns="">dtm2.SourceTable = "Table1";<br xmlns="">dtm2.DataSetTable = "Lieferanten";<br xmlns="">da.TableMappings.Add((object)dtm2);<br></br>DataTableMapping dtm3 = new DataTableMapping();<br xmlns="">dtm3.SourceTable = "Table2";<br xmlns="">dtm3.DataSetTable = "Kategorien";<br xmlns="">da.TableMappings.Add((object)dtm3);<br></br>DataSet ds = new DataSet();<br xmlns="">da.Fill(ds);<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 33.8  </span>Komplexes TableMapping
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">DataTableMapping</span> gehört zum Namespace <span class="clisting">System.Data.Common</span>, der vorher mit <span class="clisting">using</span> bekannt gegeben werden sollte. Sie erkennen, dass diese Art der Zuordnung mehr Programmieraufwand
+                                                      bedeutet.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp8c896b6c-103a-4c76-9d7d-e98f055cc09b" name="dodtp8c896b6c-103a-4c76-9d7d-e98f055cc09b"></a><h3 class="t3"><span class="cfett">33.4.1    </span><span class="cfett"> Spaltenzuordnungen in einem DataSet</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8d30a0ff-51d3-4ac9-9b06-2233db54d121"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf9233ec2-6a3a-4a81-aeab-9afdef3bac46"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp67d7b623-0412-493d-8d12-a7a0e42dfb2b"></a>Jeder Spalte der SELECT-Abfrage wird eine Spalte in der <span class="clisting">DataTable</span> zugeordnet. Als Spaltenbezeichner verwendet ADO.NET dabei den Spaltennamen der Originaltabelle
+                                                      in der Datenbank. Fragen Sie die Datenquelle mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT ProductName, UnitPrice FROM Products<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ab, lauten die Spalten in der <span class="clisting">DataTable</span> ebenfalls <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitPrice</span>. Wünschen Sie andere Spaltenbezeichner, können Sie im SELECT-Statement für die einzelnen
+                                                      Spalten ein Alias angeben, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT ProductName AS Artikelname, UnitPrice As Einzelpreis FROM Products<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun würden in der <span class="clisting">DataTable</span> die Spaltenbezeichner <span class="ckursiv">Artikelname</span> und <span class="ckursiv">Einzelpreis</span> lauten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können aber auch alternativ einen anderen Mechanismus einsetzen. Ein <span class="clisting">DataTableMapping</span>-Objekt hat eine eigene Auflistung, mit der den obligatorischen Spaltenbezeichnern
+                                                      neue zugeordnet werden können. Diese Auflistung ist vom Typ <span class="clisting">DataColumnMappingCollection</span> und enthält <span class="clisting">DataColumnMapping</span>-Objekte. Jedes <span class="clisting">DataColumnMapping</span>-Objekt beschreibt für sich eine Neuzuordnung eines Spaltenbezeichners in einer <span class="clisting">DataTable</span>. Die vielleicht ein wenig komplex anmutenden Zusammenhänge zwischen <span class="clisting">DataAdapter</span>, <span class="clisting">DataTableMapping</span> und <span class="clisting">DataColumnMapping</span> sind in Abbildung 33.1 anschaulich dargestellt.
+                                                   </p>
+                                                   <p><a href="bilder/33_01.png" rel="lightbox" title="Die Hierarchie der Zuordnungsklassen"><img class="bild" border="1" src="bilderklein/klein33_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 33.1  </span>Die Hierarchie der Zuordnungsklassen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Referenz auf die <span class="clisting">DataColumnMappingCollection</span> stellt die Eigenschaft <span class="clisting">ColumnMappings</span> der Klasse <span class="clisting">DataTableMapping</span> bereit:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DataColumnMappingCollection ColumnMappings {get;}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine Neuzuordnung festzulegen, bietet sich auch hier der Weg über die <span class="clisting">Add</span>-Methode des <span class="clisting">DataColumnMappingCollection</span>-Objekts an. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DataColumnMapping Add(string, string);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Analog zur <span class="clisting">Add</span>-Methode der <span class="clisting">DataTableMappingCollection</span> wird dem ersten Parameter der ursprüngliche Spaltenbezeichner und dem zweiten Parameter
+                                                      der gewünschte übergeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Codefragment zeigt den kompletten Code, der notwendig ist, um neben dem
+                                                      Tabellennamen auch die Spaltenbezeichner einer Abfrage neu festzulegen. Zum Schluss
+                                                      werden die Spaltenneuzuordnungen zur Bestätigung an der Konsole ausgegeben. Der Code
+                                                      im Schleifenkopf zur Ausgabe der Spaltenbezeichner dürfte ohne weitere Erläuterungen
+                                                      verständlich sein.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strCon = @"...";<br xmlns="">SqlConnection con = new SqlConnection(strCon);<br xmlns="">string strSQL = "SELECT ProductName, UnitPrice FROM Products";<br xmlns="">SqlDataAdapter da = new SqlDataAdapter(strSQL, con);<br></br>// Neuzuordnung des Tabellennamens<br></br>DataTableMapping dtm = da.TableMappings.Add("Table", "Autoren");<br></br>// Neuzuordnung der Tabellenbezeichner<br></br>dtm.ColumnMappings.Add("ProductName", "Artikelname");<br xmlns="">dtm.ColumnMappings.Add("UnitPrice", "Einzelpreis");<br></br>DataSet ds = new DataSet();<br xmlns="">da.Fill(ds);<br></br>// Konsolenausgabe der Spaltenbezeichner<br></br>foreach(DataColumn column in ds.Tables[0].Columns)<br xmlns="">   Console.WriteLine(column.ColumnName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 33.9  </span>Tabellen- und Spaltenbezeichner mappen
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp8d30a0ff-51d3-4ac9-9b06-2233db54d121" name="dodtp8d30a0ff-51d3-4ac9-9b06-2233db54d121"></a><h3 class="t3"><span class="cfett">33.4.2    </span><span class="cfett"> Spaltenzuordnungen einer DataTable</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp97c402e4-9bac-4d67-9eef-0e62dcfd2509"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8c896b6c-103a-4c76-9d7d-e98f055cc09b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Übergeben Sie der <span class="clisting">Fill</span>-Methode anstelle eines <span class="clisting">DataSet</span>-Objekts ein <span class="clisting">DataTable</span>-Objekt, müssen Sie ein wenig anders vorgehen, um die Spalten mit eigenen Bezeichnern
+                                                      im lokalen Datenspeicher anzusprechen. Dazu erzeugen Sie wieder ein <span class="clisting">DataTableMapping</span>-Objekt, dem Sie die gewünschten Spaltenbezeichner zuordnen. Bei der Instanziierung
+                                                      von <span class="clisting">DataTable</span> rufen Sie allerdings den parametrisierten Konstruktor auf, dem der im <span class="clisting">DataTableMappping</span> zugeordnete Tabellenname übergeben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">DataTableMapping dtm = da.TableMappings.Add("Table", "Products");<br></br>// Neuzuordnung der Spaltenbezeichner<br></br>dtm.ColumnMappings.Add("ProductName", "Artikelname");<br xmlns="">dtm.ColumnMappings.Add("UnitPrice", "Einzelpreis");<br xmlns="">DataTable tbl = new DataTable("Artikel");<br xmlns="">da.Fill(tbl);<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 33.10  </span>Spaltenzuordnungen festlegen
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp97c402e4-9bac-4d67-9eef-0e62dcfd2509" name="dodtp97c402e4-9bac-4d67-9eef-0e62dcfd2509"></a><h3 class="t3"><span class="cfett">33.4.3    </span><span class="cfett"> Die Eigenschaft »MissingMappingAction« des DataAdapters</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9fa8f576-d61b-4204-ae9f-28aa514ab7e3"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8d30a0ff-51d3-4ac9-9b06-2233db54d121"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Neuzuordnung der Tabellen- und Spaltenbezeichner ist eine Option, die vor dem
+                                                      Aufruf der Methode <span class="clisting">Fill</span> wahrgenommen werden kann. Der <span class="clisting">DataAdapter</span> prüft vor dem Füllen des <span class="clisting">DataSets</span>, ob die Zuordnungsauflistungen gefüllt sind. Dabei interessiert er sich besonders
+                                                      für die Spaltenzuordnungen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für jede Spalte des Abfrageergebnisses überprüft der <span class="clisting">DataAdapter</span>, ob dafür eine Zuordnung in der <span class="clisting">DataColumnMappingCollection</span><span class="clisting"><a class="indexterm" id="dodtp34d99dc8-9ef2-4be2-b9f5-cc02bdd80b3c"></a></span> angegeben ist. Existiert eine solche nicht, überprüft er im nächsten Schritt seine
+                                                      <span class="clisting">MissingMappingAction</span>-Eigenschaft. Hier findet er die Antwort darauf, wie er mit einer fehlenden Spaltenangabe
+                                                      umzugehen hat. Wie Sie bisher erfahren haben, werden Spalten, die nicht im <span class="clisting">DataColumnMapping</span>-Objekt angegeben sind, mit dem Namen, den sie in der Originaltabelle haben, in die
+                                                      entsprechende <span class="clisting">DataTable</span> eingetragen. Der <span class="clisting">DataAdapter</span> kann aber auch angewiesen werden, alle Spalten, die nicht in der Zuordnungstabelle
+                                                      enthalten sind, zu ignorieren. Eine dritte Möglichkeit wäre es, eine Ausnahme auszulösen,
+                                                      wenn keine Zuordnung angegeben ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">MissingMappingAction</span> ist vom Typ der gleichnamigen Enumeration <span class="clisting">MissingMappingAction</span>. Die drei Member der Enumeration lauten <span class="clisting">Error</span>, <span class="clisting">Ignore</span> und <span class="clisting">Passthrough</span>. Letztere ist die Standardeinstellung.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 33.1  </span>Mitglieder der Enumeration »MissingMappingAction«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Error</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fehlt eine Spaltenzuordnung, wird eine Ausnahme ausgelöst.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Ignore</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fehlt eine Spaltenzuordnung, wird die Spalte in der DataTable ignoriert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Passthrough</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fehlt eine Spaltenzuordnung, wird die Spalte unter ihrem ursprünglichen Namen der
+                                                                  DataTable hinzugefügt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs33_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="33  ADO.NET &#8211; Der SqlDataAdapter"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_33_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_33_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,762 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 16  Einige wichtige .NET-Klassen">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="16_003.html">
+      <link rel="next" href="1997_16_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_16_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_16_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5" class="navnav">16 Einige wichtige .NET-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_001.html#dodtp2450680c-ac9d-48da-81ea-6672f80715f7" class="navnav">16.1 Die Klasse »Object«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp6f1413c9-418e-47cf-83de-ec5739505f68" class="navnav">16.1.1 Referenzvergleiche mit »Equals« und »ReferenceEquals«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" class="navnav">16.1.2 »ToString« und »GetType«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" class="navnav">16.1.3 Die Methode »MemberwiseClone« und das Problem des Klonens</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_002.html#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" class="navnav">16.2 Die Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" class="navnav">16.2.1 Das Erzeugen eines Strings</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" class="navnav">16.2.2 Die Eigenschaften von »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp9869302a-a81f-476a-862b-31ff55711cc8" class="navnav">16.2.3 Die Methoden der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp8a6e62fc-2274-4607-885a-765ccab87be8" class="navnav">16.2.4 Zusammenfassung der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_003.html#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" class="navnav">16.3 Die Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" class="navnav">16.3.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" class="navnav">16.3.2 Die Kapazität eines »StringBuilder«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" class="navnav">16.3.3 Die Konstruktoren der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" class="navnav">16.3.4 Die Eigenschaften der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp439ff604-4457-439b-b552-95ef23a2d92e" class="navnav">16.3.5 Die Methoden der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp64c689f2-4f33-4e60-919a-03c308002a13" class="navnav">16.3.6 Allgemeine Anmerkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_004.html#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" class="navh">16.4 Der Typ »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" class="navh">16.4.1 Die Zeitspanne »Tick«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtp615f8ac3-1362-4523-84f4-fa23473b674b" class="navh">16.4.2 Die Konstruktoren von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" class="navh">16.4.3 Die Eigenschaften von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" class="navh">16.4.4 Die Methoden der Klasse »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_005.html#dodtpb26830f8-1fa0-4b0b-b86d-a20949a22f00" class="navnav">16.5 Die Klasse »TimeSpan«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_006.html#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" class="navnav">16.6 Ausgabeformatierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" class="navnav">16.6.1 Formatierung mit der Methode »String.Format«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" class="navnav">16.6.2 Formatierung mit der Methode »ToString«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" class="navnav">16.6.3 Benutzerdefinierte Formatierung</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" name="dodtp1df65a8b-8a25-43f0-874f-954f88ae185e"></a><h2 class="t2"><span class="cfett">16.4    </span><span class="cfett"> Der Typ »DateTime«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9ed9b9a2-fa8b-4994-8388-2f579591af9f"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp478612d0-695d-43ba-b14f-751d57074f3d"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um ein Datum einschließlich einer Zeitangabe in einer Variablen zu speichern, deklarieren
+                                                      Sie die Variable vom Typ <span class="clisting">DateTime</span>, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DateTime myDate = new DateTime(2003, 12, 6);<br xmlns="">Console.WriteLine(myDate);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe wird lauten:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">06.12.2003  00:00:00<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit einer Variablen des Typs <span class="clisting">DateTime</span><span class="clisting"><a class="indexterm" id="dodtpc4192d3f-6d01-45e9-8369-08684cb31403"></a></span> lässt sich ein Datum zwischen dem 1. Januar 01 und dem 31. Dezember 9999 behandeln
+                                                      &#8211; nach dem gregorianischen Kalender, um präzise zu sein.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" name="dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53"></a><h3 class="t3"><span class="cfett">16.4.1    </span><span class="cfett"> Die Zeitspanne »Tick«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp626acfe6-cdd7-4ae3-9b0f-99eb84763bd7"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp2871eb7f-4c79-4a9a-b284-5b46d7d06d41"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp615f8ac3-1362-4523-84f4-fa23473b674b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Zeitmessung erfolgt in Einheiten von 100 Nanosekunden, die als <span class="cfett">Tick</span><span class="cfett"><a class="indexterm" id="dodtp6fef0f35-2c81-4b55-9111-76ce0eb31883"></a></span> bezeichnet werden! Diese Aussage muss man sich auf der Zunge zergehen lassen: Die
+                                                      .NET-Zeitmessung beginnt am 1.1.0001 um 0:00 Uhr, und es können Intervalle von 0.0000001
+                                                      Sekunden (in Worten: ein Zehnmillionstel) unterschieden werden. Die Anzahl der Ticks
+                                                      seit Beginn dieser Zeitrechnung kann in einer <span class="clisting">long</span>-Variablen gespeichert werden, die damit groß genug ist, alle Intervalle bis zum Ende
+                                                      des Jahres 9999 abdecken zu können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie das aktuelle Datum und die aktuelle Zeit ausgedrückt in Ticks sehen wollen,
+                                                      dann geben Sie den folgenden Code ein:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(DateTime.Now.Ticks);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst rufen Sie die statische Methode <span class="clisting">Now</span><span class="clisting"><a class="indexterm" id="dodtpca5d5983-293a-41d2-b77d-70227772be88"></a></span> auf, die das aktuelle Systemdatum einschließlich der Zeit als <span class="clisting">DateTime</span> zurückliefert. Darauf wird die Eigenschaft <span class="clisting">Ticks</span><span class="clisting"><a class="indexterm" id="dodtp35ef6e58-55ec-47e0-a279-a500f6e768d6"></a><a class="indexterm" id="dodtp34980b61-5fa0-401e-b961-9ab3ef919593"></a></span> angewendet, die Ihnen eine kaum noch fehlerfrei abschreibbare Zahl liefert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Umgekehrt können Sie natürlich auch aus einem <span class="clisting">long</span>, der als <span class="clisting">Tick</span> interpretiert werden soll, das Datum und die Zeit ermitteln. Dazu wird die Klasse
+                                                      <span class="clisting">DateTime</span> instanziiert und dabei ein Konstruktor aufgerufen, der einen <span class="clisting">long</span> erwartet, der als die Anzahl der Ticks seit Beginn der .NET-Zeitrechnung interpretiert
+                                                      wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DateTime actualDate = new DateTime(631452984963219664);<br xmlns="">Console.WriteLine(actualDate.ToString());<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe lautet:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">30.12.2001 08:41:36<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie haben jetzt einen ersten Eindruck vom Umgang mit Datum und Uhrzeit gewonnen. Wir
+                                                      wollen uns nun die Details der Klasse <span class="clisting">DateTime</span> ansehen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp615f8ac3-1362-4523-84f4-fa23473b674b" name="dodtp615f8ac3-1362-4523-84f4-fa23473b674b"></a><h3 class="t3"><span class="cfett">16.4.2    </span><span class="cfett"> Die Konstruktoren von »DateTime«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Ihnen die Anzahl der Ticks vorliegt, genügt der einparametrige Konstruktor, um
+                                                      ein Objekt zu erzeugen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DateTime(long ticks);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da in den meisten Fällen vermutlich kaum die Anzahl der Tick-Intervalle bekannt sein
+                                                      dürfte, kommt diesem Konstruktor relativ geringe Bedeutung zu.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wollen Sie mit einem bestimmten Datum operieren, bei dem die Uhrzeit keine Rolle spielt,
+                                                      bietet sich der folgende Konstruktor an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DateTime (int year, int month, int day);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den Parametern wird das Jahr, der Monat und der Tag jeweils als <span class="clisting">int</span> übergeben. Dabei ist die Jahresangabe auf die Zahlen zwischen einschließlich 1 und
+                                                      9999 begrenzt, die Monatsangabe natürlich auf 1 bis 12, und die Anzahl der Tage hängt
+                                                      vom Kalendermonat ab. Da bei diesem Konstruktor auf die Zeitangabe verzichtet wird,
+                                                      bezieht sich das Datum immer auf Mitternacht, also exakt 0:00 Uhr.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Listing setzen wir diesen Konstruktor ein, um das Datum 12. Mai 1965
+                                                      abzubilden, und lassen uns an der Konsole die Ticks ausgeben, die dieser Angabe entsprechen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DateTime date = new DateTime(1965, 5, 12);<br xmlns="">Console.WriteLine("Datum: {0}", date);<br xmlns="">Console.WriteLine("Ticks: {0}", date.Ticks);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.24  </span>Abbildung des Datums 12. Mai 1965
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für eine weitere Präzisierung durch eine zusätzliche Zeitangabe stehen zwei Konstruktoren
+                                                      zur Verfügung. Während der erste zusätzlich zu der Angabe des Datums in drei weiteren
+                                                      Parametern Stunde, Minute und Sekunde entgegennimmt, kann dem anderen in einem siebten
+                                                      Parameter die Anzahl der Millisekunden übergeben werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DateTime (int year, int month, int day, int h, int min, int sec);<br></br>public DateTime (int year, int month, int day, int h, int min, int sec, int msec);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für jeden dieser Konstruktoren gibt es noch eine weitere Überladung, die um eine Referenz
+                                                      vom Typ <span class="clisting">System.Globalization.Calendar</span> ergänzt ist. Damit kann man gegebenenfalls das Kalenderformat vom gregorianischen
+                                                      Kalender auf einen anderen umschalten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">DateTime</span> können Sie auch festlegen, auf welcher Basis die Zeitangabe erfolgt. Dazu gibt es
+                                                      drei Möglichkeiten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die Zeitangabe bezieht sich auf die lokale Systemzeit.</li>
+                                                      <li class="pgp">Die Zeitangabe legt die koordinierte Weltzeit (UTC) zugrunde.</li>
+                                                      <li class="pgp">Die Zeitangabe ist nicht genau spezifiziert.</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Festlegung muss bereits bei der Instanziierung erfolgen. Dazu stehen einige Konstruktoren
+                                                      zur Verfügung, denen ein Argument vom Typ <span class="clisting">DateTimeKind</span> übergeben wird. Bei <span class="clisting">DateTimeKind</span> handelt es sich um eine Enumeration mit den Elementen <span class="clisting">Local</span>, <span class="clisting">Unspecified</span> und <span class="clisting">Utc</span>. Der Standard ist <span class="clisting">Unspecified</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DateTime (long ticks, DateTimeKind kind);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Liegt ein <span class="clisting">DateTime</span>-Objekt vor, lässt sich die Zeitbasis nicht mehr verändern. Sie können die Einstellung
+                                                      jedoch mit der Eigenschaft <span class="clisting">Kind</span> jederzeit auswerten.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" name="dodtpf838fc04-1e4b-487f-b821-5ba71d28638a"></a><h3 class="t3"><span class="cfett">16.4.3    </span><span class="cfett"> Die Eigenschaften von »DateTime«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpe7789c53-6cee-45b8-bd89-dad6808ff62a"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp0af5407f-7723-40db-81c1-54c23a3a6c7d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp25620d41-cd9b-449c-8e87-43cb85f96ba5"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpe782b61f-fa58-4a3e-9863-f6097b2ecd31"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpbb0b582a-a9cf-4044-8a40-227b0c6f747d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp000e9b22-ed9c-4ab7-b5ec-6329cb89ad24"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8a2123ca-81dd-4c41-9ed5-4292ad905e8e"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp769aac17-3f0a-4037-9e79-c2ca3d664705"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp615f8ac3-1362-4523-84f4-fa23473b674b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Liegt ein gültiges Datum vor, lassen sich daraus vom Jahr bis hin zu den Millisekunden
+                                                      sämtliche Informationen extrahieren. Die Namen der Eigenschaften sind sehr einprägsam:
+                                                      <span class="clisting">Year</span><span class="clisting"><a class="indexterm" id="dodtp759b5e93-f4be-4b11-82fc-9971b71a54b6"></a></span><span class="cfett"><a class="indexterm" id="dodtpc6fcfee9-a2fa-48ec-8c60-a39e7304c990"></a></span>, <span class="clisting">Month</span><span class="clisting"><a class="indexterm" id="dodtpe6bdf2bb-6312-46b3-89fd-374ca00bd27c"></a></span><span class="cfett"><a class="indexterm" id="dodtpe12de55e-f4ec-4b3a-92c0-3b03ed071d16"></a></span>, <span class="clisting">Day</span><span class="clisting"><a class="indexterm" id="dodtp1950bb1e-1a9a-4c2f-8ffa-23cb7d738929"></a></span><span class="cfett"><a class="indexterm" id="dodtp52b34207-a35c-4b8d-9039-f1365236bc6a"></a></span>, <span class="clisting">Hour</span><span class="clisting"><a class="indexterm" id="dodtpe9a44931-eb9d-4daf-b387-f810cfa725e3"></a></span><span class="cfett"><a class="indexterm" id="dodtp4262d678-0108-4f91-8e49-5f23c9900921"></a></span>, <span class="clisting">Minute</span><span class="clisting"><a class="indexterm" id="dodtp00bc1678-e831-48d8-b06f-5d5c6425c6c2"></a></span><span class="cfett"><a class="indexterm" id="dodtp3244c080-8ad5-4714-9c6e-56b3b20637a9"></a></span>, <span class="clisting">Second</span><span class="clisting"><a class="indexterm" id="dodtpb5c8b7af-5910-4088-9145-42ff3685e0cd"></a><a class="indexterm" id="dodtp60483918-c3ee-4fb2-bec4-a0a9945fbcbe"></a></span> und <span class="clisting">Millisecond</span><span class="clisting"><a class="indexterm" id="dodtp2220ac8c-ecfe-4f9c-bf36-a63d22098035"></a></span><span class="cfett"><a class="indexterm" id="dodtpc4682343-57b1-4973-a4ac-fdf84e46e88b"></a></span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir an, wir wollen das aktuelle Systemdatum, das wir mit der Eigenschaft <span class="clisting">Now</span><span class="clisting"><a class="indexterm" id="dodtpbfca986f-13f1-499a-b208-7d30951c34c5"></a><a class="indexterm" id="dodtp022c4f44-79c4-4e24-89c7-93b32fd977c0"></a></span> ermitteln können, in seine Detailinformationen zerlegen, könnte das wie nachfolgend
+                                                      gezeigt erfolgen: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DateTime newDate = DateTime.Now;<br xmlns="">Console.WriteLine("Jahr      = {0}", newDate.Year);<br xmlns="">Console.WriteLine("Monat     = {0}", newDate.Month);<br xmlns="">Console.Write("Tag       = {0}", newDate.Day);<br xmlns="">Console.WriteLine(" ({0})", newDate.DayOfWeek.ToString());<br xmlns="">Console.WriteLine("Stunde    = {0}", newDate.Hour);<br xmlns="">Console.WriteLine("Minute    = {0}", newDate.Minute);<br xmlns="">Console.WriteLine("Sekunde   = {0}", newDate.Second);<br xmlns="">Console.WriteLine("MilliSek. = {0}", newDate.Millisecond);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.25  </span>Datum- und Zeitanteile aus »DateTime.Now« extrahieren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weil die Ausgabe der Eigenschaft <span class="clisting">Day</span><span class="clisting"><a class="indexterm" id="dodtp8eda8f66-169d-48a5-8b75-a7afce97926d"></a></span> nur das aktuelle Tagesdatum liefert, ohne den Wochentag anzugeben, bietet sich eine
+                                                      weitere Eigenschaft von <span class="clisting">DateTime</span> an, die aus einem gegebenen Datum sogar den Wochentag ermittelt: <span class="clisting">DayOfWeek</span><span class="cfett"><a class="indexterm" id="dodtp70dc1758-873f-488a-a56c-28697c6e8597"></a><a class="indexterm" id="dodtp449056af-554b-4bb5-825f-f6cd46557cf5"></a></span>. Der Rückgabewert ist vom Typ <span class="clisting">DayOfWeek</span><span class="clisting"><a class="indexterm" id="dodtpc9b8994f-7a1f-4c5a-b210-4754cfb0db84"></a></span>, einer Enumeration des <span class="clisting">System</span>-Namespaces, die für den Sonntag 0 festlegt, für Montag 1 usw. Mit dem Aufruf von
+                                                      <span class="clisting">ToString</span> auf <span class="clisting">DayOfWeek</span><span class="clisting"><a class="indexterm" id="dodtp69e8cf93-68c1-4183-a0c1-274ae9bedcf7"></a></span> erhalten wir die Zeichenfolge, die der Konstanten entspricht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bedauerlich ist, dass es keine gleichwertige Auflistung für die Monate gibt. Wenn
+                                                      Sie daher auch den Monatsnamen in der Ausgabe als Text und nicht nur als Zahl lesen
+                                                      wollen, müssen Sie die Zahlen 1&#8211;12 selbst den Monatsnamen zuordnen, beispielsweise
+                                                      mit Hilfe eines <span class="clisting">switch</span>-Statements.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Now</span> liefert die aktuelle Systemzeit und hängt damit unter Windows-Plattformen von der
+                                                      Einstellung in der <span class="ckursiv">Systemsteuerung</span> ab. Eine sehr ähnliche Eigenschaft ist <span class="clisting">UtcNow</span><span class="clisting"><a class="indexterm" id="dodtpf22acd38-f45c-451d-8ab3-bd4f18715dd1"></a><a class="indexterm" id="dodtp8ff3980d-9dd9-46b9-9891-b5c683ada44d"></a></span><span class="cfett"><a class="indexterm" id="dodtp34b45a11-7027-40a4-85cb-3636952dbf7a"></a><a class="indexterm" id="dodtp015cfcd0-342b-4a6d-8f17-9fbdb27a336d"></a></span>, die aus den Einstellungen in der Systemsteuerung die <span class="ckursiv">Greenwich Mean Time</span> (GMT) ermittelt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn auf die Zeitangabe, die uns <span class="clisting">Now</span> liefert, verzichtet werden kann oder muss, können Sie auch auf die statische Eigenschaft
+                                                      <span class="clisting">Today</span><span class="clisting"><a class="indexterm" id="dodtp729efb41-977d-424f-a347-b2d29f2d4454"></a><a class="indexterm" id="dodtpec1e75d9-baaf-4c16-8ca3-eed1834e3782"></a></span> zurückgreifen, die das Datum ohne Zeitangabe liefert. Diese wird auf 00:00:00 gesetzt.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" name="dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a"></a><h3 class="t3"><span class="cfett">16.4.4    </span><span class="cfett"> Die Methoden der Klasse »DateTime«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc569b674-77d9-4d19-aa6b-71f3f4bbc993"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nahezu alle Methoden lassen sich in zwei operativen Gruppen zusammenfassen:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Methoden, die der Ausgabeformatierung dienen</li>
+                                                      <li class="pgp">die Gruppe der <span class="clisting">Add</span>-Methoden, mit der zu einem gegebenen Datum eine Zeitspanne addiert oder subtrahiert
+                                                         werden kann
+                                                      </li>
+                                                   </ul>
+                                                   <h4 class="t4"> Methoden zum Extrahieren von Datum und Zeit</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit insgesamt vier vordefinierten Methoden lässt sich die Textausgabe eines <span class="clisting">DateTime</span>-Objekts verändern:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">ToLongDateString</span><span class="clisting"><a class="indexterm" id="dodtp8f4a55bd-72c3-46d2-bb58-70bbb42c45a7"></a><a class="indexterm" id="dodtp55b552ef-f0c7-49c9-96db-33597db7cdb3"></a><a class="indexterm" id="dodtp5bc7da05-cae2-48ab-a06c-83c34b83e2dc"></a><a class="indexterm" id="dodtp4ce74842-2826-43f9-8f1a-28f6d472d111"></a></span> und <span class="clisting">ToShortDateString</span><span class="clisting"><a class="indexterm" id="dodtp17d42997-725d-4470-a16e-53daa86716d2"></a><a class="indexterm" id="dodtpfc7e3ec9-fd93-465b-be05-c85238ac3922"></a></span><a class="indexterm" id="dodtpccc6060c-463f-4708-8e67-0f49e29b58dd"></a><a class="indexterm" id="dodtpf8ab73d7-7270-4675-b26d-4fd23391d092"></a></li>
+                                                      <li class="pgp"><span class="clisting">ToLongTimeString</span><span class="clisting"><a class="indexterm" id="dodtp86756797-1092-46e9-91ba-d31ad7b80088"></a><a class="indexterm" id="dodtp55ef0542-cb52-4f3b-a620-703df9a313b9"></a><a class="indexterm" id="dodtpe01a6054-7b07-464a-842c-d4e7484d0ef2"></a><a class="indexterm" id="dodtp54f05e8a-3230-4a65-85dc-65ff79c19267"></a></span> und <span class="clisting">ToShortTimeString</span><span class="clisting"><a class="indexterm" id="dodtp365f2217-5b91-430d-8a27-3faabe84b346"></a><a class="indexterm" id="dodtp84873bdf-1a5a-49e7-81b1-1ca6e91d9390"></a></span><a class="indexterm" id="dodtp4409ac2b-a694-4f4f-9b76-19f25f5a9741"></a><a class="indexterm" id="dodtpf2801d20-7729-4873-812b-e83da038d60c"></a></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir können den Effekt dieser Methoden am besten anhand von Beispielen sehen. Dazu
+                                                      deklarieren wir eine Variable vom Typ <span class="clisting">DateTime</span> und führen darauf alle vier Methoden aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Datum = 3. Februar 2006 5:25:30<br></br>DateTime date = new DateTime(2006, 2, 3, 5, 25, 30);<br></br>// Ausgabe: Mittwoch, 3. Februar 2006<br></br>Console.WriteLine(date.ToLongDateString());<br></br>// Ausgabe: 03.02.2006<br></br>Console.WriteLine(date.ToShortDateString());<br></br>// Ausgabe: 05:25:30<br></br>Console.WriteLine(date.ToLongTimeString());<br></br>// Ausgabe: 05:25<br></br>Console.WriteLine(date.ToShortTimeString());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.26  </span>Mehrere Ausgabemöglichkeiten von Datum und Zeit
+                                                   </p>
+                                                   <h4 class="t4"> Die Methode »ToFileTime«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weitaus interessanter als diese Formatmethoden ist eine andere, die ihre Leistungsfähigkeit
+                                                      erst auf den zweiten Blick offenbart: <span class="clisting">ToFileTime</span><span class="cfett"><a class="indexterm" id="dodtpfc26288b-136a-4cad-9f45-055be43c97bb"></a><a class="indexterm" id="dodtp88021cc2-ff15-4e2a-ac1d-7934384362f4"></a></span>. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public long ToFileTime<a class="indexterm" id="dodtpb60c2f1c-20c3-497b-bf55-c03d972d3e19"></a><a class="indexterm" id="dodtpdb1e5f8e-ce45-4b1d-8568-cf23b0340691"></a>();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Rückgabewert vom Typ <span class="clisting">long</span> enthält die Anzahl der <span class="clisting">Ticks</span> seit dem 1. Januar 1601, 12 Uhr. Welchen Hintergrund diese scheinbar zufällige Jahreszahl
+                                                      hat, verrät uns die Dokumentation nicht. Das soll uns aber auch nicht weiter interessieren,
+                                                      viel wichtiger ist die Tatsache, mit dieser Methode ein Mittel in den Händen zu halten,
+                                                      das es uns ermöglicht, die Zeitspanne zwischen zwei Ereignissen zu messen &#8211; und dafür
+                                                      brauchen wir einen präzise definierten, gleichermaßen gültigen Ursprung, egal wie
+                                                      er definiert ist.
+                                                   </p>
+                                                   <h4 class="t4"> Rechenoperationen mit »DateTime«-Objekten</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">Add</span>-Methoden decken alle Bedürfnisse hinsichtlich der Änderung eines Datums oder einer
+                                                      Zeit ab. Aus dem Bezeichner ist sofort zu erkennen, welche Einheit zu einem <span class="clisting">DateTime</span>-Objekt addiert werden soll: 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">AddDays</span><span class="clisting"><a class="indexterm" id="dodtp918be468-520d-4239-aee4-9c5be1866838"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">AddHours</span><span class="clisting"><a class="indexterm" id="dodtpfd56a0a6-ff87-475d-a92b-30004d4af1b6"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">AddMonths</span><span class="clisting"><a class="indexterm" id="dodtpb06810ce-ef7e-4138-aa24-5c146091ae85"></a></span> usw.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Allen Methoden wird ein Wert vom Typ <span class="clisting">int</span> bzw. <span class="clisting">double</span> übergeben, und der Rückgabewert ist vom Typ <span class="clisting">DateTime</span>, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public DateTime AddSeconds<a class="indexterm" id="dodtp26581c51-6636-4126-969d-cdf4cb30df24"></a><a class="indexterm" id="dodtp5debc485-8f5c-4377-aae2-c3fd9561be06"></a><a class="indexterm" id="dodtp0232fe15-081f-43c3-8d0b-4401756848fd"></a><a class="indexterm" id="dodtp752802d2-0f69-4ad3-bbbd-9d96b3e20f9a"></a>(double);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Listing wird ein <span class="clisting">DateTime</span>-Objekt erzeugt, das das Datum 2. August 1995 und die Zeit 23:00 Uhr beschreibt. Davon
+                                                      werden mit der Methode <span class="clisting">AddHours</span> 30 Stunden subtrahiert:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DateTime now = new DateTime(1995, 8, 2, 23, 0, 0);<br xmlns="">now = now.AddHours(-30);<br xmlns="">Console.WriteLine(now);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.27  </span>Rechenoperationen mit »DateTime«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An der Konsole wird </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">01.08.1995 17:00:00<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ausgegeben, was beweist, dass die Methode automatisch auch ein neues Datum berücksichtigt,
+                                                      das aus der Addition resultiert.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs16_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="16  Einige wichtige .NET-Klassen"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_16_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_16_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

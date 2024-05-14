@@ -1,0 +1,1150 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 34  ADO.NET &#8211; Daten im lokalen Speicher ">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 34  ADO.NET &#8211; Daten im lokalen Speicher ">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 34  ADO.NET &#8211; Daten im lokalen Speicher </title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="34_003.html">
+      <link rel="next" href="1997_34_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_34_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_34_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96" class="navnav">34 ADO.NET &#8211; Daten im lokalen Speicher</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_001.html#dodtpb0a6b54d-a2fd-49b3-ad74-40d4f648f9f8" class="navnav">34.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_002.html#dodtp886426a8-df4b-4c21-9276-e7a5a3976526" class="navnav">34.2 Verwenden des DataSet-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_002.html#dodtp3df1e879-772f-448c-a00c-8305f51cbcab" class="navnav">34.2.1 Ein DataSet-Objekt erzeugen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_002.html#dodtp6a34ed9a-be49-4cf6-8f41-ebb91debd5dc" class="navnav">34.2.2 Die Anatomie einer DataTable</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_002.html#dodtp4fd9f9b3-5274-4034-82ba-9bd6d9c52dfd" class="navnav">34.2.3 Der Zugriff auf eine Tabelle im DataSet</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_002.html#dodtp10552e5b-7a26-4c4f-a22e-f64f02d61c74" class="navnav">34.2.4 Der Zugriff auf die Ergebnisliste</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_002.html#dodtpa27be2e9-1e69-42dd-9299-42a496e44790" class="navnav">34.2.5 Dateninformationen in eine XML-Datei schreiben</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_003.html#dodtp70d715fc-b77d-464a-8516-73f57c8e97f2" class="navnav">34.3 Gültigkeitsprüfung im DataSet</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_003.html#dodtpa0d9fb56-936d-4beb-8004-c21e8aafb0e8" class="navnav">34.3.1 Dem DataSet Schemainformationen übergeben</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_003.html#dodtpc5267308-6b92-4d7c-9cd9-42ebc2c1d59a" class="navnav">34.3.2 Eigenschaften einer DataColumn, die der Gültigkeitsprüfung dienen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_003.html#dodtp8c627d3b-5016-430e-8077-2d2b88f86738" class="navnav">34.3.3 Die Constraints-Klassen einer »DataTable«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_003.html#dodtp4dc3a53a-431d-4079-9b9c-6096f3759309" class="navnav">34.3.4 Das Schema mit Programmcode erzeugen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_003.html#dodtp768a0e0f-a05d-4025-9c93-a5f3819ed7e1" class="navnav">34.3.5 Schemainformationen mit SqlDataAdapter abrufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_004.html#dodtp922d60dc-5c3f-4ee3-9444-9ea7efe46f9c" class="navh">34.4 Änderungen in einer DataTable vornehmen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtpc044423c-3977-45fc-a250-7292e904c5ed" class="navh">34.4.1 Editieren einer DataRow</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtp99b2f81d-879e-42f1-b5c0-e8cd3b3f17c6" class="navh">34.4.2 Löschen einer Datenzeile</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtpd0f35bd5-65ff-4bdd-9013-dc08e02eb4fc" class="navh">34.4.3 Eine neue Datenzeile hinzufügen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtp1d726dd4-29c6-4a45-8f7f-1092da5574fa" class="navh">34.4.4 Der Sonderfall: Autoinkrementspalten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtpdf9dab7f-2302-41d3-8958-09df54038d6e" class="navh">34.4.5 Was bei einer Änderung einer Datenzeile passiert</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_004.html#dodtp28b8697b-6d4c-48a5-90f4-f5b83d5c6153" class="navh">34.4.6 Manuelles Steuern der Eigenschaft »DataRowState«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_005.html#dodtp8ae4d458-9920-410b-a24c-301979e7e7e4" class="navnav">34.5 Mit mehreren Tabellen arbeiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtpd67115dd-ea19-43bc-9134-693831e52205" class="navnav">34.5.1 Der Weg über JOIN-Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtp95f458fa-1fe0-4d10-96a6-2771242da3a6" class="navnav">34.5.2 Mehrere Tabellen in einem DataSet</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtpc03c5e10-20b6-4330-8a5b-22af8d9a41e7" class="navnav">34.5.3 Eine DataRelation erzeugen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtpe1762576-c632-41df-8d47-c9bf81289c8e" class="navnav">34.5.4 DataRelations und Einschränkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtp5d4d2c54-85c7-4b18-8d4c-4b3937deb208" class="navnav">34.5.5 In Beziehung stehende Daten suchen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_005.html#dodtp10a11683-2fd1-460d-99e9-07d7800e5e2d" class="navnav">34.5.6 Ergänzung zum Speichern von Schemainformationen in einer XML-Schemadatei</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_006.html#dodtp37656b1b-cd4a-44b1-ac46-3ef94ddab2b0" class="navnav">34.6 Filtern und suchen in einer DataTable</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_006.html#dodtp5a6816bc-4ade-4f70-9f0c-07bd1ddd5e57" class="navnav">34.6.1 Die Methode »Find«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_006.html#dodtpab3789e2-239b-4d7c-b6c3-29f9a551b5bc" class="navnav">34.6.2 Die Methode »Select«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_34_007.html#dodtpa182a1ef-0451-4915-a5f8-33caafbb55b1" class="navnav">34.7 Objekte vom Typ »DataView«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtpf043a503-e5ed-4df4-9959-016bc7e52dc8" class="navnav">34.7.1 Einen »DataView« erzeugen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtpcb2f648d-660e-4d14-8d94-5158d9015276" class="navnav">34.7.2 Auf die Datenzeilen in einem »DataView« zugreifen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtp147a5101-0cbc-4a68-8f51-c6ae8d56de8f" class="navnav">34.7.3 Die Eigenschaft »Sort« und die Methode »Find«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtpb03964de-e949-479c-a2c0-52c4c95e23be" class="navnav">34.7.4 Die Methode »FindRows«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtp833926c6-0ddd-4187-889e-b70ba89b3a45" class="navnav">34.7.5 Die Eigenschaft »RowFilter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtpab0076f8-4652-4c28-b2a8-a4acd975898f" class="navnav">34.7.6 Die Eigenschaft »RowStateFilter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtpba3abb3e-147f-4b21-8380-b5b7fe754807" class="navnav">34.7.7 Änderungen an einem »DataView«-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_34_007.html#dodtp8095dd31-c360-40a9-8ac3-83a0c3567fb0" class="navnav">34.7.8 Aus einem »DataView« eine »DataTable« erzeugen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp922d60dc-5c3f-4ee3-9444-9ea7efe46f9c" name="dodtp922d60dc-5c3f-4ee3-9444-9ea7efe46f9c"></a><h2 class="t2"><span class="cfett">34.4    </span><span class="cfett"> Änderungen in einer DataTable vornehmen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc044423c-3977-45fc-a250-7292e904c5ed"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns nun an, wie wir einer <span class="clisting">DataTable</span> eine neue <span class="clisting">DataRow</span> hinzufügen und eine vorhandene <span class="clisting">DataRow</span> löschen oder editieren können. Um einen wichtigen Punkt gleich vorwegzunehmen: Jegliche
+                                                      Änderung betrifft zunächst nur das <span class="clisting">DataSet</span>. Die Originaldatenbank weiß davon nichts. Erst zu einem späteren Zeitpunkt werden
+                                                      alle Änderungen zur Datenbank übermittelt. Wir behandeln daher in diesem Abschnitt
+                                                      nur die lokalen Aktualisierungen. In Kapitel 35 werden wir uns der Aktualisierung
+                                                      der Originaldatenquelle zuwenden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc044423c-3977-45fc-a250-7292e904c5ed" name="dodtpc044423c-3977-45fc-a250-7292e904c5ed"></a><h3 class="t3"><span class="cfett">34.4.1    </span><span class="cfett"> Editieren einer DataRow</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp99b2f81d-879e-42f1-b5c0-e8cd3b3f17c6"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp922d60dc-5c3f-4ee3-9444-9ea7efe46f9c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt drei Möglichkeiten, eine Zeile zu aktualisieren. Im einfachsten Fall weisen
+                                                      Sie der betreffenden Spalte nur den neuen Inhalt zu:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ds.Tables[0].Rows[3]["ProductName"] = "Kirschkuchen";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Änderung wird sofort in die angegebene Spalte der entsprechenden Datenzeile geschrieben.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die zweite Möglichkeit puffert die Änderung. Dazu wird vor Beginn der Änderung die
+                                                      Methode <span class="clisting">BeginEdit</span><span class="clisting"><a class="indexterm" id="dodtp68b71270-6198-4745-8b24-cd04d1380d5f"></a></span> auf die zu ändernde Datenzeile aufgerufen und die Änderung mit <span class="clisting">EndEdit</span> bestätigt. Sie können die eingeleitete Änderung auch zurücksetzen und anstelle von
+                                                      <span class="clisting">EndEdit</span><span class="clisting"><a class="indexterm" id="dodtp2fe2519f-0108-4987-8eb5-53922d70ea7e"></a></span> die Methode <span class="clisting">CancelEdit</span><span class="clisting"><a class="indexterm" id="dodtp647ac3c6-3469-4b46-9a70-9c2602450f95"></a></span> aufrufen. Die Zeile wird dann in den Zustand zurückversetzt, den sie vor <span class="clisting">BeginEdit</span> hatte.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataRow row = ds.Tables[0].Rows[3];<br xmlns="">row.BeginEdit();<br xmlns="">row["ProductName"] = "Kirschkuchen";<br xmlns="">row.EndEdit();<br></br>// Alternativ: row.cancelEdit();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 34.6  </span>Ändern einer Datenzeile
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Pufferung der Änderung ist nicht der einzige Unterschied zwischen den beiden Aktualisierungsmöglichkeiten.
+                                                      Die <span class="clisting">DataTable</span> verfügt über mehrere Ereignisse, die nur im Zusammenhang mit <span class="clisting">BeginEdit</span> und <span class="clisting">EndEdit</span> ausgelöst werden. Es handelt sich hierbei um
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">RowChanging</span></li>
+                                                      <li class="pgp"><span class="clisting"><a class="indexterm" id="dodtpdf45166f-60e8-414c-9a89-e24d76899fc2"></a></span><span class="clisting">RowChanged</span></li>
+                                                      <li class="pgp"><span class="clisting"><a class="indexterm" id="dodtpb8dcf64e-30a4-427c-a6df-9897f248297e"></a></span><span class="clisting">ColumnChanging</span></li>
+                                                      <li class="pgp"><span class="clisting">ColumnChanged</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Ereignisse spielen eine Rolle, wenn Änderungen an einer Datenzeile oder Spalte
+                                                      überprüft werden müssen. Die Ereignisse werden nicht ausgelöst, wenn Sie <span class="clisting">CancelEdit</span> aufrufen. Wenn wir uns später dem Zurückschreiben der Änderungen in die Originaldatenbank
+                                                      zuwenden, werden wir noch einmal auf diese Ereignisse zurückkommen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die dritte Möglichkeit bietet uns die Eigenschaft <span class="clisting">ItemArray</span><span class="clisting"><a class="indexterm" id="dodtpedb30355-62bd-4249-aeac-6a5148649a88"></a></span>, die ein <span class="clisting">Object</span>-Array beschreibt. Mit dieser Eigenschaft können Sie den Inhalt einer Datenzeile abrufen
+                                                      oder verändern. <span class="clisting">ItemArray</span> arbeitet mit einem Array, in dem jedes Element einer Spalte entspricht. Mit einer
+                                                      Codezeile können Sie mehrere Spaltenwerte abrufen und editieren. Ist in einer Zeile
+                                                      nur eine Teilmenge der verfügbaren Werte zu modifizieren, verwenden Sie <span class="clisting">null</span>, um anzuzeigen, dass der Wert dieser Spalte nicht geändert werden soll.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Codefragment werden drei Spalten der Tabelle <span class="ckursiv">Products</span> abgefragt. In der ersten Datenzeile soll mit der Eigenschaft <span class="clisting">ItemArray</span> der Produktbezeichner modifiziert werden. Weil der Schlüsselwert nicht geändert wird,
+                                                      muss an der ersten Position <span class="clisting">null</span> in das Objekt-Array geschrieben werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SqlCommand cmd = new SqlCommand();<br xmlns="">cmd.Connection = con;<br xmlns="">cmd.CommandText = "SELECT ProductID, ProductName, UnitPrice FROM Products";<br xmlns="">DataSet ds = new DataSet();<br xmlns="">SqlDataAdapter da = new SqlDataAdapter(cmd);<br xmlns="">da.Fill(ds);<br xmlns="">DataRow row = ds.Tables[0].Rows[0];<br xmlns="">row.ItemArray = new Object[] {null, "Kirschkuchen"};<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 34.7  </span>Änderungen mit »ItemArray«
+                                                   </p>
+                                                   <h4 class="t4"> Den Spaltenwert auf NULL festlegen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchten Sie den Wert einer Spalte auf NULL setzen, verwenden Sie die Klasse <span class="clisting">DBNull</span>, die sich im Namespace <span class="clisting">System</span> befindet. Mit der Eigenschaft <span class="clisting">Value</span> legen Sie den Wert einer Spalte in einer <span class="clisting">DataRow</span> auf NULL fest.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataRow row = ds.Tables[0].Rows[4];<br xmlns="">row["UnitPrice"] = DBNull.Value;<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp99b2f81d-879e-42f1-b5c0-e8cd3b3f17c6" name="dodtp99b2f81d-879e-42f1-b5c0-e8cd3b3f17c6"></a><h3 class="t3"><span class="cfett">34.4.2    </span><span class="cfett"> Löschen einer Datenzeile</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd0f35bd5-65ff-4bdd-9013-dc08e02eb4fc"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp65b32b2a-1efb-4a3b-b2d0-4ac6214968b8"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Löschen einer Datenzeile ist sehr einfach: Sie rufen hierzu die Methode <span class="clisting">Delete</span> der <span class="clisting">DataRow</span> auf, die gelöscht werden soll.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">row.Delete<a class="indexterm" id="dodtp35cbae54-22a3-4697-a71a-884e645f4549"></a>();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es ist falsch anzunehmen, dass die betreffende Datenzeile nun aus der <span class="clisting">DataTable</span> entfernt wird. Sie ist immer noch vorhanden, allerdings kennzeichnet ADO.NET sie
+                                                      als gelöscht. Hintergrund der Markierung ist, dass das Löschen zunächst nur das aktuelle
+                                                      <span class="clisting">DataSet</span> betrifft und zu einem späteren Zeitpunkt der Originaldatenbank mitgeteilt werden
+                                                      muss. Es wäre daher auch falsch, eine Datenzeile mit <span class="clisting">Remove</span> oder <span class="clisting">RemoveAt</span> aus der <span class="clisting">DataRowCollection</span> der Tabelle zu entfernen, denn dann findet der Aktualisierungsprozess die Datenzeile
+                                                      nicht mehr.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpd0f35bd5-65ff-4bdd-9013-dc08e02eb4fc" name="dodtpd0f35bd5-65ff-4bdd-9013-dc08e02eb4fc"></a><h3 class="t3"><span class="cfett">34.4.3    </span><span class="cfett"> Eine neue Datenzeile hinzufügen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1d726dd4-29c6-4a45-8f7f-1092da5574fa"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp99b2f81d-879e-42f1-b5c0-e8cd3b3f17c6"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Datenzeile zu einer <span class="clisting">DataTable</span> hinzuzufügen, ist auch nicht schwierig. Allerdings stellt die Klasse <span class="clisting">DataRow</span> keinen öffentlichen Konstruktor zur Verfügung, denn woher sollte ein auf diese Weise
+                                                      konstruiertes <span class="clisting">DataRow</span>-Objekt etwas von den Spalten wissen, durch die es beschrieben wird?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ADO.NET bietet Ihnen genauso wie zum Editieren einer Datenzeile drei Varianten an,
+                                                      um eine neue Datenzeile zu einer <span class="clisting">DataTable</span> hinzuzufügen. Zunächst einmal sei die Methode <span class="clisting">NewRow</span><span class="clisting"><a class="indexterm" id="dodtp639c5973-2f33-4acb-b15f-74228eb6e510"></a></span> der <span class="clisting">DataTable</span> erwähnt. Eine so erzeugte neue Zeile enthält alle Informationen über die Spalten
+                                                      in der Tabelle. Werden im Schema keine Standardwerte vorgegeben, sind die Inhalte
+                                                      der Spalten auf NULL gesetzt. Haben Sie alle Einträge in der neuen Zeile vorgenommen,
+                                                      müssen Sie die neue Zeile der <span class="clisting">DataRowCollection</span> anhängen, denn das leistet der Aufruf von <span class="clisting">NewRow</span> nicht.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataTable tbl = ds.Tables[0];<br xmlns="">DataRow row = tbl.NewRow();<br xmlns="">row["ProductName"] = "Erbsensuppe";<br xmlns="">row["UnitPrice"] = 2;<br xmlns="">row["SupplierID"] = 3;<br xmlns="">[...]<br xmlns="">tbl.Rows.Add(row);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 34.8  </span>Hinzufügen einer Datenzeile
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die zweite Möglichkeit, eine neue Datenzeile hinzuzufügen, bietet eine Überladung
+                                                      der Methode <span class="clisting">Add</span> der <span class="clisting">DataRowCollection</span>. Übergeben Sie dem Methodenaufruf die Spaltenwerte in der Reihenfolge, die der Reihenfolge
+                                                      der Spalten in der SELECT-Abfrage entspricht. Basierend auf der Auswahlabfrage
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT ProductName, Unitprice, UnitsInStock FROM Products<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">könnte eine neue Datenzeile wie folgt hinzugefügt werden:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ds.Tables[0].Rows.Add("Mehl", 20, 0);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Gegensatz zur Methode <span class="clisting">NewRow</span> wird die neue Datenzeile automatisch der <span class="clisting">DataRowCollection</span> hinzugefügt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die dritte Möglichkeit stellt die Methode <span class="clisting">LoadDataRow</span> der <span class="clisting">DataTable</span> dar. Diese Methode arbeitet ähnlich wie die zuvor gezeigte <span class="clisting">Add</span>-Methode der <span class="clisting">DataRowCollection</span>, verlangt aber die Angabe von zwei Parametern. Geben Sie im ersten Parameter ein
+                                                      Array von Werten an, dessen Elemente den Spalten in der Tabelle entsprechen. Tragen
+                                                      Sie im zweiten Parameter <span class="clisting">false</span> ein. Hintergrund ist, dass die so gekennzeichnete Datenzeile als neue Datenzeile
+                                                      interpretiert wird. <span class="clisting">LoadDataRow</span> eignet sich nämlich auch dazu, eine bestimmte Datenzeile zu suchen und zu modifizieren.
+                                                      Dann muss dem zweiten Parameter jedoch <span class="clisting">true</span> übergeben werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ds.Tables[0].LoadDataRow(new object[] {"Mehl", 20, 0}, false);<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1d726dd4-29c6-4a45-8f7f-1092da5574fa" name="dodtp1d726dd4-29c6-4a45-8f7f-1092da5574fa"></a><h3 class="t3"><span class="cfett">34.4.4    </span><span class="cfett"> Der Sonderfall: Autoinkrementspalten</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdf9dab7f-2302-41d3-8958-09df54038d6e"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd0f35bd5-65ff-4bdd-9013-dc08e02eb4fc"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp8e666d4c-2459-4874-b0ee-d9ac66fa0f09"></a>Viele Tabellen in Datenbanken beschreiben das Primärschlüsselfeld mit Autoinkrementwerten.
+                                                      Das ist vorteilhaft, weil eine zentrale Logik immer eindeutige Ganzzahlen erzeugt.
+                                                      Fügen wir jedoch eine neue Datenzeile zu einer <span class="clisting">DataTable</span> hinzu, die ein solches Schlüsselfeld definiert, haben wir keine Verbindung zur Originaldatenbank.
+                                                      Mit anderen Worten: Wir kennen den neuen Wert des Schlüsselfeldes nicht. Den erfahren
+                                                      wir erst, wenn wir die Datenbank aktualisiert haben und eine entsprechende Abfrage
+                                                      starten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ADO.NET unterstützt uns mit drei Eigenschaften der <span class="clisting">DataColumn</span>, um auch diese scheinbare Problematik zu lösen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">AutoIncrement</span></li>
+                                                      <li class="pgp"><span class="clisting"><a class="indexterm" id="dodtpc1daebe0-acb5-4d45-8665-1d451fd0083b"></a></span><span class="clisting">AutoIncrementSeed</span></li>
+                                                      <li class="pgp"><a class="indexterm" id="dodtp44641d09-63ab-4333-93c9-06b5546aa881"></a><span class="clisting">AutoIncrementStep</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpbf5b8b90-ecc1-4b00-9b93-6f4e04b8aad6"></a>Um von ADO.NET in einer <span class="clisting">DataTable</span> Autoinkrementwerte generieren zu lassen, muss die Eigenschaft <span class="clisting">AutoIncrement</span> der betreffenden Spalte auf <span class="clisting">true</span> gesetzt werden. Mit <span class="clisting">AutoIncrementSeed</span> und <span class="clisting">AutoIncrementStep</span> werden die von ADO.NET erzeugten Werte gesteuert. <span class="clisting">AutoIncrementSeed</span> beschreibt dabei den Startwert der Autoinkrementspalte für die erste neu hinzugefügte
+                                                      Datenzeile. <span class="clisting">AutoIncrementStep</span> gibt die Schrittweite an, mit der neue Schlüsselwerte generiert werden. Legen Sie
+                                                      für eine Autoinkrementspalte beispielsweise <span class="clisting">AutoIncrementSeed=1</span> und <span class="clisting">AutoIncrementStep=2</span> fest, lauten die Werte für die drei nachfolgend hinzugefügten Datenzeilen 1, 3 und
+                                                      5.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Werte, die ADO.NET erzeugt, müssen Sie als Platzhalter verstehen. Sie werden später
+                                                      bei der Aktualisierung der Originaldatenbank nicht mit zurückgeschrieben. Die tatsächlichen
+                                                      Schlüsselwerte erzeugt die Datenbank selbst.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Doch welche Werte sollten Sie in der <span class="clisting">DataTable</span> vergeben? Eigentlich müssen Sie nur sicherstellen, dass neue Schlüsselwerte nicht
+                                                      mit den Schlüsselwerten in Konflikt geraten, die bereits in der <span class="clisting">DataTable</span> enthalten sind. Sie können auch davon ausgehen, dass negative Werte in der Datenbank
+                                                      nicht verwendet werden. Empfehlenswert ist daher, die beiden Eigenschaften <span class="clisting">AutoIncrementSeed</span> und <span class="clisting">AutoIncrementStep</span> auf jeweils <span class="clisting">&#8211;1</span> festzulegen. Zudem sollten diese Einstellungen erfolgen, ehe das <span class="clisting">DataSet</span> mit den Daten gefüllt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns dazu nun ein Beispiel an.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 34\AutoIncrementSample</span><br></br><span class="clistingfett">class Program</span> {<br></br> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection();<br xmlns="">    con.ConnectionString = "...";<br xmlns="">    SqlCommand cmd = new SqlCommand();<br xmlns="">    cmd.Connection = con;<br xmlns="">    cmd.CommandText = "SELECT ProductID, ProductName FROM Products";<br xmlns="">    DataSet ds = new DataSet();<br xmlns="">    SqlDataAdapter da = new SqlDataAdapter(cmd);<br></br>    // Schemainformationen abrufen<br></br>    da.FillSchema(ds, SchemaType.Source);<br></br>    // Festlegen, wie die neuen Schlüsselwerte erzeugt werden<br></br>    ds.Tables[0].Columns[0].AutoIncrementSeed = -1;<br xmlns="">    ds.Tables[0].Columns[0].AutoIncrementStep = -1;<br></br>    // DataSet füllen<br></br>    da.Fill(ds);<br></br>    // Neue Datenzeilen hinzufügen<br></br>    DataRow row = ds.Tables[0].NewRow();<br xmlns="">    row["ProductName"] = "Kaffee";<br xmlns="">    ds.Tables[0].Rows.Add(row);<br xmlns="">    row = ds.Tables[0].NewRow();<br xmlns="">    row["ProductName"] = "Milch";<br xmlns="">    ds.Tables[0].Rows.Add(row);<br xmlns="">    row = ds.Tables[0].NewRow();<br xmlns="">    row["ProductName"] = "Zucker";<br xmlns="">    ds.Tables[0].Rows.Add(row);<br></br>    // Ausgabe des DataSets<br></br>    foreach (DataRow tempRow in ds.Tables[0].Rows)<br xmlns="">      Console.WriteLine("{0,-6}{1}",tempRow[0],tempRow[1]);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 34.9  </span>Hinzufügen von Datenzeilen mit einer Autoinkrementspalte
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit der Code überschaubar bleibt, werden aus der Datenbank nur zwei Spalten der
+                                                      Tabelle <span class="ckursiv">Products</span> abgefragt. Die Primärschlüsselspalte <span class="ckursiv">ProductID</span> ist als Autoinkrementspalte definiert. Mit <span class="clisting">FillSchema</span> werden die Metadaten der Tabelle bezogen. In der Praxis würde man diese Methode in
+                                                      einer Anwendung wohl aus den weiter oben angeführten Gründen nicht benutzen, aber
+                                                      für ein Beispielprogramm ist sie durchaus geeignet. Da <span class="clisting">FillSchema</span> auch <span class="clisting">AutoIncrement=true</span> für die Spalte <span class="ckursiv">ProductID</span> setzt, muss diese Eigenschaft der <span class="clisting">DataColumn</span> nicht mehr gesetzt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Später werden der <span class="clisting">DataTable</span> drei Datenzeilen hinzugefügt. Der temporäre Schlüsselwert der ersten ist auf &#8211;1 festgelegt.
+                                                      Alle weiteren neuen Schlüsselwerte werden mit der Schrittweite &#8211;1 generiert, so dass
+                                                      der Schlüsselwert der zweiten neuen Datenzeile &#8211;2 ist, der der dritten neuen Datenzeile
+                                                      &#8211;3. Beachten Sie, dass die Autoinkrementeigenschaften vor dem Füllen des <span class="clisting">DataSets</span> gesetzt werden müssen. Ansonsten wirken sich die Eigenschaftswerte nicht auf die
+                                                      Autoinkrementwerte aus, die die <span class="clisting">DataTable</span> generiert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Abschluss unserer Betrachtungen zu den Autoinkrementwerten noch eine Anmerkung:
+                                                      Vergessen Sie nicht, dass die generierten Schlüsselwerte nur Platzhalter innerhalb
+                                                      der <span class="clisting">DataTable</span> darstellen. Erst nach der Übermittlung zur Originaldatenbank werden die tatsächlichen
+                                                      und endgültigen Schlüsselwerte von der Datenbank erzeugt. Sie sollten daher vermeiden,
+                                                      die temporären Schlüsselwerte dem Anwender anzuzeigen. Es könnte unabsehbare Folgen
+                                                      haben, wenn der Anwender sich eine ADO.NET-Schlüsselnummer notiert, die später nach
+                                                      der Aktualisierung nicht mehr existiert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpdf9dab7f-2302-41d3-8958-09df54038d6e" name="dodtpdf9dab7f-2302-41d3-8958-09df54038d6e"></a><h3 class="t3"><span class="cfett">34.4.5    </span><span class="cfett"> Was bei einer Änderung einer Datenzeile passiert</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp28b8697b-6d4c-48a5-90f4-f5b83d5c6153"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1d726dd4-29c6-4a45-8f7f-1092da5574fa"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Die Eigenschaft »RowState«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpf9beb51d-61fd-41da-af4d-7e77653a26dc"></a>Ein <span class="clisting">DataSet</span> ist im lokalen Cache der Anwendung abgelegt. Während des Löschens, Änderns und Hinzufügens
+                                                      von Datenzeilen besteht zu der Originaldatenbank keine Verbindung. Wenn der Benutzer
+                                                      die geänderten Daten später an die Datenbank übermitteln möchte, muss sich das <span class="clisting">DataSet</span> daran erinnern können, welche Zeilen von einer Änderung betroffen sind, und natürlich
+                                                      auch, welcher Natur diese Änderung ist. Haben Sie beispielsweise eine Datenzeile gelöscht,
+                                                      muss für die betreffende Datenzeile ein DELETE-SQL-Statement zur Datenbank geschickt
+                                                      werden, das das Löschen in der Originaltabelle bewirkt. Haben Sie eine Datenzeile
+                                                      geändert, bedarf es eines passend formulierten UPDATE-Statements. Wie die Aktualisierungsabfragen
+                                                      erzeugt werden, sei an dieser Stelle noch nicht erläutert. Das werden wir uns im Detail
+                                                      später noch ansehen. Aber Sie sollten an dieser Stelle erkennen, wie wichtig es ist,
+                                                      dass jede Datenzeile ihren eigenen Aktualisierungszustand beschreiben kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ADO.NET speichert die notwendigen Zustandsinformationen in der Eigenschaft <span class="clisting">RowState</span> jeder Datenzeile. Die Eigenschaft wird durch die Enumeration <span class="clisting">DataRowState</span> beschrieben, wie in Tabelle 34.3 aufgelistet.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 34.3  </span>Mitglieder der Enumeration DataRowState
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Added</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile wurde einer <span class="clisting">DataRowCollection</span> hinzugefügt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Deleted</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile wurde mit der <span class="clisting">Delete</span>-Methode der <span class="clisting">DataRow</span> gelöscht.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Detached</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile wurde erstellt, ist jedoch nicht Teil einer <span class="clisting">DataRowCollection</span>. Eine <span class="clisting">DataRow</span> befindet sich in diesem Zustand, wenn sie unmittelbar nach ihrer Erstellung noch
+                                                                  keiner Auflistung hinzugefügt wurde oder wenn sie aus einer Auflistung entfernt wurde.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Modified</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile wurde geändert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Unchanged</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile wurde nicht geändert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Der ursprüngliche und der aktualisierte Inhalt einer Datenzeile</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie wissen nun, dass eine Datenzeile beschreibt, ob und wie sie modifiziert wurde.
+                                                      Um später die Änderung zur Datenbank zu übermitteln, reicht das aber noch nicht aus:
+                                                      Es fehlen noch dringend notwendige Informationen. Stellen Sie sich dazu nur vor, Sie
+                                                      würden den Artikelbezeichner einer Datenzeile der Tabelle <span class="ckursiv">Products</span> ändern und die Änderung mit einem UPDATE-Statement der Datenbank mitteilen. Das SQL-Statement
+                                                      könnte wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">UPDATE Products<br xmlns="">SET ProductName = @Param1<br xmlns="">WHERE ProductID = @Param2 AND ProductName = @Param3<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Parameter <span class="ckursiv">@Param1</span> wird der geänderte, also neue Wert übermittelt, in <span class="ckursiv">@Param2</span> der Schlüsselwert der Datenzeile und in <span class="ckursiv">@Param3</span> der ursprüngliche Wert der Spalte <span class="ckursiv">ProductID</span>. Setzen Sie ein solches Statement ab, darf natürlich zwischen dem Abrufen der Dateninformationen
+                                                      und der Aktualisierung kein zweiter Benutzer den Produktnamen geändert haben. Die
+                                                      Folge wäre eine Konfliktsituation, weil die anstehende Änderung nicht in die Datenbank
+                                                      geschrieben werden kann. Dieser (scheinbaren) Problematik wollen wir an dieser Stelle
+                                                      noch nicht weiter nachgehen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sollten erkennen: Um das UPDATE-Statement erfolgreich absetzen zu können, bedarf
+                                                      es nicht nur der geänderten Werte, sondern auch des Originalwertes, um die Datenzeile
+                                                      in der Datenbank zu identifizieren. Für diesen Zweck ist der Indexer einer <span class="clisting">DataRow</span> überladen. Anstatt mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">row["Productname"]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">den aktuellen, also möglicherweise geänderten Wert der Spalte <span class="ckursiv">ProductName</span> abzurufen, können Sie auch mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">row["Productname", DataRowVersion.Original]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">auf den von der Datenbank bezogenen Originalwert zurückgreifen.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">DataRowVersion</span><span class="clisting"><a class="indexterm" id="dodtp05060374-414b-4ecc-b37b-711fb21d48c4"></a></span> ist eine Aufzählung, mit der die gewünschte Version der betreffenden Spalte in der
+                                                      Datenzeile angegeben werden kann.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 34.4  </span>Die Werte der Enumeration DataRowVersion
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Current</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile enthält aktuelle Werte.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Default</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile enthält einen vorgeschlagenen Wert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Original</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Standardversion der Zeile, dem aktuellen <span class="clisting">DataRowState</span> entsprechend.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Proposed</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Zeile enthält ihre ursprünglichen Werte.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können sich jetzt sicher vorstellen, dass es von jeder <span class="clisting">DataRow</span> immer zwei Versionen gibt: Zunächst einmal <span class="clisting">DataRowVersion.Original</span> für die Werte, die aus der Datenbank bezogen worden sind, und <span class="clisting">DataRowVersion.Current</span> für die aktuellen und möglicherweise geänderten Werte. Jetzt wird auch verständlich,
+                                                      warum es nach der Einleitung einer Änderung mit <span class="clisting">BeginEdit</span> mittels <span class="clisting">CancelEdit</span> möglich ist, den ursprünglichen Zustand einer <span class="clisting">DataRow</span> wiederherzustellen. Rufen Sie mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">row["ProductName"]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">den Inhalt einer Spalte ab, wird immer <span class="clisting">DataRowVersion.Current</span> ausgewertet. Das ist wichtig zu wissen, denn sollten Sie die <span class="clisting">DataRowCollection</span> in einer Schleife durchlaufen, innerhalb deren zum Beispiel auf Spalten aller geänderten
+                                                      Zeilen zugegriffen wird, dürfen Sie von einer gelöschten Zeile nicht <span class="clisting">DataRowVersion.Current</span> abrufen. Sie können aber sehr wohl <span class="clisting">DataRowVersion.Original</span> auswerten, weil eine als gelöscht markierte Datenzeile nicht aus der <span class="clisting">DataRowCollection</span> entfernt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das nächste Beispiel zeigt Ihnen die prinzipielle Vorgehensweise: Nachdem das <span class="clisting">DataSet</span> aus der Artikeltabelle mit Daten gefüllt ist, wird zuerst ein weiterer Datensatz
+                                                      hinzugefügt. Anschließend wird in der Tabelle nach einem bestimmten Artikel gesucht
+                                                      (Tofu). Hierzu wird die Methode <span class="clisting">Select</span> der <span class="clisting">DataTable</span> aufgerufen, die mehrere Überladungen aufweist. Benutzt wird in diesem Beispiel die
+                                                      einfach parametrisierte Version, der ein Suchkriterium als Zeichenfolge übergeben
+                                                      wird. Die Zeichenfolge entspricht der WHERE-Klausel in einer SELECT-Abfrage ohne die
+                                                      Angabe von WHERE. Zum Schluss wird auch noch die fünfte Datenzeile aus der Liste »gelöscht«.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An der Konsole werden abschließend nur die Datenzeilen angezeigt, die in irgendeiner
+                                                      Form gegenüber dem Original eine Änderung erfahren haben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 34\AusgabeModifizierterDaten</span><br></br><span class="clistingfett">class Program</span> {<br></br> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection();<br xmlns="">    con.ConnectionString = "...";<br xmlns="">    SqlCommand cmd = new SqlCommand();<br xmlns="">    cmd.Connection = con;<br xmlns="">    cmd.CommandText = "SELECT ProductID, ProductName, UnitsInStock " +<br xmlns="">                      "FROM Products";<br xmlns="">    DataSet ds = new DataSet();<br xmlns="">    SqlDataAdapter da = new SqlDataAdapter(cmd);<br xmlns="">    da.FillSchema(ds, SchemaType.Source);<br xmlns="">    ds.Tables[0].Columns["ProductID"].AutoIncrementSeed = -1;<br xmlns="">    ds.Tables[0].Columns["ProductID"].AutoIncrementStep = -1;<br xmlns="">    da.Fill(ds);<br></br>    // Neue Datenzeile hinzufügen<br></br>    DataRow newRow = ds.Tables[0].NewRow();<br xmlns="">    newRow["ProductName"] = "Camembert";<br xmlns="">    newRow["UnitsInStock"] = 100;<br xmlns="">    ds.Tables[0].Rows.Add(newRow);<br></br>    // Datenzeile ändern<br></br>    DataRow[] editRow = ds.Tables[0].Select("ProductName='Tofu'");<br xmlns="">    if (editRow.Length == 1) {<br xmlns="">      editRow[0].BeginEdit();<br xmlns="">      editRow[0]["UnitsInStock"] = 1000;<br xmlns="">      editRow[0].EndEdit();<br xmlns="">    }<br xmlns="">    else<br xmlns="">      Console.WriteLine("Datenzeile 'Tofu' nicht gefunden.");<br></br>    // Datenzeile löschen<br></br>    ds.Tables[0].Rows[4].Delete();<br></br>    // Ausgabe<br></br>    foreach (DataRow tempRow in ds.Tables[0].Rows) {<br xmlns="">      if (tempRow.RowState == DataRowState.Added)<br xmlns="">        Console.WriteLine("Neue Datenzeile: {0}", tempRow["Productname"]);<br xmlns="">      else if (tempRow.RowState == DataRowState.Modified) {<br xmlns="">        Console.WriteLine("Modifiziert: {0}", tempRow["Productname"]);<br xmlns="">        Console.WriteLine("Alter Wert: {0}",<br xmlns="">                   tempRow["UnitsInStock", DataRowVersion.Original]);<br xmlns="">        Console.WriteLine("Neuer Wert: {0}", tempRow["UnitsInStock"]);<br xmlns="">      }<br xmlns="">      else if (tempRow.RowState == DataRowState.Deleted)<br xmlns="">        Console.WriteLine("Gelöscht: {0}",<br xmlns="">             tempRow["ProductName", DataRowVersion.Original]);<br xmlns="">      else<br xmlns="">        continue;<br xmlns="">      Console.WriteLine(new string('-', 40));<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 34.10  </span>Anzeige modifizierter Datenzeilen
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp28b8697b-6d4c-48a5-90f4-f5b83d5c6153" name="dodtp28b8697b-6d4c-48a5-90f4-f5b83d5c6153"></a><h3 class="t3"><span class="cfett">34.4.6    </span><span class="cfett"> Manuelles Steuern der Eigenschaft »DataRowState«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp01b8662f-edaa-4357-ac7b-882873c9a5ab"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Eigenschaft <span class="clisting">RowState</span> ist für jede Datenzeile nach dem Füllen des <span class="clisting">DataSets</span> auf <span class="clisting">Unchanged</span> gesetzt. Je nachdem, ob Sie eine Datenzeile ändern, löschen oder hinzufügen, wird
+                                                      ihr Zustand automatisch auf <span class="clisting">Modified</span>, <span class="clisting">Deleted</span> oder <span class="clisting">Added</span> gesetzt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit zwei Methoden können Sie den <span class="clisting">RowState</span> per Code beeinflussen: <span class="clisting">AcceptChanges</span> und <span class="clisting">RejectChanges</span><span class="clisting"><a class="indexterm" id="dodtpbb11d412-2758-4a9e-9324-22ba63663b07"></a></span>. Es handelt sich hierbei um Methoden, die Sie auf dem <span class="clisting">DataSet</span>, der <span class="clisting">DataTable</span> oder einer bestimmten <span class="clisting">DataRow</span> aufrufen können.
+                                                   </p>
+                                                   <h4 class="t4"> Die Methode »AcceptChanges«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">AcceptChanges</span><span class="clisting"><a class="indexterm" id="dodtpb38b84fb-4d00-4de2-a448-13db023921bb"></a></span> setzt den <span class="clisting">RowState</span> einer Datenzeile von <span class="clisting">Added</span> oder <span class="clisting">Modified</span> auf <span class="clisting">Unchanged</span>. Dabei wird der Inhalt von <span class="clisting">DataRowVersion.Original</span> durch den von <span class="clisting">DataRowVersion.Current</span> beschriebenen Inhalt ersetzt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Trifft die Methode auf eine gelöschte Datenzeile, wird die Datenzeile aus der <span class="clisting">DataRowCollection</span> entfernt und <span class="clisting">RowState</span> auf <span class="clisting">DataRowState.Detached</span> gesetzt. Rufen Sie <span class="clisting">AcceptChanges</span> auf die Referenz des <span class="clisting">DataSets</span> auf, wird mit allen Datenzeilenänderungen in sämtlichen Tabellen so verfahren. Der
+                                                      Aufruf auf eine bestimmte Tabelle im <span class="clisting">DataSet</span> wirkt sich dementsprechend nur auf die betreffenden Datenzeilen der Tabelle aus.
+                                                      Analog können Sie auch den Zustand einer bestimmten Datenzeile ändern.
+                                                   </p>
+                                                   <h4 class="t4"> Die Methode »RejectChanges«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">RejectChanges</span> verwerfen Sie alle Änderungen. Die Methode setzt die aktuellen Werte der <span class="clisting">DataRow</span> auf ihre ursprünglichen Werte zurück. Dabei werden die in der <span class="clisting">DataRow</span> enthaltenen Änderungen verworfen, also:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DataRowVersion.Current = DataRowVersion.Original<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">RowState</span> hängt nach dem Aufruf von <span class="clisting">RejectChanges</span> vom anfänglichen <span class="clisting">RowState</span> ab. Der Zustand <span class="clisting">Deleted</span> oder <span class="clisting">Modified</span> wird zu <span class="clisting">Unchanged</span>, eine hinzugefügte Datenzeile wird zu <span class="clisting">Detached</span>.
+                                                   </p>
+                                                   <h4 class="t4"> Die Methoden »SetAdded« und »SetModified«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting"><a class="indexterm" id="dodtpb99a914b-87f2-44d1-af28-c2c53f6365ea"></a></span><span class="clisting">SetAdded</span> ändert den Zustand einer Datenzeile in <span class="clisting">Added</span> und kann nur für eine <span class="clisting">DataRow</span> aufgerufen werden, deren <span class="clisting">RowState</span> den Wert <span class="clisting">Unchanged</span> oder <span class="clisting">Added</span> hat. Ist der Ausgangszustand ein anderer, wird die Ausnahme <span class="clisting">InvalidOperationException</span> ausgelöst.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dementsprechend ändert <span class="clisting">SetModified</span> den Zustand in <span class="clisting">Modified</span>. Der Einsatz dieser Methode beschränkt sich auf Datenzeilen, deren Ausgangszustand
+                                                      <span class="clisting">Unchanged</span> ist. Ansonsten wird ebenfalls die eben erwähnte Ausnahme ausgelöst.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs34_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="34  ADO.NET &#8211; Daten im lokalen Speicher "><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_34_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_34_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,842 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 15  Multithreading und die Task Parallel Library (TPL)">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 15  Multithreading und die Task Parallel Library (TPL)">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 15  Multithreading und die Task Parallel Library
+         (TPL)
+      </title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="15_002.html">
+      <link rel="next" href="1997_15_004.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_15_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_15_004.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c" class="navnav">15 Multithreading und die Task Parallel Library (TPL)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_15_001.html#dodtpc0d5936d-a2e4-4b29-9932-e36dbac275af" class="navnav">15.1 Überblick</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_15_002.html#dodtp4d7cb142-5b23-44cf-8fa5-93084ae61382" class="navnav">15.2 Multithreading mit der Klasse »Thread«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp19f119d7-3b77-4536-a049-221ce37cc94d" class="navnav">15.2.1 Einführung in das Multithreading</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtpa66bab0d-2c4f-4309-90e1-f4ea00581c8d" class="navnav">15.2.2 Threadzustände und Prioritäten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp1645ee1a-de52-42ca-9683-6fe1993e6641" class="navnav">15.2.3 Zusammenspiel mehrerer Threads</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp71df3d21-6ccf-44c1-9a44-82e42880cd0e" class="navnav">15.2.4 Die Entwicklung einer einfachen Multithreading-Anwendung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtpd6a16d11-bd5e-44af-9e14-ac5a11c3eb85" class="navnav">15.2.5 Die Klasse »Thread«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp739768cf-b9d9-45cc-a7f6-afa2e8dcf605" class="navnav">15.2.6 Threadpools nutzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp43938eba-7e16-4364-bd85-19b830b86d5c" class="navnav">15.2.7 Die Synchronisation von Threads</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp8c7e0f11-8034-4e70-83f0-2d8c7626475b" class="navnav">15.2.8 Der »Monitor« zur Synchronisation</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp8e4a436e-9677-48ce-aacc-f35948ef052f" class="navnav">15.2.9 Das Attribut »MethodImpl«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtpd46936fd-3a82-40fa-b04d-10ceef675910" class="navnav">15.2.10 Das Synchronisationsobjekt »Mutex«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtpa9584a73-4980-4804-b6ad-6e098f16b97c" class="navnav">15.2.11 Grundlagen asynchroner Methodenaufrufe</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp6cd94ef0-9aae-45b1-9de3-f66b3125d6e4" class="navnav">15.2.12 Asynchroner Methodenaufruf</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtp9bd6facd-ddf6-4ead-b467-4f0cdde0ab10" class="navnav">15.2.13 Asynchroner Aufruf mit Rückgabewerten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_002.html#dodtpced1bada-5ac1-498c-9821-5c3fe6e65f9f" class="navnav">15.2.14 Eine Klasse mit asynchronen Methodenaufrufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_15_003.html#dodtpcdded817-8f7d-4748-be93-4011e419194f" class="navh">15.3 Die TPL (Task Parallel Library)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_003.html#dodtped92ac97-f679-4aee-a6c3-ecb78252bfec" class="navh">15.3.1 Allgemeines zur Parallelisierung mit der TPL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_003.html#dodtpc5bc6a6f-61e9-4145-ad44-7442387916a1" class="navh">15.3.2 Die Klasse »Parallel«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_15_003.html#dodtp4e9d3a21-53d2-4140-a0bc-523da641364d" class="navh">15.3.3 Die Klasse »Task«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_15_004.html#dodtp374147ac-0ac9-4355-8e5c-6db6f4543bfc" class="navnav">15.4 Asynchrone Programmierung mit »async« und »await«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcdded817-8f7d-4748-be93-4011e419194f" name="dodtpcdded817-8f7d-4748-be93-4011e419194f"></a><h2 class="t2"><span class="cfett">15.3    </span><span class="cfett"> Die TPL (Task Parallel Library)</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtped92ac97-f679-4aee-a6c3-ecb78252bfec"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem .NET Framework 4.0 ist die Entwicklung multithread-fähiger Anwendungen um
+                                                      die Bibliothek TPL (Task Parallel Library) ergänzt worden. Dabei muss der Entwickler
+                                                      sich nicht mehr um jeden Thread einzeln kümmern, sondern für ihn steht primär die
+                                                      Aufgabenstellung im Vordergrund, Tasks zu definieren und zu synchronisieren. Das Erstellen
+                                                      der Threads wird zur Laufzeit automatisch erfolgen, und das sogar unter optimaler
+                                                      Ausnutzung der Hardwareausstattung. Das bedeutet, wenn eine Anwendung auf einem Dual-Core-Prozessor
+                                                      ausgeführt wird, wird der Task in zwei Threads abgearbeitet. Läuft die Anwendung hingegen
+                                                      auf einem Quad-Core-Prozessor, werden vier Threads erzeugt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das hört sich alles bereits sehr verlockend an. Allerdings sollte bereits am Anfang
+                                                      darauf hingewiesen werden, dass die parallele Programmierung mit TPL nicht automatisch
+                                                      dazu führt, dass die Anwendungen schneller ausgeführt werden. Ganz im Gegenteil, unter
+                                                      Umständen können Anwendungen sogar langsamer werden. Was sich paradox anhört, ist
+                                                      sehr einfach zu erklären. Mit dem Verteilen über mehrere Prozessorkerne ist ein gewaltiger
+                                                      Overhead verbunden: Daten müssen in die Kerne eingelesen werden, Daten müssen die
+                                                      Kerne auch wieder verlassen und zwischengespeichert werden. Stimmt das Verhältnis
+                                                      zwischen reiner Rechenzeit und den Verwaltungsoperationen nicht, kann die Performance
+                                                      durch Nutzen der Parallelisierung darunter leiden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es lässt sich nicht eindeutig sagen, wann die Parallelverarbeitung Vorteile bringt.
+                                                      Als Daumenregel können Sie nehmen: Je mehr Prozessorkerne genutzt werden können, desto
+                                                      aufwendiger und zeitintensiver sollten die Operationen sein, um von der parallelen
+                                                      Verarbeitung profitieren zu können. Im Zweifelsfall sollten Sie das Programm testen
+                                                      &#8211; auch auf Rechnern mit unterschiedlicher Ausstattung. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtped92ac97-f679-4aee-a6c3-ecb78252bfec" name="dodtped92ac97-f679-4aee-a6c3-ecb78252bfec"></a><h3 class="t3"><span class="cfett">15.3.1    </span><span class="cfett"> Allgemeines zur Parallelisierung mit der TPL</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc5bc6a6f-61e9-4145-ad44-7442387916a1"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcdded817-8f7d-4748-be93-4011e419194f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klassen zur parallelen Programmierung mit der TPL sind im Namespace <span class="clisting">System.Threading.Tasks</span> zu finden. Allerdings gibt es auch weitere Klassen in anderen Namespaces, die im
+                                                      Zuge der TPL eingeführt worden sind und die Parallelisierung nutzen. Der Namespace
+                                                      <span class="clisting">System.Collections.Concurrent</span> mit seinen neuen Auflistungsklassen sei an dieser Stelle erwähnt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Setzen Sie die Task Parallel Library ein, werden Sie es hauptsächlich mit zwei Klassen
+                                                      zu tun haben:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die Klasse <span class="clisting">Parallel</span>: Mit dieser Klasse werden in erster Linie Schleifen parallel ausgeführt. Dazu wird
+                                                         die zu verarbeitende Datenmenge in Teilmengen aufgeteilt. Wie viele Teilmengen verarbeitet
+                                                         werden, entscheidet die Klasse selbst. Dabei kann es aber durchaus vorkommen, dass
+                                                         keine Teilmengen gebildet werden, also keine parallele Verarbeitung stattfindet. Dieses
+                                                         Verhalten zeugt von einer ausgeprägten Optimierung der Klasse hinsichtlich des Performancegewinns.
+                                                         Die notwendigen Threads bezieht die TPL übrigens aus dem Threadpool.
+                                                      </li>
+                                                      <li class="pgp">Die Klasse <span class="clisting">Task</span> (und deren Ableitung <span class="clisting">Task&lt;TResult&gt;</span>): Diese Klasse unterstützt die parallele Abarbeitung von Methoden. Liefert ein Task
+                                                         einen Wert zurück, verwenden Sie die Klasse <span class="clisting">Task&lt;TResult&gt;</span>. Die <span class="clisting">Task</span>-Klasse bietet Möglichkeiten, wie sie auch von der Klasse <span class="clisting">Thread</span> her bekannt sind, allerdings unter Verwendung des Threadpools. Im Vergleich zu <span class="clisting">Thread</span> ist Task aber einfacher zu handhaben.
+                                                      </li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc5bc6a6f-61e9-4145-ad44-7442387916a1" name="dodtpc5bc6a6f-61e9-4145-ad44-7442387916a1"></a><h3 class="t3"><span class="cfett">15.3.2    </span><span class="cfett"> Die Klasse »Parallel«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4e9d3a21-53d2-4140-a0bc-523da641364d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtped92ac97-f679-4aee-a6c3-ecb78252bfec"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die statische Klasse <span class="clisting">Parallel</span> unterstützt die Parallelisierung von Codebereichen und Schleifen. Dafür werden insgesamt
+                                                      nur drei Methoden angeboten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">For</span></li>
+                                                      <li class="pgp"><span class="clisting">ForEach</span></li>
+                                                      <li class="pgp"><span class="clisting">Invoke</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle drei Methoden sind überladen (und natürlich statisch). Damit können Sie gewissermaßen
+                                                      ein Feintuning der parallelen Verarbeitung steuern, beispielsweise um die Anzahl der
+                                                      benutzten Prozessorkerne zu beschränken.
+                                                   </p>
+                                                   <h4 class="t4"> Die Methode »Parallel.Invoke«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die einfachste Art, parallele Operationen anzustoßen, ist die Methode <span class="clisting">Invoke</span> der Klasse <span class="clisting">Parallel</span>. Die Methode definiert ein Paramater-Array, dem Sie <span class="clisting">Action</span>-Objekte übergeben. Die Syntax lautet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static void Invoke(params Action[] action)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Action</span> ist ein Delegate und kapselt eine Methode, die über keine Parameter verfügt und keinen
+                                                      Wert zurückgibt. Erst wenn alle Methoden abgearbeitet sind, wird die Programmausführung
+                                                      mit der auf <span class="clisting">Invoke</span> folgenden Anweisung fortgesetzt. <span class="clisting">Invoke</span> blockiert also den Programmablauf und hat synchronen Charakter.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen sicherstellen, dass innerhalb der Methoden nicht dieselben Variablen benutzt
+                                                      werden. Ansonsten erleben Sie unliebsame Überraschungen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Beispielprogramm werden mit <span class="clisting">Task1</span>, <span class="clisting">Task2</span> und <span class="clisting">Task3</span> drei Methoden beschrieben. Sie leisten nichts Besonderes und geben nur innerhalb
+                                                      einer Schleife Konsolenmeldungen aus, die mit <span class="clisting">Thread.Sleep</span> noch ein wenig gebremst werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 15\ParallelInvokeSample</span><br></br>class Program {<br></br><span class="clistingfett">  static void Main(string[] args) </span>{<br xmlns="">    Parallel.Invoke(Task1, Task2, Task3);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br><span class="clistingfett">  static void Task1() </span>{<br xmlns="">    for (int i = 0; i &lt; 10; i++) {<br xmlns="">      Thread.Sleep(50);<br xmlns="">      Console.Write(" #1 ");<br xmlns="">    }<br xmlns="">  }<br></br>  <span class="clistingfett">static void Task2() </span>{<br xmlns="">    for (int i = 0; i &lt; 10; i++) {<br xmlns="">      Thread.Sleep(50);<br xmlns="">      Console.Write(" #2 ");<br xmlns="">    }      <br xmlns="">  }<br></br><span class="clistingfett">  static void Task3() </span>{<br xmlns="">    for (int i = 0; i &lt; 10; i++) {<br xmlns="">      Thread.Sleep(50);<br xmlns="">      Console.Write(" #3 ");<br xmlns="">    }         <br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.21  </span>Methoden auf mehrere Prozessorkerne verteilen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Abbildung 15.9 beweist, dass alle Tasks parallel ausgeführt werden. Besser gesagt,
+                                                      ich kann das hiermit nur für <span class="clisting">Task1</span> und <span class="clisting">Task2</span> beweisen. Der dritte Task wird am Ende komplett auf einmal abgearbeitet &#8211; daran können
+                                                      Sie sehen, dass diese Abbildung auf einer Dual-Core-Maschine erstellt worden ist.
+                                                   </p>
+                                                   <p><a href="bilder/15_09.png" rel="lightbox" title="Ausgabe des Beispielprogramms »ParallelInvokeSample«"><img class="bild" border="1" src="bilderklein/klein15_09.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 15.9  </span>Ausgabe des Beispielprogramms »ParallelInvokeSample«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im <span class="cscreenelement">Task-Manager</span> können Sie auch beobachten, dass bei der Ausführung einer parallelen Operation die
+                                                      einzelnen CPUs ihre Arbeit verrichten. Allerdings werden Sie wahrscheinlich praktisch
+                                                      keine Reaktion sehen, wenn Sie unser Beispielprogramm laufen lassen. Dafür wird die
+                                                      Fähigkeit einer CPU von unserem Beispiel viel zu wenig herausgefordert &#8211; die CPU langweilt
+                                                      sich, ist praktisch beschäftigungslos. Um in Abbildung 15.10 wenigstens etwas Aktivität
+                                                      deutlich zu machen, wurde die Anzahl der Schleifendurchläufe des Beispielprogramms
+                                                      auf 100000 erhöht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nicht unüblich ist die Angabe der Tasks durch Lambda-Ausdrücke. Der Code ist kürzer,
+                                                      aber auch zunächst schlechter lesbar. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns=""> Parallel.Invoke(() =&gt; { for (int i = 0; i &lt; 10; i++) {<br xmlns="">                                        Thread.Sleep(50);<br xmlns="">                                        Console.Write(" #1 ");<br xmlns="">                                    } },<br xmlns="">                 () =&gt; { for (int i = 0; i &lt; 10; i++) {<br xmlns="">                                        Thread.Sleep(50);<br xmlns="">                                        Console.Write(" #2 ");<br xmlns="">                                    } },<br xmlns="">                 () =&gt; { for (int i = 0; i &lt; 10; i++) {<br xmlns="">                                        Thread.Sleep(50);<br xmlns="">                                        Console.Write(" #3 ");<br xmlns="">                                    } });<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.22  </span>Verwendung von Lambda-Ausdrücken
+                                                   </p>
+                                                   <p><a href="bilder/15_10.png" rel="lightbox" title="Anzeige der CPU-Auslastung im Task-Manager"><img class="bild" border="1" src="bilderklein/klein15_10.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 15.10  </span>Anzeige der CPU-Auslastung im Task-Manager
+                                                   </p>
+                                                   <h4 class="t4"> Schleifen mit »Parallel.For«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">Parallel.For</span> und <span class="clisting">Parallel.Foreach</span> lassen sich einfache Schleifendurchläufe parallelisieren. Der Effekt der Performancesteigerung
+                                                      wird sich sicher nicht bei 10 oder 100 Schleifendurchläufen bemerkbar machen, die
+                                                      Anzahl sollte schon deutlich darüber liegen und hängt auch von der Anzahl der beteiligten
+                                                      Prozessorkerne ab.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Syntax der <span class="clisting">For</span>-Methode ähnelt sehr der <span class="clisting">for</span>-Schleife:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static ParallelLoopResult For(int fromInclusive,int toExclusive,<br></br>                                     Action&lt;int&gt; body )<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der erste Parameter erwartet den Startindex (<span class="clisting">inclusive</span>), der zweite den Endindex (<span class="clisting">exklusive</span>). Der letzte Parameter ist wieder ein Delegate, der auf den Code zeigt, der innerhalb
+                                                      der Schleife ausgeführt wird. Der Rückgabewert vom Typ <span class="clisting">ParallelLoopResult</span> gibt Auskunft, ob die Schleife komplett ausgeführt worden ist oder vorzeitig beendet
+                                                      wurde. Zudem können Sie den Index abrufen, bei dem die Schleife abgebrochen worden
+                                                      ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im nächsten Beispielprogramm wird <span class="clisting">Parallel.For</span> nicht nur demonstriert, sondern auch die Zeitspanne zwischen einer herkömmlichen
+                                                      Schleife und einer parallelisierten in Millisekunden gemessen. Zur Messung der Zeitspanne,
+                                                      die die Laufzeit zur Abarbeitung der Schleifen braucht, greifen wir auf die Klasse
+                                                      <span class="clisting">StopWatch</span> aus dem Namespace <span class="clisting">System.Diagnostics</span> zurück.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 15\ParallelForSample</span><br></br>class Program {<br></br><span class="clistingfett">  static void Main(string[] args) </span>{<br xmlns="">    Stopwatch watch = new Stopwatch();<br xmlns="">    watch.Start();<br xmlns="">    ParallelTest();<br xmlns="">    watch.Stop();<br xmlns="">    Console.WriteLine(watch.ElapsedMilliseconds);<br xmlns="">    watch.Reset();<br></br>    watch.Start();<br xmlns="">    SynchTest();<br xmlns="">    watch.Stop();<br xmlns="">    Console.WriteLine(watch.ElapsedMilliseconds);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br><span class="clistingfett">  static void SynchTest() </span>{<br xmlns="">    double[] arr = new double[1000000];<br xmlns="">    for(int i = 0; i &lt; 1000000; i++)<br xmlns="">      arr[i] = Math.Pow(i, 0.333) * Math.Sqrt(Math.Sin(i));<br xmlns="">  }<br></br><span class="clistingfett">  static void ParallelTest() </span>{<br xmlns="">    double[] arr = new double[1000000];<br xmlns="">    Parallel.For(0, 1000000, i =&gt; <br xmlns="">            {<br xmlns="">               arr[i] = Math.Pow(i, 0.333) * Math.Sqrt(Math.Sin(i));         <br xmlns="">            });<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.23  </span>Parallel verarbeitete Schleife
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Testen Sie das Programm auf Ihrem Rechner, haben Sie mit Sicherheit andere Werte.
+                                                      Aber die Tendenz dürfte ähnlich sein: Die parallele Ausführung dauert im Schnitt 140
+                                                      ms, die synchrone 268. Das bedeutet fast 50 % Performancegewinn. Je geringer Sie die
+                                                      Anzahl der Schleifendurchläufe festlegen, desto geringer ist auch der Vorteil der
+                                                      Parallelisierung.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Die Erhöhung des Schleifenzählers ist immer +1. Möchten Sie andere Schrittweiten festlegen,
+                                                         müssen Sie im Schleifenblock eine entsprechende Umrechnung vornehmen. Angenommen,
+                                                         Sie sind an allen ganzzahligen Werten zwischen 0 und 100 interessiert, könnten Sie
+                                                         im Schleifenkörper den folgenden Code schreiben:
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint"> Parallel.For(0, 50, i =&gt; <br xmlns=""> {<br xmlns="">    int newIndex = i * 2;<br xmlns="">    Console.Write(" {0} ", newIndex);<br xmlns=""> });<br></pre></div>
+                                                      <p class="pbstandard">Außerdem ist nur eine positive Iteration möglich.</p>
+                                                   </div>
+                                                   <h4 class="t4"> Schleifenunterbrechung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der parallelen Verarbeitung muss natürlich eine Schleife anders abgebrochen werden
+                                                      als in einer herkömmlichen Schleife. Die Klasse <span class="clisting">Parallel</span> stellt dazu eine Überladung der Methode <span class="clisting">For</span> zur Verfügung, deren Syntax wir uns zuerst ansehen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static ParallelLoopResult For(int fromInclusive,int toExclusive,<br></br>                                     Action&lt;int, ParallelLoopState&gt; body )<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier wird eine andere Variante des Delegaten <span class="clisting">Action</span> benutzt. Sie geben hier ein Objekt vom Typ <span class="clisting">ParallelLoopState</span> an, das unter anderem auch die Methode <span class="clisting">Stop</span> zum Abbruch einer parallel ausgeführten Schleife bereitstellt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Parallel.For(0, 1000000, (i, option) =&gt; <br xmlns="">{<br xmlns="">   arr[i] = Math.Pow(i, 0.333) * Math.Sqrt(Math.Sin(i));<br xmlns="">   if (i &gt; 1000) option.Stop();<br xmlns="">});<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt neben der Methode <span class="clisting">Stop</span> auch noch die Methode <span class="clisting">Break</span>. Diese Methode gibt an, dass die Schleife nach der aktuellen Iteration beendet werden
+                                                      soll.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Die <span class="clisting">For</span>-Methode hat noch mehr Überladungen als die beiden hier vorgestellten. Wir werden
+                                                         aber darauf nicht weiter eingehen.
+                                                      </p>
+                                                   </div>
+                                                   <h4 class="t4"> Auswerten des Status der Schleifenoperation</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">For</span> liefert einen Rückgabewert vom Typ <span class="clisting">ParallelLoopResult</span>. Mit <span class="clisting">IsCompleted</span> und <span class="clisting">LowestBreakIteration</span> hat die Klasse nur zwei Eigenschaften. In beiden Fällen bezieht sich die Auswertung
+                                                      auf einen möglichen vorzeitigen Schleifenabbruch. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">IsCompleted</span> gibt an, ob die Schleife bis zum Abschluss ausgeführt wurde. <span class="clisting">LowestBreakIteration</span> gibt den Indexwert an, bei dem eine Schleife mit <span class="clisting">Break</span> unterbrochen worden ist. Wurde eine Schleife mit <span class="clisting">Stop</span> beendet, ist der Rückgabewert <span class="clisting">null</span>.
+                                                   </p>
+                                                   <h4 class="t4"> Collection mit »ForEach« parallel durchlaufen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Parallelisierung der <span class="clisting">For</span>-Schleife mit <span class="clisting">Parallel.For</span> habe ich Ihnen gezeigt. Es gibt auch noch die sehr ähnliche Methode <span class="clisting">ForEach</span> der Klasse <span class="clisting">Parallel</span>, um auch auf Collections parallel zugreifen zu können.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich ähnelt der Einsatz der <span class="clisting">ForEach</span>-Methode dem der <span class="clisting">For</span>-Methode. Daher soll an dieser Stelle auch nur kurz gezeigt werden, wie die Methode
+                                                      eingesetzt wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string[] namen = { "Peter", "Uwe", "Udo", "Willi", <br xmlns="">                    "Pia", "Michael", "Conie" };<br xmlns="">Parallel.ForEach(namen, name  =&gt; <br xmlns="">{                <br xmlns="">  Console.WriteLine(name);<br xmlns="">});<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.24  </span>Parallele Verarbeitung mit »ForEach«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können übrigens nicht erwarten, dass die Namen in der Reihenfolge ausgegeben werden,
+                                                      in der sie in der Liste angegeben sind.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp4e9d3a21-53d2-4140-a0bc-523da641364d" name="dodtp4e9d3a21-53d2-4140-a0bc-523da641364d"></a><h3 class="t3"><span class="cfett">15.3.3    </span><span class="cfett"> Die Klasse »Task«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc4872324-5679-4c9c-8db3-52b7437c5d78"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Oben habe ich bereits erwähnt, dass die Klasse <span class="clisting">Task</span> durchaus der Klasse <span class="clisting">Thread</span> ähnelt. Widmen wir uns nun dieser Klasse.
+                                                   </p>
+                                                   <h4 class="t4"> Einen Task erstellen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zunächst einmal gilt es, sich ein Objekt vom Typ <span class="clisting">Task</span> zu besorgen. Dazu bieten sich zwei Möglichkeiten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie instanziieren in gewohnter Weise mit <span class="clisting">new</span> und übergeben dabei ein Objekt vom Typ <span class="clisting">Action</span> (Sie erinnern sich, es handelt sich dabei um einen Delegate).
+                                                      </li>
+                                                      <li class="pgp">Sie rufen <span class="clisting">Task.factory.StartNew</span> unter Übergabe eines <span class="clisting">Action</span>-Objekts auf.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Unterschied zwischen diesen beiden Varianten ist, dass der Task im ersten Fall
+                                                      noch explizit gestartet werden muss, während im zweiten Fall der Task bereits automatisch
+                                                      gestartet wird. Im folgenden Listing werden beide Möglichkeiten gezeigt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">  Task task1 = Task.Factory.StartNew(DoSomething);<br xmlns="">  Task task2 = new Task(Test);<br xmlns="">  task2.Start();<br xmlns="">}<br></br><span class="clistingfett">public static void DoSomething()</span> { <br xmlns="">  Console.WriteLine("Task wird ausgeführt ...");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.25  </span>Einsatz der Klasse »Task«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die durch das Objekt <span class="ckursiv">task1</span> beschriebene Operation wird sofort gestartet, während es des Aufrufs der Methode
+                                                      <span class="clisting">Start</span> beim Objekt <span class="ckursiv">task2</span> bedarf.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Natürlich können Sie die Operation auch unter Verwendung eines Lambda-Ausdrucks mitteilen,
+                                                      z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Task task1 = Task.Factory.StartNew(() =&gt; <br xmlns="">{ <br xmlns="">  Console.WriteLine("Task wird ausgeführt ...");<br xmlns="">});<br></pre></div>
+                                                   <h4 class="t4"> Daten an den Task übergeben</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manche parallel auszuführende Operationen werden eine Datenübergabe voraussetzen.
+                                                      Natürlich geht auch das. Sehen wir uns zuerst die entsprechende Überladung der Methode
+                                                      <span class="clisting">StartNew</span> an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public Task StartNew(Action&lt;Object&gt; action, Object state)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt wird es etwas komplexer, denn <span class="clisting">StartNew</span> definiert zwei Parameter. Fangen wir mit dem zweiten an. An dieser Position geben
+                                                      wir unser Übergabeargument an, das als <span class="clisting">Object</span>-Typ entgegengenommen wird. Der erste Parameter beschreibt nicht nur die parallele
+                                                      Operation (die, wie Sie vorher gesehen haben, »parameterlos« ist), sondern wir müssen
+                                                      hier einen beliebigen Parameter beschreiben, der innerhalb der Operation dazu dient,
+                                                      den tatsächlichen Typ des zweiten Übergabearguments zu bestimmen. Das hört sich kompliziert
+                                                      an, deshalb auch sofort ein einfaches Beispiel.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string name = "Andreas";<br xmlns="">Task.Factory.StartNew((str) =&gt; { <span class="clistingfett">/* ... */</span> }, name);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ich habe bewusst auf die Angabe jeglicher Operationen verzichtet, damit der Code gut
+                                                      lesbar bleibt. Das zweite Argument ist hier <span class="clisting">name</span>, mit <span class="clisting">str</span> wird das erforderliche erste Argument beschrieben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jetzt sehen wir uns ein konkretes Beispiel an. In diesem wird ein Integer-Array an
+                                                      die parallele Operation übergeben und dort in die Konsole geschrieben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int[] arr = { 1, 2, 3, 4, 5 };<br xmlns="">Task.Factory.StartNew((liste) =&gt;<br xmlns="">{<br xmlns="">  int[] p = (int[])liste;<br xmlns="">  foreach(int item in arr)<br xmlns="">    Console.WriteLine(item);<br xmlns="">}, arr);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.26  </span>Datenübergabe an »Task«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier können Sie erkennen, wie der erste Parameter <span class="clisting">liste</span> innerhalb der Methode in den tatsächlichen Typ <span class="clisting">int[]</span> konvertiert wird und uns den nachfolgenden Zugriff auf die Elemente des Arrays ermöglicht.
+                                                   </p>
+                                                   <h4 class="t4"> Auf das Beenden eines Tasks warten</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Oftmals hängt die weitere Programmausführung davon ab, ob der Task oder die Tasks
+                                                      die Bearbeitung beendet haben. In solchen Situation bieten sich mit <span class="clisting">Wait</span>, <span class="clisting">WaitAny</span> und <span class="clisting">WaitAll</span> gleich mehrere Möglichkeiten, auf das Ende eines Tasks zu warten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Warten Sie auf das Ende der Ausführungen eines bestimmten Tasks, bietet sich die Methode
+                                                      <span class="clisting">Wait</span> an, die auf die Referenz des <span class="clisting">Task</span>-Objekts aufgerufen wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Task task = Task.Factory.StartNew(() =&gt;<br xmlns="">{<br xmlns="">  Console.WriteLine("Lange Operation ....");<br xmlns="">  Thread.Sleep(5000);<br xmlns="">  Console.WriteLine("Ich bin fertig ...");<br xmlns="">});<br xmlns="">task.Wait();<br xmlns="">Console.WriteLine("Task hat Arbeit beendet ...");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.27  </span>Auf das Beenden eines Tasks warten
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können <span class="clisting">Wait</span> auch mitteilen, dass Sie nur für eine bestimmte Dauer warten möchten, und übergeben
+                                                      dann die entsprechende Zeitspanne in Millisekunden als Argument. Dieser Fall dürfte
+                                                      aber eher selten auftreten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sind mehrere Tasks gestartet, können Sie auf das Beenden eines bestimmten oder auch
+                                                      aller Tasks mit der statischen Methode <span class="clisting">WaitAll</span> warten, der Sie die Referenzen auf die Tasks angeben, von denen der weitere Ablauf
+                                                      des Programms abhängt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Task task1 = Task.Factory.StartNew(() =&gt;<br xmlns="">{<br xmlns="">  Thread.Sleep(10000);<br xmlns="">  Console.WriteLine("Task #1: fertig ...");<br xmlns="">});<br xmlns="">Task task2 = Task.Factory.StartNew(() =&gt;<br xmlns="">{<br xmlns="">  Thread.Sleep(3000);<br xmlns="">  Console.WriteLine("Task #2: fertig ...");<br xmlns="">});<br xmlns="">Task task3 = Task.Factory.StartNew(() =&gt;<br xmlns="">{<br xmlns="">  Thread.Sleep(6000);<br xmlns="">  Console.WriteLine("Task #3: fertig ...");<br xmlns="">});<br xmlns="">Task.WaitAll(task1, task2, task3);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.28  </span>Warten auf das Beenden mehrerer Tasks
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alternativ bietet sich bei mehreren laufenden Aufgaben auch <span class="clisting">WaitAny</span> an. <span class="clisting">WaitAny</span> erwartet eine Liste von Aufgaben. Das Programm wird nach <span class="clisting">WaitAny</span> fortgesetzt, wenn eine der aufgeführten Aufgaben beendet wird. 
+                                                   </p>
+                                                   <h4 class="t4"> Rückgabewerte auswerten</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tasks müssen nicht zwangsläufig vom Typ <span class="clisting">void</span> sein, sie können auch Rückgabewerte haben. Für solche Aufgaben ist die Klasse <span class="clisting">Task</span> nicht mehr geeignet. Stattdessen greifen wir auf <span class="clisting">Task&lt;TResult&gt;</span> zurück, die eine Ableitung von <span class="clisting">Task</span> ist. Der generische Typparameter beschreibt den Datentyp des Rückgabewerts.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis der parallelen Operation holen wir uns mit der Eigenschaft <span class="clisting">Result</span> des <span class="clisting">Task&lt;TResult&gt;</span>-Objekts ab. Der Ergebniswert entspricht dem Typparameter der Aufgabe. <span class="clisting">Result</span> wartet übrigens so lange, bis das Ergebnis vorliegt.  Im folgenden Listing wird eine
+                                                      <span class="clisting">int</span>-Variable an die Operation übergeben und damit eine einfache mathematische Berechnung
+                                                      angestellt. Um zeigen zu können, dass <span class="clisting">Result</span> tatsächlich bis zum Eintreffen des Rückgabewerts wartet, wird die Dauer der Operation
+                                                      um drei Sekunden verzögert. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int value = 12;<br xmlns="">Task&lt;long&gt; task = Task&lt;long&gt;.Factory.StartNew((wert) =&gt;<br xmlns="">{<br xmlns="">  int var = (int)wert;<br xmlns="">  Thread.Sleep(3000);<br xmlns="">  return var * var;<br xmlns="">}, value);<br xmlns="">Console.WriteLine("Ich warte ...");<br xmlns="">Console.WriteLine("Resultat: {0}", task.Result);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 15.29  </span>Auswerten von Rückgabewerten
+                                                   </p>
+                                                   <h4 class="t4"> Abbruch einer parallelen Operation von außen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Innerhalb einer parallelen Operation können Sie mit <span class="clisting">return</span> die Operation abbrechen. Von außerhalb ist schon etwas mehr Coding erforderlich.
+                                                      Im Mittelpunkt steht dabei ein Objekt vom Typ <span class="clisting">CancellationTokenSource</span>, mit dem einem Task signalisiert wird, dass er seine parallele Ausführung beenden
+                                                      soll. Dem <span class="clisting">CancellationTokenSource</span>-Objekt ist ein <span class="clisting">CancellationToken</span>-Objekt zugeordnet, das für die Weitergabe einer Abbruchbenachrichtigung verantwortlich
+                                                      ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Abbruch einer parallelen Ausführung wird mit der Methode <span class="clisting">Cancel</span> des <span class="clisting">CancellationTokenSource</span>-Objekts eingeleitet. Das Token gibt in seiner Eigenschaft <span class="clisting">IsCancellationRequested</span> Auskunft darüber, ob ein Abbruch gewünscht ist. Ist der Wert <span class="clisting">true</span>, kann mit der Auslösung der Exception <span class="clisting">OperationCanceledException</span> darauf reagiert werden. Sehr einfach geht die Auslösung der Exception durch den Aufruf
+                                                      der Methode <span class="clisting">ThrowIfCancellationRequested</span> auf das Token-Objekt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das hört sich ziemlich komplex an, deshalb wollen wir uns auch dazu ein Beispiel ansehen.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 15\CancellationSample</span><br></br><span class="clistingfett">class Program</span> {<br></br>  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    var cts = new CancellationTokenSource();<br xmlns="">    CancellationToken token = cts.Token;<br xmlns="">    Task task = Task.Factory.StartNew(() =&gt;<br xmlns="">    {<br xmlns="">       Thread.Sleep(1000);<br xmlns="">       while(true) {                   <br xmlns="">         if (token.IsCancellationRequested) {<br xmlns="">           token.ThrowIfCancellationRequested();<br xmlns="">         }<br xmlns="">       }                <br xmlns="">    }, cts.Token);<br xmlns="">    cts.Cancel();<br xmlns="">    Console.WriteLine("Abbruch der parallelen Operation ...");<br xmlns="">    try {                <br xmlns="">      task.Wait();<br xmlns="">    }<br xmlns="">    catch (Exception ex) {<br xmlns="">      Console.WriteLine("In catch: " + ex.InnerException.Message);<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach der Definition des Tasks wird die Methode <span class="clisting">Cancel</span> aufgerufen und in einem <span class="clisting">try</span>-Block mit <span class="clisting">Wait</span> auf das Beenden der parallelen Operation gewartet.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs15_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="15  Multithreading und die Task Parallel Library (TPL)"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_15_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_15_004.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,1860 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 16  Einige wichtige .NET-Klassen">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 16  Einige wichtige .NET-Klassen</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="16_001.html">
+      <link rel="next" href="1997_16_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_16_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_16_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5" class="navnav">16 Einige wichtige .NET-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_001.html#dodtp2450680c-ac9d-48da-81ea-6672f80715f7" class="navnav">16.1 Die Klasse »Object«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp6f1413c9-418e-47cf-83de-ec5739505f68" class="navnav">16.1.1 Referenzvergleiche mit »Equals« und »ReferenceEquals«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtp0faa7b0e-a8f1-49ae-8bd1-b991955490bc" class="navnav">16.1.2 »ToString« und »GetType«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_001.html#dodtpe543e67a-1953-47cc-9b32-7bdb44a75b79" class="navnav">16.1.3 Die Methode »MemberwiseClone« und das Problem des Klonens</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_002.html#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" class="navh">16.2 Die Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" class="navh">16.2.1 Das Erzeugen eines Strings</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" class="navh">16.2.2 Die Eigenschaften von »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp9869302a-a81f-476a-862b-31ff55711cc8" class="navh">16.2.3 Die Methoden der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_002.html#dodtp8a6e62fc-2274-4607-885a-765ccab87be8" class="navh">16.2.4 Zusammenfassung der Klasse »String«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_003.html#dodtpb8f7b8a8-1331-4ed5-8ecc-fddd8dbfa61d" class="navnav">16.3 Die Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp9e242fe7-df0a-4879-ad37-a7f080dd9e22" class="navnav">16.3.1 Allgemeines</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp33965958-1b64-49b0-9568-1a9c9d4c7b5b" class="navnav">16.3.2 Die Kapazität eines »StringBuilder«-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpe8b360af-fd6a-4786-93c8-b55e8e229b20" class="navnav">16.3.3 Die Konstruktoren der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtpfaa85795-b24b-431d-91a8-5cd9cc075583" class="navnav">16.3.4 Die Eigenschaften der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp439ff604-4457-439b-b552-95ef23a2d92e" class="navnav">16.3.5 Die Methoden der Klasse »StringBuilder«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_003.html#dodtp64c689f2-4f33-4e60-919a-03c308002a13" class="navnav">16.3.6 Allgemeine Anmerkungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_004.html#dodtp1df65a8b-8a25-43f0-874f-954f88ae185e" class="navnav">16.4 Der Typ »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpceae5a3e-e450-4e12-b2cf-f289a7741e53" class="navnav">16.4.1 Die Zeitspanne »Tick«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtp615f8ac3-1362-4523-84f4-fa23473b674b" class="navnav">16.4.2 Die Konstruktoren von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpf838fc04-1e4b-487f-b821-5ba71d28638a" class="navnav">16.4.3 Die Eigenschaften von »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_004.html#dodtpe594e9a8-0aa9-473c-aa3e-cbd15565ca6a" class="navnav">16.4.4 Die Methoden der Klasse »DateTime«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_005.html#dodtpb26830f8-1fa0-4b0b-b86d-a20949a22f00" class="navnav">16.5 Die Klasse »TimeSpan«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_16_006.html#dodtpbfa70397-303e-43d2-a4bc-2c3e1796f06e" class="navnav">16.6 Ausgabeformatierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtp35f96cd1-76ce-4d70-a690-b3014e930f80" class="navnav">16.6.1 Formatierung mit der Methode »String.Format«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpaea254df-a16d-489c-b882-6b628f6d4ca3" class="navnav">16.6.2 Formatierung mit der Methode »ToString«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_16_006.html#dodtpcf003534-3e24-40ce-8bde-fb146f0ff9bd" class="navnav">16.6.3 Benutzerdefinierte Formatierung</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9" name="dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9"></a><h2 class="t2"><span class="cfett">16.2    </span><span class="cfett"> Die Klasse »String«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp856fed2b-4f9f-408b-90c6-89c53f93c7ac"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp1b2eb0cc-f92d-4a42-a37b-c0edbc037c4d"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">String</span>-Variablen repräsentieren Zeichenfolgen mit einem ganz wesentlichen Charakteristikum:
+                                                      Sie sind unveränderlich. Ändern Sie den Inhalt einer Zeichenfolgevariablen durch eine
+                                                      neue Zuweisung, wird ein neues <span class="clisting">String</span>-Objekt erzeugt und das alte verworfen. Dieses Phänomen können Sie sehr einfach verstehen,
+                                                      wenn Sie das folgende Listing ausprobieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Hallo";<br xmlns="">Console.WriteLine(text.GetHashCode());<br xmlns="">text = "Berlin";<br xmlns="">Console.WriteLine(text.GetHashCode());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.6  </span>Ändern des Inhalts einer »String«-Variablen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis wird sein, dass unterschiedliche Hashcodes in der Konsole angezeigt werden.
+                                                      Daraus kann der Schluss gezogen werden, dass beim Ändern des Werts der <span class="clisting">String</span>-Variablen tatsächlich ein neues Objekt erzeugt worden ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diesem anscheinenden Nachteil steht aber auch ein Vorteil gegenüber, denn intern verwaltet
+                                                      die Laufzeitumgebung eine Tabelle, die jeden String einer Anwendung enthält. Wenn
+                                                      Sie zur Laufzeit ein neues <span class="clisting">String</span>-Objekt erzeugen, wird zuerst die Tabelle nach einem identischen String durchsucht.
+                                                      Ist ein solcher vorhanden, wird der neuen <span class="clisting">String</span>-Variablen eine Referenz auf die bereits existierende Instanz zurückgeliefert, andernfalls
+                                                      wird der Pool vergrößert. Auch das können Sie sehr einfach prüfen, wenn Sie das Codefragment
+                                                      ein klein wenig ändern:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Hallo";<br xmlns="">Console.WriteLine(text.GetHashCode());<br xmlns="">string text1 = "Hallo";<br xmlns="">Console.WriteLine(text1.GetHashCode());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.7  </span>»String«-Variablen gleichen Inhalts
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun werden an der Konsole identische Hashcodes angezeigt.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird eine Zeichenfolge häufig verändert, werden die vorhandenen Ressourcen möglicherweise
+                                                      an den Rand ihrer Möglichkeiten getrieben, mit der Konsequenz der Performanceeinbuße.
+                                                      
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Sie sollten in Fällen, in denen eine Zeichenfolge oft geändert wird, auf die Klasse
+                                                         <span class="clisting">StringBuilder</span> zurückgreifen, die die beschriebenen Nachteile nicht hat<a class="indexterm" id="dodtp1e548d4c-aeb5-4149-b3a1-cd4177e664bd"></a>. In Abschnitt 16.3 wird diese Klasse Thema für uns sein. Verschwiegen werden darf
+                                                         dabei jedoch auch nicht, dass die Fähigkeiten einer <span class="clisting">StringBuilder</span>-Zeichenfolge deutlich eingeschränkter sind als die einer <span class="clisting">string</span>-Zeichenfolge.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f" name="dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f"></a><h3 class="t3"><span class="cfett">16.2.1    </span><span class="cfett"> Das Erzeugen eines Strings</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp092f009c-4fb2-4d63-8bfa-0b6de790e84a"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf521bd1a-a832-4e26-a7c5-d3033e0280f9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im einfachsten Fall wird ein Objekt vom Typ <span class="clisting">String</span> durch eine einfache Deklaration erzeugt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string str = "C# ist spitze!";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist der Weg, den wir bisher meistens beschritten haben und der wohl auch die Regel
+                                                      darstellt. Es gibt aber noch weitere Möglichkeiten. Dazu sind in der Klasse <span class="clisting">String</span> mehrere Konstruktoren definiert. Beispielsweise können Sie einem Konstruktor ein
+                                                      <span class="clisting">char</span>-Array übergeben, aus dem ein <span class="clisting">String</span>-Objekt erstellt wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">char[] charArr = {'C','#',' ','5','.','0'};<br xmlns="">string strText = new String(charArr);<br xmlns="">Console.WriteLine(strText);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieses Codefragment bildet aus dem <span class="clisting">char</span>-Array die Zeichenfolge »C# 5.0«. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit einem weiteren Konstruktor können Sie eine Zeichenfolge erzeugen, die sich aus
+                                                      einer bestimmten Anzahl gleicher Zeichen zusammensetzt. Benötigen Sie beispielsweise
+                                                      eine Zeichenfolge aus zehn »<span class="clisting">*</span>«, könnten Sie das mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strtext = new String('*', 10);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">erreichen. </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b" name="dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b"></a><h3 class="t3"><span class="cfett">16.2.2    </span><span class="cfett"> Die Eigenschaften von »String«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9869302a-a81f-476a-862b-31ff55711cc8"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe3713d01-96b7-4c92-88c6-67c21e2bd85f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">String</span> weist nur zwei Eigenschaften auf: <span class="clisting">Length</span> und <span class="clisting">Chars</span>. <span class="clisting">Length</span> liefert die Anzahl der Zeichen, und mit <span class="clisting">Chars</span> <a class="indexterm" id="dodtp254884b9-5b78-4d9d-8323-a66fd86ab98f"></a><a class="indexterm" id="dodtp1bae2eff-a2ea-4399-b5ca-f3b40c984131"></a><a class="indexterm" id="dodtp71739970-65fa-4e50-8c5a-776c49b0a062"></a><a class="indexterm" id="dodtp962b877d-4667-41f6-a47a-58db8523f00a"></a>können Sie auf ein einzelnes Zeichen aus der Zeichenfolge zugreifen. Die Definition
+                                                      von <span class="clisting">Chars</span>, die in C# als Indexer implementiert ist, lautet wie folgt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public char this[int index] {get;}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Übergeben wird dem Indexer eine Zahl, die die Position eines Zeichens innerhalb der
+                                                      Zeichenfolge beschreibt, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "HALLO";<br xmlns="">char newChar = text[2];<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">char</span>-Variable enthält damit das Zeichen »L«.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9869302a-a81f-476a-862b-31ff55711cc8" name="dodtp9869302a-a81f-476a-862b-31ff55711cc8"></a><h3 class="t3"><span class="cfett">16.2.3    </span><span class="cfett"> Die Methoden der Klasse »String«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp8a6e62fc-2274-4607-885a-765ccab87be8"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdcde54ba-1ce7-4cba-b981-1971d5bea32b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie werden sich oft mit der einfachen Existenz einer Zeichenfolge nicht zufrieden
+                                                      geben, da es sehr häufig vorkommt, dass Zeichenfolgen verglichen oder manipuliert
+                                                      werden müssen oder eine formatierte Ausgabe erwünscht ist. Die Klasse <span class="clisting">String</span> bietet zu diesem Zweck eine Reihe von Methoden an, die wir uns nun ansehen wollen.
+                                                   </p>
+                                                   <h4 class="t4"> Zeichenfolgen-Vergleiche</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um zwei Zeichenfolgen zu vergleichen, haben Sie die Qual der Wahl, denn dazu stehen
+                                                      Ihnen mit <span class="clisting">Equals</span>, <span class="clisting">Compare</span>, <span class="clisting">CompareTo</span><span class="cfett"> </span>und<span class="cfett"> </span><span class="clisting">CompareOrdinal</span><span class="clisting"><a class="indexterm" id="dodtpc89a5a0f-7be7-44e2-84bc-3f266ae8d526"></a><a class="indexterm" id="dodtpfdc8c319-0ec9-459b-94ed-44d1fc496708"></a></span> gleich vier Methoden zur Verfügung. Alle sind sich ähnlich und unterscheiden sich
+                                                      nur in kleinen Nuancen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bekanntlich werden mit <span class="clisting">Equals</span> standardmäßig zwei Referenzen miteinander verglichen. Da zwei <span class="clisting">String</span>-Variablen, die denselben Inhalt haben, ein und dasselbe Objekt im Speicher referenzieren,
+                                                      können Sie diese Methode auch dazu benutzen, den Inhalt der Variablen miteinander
+                                                      zu vergleichen. Verweisen zwei Strings auf dieselbe Speicheradresse, muss deren Inhalt
+                                                      zwangsläufig identisch sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehr ähnlich arbeitet auch <span class="clisting">Compare</span>. Die Methode liefert jedoch keinen booleschen Wert, sondern einen Integer, der entweder
+                                                      &lt; 0, 0 oder &gt; 0 ist. Dazu ein Beispiel:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string strText = "Hallo";<br xmlns="">string myString = "Hallo";<br xmlns="">if(String.Compare(strText, myString) == 0)<br xmlns="">   Console.WriteLine("Die beiden Strings sind identisch");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.8  </span>Zeichenfolgenvergleich mit der Methode »Compare«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis an der Konsole bestätigt, dass beide Zeichenfolgen denselben Inhalt aufweisen.
+                                                      Ändern wir nun einen der beiden Strings von »Hallo« in »hallo«, und wir testen noch
+                                                      einmal. Diesmal erhalten wir keine Bestätigung, was uns zu folgender Aussage führt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Standardmäßig wird bei String-Variablen zwischen Groß- und Kleinschreibung unterschieden.</p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Interpretation der Rückgabewerte von <span class="clisting">Compare</span><span class="clisting"><a class="indexterm" id="dodtpbaa64807-1ba6-4884-9878-0c121c36d11c"></a></span>, die ebenfalls für die Vergleichsmethode <span class="clisting">CompareTo</span><span class="clisting"><a class="indexterm" id="dodtp3a5d803f-06da-473b-9a00-fd2c3b9f8a70"></a></span> gilt, können Sie Tabelle 16.2 entnehmen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.2  </span>Die Rückgabewerte von String-Vergleichsoperationen
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Rückgabewert
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&lt; 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der String des ersten Arguments ist kleiner als der des zweiten.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Beide Strings sind gleich.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&gt; 0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der String des ersten Arguments ist größer als der des zweiten.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die spezifische Ländereinstellung entscheidet darüber, wann ein Zeichen als größer
+                                                      oder kleiner im Vergleich zu einem zweiten gilt. Im mitteleuropäischen Sprachraum
+                                                      ist festgelegt, dass den Großbuchstaben ein größerer Wert zugeordnet ist als ihrem
+                                                      kleingeschriebenen Pendant. Daher gilt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">A &gt; a<br></br>B &gt; b<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Innerhalb von Groß- bzw. Kleinbuchstaben gilt die Reihenfolge, dass A &lt; B &lt; C bzw.
+                                                      a &lt; b &lt; c ist. Ganz allgemein kann man die Sortierregel dann wie folgt beschreiben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">a &lt; A &lt; b &lt; B &lt; c &lt; C ... &lt; y &lt; Y &lt; z &lt; Z</span><br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Compare</span> durchläuft die beiden zu vergleichenden Zeichenfolgen Zeichen für Zeichen. Dabei
+                                                      wird zunächst die Wertigkeit eines Buchstabens im Alphabet festgestellt, und bei Gleichheit
+                                                      wird zwischen Groß- und Kleinschreibung unterschieden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">CompareOrdinal</span><span class="clisting"><a class="indexterm" id="dodtp07260df3-f2b7-4b15-9f82-6cb1719c3164"></a></span> vergleicht zwei Zeichenfolgen auf Basis der ANSI-Werte. Die Methode<span class="cfett"> </span>durchläuft dazu die beiden Zeichenfolgen Zeichen für Zeichen. Stimmt auch das letzte
+                                                      Zeichen in beiden Zeichenfolgen überein, ist der Rückgabewert 0. Stellt die Methode
+                                                      an einer Ordinalposition keine Übereinstimmung fest, bricht die Methode ab und liefert
+                                                      als Rückgabewert die Differenz der Zeichencodes. Tabelle 16.3 zeigt dies mit den Zeichenfolgen
+                                                      <span class="ckursiv">text1</span> und <span class="ckursiv">text2</span>.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.3  </span>»CompareOrdinal«-Vergleichsergebnisse
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               text1
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">text2
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Rückgabewert
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">A</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">7</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">a</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&#8211;25</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">P</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&#8211;8</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">p</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&#8211;40</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">0</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">h</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">&#8211;32</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">h</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">H</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">32</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fassen wir zum Abschluss noch einmal alle Vergleichsoperationen zur besseren Übersicht
+                                                      in einer Tabelle zusammen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.4  </span>Die Vergleichs<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp463c1c00-1379-4383-901c-4ff418e4c1dd"></a>methoden der »String«-Klasse
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Vergleichsmethode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Equals</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stellt fest, ob zwei Strings denselben Inhalt und folglich auch dieselbe Referenz
+                                                                  haben
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Compare</span><span class="clisting"><a class="indexterm" id="dodtpc4cd8ab9-05c3-4cb5-9918-69782c10e39a"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Klassenmethode, die die lexikalische Reihenfolge der Zeichen in zwei Strings miteinander
+                                                                  vergleicht
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CompareOrdinal</span><span class="clisting"><a class="indexterm" id="dodtp6b2c3423-f2b2-411c-b64a-c5db2391f94f"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Klassenmethode, die die lexikalische Reihenfolge der Zeichen in zwei Strings auf Basis
+                                                                  der ANSI-Werte miteinander vergleicht
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CompareTo</span><span class="clisting"><a class="indexterm" id="dodtpc6908513-6bd5-4346-95c7-487f231834da"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Instanzmethode, die die lexikalische Reihenfolge der Zeichen in zwei Strings miteinander
+                                                                  vergleicht
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Suchen in einer Zeichenkette</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Viele Aufgaben, die sich im Zusammenhang mit Zeichenfolgen stellen, beziehen sich
+                                                      auf die Suche nach einem bestimmten Zeichen oder nach einer Abfolge von Zeichen innerhalb
+                                                      einer Zeichenfolge. Das Ergebnis der Suche wird beispielsweise zur Konstruktion eines
+                                                      neuen Strings oder als Anweisung innerhalb einer anderen, äußeren Anweisung benötigt.
+                                                      Wir wollen uns im Folgenden diese Methoden und ihren Einsatz anschauen. Doch zunächst
+                                                      verschaffen wir uns einen ersten Überblick:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">StartsWith</span><span class="clisting"><a class="indexterm" id="dodtp78fb9249-9ca0-4787-b82c-e9628c0677a7"></a><a class="indexterm" id="dodtpb58334cb-a06a-48bc-a261-f2b75de26a8d"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">EndsWith</span><span class="clisting"><a class="indexterm" id="dodtp7a0ccb53-ea86-4bbb-8f05-19fe35523fe1"></a><a class="indexterm" id="dodtpf1616822-7e76-479e-bec5-f36ef1767640"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">IndexOf</span><span class="clisting"><a class="indexterm" id="dodtpd068af30-2417-43fc-bd5d-54d2e1e1d725"></a><a class="indexterm" id="dodtpccb73329-4285-4aec-85f1-88731bb4158a"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">LastIndexOf</span><span class="clisting"><a class="indexterm" id="dodtp62edb0c5-3eec-45f0-a87a-3deb3dd39295"></a><a class="indexterm" id="dodtpdba5d28d-1ca8-4e84-9847-36c778ab7dc2"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">Substring</span><span class="clisting"><a class="indexterm" id="dodtp0c706c6e-2b79-4124-ba39-d11cb66684d8"></a><a class="indexterm" id="dodtp0f653dd5-b0e0-4d93-bc34-414f06769a20"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fangen wir mit den beiden erstgenannten Methoden an, die in ihrer Funktionalität einander
+                                                      sehr ähnlich sind: Mit <span class="clisting">StartsWith</span><span class="clisting"><a class="indexterm" id="dodtpad92a75c-9f2f-43b8-a4cd-eb02bfa92b35"></a><a class="indexterm" id="dodtp96706ac6-ca00-4998-adc3-9b57674688c6"></a></span> und <span class="clisting">EndsWith</span><span class="cfett"><a class="indexterm" id="dodtp393ae725-a8e0-48fe-9666-5c14c9e4fe4e"></a><a class="indexterm" id="dodtp8fbd4d73-9652-490a-9a8b-35bef7a9f27b"></a></span> wird der Anfang oder das Ende einer Zeichenfolge auf eine vorgegebene Zeichensequenz
+                                                      hin überprüft. Beide liefern als Ergebnis ihres Aufrufs einen booleschen Wert zurück.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Anzahl der dem Parameter mitgeteilten Zeichen spielt keine Rolle, es kann sich
+                                                      um ein einzelnes handeln oder um eine Zeichenfolge. Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Eine Kröte überquert die Fahrbahn";<br xmlns="">if (text.StartsWith("Ein"))<br xmlns="">  [...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.9  </span>Die Methode »String.StartsWith«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">werden Sie demnach das Ergebnis <span class="clisting">true</span> erhalten. In gleicher Weise lässt sich die Methode <span class="clisting">EndsWith</span> einsetzen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Eine Kröte überquert die Fahrbahn";<br xmlns="">if (text.EndsWith("Bahn"))<br xmlns="">  [...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.10  </span>Die Methode »EndsWith«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass die Groß- und Kleinschreibung auch bei der Untersuchung einer Zeichenfolge
+                                                      berücksichtigt wird. Daher wird der Rückgabewert in diesem Fall <span class="clisting">false</span> sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">IndexOf</span><span class="clisting"><a class="indexterm" id="dodtp4f9aeae0-8d0b-4514-b54d-e07a1035d8b8"></a><a class="indexterm" id="dodtp48e743d2-46b5-45d5-beff-284f4fd98124"></a></span> bzw. <span class="clisting">LastIndexOf</span><span class="clisting"><a class="indexterm" id="dodtp9e2c966d-f83a-4105-87cf-974ec7de7b12"></a><a class="indexterm" id="dodtp86c054bd-c760-4d73-99eb-2eb73e2e826e"></a></span> lässt sich<span class="cfett"> </span>das erste oder das letzte Auftreten eines Zeichens oder einer Zeichenkette ermitteln.
+                                                      Beide Methoden sind vielfach überladen und erlauben die Übergabe eines <span class="clisting">char</span> ebenso wie die Übergabe einer Zeichenfolge, nach der gesucht werden soll. Der Rückgabewert
+                                                      ist die Position, an der das oder die Zeichen zum ersten Mal auftritt bzw. auftreten.
+                                                      Ist die Suche erfolglos, ist der Rückgabewert &#8211;1.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im einfachsten Fall ähnelt die Funktionalität der beiden Methoden der von <span class="clisting">StartsWith</span> und <span class="clisting">EndsWith</span>. Die Überladung ermöglicht es aber, die Suche ab einer bestimmten Position zu beginnen
+                                                      und &#8211; falls gewünscht &#8211; die Anzahl der Positionen anzugeben, an denen das Original
+                                                      mit dem Suchstring verglichen wird. Das folgende Codefragment demonstriert den Einsatz
+                                                      der <span class="clisting">IndexOf</span>-Methode.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string = "Da wird der Hund in der Pfanne verrückt.";<br xmlns="">int position = &#8211;1;<br xmlns="">do {<br xmlns="">  position++;<br xmlns="">  pos = text.IndexOf("der", position);<br xmlns="">  if(position == &#8211;1)<br xmlns="">    Console.WriteLine("Ende des Strings erreicht.");<br xmlns="">  else<br xmlns="">    Console.WriteLine("Vorkommen an Position {0}", position);<br xmlns="">} while(!(position == &#8211;1));<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.11  </span>Die Methode »String.IndexOf«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir geben zwar nur eine statische Zeichenfolge vor, aber das sollte uns in dieser
+                                                      Demonstration genügen. Gesucht wird in dieser Zeichenfolge der Teilstring »der«. Wir
+                                                      deklarieren zunächst die Variable <span class="ckursiv">position</span>, die in der folgenden <span class="clisting">do</span>-Schleife als Positionszeiger dient und der das Ergebnis des Aufrufs <span class="clisting">IndexOf</span> zugewiesen wird. Wird der gesuchte Teilstring gefunden, muss der Positionszeiger
+                                                      um eine Position verschoben werden, um nicht in einer Endlosschleife zu enden. Das
+                                                      hat aber zur Konsequenz, dass vor dem Eintritt in die Schleife <span class="ckursiv">position</span> mit &#8211;1 vorinitialisiert werden muss, damit die Suche beim ersten Schleifendurchlauf
+                                                      auch mit 0 startet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Ausstieg aus der Schleife ist gewährleistet, wenn <span class="clisting">IndexOf</span> das Ergebnis &#8211;1 liefert. Innerhalb des zu durchsuchenden Strings ist der Suchstring
+                                                      an den Positionen 8 und 20 enthalten. Beachten Sie, dass dem ersten Zeichen im zu
+                                                      durchsuchenden String der Index 0 zugeordnet ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas allgemeiner gehalten ist die sehr flexibel einsetzbare Methode <span class="clisting">Substring</span><span class="cfett"><a class="indexterm" id="dodtp9f2c5395-0e85-4683-be4c-280b1155a378"></a><a class="indexterm" id="dodtp2f4c4e77-403b-4df9-a0b1-5af23fc9b338"></a></span>, die überladen ist und aus einer gegebenen Zeichenfolge einen Teilstring zurückliefert.
+                                                      <span class="clisting">Substring</span> wird in jedem Fall der Index der Startposition übergeben, ab der ein vorhandener
+                                                      String ausgewertet wird. Übergeben Sie einen zweiten Parameter, können Sie zudem die
+                                                      Anzahl der einzulesenden Zeichen ab der im ersten Parameter angegebenen Position festlegen.
+                                                      Wollen Sie beispielsweise die ersten sieben Zeichen einer Zeichenfolge einlesen, würde
+                                                      die Anweisung dazu wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Projektmappen-Explorer";<br xmlns="">string teilString = text.Substring(0, 7);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.12  </span>Die Methode »String.SubString«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Variable <span class="ckursiv">teilString</span> wird den Inhalt »Projekt« haben. Benötigen Sie einen Teilabschnitt vom Ende eines
+                                                      Strings &#8211; nehmen wir an, die letzten acht Zeichen &#8211;, setzen Sie den Positionszeiger
+                                                      auf das erste einzulesende Zeichen, indem Sie von der Gesamtlänge des Strings die
+                                                      Anzahl der einzulesenden Zeichen subtrahieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">String text = "Projektmappen-Explorer";<br xmlns="">string teilString = teilString.Substring(teilString.Length &#8211; 8, 8);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun lautet der Inhalt von <span class="ckursiv">teilString</span> »Explorer«.
+                                                   </p>
+                                                   <h4 class="t4"> Die Methoden »Trim« und »Pad«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp25f3b799-7aca-46d4-9286-f4921645ba8d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp753eac47-037c-4eae-8035-44b8c33c370d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpdf5bba6e-da1c-410b-846c-fee9512e0c58"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Stellen Sie sich vor, Sie schreiben ein Programm, das auf eine Datenbank zugreift.
+                                                      In der Datenbank befindet sich eine Tabelle mit dem Kundenstamm eines Unternehmens.
+                                                      Aus dieser Tabelle soll ein ganz bestimmter Datensatz herausgegriffen werden, beispielsweise
+                                                      um die Kundendaten einzusehen oder zu ändern. Um nicht die gesamte Kundenliste der
+                                                      Reihe nach zu durchforsten (natürlich auch, um die Ressourcen zu schonen und um eine
+                                                      gute Performance der Anwendung zu gewährleisten), sollte der Anwender dazu aufgefordert
+                                                      werden, den Namen des Unternehmens anzugeben. Diese Eingabe wird nachfolgend dazu
+                                                      benutzt, in der Tabelle den passenden Datensatz zu suchen und ihn an den Anwender
+                                                      zurückzugeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir an, der Anwender sucht nach dem Unternehmen »Tollsoft GmbH« und gibt dazu
+                                                      das folgende Suchkriterium ein, nach dem der Kundenstamm der Tabelle durchsucht wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Tollsoft GmbH<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fällt Ihnen etwas auf? Wenn nicht, dann sei Ihnen gesagt, Sie machen denselben Fehler
+                                                      wie unser fiktiver Anwender &#8211; der Datensatz wird nämlich nicht gefunden. Der Grund
+                                                      ist ganz trivial: Vor dem Namen des Unternehmens steht &#8211; kaum bemerkbar &#8211; ein Leerzeichen.
+                                                      <span class="clisting">"Tollsoft GmbH"</span> und <span class="clisting">"Tollsoft GmbH"</span> sind aber unterschiedliche Firmennamen &#8211; zumindest aus Sicht des Programms. Fehler
+                                                      dieser Art schleichen sich sehr schnell ein und müssen daher schon in der Entwicklungsphase
+                                                      ausgeschlossen werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">String</span> stellt Ihnen zur Lösung die Methoden <span class="clisting">Trim</span>, <span class="clisting">TrimStart</span><span class="clisting"><a class="indexterm" id="dodtp235312af-4495-48c0-8a53-915bd7974f3c"></a></span> und <span class="clisting">TrimEnd</span><span class="clisting"><a class="indexterm" id="dodtp4fc176b1-8fa4-4410-8a31-9cd2fd6b77a4"></a></span> zur Verfügung. <span class="clisting">Trim</span> entfernt bestimmte Zeichen sowohl am Anfang als auch am Ende einer Zeichenfolge,
+                                                      und <span class="clisting">TrimStart</span> und <span class="clisting">TrimEnd</span> entfernen bestimmte Zeichen am Anfang bzw. Ende einer Zeichenfolge.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns die Definition der Methode <span class="clisting">Trim</span> an, die einfach überladen ist:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public string Trim();<br></br>public string Trim(params char[]);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die erste Variante wird auf ein <span class="clisting">String</span>-Objekt aufgerufen und entfernt automatisch die Leerzeichen, die sich am Anfang und
+                                                      am Ende der Zeichenfolge befinden. Die parameterlose <span class="clisting">Trim</span>-Methode ist damit auf Leerzeichen spezialisiert und dürfte in den meisten Anwendungsfällen
+                                                      genügen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die parametrisierte Version ist deutlich leistungsfähiger. Ihr wird ein <span class="clisting">char</span>-Array übergeben, das diejenigen Zeichen enthält, die weder am Anfang noch am Ende
+                                                      der Zeichenfolge erlaubt sind. Das folgende Codefragment zeigt die Wirkungsweise der
+                                                      Methode:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Am Straßenrand sitzt eine Kröte.";<br xmlns="">char[] charArr = {' ','m','A','.'};<br xmlns="">text = text.Trim(charArr);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.13  </span>Die Methode »String.Trim«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir definieren das Array so, dass weder das Leerzeichen noch ein Punkt oder die Buchstaben
+                                                      »A« und »m« zugelassen sind. Die aus dem Aufruf der <span class="clisting">Trim</span>-Methode resultierende Zeichenfolge wird lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Straßenrand sitzt eine Kröte<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehr ähnlich arbeiten auch die beiden Methoden <span class="clisting">TrimStart</span> und <span class="clisting">TrimEnd</span>, die nicht überladen sind und ein <span class="clisting">char</span>-Array als Übergabeparameter erwarten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methoden <span class="clisting">PadLeft</span><span class="clisting"><a class="indexterm" id="dodtpc7d8be85-4cee-40db-9ad9-a4013a30e1ca"></a><a class="indexterm" id="dodtp42aff103-758b-421e-bc24-650dec6e1d55"></a></span> und <span class="clisting">PadRight</span><span class="clisting"><a class="indexterm" id="dodtpaa285e61-09f0-4c88-88e0-6a38ae2c5b9f"></a><a class="indexterm" id="dodtp6f4f5f11-41d8-4e5f-ad3e-a69aafa01dd9"></a><a class="indexterm" id="dodtpddf2492b-2fe0-4199-8cde-6c2fb02130c8"></a></span> schneiden keine Zeichen an den <span class="clisting">String</span>-Enden ab, sondern fügen bestimmte Zeichen entweder am Anfang oder Ende der Zeichenfolge
+                                                      hinzu. Auch diese Methoden sind überladen. Wir wollen uns kurz beide Parameterlisten
+                                                      anschauen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public string PadLeft<a class="indexterm" id="dodtpab390409-0a2f-435b-a5e9-bf8d89782e59"></a><a class="indexterm" id="dodtpb5a8fb75-20a1-4790-9d06-f5f7e89ea89f"></a>(int);<br></br>public string PadLeft(int, char);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieselbe Überladungsliste weist auch die Methode <span class="clisting">PadRight</span><span class="cfett"> </span>auf.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die einfach parametrisierte Variante hängt Leerzeichen an den Anfang (<span class="clisting">PadLeft</span>) oder das Ende (<span class="clisting">PadRight</span><span class="clisting"><a class="indexterm" id="dodtpdfbf47f4-93cf-457a-8f96-a9158f8a8182"></a></span>) der Zeichenfolge an. Der Integer gibt an, wie lang die am Ende resultierende Zeichenfolge
+                                                      insgesamt werden soll &#8211; einschließlich der Anzahl der Zeichen des Strings selbst.
+                                                      Wenn Sie einen Wert übergeben, der gleich oder kleiner der Länge der Zeichenfolge
+                                                      ist, verpufft der Methodenaufruf wirkungslos. Daher ist es sinnvoll, die Länge der
+                                                      Zeichenfolge zu bestimmen und dazu die Anzahl der gewünschten Leerzeichen zu addieren.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Kaffeepause";<br xmlns="">Console.WriteLine(text.PadLeft(text.Length + 3));<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.14  </span>Die Methode »String.PadLeft«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie ein anderes Zeichen am Anfang oder Ende des Strings wünschen, müssen Sie
+                                                      sich für die zweite Variante der Methode entscheiden. Dem zweiten Parameter übergeben
+                                                      Sie das gewünschte Zeichen als <span class="clisting">char</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Kaffeepause"; <br xmlns="">text = text.PadLeft(text.Length + 3, '*');<br xmlns="">text = text.PadRight(text.Length + 3, '*');<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.15  </span>Die Methoden »String.PadLeft« und »String.PadRight«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis der Operationen lautet »***Kaffeepause***«.</p>
+                                                   <h4 class="t4"> Zeichenfolgen ändern</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher haben wir Strings verglichen, nach bestimmten Zeichensequenzen in einer Zeichenfolge
+                                                      gesucht und am Anfang oder am Ende einer Zeichenfolge Zeichen beliebiger Länge angehängt.
+                                                      Eine Reihe weiterer Methoden eröffnet uns die Möglichkeit, in der Zeichenfolge einzelne
+                                                      Zeichen zu manipulieren, indem wir sie durch andere ersetzen oder einfach aus dem
+                                                      String löschen. Zu diesen Methoden gehören:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">Insert</span><span class="clisting"><a class="indexterm" id="dodtp0dec206d-9e99-4786-96a1-4cebc3efa208"></a><a class="indexterm" id="dodtpb8b14df0-335b-4f2b-b03f-44be30a983db"></a><a class="indexterm" id="dodtp154efdca-31da-41ca-a2e8-bff6d2cdf52e"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">Remove</span><span class="clisting"><a class="indexterm" id="dodtpa2d4220e-1eee-4315-829e-d2ccaedae913"></a><a class="indexterm" id="dodtp70d62c0a-e7ac-488d-be35-3e8cb79f25c8"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">Replace</span><span class="clisting"><a class="indexterm" id="dodtp00870659-10cf-462f-a7a0-24b43b9ebe33"></a><a class="indexterm" id="dodtp79082f97-d888-45a4-b17f-c9da5ca8584e"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">Split</span><span class="clisting"><a class="indexterm" id="dodtpb8e4cfa6-ae4e-409b-a1f9-d784b95487ac"></a><a class="indexterm" id="dodtpa564eaaf-7a7b-49fe-b02f-67fd5fea76d3"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">ToUpper</span><span class="clisting"><a class="indexterm" id="dodtp9430c73b-55ce-48fc-9995-3489b12cd000"></a><a class="indexterm" id="dodtpe581a70f-1058-4543-b3f1-5d1fe71e4159"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">ToLower</span><span class="clisting"><a class="indexterm" id="dodtpd48bc57e-8c1b-477a-9015-59aaae550b3c"></a><a class="indexterm" id="dodtp774ac9ce-f286-4e13-9388-1fa7edddd522"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">ToUpper</span><span class="clisting"><a class="indexterm" id="dodtpf4676e1d-f1af-437d-a8ca-3df86e6448f5"></a><a class="indexterm" id="dodtpd1ec2580-b65d-4c44-81d6-2b7354c251ca"></a></span> und <span class="clisting">ToLower</span><span class="clisting"><a class="indexterm" id="dodtpdbc396f5-a567-46fd-83d1-e0bda69399e2"></a><a class="indexterm" id="dodtp51d5c793-ccf5-4370-864c-dd3c16d366f7"></a></span> sind sehr einfach einzusetzen. Sie wandeln alle Zeichen einer Zeichenfolge entweder
+                                                      in Großbuchstaben (<span class="clisting">ToUpper</span>) oder in Kleinbuchstaben (<span class="clisting">ToLower</span>) um. Aus 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Visual Studio .NET";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">text = text.ToUpper();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">der Inhalt zu:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">VISUAL STUDIO .NET<br></pre></div>
+                                                   <h4 class="t4"> Einsetzen oder Ersetzen eines Teilstrings</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal ist es notwendig, eine Zeichenfolge ab einer bestimmten Position zu erweitern,
+                                                      ohne dabei aus dem Original Zeichen durch Überschreiben zu löschen. Hier spielt <span class="clisting">Insert</span> seine Möglichkeiten aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public string Insert<a class="indexterm" id="dodtp600996cb-43c5-4782-8aef-6237299d435a"></a><a class="indexterm" id="dodtp2134ceb3-eacd-421f-90c3-d2ede472695e"></a>(int, string);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dem ersten Parameter übergeben Sie die Position, ab der die im zweiten Parameter genannte
+                                                      Zeichenkette eingefügt werden soll. Aus der Zeichenfolge 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "C# ist spitze.";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wollen wir die noch näher an der Wahrheit liegende Zeichenfolge </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">"C# ist absolut spitze."<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">formulieren. Den String, den wir mittels <span class="clisting">Insert</span> einfügen wollen, kennen wir. Was noch fehlt, ist die Position, ab der er eingefügt
+                                                      werden soll. Dabei hilft <span class="clisting">IndexOf</span> weiter:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">text = text.Insert<a class="indexterm" id="dodtp8c1dd899-85dd-47f6-bcaa-a3b1267f0f0e"></a><a class="indexterm" id="dodtp0b706c52-1a22-4ae4-bb4e-8b356ccd7dd9"></a>(text.IndexOf("spitze"), "absolut ");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Methode liefert den Index des ersten Zeichens der übergebenen Zeichenfolge <span class="ckursiv">spitze</span>, der als Einfügemarke für das zusätzliche Wort von <span class="clisting">Insert</span> benutzt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit<span class="cfett"> </span><span class="clisting">Replace</span> können Sie einen String &#8211; man sollte besser von einem Teilstring sprechen &#8211; durch
+                                                      einen anderen ersetzen. <span class="clisting">Replace</span> ist aber nicht nur auf den Austausch einer bestimmten Zeichensequenz in einer Zeichenfolge
+                                                      beschränkt, es kann auch jedes Zeichen durch ein anderes ersetzt werden. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public string Replace<a class="indexterm" id="dodtpb0f528b4-934c-4e9d-a051-7091ee8f7ef8"></a><a class="indexterm" id="dodtpbbd23506-372e-43bc-b85c-6fa9ca4fe76a"></a><a class="indexterm" id="dodtp222eb3be-8a58-4ffe-abe0-69515bcdf601"></a>(char, char);<br></br>public string Replace(string, string);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der erste Parameter beschreibt das zu ersetzende Zeichen bzw. die zu ersetzende Zeichenfolge.
+                                                      Wodurch ersetzt werden soll, weiß der zweite Parameter zu berichten. Sollte Ihnen
+                                                      der Satz »Schule macht viel Spaß« nicht gefallen, können Sie ihn mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">text = text.Replace("viel", "nie");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">in eine möglicherweise ehrlichere Aussage überführen.</p>
+                                                   <h4 class="t4"> Die »Split«-Methode</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp8dc693f1-d7fa-4c42-8c21-41c3cee52390"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es können Situationen auftreten, in denen mehrere Zeichenketten vorliegen, die Sie
+                                                      für eine bestimmte Operation wie eine einzige Zeichenkette behandeln wollen. Stellen
+                                                      Sie sich dazu vor, Sie möchten Ihre Adresse über das Netzwerk einer anderen Person
+                                                      mitteilen. Dazu können Sie zuerst Ihren Vornamen bekannt geben, im Anschluss daran
+                                                      Ihren Zunamen, schließlich den Wohnort usw. Besser wäre es, die vollständige Information
+                                                      in einem String zu verschicken und sich mit dem Empfänger auf ein Format zu einigen,
+                                                      nach dem der übermittelte String wieder in seine ursprünglichen Einzelstrings zerlegt
+                                                      werden kann und die Substrings zu interpretieren sind. Schließlich müssen beide Parteien
+                                                      wissen, ob es sich bei <span class="ckursiv">Otto</span> um den Vor- oder Zunamen handelt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben der Interpretationsreihenfolge müssen Sie ein als Separator dienendes Zeichen
+                                                      festlegen, das die Teilzeichenfolgen voneinander trennt. Haben sich Sender und Empfänger
+                                                      darüber geeinigt, lässt sich die beim Empfänger eingehende Zeichenfolge in die ursprünglichen
+                                                      Teilstrings zerlegen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">String</span>-Klasse unterstützt mit ihrer Methode <span class="clisting">Split</span> das eben beschriebene Szenario des Zerlegens einer Zeichenfolge in Teilstrings. Schauen
+                                                      wir uns zunächst einmal die Definition der <span class="clisting">Split</span>-Methode an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public string[] Split<a class="indexterm" id="dodtpe6b152af-7fe7-4224-b121-2343461d8aa9"></a><a class="indexterm" id="dodtp750221b3-31c5-4ce5-9457-817152d58d0b"></a>(params char[]);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode durchsucht den String, auf den <span class="clisting">Split</span> aufgerufen wird, nach den spezifizierten Separatoren, die dem Parameter mitgeteilt
+                                                      werden. Da dieser Parameter als <span class="clisting">params</span>-Parameter definiert ist, können durchaus mehrere verschiedene Trennzeichen spezifiziert
+                                                      werden. Das eröffnet Interpretationsmöglichkeiten hinsichtlich der Teilzeichenfolgen.
+                                                      So könnten Sie beispielsweise festlegen, dass als Separator zwischen dem Vor- und
+                                                      dem Zunamen ein Semikolon benutzt wird, zwischen dem Zunamen und dem Wohnort ein Ausrufezeichen
+                                                      usw. Die einzelnen Teilstrings werden in einem <span class="clisting">String</span>-Array an den Aufrufer zurückgegeben. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns die Arbeitsweise dieser etwas komplexeren Methode an einem Beispiel
+                                                      verdeutlichen und legen dazu fest, das Semikolon als Separator zu benutzen. Eine Methode,
+                                                      die in der Lage ist, eine ihr übergebene Zeichenfolge wieder in die ursprünglichen
+                                                      Teilstrings zu zerlegen, könnte wie folgt aussehen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public static void GetSubstrings(string text)</span> {<br xmlns="">  string[] liste = text.Split(';');<br xmlns="">  for(int i = 0; i &lt;= liste.GetUpperBound(0); i++)<br xmlns="">    Console.WriteLine(liste[i]);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.16  </span>Zerlegen einer Zeichenfolge in Teilstrings
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Aufruf der Methode <span class="clisting">GetSubstrings</span> wird dem Parameter <span class="ckursiv">text</span> eine Zeichenfolge übergeben, deren Teilstrings durch ein Semikolon getrennt sind.
+                                                      In der Methode wird <span class="ckursiv">text</span> in seine Teilstrings zerlegt und dem Array <span class="ckursiv">liste</span> zugewiesen. Die Aufsplittung erfolgt mit der <span class="clisting">Split</span>-Methode auf das Objekt <span class="ckursiv">text</span>. Der Semikolon-Separator wird der <span class="clisting">Split</span>-Methode als Argument übergeben. In den einzelnen Elementen des <span class="clisting">String</span>-Arrays liegen danach alle Teilzeichenfolgen vor, die in einer Schleife der Reihe
+                                                      nach an der Konsole angezeigt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun wollen wir die Methode testen und entwickeln dazu ein kleines Beispielprogramm:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  string[] str = new String[4];<br xmlns="">  str[0] = "Busch;";<br xmlns="">  str[1] = "Fridolin;";<br xmlns="">  str[2] = "Schlauberger Gasse 12;";<br xmlns="">  str[3] = "München";<br xmlns="">  string strArr;<br xmlns="">  strArr = string.Concat(str);<br xmlns="">  GetSubstrings(strArr);<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.17  </span>Testen der Methode »GetSubstrings« aus Listing 16.16
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Konvention folgend, ist bis auf die Angabe des Wohnortes hinter jedem String ein
+                                                      Strichpunkt als Abschluss gesetzt. Jeder String wird als Element eines Arrays gespeichert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um aus allen Teilstrings einen einzigen zu erstellen, könnten wir mit dem <span class="cprogrammierelement">+</span>-Operator arbeiten, aber die Klasse <span class="clisting">String</span> bietet uns eine Alternative in Form der Methode <span class="clisting">Concat</span><span class="clisting"><a class="indexterm" id="dodtpef8264f8-5779-4a57-a151-b69d906f717a"></a></span> an. Diese dient dazu, aus mehreren Einzelstrings einen Gesamtstring zu erzeugen.
+                                                      <span class="clisting">Concat</span> ist überladen, um den vielfältigen Anforderungen gerecht zu werden, die sich bei
+                                                      der String-Verknüpfung ergeben. Im Beispielcode fiel die Entscheidung auf die überladene
+                                                      Methode, die als Argument ein <span class="clisting">String</span>-Array erwartet und aus allen Array-Elementen einen String erzeugt, der unserer benutzerdefinierten
+                                                      Methode <span class="clisting">GetSubstrings</span> übergeben wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe an der Konsole beweist die korrekte Interpretation: Der übergebene String
+                                                      wird wieder in seine ursprünglichen Substrings zerlegt. Beachten Sie, dass die <span class="clisting">Split</span>-Methode die Trennzeichen im String erkennt und weiß, dass diese nicht zu den einzelnen
+                                                      String-Objekten gehören. Sie werden deshalb automatisch entfernt.
+                                                   </p>
+                                                   <h4 class="t4"> Zeichenfolgen und »char«-Arrays</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie werden, wenn Sie sich intensiver mit den Klassen des .NET Frameworks beschäftigen,
+                                                      immer wieder auf Methoden treffen, die Parameter entweder vom Typ eines <span class="clisting">char</span>-Arrays oder vom Typ <span class="clisting">string</span> deklarieren. Je nach Ausgangssituation im Programm ist dann die Umwandlung eines
+                                                      <span class="clisting">char</span>-Arrays in <span class="clisting">string</span> oder umgekehrt notwendig. Möchten Sie aus einem <span class="clisting">char</span>-Array einen String erzeugen, übergeben Sie dem passenden <span class="clisting">string</span>-Konstruktor die Referenz auf das Array, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">char[] charArr = {'K','a','r','n','e','v','a','l'};<br xmlns="">string text = new string(charArr);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der umgekehrte Weg, die einzelnen Zeichen einer <span class="clisting">string</span>-Referenz in ein <span class="clisting">char</span>-Array zu schreiben, scheint ein wenig kniffliger zu sein. Mit den bisher gezeigten
+                                                      Methoden der Klasse <span class="clisting">String</span> sollte das kein allzu großes Problem sein, aber die .NET-Baumeister haben Ihnen diese
+                                                      Arbeit bereits abgenommen, wie ein Blick in die Dokumentation der <span class="clisting">String</span>-Klasse verrät. Diese veröffentlicht die Methode <span class="clisting">ToCharArray</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public char[] ToCharArray<a class="indexterm" id="dodtpc0ddf8dd-a49d-46a0-bdcb-3e023af90d57"></a><a class="indexterm" id="dodtpce7400b7-c0ec-45ad-afc3-f7ad0c4b96a1"></a><a class="indexterm" id="dodtp6c329705-32a0-46d7-8d68-e93d6b70476c"></a><a class="indexterm" id="dodtpabbbb71d-54fb-483b-942a-e815e7a900f9"></a>();<br></br>public char[] ToCharArray(int, int);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Entscheiden Sie sich für die parameterlose Methode, werden die Zeichen des gesamten
+                                                      Strings, auf dem die Methode aufgerufen wird, einem <span class="clisting">char</span>-Array zugewiesen. Wollen Sie ab einer bestimmten Position einen Teil des Strings
+                                                      einem <span class="clisting">char</span>-Array zuweisen, entscheiden Sie sich für die parametrisierte <span class="clisting">ToCharArray</span>-Methode. Das folgende Listing benutzt die parameterlose Methode, um das Array zu
+                                                      füllen und anschließend die einzelnen Elemente zeilenweise an der Konsole auszugeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string text = "Quantenmechanik";<br xmlns="">char[] charArray = text.ToCharArray();<br xmlns="">for(int i = 0; i&lt;= charArray.GetUpperBound(0); i++)<br xmlns="">   Console.WriteLine(charArray[i]);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 16.18  </span>Zeichenfolge in ein »char«-Array umwandeln
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An der Konsole wird das Wort, das ursprünglich durch einen String gebildet wurde,
+                                                      nun Buchstabe für Buchstabe in je einer Zeile angezeigt.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp8a6e62fc-2274-4607-885a-765ccab87be8" name="dodtp8a6e62fc-2274-4607-885a-765ccab87be8"></a><h3 class="t3"><span class="cfett">16.2.4    </span><span class="cfett"> Zusammenfassung der Klasse »String«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd601ead1-8d45-4724-8506-901c8858f260"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Abschluss unserer Betrachtungen der Klasse <span class="clisting">String</span> wollen wir des besseren Gesamtüberblicks wegen in tabellarischer Form noch einmal
+                                                      alle in diesem Abschnitt erwähnten Methoden auflisten. 
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 16.5  </span>Übersicht über die Methoden der Klasse »String<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp1052db7e-28ac-4191-a977-3b5d8b753b6b"></a>«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Methode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Compare</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">(Klassenmethode) Vergleicht zwei <span class="clisting">String</span>-Objekte und liefert einen <br xmlns="">booleschen Wert zurück.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CompareOrdinal</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Vergleicht zwei <span class="clisting">String</span>-Objekte. Dabei wird der ANSI-Code berücksichtigt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CompareTo</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Wie <span class="clisting">Compare</span>, jedoch als Instanzmethode implementiert.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">EndsWith</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Prüft, ob das Ende eines gegebenen <span class="clisting">String</span>-Objekts einer bestimmten <br xmlns="">Zeichenfolge entspricht.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">IndexOf</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert den Index des ersten Auftretens einer bestimmten Zeichenfolge oder eines <span class="clisting">char</span>-Typs in einer Zeichenfolge zurück.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">IndexOfAny</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert den Index des ersten Auftretens eines bestimmten <span class="clisting">char</span>-Arrays in einer Zeichenfolge zurück.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Insert</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fügt eine Zeichenfolge ab einer bestimmten Position in eine Zeichenfolge ein.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">LastIndexOf</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert den Index des letzten Auftretens einer bestimmten Zeichenfolge oder eines
+                                                                  <span class="clisting">char</span>-Typs in einer Zeichenfolge.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">PadLeft</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fügt eine bestimmte Anzahl gleicher Zeichen vor dem ersten Zeichen des <span class="clisting">String</span>-Objekts ein. 
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">PadRight</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Fügt eine bestimmte Anzahl gleicher Zeichen nach dem letzten Zeichen des <span class="clisting">String</span>-Objekts ein.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Remove</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Löscht eine Anzahl von Zeichen ab einer spezifizierten Position aus der Zeichenfolge.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Replace</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ersetzt eine Anzahl von Zeichen in einer Zeichenfolge.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Split</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Erzeugt aus einer Zeichenfolge mehrere Teilzeichenfolgen mit einem <br xmlns="">spezifizierten Separator.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">StartsWith</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Prüft, ob der Anfang eines gegebenen <span class="clisting">String</span>-Objekts einer bestimmten Zeichenfolge entspricht.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Substring</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert eine Zeichenfolge bestimmter Größe aus einem <span class="clisting">String</span>-Objekt zurück.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToCharArray</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Weist die Zeichen eines <span class="clisting">String</span>-Objekts einem <span class="clisting">char</span>-Array zu.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToLower</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Konvertiert alle Zeichen eines Strings in Kleinbuchstaben.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToUpper</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Konvertiert alle Zeichen eines Strings in Großbuchstaben.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Trim</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Löscht alle voraus- oder nachlaufenden Leerzeichen einer Zeichenfolge.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs16_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="16  Einige wichtige .NET-Klassen"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_16_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_16_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

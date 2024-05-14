@@ -1,0 +1,855 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 38  Datenabfragen des Entity Data Models (EDM)">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 38  Datenabfragen des Entity Data Models (EDM)">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 38  Datenabfragen des Entity Data Models (EDM)</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="38_001.html">
+      <link rel="next" href="1997_38_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_38_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_38_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce" class="navnav">38 Datenabfragen des Entity Data Models (EDM)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_001.html#dodtp753f268a-224a-41f7-b614-9793cce3a56c" class="navnav">38.1 Abfragen mit LINQ to Entities</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpc1710009-3278-468f-8d35-c0ef28967ed2" class="navnav">38.1.1 Allgemeine Begriffe in LINQ</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtp926fe8a1-28ea-4756-a1c8-feda08328009" class="navnav">38.1.2 Einfache Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtp29b48161-726e-44cc-add0-f605c383d526" class="navnav">38.1.3 Navigieren in Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpf9152059-9697-42f3-bc07-a342c539df1c" class="navnav">38.1.4 Aggregatmethoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpd42a4481-c813-44e3-85a9-4621744090da" class="navnav">38.1.5 Joins in LINQ definieren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpa0b1e3f3-9bae-43b4-adb6-398a5e222946" class="navnav">38.1.6 In Beziehung stehende Daten laden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_002.html#dodtpa1229eb3-d758-4b44-a58e-a0bbe7d1333a" class="navh">38.2 Abfragen mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp99064349-1a4e-4b9e-8092-73240347f2a5" class="navh">38.2.1 Ein erstes Beispiel mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp9e31282b-c2af-42e0-a71d-c4383b51e128" class="navh">38.2.2 Die fundamentalen Regeln der Entity-SQL-Syntax</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp2900c0cf-9961-483e-8da8-03cb65d89a64" class="navh">38.2.3 Filtern mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtpe129891d-6f37-4830-978d-010e357ab25c" class="navh">38.2.4 Parametrisierte Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_003.html#dodtp315feedb-56b4-4813-aa5b-a89f2b498c7a" class="navnav">38.3 Der EntityClient-Provider</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_003.html#dodtpbfd72381-3cd6-4df3-bddf-7c8c2cfeca08" class="navnav">38.3.1 Verbindungen mit »EntityConnection«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_003.html#dodtpfdce030f-e9be-4ba8-bcc2-f0884c899c99" class="navnav">38.3.2 Die Klasse »EntityCommand«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_004.html#dodtp5f90df9f-3d81-471d-8a4a-a0a7ef9cae42" class="navnav">38.4 Abfrage-Generator-Methoden (QueryBuilder-Methoden)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_005.html#dodtp49f2ae21-5376-49f8-8822-37285ae80390" class="navnav">38.5 SQL-Direktabfragen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpa1229eb3-d758-4b44-a58e-a0bbe7d1333a" name="dodtpa1229eb3-d758-4b44-a58e-a0bbe7d1333a"></a><h2 class="t2"><span class="cfett">38.2    </span><span class="cfett"> Abfragen mit Entity SQL</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp3b49cb29-ec08-4d5b-acd0-89a2be710543"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp99064349-1a4e-4b9e-8092-73240347f2a5"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Entity SQL (kurz: eSQL) ist eine Alternative zu LINQ to Entities. Entity SQL ist ein
+                                                      datenbankunabhängiger SQL-Dialekt, der direkt mit dem konzeptionellen Modell arbeitet.
+                                                      Die Syntax ähnelt der des traditionellen T-SQL und ist auf die Belange der Entitäten
+                                                      hin geprägt. Allerdings wird das einfache Übernehmen einer T-SQL nach Entity SQL zu
+                                                      einem Fehler führen &#8211; und natürlich auch in umgekehrter Richtung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Warum eine weitere Abfragevariante? Zunächst einmal ist festzustellen, dass die Entwicklung
+                                                      von Entity SQL begann, als es LINQ noch nicht gab. Dass man später trotz LINQ Entity
+                                                      SQL weiterverfolgte, hat einen recht einfachen Grund: LINQ ist Teil der Sprache von
+                                                      C# geworden, wird aber von den vielen anderen .NET-fähigen Sprachen unterstützt. Zudem
+                                                      werden in manchen Situationen keine Entitäten (also Objekte) benötigt &#8211; beispielsweise
+                                                      wenn nur »nackte« Daten gewünscht werden und die Materialisierung in Entitäten nicht
+                                                      von Interesse ist, ähnlich wie bei den <span class="clisting">DataReader</span>-Objekten von ADO.NET. Solche Anforderungen können nur mit Entity SQL gelöst werden.
+                                                      Ein weiterer Vorteil von Entity SQL ist, dass eine Abfrage erst zur Laufzeit erzeugt
+                                                      werden kann. Das ist mit LINQ to Entities nicht möglich.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Entity SQL unterstützt nur Abfragen. Es gibt daher in Entity SQL zwar ein <span class="clisting">SELECT</span>, aber keine Aktualisierungsstatements wie <span class="clisting">UPDATE</span>, <span class="clisting">INSERT</span> oder <span class="clisting">DELETE</span>. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp99064349-1a4e-4b9e-8092-73240347f2a5" name="dodtp99064349-1a4e-4b9e-8092-73240347f2a5"></a><h3 class="t3"><span class="cfett">38.2.1    </span><span class="cfett"> Ein erstes Beispiel mit Entity SQL</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9e31282b-c2af-42e0-a71d-c4383b51e128"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa1229eb3-d758-4b44-a58e-a0bbe7d1333a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen Sie sich noch einmal Abbildung 37.13 im vorhergehenden Kapitel an. Sie können
+                                                      darin erkennen, dass Sie die Object Services des Entity Frameworks ansprechen können
+                                                      oder die Entity-SQL-Abfrage dem EntityClient-Provider übergeben können. Das folgende
+                                                      erste Beispiel einer Entity-SQL-Abfrage soll die Object Services nutzen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities()) <br xmlns="">{<br xmlns="">  var query = "SELECT VALUE p FROM NorthwindEntities.Products AS p " +<br xmlns="">              "WHERE p.UnitPrice &gt; 50";<br xmlns="">  ObjectQuery&lt;Product&gt; products = context.CreateQuery&lt;Product&gt;(query);<br></br>  foreach (Product item in products)<br xmlns="">    Console.WriteLine(item.ProductName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.21  </span>Einfache Entity-SQL-Abfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Variable <span class="ckursiv">query</span> beschreibt das Entity-SQL-Statement. Anschließend wird ein Objekt vom Typ <span class="clisting">ObjectQuery</span> erzeugt. Dazu wird auf dem Objektkontext dessen Methode <span class="clisting">CreateQuery</span> aufgerufen und das Entity-SQL-Statement übergeben. Sie sehen, das Entity-SQL-Statement
+                                                      sieht anders aus als ein T-SQL-Statement. Das sollte aber auch nicht verwundern, denn
+                                                      Entitäten unterscheiden sich deutlich von relationalen Daten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Listing 38.21 wird ein Objekt vom Typ <span class="clisting">ObjectQuery</span> durch den Aufruf der Methode <span class="clisting">CreateQuery</span> auf den Objektkontext erzeugt. Sie können alternativ auch den Konstruktor der Klasse
+                                                      <span class="clisting">ObjectQuery</span> benutzen, dem Sie zuerst die das Entity SQL beschreibende Zeichenfolge und anschließend
+                                                      die Referenz auf den Objektkontext übergeben. Bezogen auf Listing 38.21 sähe die Anweisung
+                                                      wie folgt aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ObjectQuery&lt;Product&gt; products = new ObjectQuery&lt;Product&gt;(query, context);<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9e31282b-c2af-42e0-a71d-c4383b51e128" name="dodtp9e31282b-c2af-42e0-a71d-c4383b51e128"></a><h3 class="t3"><span class="cfett">38.2.2    </span><span class="cfett"> Die fundamentalen Regeln der Entity-SQL-Syntax</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2900c0cf-9961-483e-8da8-03cb65d89a64"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp99064349-1a4e-4b9e-8092-73240347f2a5"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns das Entity-SQL-Statement des Listings 38.21 genauer an und ignorieren
+                                                      dabei die WHERE-Klausel.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM NorthwindEntities.Products AS p<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In jeder Entity-SQL-Abfrage muss das Entitätenmodell angegeben werden, auf das sich
+                                                      die Abfrage bezieht. In unserem Fall ist das <span class="clisting">NorthwindEntities.Products</span>. Die Groß- oder Kleinschreibung findet hier keine Berücksichtigung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die VALUE-Klausel wird benötigt, wenn die einzelnen Resultate nur einen bestimmten
+                                                      Typ beschreiben. Dabei kann es sich um eine Entität, eine Eigenschaft oder auch eine
+                                                      Liste von Entitäten handeln. Um alle Produktbezeichner abzufragen, wären die folgenden
+                                                      Anweisungen notwendig:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = "SELECT VALUE p.ProductName FROM NorthwindEntities.Products AS p";<br xmlns="">var products = context.CreateQuery&lt;string&gt;(query);<br></pre></div>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Ohne VALUE wird das Resultat der Abfrage tabellarisch geliefert. Um die Daten zu erhalten,
+                                                         muss dann durch die Zeilen und Spalten navigiert werden.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Gehören mehrere Elemente zu einem Rückgabeelement, können Sie auf VALUE verzichten.
+                                                      Angenommen, jedes Element der Ergebnismenge soll durch <span class="ckursiv">ProductName</span> und <span class="ckursiv">UnitPrice</span> beschrieben werden, würde das Entity-SQL-Statement wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = "SELECT p.ProductName, p.UnitPrice FROM ... AS p";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas Probleme macht nun die Ausgabe an der Konsole, denn wir haben es hier mit einer
+                                                      Projektion zu tun, die unter LINQ zu einem anonymen Typ wird, womit LINQ problemlos
+                                                      umgehen kann. Entity SQL kann das jedoch nicht. Andererseits benötigt die Methode
+                                                      <span class="clisting">CreateQuery</span> eine genaue Typangabe. Die Lösung ist sehr einfach: Tragen Sie den Typ <span class="clisting">DbDataRecord</span> ein, der sich im Namespace <span class="clisting">System.Data.Common</span> befindet. Der Code würde einschließlich des Entity-SQL-Statements wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = "SELECT p.ProductName, p.UnitPrice FROM ... AS p";<br xmlns="">  var products = new ObjectQuery&lt;DbDataRecord&gt;(query, context);<br xmlns="">  foreach (var item in products)<br xmlns="">    Console.WriteLine(item.GetValue(0));<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.22  </span>Entity-SQL-Statement
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den Einsatz von VALUE kennen Sie nun. Erwähnt werden muss in diesem Statement noch,
+                                                      dass mit AS eine Variable deklariert wird, die die Ergebnismenge darstellt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Entity SQL unterstützt nicht das »*«-Zeichen, um alle Spalten an den Aufrufer zurückzuliefern.
+                                                         Das bedeutet, dass alle Spalten, auf die der Aufrufer zugreifen soll, ausdrücklich
+                                                         genannt werden müssen.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp2900c0cf-9961-483e-8da8-03cb65d89a64" name="dodtp2900c0cf-9961-483e-8da8-03cb65d89a64"></a><h3 class="t3"><span class="cfett">38.2.3    </span><span class="cfett"> Filtern mit Entity SQL</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe129891d-6f37-4830-978d-010e357ab25c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9e31282b-c2af-42e0-a71d-c4383b51e128"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine der wichtigsten Operationen einer Abfrage ist das Filtern von Daten. Wie in der
+                                                      klassischen SQL-Syntax verwendet auch Entity SQL zum Filtern von Daten die WHERE-Klausel.
+                                                      Das folgende Listing zeigt, wie diejenigen Produkte in die Ergebnismenge geschrieben
+                                                      werden können, die mit <span class="clisting">Discontinued=true</span> als Auslaufprodukte gekennzeichnet sind.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  string query = "SELECT VALUE p FROM northwindentities.products AS p " +<br xmlns="">                 "WHERE p.Discontinued = true";<br xmlns="">  ObjectQuery&lt;Product&gt; products = new ObjectQuery&lt;Product&gt;(query, context);<br xmlns="">  foreach (var item in products)<br xmlns="">    Console.WriteLine(item.ProductName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.23  </span>Alle Auslaufprodukte mit Entity SQL herausfiltern
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Filteroperatoren von Entity SQL aufzuführen würde den Rahmen sprengen. Nichtsdestotrotz
+                                                      sollen hier die wichtigsten erwähnt werden.
+                                                   </p>
+                                                   <h4 class="t4"> Logische Operatoren</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können in Entity SQL die üblichen logischen Operatoren NOT, OR und AND benutzen.
+                                                      Sollten mehrere logische Operatoren verwendet werden, spiegelt die Reihenfolge NOT,
+                                                      OR und AND auch die Prioritätsreihenfolge wider. In C# ist es auch möglich, diese
+                                                      Operatoren durch die sprachspezifischen zu ersetzen. Daher können Sie eine Entity-SQL-Abfrage
+                                                      entweder mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM NorthwindEntities.Products AS p <br xmlns="">WHERE p.UnitPrice &gt; 20 AND p.UnitsInStock &lt;10<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">oder mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM NorthwindEntities.Products AS p <br xmlns="">WHERE p.UnitPrice &gt; 20 &amp;&amp; p.UnitsInStock &lt;10<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">formulieren.</p>
+                                                   <h4 class="t4"> Vergleichsoperatoren</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Vergleich von Werten bietet Entity SQL die üblichen »Verdächtigen« an (siehe Tabelle
+                                                      38.2):
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 38.2  </span>Logische Operatoren von Entity SQL
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Operator
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">&lt;</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kleiner als ...</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">&gt;</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Größer als ...</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">&gt;=</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Größer als oder gleich ...</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">&lt;=</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Kleiner als oder gleich ...</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">=</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gleich. In C# kann für diesen Operator auch »<span class="clisting">==</span>« benutzt werden.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">&lt;&gt;</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ungleich. In C# kann für diesen Operator auch »<span class="clisting">!=</span>« benutzt werden.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Mustervergleiche mit Zeichenfolgen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch hinsichtlich des Mustervergleichs mit LIKE ähnelt Entity SQL dem klassischen
+                                                      SQL. Mit Platzhaltern wird geprüft, ob die Zeichenkette passend zu einer Vorgabe ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die folgende Entity-SQL-Abfrage liefert beispielsweise alle Artikel, die mit dem Buchstaben
+                                                      »C« im Produktnamen beginnen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM ... AS p WHERE p.ProductName LIKE 'C%'<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Statement wird der Filter erweitert in der Weise, dass alle Produkte,
+                                                      deren erster Buchstabe des Produktbezeichners im Bereich von »A« bis »D« liegt, zurückgeliefert
+                                                      werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM ... AS p WHERE p.ProductName LIKE '[A-D]%'<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das »%«-Zeichen dient als Platzhalter für x-beliebig viele Zeichen, mit den eckigen
+                                                      Klammern wird der gewünschte Bereich definiert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Festlegung des Bereichs kann auch negiert werden. Wollen Sie beispielsweise alle
+                                                      Produkte abfragen, die sich nicht im Bereich »A« bis »D« befinden, muss die WHERE-Klausel
+                                                      wie folgt definiert werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">... WHERE p.ProductName LIKE '[^A-D]%'<br></pre></div>
+                                                   <h4 class="t4"> Bereiche von Werten prüfen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um zu prüfen, ob ein Wert sich innerhalb eines bestimmten Bereichs befindet, benutzen
+                                                      Sie den BETWEEN-Operator. Das folgende Statement liefert alle Produkte zurück, deren
+                                                      Preis zwischen einschließlich 10 und 20 liegt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM ... AS p WHERE p.UnitPrice BETWEEN 10 AND 20<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anzumerken sei noch, dass sich der BETWEEN-Operator mit NOT negieren lässt.</p>
+                                                   <h4 class="t4"> Der Operator IS NULL</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tabellenspalten einer Datenbank können den Wert NULL haben. Mit den logischen Operatoren
+                                                      wie »<span class="clisting">=</span>« oder »<span class="clisting">&lt;&gt;</span>« ein Feld auf NULL hin zu prüfen, erzeugt zwar keinen Fehler, liefert aber andererseits
+                                                      auch nichts zurück, weil ein Wert weder NULL noch ungleich NULL sein kann. Um gegen
+                                                      NULL zu prüfen, gibt es daher in Entity SQL den Operator IS NULL.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das nächste Entity-SQL-Statement fragt nach allen Datensätzen, die im Feld <span class="ckursiv">CategoryID</span> den Wert NULL haben. Standardmäßig hat das kein Datensatz in der Tabelle <span class="ckursiv">Products</span>. Wenn Sie tatsächlich ein Ergebnis sehen wollen, sollten Sie vorher eine Datenzeile
+                                                      hinzufügen, die in dem betreffenden Feld NULL aufweist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT VALUE p FROM ... AS p WHERE p.CategoryID IS NULL<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe129891d-6f37-4830-978d-010e357ab25c" name="dodtpe129891d-6f37-4830-978d-010e357ab25c"></a><h3 class="t3"><span class="cfett">38.2.4    </span><span class="cfett"> Parametrisierte Abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5a36d1b1-f9cc-4ec1-8876-53ae8a0a9e5b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die meisten Filter einer Datenabfrage sind nicht statisch, sondern dynamisch. Mit
+                                                      anderen Worten heißt das, dass die meisten Abfragen parametrisiert sind. Auch in diesen
+                                                      Fällen unterstützt uns das <span class="clisting">ObjectQuery</span>-Objekt durch die Bereitstellung einer Parameter-Collection, die über die Eigenschaft
+                                                      <span class="clisting">Parameters</span> angesprochen werden kann. Die Parameter werden, angelehnt an T-SQL, mit einem @-Zeichen
+                                                      eingeleitet und mit der <span class="clisting">Add</span>-Methode der Parameterliste des <span class="clisting">ObjectQuery</span>-Objekts hinzugefügt. Dabei muss jedoch beachtet werden, dass beim Hinzufügen das
+                                                      @-Zeichen nicht mit angegeben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  string query = "SELECT VALUE p FROM NorthwindEntities.Products AS p " +<br xmlns="">                 "WHERE p.UnitPrice &gt; @preis";<br xmlns="">  ObjectQuery&lt;Product&gt; products = context.CreateQuery&lt;Product&gt;(query);<br xmlns="">  products.Parameters.Add(new ObjectParameter("preis", 50));<br xmlns="">  foreach (Product item in products)<br xmlns="">    Console.WriteLine("{0,-35}{1}", item.ProductName, item.UnitPrice);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.24  </span>Parametrisierte Abfrage mit Entity SQL
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs38_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="38  Datenabfragen des Entity Data Models (EDM)"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_38_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_38_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

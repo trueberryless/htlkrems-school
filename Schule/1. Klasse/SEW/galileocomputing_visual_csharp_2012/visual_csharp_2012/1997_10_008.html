@@ -1,0 +1,1267 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 10  Weitere C#-Sprachfeatures">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 10  Weitere C#-Sprachfeatures">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 10  Weitere C#-Sprachfeatures</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="10_007.html">
+      <link rel="next" href="1997_10_009.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_10_007.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_10_009.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede" class="navnav">10 Weitere C#-Sprachfeatures</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_001.html#dodtpea2163c6-7676-4355-afdd-8feb4dd30ba8" class="navnav">10.1 Implizit typisierte Variablen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_002.html#dodtp33f60432-614d-4bf8-94e0-c5ac108f5e09" class="navnav">10.2 Anonyme Typen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_003.html#dodtp46efe5c6-5001-428b-b4f9-95b9b613bc34" class="navnav">10.3 Lambda-Ausdrücke</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_003.html#dodtp48887391-6670-4ad2-ad54-bc52253b8ea4" class="navnav">10.3.1 Projektion und Prädikat</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_004.html#dodtp8cb905ec-01d5-4365-bbe2-e8e5057383db" class="navnav">10.4 Erweiterungsmethoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_005.html#dodtp245e1d72-c6cf-42e4-be49-49f3e196d1aa" class="navnav">10.5 Partielle Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_005.html#dodtpe87bafdf-e7ce-4d98-919c-d91ef4425e5c" class="navnav">10.5.1 Wo partielle Methoden eingesetzt werden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_006.html#dodtpe76ab009-5081-4073-9857-037d41e5385a" class="navnav">10.6 Operatorüberladung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_006.html#dodtp29727c4f-62f3-4030-ad39-f7bd432f9b11" class="navnav">10.6.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_006.html#dodtpb4dafee0-3e36-439e-81b7-73e53fb7946f" class="navnav">10.6.2 Die Syntax der Operatorüberladung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_006.html#dodtpeb8d26fd-7e98-49a7-947f-572b1f61b988" class="navnav">10.6.3 Die Operatorüberladungen im Projekt »GeometricObjectsSolution«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_006.html#dodtp853993da-5b6d-4784-bdd8-bb832e292ed8" class="navnav">10.6.4 Die Operatoren »true« und »false« überladen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_006.html#dodtpd660ca94-1520-406f-b9e2-1b69eee47c92" class="navnav">10.6.5 Benutzerdefinierte Konvertierungen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_007.html#dodtp64981a13-8ca2-4f1e-9bbd-7570fae18cc6" class="navnav">10.7 Indexer</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_007.html#dodtp3cec03dc-1309-41e2-8e3a-68407f3c8843" class="navnav">10.7.1 Überladen von Indexern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_007.html#dodtpb8d56af9-e792-4552-8d15-3cf72c49d0c3" class="navnav">10.7.2 Parameterbehaftete Eigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_008.html#dodtp5536ce37-777a-4ba3-9cba-a72ccefd2067" class="navh">10.8 Attribute</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_008.html#dodtp7e9831ec-4fd8-4d1a-89c1-6606092053b9" class="navh">10.8.1 Das »Flags«-Attribut</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_008.html#dodtp08e96a8d-179a-45eb-abe6-6c64db205585" class="navh">10.8.2 Benutzerdefinierte Attribute</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_008.html#dodtp31d3f902-6ba1-4ab5-8220-194ab2f43652" class="navh">10.8.3 Attribute auswerten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_008.html#dodtp458b1254-752d-4bb0-9425-2373234af1d2" class="navh">10.8.4 Festlegen der Assembly-Eigenschaften in »Assembly-Info.cs«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_009.html#dodtp9e51bc48-3183-4612-987f-6626866aa7a7" class="navnav">10.9 Dynamisches Binden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_009.html#dodtp7f1cdf49-64d6-454d-8305-b026026f94b7" class="navnav">10.9.1 Eine kurze Analyse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_009.html#dodtp9ffb3953-ebc8-4d7f-9429-0989911d0c48" class="navnav">10.9.2 Dynamische Objekte</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_10_010.html#dodtp6507ea6d-ba13-49af-9560-8059bb666759" class="navnav">10.10 Unsicherer (unsafe) Programmcode &#8211; Zeigertechnik in C#</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtp54b10f8a-5b92-40ef-88ec-fde39de5f62c" class="navnav">10.10.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtp2b3dc9ea-651c-40f4-842a-8a84c93a4b77" class="navnav">10.10.2 Das Schlüsselwort »unsafe«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtpa2feda50-33c9-409c-affc-e3a3b514ca31" class="navnav">10.10.3 Die Deklaration von Zeigern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtp06f26571-5d2e-4acf-ac2e-b35ad3f4524c" class="navnav">10.10.4 Die »fixed«-Anweisung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtp08a2760f-0c66-433f-b79e-2d8231082dc4" class="navnav">10.10.5 Zeigerarithmetik</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_10_010.html#dodtp3624016d-c259-42a6-9e92-c5469ce67fe7" class="navnav">10.10.6 Der Operator »-&gt;«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp5536ce37-777a-4ba3-9cba-a72ccefd2067" name="dodtp5536ce37-777a-4ba3-9cba-a72ccefd2067"></a><h2 class="t2"><span class="cfett">10.8    </span><span class="cfett"> Attribute</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpe25e6eeb-f80b-4170-aae7-de0395abb53e"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp7e9831ec-4fd8-4d1a-89c1-6606092053b9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Attribut ist ein Feature von .NET, das einer Komponente deklarativ Zusatzinformationen
+                                                      bereitstellt oder einfach nur alleine durch seine Anwesenheit bestimmte Operationen
+                                                      ermöglicht oder gar steuert. Attribute gehören zu den Metadaten eines Programms und
+                                                      können zur Laufzeit ausgewertet werden. 
+                                                   </p>
+                                                   <p><a href="bilder/10_01.png" rel="lightbox" title="Die Metadaten der Klasse »GeometricObject«"><img class="bild" border="1" src="bilderklein/klein10_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 10.1  </span>Die Metadaten der Klasse »GeometricObject«
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbueberschrift">
+                                                         
+                                                         
+                                                         
+                                                         Anmerkung
+                                                      </p>
+                                                      <p class="pbstandard">Metadaten sind ein Pflichtbestandteil jeder .NET-Anwendung. Metadaten beschreiben
+                                                         sprachneutral die gesamte Struktur einer Assembly. Dazu gehören alle enthaltenen Typen,
+                                                         Methoden, Eigenschaften, Ereignisse, Konstruktoren, implementierte Interfaces usw.
+                                                         Zudem gehören zu den Metadaten auch weiter gehende Informationen, beispielsweise die
+                                                         Parameterlisten der Methoden einschließlich der Typangabe, die Sichtbarkeit der einzelnen
+                                                         Komponenten, Basisklassenangaben und viele andere Details. Der Vorteil ist, dass die
+                                                         Metadaten mit Hilfe der Reflection-API gelesen und ausgewertet werden können. Dazu
+                                                         muss noch
+                                                      </p>
+                                                      <p class="pbstandard">nicht einmal eine Klasse geladen, geschweige denn ein Objekt erstellt werden. Die
+                                                         IntelliSense-Liste greift zum Beispiel auch die Metadaten ab, woher sollte sie auch
+                                                         sonst die Informationen beziehen?
+                                                      </p>
+                                                      <p class="pbstandard">Sie können sich die Metadaten natürlich selber ansehen. Dazu stellt Visual Studio
+                                                         das Tool <span class="ckursiv">IL-Disassembler</span> (<span class="ckursiv">ildasm.exe</span>) zur Verfügung. Wenn Sie das Tool starten, müssen Sie nur die entsprechende EXE-Datei
+                                                         angeben, um die Metadaten zu sehen. Abbildung 10.1 zeigt exemplarisch das Kompilat
+                                                         der Datei <span class="ckursiv">GeometricObjects.exe</span> des Beispielprogramms <span class="ckursiv">GeometricObjectsSolution_11</span>.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit einem Attribut lässt sich das Laufzeitverhalten praktisch aller .NET-Komponenten
+                                                      beeinflussen: Assemblys, Klassen, Interfaces, Strukturen, Delegates, Enumerationen,
+                                                      Konstruktoren, Methoden, Eigenschaften, Parameter, Ereignisse, ja sogar die Rückgabewerte
+                                                      von Methoden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein ganz typisches Attribut ist das <span class="clisting">SerializableAttribute</span>. Es kann zum Beispiel mit einer Klasse, Enumeration, Struktur oder einem Delegaten
+                                                      verknüpft werden, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[SerializableAttribute]<br xmlns="">public class Circle { [...] }<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Und wozu dient dieses Attribut? Die Antwort ist ganz einfach: Es legt allein mit seiner
+                                                      Anwesenheit fest, dass der Typ, hier <span class="clisting">Circle</span>, binär serialisiert werden kann. Ist das Attribut nicht vorhanden, geht es nicht.
+                                                      Somit kommt diesem Attribut, wie vielen anderen auch, einzig und allein die Bedeutung
+                                                      einer booleschen Variablen zu, die <span class="clisting">true</span> oder <span class="clisting">false</span> gesetzt ist. Der Clou an der Sache ist, dass dazu nicht erst eine Klasse geladen
+                                                      oder gar ein Objekt erstellt werden muss. Stattdessen werden zur Laufzeit nur die
+                                                      Metadaten per <span class="ckursiv">Reflection</span> ausgewertet, und die Information steht bereit, da Attribute in den Metadaten zu finden
+                                                      sind.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Basisklasse aller Attribute ist die abstrakte Klasse <span class="clisting">System.Attribute</span>. Schaut man in die Online-Dokumentation zu <span class="clisting">Attribute</span>, wird man feststellen, dass das .NET Framework sehr viele Attribute vordefiniert.
+                                                      Alle denkbaren Anforderungen werden damit sicherlich nicht abgedeckt, deshalb können
+                                                      Sie auch benutzerdefinierte Attribute entwickeln und dadurch die Flexibilität Ihrer
+                                                      Anwendung erhöhen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp7e9831ec-4fd8-4d1a-89c1-6606092053b9" name="dodtp7e9831ec-4fd8-4d1a-89c1-6606092053b9"></a><h3 class="t3"><span class="cfett">10.8.1    </span><span class="cfett"> Das »Flags«-Attribut</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd5339f9c-db93-4255-9657-1a3109493520"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp5c319c0d-d481-4db1-906c-1d13457faf4c"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp08e96a8d-179a-45eb-abe6-6c64db205585"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5536ce37-777a-4ba3-9cba-a72ccefd2067"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns die Wirkungsweise der Attribute exemplarisch am Attribut <span class="clisting">FlagsAttribute</span> ansehen, das zum .NET Framework gehört und ausschließlich mit Enumerationen verknüpft
+                                                      werden kann. Mit dem Attribut lässt sich angeben, dass die Enumeration auch als Kombination
+                                                      von Bits, also ein Bit-Feld, aufgefasst werden kann. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das wollen wir uns an einem Beispiel ansehen. Nehmen wir an, wir hätten eine benutzerdefinierte
+                                                      Enumeration namens <span class="clisting">Keys</span> bereitgestellt, die drei Zustandstasten <span class="ctastatur"><img align="top" src="keys/tastatur_KMKqKQ==.gif" alt="Shift" title="Shift"></img></span>, <span class="ctastatur"><img align="top" src="keys/KFN0cmcp.gif" alt="Strg" title="Strg"></img></span> und <span class="ctastatur"><img align="top" src="keys/KEFsdCk=.gif" alt="Alt" title="Alt"></img></span> beschreibt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public enum Keys {<br xmlns="">  Shift = 1,<br xmlns="">  Ctrl = 2,<br xmlns="">  Alt = 4<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.37  </span>Benutzerdefinierte Enumeration »Keys« 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Enumerationsmitglieder sollen nun befähigt werden, als Bit-Feld interpretiert
+                                                      zu werden. Dazu wird das Attribut in eckige Klammern gefasst und vor der Definition
+                                                      der Enumeration angegeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[FlagsAttribute]<br xmlns="">public enum Keys {<br xmlns="">  Shift = 1,<br xmlns="">  Ctrl = 2,<br xmlns="">  Alt = 4<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.38  </span>Benutzerdefinierte Enumeration »Keys« mit dem »FlagsAttribute«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun können wir eine Variable vom Typ <span class="ckursiv">Keys</span> deklarieren und ihr einen Wert zuweisen, der den Zustand der beiden gleichzeitig
+                                                      gedrückten Tasten <span class="ctastatur"><img align="top" src="keys/KFN0cmcp.gif" alt="Strg" title="Strg"></img></span> und <span class="ctastatur"><img align="top" src="keys/tastatur_KMKqKQ==.gif" alt="Shift" title="Shift"></img></span> beschreibt. Beide Member verknüpfen wir mit dem <span class="clisting">|</span>-Operator:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Keys tastenkombination = Keys.Ctrl | Keys.Shift;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit den bitweisen Operatoren kann nun geprüft werden, ob der Anwender eine bestimmte
+                                                      Taste oder gar Tastenkombination gedrückt hat.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Keys tastenkombination = Keys.Ctrl | Keys.Shift;<br xmlns="">if ((tastenkombination &amp; Keys.Alt) == Keys.Alt)<br xmlns="">  Console.WriteLine("Alt gedrückt");<br xmlns="">else<br xmlns="">  Console.WriteLine("Alt nicht gedrückt");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.39  </span>Prüfen, ob eine bestimmte Tastenkombination gedrückt ist
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier wird natürlich die Ausgabe lauten, dass die <span class="ctastatur"><img align="top" src="keys/KEFsdCk=.gif" alt="Alt" title="Alt"></img></span>-Taste nicht gedrückt ist, da die Variable <span class="ckursiv">tastenkombination</span> die beiden Tasten <span class="ctastatur"><img align="top" src="keys/KEN0cmwp.gif" alt="Ctrl" title="Ctrl"></img></span> und <span class="ctastatur"><img align="top" src="keys/tastatur_KMKqKQ==.gif" alt="Shift" title="Shift"></img></span> beschreibt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Eine ähnliche Enumeration, die dann allerdings jede Taste der Tastatur beschreibt,
+                                                         gibt es übrigens auch im Namespace <span class="clisting">System.Windows.Forms</span>.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen wir uns nun den Inhalt der Variablen <span class="ckursiv">tastenkombination</span> mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(tastenkombination.ToString());<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ausgeben, erhalten wir: </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Shift, Ctrl<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hätten wir <span class="clisting">FlagsAttribute</span> nicht gesetzt, würde die Ausgabe 3 lauten. Sie müssen berücksichtigen, dass die Mitglieder
+                                                      solchermaßen definierter Enumerationen Zweierpotenzen sind (also 1, 2, 4, 8, 16, 32,
+                                                      64, ...). Alternativ sind auch hexadezimale Zahlenwerte zulässig.
+                                                   </p>
+                                                   <h4 class="t4"> Attribute setzen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Attributbezeichner enden immer mit dem Suffix <span class="ckursiv">Attribute</span>. Wird ein Attribut mit einem Element verknüpft, darf auf das Suffix <span class="clisting">Attribute</span> verzichtet werden. Bezogen auf unser Beispiel dürfen Sie also
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">[FlagsAttribute]</span><br xmlns="">public enum Keys {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">und </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">[Flags]</span><br xmlns="">public enum Keys {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">gleichwertig verwenden. Bemerkt die Laufzeit die Verknüpfung eines Attributs mit einem
+                                                      Element, sucht sie nach einer Klasse, die mit dem angegebenen Attributbezeichner übereinstimmt
+                                                      und gleichzeitig die Klasse <span class="clisting">Attribute</span> ableitet, also beispielsweise nach einer Klasse namens <span class="clisting">Flags</span>. Wird die Laufzeit nicht fündig, hängt sie automatisch das Suffix <span class="clisting">Attribute</span> an den Bezeichner an und wiederholt seine Suche. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können auch mehrere Attribute gleichzeitig setzen. Beispielsweise könnten Sie
+                                                      mit dem <span class="clisting">ObsoleteAttribute</span> das Element zusätzlich als veraltet kennzeichnen, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[FlagsAttribute]<br xmlns="">[Obsolete("Diese Enumeration ist veraltet.");<br xmlns=""> public enum Keys {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.40  </span>Verknüpfung von »Keys« mit den Attributen »Obsolete« und »Flags« 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbueberschrift">Anmerkung</p>
+                                                      <p class="pbstandard">Innerhalb einer mit <span class="clisting">Flags</span> verknüpften Enumeration können Sie zur Zuweisung auch die bereits in der Enumeration
+                                                         angegebenen Konstanten verwenden. Stellen Sie sich beispiels-
+                                                      </p>
+                                                      <p class="pbstandard">weise vor, in unserer <span class="clisting">Keys</span>-Enumeration soll zusätzlich der Member <span class="clisting">All</span> hinzugefügt werden, der alle anderen Enumerationsmember beschreibt. Sie können das
+                                                         wie folgt umsetzen:
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint">[FlagsAttribute]<br xmlns="">public enum Keys {<br xmlns="">  Shift = 1,<br xmlns="">  Ctrl = 2,<br xmlns="">  Alt = 4<br xmlns="">  All = Shift | Ctrl | Alt<br xmlns="">}<br></pre></div>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp08e96a8d-179a-45eb-abe6-6c64db205585" name="dodtp08e96a8d-179a-45eb-abe6-6c64db205585"></a><h3 class="t3"><span class="cfett">10.8.2    </span><span class="cfett"> Benutzerdefinierte Attribute</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp23ec01be-8b6b-492d-a823-2612b874dcb3"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp31d3f902-6ba1-4ab5-8220-194ab2f43652"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf9ed07e2-d269-4383-8274-9324959ef15f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Attribute basieren auf Klassendefinitionen und können daher alle klassentypischen
+                                                      Elemente enthalten. Dazu gehören neben Konstruktoren auch Felder. Insbesondere diese
+                                                      beiden Elemente ermöglichen es, über ein Attribut dem attributierten Element Zusatzinformationen
+                                                      bereitzustellen. Wie das in der Praxis aussieht, wollen wir uns am Beispiel eines
+                                                      benutzerdefinierten Attributs verdeutlichen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Obwohl das .NET Framework zahlreiche Attribute vordefiniert, können Sie auch für eigene
+                                                      Zwecke Attributklassen selber schreiben. Allerdings müssen Sie für die Auswertung
+                                                      des Attributs zur Laufzeit dann auch selber sorgen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Drei Punkte müssen Sie beachten, um ein benutzerdefiniertes Attribut zu programmieren:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Der Definition eines benutzerdefinierten Attributs selbst geht immer die Definition
+                                                         des Attributs <span class="clisting">AttributeUsageAttribute</span><span class="clisting"><a class="indexterm" id="dodtp8eef5c5e-0220-466f-8ef0-2c8e124ee426"></a><a class="indexterm" id="dodtp167effdb-f049-4ac7-807b-e489ab754374"></a></span> voraus.
+                                                      </li>
+                                                      <li class="pgp">Die Klasse wird aus <span class="clisting">Attribute</span><span class="clisting"><a class="indexterm" id="dodtp0aabd991-a9fa-483b-9a9f-c3e38c6fe316"></a></span> abgeleitet.
+                                                      </li>
+                                                      <li class="pgp">Dem Klassenbezeichner sollte das Suffix <span class="clisting">Attribute</span> angehängt werden.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen Sie uns an dieser Stelle exemplarisch ein eigenes Attribut erstellen, dessen
+                                                      Aufgabe es ist, sowohl den Entwickler einer Klasse oder Methode als auch dessen Personalnummer
+                                                      anzugeben. Das folgende Beispiel zeigt die noch unvollständige Definition der Attributklasse:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method,<br xmlns="">                Inherited = false,  <br xmlns="">                AllowMultiple = false)] <br xmlns="">public class DeveloperAttribute : Attribute <br xmlns="">{<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.41  </span>Grundstruktur des benutzerdefinierten Attributs »DeveloperAttribute«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Voranstellung des Attributs <span class="clisting">AttributeUsage</span> vor der Klasse legt elementare Eigenschaften der neuen Attributklasse fest. In diesem
+                                                      Zusammenhang sind drei Parameter besonders interessant: 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">AttributeTargets</span><span class="clisting"><a class="indexterm" id="dodtpab385dc6-307c-4a70-94da-59bf833f4403"></a><a class="indexterm" id="dodtpe7707690-9967-47b0-b760-0d6c361af6a5"></a></span><a class="indexterm" id="dodtpba551302-bbb6-4f79-8713-f25afedb5de1"></a></li>
+                                                      <li class="pgp"><span class="clisting">Inherited</span><span class="clisting"><a class="indexterm" id="dodtp9eda46ab-291c-432f-b17f-71c223615f09"></a><a class="indexterm" id="dodtpbb46be83-05c3-4067-98dd-16ebe33db1bf"></a></span><a class="indexterm" id="dodtp0f4c81a5-8078-46d0-aafa-5fe3e0d115da"></a></li>
+                                                      <li class="pgp"><span class="clisting">AllowMultiple</span><span class="clisting"><a class="indexterm" id="dodtp35c94570-a759-426b-91e0-0c00dd6f41c2"></a><a class="indexterm" id="dodtpa1c1a7e4-5a57-4bd8-a256-32303b24d0e2"></a></span><a class="indexterm" id="dodtp8a104467-92a4-4351-aa40-525b209b21f1"></a></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Während<span class="cfett"> </span><span class="clisting">AttributeTargets</span> angegeben werden muss, sind die beiden anderen Angaben optional.
+                                                   </p>
+                                                   <h4 class="t4"> AttributeTargets</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jedes Attribut kann sich nur auf bestimmte Codeelemente auswirken. Diese werden mit
+                                                      <span class="clisting">AttributeTargets</span> bekannt gegeben. Das Attribut <span class="clisting">Flags</span> kann beispielsweise mit Klassen, Enumerationen, Strukturen und Delegaten verknüpft
+                                                      werden. Man kann den Einsatz eines Attributs ebenso gut nur auf Methoden oder Felder
+                                                      beschränken. Es steht dabei immer folgende Frage im Vordergrund: Was soll das Attribut
+                                                      letztendlich bewirken, welche Elemente sollen über das Attribut beeinflusst werden?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">AttributeTargets</span> ist als Enumeration vordefiniert und weist seinerseits selbst das <span class="clisting">FlagsAttribute</span> auf, um mehrere Zielelemente angeben zu können. In Tabelle 10.2 finden Sie alle möglichen
+                                                      Elemente, die generell mit Attributen verknüpft werden können.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 10.2  </span>Mitglieder der »AttributeTargets«<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa445dae9-9da6-4786-9bf0-2cb15d7808c0"></a>-Enumeration
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Mitglieder
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">All</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für jedes Element der Anwendung. </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Assembly</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Assemblierung.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Class</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Klasse.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Constructor</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für den Konstruktor.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Delegate</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für den Delegate.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Enum</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Enumeration.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Event</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für das Ereignis.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Field</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für das Feld.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Interface</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Schnittstelle.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Method</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Methode.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Module</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für das Modul.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Parameter</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für den Parameter.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Property</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Property.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ReturnValue</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für den Rückgabewert.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Struct</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Das Attribut gilt für die Struktur.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im folgenden Listing sehen Sie den Teilausschnitt unseres benutzerdefinierten Attributs.
+                                                      Das Attribut kann entweder Klassen oder Methoden angeheftet werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[AttributeUsage(<span class="clistingfett">AttributeTargets.Class | AttributeTargets.Method</span>)]<br xmlns="">public class DeveloperAttribute : Attribute { [...] }<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.42  </span>Die Zielmember des Attributs angeben 
+                                                   </p>
+                                                   <h4 class="t4"> Inherited</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp20856f89-8b80-4240-9a65-42bcee32d86a"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Klasse kann ihre Mitglieder einer abgeleiteten Klasse vererben. Einem Entwickler
+                                                      stellt sich natürlich die Frage, ob das Attribut in den Vererbungsprozess mit einbezogen
+                                                      wird oder ob es Gründe gibt, es davon auszuschließen. Einem benutzerdefinierten Attribut
+                                                      teilen wir dies durch den booleschen Parameter <span class="clisting">Inherited</span> mit, den wir optional <span class="clisting">AttributeUsageAttribute</span> übergeben können. Standardmäßig ist der Wert auf <span class="clisting">true</span> festgelegt. Demnach vererbt sich ein gesetztes Attribut in einer Vererbungshierarchie
+                                                      weiter. 
+                                                   </p>
+                                                   <h4 class="t4"> AllowMultiple</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp3a0bd794-edfe-416c-a165-7d4ff05775d3"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In wohl eher seltenen Fällen kann es erforderlich sein, ein Attribut demselben Element
+                                                      mehrfach zuzuweisen. Diese Situation wäre denkbar, wenn man über das Attribut einem
+                                                      Element mehrere Feldinformationen zukommen lassen möchte. Dann muss man die mehrfache
+                                                      Anwendung eines Attributs explizit gestatten. Zur Lösung geben Sie den Parameter
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">AllowMultiple = true<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">an. Verzichten Sie auf diese Angabe, kann ein Attribut per Definition mit einem bestimmten
+                                                      Element nur einmal verknüpft werden.
+                                                   </p>
+                                                   <h4 class="t4"> Felder und Konstruktoren eines Attributs</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können in Attributklassen öffentliche Felder und Eigenschaften definieren, deren
+                                                      Daten an den Benutzer des Attributs weitergeleitet werden. Initialisiert werden die
+                                                      Felder über Konstruktoren. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unser <span class="clisting">DeveloperAttribute</span> soll nun um die beiden Felder <span class="clisting">Name</span> und <span class="clisting">Identifier</span> ergänzt werden. Das Feld <span class="clisting">Name</span> wird beim Konstruktoraufruf initialisiert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]<span class="clistingfett"><br xmlns="">public class DeveloperAttribute : Attribute </span>{<br xmlns="">  public string Name { get; set; }<br xmlns="">  public int Identifier { get; set; }<br></br><span class="clistingfett">  public DeveloperAttribute(string name) </span>{<br xmlns="">    Name = name;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.43  </span>Vollständiges benutzerdefiniertes Attribut 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Konstruktor nimmt einen Parameter entgegen, nämlich den Wert für das Feld <span class="clisting">Name</span>. Bevor Sie sich darüber Gedanken machen, wie man das Feld <span class="clisting">Identifier</span> initialisiert, sehen Sie sich an, wie das Attribut auf eine Klasse angewendet wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[DeveloperAttribute("Meier")] <span class="clistingfett"><br xmlns="">public class Demo</span> {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.44  </span>Verwenden des benutzerdefinierten Attributs 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dieser Definition wird der Konstruktor unter Übergabe einer Zeichenfolge aufgerufen.
+                                                      Das zweite Feld des Attributs (<span class="clisting">Identifier</span>) wird mit keinem bestimmten Wert initialisiert, es enthält 0.
+                                                   </p>
+                                                   <h4 class="t4"> Positionale und benannte Parameter</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpfc846f7d-1fe3-42ab-a160-6057ce4f0f2c"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um <span class="clisting">Identifier</span> einen individuellen Wert zuzuweisen, lässt sich <span class="clisting">DeveloperAttribute</span> auch wie folgt mit der Klasse verknüpfen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[DeveloperAttribute("Meier", Identifier = 8815)] <span class="clistingfett"><br xmlns="">public class Demo</span> {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.45  </span>Verwendung positionaler und benannter Parameter
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass wir jetzt zwei Argumente übergeben, obwohl der Konstruktor nur
+                                                      einen Parameter definiert. Dies ist ein besonderes Merkmal der Attribute, denn beim
+                                                      Initialisieren eines Attributs können Sie sowohl <span class="cfett">positionale</span><span class="cfett"><a class="indexterm" id="dodtp2beedf18-0170-43ca-8344-a77a514d8783"></a></span> als auch <span class="cfett">benannte Parameter</span><span class="cfett"><a class="indexterm" id="dodtp9ce55fe1-6925-47f2-98da-538cff18809b"></a></span> verwenden. 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">Positionale Parameter</span><span class="cfett"><a class="indexterm" id="dodtp8b43a04f-c336-46e7-94c1-0e65855bb426"></a></span> sind die Parameter für den Konstruktoraufruf und müssen immer angegeben werden, wenn
+                                                         das Attribut gesetzt wird.<span class="cfett"> </span></li>
+                                                      <li class="pgp"><span class="cfett">Benannte Parameter </span>sind optionale Parameter. In unserem Beispiel ist <span class="clisting">Name</span> ein positionaler Parameter, dem die Zeichenfolge »Meier« übergeben wird, während
+                                                         <span class="clisting">Identifier</span> ein benannter Parameter ist. 
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Benannte Parameter sind sehr flexibel. Einerseits können sie Standardwerte aufweisen,
+                                                      die grundsätzlich immer gültig sind, andererseits kann der Wert im Bedarfsfall individuell
+                                                      festgelegt werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Möglichkeit, benannte Parameter vorzusehen, befreit Sie von der Verpflichtung,
+                                                      für jede denkbare Kombination von Feldern und Eigenschaften überladene Konstruktoren
+                                                      in der Attributdefinition vorsehen zu müssen. Andererseits wird Ihnen damit aber nicht
+                                                      die Alternative entzogen, dennoch den Konstruktor zu überladen. Da unterscheiden sich
+                                                      die herkömmlichen Klassendefinitionen nicht von denen der Attribute.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Verknüpfen Sie ein Attribut mit einem Element und verwenden dabei positionale und
+                                                      benannte Parameter, müssen Sie eine wichtige Regel beachten: Zuerst werden die positionalen
+                                                      Parameter aufgeführt, danach die benannten. Die Reihenfolge der benannten Parameter
+                                                      ist beliebig, da der Compiler aufgrund der Parameternamen die angegebenen Werte richtig
+                                                      zuordnen kann. Benannte Parameter können alle öffentlich deklarierten Felder oder
+                                                      Eigenschaften sein &#8211; vorausgesetzt, sie sind weder statisch noch konstant definiert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp31d3f902-6ba1-4ab5-8220-194ab2f43652" name="dodtp31d3f902-6ba1-4ab5-8220-194ab2f43652"></a><h3 class="t3"><span class="cfett">10.8.3    </span><span class="cfett"> Attribute auswerten</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpead8da52-a579-45ec-8312-e05aad504736"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp458b1254-752d-4bb0-9425-2373234af1d2"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe6fd3dc5-5599-4f38-a6ec-3978eb4a6274"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Operationen, die auf die Existenz eines Attributs angewiesen sind, müssen zuerst feststellen,
+                                                      ob das erforderliche Attribut gesetzt ist oder nicht. Im folgenden Beispielprogramm
+                                                      soll dies für das Beispiel unseres eben entwickelten <span class="clisting">DeveloperAttribute</span> gezeigt werden. Beachten Sie hier bitte, dass der Namespace <span class="clisting">System.Reflection</span> bekannt gegeben werden muss.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 10\AttributeSample</span><br></br>using System.Reflection;<br></br>[Developer("Meier")]<span class="clistingfett"><br xmlns="">class Demo</span> {<br xmlns="">  [Developer("Fischer", Identifier=455)]<br xmlns="">  public void DoSomething() { }<br xmlns="">  public void DoMore() { }<br xmlns="">}<br></br>[AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]<span class="clistingfett"><br xmlns="">public class DeveloperAttribute : Attribute </span>{<br xmlns="">  public string Name { get; set; }<br xmlns="">  public int Identifier { get; set; }<br></br>  public DeveloperAttribute(string name) {<br xmlns="">    Name = name;<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">class Program</span> {<br></br>  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    Type tDemo = typeof(Demo);<br xmlns="">    Type tAttr = typeof(DeveloperAttribute);         <br xmlns="">    MethodInfo mInfo1 = tDemo.GetMethod("DoSomething");<br xmlns="">    MethodInfo mInfo2 = tDemo.GetMethod("DoMore");<br></br>    // Prüfen, ob das Attribut bei der Klasse 'Demo' gesetzt ist<br></br>    DeveloperAttribute attr =  <br xmlns="">      (DeveloperAttribute)Attribute.GetCustomAttribute(tDemo, tAttr);<br xmlns="">    if (attr != null) {<br xmlns="">      Console.WriteLine("Name: {0}", attr.Name);<br xmlns="">      Console.WriteLine("Identifier: {0}", attr.Identifier);<br xmlns="">    }<br xmlns="">    else<br xmlns="">      Console.WriteLine("Attribut nicht gesetzt");<br></br>    // Prüfen, ob das Attribut bei der Methode 'DoSomething' gesetzt ist<br></br>    attr = (DeveloperAttribute)Attribute.GetCustomAttribute(mInfo1, tAttr);<br xmlns="">    if (attr != null) {<br xmlns="">      Console.WriteLine("Name: {0}", attr.Name);<br xmlns="">      Console.WriteLine("Identifier: {0}", attr.Identifier);<br xmlns="">    }<br></br>    // Prüfen, ob das Attribut bei der Methode 'DoMore' gesetzt ist<br></br>    bool isDefinied = Attribute.IsDefined(mInfo2, tAttr);<br xmlns="">    if (isDefinied)<br xmlns="">      Console.WriteLine("DoMore hat das Attribut.");<br xmlns="">    else<br xmlns="">      Console.WriteLine("DoMore hat das Attribut nicht.");<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.46  </span>Beispielprogramm zur Auswertung eines Attributs 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das benutzerdefinierte Attribut <span class="clisting">DeveloperAttribute</span> ist identisch mit demjenigen, das wir bereits vorher in diesem Abschnitt behandelt
+                                                      haben. Es erlaubt, mit einer Klasse oder einer Methode verknüpft zu werden. Die Klasse
+                                                      <span class="clisting">Demo</span>, die dieses Attribut aufweist, enthält mit <span class="clisting">DoSomething</span> und <span class="clisting">DoMore</span> zwei Methoden, von denen nur die erstgenannte mit dem Attribut verknüpft ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Beantwortung der Frage, ob ein bestimmtes Element mit dem <span class="clisting">DeveloperAttribute</span> verknüpft ist oder nicht, greifen wir auf die Möglichkeiten einer Technik zurück,
+                                                      die als <span class="cfett">Reflection</span> bezeichnet wird. Die Reflection gestattet es, die Metadaten einer .NET Assembly und
+                                                      der darin enthaltenen Datentypen zu untersuchen und auszuwerten. Zur Abfrage von Attributen
+                                                      stellt die Reflection die Klasse <span class="clisting">Attribute</span> mit der statischen Methode <span class="clisting">GetCustomAttribute</span> bereit. Da wir sowohl die Klasse als auch die Methoden untersuchen wollen, müssen
+                                                      wir auf zwei verschiedene Überladungen zurückgreifen. Für die Klasse ist es die folgende:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static Attribute GetCustomAttribute<a class="indexterm" id="dodtp586468a7-b747-425a-95c6-898813c8e602"></a><a class="indexterm" id="dodtp9535360c-42a5-4102-9c50-32c93d979f51"></a><a class="indexterm" id="dodtp0bfa9bd9-75f5-4aa7-a0ee-2e27c5cfaa40"></a>(Module, Type);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine Methode zu untersuchen, ist es die folgende Überladung:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static Attribute GetCustomAttribute<a class="indexterm" id="dodtpfbba57dd-28f6-4dff-8e51-e2fd16feada1"></a><a class="indexterm" id="dodtp7ee2fa4f-a61e-4820-be02-0c940e09a27e"></a><a class="indexterm" id="dodtpa3135c5c-bb85-4638-937d-30916fe21c92"></a>(MemberInfo, Type);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Argument geben wir den Typ des zu untersuchenden Elements an, im zweiten
+                                                      Parameter den Typ des Attributs. Zur Beschreibung des Typs mittels Code wird von der
+                                                      Reflection die Klasse <span class="clisting">Type</span> bereitgestellt. Diese beschreibt den Datentyp und kann auf zweierlei Art und Weise
+                                                      erzeugt werden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">unter Verwendung des Operators <span class="clisting">typeof</span>, dem der Typbezeichner übergeben wird            (z. B. <span class="clisting">typeof(Demo)</span>)
+                                                      </li>
+                                                      <li class="pgp">unter Aufruf der Methode <span class="clisting">GetType()</span> auf eine Objektreferenz (z. B. <span class="clisting">myObject.GetType()</span>)
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die Attribute einer Klasse auszuwerten, übergeben Sie der Methode <span class="clisting">GetCustomAttribute</span> nur den Typ der Klasse und den <span class="clisting">Type</span> des gesuchten Attributs. Zur Auswertung einer Methode ist ein <span class="clisting">MemberInfo</span>-Objekt erforderlich. <span class="clisting">MemberInfo</span> ist eine abstrakte Klasse im Namespace <span class="clisting">System.Reflection</span>. Wir erhalten die Metadaten der zu untersuchenden Methode, wenn wir die Methode <span class="clisting">GetMethod</span> des <span class="clisting">Type</span>-Objects unter Angabe des Methodenbezeichners aufrufen. Der Typ der Rückgabe ist <span class="clisting">MethodInfo</span>, eine von <span class="clisting">MemberInfo</span> abgeleitete Klasse. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Typ der Rückgabe der beiden Überladungen von <span class="clisting">GetCustomAttribute</span> ist <span class="clisting">Attribute</span>. Dabei handelt es sich entweder um die Referenz auf das gefundene Attribut oder <span class="clisting">null</span>, falls das Attribut nicht mit dem im ersten Parameter angeführten Element verknüpft
+                                                      ist. Daher erfolgt zuerst eine Konvertierung in das Zielattribut und anschließend
+                                                      eine Überprüfung, ob der Rückgabewert <span class="clisting">null</span> ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">DeveloperAttribute attr = (DeveloperAttribute)Attribute.GetCustomAttribute(tDemo, tAttr);<br xmlns="">if (attr != null) {<br xmlns="">  Console.WriteLine("Name: {0}", attr.Name);<br xmlns="">  Console.WriteLine("Identifier: {0}", attr.Identifier;<br xmlns="">}<br xmlns="">else<br xmlns="">  Console.WriteLine("Attribut nicht gesetzt");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.47  </span>Auswertung, ob ein Attribut gesetzt ist 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da wir bei der Implementierung von <span class="clisting">Main</span> wissen, dass nur unser benutzerdefiniertes Attribut <span class="clisting">DeveloperAttribute</span> gesetzt ist (oder auch nicht), genügt uns diese Untersuchung. Ein Element kann natürlich
+                                                      auch mit mehreren Attributen verknüpft sein. Im Code müssten wir dann die Elemente
+                                                      auf alle gesetzten Attribute abfragen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp458b1254-752d-4bb0-9425-2373234af1d2" name="dodtp458b1254-752d-4bb0-9425-2373234af1d2"></a><h3 class="t3"><span class="cfett">10.8.4    </span><span class="cfett"> Festlegen der Assembly-Eigenschaften in »Assembly-Info.cs«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp31d3f902-6ba1-4ab5-8220-194ab2f43652"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jedes .NET-Projekt weist neben den Quellcodedateien auch die Datei <span class="ckursiv">AssemblyInfo.cs</span> auf, die Metadaten über die Assemblierung beschreibt. Ganz allgemein dient diese
+                                                      Datei dazu, Zusatzinformationen zu der aktuellen Assemblierung bereitzustellen, beispielsweise
+                                                      eine Beschreibung, Versionsinformationen, Firmenname, Produktname und mehr. Diese
+                                                      werden im Windows Explorer in den Dateieigenschaften angezeigt. Da die Informationen
+                                                      die Assemblierung als Ganzes betreffen, müssen die Deklarationen außerhalb einer Klasse
+                                                      stehen und dürfen auch nur einmal gesetzt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[assembly: AssemblyTitle("AssemblyTitle")]<br xmlns="">[assembly: AssemblyDescription("AssemblyDescription")]<br xmlns="">[assembly: AssemblyConfiguration("AssemblyConfiguration")]<br xmlns="">[assembly: AssemblyCompany("Tollsoft")]<br xmlns="">[assembly: AssemblyProduct("AssemblyProduct")]<br xmlns="">[assembly: AssemblyCopyright("Copyright ©Tollsoft 2008")]<br xmlns="">[assembly: AssemblyTrademark("AssemblyTrademark")]<br xmlns="">[assembly: AssemblyCulture("")]<br xmlns="">[assembly: ComVisible(false)]<br xmlns="">[assembly: Guid("948efa6b-af3a-4ba2-8835-b54b058015d4")]<br xmlns="">[assembly: AssemblyVersion("1.0.0.0")]<br xmlns="">[assembly: AssemblyFileVersion("1.0.0.0")<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 10.48  </span>Die Datei »AssemblyInfo.cs« 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können die gewünschten Assembly-Informationen in der Datei <span class="ckursiv">AssemblyInfo.cs</span> eintragen, Sie können aber auch die Einträge im Eigenschaftsdialog des Projekts vornehmen.
+                                                      Dazu öffnen Sie das Eigenschaftsfenster des Projekts und wählen die Lasche <span class="cscreenelement">Anwendung</span>. Auf dieser Registerkarte sehen Sie die Schaltfläche <span class="cscreenelement">Assembly-Information...</span>, über die der in Abbildung 10.2 gezeigte Dialog geöffnet wird. 
+                                                   </p>
+                                                   <p><a href="bilder/10_02.png" rel="lightbox" title="Eintragen der Assembly-Informationen in Visual Studio 2012"><img class="bild" border="1" src="bilderklein/klein10_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 10.2  </span>Eintragen der Assembly-Informationen in Visual Studio 2012
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs10_008.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="10  Weitere C#-Sprachfeatures"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_10_007.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_10_009.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

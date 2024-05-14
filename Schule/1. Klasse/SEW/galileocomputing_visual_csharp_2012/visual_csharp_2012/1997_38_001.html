@@ -1,0 +1,1268 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 38  Datenabfragen des Entity Data Models (EDM)">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 38  Datenabfragen des Entity Data Models (EDM)">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 38  Datenabfragen des Entity Data Models (EDM)</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="37_006.html">
+      <link rel="next" href="1997_38_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_37_006.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_38_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce" class="navh">38 Datenabfragen des Entity Data Models (EDM)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_001.html#dodtp753f268a-224a-41f7-b614-9793cce3a56c" class="navh">38.1 Abfragen mit LINQ to Entities</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpc1710009-3278-468f-8d35-c0ef28967ed2" class="navh">38.1.1 Allgemeine Begriffe in LINQ</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtp926fe8a1-28ea-4756-a1c8-feda08328009" class="navh">38.1.2 Einfache Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtp29b48161-726e-44cc-add0-f605c383d526" class="navh">38.1.3 Navigieren in Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpf9152059-9697-42f3-bc07-a342c539df1c" class="navh">38.1.4 Aggregatmethoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpd42a4481-c813-44e3-85a9-4621744090da" class="navh">38.1.5 Joins in LINQ definieren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_001.html#dodtpa0b1e3f3-9bae-43b4-adb6-398a5e222946" class="navh">38.1.6 In Beziehung stehende Daten laden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_002.html#dodtpa1229eb3-d758-4b44-a58e-a0bbe7d1333a" class="navnav">38.2 Abfragen mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp99064349-1a4e-4b9e-8092-73240347f2a5" class="navnav">38.2.1 Ein erstes Beispiel mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp9e31282b-c2af-42e0-a71d-c4383b51e128" class="navnav">38.2.2 Die fundamentalen Regeln der Entity-SQL-Syntax</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtp2900c0cf-9961-483e-8da8-03cb65d89a64" class="navnav">38.2.3 Filtern mit Entity SQL</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_002.html#dodtpe129891d-6f37-4830-978d-010e357ab25c" class="navnav">38.2.4 Parametrisierte Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_003.html#dodtp315feedb-56b4-4813-aa5b-a89f2b498c7a" class="navnav">38.3 Der EntityClient-Provider</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_003.html#dodtpbfd72381-3cd6-4df3-bddf-7c8c2cfeca08" class="navnav">38.3.1 Verbindungen mit »EntityConnection«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_38_003.html#dodtpfdce030f-e9be-4ba8-bcc2-f0884c899c99" class="navnav">38.3.2 Die Klasse »EntityCommand«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_004.html#dodtp5f90df9f-3d81-471d-8a4a-a0a7ef9cae42" class="navnav">38.4 Abfrage-Generator-Methoden (QueryBuilder-Methoden)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_38_005.html#dodtp49f2ae21-5376-49f8-8822-37285ae80390" class="navnav">38.5 SQL-Direktabfragen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp106a1823-39fd-4557-8819-0e6be4db7cce" name="dodtp106a1823-39fd-4557-8819-0e6be4db7cce"></a><h1 class="t1"><span class="cfett">38 </span><span class="cfett"> Datenabfragen des Entity Data Models (EDM)</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp753f268a-224a-41f7-b614-9793cce3a56c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im letzten Kapitel haben Sie alles Wesentliche rund um das Konzept des Entity Frameworks
+                                                      erfahren. Sie kennen die Strukturen und auch alle wichtigen und grundlegenden Komponenten.
+                                                      In diesem Kapitel wollen wir uns mit den gegen das Entity Data Model (EDM) abgesetzten
+                                                      Datenabfragen beschäftigen und deren Möglichkeiten ausloten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ganz am Anfang sei vorab Folgendes klargestellt. Grundsätzlich stehen Ihnen dazu drei
+                                                      verschiedene Techniken zur Verfügung:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">LINQ to Entities</li>
+                                                      <li class="pgp">Entity SQL</li>
+                                                      <li class="pgp">der EntityClient-Provider</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Abfragen mit LINQ to Entities sind verhältnismäßig einfach zu formulieren, wenn man
+                                                      sich mit LINQ und den dazugehörigen Spracherweiterungen in C# oder VB.NET vertraut
+                                                      gemacht hat. LINQ kann überall dort eingesetzt werden, wo generell Datenmengen abgefragt,
+                                                      gefiltert oder sortiert werden sollen, und hat sich zu einem regelrechten Standard
+                                                      etabliert. In den meisten Fällen wird LINQ to Entities die erste Wahl sein. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Entity SQL wurde entwickelt, bevor LINQ offiziell das Licht der Welt erblickte. Dass
+                                                      das Entity Framework trotz Einführung von LINQ to Entities auch Entity SQL unterstützt,
+                                                      hat einen simplen Grund: Nicht alle .NET-Sprachen unterstützen LINQ, wie es C# tut.
+                                                      Entwickler, die auf eine .NET-fähige Sprache setzen, die LINQ nicht unterstützt, haben
+                                                      daher mit Entity SQL trotzdem die Möglichkeit, die Vorzüge des Entity Frameworks zu
+                                                      nutzen. Allerdings sei angemerkt, dass Entity SQL trotz der Ähnlichkeit zu SQL (bzw.
+                                                      T-SQL) nicht ganz einfach ist und ein Umdenken erforderlich macht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weniger bekannt und auch nicht häufig im praktischen Alltag ist der EntityClient-Provider.
+                                                      Dieser ähnelt in vielfacher Hinsicht den ADO.NET-Providern SqlClient oder OracleClient.
+                                                      Der wesentliche Unterschied zwischen LINQ to Entities und dem EntityClient-Provider
+                                                      besteht darin, wie die Daten dem Client zur Verfügung gestellt werden. Während LINQ
+                                                      to Entities Objekte »materialisiert«, ist das Resultat von EntityClient eine Ansammlung
+                                                      von Spalten und Zeilen, ähnlich dem der anderen ADO.NET-Provider.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ich werde Ihnen in diesem Kapitel alle drei Techniken vorstellen. Dabei werden wir
+                                                      uns vorrangig mit LINQ to Entities beschäftigen, weil es zumindest beim Einsatz von
+                                                      C# eine herausragende Position einnimmt.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp753f268a-224a-41f7-b614-9793cce3a56c" name="dodtp753f268a-224a-41f7-b614-9793cce3a56c"></a><h2 class="t2"><span class="cfett">38.1    </span><span class="cfett"> Abfragen mit LINQ to Entities</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc1710009-3278-468f-8d35-c0ef28967ed2"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp106a1823-39fd-4557-8819-0e6be4db7cce"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc1710009-3278-468f-8d35-c0ef28967ed2" name="dodtpc1710009-3278-468f-8d35-c0ef28967ed2"></a><h3 class="t3"><span class="cfett">38.1.1    </span><span class="cfett"> Allgemeine Begriffe in LINQ</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp926fe8a1-28ea-4756-a1c8-feda08328009"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp753f268a-224a-41f7-b614-9793cce3a56c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In LINQ werden Begriffe verwendet, die Sie am Anfang schon einmal gehört haben sollten,
+                                                      da wir sie in diesem Kapitel häufiger verwenden werden: Operatoren und Sequenzen.
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">Operatoren</span>: Methoden, die speziell auf LINQ zugeschnitten sind, werden als Operatoren bezeichnet.
+                                                         Für LINQ gibt es über 100 Operatoren, die teilweise auch noch überladen sind. Mit
+                                                         Operatoren lassen sich Entitätsmengen (auch Sequenzen genannt, siehe weiter unten)
+                                                         filtern, sortieren und gruppieren. Die Möglichkeiten, die uns durch die Operatoren
+                                                         geboten werden, sollten eigentlich keine Wünsche mehr offenlassen &#8211; und wenn doch,
+                                                         können Sie natürlich auch eine eigene, spezifische LINQ-Methode schreiben. LINQ-Abfragen
+                                                         werden samt ihren Operatoren in ein SQL-Statement übersetzt, das von der Datenbank
+                                                         verstanden wird. 
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">Sequenzen</span><span class="cfett"><a class="indexterm" id="dodtpcc8f7856-3d68-445d-ab75-eff76978d134"></a></span>: Elementmengen, die sich im Speicher befinden, werden im Allgemeinen als Auflistungen
+                                                         bezeichnet. Im Zusammenhang mit LINQ wird auch der Begriff Sequenz benutzt. Während
+                                                         herkömmliche Auflistungen &#8211; wie erwähnt &#8211; immer vollständig im Speicher liegen, werden
+                                                         die Elemente einer Sequenz immer erst dann ermittelt, wenn sie benötigt werden. Eine
+                                                         Sequenz ist immer ein Objekt, das die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> implementiert.
+                                                      </li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp926fe8a1-28ea-4756-a1c8-feda08328009" name="dodtp926fe8a1-28ea-4756-a1c8-feda08328009"></a><h3 class="t3"><span class="cfett">38.1.2    </span><span class="cfett"> Einfache Abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp29b48161-726e-44cc-add0-f605c383d526"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc1710009-3278-468f-8d35-c0ef28967ed2"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lassen Sie uns mit einer Konsolenanwendung beginnen, der wir ein Entity Data Model
+                                                      (EDM) mit dem Bezeichner <span class="ckursiv">Northwind.edmx</span> hinzufügen. Das EDM soll die beiden Tabellen <span class="ckursiv">Products</span> und <span class="ckursiv">Categories</span> der Northwind-Datenbank beschreiben. Wenn Sie die singuläre und pluralisierende Namensgebung
+                                                      berücksichtigt haben (siehe Abbildung 38.3), werden in der Datei <span class="ckursiv">Northwind.Designer.cs</span> die drei Klassen <span class="clisting">NorthwindEntities</span>, <span class="clisting">Product</span> und <span class="clisting">Category</span> erzeugt. Dabei ist <span class="clisting">NorthwindEntities</span> die Klasse, die von <span class="clisting">ObjectContext</span> abgeleitet ist, während <span class="clisting">Product</span> und <span class="clisting">Category</span> die Entitäten beschreiben, die von der Basis <span class="clisting">EntityObject</span> abgeleitet sind. Mit diesen drei Klassen werden wir in diesem Kapitel durchweg arbeiten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die denkbar einfachste Abfrage ist die, die uns alle Artikel der Tabelle <span class="ckursiv">Products</span> zurückliefert. Dazu schreiben wir den folgenden Code in der Methode <span class="clisting">Main</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var products = context.Products;<br xmlns="">  foreach (var prod in products)<br xmlns="">    Console.WriteLine("{0,-5}{1}", prod.ProductID, prod.ProductName);                <br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.1  </span>Die denkbar einfachste LINQ-Abfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird eine Instanz der Klasse <span class="clisting">NorthwindEntities</span> erzeugt. Sie sollten dazu die <span class="clisting">using</span>-Anweisung verwenden, damit der Objektkontext nach seiner Verwendung sofort ordentlich
+                                                      mit <span class="clisting">Dispose</span> geschlossen wird. Der Objektkontext ist, neben der eigentlichen Abfrage, auch dafür
+                                                      verantwortlich, dass die Verbindung zur Datenbank aufgebaut wird. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das <span class="clisting">NorthwindEntities</span>-Objekt veröffentlicht mit <span class="clisting">Categories</span> und <span class="clisting">Products</span> zwei Eigenschaften, die jeweils die Menge aller angeforderten Entitäten zurückliefern,
+                                                      also entweder eine Sequenz aller Artikel oder aller Kategorien. Beide Eigenschaften
+                                                      sind vom Typ <span class="clisting">ObjectSet</span><span class="clisting"><a class="indexterm" id="dodtp4305071c-c266-48c4-b3a2-bc82090f1c9a"></a>&lt;T&gt;</span> (oder präziser vom Typ <span class="clisting">ObjectSet&lt;Product&gt;</span> und <span class="clisting">ObjectSet&lt;Category&gt;</span>). Die generische Klasse <span class="clisting">ObjectSet&lt;T&gt;</span> gehört zum Namespace <span class="clisting">System.Data.Objects</span> und liefert eine typisierte Menge von Entitäten zurück, in unserem Fall alle Produkte.
+                                                      Daher ließe sich das Abfragestatement auch wie folgt formulieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ObjectSet&lt;Product&gt; products = context.Products;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da das Ergebnis einer LINQ-Abfrage vom Typ <span class="clisting">IEnumerable&lt;T&gt;</span> ist, wäre auch die Formulierung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">IEnumerable&lt;Product&gt; products = context.Products;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">möglich. Sollten Sie jedoch später im Programmcode auf eine spezifische Methode der
+                                                      Klasse <span class="clisting">ObjectSet&lt;T&gt;</span> zugreifen wollen, wäre eine vorhergehende Typkonvertierung notwendig.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Haltemodus von Visual Studio können Sie sich sehr einfach den Typ der Rückgabe
+                                                      anzeigen lassen, wenn Sie die Maus über den Bezeichner <span class="ckursiv">products</span> ziehen (siehe Abbildung 38.1). 
+                                                   </p>
+                                                   <p><a href="bilder/38_01.png" rel="lightbox" title="Anzeige des Rückgabedatentyps des Listings 38.1"><img class="bild" border="1" src="bilderklein/klein38_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 38.1  </span>Anzeige des Rückgabedatentyps des Listings 38.1
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ausgeführt wird die LINQ-Abfrage nicht an der Position, wo sie definiert ist, sondern
+                                                      in dem Moment, wenn zum ersten Mal die Ergebnismenge verwendet wird. In Listing 38.1
+                                                      ist das beim ersten Durchlauf der <span class="clisting">foreach</span>-Schleife der Fall. Dabei wird die LINQ-Abfrage in eine SQL-Abfrage übersetzt, die
+                                                      von der Datenbank verstanden wird. Wir können uns das SQL-Statement im SQL Server
+                                                      ansehen, wenn wir aus dem SQL Server Management Studio heraus den SQL Server Profiler
+                                                      starten und ein neues Ablaufverfolgungsprotokoll erstellen. Anschließend starten wir
+                                                      die Laufzeit von Visual Studio und können uns nun im Protokoll die tatsächlich gegen
+                                                      die <span class="ckursiv">Northwind</span>-Datenbank abgesetzte SQL-Abfrage ansehen. Sie lautet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT <br xmlns="">[Extent1].[ProductID] AS [ProductID], <br xmlns="">[Extent1].[ProductName] AS [ProductName], <br xmlns="">[Extent1].[SupplierID] AS [SupplierID], <br xmlns="">[Extent1].[CategoryID] AS [CategoryID], <br xmlns="">[Extent1].[QuantityPerUnit] AS [QuantityPerUnit], <br xmlns="">[Extent1].[UnitPrice] AS [UnitPrice], <br xmlns="">[Extent1].[UnitsInStock] AS [UnitsInStock], <br xmlns="">[Extent1].[UnitsOnOrder] AS [UnitsOnOrder], <br xmlns="">[Extent1].[ReorderLevel] AS [ReorderLevel], <br xmlns="">[Extent1].[Discontinued] AS [Discontinued]<br xmlns="">FROM [dbo].[Products] AS [Extent1]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das SQL-Statement sieht natürlich anders aus als die LINQ-Abfrage und entspricht eher
+                                                      dem, was ein T-SQL-Entwickler kennt und benutzt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Der SQL Server Profiler bietet den Vorteil, alle mit einem SQL-Statement zusammenhängenden
+                                                         Ereignisse zu protokollieren. Sollten Sie sich jedoch nur für das abgesetzte SQL-Statement
+                                                         interessieren, können Sie auch die Methode <span class="clisting">ToTraceString</span><span class="clisting"><a class="indexterm" id="dodtp02c3f709-b33b-49ec-bd3e-b956edd7235b"></a></span> der Klasse <span class="clisting">ObjectSet&lt;T&gt;</span> aufrufen, z. B.:
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint">Console.WriteLine(products.ToTraceString());<br></pre></div>
+                                                   </div>
+                                                   <h4 class="t4"> Die Verbindungszeichenfolge</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sobald mit den Daten einer Abfrage Operationen durchgeführt werden sollen, baut der
+                                                      Objektkontext automatisch eine Verbindung zur Datenbank auf. Hierzu holt sich der
+                                                      Objektkontext alle notwendigen Informationen aus einer Verbindungszeichenfolge, die
+                                                      in der Konfigurationsdatei definiert ist. Die Verbindungszeichenfolgen sind im Grunde
+                                                      genommen von ADO.NET her bekannt, allerdings im Entity Framework etwas komplexer.
+                                                      
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachfolgend sehen Sie die Verbindungszeichenfolge unseres Entity Data Models.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;connectionStrings&gt;<br xmlns="">  &lt;add name="NorthwindEntities" <br xmlns="">       connectionString="metadata=res://*/Northwind.csdl|<br xmlns="">                         res://*/Northwind.ssdl|<br xmlns="">                         res://*/Northwind.msl;<br xmlns="">       provider=System.Data.SqlClient;<br xmlns="">       provider connection string=&amp;quot;<br xmlns="">       data source=.;<br xmlns="">       initial catalog=Northwind;<br xmlns="">       integrated security=True;<br xmlns="">       multipleactiveresultsets=True;<br xmlns="">       App=EntityFramework&amp;quot;" <br xmlns="">       providerName="System.Data.EntityClient" /&gt;<br xmlns="">&lt;/connectionStrings&gt;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben den allgemein üblichen Informationen wie der Angabe des Providers und der klassischen
+                                                      Verbindungszeichenfolge werden durch das <span class="clisting">metadata</span>-Attribut auch die Dateien angegeben, die die Beschreibungen für das EDM enthalten
+                                                      (CSDL, MSL und SSDL). Da hier eine Verschachtelung von zwei Verbindungszeichenfolgen
+                                                      vorliegt, wird die innere Verbindungszeichenfolge mit <span class="clisting">&amp;quot</span> eingeschlossen, womit Anführungszeichen beschrieben werden.
+                                                   </p>
+                                                   <h4 class="t4"> Projektionen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Beispiel des Listings 38.1 stellt die einfachste Form einer Abfrage dar und liefert
+                                                      alle Daten, die sich in der Tabelle <span class="ckursiv">Products</span> befinden. In SQL-Syntax entspricht das der Abfrage <span class="ckursiv">SELECT * FROM Products</span>. In der Regel wird man aber Abfragen formulieren, die nur ganz bestimmte Eigenschaften
+                                                      der Entität in die Sequenz aufnehmen. Hierbei spricht man von einer <span class="cfett">Projektion</span><span class="cfett"><a class="indexterm" id="dodtpd7db6615-9634-4dc8-ae19-d0f9bc5c35db"></a></span>. Greifen wir auf unser Beispiel aus dem letzten Abschnitt zurück und beschränken
+                                                      uns nun auf die Ausgabe der drei Eigenschaften <span class="clisting">ProductID</span>, <span class="clisting">ProductName</span> und <span class="clisting">UnitPrice</span>. Zusätzlich sollen die abgefragten Daten gefiltert werden, so dass nur die Artikel,
+                                                      deren Preis größer oder gleich 50 ist, die Ergebnismenge bilden. Dazu ändern wir unsere
+                                                      LINQ-Abfrage wie folgt ab:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var products = from p in context.Products<br xmlns="">                 where p.UnitPrice &gt;= 50<br xmlns="">                 select new { p.ProductID, p.ProductName, p.UnitPrice };<br xmlns="">  foreach (var prod in products)<br xmlns="">    Console.WriteLine("{0,-5}{1,-35}{2}", <br xmlns="">                       prod.ProductID, prod.ProductName, prod.UnitPrice);  <br xmlns="">} <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.2  </span>Projektion und Filterung (Abfragesyntax)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können für diese Abfrage, die in der Abfragesyntax formuliert worden ist, auch
+                                                      die gleichwertige Methodensyntax verwenden: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var products = context.Products<br xmlns="">          .Where(p =&gt; p.UnitPrice &gt;= 50)<br xmlns="">          .Select(p =&gt; new { p.ProductID, p.ProductName, p.UnitPrice});<br></pre></div>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Während die Abfragesyntax leichter zu lesen ist, erinnert die Methodensyntax eher
+                                                         an eine Programmiersprache. Welche Syntax Sie selbst bevorzugen, ist völlig unerheblich,
+                                                         da das Resultat der Abfrage in jedem Fall dasselbe ist.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Interessant ist für uns an dieser Stelle weniger das Ergebnis der Abfrage. Vielmehr
+                                                      interessiert uns der Datentyp der Ergebnismenge. Schließlich projizieren wir nur einen
+                                                      Teil der tatsächlichen Spalten der Tabelle <span class="ckursiv">Products</span> in unsere Ergebnismenge. Um den Typ in Erfahrung zu bringen, legen wir einen Haltepunkt
+                                                      in der Entwicklungsumgebung fest, z. B. in der <span class="clisting">foreach</span>-Zeile. Starten Sie danach die Anwendung, und gehen Sie mit dem Mauszeiger auf die
+                                                      Variable <span class="ckursiv">products</span>. Sie werden feststellen, dass die Ergebnismenge nun vom Typ <span class="clisting">ObjectQuery</span><span class="clisting"><a class="indexterm" id="dodtpc3614965-114b-4e63-8192-08ce72a83b27"></a>&lt;T&gt;</span> ist, bei dem der generische Typparameter einen anonymen Typ beschreibt (siehe Abbildung
+                                                      38.2).
+                                                   </p>
+                                                   <p><a href="bilder/38_02.png" rel="lightbox" title="»ObjectQuery<T&gt;« als Rückgabetyp einer Selektion"><img class="bild" border="1" src="bilderklein/klein38_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 38.2  </span>»ObjectQuery&lt;T&gt;« als Rückgabetyp einer Selektion
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die beiden Klassen <span class="clisting">ObjectQuery&lt;T&gt;</span> und <span class="clisting">ObjectSet&lt;T&gt;</span> sind sich sehr ähnlich. Allerdings ist <span class="clisting">ObjectSet&lt;T&gt;</span> spezialisierter als <span class="clisting">ObjectQuery&lt;T&gt;</span>, da es sich um eine typisierte Entitätenmenge handelt, während es sich bei <span class="clisting">ObjectQuery&lt;T&gt;</span> nur um eine typisierte Abfrage, also unter Umständen auch mit einer definierten Projektion,
+                                                      handelt. Die Ähnlichkeit spiegelt sich auch in den Klassendefinitionen wider: Der
+                                                      Typ <span class="clisting">ObjectSet&lt;T&gt;</span> ist von <span class="clisting">ObjectQuery&lt;T&gt;</span> abgeleitet. Gegenüber der Basis weist <span class="clisting">ObjectSet&lt;T&gt;</span> zusätzliche Funktionalitäten auf, beispielsweise für das Hinzufügen oder Löschen
+                                                      von Objekten.
+                                                   </p>
+                                                   <h4 class="t4"> Einzelne Entitäten abrufen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unsere bisherigen Abfragen lieferten als Ergebnis Objekte, die die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> implementieren. Dabei handelt es sich um Sequenzen vom Typ <span class="clisting">ObjectSet&lt;T&gt;</span> oder <span class="clisting">ObjectQuery&lt;T&gt;</span>. Um die einzelnen Entitäten auszuwerten, musste die Ergebnismenge in einer Schleife
+                                                      durchlaufen werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal reicht es aus, wenn das Resultat einer LINQ-Abfrage nur eine bestimmte Entität
+                                                      zurückliefert. Beispielsweise könnte es sich dabei um den Artikel mit der <span class="clisting">ProductID = 22</span> handeln. Für diese Fälle stellt uns das Entity Framework vier Methoden zur Verfügung:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">Single</span><span class="clisting"><a class="indexterm" id="dodtp04ea51b8-6b0b-4086-8651-e1bccd9d9305"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">SingleOrDefault</span><span class="clisting"><a class="indexterm" id="dodtpc4936709-02fc-4086-b3ed-98b1f6da3416"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">First</span><span class="clisting"><a class="indexterm" id="dodtpee71c98c-92b8-4e4e-8a54-d6b0e32f94b0"></a></span></li>
+                                                      <li class="pgp"><span class="clisting">FirstOrDefault</span><span class="clisting"><a class="indexterm" id="dodtpef5615bb-98a8-43c7-aa5d-52ff7a34b54f"></a></span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">First</span> bzw. <span class="clisting">FirstOrDefault</span> bieten sich an, wenn aus einer Sequenz nur das erste Element zurückgegeben werden
+                                                      soll. <span class="clisting">Single</span> bzw. <span class="clisting">SingleOrDefault</span> sind dann geeignet, wenn nur ein Element als Resultat der Abfrage erwartet werden
+                                                      kann. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es bleibt noch zu klären, was der Unterschied zwischen <span class="clisting">Single</span> und <span class="clisting">SingleOrDefault</span> bzw. <span class="clisting">First</span> und <span class="clisting">FirstOrDefault</span> ist. Die Erklärung ist sehr einfach: Wird kein passendes Element gefunden, lösen
+                                                      <span class="clisting">Single</span> und <span class="clisting">First</span> eine Ausnahme vom Typ <span class="clisting">InvalidOperationException</span> aus, <span class="clisting">SingleOrDefault</span> und <span class="clisting">FirstOrDefault</span> liefern in dieser Situation hingegen den Rückgabewert <span class="clisting">null</span>. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Im Zusammenhang mit den beiden Methoden <span class="clisting">Single</span> und <span class="clisting">SingleOrDefault</span> gibt es noch eine weitere Situation, die zu der genannten Ausnahme führt. Das ist
+                                                         nämlich genau dann der Fall, wenn in der Ergebnismenge mehrere Resultate stehen, während
+                                                         beide Methoden nur ein Resultat erwarten. Sie sollten dann <span class="clisting">First</span> oder <span class="clisting">FirstOrDefault</span> benutzen.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Abfragen, die Sequenzen als Resultat liefern, werden per Vorgabe erst in dem Moment
+                                                      ausgeführt, wenn auf die Elemente der Sequenz zugegriffen wird. Ganz anders verhalten
+                                                      sich die vier in diesem Abschnitt angesprochenen Methoden, die nur ein Element in
+                                                      der Ergebnismenge haben: Sie werden sofort ausgeführt, das Objekt steht also sofort
+                                                      zur Verfügung. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit diesen Kenntnissen ausgestattet ist es nun sehr einfach, den Artikel mit der <span class="clisting">ProductID</span> 22 abzurufen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = (from prod in context.Products <br xmlns="">               where prod.ProductID == 22<br xmlns="">               select prod).<span class="clistingfett">SingleOrDefault()</span>;<br xmlns="">  if (query != null)<br xmlns="">    Console.WriteLine("{0,-20}", query.ProductName);<br xmlns="">  else<br xmlns="">    Console.WriteLine("Kein entsprechendes Element gefunden.");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.3  </span>Die Methode »SingleOrDefault«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können die Abfrage auch noch einfacher definieren, denn <span class="clisting">SingleOrDefault</span> (aber auch <span class="clisting">Single</span>, <span class="clisting">First</span> und <span class="clisting">FirstOrDefault</span>) ist in der Weise überladen, dass die Filterbedingung als Argument des Methodenaufrufs
+                                                      angegeben werden kann, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = (from prod in context.Products  <br xmlns="">             select prod).SingleOrDefault(p =&gt; p.ProductID == 22);<br></pre></div>
+                                                   <h4 class="t4"> Abfragen mit Paging</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht wünschen Sie, dass Ihre Abfrage nur einen bestimmten Teilbereich der Tabelle
+                                                      in das Abfrageresultat projiziert. Dann müssen Sie die Technik des Pagings benutzen.
+                                                      Umgesetzt wird das Paging in LINQ to Entities mit den beiden Operatoren <span class="clisting">Skip</span> und <span class="clisting">Take</span>. An den Operator <span class="clisting">Skip</span> übergeben Sie dabei die Anzahl der Elemente, die übersprungen werden sollen, <span class="clisting">Take</span> erwartet die Anzahl der zurückzugebenden Elemente. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing zeigt den Einsatz der beiden Operatoren. Dabei muss berücksichtigt
+                                                      werden, dass <span class="clisting">Skip</span> nur auf sortierte Mengen angesetzt werden kann und die Sortierung ausschlaggebend
+                                                      dafür ist, welche Elemente in die Ergebnismenge aufgenommen werden. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  Console.Write("Wie viele DS überspringen?");<br xmlns="">  int skip = Convert.ToInt32(Console.ReadLine());<br xmlns="">  Console.Write("Wie viele DS anzeigen?");<br xmlns="">  int count = Convert.ToInt32(Console.ReadLine());<br xmlns="">  var query = (from prod in context.Products<br xmlns="">               orderby prod.ProductID<br xmlns="">               select prod).<span class="clistingfett">Skip(skip).Take(count)</span>;<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("{0,-4}{1}", item.ProductID, item.ProductName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.4  </span>Das Paging mit »Skip« und »Take« umsetzen
+                                                   </p>
+                                                   <h4 class="t4"> Operatoren mit sofortiger Ausführung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sowohl <span class="clisting">Single</span>/<span class="clisting">SingleOrDefault</span> als auch <span class="clisting">First</span>/<span class="clisting">FirstOrDefault</span> werden sofort ausgeführt. Aber auch eine Abfrage, die mehrere Objekte als Resultat
+                                                      liefert, lässt sich sofort ausführen. Die Operatoren, die dazu in der Lage sind, können
+                                                      Sie der Tabelle 38.1 entnehmen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 38.1  </span>Operatoren mit sofortiger Ausführung
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Operator
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToList</span><span class="clisting"><a class="indexterm" id="dodtp9da8178c-d6d9-44bd-88ec-84d20f0e04df"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Erstellt aus einem <span class="clisting">IEnumerable&lt;T&gt;</span>-Objekt ein <span class="clisting">List&lt;T&gt;</span>-Objekt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToDictionary</span><span class="clisting"><a class="indexterm" id="dodtp9197887f-5915-4866-ab2d-f0736d66c51a"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Erstellt aus einem <span class="clisting">IEnumerable&lt;T&gt;</span>-Objekt ein <span class="clisting">Dictionary&lt;TKey, TValue&gt;</span>-Objekt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToLookup</span><span class="clisting"><a class="indexterm" id="dodtpf8772789-e55d-47e0-aab6-adbe8fd66f1d"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Erstellt aus einem <span class="clisting">IEnumerable&lt;T&gt;</span>-Objekt ein <span class="clisting">Lookup&lt;TKey, TElement&gt;</span>-Objekt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ToArray</span><span class="clisting"><a class="indexterm" id="dodtp8b7fe78e-f50b-4743-969f-6f8d338c00b2"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Erstellt aus einem <span class="clisting">IEnumerable&lt;T&gt;</span>-Objekt ein Array.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu auch noch ein Listing, das den Einsatz des <span class="clisting">ToList</span>-Operators zeigt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  List&lt;Product&gt; query = (from prod in context.Products<br xmlns="">                         where prod.UnitPrice &lt; 10<br xmlns="">                         select prod).ToList();<br xmlns="">  foreach (Product item in query)<br xmlns="">    Console.WriteLine("{0,-35}{1}", item.ProductName, item.UnitPrice);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.5  </span>Der »ToList«-Operator
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anzumerken sei an dieser Stelle, dass auch die Aggregat-Operatoren von LINQ wie beispielsweise
+                                                      <span class="clisting">Count</span> oder <span class="clisting">Max</span> zu einer sofortigen Ausführung der Abfrage führen. Weiter unten werden wir auf diese
+                                                      Operatoren noch zu sprechen kommen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp29b48161-726e-44cc-add0-f605c383d526" name="dodtp29b48161-726e-44cc-add0-f605c383d526"></a><h3 class="t3"><span class="cfett">38.1.3    </span><span class="cfett"> Navigieren in Abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf9152059-9697-42f3-bc07-a342c539df1c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp522cceff-332e-4048-b0e2-5e821f5dfd52"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unser EDM bildet die beiden Tabellen <span class="ckursiv">Products</span> und <span class="ckursiv">Categories</span> ab, zwischen denen in der Datenbank eine 1:n-Beziehung besteht: Ein Produkt wird
+                                                      genau einer (oder keiner) Kategorie zugeordnet, während mehrere Produkte zu einer
+                                                      Kategorie gehören können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ADO.NET Entity Framework haben Sie zwei Möglichkeiten, um die Beziehung zwischen
+                                                      zwei Entitäten zu nutzen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">die Navigationseigenschaften</li>
+                                                      <li class="pgp">die Fremdschlüsselspalte von abhängigen Entitäten</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Navigationseigenschaften ermöglichen es, sehr einfach in Beziehung stehende Entitäten
+                                                      abzurufen. Bezogen auf unser EDM wird die Beziehung zwischen den Entitäten <span class="clisting">Product</span> und <span class="clisting">Category</span> mit den beiden Navigationseigenschaften <span class="clisting">Products</span> (in der Entität <span class="clisting">Category</span>) und <span class="clisting">Category</span> (in der Entität <span class="clisting">Product</span>) umgesetzt. Die Umsetzung der Fremdschlüsselspalte in eine Eigenschaft der Entität
+                                                      (in <span class="clisting">Product</span> handelt es sich um die Eigenschaft <span class="clisting">CategoryID</span>) lässt sich ebenfalls zur Abbildung einer Beziehung nutzen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Moment stellt sich die Frage, warum uns zwei Varianten angeboten werden.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um diese Frage zu beantworten, müssen wir in der Historie des ADO.NET Entity Frameworks
+                                                      ein wenig zurückblicken. In der ersten Version 3.5 enthielten die Entitäten nur Navigationseigenschaften.
+                                                      Es war dies die strikte Einhaltung eines objektorientierten Ansatzes und dessen Umsetzung
+                                                      im konzeptionellen Modell, in dem auch die Beziehung durch ein Element abgebildet
+                                                      wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nicht in allen Fällen haben sich die Navigationseigenschaften als vorteilhaft erwiesen.
+                                                      Als typisches Beispiel sei hier die Datenbindung erwähnt. Hier war es nur mit verhältnismäßig
+                                                      hohem Programmieraufwand möglich, aus dem Resultat der Navigationseigenschaft den
+                                                      Fremdschlüsselwert zu ermitteln. Das Entwicklerteam sah sich daher gezwungen, den
+                                                      abhängigen Entitäten eine Eigenschaft hinzuzufügen, die den Fremdschlüssel repräsentiert.
+                                                      
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Die Fremdschlüsselspalten werden ab EF 4.0 automatisch in den betreffenden Entitäten
+                                                         berücksichtigt. Möchten Sie auf diese Spalten verzichten, haben Sie bei der Definition
+                                                         des Entity Data Models dazu die Möglichkeit, wenn Sie die Auswahl im entsprechenden
+                                                         Optionsschalter des Dialogs (siehe auch Abbildung 37.3) abwählen. 
+                                                      </p>
+                                                   </div>
+                                                   <h4 class="t4"> Navigation von der »n-Seite« zur »1-Seite« einer Zuordnung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jeder <span class="clisting">Product</span>-Entität wird genau eine <span class="clisting">Category</span>-Entität zugeordnet. Uns interessiert zunächst im folgenden Beispiel die Kategorie,
+                                                      die jedem Produkt zugeordnet ist. Die Ergebnismenge soll dazu den Produkt- und den
+                                                      Kategoriebezeichner enthalten.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = context.Products<br xmlns="">           .Select(p =&gt; new { p.ProductName, <span class="clistingfett">p.Category.CategoryName</span>});<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("{0,-35}{1}", item.ProductName, item.CategoryName);<br xmlns="">}   <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.6  </span>Einsatz der Navigationsmethode »Category«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sollten Sie sich mehr für die Abfragesyntax begeistern können, hier auch noch die
+                                                      Abfrage in dieser syntaktischen Variante:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = from p in context.Products<br xmlns="">            select new { p.ProductName, <span class="clistingfett">p.Category.CategoryName</span> };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir rufen in beiden Fällen die Navigationseigenschaft<a class="indexterm" id="dodtpaffd592d-2f04-4281-b862-f7336b26da63"></a> <span class="clisting">Category</span> der <span class="clisting">Product</span>-Entität auf. Die Navigationseigenschaft liefert uns die Referenz auf die dem Produkt
+                                                      zugeordnete <span class="clisting">Category</span>-Entität, von der wir die Eigenschaft <span class="clisting">CategoryName</span> abrufen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis der Abfrage ist ein anonymer Typ, der sich aus der Eigenschaft <span class="clisting">ProductName</span> der Entität <span class="clisting">Product</span> und der Eigenschaft <span class="clisting">CategoryName</span> der Entität <span class="clisting">Category</span> zusammensetzt. Die Sequenz ist vom Typ <span class="clisting">ObjectQuery&lt;T&gt;</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sollte Ihnen die Ausgabe nicht gefallen, lässt sich die Ergebnisliste auch sortieren
+                                                      oder filtern. Auch dabei unterstützt uns die Navigationseigenschaft <span class="clisting">Category</span> der Entität <span class="clisting">Product</span>. Im folgenden Listing wird primär nach <span class="clisting">CategoryName</span> sortiert, anschließend innerhalb der Kategorie nach <span class="clisting">ProductName</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from prod in context.Products<span class="clistingfett"><br xmlns="">              orderby prod.Category.CategoryName, prod.ProductName</span> <br xmlns="">              select new { prod.ProductName, prod.Category.CategoryName };<br xmlns="">  foreach(var item in query)<br xmlns="">    Console.WriteLine("{0,-35}{1}", item.CategoryName, item.ProductName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.7  </span>Sortieren der Ergebnismenge
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Abfrage nun auch noch in Methodensyntax:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = context.Products<br xmlns="">            <span class="clistingfett">.OrderBy(p =&gt; p.Category.CategoryName)<br xmlns="">            .ThenBy(p =&gt; p.ProductName)</span><br xmlns="">            .Select(p =&gt; new { p.ProductName, p.Category.CategoryName });<br></pre></div>
+                                                   <h4 class="t4"> Navigation von der »1-Seite« zur »n-Seite« einer Zuordnung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Navigation von der 1-Seite einer Zuordnung zu der n-Seite der Zuordnung sieht
+                                                      etwas anders aus. Eine solche Navigation wird in unserem Entity Data Model durch die
+                                                      Eigenschaft <span class="clisting">Products</span> der Entität <span class="clisting">Category</span> beschrieben: Jeder Kategorie sind viele Produkte zugeordnet (oder auch keins). Also
+                                                      liefert uns die Navigationseigenschaft <span class="clisting">Products</span> nicht maximal ein Objekt zurück, sondern unter Umständen sehr viele. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Betrachten Sie dazu das folgende Listing 38.8, in dem alle Produkte abgerufen werden,
+                                                      die entweder der Kategorie <span class="ckursiv">Beverages</span> (<span class="clisting">CategoryID=1</span>) oder der Kategorie <span class="ckursiv">Seafood</span> (<span class="clisting">CategoryID=8</span>) zugeordnet sind.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              where cat.CategoryID == 1 || cat.CategoryID == 8<br xmlns="">              select new { cat.CategoryName, Artikel = cat.Products };<br xmlns="">  foreach (var item in query) <br xmlns="">  {<br xmlns="">    Console.WriteLine("{0}", item.CategoryName);<br xmlns="">    foreach (var prod in item.Artikel)<br xmlns="">      Console.WriteLine("... {0}", prod.ProductName);<br xmlns="">    Console.WriteLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.8  </span>Einsatz der Navigationseigenschaft »Products«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ergebnismenge setzt sich aus dem Bezeichner der Kategorie und einer Liste der
+                                                      zu der betreffenden Kategorie gehörenden Produkte zusammen, die durch die Eigenschaft
+                                                      <span class="clisting">Artikel</span> beschrieben wird. Diese Eigenschaft ist vom Typ <span class="clisting">EntityCollection</span><span class="clisting"><a class="indexterm" id="dodtpc08cd55a-8337-4946-a01e-deccc4b9d0d9"></a>&lt;T&gt;</span> und kann mit einer <span class="clisting">foreach</span>-Schleife durchlaufen werden.
+                                                   </p>
+                                                   <h4 class="t4"> Eingebettete Abfragen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Listing 38.8 ist das von der Datenbank gelieferte Datenvolumen zur Materialisierung
+                                                      sehr groß, weil alle Produkte mit allen ihren Eigenschaften in die Ergebnismenge geschrieben
+                                                      werden. Interessieren uns aber nicht alle Eigenschaften, sollten wir nur die für uns
+                                                      wesentlichen abrufen. Dazu ist eine Selektion bezogen auf die von der Navigationseigenschaft
+                                                      zurückgelieferten Produkte notwendig. Unsere Abfrage wollen wir daher im nächsten
+                                                      Schritt verbessern und nur die beiden Eigenschaften <span class="clisting">ProductName</span> und <span class="clisting">UnitPrice</span> der <span class="clisting">Product</span>-Entität in die Ergebnismenge aufnehmen. Aus diesem Grund ersetzen wir in der LINQ-Abfrage
+                                                      den Teilausdruck
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Artikel = cat.Products<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">durch eine Projektion, in der die beiden erwähnten Eigenschaften aufgenommen werden.
+                                                      Dazu formulieren wir eine innere, eingebettete Abfrage, wie im folgenden Codefragment
+                                                      gezeigt wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              where cat.CategoryID == 1 || cat.CategoryID == 8<br xmlns="">              select new { cat.CategoryName,<span class="clistingfett"><br xmlns="">                           Artikel = from prod in cat.Products<br xmlns="">                                     select new { prod.ProductName,  <br xmlns="">                                                  prod.UnitPrice }</span><br xmlns="">                         };<br></br>  foreach (var item in query) <br xmlns="">  {<br xmlns="">    Console.WriteLine(item.CategoryName);<br xmlns="">    foreach (var item2 in item.Artikel)<br xmlns="">      Console.WriteLine("...{0,-35}{1}",item2.ProductName, item2.UnitPrice);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.9  </span>Navigationseigenschaft mit Selektion
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun wird die Eigenschaft <span class="clisting">Artikel</span> in der Ergebnismenge nicht mehr durch ein Objekt vom Typ <span class="clisting">EntityCollection&lt;T&gt;</span>, sondern durch eine Liste (Typ: <span class="clisting">List&lt;T&gt;</span>) anonymer Typen beschrieben. Jedes der Listenelemente wird aus den Eigenschaften
+                                                      <span class="clisting">ProductName</span> und <span class="clisting">UnitPrice</span> der Entität <span class="clisting">Product</span> gebildet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht haben Sie auch noch eine andere Idee, das Vorhaben zu realisieren, und
+                                                      schreiben die folgende LINQ-Abfrage:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = from prod in context.Products<br xmlns="">            where prod.CategoryID == 1 || prod.CategoryID == 8<br xmlns="">            orderby prod.CategoryID<br xmlns="">            select new { prod.Category.CategoryName, <br xmlns="">                         prod.ProductName, prod.UnitPrice };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass nun die Abfrage gewissermaßen umgedreht worden ist: Es wird als
+                                                      Ausgangsmenge der LINQ-Abfrage nicht mehr <span class="clisting">Categories</span>, sondern <span class="clisting">Products</span> verwendet. Zuerst werden die Produkte anhand der <span class="clisting">CategoryID</span>-Eigenschaft gefiltert, anschließend nach Kategorien sortiert. Die Sequenz wird durch
+                                                      einen anonymen Typ gebildet, der alle erforderlichen Eigenschaften enthält, nämlich
+                                                      <span class="clisting">CategoryName</span>, <span class="clisting">ProductName</span> und <span class="clisting">UnitPrice</span>. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese LINQ-Abfrage führt offensichtlich zum gleichen Resultat. Dennoch gibt es einen
+                                                      Unterschied: Sobald einer Kategorie mehrere Produkte zugeordnet werden (was in unserer
+                                                      Datenquelle tatsächlich der Fall ist), ist der Kategoriebezeichner (<span class="clisting">CategoryName</span>) mehrfach in der Ergebnismenge enthalten. Das war im ersten Beispiel nicht der Fall.
+                                                   </p>
+                                                   <h4 class="t4"> Filtern einer »EntityCollection«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Stellen wir uns nun die folgende Aufgabe: Es sollen alle Kategorien ausgegeben werden,
+                                                      die von einem bestimmten Lieferanten bereitgestellt werden können. Nehmen wir an,
+                                                      es würde sich dabei um den Lieferanten <span class="ckursiv">Exotic Liquids</span> handeln, der in der Tabelle <span class="ckursiv">Suppliers</span> unter <span class="clisting">SupplierID=1</span> geführt wird. (Hinweis: Die Entität <span class="clisting">Product</span> stellt mit der Eigenschaft <span class="clisting">SupplierID</span> den Bezug zu dem Lieferanten her. Allerdings ist die Aufgabenstellung so einfach
+                                                      gehalten, dass wir unser EDM nicht durch eine Entität <span class="clisting">Supplier</span> erweitern müssen.) 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein erster, etwas naiver Ansatz der Formulierung der LINQ-Abfrage könnte wie folgt
+                                                      aussehen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// ACHTUNG: Falsche LINQ-Abfrage<br></br>var query = from cat in context.Categories<br xmlns="">            where cat.Products.SupplierID == 1<br xmlns="">            select cat;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der LINQ-Ausdruck wird zu einem Fehler führen, da der Teilausdruck <span class="clisting">cat.Products</span> vom Typ <span class="clisting">EntityCollection&lt;T&gt;</span> ist und nicht die Eigenschaft <span class="clisting">SupplierID</span> veröffentlicht, die zur Filterung der Daten notwendig ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In dieser Situation hilft uns die Methode <span class="clisting">Any</span> weiter. <span class="clisting">Any</span> stellt fest, ob ein Element in einer Menge vom Typ <span class="clisting">IEnumerable&lt;T&gt;</span> eine bestimmte Bedingung erfüllt. In unserem Fall handelt es sich um die durch <span class="clisting">cat.Products</span> gebildete Menge vom Typ <span class="clisting">EntityCollection&lt;T&gt;</span>, die auch die erforderliche Schnittstelle implementiert. Die Lösung der Aufgabestellung
+                                                      mit <span class="clisting">Any</span> beschreibt das folgende Listing.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              where cat.Products.<span class="clistingfett">Any</span>(prod =&gt; prod.SupplierID == 1)<br xmlns="">              select cat;<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine(item.CategoryName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.10  </span>Filtern einer »EntityCollection«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Any</span> entnimmt aus der <span class="clisting">EntityCollection</span> ein Element nach dem anderen und untersucht, ob die Bedingung <span class="clisting">SupplierID=1</span> erfüllt ist oder nicht. Alle Kategorien, die mindestens ein Produkt enthalten, das
+                                                      die gestellte Bedingung erfüllt, gehören zur Ergebnismenge der LINQ-Abfrage. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf9152059-9697-42f3-bc07-a342c539df1c" name="dodtpf9152059-9697-42f3-bc07-a342c539df1c"></a><h3 class="t3"><span class="cfett">38.1.4    </span><span class="cfett"> Aggregatmethoden</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp72b8cfb2-ef4b-496f-b82b-b30c7b1fcc0c"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd42a4481-c813-44e3-85a9-4621744090da"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp045fd1de-531a-4796-9fd7-3ecf69c1abf3"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Aggregate</span>, <span class="clisting">Average</span>, <span class="clisting">Count</span>, <span class="clisting">LongCount</span>, <span class="clisting">Min</span>, <span class="clisting">Max</span> und <span class="clisting">Sum</span> sind LINQ-Aggregatoperatoren und ermöglichen einfache mathematische Operationen mit
+                                                      den Elementen einer Sequenz. Wie weiter oben schon erwähnt, stellen alle Aggregatmethoden
+                                                      das Resultat der Abfrage sofort zur Verfügung. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Folgenden wollen wir uns den Einsatz der LINQ-Abfrageoperatoren an Beispielen ansehen.
+                                                      Dabei möchte ich Ihnen exemplarisch für alle anderen die beiden Aggregatmethoden <span class="clisting">Count</span> und <span class="clisting">Max</span> vorstellen.
+                                                   </p>
+                                                   <h4 class="t4"> Der »Count«-Operator</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Starten wir mit einer sehr einfachen Abfrage, die uns die Gesamtanzahl aller Produkte
+                                                      angibt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int count = context.Products.Count();<br xmlns="">Console.WriteLine("Anzahl der Produkte: {0}", count);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier kommt der Operator <span class="clisting">Count</span> zum Einsatz, der einen Integer als Rückgabewert hat. Sollte die Menge sehr groß sein,
+                                                      d. h. den Wertebereich des Integers überschreiten, würde sich alternativ <span class="clisting">LongCount</span> anbieten, denn dieser Operator hat den Rückgabedatentyp <span class="clisting">long</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum tieferen Verständnis sollten wir uns die Definition von <span class="clisting">Count</span> ansehen, wobei es sich selbstverständlich um eine Erweiterungsmethode handelt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static int Count&lt;T&gt;(this IEnumerable&lt;T&gt; source)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Parameter deutet an, dass <span class="clisting">Count</span> die Typen erweitert, die die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> implementieren. Damit rechtfertigt sich auch, dass wir <span class="clisting">Count</span> auf <span class="clisting">context.Products</span> aufrufen, weil der Teilausdruck <span class="clisting">context.Products</span> vom Typ <span class="clisting">ObjectSet&lt;T&gt;</span> ist und somit das genannte Interface implementiert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Count</span> ist überladen. Wir können auch eine Bedingung formulieren, unter deren Berücksichtigung
+                                                      wir ein gefiltertes Resultat haben wollen. Die Bedingung wird als Lambda-Ausdruck
+                                                      formuliert. Die Definition der Überladung sieht wie folgt aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static int Count&lt;T&gt;(this IEnumerable&lt;T&gt; source, <br></br>                           Func&lt;T, bool&gt; predicate)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um Ihnen ein Beispiel zur <span class="clisting">Count</span>-Überladung zu zeigen, nehmen wir an, dass wir wissen wollen, wie viele Produkte »teuer«
+                                                      sind, sagen wir, einen Preis haben, der größer oder gleich 50 ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int count = context.Products.Count(p =&gt; p.UnitPrice &gt;= 50);<br xmlns="">Console.WriteLine("Anzahl der Produkte: {0}", count);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist doch überhaupt nicht schwer, oder?</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas mehr wird uns abverlangt, wenn wir wissen wollen, wie viele Produkte zu jeder
+                                                      Kategorie gehören. Natürlich hilft uns auch hier <span class="clisting">Count</span> weiter.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              select new { cat.CategoryName, Count = cat.Products.Count() };<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("{0,-15}  {1}", item.CategoryName, item.Count);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.11  </span>Weiterer Einsatz von »Count«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird das <span class="clisting">ObjectSet&lt;Category&gt;</span> gebildet. In die Ergebnismenge wird anschließend der Kategoriebezeichner aufgenommen
+                                                      und der Wert, der die Anzahl der Produkte widerspiegelt. Dazu wird für jedes Element
+                                                      in der Ergebnismenge &#8211; also für jede Kategorie &#8211; die Navigationsmethode <span class="clisting">Products</span> aufgerufen, die alle Produkte der entsprechenden Kategorie liefert. Mit <span class="clisting">Count</span> zählen wir allerdings nur die Produkte und verzichten auf weitere Angaben. 
+                                                   </p>
+                                                   <h4 class="t4"> Der »Max«-Operator</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">Max</span>-Operator liefert einen Maximalwert aus einer Menge zurück, die die Schnittstelle
+                                                      <span class="clisting">IEnumerable&lt;T&gt;</span> implementiert. Einen relativ einfachen Einsatz des <span class="clisting">Max</span>-Operators zeigt das folgende Listing, das dazu dient, aus allen Produkten das mit
+                                                      dem höchsten Preis herauszufiltern. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from prod in context.Products<br xmlns="">              where prod.UnitPrice == <span class="clistingfett">context.Products.Max(p =&gt; p.UnitPrice)</span><br xmlns="">              select new { prod.ProductName, prod.UnitPrice };<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("{0}, {1}", item.ProductName, item.UnitPrice);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.12  </span>Der Operator »Max«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Listing wird <span class="clisting">Max</span> innerhalb der Filterung mit <span class="clisting">Where</span> dazu benutzt, aus allen Produkten den Höchstpreis festzustellen. Mit diesem werden
+                                                      alle Produkte verglichen und bei Übereinstimmung in die Ergebnismenge eingetragen.
+                                                      In unserem Beispiel handelt es sich zwar um genau ein Produkt, aber es könnten durchaus
+                                                      auch mehrere sein.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpd42a4481-c813-44e3-85a9-4621744090da" name="dodtpd42a4481-c813-44e3-85a9-4621744090da"></a><h3 class="t3"><span class="cfett">38.1.5    </span><span class="cfett"> Joins in LINQ definieren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa0b1e3f3-9bae-43b4-adb6-398a5e222946"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbae6be85-1885-45ba-aa97-58ac1425310d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Inner Joins</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Listing 38.8 haben wir die Navigationsmethoden dazu benutzt, uns alle Produkte
+                                                      der beiden Kategorien <span class="ckursiv">Beverages</span> (<span class="clisting">CategoryID=1</span>) und <span class="ckursiv">Seafood</span> (<span class="clisting">CategoryID=8</span>) ausgeben zu lassen. Wir können die LINQ-Abfrage auch ohne Einsatz der Navigationsmethoden
+                                                      formulieren, indem wir mit <span class="clisting">Join</span> diese Assoziation nachbilden. Mit anderen Worten bilden wir die Beziehung zwischen
+                                                      den beiden Entitäten <span class="clisting">Product</span> und <span class="clisting">Category</span> nach, ohne die Navigationsmethoden zu bemühen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anders als im erwähnten Listings 38.8 wollen wir uns aber nicht auf die zwei Kategorien
+                                                      beschränken, sondern alle berücksichtigen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories <br xmlns="">              <span class="clistingfett">join</span> prod <span class="clistingfett">in</span> context.Products <br xmlns="">              <span class="clistingfett">on</span> cat.CategoryID <span class="clistingfett">equals</span> prod.CategoryID<br xmlns="">              orderby cat.CategoryName<br xmlns="">              select new { cat.CategoryName, prod.ProductName };<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("{0}...{1}", item.CategoryName, item.ProductName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.13  </span>Inner Join
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auf diese Weise haben wir einen inneren Join erzeugt, der nur die Entitäten berücksichtigt,
+                                                      die eine gemeinsame <span class="clisting">CategoryID</span> aufweisen. Alle Kategorien, die keine Entsprechung auf der Seite der Produkte finden,
+                                                      gehören nicht zum Ergebnis der Abfrage. Da es in der <span class="ckursiv">Northwind</span>-Datenbank eine solche Kategorie nicht gibt, sollten Sie in der Tabelle <span class="ckursiv">Categories</span> der <span class="ckursiv">Northwind</span>-Datenbank eine weitere Kategorie hinzufügen, z. B. <span class="ckursiv">Magazines</span>, und die LINQ-Abfrage noch einmal starten. <span class="ckursiv">Magazines</span> wird nicht in der Ergebnisliste geführt, weil der neuen Kategorie kein Produkt zugeordnet
+                                                      worden ist.
+                                                   </p>
+                                                   <h4 class="t4"> Left Outer Joins mit LINQ</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein <span class="ckursiv">Left Outer Join</span> ist ein Join, in dem jedes Element aus der zuerst genannten Elementmenge auch dann
+                                                      aufgeführt wird, wenn in der zweiten Auflistung kein korrelierendes Element existiert.
+                                                      Um einen <span class="ckursiv">Left Outer Join</span> mit LINQ zu formulieren, bilden Sie einen Group Join und rufen auf diesen <span class="clisting">DefaultIfEmpty</span> auf. Das klingt kompliziert, daher dazu auch sofort ein Beispiel. Um tatsächlich
+                                                      auch ein Ergebnis zu finden, sollten Sie spätestens jetzt die Kategorie <span class="ckursiv">Magazines</span> in der Tabelle <span class="ckursiv">Categories</span> der <span class="ckursiv">Northwind</span>-Datenbank eintragen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var results = from cat in context.Categories <br xmlns="">                <span class="clistingfett">join</span> prod <span class="clistingfett">in</span> context.Products<br xmlns="">                <span class="clistingfett">on</span> cat.CategoryID <span class="clistingfett">equals</span> prod.CategoryID<br xmlns="">                <span class="clistingfett">into</span> listProd<br xmlns="">                from p in listProd.<span class="clistingfett">DefaultIfEmpty()</span><br xmlns="">                select new { CatName = cat.CategoryName, <br xmlns="">                             ProdName = p.ProductName };<br></br>  foreach (var item in results)<br xmlns="">    Console.WriteLine("{0,-15} ... {1}", item.CatName, item.ProdName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.14  </span>Left Outer Join
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Sequenz <span class="ckursiv">Categories</span> ist hier die linke Auflistung, die Sequenz <span class="ckursiv">Products</span> die rechte. Ein <span class="ckursiv">Group Join</span>, der in LINQ mit <span class="clisting">into</span> abgebildet wird, erzeugt eine hierarchische Ergebnismenge, in der die Elemente aus
+                                                      der rechten Sequenz dem entsprechenden Element aus der linken Sequenz zugeordnet werden.
+                                                      Ein Group Join kann man sich damit als eine Menge von Objektarrays vorstellen. In
+                                                      unserem Beispiel wird für jedes Element der linken Sequenz, also der Kategorien, mit
+                                                      <span class="clisting">into</span> ein Array gebildet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn für ein Element der linken Sequenz keine korrespondierenden Elemente aus der
+                                                      rechten Sequenz zugeordnet werden können, erzeugt die <span class="clisting">join</span>-Klausel ein leeres Array. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Anschließend muss jedes Element der linken Elementmenge in die Ergebnisliste aufgenommen
+                                                      werden, selbst wenn dieses Element keine Entsprechung in der rechten Auflistung hat.
+                                                      Dazu rufen Sie <span class="clisting">DefaultIfEmpty</span> für jede Sequenz von übereinstimmenden Elementen aus dem Group Join auf. Die Ausgabe
+                                                      in der Konsole überzeugt: Tatsächlich finden wir die neue Kategorie <span class="ckursiv">Magazines</span> wieder, obwohl keine entsprechenden Produkte zugeordnet werden können.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht interessieren Sie sich nur für die Kategorien, denen noch keine Produkte
+                                                      zugeordnet worden sind. Basierend auf der LINQ-Abfrage des letzten Listings müssen
+                                                      wir nur eine kleine Ergänzung vornehmen und die Elemente aus der Ergebnisliste herausfiltern,
+                                                      die den Wert <span class="clisting">null</span> haben, also:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var results = from cat in context.Categories join prod in context.Products<br xmlns="">              on cat.CategoryID equals prod.CategoryID<br xmlns="">              into listProd<br xmlns="">              from p in listProd.DefaultIfEmpty()<br xmlns="">              <span class="clistingfett">where p == null</span><br xmlns="">              [...]<br></pre></div>
+                                                   <h4 class="t4"> Right Outer Joins mit LINQ</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unter einem Right Outer Join wird die Umkehrung des Left-Outer-Join-Prinzips verstanden:
+                                                      Es werden alle Elemente der zweiten Elementmenge in die Ergebnisliste aufgenommen
+                                                      &#8211; auch wenn sich kein entsprechendes Element in der ersten Elementliste befindet.
+                                                      Bezogen auf unser Listing 38.14 würde das bedeuten, dass wir alle Produkte in das
+                                                      Abfrageresultat schreiben, auch wenn das Produkt keiner Kategorie zugeordnet wird
+                                                      (das Feld <span class="clisting">CategoryID</span> darf tatsächlich per Definition <span class="clisting">Null</span> sein).
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">LINQ unterstützt von Hause aus keine Right Outer Joins. Auch wenn das im ersten Moment
+                                                      ernüchternd klingt, gibt es aber sehr wohl einen Weg, einen Right Outer Join nachzubilden:
+                                                      Wir müssen dazu nur einen Left Join definieren und die Reihenfolge der angeführten
+                                                      Elementlisten hinter <span class="clisting">from</span> umdrehen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var results = from prod in context.Products <br xmlns="">                join cat in context.Categories<br xmlns="">                on prod.CategoryID equals cat.CategoryID<br xmlns="">                into listProd<br xmlns="">                from p in listProd.DefaultIfEmpty()<br xmlns="">                select new {<br xmlns="">                             CatName = p.CategoryName,<br xmlns="">                             ProdName = prod.ProductName <br xmlns="">                };<br xmlns="">  foreach (var item in results)<br xmlns="">    Console.WriteLine("{0,-35}{1}", item.ProdName, item.CatName);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.15  </span>Right Outer Joins
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wenn Sie dieses Beispiel ausprobieren möchten, sollten Sie zuvor der Tabelle <span class="ckursiv">Products</span> einen weiteren Artikel hinzufügen, aber ohne eine Kategorie anzugeben. Dann können
+                                                         Sie erkennen, dass auch das neue Produkt in die Ergebnisliste aufgenommen worden ist.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpa0b1e3f3-9bae-43b4-adb6-398a5e222946" name="dodtpa0b1e3f3-9bae-43b4-adb6-398a5e222946"></a><h3 class="t3"><span class="cfett">38.1.6    </span><span class="cfett"> In Beziehung stehende Daten laden</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpdf481574-9cc1-4938-92ae-23dc37c31a4f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Lazy Loading</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In den bisherigen Beispielen lieferten uns die LINQ-Abfragen immer das gewünschte
+                                                      Ergebnis. Wir haben uns keine Gedanken darüber gemacht, wann und wie die Daten tatsächlich
+                                                      bereitgestellt werden &#8211; das Entity Framework hat das für uns im Hintergrund automatisch
+                                                      erledigt. Dennoch müssen wir uns darüber bewusst sein, dass auch hinsichtlich des
+                                                      Ladens der Daten aus der Datenbank Vorgänge ablaufen, die wir beeinflussen können,
+                                                      besser noch, die wir manchmal sogar beeinflussen müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Verdeutlichung der Problematik sehen Sie sich bitte das folgende Listing an. Die
+                                                      LINQ-Abfrage liefert eine Menge anonymer Typen, in der alle Kategorien sowie die Anzahl
+                                                      der Produkte der betreffenden Kategorie enthalten sind. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              select new { cat, Anzahl = cat.Products.Count() };<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("Kategorie: {0,-15} Anzahl der Produkte: {1}", <br xmlns="">                       item.cat.CategoryName, item.Anzahl);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.16  </span>Anzahl der einer Kategorie zugeordneten Produkte
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dasselbe Resultat liefert auch die LINQ-Abfrage des folgenden Listings. Wir fragen
+                                                      wieder alle Kategorien ab und bilden ein Objekt vom Typ <span class="clisting">QuerySet&lt;Category&gt;</span>. Innerhalb der <span class="clisting">foreach</span>-Schleife wird bei der Ausgabe über die Navigationseigenschaft <span class="clisting">Products</span> die Summe aller Produkte gebildet, die zu der betreffenden Kategorie gehören.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              select cat;<br xmlns="">  foreach (var item in query)<br xmlns="">    Console.WriteLine("Kategorie: {0,-15}Anzahl der Produkte: {1}", <br xmlns="">                       item.CategoryName, item.Products.Count());<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.17  </span>Anzahl der einer Kategorie zugeordneten Produkte (Lazy Loading)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Obwohl ganz offensichtlich die Konsolenausgabe identisch ist, unterscheidet sich die
+                                                      Ausführung der beiden Listings ganz deutlich. Wir können uns davon überzeugen, wenn
+                                                      wir den SQL Server Profiler starten und uns den Ablauf der Ausführung protokollieren
+                                                      lassen. In den folgenden beiden Abbildungen sind sowohl für Listing 38.16 als auch
+                                                      für Listing 38.17 die vom SQL Server Profiler aufgezeichneten Protokolle dargestellt.
+                                                   </p>
+                                                   <p><a href="bilder/38_03.png" rel="lightbox" title="Ablaufprotokoll des Listings 38.16"><img class="bild" border="1" src="bilderklein/klein38_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 38.3  </span>Ablaufprotokoll des Listings 38.16
+                                                   </p>
+                                                   <p><a href="bilder/38_04.png" rel="lightbox" title="Ablaufprotokoll des Listings 38.17"><img class="bild" border="1" src="bilderklein/klein38_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 38.4  </span>Ablaufprotokoll des Listings 38.17
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es fällt auf, dass im Fall der Ausführung von Listing 38.16 nur eine Abfrage an den
+                                                      SQL Server geschickt wird, die dann alle erforderlichen Daten enthält.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fragen wir jedoch zuerst nur alle Kategorien ab und rufen innerhalb der Schleife auch
+                                                      die Navigationseigenschaft auf, um die Summe aller Produkte zu ermitteln, wird für
+                                                      jede Kategorie eine neue Abfrage auf dem SQL Server ausgeführt. Das Verhalten, bei
+                                                      dem beim Zugriff auf eine Navigationseigenschaft automatisch Daten aus der Datenquelle
+                                                      geladen werden, wird als <span class="cfett">Lazy Loading</span> oder <span class="cfett">Deferred Loading</span><span class="cfett"><a class="indexterm" id="dodtpacfe5935-f160-41e4-9ff1-684603784ed0"></a></span> bezeichnet. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lazy Loading ist die Standardvorgabe des Entity Frameworks und führt zu mehr oder
+                                                      wenigen vielen zusätzlichen Datenbankabfragen. Das Verhalten ist somit natürlich alles
+                                                      andere als effizient und kann wegen der damit verbundenen hohen Datenbankaktivität
+                                                      zu Problemen führen. Wenn Sie sich Abbildung 38.4 noch einmal ansehen, werden Sie
+                                                      zudem feststellen, dass alle Produktdaten abgerufen werden. Eine Filterung der zu
+                                                      ladenden Daten ist mit Lazy Loading nicht möglich. Dieser Problematik des Lazy Loadings
+                                                      sollten Sie sich bewusst sein und nach Möglichkeit darauf verzichten. Es gibt auch
+                                                      noch andere Möglichkeiten, um die in Beziehung stehenden Daten zu laden.
+                                                   </p>
+                                                   <h4 class="t4"> Lazy Loading unterdrücken</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Lazy Loading ist per Vorgabe aktiviert und wird in den Konstruktoren der von <span class="clisting">ObjectContext</span> abgeleiteten Klasse (in unseren Beispielen <span class="clisting">NorthwindEntities</span>) festgelegt. Sie können es jedoch auf zwei verschiedene Weisen abschalten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">mit Programmcode</li>
+                                                      <li class="pgp">in der Entwicklungsumgebung</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Deaktivierung erfolgt über die Eigenschaft <span class="clisting">ContextOptions</span> des <span class="clisting">ObjectContext</span>-Objekts. <span class="clisting">ContextOptions</span> beschreibt selbst die Referenz auf ein Objekt vom Typ <span class="clisting">ObjectContextOptions</span>, mit dem mehrere spezifische Eigenschaften des <span class="clisting">ObjectContext</span>-Objekts beschrieben werden. In unserem aktuellen Fall interessiert uns die Abschaltung
+                                                      des Lazy Loadings, die wir durch Setzen der Eigenschaft <span class="clisting">LazyLoadingEnabled</span> auf <span class="clisting">false</span> erreichen können.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities()) {<br xmlns="">  context.ContextOptions.LazyLoadingEnabled = false;<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Abschalten in der Entwicklungsumgebung markieren Sie das Entity Data Model im
+                                                      Designer, damit dessen Eigenschaften im Eigenschaftsfenster angezeigt werden. Danach
+                                                      stellen Sie die Eigenschaft <span class="clisting">Lazy Loading aktiviert</span> auf <span class="clisting">false</span> ein (siehe Abbildung 38.5).
+                                                   </p>
+                                                   <p><a href="bilder/38_05.png" rel="lightbox" title="Die Eigenschaft »Lazy Loading« des konzeptionellen Modells"><img class="bild" border="1" src="bilderklein/klein38_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 38.5  </span>Die Eigenschaft »Lazy Loading« des konzeptionellen Modells
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem deaktivierten Lazy Loading sollten Sie noch einmal Listing 38.22 ausführen.
+                                                      Sie werden feststellen, dass nun die Daten der Produkte nicht mehr nachgeladen werden
+                                                      und somit auch der <span class="clisting">Count</span>-Aufruf wirkungslos verpufft: Die Anzeige lautet für jede Kategorie »Anzahl der Produkte:
+                                                      0«.
+                                                   </p>
+                                                   <h4 class="t4"> Explizites Laden verbundener Objekte</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Deaktivierung des Lazy Loadings haben wir uns zunächst einmal der Möglichkeit
+                                                      beraubt, die Anzahl der zu einer Kategorie gehörenden Produkte zu ermitteln. Dennoch
+                                                      lassen sich die Produkte für jede Kategorie explizit laden. Dazu rufen wir die Methode
+                                                      <span class="clisting">Load</span><span class="clisting"><a class="indexterm" id="dodtp392b5016-9a69-497b-96f8-b381848d718f"></a></span> auf <span class="clisting">Products</span> in der Schleife auf. <span class="clisting">Load</span> ist eine Methode der Klasse <span class="clisting">EntityCollection&lt;T&gt;</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  context.ContextOptions.LazyLoadingEnabled = false;<br xmlns="">  var query = from cat in context.Categories <br xmlns="">              select cat;<br xmlns="">  foreach (var item in query) <br xmlns="">  {<br xmlns="">    <span class="clistingfett">item.Products.Load();</span><br xmlns="">    Console.WriteLine("{0,-20} 'Anzahl: {1}", <br xmlns="">                       item.CategoryName, item.Products.Count);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.18  </span>Explizites Laden mit der Methode »Load«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie sich das Ablaufprotokoll im SQL Server Profiler ansehen, werden Sie keinen
+                                                      Unterschied zum Lazy Loading feststellen, denn für jede Kategorie wird weiterhin ein
+                                                      Server-Roundtrip erforderlich. Dennoch hat der explizite Aufruf von <span class="clisting">Load</span> einen Vorteil gegenüber dem Lazy Loading: Sie können nämlich steuern, zu welcher
+                                                      Kategorie die Anzahl der Produkte angezeigt werden soll. Dadurch wird sichergestellt,
+                                                      dass eine Abfrage nicht ohne eine explizite Anforderung der verknüpften Entität ausgeführt
+                                                      wird. Das ist ein großer Vorteil im Vergleich zum standardmäßigen Lazy Loading.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing zeigt, wie der Code dazu geschrieben werden muss.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  context.ContextOptions.LazyLoadingEnabled = false;<br xmlns="">  var query = from cat in context.Categories<br xmlns="">              select cat;<br xmlns="">  foreach (var item in query)<br xmlns="">  {<br xmlns="">    Console.WriteLine(item.CategoryName);<br xmlns="">    if (item.CategoryName == "Beverages") {<br xmlns="">      <span class="clistingfett">item.Products.Load();</span><br xmlns="">      Console.WriteLine("Anzahl: {0}", item.Products.Count());<br xmlns="">    }<br xmlns="">    Console.WriteLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.19  </span>Explizites Laden mit der Methode »Load«
+                                                   </p>
+                                                   <h4 class="t4"> Eager Loading</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Fällen, in denen von vornherein bekannt ist, dass nicht nur die Kategorien, sondern
+                                                      darüber hinaus auch viele Produkte und deren Details von Interesse sind, ist es eine
+                                                      gute Lösung, die Produkte direkt von der LINQ-Anfrage zurückgeben zu lassen. Dass
+                                                      man das mit einem <span class="clisting">Select</span> in einer Projektion erreichen kann, haben Sie schon erfahren. Die Methode <span class="clisting">Include</span>, die auf ein <span class="clisting">ObjectQuery</span>-Objekt aufgerufen wird, ist eine andere Variante und wird als <span class="cfett">Eager Loading</span> bezeichnet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Include</span> hat gegenüber einer Projektion den Vorteil, dass das Abfrageergebnis Entitäten liefert
+                                                      und nicht nur anonyme Typen. Andererseits ermöglicht <span class="clisting">Include</span> keine Filterung, was mit einer Selektion wiederum möglich ist. <span class="clisting">Include</span> wird entweder auf Objekte der Klassen <span class="clisting">ObjectQuery</span> oder der Klasse <span class="clisting">ObjectSet</span> aufgerufen. Im Zusammenhang mit Projektionen kann <span class="clisting">Include</span> nicht verwendet werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kommen wir nun zu unserem Beispiel von oben zurück und rufen die Produkte als Entitäten
+                                                      ab. Dazu übergeben wird den Bezeichner der Navigationseigenschaft <span class="clisting">Products</span> als Zeichenfolge an die Methode <span class="clisting">Include</span><span class="clisting"><a class="indexterm" id="dodtp608af15b-50b9-4cb2-9c44-179e275cec76"></a></span>. Um auf die <span class="clisting">Product</span>-Entitäten zuzugreifen, können wir in der Ausgabe die Navigationseigenschaft nutzen,
+                                                      ohne dass es zu einem Server-Roundtrip kommt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var query = from cat in <span class="clistingfett">context.Categories.Include("Products")</span><br xmlns="">              select cat;<br></br>  foreach (var item in query) <br xmlns="">  {<br xmlns="">    Console.WriteLine(item.CategoryName);<br xmlns="">    foreach (Product prod in item.Products)<br xmlns="">      Console.WriteLine("  {0}", prod.ProductName);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 38.20  </span>Eager Loading mit »Include«
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Mit <span class="clisting">Load</span> und <span class="clisting">Include</span> lassen sich explizit in Beziehung stehende Daten nachladen. Sie werden immer wieder
+                                                         in die Situation kommen, eine Entscheidung zugunsten der einen oder anderen Variante
+                                                         treffen zu müssen. <span class="clisting">Load</span> hat, wie oben erwähnt, den großen Nachteil, immer wieder Daten aus der Datenbank
+                                                         nachladen zu müssen. Der Datenbankserver wird damit unter Umständen erheblich belastet.
+                                                         <span class="clisting">Load</span> genießt aber andererseits den Vorteil, dass man nur dann Daten einer Beziehung nachladen
+                                                         kann, wenn sie tatsächlich benötigt werden. Demgegenüber begnügt sich <span class="clisting">Include</span> mit einem Aufruf, lädt aber alle Daten, ob Sie sie benötigen oder nicht. Die Entscheidung,
+                                                         ob <span class="clisting">Include</span> oder <span class="clisting">Load</span>, kommt der Entscheidung »Pest oder Cholera« gleich. Einen allgemeingültigen Tipp
+                                                         kann man nicht geben, es ist im Einzelfall zu entscheiden, welcher Variante man den
+                                                         Vorzug einräumt.
+                                                      </p>
+                                                   </div><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs38_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="38  Datenabfragen des Entity Data Models (EDM)"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_37_006.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_38_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

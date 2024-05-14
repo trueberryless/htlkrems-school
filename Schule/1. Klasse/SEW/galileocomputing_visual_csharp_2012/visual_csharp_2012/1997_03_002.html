@@ -1,0 +1,1095 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 3  Das Klassendesign">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 3  Das Klassendesign">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 3  Das Klassendesign</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="03_001.html">
+      <link rel="next" href="1997_03_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_03_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_03_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78" class="navnav">3 Das Klassendesign</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_001.html#dodtp4f8d2696-0460-493a-9474-2a4c871f7312" class="navnav">3.1 Einführung in die Objektorientierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_002.html#dodtp51c14bec-37cf-4e1d-99ad-c6671e6e8177" class="navh">3.2 Die Klassendefinition</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtpeb00d15f-8afd-4422-b213-d67e44ed67fb" class="navh">3.2.1 Klassen im Visual Studio anlegen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtp58976733-34ec-4b3b-a9af-0dc3a7bcb83f" class="navh">3.2.2 Das Projekt »GeometricObjectsSolution«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtp1b23cdd3-322a-4d72-aa9d-441ff2bc2198" class="navh">3.2.3 Die Deklaration von Objektvariablen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtpd0797071-958a-45ee-90d2-e0cead5ad2f1" class="navh">3.2.4 Zugriffsmodifizierer einer Klasse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtp85fe784e-1fa7-4bae-b8ee-a0019700a8cc" class="navh">3.2.5 Splitten einer Klassendefinition mit »partial«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_002.html#dodtp5c6ca303-fb86-40f3-95d5-686f1e498314" class="navh">3.2.6 Arbeiten mit Objektreferenzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_003.html#dodtpe1d3037c-f558-4aef-ad75-51ff1de7b8c4" class="navnav">3.3 Referenz- und Wertetypen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_003.html#dodtpcda74388-490f-432c-b5b0-74f3b0809d74" class="navnav">3.3.1 Werte- und Referenztypen nutzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_004.html#dodtp0019e906-4cca-4f1a-a629-058e656f2390" class="navnav">3.4 Die Eigenschaften eines Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtp2d193236-39a5-4ebc-9d89-76116fcd720e" class="navnav">3.4.1 Öffentliche Felder</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtp54bc2e15-a4c1-48b2-b5af-4c3fda91ac30" class="navnav">3.4.2 Datenkapselung mit Eigenschaftsmethoden sicherstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtpb26050ea-731e-47f7-b7f4-1fd9ea120947" class="navnav">3.4.3 Die Ergänzung der Klasse »Circle«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtp3bf71c64-3107-4244-b2cb-a43acdf6344c" class="navnav">3.4.4 Lese- und schreibgeschützte Eigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtpf355cc48-a251-47ec-8cc1-dd12de0a2b26" class="navnav">3.4.5 Sichtbarkeit der Accessoren »get« und »set«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtp684c5d00-656c-46dc-8d10-86ce0f9c1be0" class="navnav">3.4.6 Unterstützung von Visual Studio 2012</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_004.html#dodtpa6c5d3d4-c1e2-47c9-a808-f560cecf3fb3" class="navnav">3.4.7 Automatisch implementierte Eigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_005.html#dodtp407a8699-f993-4382-abcb-8bf03a7abe86" class="navnav">3.5 Methoden eines Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp9ca9426f-9bb7-4b07-9c2a-d6dab42e8ef1" class="navnav">3.5.1 Methoden mit Rückgabewert</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpc528dcef-f515-4360-aad1-3d1fa3191856" class="navnav">3.5.2 Methoden ohne Rückgabewert</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpaddb399d-8b91-4732-ba42-e25aa87ad214" class="navnav">3.5.3 Methoden mit Parameterliste</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp325f55bf-fa49-43d2-be2b-62ec7b589d97" class="navnav">3.5.4 Methodenüberladung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpb5364f20-299b-47fb-9973-46c4560a7e54" class="navnav">3.5.5 Variablen innerhalb einer Methode (lokale Variablen)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp757b19f8-9b64-4c17-b322-a5bafa952e6d" class="navnav">3.5.6 Referenz- und Wertparameter</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpa52b56af-9ba4-4b5b-89b6-e9f07f0e9372" class="navnav">3.5.7 Besondere Aspekte einer Parameterliste</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp2d365bc3-309b-4200-ac55-eebe5124e7eb" class="navnav">3.5.8 Zugriff auf private Daten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpbddfd9bf-a977-418d-971f-4a8ad82eff29" class="navnav">3.5.9 Die Trennung von Daten und Code</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp245b38d0-1feb-4a0a-8854-6779c2aeda99" class="navnav">3.5.10 Namenskonflikte mit »this« lösen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtp747afc7e-02f0-47c9-8fc0-3eb77c334a56" class="navnav">3.5.11 Methode oder Eigenschaft?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_005.html#dodtpea18c9d9-0017-4886-99dc-5a546fad86c2" class="navnav">3.5.12 Umbenennen von Methoden und Eigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_006.html#dodtp9384756a-492d-4953-bfd6-6d7fd5bd5b35" class="navnav">3.6 Konstruktoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp90db4b1b-5966-4c5d-b9de-10d6a739f434" class="navnav">3.6.1 Konstruktoren bereitstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp806f9b1d-6b23-441b-825c-592d6473850b" class="navnav">3.6.2 Die Konstruktoraufrufe</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp1fc335e0-526d-4055-a238-7f5a935ed54a" class="navnav">3.6.3 Definition von Konstruktoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp8d959447-8574-4206-babb-190f3ce815c2" class="navnav">3.6.4 »public«- und »internal«-Konstruktoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp60a908b8-cd82-462e-915c-64517c358a3b" class="navnav">3.6.5 »private«-Konstruktoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp0e4a98af-a6a9-469f-99fe-c1695f2ed078" class="navnav">3.6.6 Konstruktorenaufrufe umleiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_006.html#dodtp0daafe7c-c803-4201-818b-df0f15c6259f" class="navnav">3.6.7 Vereinfachte Objektinitialisierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_007.html#dodtp2edf7963-fe86-4c10-8536-4798e1ef5627" class="navnav">3.7 Der Destruktor</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_008.html#dodtp3a4a938b-3d1a-4aed-8c69-908ebf7a4b15" class="navnav">3.8 Konstanten in einer Klasse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_008.html#dodtp9203e513-3e43-4f91-be7b-71fa35459c21" class="navnav">3.8.1 Konstanten mit dem Schlüsselwort »const«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_008.html#dodtp56b03b3b-7000-4c5a-a5aa-6aa5835e372c" class="navnav">3.8.2 Schreibgeschützte Felder mit »readonly«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_009.html#dodtp409e3500-504b-45b7-b5a4-80baf1d23349" class="navnav">3.9 Statische Klassenkomponenten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_009.html#dodtpc3444433-a411-49b3-9af3-55f516564850" class="navnav">3.9.1 Statische Eigenschaften</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_009.html#dodtpeb9ffee8-90e5-4733-a666-1420a2926f0a" class="navnav">3.9.2 Statische Methoden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_009.html#dodtpb370de77-ddf5-4cdb-a22e-d3bc7d955535" class="navnav">3.9.3 Statische Klasseninitialisierer</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_009.html#dodtpa4319d36-6354-4825-99f1-0335a71076d0" class="navnav">3.9.4 Statische Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_009.html#dodtp28d82fd2-f3ba-4f68-8a68-8daee8a1b6bb" class="navnav">3.9.5 Statische Klasse oder Singleton-Pattern?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_010.html#dodtpd01eb7ee-ad3f-4b5c-82dc-174b8a0260ac" class="navnav">3.10 Namensräume (Namespaces)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp25dffe43-7fec-47af-9ae3-379d8a658bb1" class="navnav">3.10.1 Zugriff auf Namespaces</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp7c017551-f04b-4c99-8a37-6dd5c25f6403" class="navnav">3.10.2 Die »using«-Direktive</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp34f9a6dd-524d-40fa-8cb0-a2ff57c23483" class="navnav">3.10.3 Globaler Namespace</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp4f105981-c225-4f85-9c4b-55bac3047084" class="navnav">3.10.4 Vermeiden von Mehrdeutigkeiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp19adc524-af26-4b25-a24d-2641c75c9537" class="navnav">3.10.5 Namespaces festlegen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp25fe87d8-7d08-4913-ba62-eef6481a4f65" class="navnav">3.10.6 Der »::«-Operator</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_03_010.html#dodtp2723cd4b-f711-4c75-876b-63fa0383c11d" class="navnav">3.10.7 Unterstützung von Visual Studio 2012 bei den Namespaces</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_03_011.html#dodtp0c09d59c-9652-4ecd-824a-63b1c4cb585e" class="navnav">3.11 Stand der Klasse »Circle«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp51c14bec-37cf-4e1d-99ad-c6671e6e8177" name="dodtp51c14bec-37cf-4e1d-99ad-c6671e6e8177"></a><h2 class="t2"><span class="cfett">3.2    </span><span class="cfett"> Die Klassendefinition</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp65eefc25-44a9-4985-83f2-037dd6d6ddd6"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd01456b1-38bf-4f37-b0f6-48426c8ce887"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9cb70b36-62b9-4479-b22f-739d1bc1280b"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpeb00d15f-8afd-4422-b213-d67e44ed67fb"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpeb00d15f-8afd-4422-b213-d67e44ed67fb" name="dodtpeb00d15f-8afd-4422-b213-d67e44ed67fb"></a><h3 class="t3"><span class="cfett">3.2.1    </span><span class="cfett"> Klassen im Visual Studio anlegen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp58976733-34ec-4b3b-a9af-0dc3a7bcb83f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp51c14bec-37cf-4e1d-99ad-c6671e6e8177"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Klasse ist die grundlegendste Einheit in der objektorientierten Programmierung
+                                                      und dient dazu, einen Datentyp zu definieren. Starten Sie ein neues Projekt vom Typ
+                                                      <span class="ckursiv">Konsolenanwendung</span>, ist die Struktur einer Klasse (<span class="clisting">Program</span>) bereits vordefiniert. Der Quellcode befindet sich in einer Datei mit der Dateierweiterung
+                                                      <span class="cfett">.cs</span>. Dateiname und Klassenbezeichner sind per Vorgabe identisch, müssen es aber nicht
+                                                      sein. In einer Quellcodedatei können Sie durchaus mehrere Klassen definieren, was
+                                                      allerdings nicht empfehlenswert ist, weil darunter die Übersicht leidet. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchten Sie eine zusätzliche Klasse in einer eigenen Quellcodedatei implementieren,
+                                                      haben Sie zwei Alternativen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie wählen im Menü <span class="cscreenelement">Projekt</span> der Entwicklungsumgebung das Untermenü <span class="cscreenelement">Klasse hinzufügen...</span></li>
+                                                      <li class="pgp">Sie öffnen mit der rechten Maustaste das Kontextmenü des Projekts im Projektmappen-Explorer,
+                                                         wählen <span class="cscreenelement">Hinzufügen</span> und danach aus der sich anschließend öffnenden Liste <span class="cscreenelement">Klasse hinzufügen...</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Daraufhin öffnet sich das Dialogfenster <span class="cscreenelement">Neues Element hinzufügen</span><span class="ckursiv">, </span>in dem die Vorlage <span class="ckursiv">Klasse</span> bereits vorselektiert ist. Sie sollten einen möglichst beschreibenden Klassennamen
+                                                      wählen, der auch gleichzeitig zum Namen der Quellcodedatei wird. Wenn Sie wollen,
+                                                      können Sie später sowohl die Klasse als auch die Quellcodedatei umbenennen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Bezeichnung von Klassen gibt es Konventionen, an denen Sie sich orientieren sollten:
+                                                      
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Der erste Buchstabe sollte großgeschrieben werden. Setzt sich der Bezeichner einer
+                                                         Klasse aus mehreren einzelnen Begriffen zusammen, wird empfohlen, zur besseren Lesbarkeit
+                                                         jeden Begriff mit einem Großbuchstaben zu beginnen.
+                                                      </li>
+                                                      <li class="pgp">Ein Klassenbezeichner sollte nicht dadurch kenntlich gemacht werden, dass ihm ein
+                                                         »C« oder ein anderes Präfix vorangestellt wird, wie es in anderen objektorientierten
+                                                         Sprachen teilweise üblich ist. 
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erscheint Ihnen der Name der Quellcodedatei zu einem späteren Zeitpunkt unpassend,
+                                                      können Sie
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">im Projektmappen-Explorer das Kontextmenü der entsprechenden Datei öffnen, <span class="cscreenelement">Umbenennen</span> wählen und den neuen Namen eingeben oder
+                                                      </li>
+                                                      <li class="pgp">im Projektmappen-Explorer die umzubenennende Datei selektieren und im Eigenschaftenfenster
+                                                         unter <span class="cscreenelement">Dateiname</span> den neuen Namen eintragen.
+                                                      </li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp58976733-34ec-4b3b-a9af-0dc3a7bcb83f" name="dodtp58976733-34ec-4b3b-a9af-0dc3a7bcb83f"></a><h3 class="t3"><span class="cfett">3.2.2    </span><span class="cfett"> Das Projekt »GeometricObjectsSolution«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1b23cdd3-322a-4d72-aa9d-441ff2bc2198"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpeb00d15f-8afd-4422-b213-d67e44ed67fb"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen an dieser Stelle mit einem Projekt beginnen, das uns über viele Kapitel
+                                                      dieses Buches hinweg begleiten wird. Nach und nach wird das Projekt ergänzt und erweitert,
+                                                      und am Ende werden nahezu alle objektorientierten Features von .NET in den zu diesem
+                                                      Projekt gehörenden Klassen enthalten sein. Bei den Klassen handelt es sich um die
+                                                      syntaktischen Beschreibungen geometrischer Objekte wie zum Beispiel um die eines Kreises
+                                                      und eines Rechtecks. Am Ende werden wir feststellen, dass die entwickelten Klassen
+                                                      nicht nur in einer Konsolenanwendung sinnvoll einzusetzen sind, sondern auch anderen
+                                                      Anwendungen als Bibliothek zur Verfügung gestellt werden können. Mit anderen Worten:
+                                                      Wir werden am Ende aus der ursprünglichen Konsolenanwendung eine Klassenbibliothek
+                                                      machen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In einer laufenden Instanz von Visual Studio 2012 können Sie gleichzeitig mehrere
+                                                      Projekte bearbeiten. Diese können miteinander in Beziehung stehen (beispielsweise
+                                                      bei einer Client-Server-Lösung), müssen es aber nicht zwangsläufig. Alle Projekte
+                                                      werden von einer sogenannten <span class="ckursiv">Projektmappe</span> verwaltet, die die Anwendungen einer laufenden Visual-Studio-Instanz in einer SLN-Datei
+                                                      regelrecht zusammenschraubt. Die Dateierweiterung <span class="ckursiv">SLN</span> steht dabei für »Solution«. Die Projektmappe wird im Dateisystem durch einen Ordner
+                                                      beschrieben, in dem alle zu der Projektmappe gehörenden Projekte als Unterordner enthalten
+                                                      sind.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen nun mit dem angekündigten Projekt starten, das als Konsolenanwendung bereitgestellt
+                                                      wird. Das Projekt sollte <span class="ckursiv">GeometricObjects</span> lauten. Zudem können Sie bereits beim Anlegen des Projekts eine Projektmappe bereitstellen
+                                                      und dieser einen passenden Namen geben. In unserem Beispiel sollte sie <span class="ckursiv">GeometricObjectsSolution</span> heißen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wie angedeutet, wird uns das Projekt <span class="ckursiv">GeometricObjects</span> über viele Kapitel dieses Buches begleiten. Um die einzelnen Versionen unterscheiden
+                                                         zu können, bekommen die Projektmappenbezeichner einen Zähler angehängt.
+                                                      </p>
+                                                   </div>
+                                                   <p><a href="bilder/03_01.png" rel="lightbox" title="Anlegen einer neuen Projektmappe"><img class="bild" border="1" src="bilderklein/klein03_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 3.1  </span>Anlegen einer neuen Projektmappe
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem wir die Projektmappe <span class="ckursiv">GeometricObjectsSolution</span> mit der Konsolenanwendung <span class="ckursiv">GeometricObjects</span> angelegt haben, wollen wir uns der ersten Klasse widmen, die <span class="clisting">Circle</span> heißen soll. Markieren Sie dazu das Projekt <span class="ckursiv">GeometricObjects</span> im Projektmappen-Explorer, öffnen Sie das Kontextmenü, und wählen Sie <span class="cscreenelement">Hinzufügen </span>&#8226;<span class="cscreenelement"> Klasse ...</span> Tragen Sie den Namen der Datei im sich daraufhin öffnenden Dialog ein (<span class="ckursiv">Circle.cs</span>), und bestätigen Sie die Angaben. Das Projekt ist danach um die Klasse <span class="clisting">Circle</span> erweitert worden, weil der Dateibezeichner automatisch als neuer Bezeichner der Klasse
+                                                      verwendet wird. Dass Datei und Klasse den gleichen Namen haben, ist aber keine Notwendigkeit.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die neue Klasse hat die folgende Struktur: </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">namespace GeometricObjects<br xmlns="">{<span class="clistingfett"><br xmlns="">  class</span><a class="indexterm" id="dodtp2ff957d5-d18d-4ab5-8cc4-c858c71fca54"></a> Circle <br xmlns="">  {<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weil die Klasse später in Form einer Klassenbibliothek veröffentlicht werden soll,
+                                                      empfiehlt es sich, die Klasse um den Zugriffsmodifizierer <span class="clisting">public</span> zu ergänzen, also:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public class Circle <br></pre></div>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Sollte in der laufenden Instanz von Visual Studio 2012 die Projektmappe im Projektmappen-Explorer
+                                                         nicht zu sehen sein, können Sie das unter <span class="cscreenelement">Extras </span>&#8226;<span class="cscreenelement"> Optionen</span> einstellen (siehe Abbildung 3.2).
+                                                      </p>
+                                                   </div>
+                                                   <p><a href="bilder/03_02.png" rel="lightbox" title="Einstellung zur Anzeige der Projektmappe"><img class="bild" border="1" src="bilderklein/klein03_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 3.2  </span>Einstellung zur Anzeige der Projektmappe
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1b23cdd3-322a-4d72-aa9d-441ff2bc2198" name="dodtp1b23cdd3-322a-4d72-aa9d-441ff2bc2198"></a><h3 class="t3"><span class="cfett">3.2.3    </span><span class="cfett"> Die Deklaration von Objektvariablen</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpfe57172a-e619-437f-8d54-3a4fa9329957"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd0797071-958a-45ee-90d2-e0cead5ad2f1"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp58976733-34ec-4b3b-a9af-0dc3a7bcb83f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Klassendefinition beschreibt den Bauplan eines Objekts und gilt als Typdefinition.
+                                                      Um ein Objekt eines bestimmten Typs zu erzeugen, muss zunächst für jedes Objekt eine
+                                                      Objektvariable deklariert werden, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Objektvariable verweist auf einen Speicherbereich. Man sagt daher auch, dass
+                                                      eine Objektvariable ein Objekt referenziert, und spricht bei einer Objektvariablen
+                                                      von einer <span class="cfett">Instanz</span> oder von einer <span class="cfett">Referenz</span><span class="cfett"><a class="indexterm" id="dodtpf75100ff-3937-431f-b3d4-dafcb9a16e40"></a><a class="indexterm" id="dodtp98d2bf4a-b605-4350-9dab-6433360908f4"></a></span>. Tatsächlich ist unter einer Referenz ein Zeiger auf die Startadresse des Speicherbereichs
+                                                      zu verstehen, der alle Zustandsdaten enthält. Zustandsdaten sind die Eigenschaften,
+                                                      die das Objekt von einem anderen Objekt desselben Typs unterscheiden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der Deklaration der Objektvariablen <span class="clisting">kreis</span> wird der für das Objekt erforderliche Speicher angefordert, aber ein konkretes Objekt
+                                                      existiert noch nicht, denn die Objektvariable ist noch nicht initialisiert. Zur Initialisierung
+                                                      einer Objektvariablen bieten sich zwei gleichwertige Alternativen an:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">die zweizeilige Variante:
+                                                      <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis;<br xmlns="">kreis = new Circle();<br></pre></div>
+                                                      </li>
+                                                      <li class="pgp">die kürzere, einzeilige Schreibweise:
+                                                      <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle();<br></pre></div>
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beide weisen ein gemeinsames Merkmal auf: den Operator <span class="clisting">new</span>, der für die Konkretisierung eines Objekts verantwortlich ist. Erst mit <span class="clisting">new</span><span class="clisting"><a class="indexterm" id="dodtp0469cb00-e8bb-472e-8e0d-c06404ef3f1c"></a></span> beginnt die Existenz des Objekts. Dahinter verbirgt sich der Aufruf einer ganz bestimmten
+                                                      Methode, die als <span class="ckursiv">Konstruktor</span> bezeichnet wird. Wir werden uns weiter unten damit noch beschäftigen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können in einer Anweisung auch mehrere Variablen desselben Typs deklarieren. Dazu
+                                                      werden die Objektvariablen hintereinandergeschrieben und durch ein Komma voneinander
+                                                      getrennt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis1, kreis2, kreis3;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der C#-Compiler erlaubt auch die folgende Anweisung:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis1, kreis2, kreis3 = new Circle();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Allerdings wird nur die zuletzt angegebene Objektvariable <span class="clisting">kreis3</span> initialisiert. <span class="clisting">kreis1</span> und <span class="clisting">kreis2</span> gelten nur als deklariert und müssen gegebenenfalls zu einem späteren Zeitpunkt noch
+                                                      mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">kreis1 = new Circle();<br xmlns="">kreis2 = new Circle();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">initialisiert werden.</p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpd0797071-958a-45ee-90d2-e0cead5ad2f1" name="dodtpd0797071-958a-45ee-90d2-e0cead5ad2f1"></a><h3 class="t3"><span class="cfett">3.2.4    </span><span class="cfett"> Zugriffsmodifizierer einer Klasse</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpe796cd4a-a984-4f0b-9bd8-d9b5f8e9e23d"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp1d089659-d04e-49b3-b0e1-c392e9396987"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp85fe784e-1fa7-4bae-b8ee-a0019700a8cc"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1b23cdd3-322a-4d72-aa9d-441ff2bc2198"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Entwickeln Sie eine neue Klasse, müssen Sie einem Umstand besondere Beachtung schenken:
+                                                      Entwerfen Sie die Klasse, um sie ausschließlich in der Anwendung zu verwenden, in
+                                                      der die Klasse definiert ist, oder beabsichtigen Sie, die Klasse auch anderen Anwendungen
+                                                      zur Verfügung zu stellen? Diese Sichtbarkeit wird durch <span class="cfett">Zugriffsmodifizierer</span><span class="cfett"><a class="indexterm" id="dodtp452984bd-3494-40d6-874d-9956ae088b9d"></a><a class="indexterm" id="dodtp1f7c544b-f579-4915-83ba-89b8115fb5aa"></a></span> beschrieben. Bei Klassen spielen nur zwei eine Rolle: <span class="clisting">public</span> und <span class="clisting">internal</span>. 
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 3.1  </span>Die Zugriffsmodi<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp6001ad0f-d274-4783-be3b-ff8b7d649762"></a>fizierer einer Klasse
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Modifizierer
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">public</span><span class="clisting"><a class="indexterm" id="dodtp67249a24-8b1f-4b2b-bf59-dc9e24149861"></a><a class="indexterm" id="dodtp61e7a0cb-16d0-4f61-b002-a3b4e452e4d7"></a><a class="indexterm" id="dodtpe0e941be-a5b9-4139-ba26-cbd81a0d0ae5"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Instanziierbarkeit einer öffentlichen Klasse unterliegt keinerlei Beschränkungen.
+                                                                  Die Klasse kann dann auch aus anderen Anwendungen heraus instanziiert werden. Auswirkungen
+                                                                  kann dieser Zugriffsmodifizierer nur dann zeigen, wenn die Klasse innerhalb einer
+                                                                  Klassenbibliothek codiert wird.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">internal</span><span class="clisting"><a class="indexterm" id="dodtp50f15304-c7e7-4e79-a550-b8e1b0609e43"></a><a class="indexterm" id="dodtp8d3addf5-e0e6-4d32-bbfd-5d16bc7f2596"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Beabsichtigen Sie, die Sichtbarkeit einer Klasse auf die Anwendung zu beschränken,
+                                                                  in der die Klasse definiert ist, müssen Sie die Klasse <span class="clisting">internal</span> deklarieren. Aus einer anderen Anwendung heraus kann dann kein Objekt dieser Klasse
+                                                                  erzeugt werden.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Angabe des Zugriffsmodifizierers ist optional. Verzichten Sie darauf, gilt die
+                                                      Klasse als <span class="clisting">internal</span><span class="cfett"><a class="indexterm" id="dodtpb450d9c4-5f58-4cc6-9756-fb0d34a164e7"></a></span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp85fe784e-1fa7-4bae-b8ee-a0019700a8cc" name="dodtp85fe784e-1fa7-4bae-b8ee-a0019700a8cc"></a><h3 class="t3"><span class="cfett">3.2.5    </span><span class="cfett"> Splitten einer Klassendefinition mit »partial«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp6d4966df-6477-4bce-8a49-6144281dedf2"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpd1af1653-7315-49e5-b813-80b2bd310c49"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5c6ca303-fb86-40f3-95d5-686f1e498314"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd0797071-958a-45ee-90d2-e0cead5ad2f1"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Klassendefinitionen in .NET lassen sich über mehrere Quellcodedateien verteilen. Diese
+                                                      Programmiertechnik erlaubt es mehreren Entwicklern, gleichzeitig an der gleichen Klasse
+                                                      zu arbeiten. Das Prinzip der <span class="cfett">partiellen Klassen</span> wird auch von der Entwicklungsumgebung bei einigen Projektvorlagen genutzt, denn
+                                                      durch die Aufteilung des Klassencodes lässt sich der von Visual Studio automatisch
+                                                      generierte Code von dem Code, den der Entwickler schreibt, sauber trennen. Das verschafft
+                                                      nicht nur einen besseren Überblick über den eigenen Code, sondern reduziert auch potenzielle
+                                                      Probleme, die auftreten können, wenn der automatisch erzeugte Code vom Entwickler
+                                                      verändert werden sollte. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Partielle Klassendefinitionen sind dadurch gekennzeichnet, dass man den Modifizierer
+                                                      <span class="clisting">partial</span> vor alle Teildefinitionen setzt. Die Signatur muss in jeder Teildefinition natürlich
+                                                      identisch sein. Nehmen wir beispielsweise an, Sie möchten die Klasse <span class="clisting">Circle</span> auf die beiden Quellcodedateien <span class="ckursiv">Circle1.cs</span> und <span class="ckursiv">Circle2.cs</span> aufteilen. Dann müssten die Klassendefinitionen wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// in der Quellcodedatei 'Circle1.cs'<br></br>partial class Circle {<br xmlns="">  [...]<br xmlns="">}<br></br>// in der Quellcodedatei 'Circle2.cs'<br></br>partial class Circle {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 3.5  </span>Partielle Klassendefinition
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Einschränkung des Gebrauchs partieller Typen müssen Sie jedoch beachten: Alle
+                                                      Klassenfragmente müssen sich in derselben Anwendung befinden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp5c6ca303-fb86-40f3-95d5-686f1e498314" name="dodtp5c6ca303-fb86-40f3-95d5-686f1e498314"></a><h3 class="t3"><span class="cfett">3.2.6    </span><span class="cfett"> Arbeiten mit Objektreferenzen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp85fe784e-1fa7-4bae-b8ee-a0019700a8cc"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Prüfen auf Initialisierung</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Objektvariable gilt als initialisiert, wenn sie auf ein konkretes Objekt zeigt
+                                                      oder den Wert <span class="clisting">null</span> beschreibt. Verwechseln Sie <span class="clisting">null</span> nicht mit der Zahl »0«. <span class="clisting">null</span> gibt an, dass eine Variable zwar initialisiert ist, aber kein konkretes Objekt referenziert.
+                                                      <a class="indexterm" id="dodtpa9b28b96-6f5c-49b2-8039-5de86ab9e4f3"></a><a class="indexterm" id="dodtp68a5601f-8c53-4d0a-86e3-916920ee9824"></a>Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird zwar eine Objektvariable deklariert, sie ist aber noch nicht initialisiert und
+                                                      hat auch <span class="cfett">nicht</span> den Zustand <span class="clisting">null</span>. Sehen wir uns an, was passiert, wenn wir eine Objektvariable deklarieren und anschließend
+                                                      ohne vorhergehende Initialisierung auf <span class="clisting">null</span> testen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class Program</span> {<br xmlns="">  <span class="clistingfett">static void Main(string[] args</span>) {<br xmlns="">    Circle kreis;<br xmlns="">    if (kreis == null) {<br></br>      // die Variable "kreis" referenziert kein Objekt<br></br>      Console.WriteLine("Das Objekt existiert nicht!");<br xmlns="">      kreis = new Circle();<br xmlns="">    }<br xmlns="">    else<br></br>      // "kreis" ist eine gültige Objektreferenz<br></br>      Console.WriteLine("Das Objekt existiert");<br></br>    // weitere Anweisungen<br></br>    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 3.6  </span>Prüfen einer Referenz auf »null« (führt zu einem Fehler)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der C#-Compiler ist intelligent genug, um zu erkennen, dass die Objektreferenz <span class="clisting">kreis</span> vor ihrer Prüfung im <span class="clisting">if</span>-Statement zu keinem Zeitpunkt initialisiert worden ist, und bricht die Kompilierung
+                                                      mit einer Fehlermeldung ab.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine initialisierte Objektvariable liegt immer dann vor, wenn Sie ihr <span class="clisting">null</span> zuweisen oder mit <span class="clisting">new</span> ein neues Objekt erzeugen. Somit wird mit den beiden folgenden Anweisungen eine Objektvariable
+                                                      initialisiert:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = null;<br></br>Circle kreis = new Circle();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Objektvariable kann nur benutzt werden, wenn sie initialisiert ist. Objekteigenschaften
+                                                      oder Objektmethoden lassen sich allerdings nur dann aufrufen, wenn sich hinter einer
+                                                      initialisierten Objektvariablen auch tatsächlich ein Objekt verbirgt und nicht <span class="clisting">null</span>. Ist man sich über den Zustand der Variablen im Unklaren, muss dieser, wie im folgenden
+                                                      Codefragment gezeigt, überprüft werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if(kreis == null)<br></br>  // die Variable "kreis" referenziert kein konkretes Objekt<br></br>else<br></br>  // "kreis" ist ein gültiges Objekt<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ebenso gut können Sie auch mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if(kreis != null) [...]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">prüfen, ob <span class="clisting">kreis</span> ein gültiger Objektverweis ist. 
+                                                   </p>
+                                                   <h4 class="t4"> Freigabe eines Objekts</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Objekte beanspruchen den Speicher. Sie sollten daher ein Objekt freigeben, wenn Sie
+                                                      es nicht mehr benötigen. Dazu weisen Sie der Objektvariablen <span class="clisting">null</span> zu, wie im folgenden Codefragment zu sehen ist:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle();<br xmlns="">[...]<br xmlns="">kreis = null;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun steht Ihnen das Objekt <span class="clisting">kreis</span> nicht mehr zur Verfügung. Allerdings ist die Annahme falsch, dass das Objekt nun
+                                                      auch im Speicher gelöscht ist. Tatsächlich existiert es dort weiter, Sie können es
+                                                      nur nicht mehr aus dem Code heraus ansprechen. Zu einem späteren Zeitpunkt wird ein
+                                                      Mechanismus, die <span class="cfett">Garbage Collection</span>, alle nicht mehr referenzierten Objekte im Speicher erfassen, und der von ihnen beanspruchte
+                                                      Speicherplatz wird wieder freigeben. So wird es auch dem Objekt <span class="clisting">kreis</span> ergehen. Auf die Garbage Collection kommen wir in Kapitel 4 detailliert zu sprechen.
+                                                   </p>
+                                                   <h4 class="t4"> Mehrere Referenzen auf ein Objekt</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es kommt häufiger vor, dass mehrere Referenzen auf dasselbe Objekt zeigen. Betrachten
+                                                      Sie dazu das folgende Listing:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis1 = new Circle();<br xmlns="">Circle kreis2 = kreis1;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 3.7  </span>Ein Objekt mit zwei Referenzen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird die Variable <span class="clisting">kreis1</span> vom Typ <span class="clisting">Circle</span> deklariert und initialisiert. Anschließend wird <span class="clisting">kreis1</span> der Variablen <span class="clisting">kreis2</span> zugewiesen. Trotz zwei namentlich unterschiedlicher Referenzen liegt nur ein konkretes
+                                                      Objekt vor, das sowohl über <span class="clisting">kreis1</span> als auch über <span class="clisting">kreis2</span> angesprochen werden kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie einem Feld über eine der beiden Referenzen einen Wert zuweisen, beispielsweise
+                                                      mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">kreis1.Radius = 10<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">können Sie auch mit der zweiten Objektreferenz den Inhalt der Eigenschaft auswerten:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(kreis2.Radius)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An der Konsole wird »10« angezeigt, da <span class="clisting">kreis2</span> dasselbe Objekt referenziert wie <span class="clisting">kreis1</span>. Wird ein Objekt mehrfach referenziert, spielt es demnach keine Rolle, über welche
+                                                      Referenz der Eigenschaft ein Wert zugewiesen bzw. ein Feld ausgelesen wird &#8211; die Operation
+                                                      wird auf demselben Objekt ausgeführt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Geben Sie eine der Referenzen mit <span class="clisting">null</span> frei, können Sie über die zweite Referenz das Objekt immer noch ansprechen, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis1 = new Circle();<br xmlns="">Circle kreis2 = kreis1;<br xmlns="">kreis2.Radius = 20;<br xmlns="">kreis2 = null;<br xmlns="">Console.WriteLine(kreis1.Radius);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 3.8  </span>Objekt nach der Freigabe einer Referenz mit »null«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">An der Konsole wird immer noch der Inhalt der Eigenschaft <span class="clisting">Radius</span> ausgegeben, also 20. Erst mit der Freigabe der letzten gültigen Referenz auf ein
+                                                      Objekt wird dieses tatsächlich unwiederbringlich freigegeben.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs03_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="3  Das Klassendesign"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_03_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_03_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,801 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 39  Entitätsaktualisierung und Zustandsverwaltung ">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 39  Entitätsaktualisierung und Zustandsverwaltung ">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 39  Entitätsaktualisierung und Zustandsverwaltung
+         
+      </title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="38_005.html">
+      <link rel="next" href="1997_39_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_38_005.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_39_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276" class="navh">39 Entitätsaktualisierung und Zustandsverwaltung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_39_001.html#dodtp80272be3-d978-462c-a318-0ebf602c29f0" class="navh">39.1 Aktualisieren von Entitäten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_001.html#dodtpfc043da8-188a-4bf4-8a05-4b44b32a4aea" class="navh">39.1.1 Entitäten ändern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_001.html#dodtp4faddbf4-b201-4237-bed1-a554b5ff7b55" class="navh">39.1.2 Hinzufügen neuer Entitäten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_001.html#dodtpec65201b-73cc-4edd-abf3-58480c422632" class="navh">39.1.3 Löschen einer Entität</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_39_002.html#dodtpd39bff65-bbf1-49b1-bf8f-fc34cccc00b4" class="navnav">39.2 Der Lebenszyklus einer Entität im Objektkontext</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtp05d092ad-48e7-4157-915d-44e6360ab4f3" class="navnav">39.2.1 Der Zustand einer Entität</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtp324b17b2-b960-4604-a89f-4cc8aefc9e2e" class="navnav">39.2.2 Das Team der Objekte im Überblick</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtp0ff49ed7-c38b-4964-a328-e8860aa50ae7" class="navnav">39.2.3 Neue Entitäten im Objektkontext</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtp2c33eb62-222b-4fe1-afe2-064f463c2b5d" class="navnav">39.2.4 Die Zustände einer Entität</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtpc3d79f06-f30e-4831-aadc-3fc2600b77a9" class="navnav">39.2.5 Zusätzliche Entitäten in den Datencache laden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_002.html#dodtpffa3cbf6-1921-45ce-bf1c-a77b91d26b8f" class="navnav">39.2.6 Die Zustandsverfolgung mit »MergeOption« steuern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_39_003.html#dodtp83899a4c-e938-4d93-9139-4ea905d36530" class="navnav">39.3 Das »ObjectStateEntry«-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_003.html#dodtp71ad8763-5eb8-4749-9d3e-de85137a88bb" class="navnav">39.3.1 Die Current- und Originalwerte abrufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_003.html#dodtp20ff8324-6165-4fc1-8145-7f71af45e23c" class="navnav">39.3.2 Die Methode »TryGetObjectStateEntry«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_003.html#dodtp9de05047-890a-4511-97e9-cfc3c6ec6886" class="navnav">39.3.3 Abrufen bestimmter Gruppen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_003.html#dodtp6a44258c-53fa-4866-92ea-301642143496" class="navnav">39.3.4 Die Methode »GetModifiedProperties«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_39_004.html#dodtpf1f707b4-cb2f-41e6-af95-dc84d7c27a2e" class="navnav">39.4 Die Klasse »EntityKey«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_004.html#dodtpa6d0b5a7-02e4-472c-9da2-944b43b727ea" class="navnav">39.4.1 Die Methoden »GetObjectByKey« und »TryGetObjectByKey«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_39_005.html#dodtp0f1b2d99-8b9d-4d38-bbb1-046457f5803f" class="navnav">39.5 Komplexere Szenarien</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_005.html#dodtpb26e4f5e-5e14-4529-ba9c-2903979e323a" class="navnav">39.5.1 Die Methode »ChangeState«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_39_005.html#dodtpa53a0080-5093-47eb-8bae-028cbf831198" class="navnav">39.5.2 Die Methoden »ApplyCurrentChanges« und »ApplyOriginalChanges«</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276" name="dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276"></a><h1 class="t1"><span class="cfett">39 </span><span class="cfett"> Entitätsaktualisierung und Zustandsverwaltung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp80272be3-d978-462c-a318-0ebf602c29f0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Typ <span class="clisting">ObjectContext</span><span class="clisting"><a class="indexterm" id="dodtp993f0df2-5cff-4845-9eca-05a132c99834"></a></span> spielt im Entity Data Model eine eminent wichtige Rolle. Im vorherigen Kapitel haben
+                                                      wir ein Objekt dieses Typs dazu benutzt, einen Kontext zu beschreiben, um Abfragen
+                                                      gegen eine Datenbank abzusetzen. Die Resultate der Abfragen wurden materialisiert
+                                                      oder, mit anderen Worten, als Objekte an die Laufzeitumgebung zurückgeliefert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Allein mit der Abfrage von Daten werden Sie sich auf die Dauer nicht zufrieden geben.
+                                                      Sie wollen die Daten oder besser gesagt Entitäten sicherlich auch verändern oder gar
+                                                      löschen oder neue Entitäten erzeugen. Diese Änderungen sollen natürlich auch in der
+                                                      Datenquelle gespeichert werden. Das wird der Schwerpunkt in diesem Kapitel sein. Darüber
+                                                      hinaus werden wir einen Blick in den Hintergrund des Entity Frameworks werfen und
+                                                      verstehen, warum neben dem <span class="clisting">ObjectContext</span> und den Entitäten im Datencache weitere Objekte eine wichtige Rolle spielen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp80272be3-d978-462c-a318-0ebf602c29f0" name="dodtp80272be3-d978-462c-a318-0ebf602c29f0"></a><h2 class="t2"><span class="cfett">39.1    </span><span class="cfett"> Aktualisieren von Entitäten</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpfc043da8-188a-4bf4-8a05-4b44b32a4aea"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpfc043da8-188a-4bf4-8a05-4b44b32a4aea" name="dodtpfc043da8-188a-4bf4-8a05-4b44b32a4aea"></a><h3 class="t3"><span class="cfett">39.1.1    </span><span class="cfett"> Entitäten ändern</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4faddbf4-b201-4237-bed1-a554b5ff7b55"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp80272be3-d978-462c-a318-0ebf602c29f0"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Änderungen an einer Entität vorzunehmen ist sehr einfach. Zuerst gilt es, sich die
+                                                      Referenz auf die zu editierende Entität zu besorgen. Dazu kann man ein <span class="clisting">ObjectQuery</span>-Objekt entsprechend filtern oder das gewünschte Objekt direkt abfragen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var prod =(context.Products<br xmlns="">                    .Select(p =&gt; p)).SingleOrDefault(p =&gt; p.ProductID == 1);<br></br>  if (prod != null) {<br xmlns="">    prod.ProductName = "Aachener Printen";<br xmlns="">    prod.UnitsInStock = 0;<br></br>    // Änderung in die Datenbank schreiben<br></br>    context.SaveChanges();<br xmlns="">    Console.WriteLine("Datenbank aktualisiert...");<br xmlns="">  }<br xmlns="">  else<br xmlns="">    Console.WriteLine("Der Artikel wurde nicht gefunden.");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.1  </span>Änderung einer Entität mit anschließender Speicherung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein bestimmter Datensatz eines Produkts kann aus der Datenbank mit der Methode <span class="clisting">Single</span> oder <span class="clisting">SingleOrDefault</span> abgefragt werden. Beiden Methoden kann die Filterbedingung als Methodenargument übergeben
+                                                      werden (eine Alternative zur <span class="clisting">Where</span>-Erweiterungsmethode). <span class="clisting">Single</span> und <span class="clisting">SingleOrDefault</span> unterscheiden sich hinsichtlich der Reaktion, wenn das entsprechende Produkt in der
+                                                      Datenbank nicht gefunden wird: <span class="clisting">Single</span> löst eine Ausnahme aus, während <span class="clisting">SingleOrDefault</span> den Rückgabewert <span class="clisting">null</span> liefert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der LINQ-Abfrage von Listing 39.1 ist keine Selektion angegeben. Damit handelt
+                                                      es sich bei dem Resultat der LINQ-Abfrage um den Typ <span class="clisting">Product</span>. Im Code werden die beiden Eigenschaften <span class="clisting">ProductName</span> und <span class="clisting">UnitsInStock</span> der Entität geändert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Methode <span class="clisting">SaveChanges</span> des Objektkontextes wird die an der Entität vorgenommene Änderung in die Datenbank
+                                                      geschrieben. Dabei wird die Änderung in ein passendes SQL-UPDATE-Statement umgesetzt.
+                                                      Sie können sich dieses ansehen, wenn Sie im <span class="ckursiv">SQL Server Management Studio</span> das Tool <span class="ckursiv">SQL Server Profiler</span> starten und ein neues Ablaufprotokoll starten. Sie werden dann das folgende SQL-Statement
+                                                      finden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">exec sp_executesql N'update [dbo].[Products]<br xmlns="">set [ProductName] = @0, [UnitsInStock] = @1<br xmlns="">where ([ProductID] = @2)<br xmlns="">',N'@0 nvarchar(40),@1 smallint,@2 int',@0=N'Aachener Printen',@1=0,@2=1<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Erwähnenswert ist, dass nur die Spalten im UPDATE-Statement angegeben sind, die auch
+                                                      tatsächlich einen neuen Wert aufweisen. In unserer Abfrage handelt es sich um <span class="clisting">ProductName</span> und <span class="clisting">UnitsInStock</span>. Die WHERE-Klausel hingegen enthält nur die Angabe des Primärschlüssels des betroffenen
+                                                      Datensatzes.
+                                                   </p>
+                                                   <h4 class="t4"> Mehrere Entitäten editieren</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">SaveChanges</span> werden alle Änderungen, die an einer Entität vorgenommen worden sind, in die Datenbank
+                                                      geschrieben. Nun möchten wir mehrere Entitäten gleichzeitig ändern. Dazu stellen wir
+                                                      uns vor, wir hätten die Absicht, den Lagerbestand aller Artikel, von denen aktuell
+                                                      20 Stück oder weniger im Lager vorrätig sind, durch eine Nachbestellung auf 100 zu
+                                                      erhöhen. Natürlich könnten wir eine LINQ-Abfrage schreiben, die direkt die Produkte
+                                                      abfragt, die unserer Bedingung genügen. Lassen Sie uns aber annehmen, alle Produkte
+                                                      der Tabelle <span class="ckursiv">Products</span> würden sich bereits im Datencache befinden, so dass wir eine weitere LINQ-Abfrage
+                                                      gegen den Datencache absetzen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br></br>  // alle Produkte abfragen<br></br>  var query = context.Products.Select(p =&gt; p).ToList();<br></br>  // Produkte herausfiltern, deren Lagerbestand &lt;= 20 ist<br></br>  var prods = query<br xmlns="">              .Where(p =&gt; p.UnitsInStock &lt;= 20)<br xmlns="">              .Select(p =&gt; p);<br></br>  // Lagerbestand erhöhen<br></br>  foreach (var item in prods)<br xmlns="">    item.UnitsInStock = 100;<br xmlns="">  int count = context.SaveChanges();<br xmlns="">  Console.WriteLine("Datenbank aktualisiert ({0} Datensätze).", count)<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.2  </span>Lagerbestand mehrerer Artikel gleichzeitig erhöhen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Schritt besorgen wir uns mit der Methode <span class="clisting">ToList</span> alle Artikel. Die Methode sorgt dafür, dass die Abfrage sofort gegen die Datenbank
+                                                      abgesetzt und die Ergebnismenge gebildet wird. Anschließend bilden wir die Menge der
+                                                      Produkte, die unserer Bedingung hinsichtlich des Lagerbestands entsprechen, und erhöhen
+                                                      diesen auf 100.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">SaveChanges</span><span class="clisting"><a class="indexterm" id="dodtp706cabc1-bd4b-4e3a-945f-961427704663"></a></span> hat einen Rückgabewert, der darüber Auskunft gibt, wie viele Entitäten von der Änderung
+                                                      betroffen sind. Diesen Wert lassen wir uns an der Konsole zur Information ausgeben.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp4faddbf4-b201-4237-bed1-a554b5ff7b55" name="dodtp4faddbf4-b201-4237-bed1-a554b5ff7b55"></a><h3 class="t3"><span class="cfett">39.1.2    </span><span class="cfett"> Hinzufügen neuer Entitäten</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpec65201b-73cc-4edd-abf3-58480c422632"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp256be69e-823b-4e2b-8246-c1d4d6b4b45b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine neue Entität zu erzeugen und diese so weit vorzubereiten, dass sie in die
+                                                      Datenbank geschrieben werden kann, sind zwei Schritte notwendig:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Im ersten Schritt muss die neue Entität erstellt werden. Dazu wird entweder der Konstruktor
+                                                         aufgerufen oder die <span class="clisting">CreateXyz</span>-Methode, die von jeder Entitätsklasse bereitgestellt wird.
+                                                      </li>
+                                                      <li class="pgp">Ist eine neue Entität erzeugt, hat sie noch keinen Bezug zum Objektkontext und liegt
+                                                         noch verwaist im Heap. Daher ist die neue Entität im zweiten Schritt dem Objektkontext
+                                                         bekannt zu geben, damit dieser zu einem späteren Zeitpunkt das Objekt in die Datenbank
+                                                         schreiben kann.
+                                                      </li>
+                                                   </ul>
+                                                   <h4 class="t4"> Erzeugen einer neuen Entität</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns zuerst den ersten Schritt an, die Erzeugung eines neuen Entitätsobjekts.
+                                                      Dazu können Sie den parameterlosen Konstruktor der Entitätsklassen aufrufen und weisen
+                                                      den Eigenschaften die gewünschten Werte zu, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product product = new Product();<br xmlns="">product.UnitsInStock = 0;<br xmlns="">product.ProductName = "Schokolade";<br xmlns="">product.Discontinued = false;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben dem parameterlosen Standardkonstruktor ist in den Entitätsklassen auch eine
+                                                      statische Methode definiert (Factory-Methode), die eine neue Entität der entsprechenden
+                                                      Entitätsklasse erzeugt und deren Referenz über den Rückgabewert bereitstellt. In der
+                                                      Klasse <span class="clisting">Product</span> lautet diese Methode <span class="clisting">CreateProduct</span>, in der Klasse <span class="clisting">Category</span> analog dazu <span class="clisting">CreateCategory</span>. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Codefragment zeigt exemplarisch die vom Assistenten generierte Methode
+                                                      <span class="clisting">CreateProduct</span> in der Klasse <span class="clisting">Product</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static Product CreateProduct(global::System.Int32 productID, <br xmlns="">                                    global::System.String productName, <br xmlns="">                                    global::System.Boolean discontinued)<br xmlns="">{<br xmlns="">  Product product = new Product();<br xmlns="">  product.ProductID = productID;<br xmlns="">  product.ProductName = productName;<br xmlns="">  product.Discontinued = discontinued;<br xmlns="">  return product;<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Factory-Methoden<a class="indexterm" id="dodtpa41d95ab-77f8-4db0-a23b-2f24d81d5ec8"></a> haben im Gegensatz zum Standardkonstruktor den Vorteil, eine Parameterliste zu definieren,
+                                                      in der neben dem Primärschlüssel auch die Eigenschaften berücksichtigt werden, die
+                                                      nicht <span class="clisting">null</span> sein dürfen. Für die Entität vom Typ <span class="clisting">Product</span> sind das die Eigenschaften <span class="clisting">ProductName</span> und <span class="clisting">Discontinued</span>. Daher erwartet die Factory-Methode Werte für diese beiden Eigenschaften, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product newProduct = Product.CreateProduct(12, "Wurst", false);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Factory-Methode garantiert also, dass eine Entität erzeugt wird, die von der Datenbank
+                                                      bei der späteren Aktualisierung in jedem Fall akzeptiert wird, während beim Einsatz
+                                                      des Konstruktors den Eigenschaften explizit ein Wert zugewiesen werden muss. 
+                                                   </p>
+                                                   <h4 class="t4"> Hinzufügen zum Objektkontext mit der Methode »AddToXxx«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem Erzeugen einer neuen Entität muss diese dem Objektkontext übergeben werden,
+                                                      da nur die Entitäten beim Aufruf der Methode <span class="clisting">SaveChanges</span> erfasst werden, die dem Objektkontext bekannt sind. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Für jede im Entity Data Model definierte Entitätsklasse stellt das Entity Framework
+                                                      dem <span class="clisting">ObjectContext</span> dazu eine spezielle Methode bereit. In unserem Beispiel beschreibt das Entity Data
+                                                      Model (EDM) die beiden Entitäten <span class="clisting">Categories</span> und <span class="clisting">Products</span>. Infolgedessen stellt der Objektkontext die beiden Methoden
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">AddToCategories(Category category)</span></li>
+                                                      <li class="pgp"><span class="clisting">AddToProducts(Product product)</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">bereit. Die neue Entität wird dabei der Methode als Argument übergeben.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Listing 39.3 zeigt im Zusammenhang das Erzeugen eines neuen Artikels, das anschließende
+                                                      Hinzufügen zum Objektkontext und die Aktualisierung der Datenbank. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  Product product = new Product();<br xmlns="">  product.ProductName = "Schokolade";<br xmlns="">  product.Discontinued = false;<br></br>  // oder: Product product = Product.CreateProduct(99, "Kuchen", false);<br></br><span class="clistingfett">  context.AddToProducts(product);</span><br xmlns="">  context.SaveChanges();<br xmlns="">  Console.WriteLine("Datenbank aktualisiert...");<br xmlns="">  Console.WriteLine("Neue ID: {0}", product.ProductID);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.3  </span>Erzeugen einer neuen Entität mit anschließender DB-Aktualisierung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Augenblick scheint der Code des Listings nichts Besonderes zu bieten. Spektakulär
+                                                      ist aber beim genaueren Hinsehen die Ausgabe am Ende des Listings. Zur Erinnerung:
+                                                      Der Primärschlüssel der Tabelle <span class="ckursiv">Products</span> wird durch einen Autoinkrementwert beschrieben, der natürlich von der Datenbank erzeugt
+                                                      wird. An der Konsole wird nach der Aktualisierung tatsächlich der Wert angezeigt,
+                                                      den die Datenbank für den neuen Datensatz generiert hat. Demnach wird beim erfolgreichen
+                                                      Hinzufügen einer neuen Entität der zugeteilte Primärschlüssel automatisch vom <span class="clisting">ObjectContext</span> übernommen. Ein sehr nettes Feature, das uns einiges an Programmcode erspart.
+                                                   </p>
+                                                   <h4 class="t4"> Hinzufügen zum Objektkontext mit der Methode »AddObject«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt mit der Methode <span class="clisting">AddObject</span> noch eine zweite Variante, ein neues Objekt dem Objektkontext zu übergeben. Die Methode
+                                                      wird von zwei Klassen bereitgestellt:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">ObjectContext</span></li>
+                                                      <li class="pgp"><span class="clisting">ObjectSet</span></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beide Varianten unterscheiden sich nur in der Anzahl der erwarteten Argumente. Während
+                                                      <span class="clisting">AddObject</span> beim Aufruf auf die Instanz des Objektkontextes die Angabe des Bezeichners der Entitätenmenge
+                                                      und der Referenz auf die hinzuzufügende Entität erwartet, begnügt sich die Methode
+                                                      beim Aufruf auf <span class="clisting">ObjectSet</span> nur mit der Angabe der neuen Entität.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um ein neues Produkt, dessen Referenz <span class="ckursiv">product</span> lautet, dem Objektkontext bekannt zu geben, können Sie demnach entweder die Anweisung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">context.Products.AddObject(product);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">oder</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">context.AddObject("Products", product);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">codieren.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Wird ein Datensatz mit einem bereits existierenden Primärschlüssel zur Datenbank hinzugefügt,
+                                                         wird eine <span class="clisting">InvalidOperationException</span> ausgelöst. Das kann jedoch im Zusammenhang mit den beiden Entitäten <span class="clisting">Product</span> und <span class="clisting">Category</span> nicht passieren, da hier die Primärschlüssel durch Autoinkrementwerte beschrieben
+                                                         werden.
+                                                      </p>
+                                                   </div>
+                                                   <h4 class="t4"> Hinzufügen zu Master- und Detailtabelle</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im praktischen Alltag werden häufig Master- und Detailtabelle gleichzeitig ergänzt.
+                                                      Angenommen, es soll der Tabelle <span class="ckursiv">Products</span> ein Produkt hinzugefügt werden, das einer Kategorie zugeordnet werden muss, die noch
+                                                      nicht von der Tabelle <span class="ckursiv">Categories</span> beschrieben wird. In üblichen Szenarien wird man zuerst die neue Kategorie in die
+                                                      Tabelle <span class="ckursiv">Categories</span> eintragen und dann den neuen Schlüsselwert abrufen. Mit diesem kann anschließend
+                                                      auch das Produkt in die Tabelle <span class="ckursiv">Products</span> eingetragen werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Entity Framework ist wesentlich intelligenter, denn <span class="clisting">SaveChanges</span> macht das alles selbstständig. Das sehen wir uns auch sofort an einem Beispiel an.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  Category newCat = Category.CreateCategory(-1, "Backwaren");<br xmlns="">  Product newProduct = new Product();<br xmlns="">  newProduct.ProductID = 0;<br xmlns="">  newProduct.ProductName = "Jubel's Eierkuchen";<br xmlns="">  newProduct.Discontinued = false;<br xmlns="">  newProduct.Category = newCat;<br xmlns="">  <span class="clistingfett">context.AddToCategories(newCat);</span><br xmlns="">  context.SaveChanges();<br xmlns="">  Console.WriteLine("Datenbank aktualisiert ...");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.4  </span>Gleichzeitige Aktualisierung von Master- und Detailtabelle 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Listing werden zuerst eine neue Kategorie und ein neuer Artikel erzeugt. Die Referenz
+                                                      auf die neue Kategorie wird der Eigenschaft <span class="clisting">Category</span> des Artikels zugewiesen, und danach wird die neue Kategorie mit der Methode <span class="clisting">AddToCategories</span> dem Objektkontext bekannt gemacht. Weil der neue Artikel seinerseits selbst mit der
+                                                      neuen Kategorie in Beziehung steht, ordnet er sich ebenfalls automatisch dem Objektkontext
+                                                      zu.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Objektkontext weiß nun, dass zwei Entitäten hinzugefügt worden sind, die miteinander
+                                                      in Beziehung stehen, und aktualisiert beim Aufruf von <span class="clisting">SaveChanges</span> in der erforderlichen Reihenfolge: Zuerst fügt er die neue Kategorie zur Datenbank
+                                                      hinzu, anschließend das neue Produkt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Davon können wir uns im SQL Server Profiler überzeugen. Es werden der Reihe nach die
+                                                      entsprechenden SQL-UPDATE-Statements abgesetzt. Als Erstes wird
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">exec sp_executesql N'insert [dbo].[Categories]([CategoryName], <br xmlns="">                            [Description], [Picture])<br xmlns="">values (@0, null, null)<br xmlns="">select [CategoryID]<br xmlns="">from [dbo].[Categories]<br xmlns="">where @@ROWCOUNT &gt; 0 and [CategoryID] = scope_identity()',<br xmlns="">                          N'@0 nvarchar(15)',@0=N'Backwaren'<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">abgesetzt, danach</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">exec sp_executesql N'insert [dbo].[Products]([ProductName], ...)<br xmlns="">values (@0, null, @1, null, null, null, null, null, @2)<br xmlns="">select [ProductID]<br xmlns="">from [dbo].[Products]<br xmlns="">where @@ROWCOUNT &gt; 0 and [ProductID] = scope_identity()',N'@0 nvarchar(40),@1 int,@2<br xmlns="">bit',@0=N'Jubel''s Eierkuchen',@1=10,@2=0<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch hier werden automatisch die neuen, von der Datenbank generierten Primärschlüssel
+                                                      bezogen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpec65201b-73cc-4edd-abf3-58480c422632" name="dodtpec65201b-73cc-4edd-abf3-58480c422632"></a><h3 class="t3"><span class="cfett">39.1.3    </span><span class="cfett"> Löschen einer Entität</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf219fb10-18fd-4830-902a-8c6c51ab00b6"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kommen wir nun zur dritten Aktualisierungsmöglichkeit, dem Löschen. Die Methode dazu
+                                                      lautet <span class="clisting">DeleteObject</span><span class="clisting"><a class="indexterm" id="dodtp414efef1-a78c-4a48-979a-c291e0ccaaf7"></a></span>, die Sie entweder auf das <span class="clisting">ObjectContext</span>-Objekt aufrufen können oder auf das <span class="clisting">ObjectSet</span>. Damit wären die beiden folgenden Anweisungen möglich, falls <span class="ckursiv">product</span> die Referenz auf die zum Löschen anstehende Entität beschreibt: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">context.DeleteObject(product);<br xmlns="">context.Products.DeleteObject(product);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Natürlich wollen wir uns auch dazu ein komplettes Listing ansehen.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var prod = context.Products<br xmlns="">                    .Select(p =&gt; p).First(p =&gt; p.ProductID == 78);<br xmlns="">  <span class="clistingfett">context.DeleteObject(prod);</span><br xmlns="">  context.SaveChanges();<br xmlns="">  Console.WriteLine("Artikel gelöscht.");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.5  </span>Löschen einer Entität
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem Aufruf von <span class="clisting">SaveChanges</span> ist das betreffende Produkt in der Datenbank gelöscht.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Sollten Sie das Beispiel des Listings 39.5 erfolgreich ausführen wollen, sollten Sie
+                                                         berücksichtigen, dass Sie vorher auch einen neuen Artikel mit der <span class="clisting">ProductID = 78</span> hinzugefügt haben, denn ursprünglich weist die Tabelle <span class="ckursiv">Products</span> nur Produkte bis zum Schlüsselwert 77 auf.
+                                                      </p>
+                                                   </div>
+                                                   <h4 class="t4"> Löschen von in Beziehung stehenden Daten</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Löschen eines Datensatzes kann es passieren, dass gegen die referenzielle Integrität
+                                                      verstoßen wird, weil der zu löschende Datensatz in Beziehung zu mindestens einem weiteren
+                                                      Datensatz in einer anderen Tabelle steht und die Beziehung eine Löschweitergabe nicht
+                                                      erlaubt. In diesem Fall wird eine Ausnahme vom Typ <span class="clisting">UpdateException</span><span class="clisting"><a class="indexterm" id="dodtp47b4add8-4c90-4de5-a720-cf0b9884c41a"></a></span> ausgelöst. Das würde beispielsweise bei dem Versuch passieren, aus der <span class="ckursiv">Northwind</span>-Datenbank einen Artikel zu löschen, der Bestandteil einer Bestellung und somit in
+                                                      der Tabelle <span class="clisting">Order_Details</span> eingetragen ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um trotzdem das Ziel zu erreichen und den Artikel zu löschen, ist es notwendig, auch
+                                                      die in Beziehung stehenden Einträge aus der Tabelle <span class="ckursiv">Order_Details</span> zu löschen. Dazu wäre zuerst ein entsprechendes Entity Data Model Voraussetzung,
+                                                      in dem zumindest die beiden Entitäten <span class="clisting">Product</span> und <span class="clisting">Order_Detail</span> enthalten sind. Sie können dazu das bereits vorhandene EDM um die erforderliche zusätzliche
+                                                      Entität ergänzen, indem Sie im Bereich des Designers mit der rechten Maustaste das
+                                                      Kontextmenü öffnen und hier <span class="cscreenelement">Modell aus der Datenbank aktualisieren...</span> auswählen. Bereits im nächsten Schritt können Sie das EDM um die Entität <span class="clisting">Order_Details</span> ergänzen (siehe Abbildung 39.1).
+                                                   </p>
+                                                   <p><a href="bilder/39_01.png" rel="lightbox" title="Entity Data Model (EDM) für das Listing 39.6"><img class="bild" border="1" src="bilderklein/klein39_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 39.1  </span>Entity Data Model (EDM) für das Listing 39.6
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den Ablauf zum Löschen des Artikels sehen Sie im Listing 39.6. </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using (NorthwindEntities context = new NorthwindEntities())<br xmlns="">{<br xmlns="">  var prod = context.Products.First(p =&gt; p.ProductID == 2);<br xmlns="">  var orders = context.Order_Details<br xmlns="">                      .Where(order =&gt; order.ProductID == prod.ProductID);<br xmlns="">  context.DeleteObject(prod);<br xmlns="">  foreach (var item in orders)<br xmlns="">    context.DeleteObject(item);<br xmlns="">  context.SaveChanges();<br xmlns="">  Console.WriteLine("Artikel (samt der Bestellungen) gelöscht.");<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 39.6  </span>Löschen von in Beziehung stehenden Daten
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird das zu löschende Produkt in den Objektkontext geladen, und mit dessen
+                                                      ID-Wert werden die entsprechenden Bestellungen abgerufen. Normalerweise würde man
+                                                      zuerst die Bestellungen löschen und anschließend das Produkt, aber beim Entity Framework
+                                                      spielt die Löschreihenfolge keine Rolle: Der Objektkontext sorgt für die richtige
+                                                      Löschreihenfolge beim Ausführen der Methode <span class="clisting">SaveChanges</span>. Sie können sich davon wieder im Ablaufverfolgungsprotokoll des SQL Server Profilers
+                                                      überzeugen. Demnach werden zuerst alle Bestellungen mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">exec sp_executesql N'delete [dbo].[Order Details]<br xmlns="">where (([OrderID] = @0) and ([ProductID] = @1))',<br xmlns="">          N'@0 int,@1 int',@0=11077,@1=2<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">gelöscht. Anschließend kommt es zum Löschen des entsprechenden Artikels.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">exec sp_executesql N'delete [dbo].[Products]<br xmlns="">where ([ProductID] = @0)',N'@0 int',@0=2<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist die Beziehung mit Löschweitergabe zwischen zwei Tabellen definiert, ist es sehr
+                                                      einfach, diese zu nutzen. Angenommen, in der <span class="ckursiv">Northwind</span>-Datenbank wäre das bei der Beziehung zwischen den beiden Tabellen <span class="ckursiv">Products</span> und <span class="ckursiv">Order_Details</span> der Fall. Dann würde es genügen, die betreffende <span class="clisting">Product</span>-Entität im Objektkontext zu löschen und die Methode <span class="clisting">SaveChanges</span> aufzurufen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var product = context.Products.First(prod =&gt; prod.ProductID == 32);<br xmlns="">context.DeleteObject(product);<br xmlns="">context.SaveChanges();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Datenbank würden automatisch alle entsprechenden Einträge in der Tabelle <span class="ckursiv">Order_Details</span> ebenfalls gelöscht.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs39_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="39  Entitätsaktualisierung und Zustandsverwaltung "><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_38_005.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_39_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

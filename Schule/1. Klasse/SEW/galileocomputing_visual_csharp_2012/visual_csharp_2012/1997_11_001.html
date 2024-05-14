@@ -1,0 +1,715 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 11  LINQ">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 11  LINQ">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 11  LINQ</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="10_010.html">
+      <link rel="next" href="1997_11_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_10_010.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_11_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894" class="navh">11 LINQ</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_001.html#dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f" class="navh">11.1 Was ist LINQ?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_001.html#dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f" class="navh">11.1.1 Verzögerte Ausführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_001.html#dodtpc02fe938-8752-4e1f-960f-a46246dcea5f" class="navh">11.1.2 LINQ-Erweiterungsmethoden an einem Beispiel</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_002.html#dodtp0712318c-14ab-406a-8c90-4994b115ea99" class="navnav">11.2 LINQ to Objects</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_002.html#dodtpabc1b196-a63c-423f-a3e7-f17d4671f7c6" class="navnav">11.2.1 Musterdaten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_002.html#dodtp051bd023-221e-48a7-87fd-abaf24fca8ab" class="navnav">11.2.2 Die allgemeine LINQ-Syntax</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_003.html#dodtpb8f86eb9-307c-453b-b940-83e81ba865a8" class="navnav">11.3 Die Abfrageoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c" class="navnav">11.3.1 Übersicht der Abfrageoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpd556d050-54eb-419a-9cd3-41575bae4e2a" class="navnav">11.3.2 Die »from«-Klausel</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp7c890ecf-d31b-4b7b-b367-9b500b73afc0" class="navnav">11.3.3 Mit »where« filtern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp6a326715-be87-4425-b902-3fda04857423" class="navnav">11.3.4 Die Projektionsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba" class="navnav">11.3.5 Die Sortieroperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp6006a3be-1c80-413d-92d8-8705f795f6a9" class="navnav">11.3.6 Gruppieren mit »GroupBy«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpc8138909-0e17-458c-9da3-255b545dfa83" class="navnav">11.3.7 Verknüpfungen mit »Join«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp9d3d8596-3745-41b7-8dac-48cd0c18a2c6" class="navnav">11.3.8 Die Set-Operatoren-Familie</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpf273c0f9-8ff2-44c4-813c-0591776ce992" class="navnav">11.3.9 Die Familie der Aggregatoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpcfee0c09-0424-4a84-b901-6ff824f695ce" class="navnav">11.3.10 Quantifizierungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpcb6db722-d7e4-47a2-bdf1-2a1c496ae3d9" class="navnav">11.3.11 Aufteilungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp4d614679-ec8d-4166-9faa-7403c7e7b767" class="navnav">11.3.12 Die Elementoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp27e46362-bb79-4b42-872e-9a691cb97f37" class="navnav">11.3.13 Die Konvertierungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp0c006063-d863-416e-b792-4cc39129b894" name="dodtp0c006063-d863-416e-b792-4cc39129b894"></a><h1 class="t1"><span class="cfett">11 </span><span class="cfett"> LINQ</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp443f4707-7cdd-488a-a1bc-ea43a9e411a8"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f" name="dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f"></a><h2 class="t2"><span class="cfett">11.1    </span><span class="cfett"> Was ist LINQ?</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp0c006063-d863-416e-b792-4cc39129b894"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">LINQ (<span class="ckursiv">Language Integrated Query</span>) ist eine Sprachergänzung von .NET, die mit .NET 3.5 eingeführt worden ist. Die Idee,
+                                                      die sich hinter LINQ verbirgt, ist, die Abfrage von Daten aus verschiedenen Datenquellen
+                                                      zu vereinfachen. Zu diesem Zweck stellt LINQ ein Modell zur Verfügung, mit dem einheitlich
+                                                      auf Daten aus verschiedensten Datenquellen zugegriffen werden kann, beispielsweise
+                                                      auf SQL-Datenbanken, auf XML-Dokumente und .NET-Auflistungen. Das Besondere ist dabei,
+                                                      dass Abfragen direkt als Code in C# oder andere .NET-Sprachen eingebunden werden können
+                                                      und nicht nur wie bisher als Zeichenfolge. Infolgedessen muss man also nicht mehr
+                                                      zwangsläufig SQL lernen, um Datenbanken abzufragen, oder XML Query, um Daten aus einem
+                                                      XML-Dokument zu lesen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Syntax von LINQ ähnelt verblüffend den Abfragebefehlen von SQL, und so sind auch
+                                                      in LINQ Sprachelemente wie <span class="clisting">select</span>, <span class="clisting">from</span> oder <span class="clisting">where</span> zu finden. Ein weiterer Vorteil von LINQ ist, dass dieses Abfragemodell als Teil
+                                                      der Sprache kompiliert werden kann und damit von IntelliSense unterstützt wird. Anders
+                                                      als etwa bei SQL-Abfragen, die erst zur Laufzeit ausgeführt werden, können Fehler
+                                                      so viel schneller gefunden werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Beispiel soll Ihnen einen ersten Eindruck von LINQ vermitteln. </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 11\FirstLINQSample</span><br></br><span class="clistingfett">class Program</span><br xmlns="">{<br xmlns="">  static void Main(string[] args)<br xmlns="">  {<br xmlns="">    Person[] persons = {<br xmlns="">                          new Person { Name = "Meier", Age = 34 },<br xmlns="">                          new Person { Name = "Müller", Age = 51 },<br xmlns="">                          new Person { Name = "Schmidt", Age = 30 },<br xmlns="">                          new Person { Name = "Fischer", Age = 25 },<br xmlns="">                          new Person { Name = "Schulz", Age = 67 },<br xmlns="">                        };<br xmlns="">    var query = from pers in persons<br xmlns="">                where pers.Age &gt;= 50<br xmlns="">                select pers;<br xmlns="">    foreach (var item in query)<br xmlns="">      Console.WriteLine("{0,-8}{1}", item.Name, item.Age);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">class Person</span><br xmlns="">{<br xmlns="">  public string Name { get; set; }<br xmlns="">  public int Age { get; set; }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.1  </span>Beispielprogramm »FirstLINQSample«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Beispiel wird ein Array aus mehreren Personen gebildet, das anschließend in der
+                                                      Weise gefiltert wird, dass nur alle Personen, die 50 Jahre alt sind oder älter, in
+                                                      die Ergebnismenge aufgenommen werden. Zur Bildung der Ergebnismenge wird ein LINQ-Ausdruck
+                                                      verwendet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = from pers in persons<br xmlns="">            where pers.Age &gt;= 50<br xmlns="">            select pers;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.2  </span>Abfragesyntax
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die von LINQ verwendete Syntax ähnelt der, die Sie vielleicht von SQL her kennen.
+                                                      An dieser Stelle sei bereits angedeutet, dass auch die Formulierung eines LINQ-Ausdrucks
+                                                      mit Erweiterungsmethoden möglich ist und zum gleichen Resultat führt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = persons<br xmlns="">            .Where(p =&gt; p.Age &gt;= 50)<br xmlns="">            .Select(p =&gt; p);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.3  </span>Erweiterungsmethodensyntax
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es spielt keine Rolle, woher die Daten in der Liste der Personen stammt: Es könnte
+                                                      sich zum Beispiel auch um die Ergebnismenge einer Datenbankabfrage handeln. LINQ ist
+                                                      in jedem Fall datenquellenneutral.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Einführung von LINQ mit C# 3.5 zwang das .NET-Entwicklerteam dazu, die .NET-Sprachen
+                                                      zu ergänzen. Dazu gehören Lambda-Ausdrücke, implizite Typisierung, Objektinitialisierer,
+                                                      anonyme Typen und Erweiterungsmethoden. Diese Sprachfeatures haben wir uns in den
+                                                      vergangenen Kapiteln bereits angesehen.  Sie können LINQ-Abfragen in C# mit SQL Server-Datenbanken,
+                                                      XML-Dokumenten, ADO.NET-Datasets schreiben sowie jede Auflistung von Objekten abfragen.
+                                                      Es gibt allerdings dabei eine wichtige Bedingung zu beachten: Die Liste muss das Interface
+                                                      <span class="clisting">IEnumerable&lt;T&gt;</span> implementieren. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f" name="dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f"></a><h3 class="t3"><span class="cfett">11.1.1    </span><span class="cfett"> Verzögerte Ausführung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc02fe938-8752-4e1f-960f-a46246dcea5f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">LINQ-Abfragen haben ein besonderes Charakteristikum. Sie werden nämlich nicht sofort
+                                                      ausgeführt, sondern erst, wenn die Ergebnismenge benötigt wird. Das könnte beispielsweise
+                                                      eine <span class="clisting">foreach</span>-Schleife sein, innerhalb deren die Abfrageresultate verarbeitet werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Greifen Sie wiederholt auf die Ergebnismenge zu, wird die Abfrage jedes Mal erneut
+                                                      ausgeführt &#8211; die Ergebnismenge wird also nicht gecacht. Hat sich in der Zwischenzeit
+                                                      die Datenquelle geändert, erhalten Sie die aktualisierten Daten und profitieren von
+                                                      diesem Verhalten. Andererseits geht die erneute Ausführung natürlich auch zu Lasten
+                                                      der Leistung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ob das Verhalten der verzögerten Ausführung positiv oder eher negativ zu bewerten
+                                                      ist, hängt vom Einzelfall ab. In einer Anwendung, die mehrfach auf die Abfrageresultate
+                                                      zugreifen muss, können Sie mit den Methoden <span class="clisting">ToArray</span>, <span class="clisting">ToList</span> oder <span class="clisting">ToDictionary</span> die Ergebnismenge zwischenspeichern. Keine Angst, Sie haben noch nichts verpasst,
+                                                      denn auf die genannten Methoden werden wir später noch eingehen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc02fe938-8752-4e1f-960f-a46246dcea5f" name="dodtpc02fe938-8752-4e1f-960f-a46246dcea5f"></a><h3 class="t3"><span class="cfett">11.1.2    </span><span class="cfett"> LINQ-Erweiterungsmethoden an einem Beispiel</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Fundament von LINQ sind die zahlreichen Erweiterungsmethoden, die im Namespace
+                                                      <span class="clisting">System.Linq</span> definiert sind. Ehe wir uns eingehender mit LINQ beschäftigen, möchte ich Ihnen zeigen,
+                                                      wie eine LINQ-Erweiterungsmethode zustande kommt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu erzeugen wir ein <span class="clisting">String</span>-Array mit mehreren Vornamen. Unser Ziel soll es sein, nur die Namen auszugeben, die
+                                                      einer bestimmten Maximallänge entsprechen. Für die Ausgabe soll eine Methode namens
+                                                      <span class="clisting">GetShortNames</span> implementiert werden. Normalerweise würde die Überprüfung der Länge der einzelnen
+                                                      Namen in dieser Methode codiert. Um möglichst flexibel zu sein, wird die Überprüfung
+                                                      in eine andere Methode ausgelagert, die <span class="clisting">FilterName</span> lauten soll. Der Methode <span class="clisting">GetShortNames</span> wird neben dem Zeichenfolge-Array auch ein Delegat auf <span class="clisting">FilterName</span> übergeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class Program </span>{<br xmlns="">  delegate bool FilterHandler(string name);    <br></br><span class="clistingfett">  static void Main(string[] args) </span>{<br xmlns="">    string[] arr = { "Peter", "Uwe", "Willi", "Udo", "Gernot" };<br xmlns="">    FilterHandler del = FilterName;<br xmlns="">    GetShortNames(arr, del);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br><span class="clistingfett">  static void GetShortNames(string[] arr, FilterHandler del) </span>{<br xmlns="">    foreach (string name in arr)<br xmlns="">      if (del(name)) Console.WriteLine(name);<br xmlns="">  }<br></br><span class="clistingfett">  static bool FilterName(string name) </span>{<br xmlns="">    if (name.Length &lt; 4) return true;<br xmlns="">    return false;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.4  </span>Filtern eines Zeichenfolgearrays
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">So weit funktioniert der Code einwandfrei. Was würden Sie aber machen, wenn Sie in
+                                                      einem anderen Kontext nicht die Namen selektieren wollen, die weniger als vier Buchstaben
+                                                      aufweisen, sondern beispielsweise mehr als sieben? Richtig, Sie würden eine weitere
+                                                      Methode bereitstellen, die genau das leistet. Und nun eine ganz gemeine Frage: Wie
+                                                      viele unterschiedliche Methoden wären Sie bereit zu implementieren, um möglichst viele
+                                                      Filter zu berücksichtigen?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es geht auch anders, denn dasselbe Ergebnis wie in Listing 11.4 erreichen Sie, wenn
+                                                      Sie einen Lambda-Ausdruck benutzen. Der Code zur Überprüfung der Zeichenfolgelänge
+                                                      wird hierbei direkt in der Parameterliste von <span class="clisting">GetShortNames</span> aufgeführt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    string[] arr = { "Peter", "Uwe", "Willi", "Udo" };<br xmlns="">    GetShortNames(arr, name =&gt; name.Length &lt; 4);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br><span class="clistingfett">  static void GetShortNames&lt;T&gt;(T[] names, Func&lt;T, bool&gt; getNames) </span>{<br xmlns="">    foreach (T name in names)<br xmlns="">      if (getNames(name))<br xmlns="">        Console.WriteLine(name);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.5  </span>Filtern eines Zeichenfolgearrays mit einem Lambda-Ausdruck
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie bitte den zweiten Parameter der Methode <span class="clisting">GetShortNames</span>. Dessen Typ <span class="clisting">Func</span><span class="clisting"><a class="indexterm" id="dodtpa0f845e8-9e9b-4372-9e30-d75ceca0e868"></a>&lt;T, bool&gt;</span> wird durch das .NET Framework bereitgestellt. Dabei handelt es sich um einen generischen
+                                                      Delegaten. Schauen wir uns dessen Definition an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public delegate TResult Func&lt;T, TResult&gt;(T arg)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Delegat kann auf eine Methode zeigen, die einen Parameter entgegennimmt. Der generische
+                                                      Typ <span class="clisting">T</span> beschreibt den Typ des Übergabeparameters, <span class="clisting">TResult</span> den Typ der Rückgabe. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Im .NET Framework sind noch zahlreiche weitere <span class="clisting">Func</span>-Delegaten vordefiniert. Damit werden Methoden beschrieben, die nicht nur einen, sondern
+                                                         bis zu 16 Parameter definieren. Eines haben aber alle <span class="clisting">Func</span>-Definitionen gemeinsam: Der letzte generische Typparameter beschreibt immer den Datentyp
+                                                         der Ergebnismenge.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht erinnern Sie sich: Ein Delegat kann auch durch einen Lambda-Ausdruck beschrieben
+                                                      werden. Das haben wir in Listing 11.5 durch die Übergabe von
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Func&lt;T, bool&gt; getNames = name =&gt; name.Length &lt; 4<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">genutzt. Der Übergabewert ist hier ein <span class="clisting">String</span>, das Ergebnis der Operation ein boolescher Wert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wichtig ist, dass Sie erkennen, dass die Methode <span class="clisting">GetShortNames</span> jetzt mit ganz unterschiedlichen Filtern aufgerufen werden kann. Vielleicht wollen
+                                                      Sie beim nächsten Mal alle Namen selektieren, die mit dem Buchstaben »H« beginnen.
+                                                      Kein Problem: Sie brauchen dazu keine weitere Methode zu schreiben und können die
+                                                      vorliegende benutzen, da der Lambda-Ausdruck in der Methode <span class="clisting">GetShortNames</span> zur Auswertung herangezogen wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Rufen wir uns an dieser Stelle noch einmal das einführende LINQ-Beispiel des Listings
+                                                      11.3 ins Gedächtnis zurück:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = persons<br xmlns="">            .Where(p =&gt; p.Age &gt;= 50)<br xmlns="">            .Select(p =&gt; p);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sieht die Filterung mit <span class="clisting">GetShortNames</span> in Listing 11.5 nicht bereits sehr ähnlich der Filterung mit der <span class="clisting">Where</span>-Methode aus? 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt aber noch einen entscheidenden Unterschied: Wir übergeben der Methode <span class="clisting">GetShortNames</span> die zu sortierende Liste als Argument. Besser wäre es, wir würden die Methode auf
+                                                      das Listenobjekt aufrufen. Dazu muss die Methode als Erweiterungsmethode definiert
+                                                      werden, wobei sich noch die Frage stellt, welche Klassen erweitert werden sollen und
+                                                      welchen Rückgabewert die Methode haben soll. Um die Allgemeingültigkeit der Methode
+                                                      sicherzustellen, legen wir fest, dass die Methode die Klassen erweitern soll, die
+                                                      <span class="clisting">IEnumerable&lt;T&gt;</span> implementieren. Diese Schnittstelle soll auch gleichzeitig den Rückgabewert beschreiben,
+                                                      um damit zu gewährleisten, dass die Ergebnismenge in einer <span class="clisting">foreach</span>-Schleife durchlaufen werden kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Überlegungen erfordern es, dass der Code in Listing 11.5 an die Erweiterungsmethode
+                                                      <span class="clisting">GetShortNames</span> angepasst werden muss. Bekanntlich müssen Erweiterungsmethoden in einer statischen
+                                                      Klasse definiert sein. Im folgenden Listing ist daher eine weitere Klasse definiert,
+                                                      die unsere Erweiterungsmethode enthält. Darüber hinaus wird der Bezeichner <span class="clisting">GetShortNames</span> in <span class="clisting">Where</span> geändert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 11\UserDefinedFilter</span><br></br>using System;<br xmlns="">using System.Collections.Generic;<br xmlns="">using System.Collections;<br></br><span class="clistingfett">class Program </span>{<br xmlns="">  static void Main(string[] args)<br xmlns="">  {<br xmlns="">    string[] arr = { "Peter", "Uwe", "Willi", "Udo" };<br xmlns="">    IEnumerable&lt;string&gt; query = arr.Where(name =&gt; name.Length &lt; 4);<br xmlns="">    foreach (string item in query)<br xmlns="">      Console.WriteLine(item);<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">static class Extensionmethod </span>{<br></br>  // Erweiterungsmethode<br></br>  public  static IEnumerable&lt;T&gt; Where&lt;T&gt;(this IEnumerable&lt;T&gt; liste, <br xmlns="">                                                 Func&lt;T, bool&gt; filter)<br xmlns="">  {<br xmlns="">    List&lt;T&gt; result = new List&lt;T&gt;();<br xmlns="">    foreach (T name in liste)<br xmlns="">      if (filter(name))<br xmlns="">        result.Add(name);            <br xmlns="">    return result;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.6  </span>Beispielprogramm »UserDefinedFilter«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Resultat zur Laufzeit wird dasselbe wie vorher sein. Allerdings haben wir nun
+                                                      eine Erweiterungsmethode entwickelt, die nicht nur ein <span class="clisting">String</span>-Array nach einer bestimmten Bedingung filtern kann, sondern jede x-beliebige Liste
+                                                      &#8211; vorausgesetzt, sie implementiert das Interface <span class="clisting">IEnumerable&lt;T&gt;</span>. Tatsächlich funktioniert die LINQ-Erweiterungsmethode <span class="clisting">Where</span> in derselben Weise. Werfen wir deshalb einen Blick auf die Definition der Methode
+                                                      von LINQ:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static IEnumerable&lt;TSource&gt; <span class="clistingfett">Where</span>&lt;TSource&gt;(<br></br>                          this IEnumerable&lt;TSource&gt; source, <br></br>                          Func&lt;TSource, bool&gt; predicate);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der erste Parameter kennzeichnet <span class="clisting">Where</span> als Erweiterungsmethode für alle Typen, die die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span><span class="clisting"><a class="indexterm" id="dodtp7d0e9381-4a73-459e-a58e-eb215c6cd025"></a></span> implementieren. Der zweite Parameter ist ein Delegat, der im ersten generischen Parameter
+                                                      den in der Liste enthaltenen Typ beschreibt. Der zweite Typparameter gibt den Rückgabewert
+                                                      <span class="clisting">Boolean</span> des Delegaten an.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs11_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="11  LINQ"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_10_010.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_11_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

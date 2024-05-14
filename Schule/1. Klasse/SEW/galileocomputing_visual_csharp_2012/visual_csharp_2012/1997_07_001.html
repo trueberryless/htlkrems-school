@@ -1,0 +1,1267 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 7  Fehlerbehandlung und Debugging">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 7  Fehlerbehandlung und Debugging">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 7  Fehlerbehandlung und Debugging</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="06_003.html">
+      <link rel="next" href="1997_07_002.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_06_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_07_002.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478" class="navh">7 Fehlerbehandlung und Debugging</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_001.html#dodtp475e5173-bcef-40de-a2cc-d388e3c618b3" class="navh">7.1 Laufzeitfehler behandeln</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp57b107c0-13dc-4413-8357-e3c031d81b3c" class="navh">7.1.1 Laufzeitfehler erkennen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbf02d593-9c1e-4242-9252-46f4cd23489f" class="navh">7.1.2 Die »try...catch«-Anweisung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74" class="navh">7.1.3 Behandlung mehrerer Exceptions</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c" class="navh">7.1.4 Die Reihenfolge der »catch«-Zweige</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b" class="navh">7.1.5 Ausnahmen in einer Methodenaufrufkette</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp45ce06b3-1ee6-4902-95ea-0880f225783d" class="navh">7.1.6 Ausnahmen werfen oder weiterleiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4" class="navh">7.1.7 Die »finally«-Anweisung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp3901077a-f470-4b3c-87c6-e9d70630005a" class="navh">7.1.8 Die Klasse »Exception«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpe4453647-e7ce-4d22-b3da-73aab09d561c" class="navh">7.1.9 Benutzerdefinierte Ausnahmen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_002.html#dodtp38a43e10-de8f-40f7-9787-04abea14189a" class="navnav">7.2 Debuggen mit Programmcode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2" class="navnav">7.2.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtpe5b5924d-4854-48ca-8dcf-f375fa2b87eb" class="navnav">7.2.2 Die Klasse »Debug«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtpe1b9477a-c95e-43e2-842d-cce7a9ed7b02" class="navnav">7.2.3 Die Klasse »Trace«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtp216b19f0-bd9d-4e0e-9bcf-292ee1cdcbf6" class="navnav">7.2.4 Bedingte Kompilierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_003.html#dodtpc45667f3-2b6e-4749-a023-38c2d740cb99" class="navnav">7.3 Fehlersuche mit Visual Studio 2012</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtp4a442b80-337e-4d5f-90c1-524153ebfc81" class="navnav">7.3.1 Debuggen im Haltemodus</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtp84387642-bfd0-4b42-bb38-431cbbeed610" class="navnav">7.3.2 Das »Direktfenster«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtpe9c778a3-b22d-4d9c-aa56-722fc69dac3b" class="navnav">7.3.3 Weitere Alternativen, um Variableninhalte zu prüfen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><a id="dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478" name="dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478"></a><h1 class="t1"><span class="cfett">7 </span><span class="cfett"> Fehlerbehandlung und Debugging</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp475e5173-bcef-40de-a2cc-d388e3c618b3"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h1><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp475e5173-bcef-40de-a2cc-d388e3c618b3" name="dodtp475e5173-bcef-40de-a2cc-d388e3c618b3"></a><h2 class="t2"><span class="cfett">7.1    </span><span class="cfett"> Laufzeitfehler behandeln</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp57b107c0-13dc-4413-8357-e3c031d81b3c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fast alle Beispiele dieses Buches waren bisher so angelegt, als könnte nie ein Fehler
+                                                      auftreten. Aber Ihnen ist es beim Testen eines Beispielcodes sicherlich schon passiert,
+                                                      dass Sie anstatt einer Zahl einen Buchstaben eingegeben haben oder umgekehrt &#8211; genau
+                                                      entgegengesetzt zu dem, was das Programm in diesem Moment erwartete. Sie wurden danach
+                                                      mit einem Laufzeitfehler konfrontiert, was zur sofortigen Beendigung des Programms
+                                                      führte. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Umstand ist natürlich insbesondere dann unangenehm und inakzeptabel, wenn bei
+                                                      einem Endanwender ein solcher Fehler auftritt. Sollten diesem dann noch Daten unwiederbringlich
+                                                      verloren gegangen sein, ist der Ärger vorprogrammiert. Sie haben einen unzufriedenen
+                                                      Kunden, der an Ihren Qualitäten als Entwickler zweifelt, und anschließend noch die
+                                                      undankbare Aufgabe, den oder gar die Fehler zu lokalisieren und in Zukunft auszuschließen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Welcher Entwickler kann zuverlässig voraussehen, welche Eingabe ein Anwender tätigt
+                                                      und vielleicht gar noch in welcher Reihenfolge, wenn er die grafische Benutzeroberfläche
+                                                      einer Applikation bedient? Welcher Anwender kann nach einem Fehler genau sagen, welche
+                                                      Arbeitsschritte und Eingaben zu der Fehlerauslösung geführt haben, welche Programme
+                                                      er über das Internet installiert hat usw.? Anwender sind fehlerfrei, sie machen alles
+                                                      richtig, nur das Programm ist schlecht. Seien wir doch einmal ehrlich zu uns selbst:
+                                                      Gibt es ein Softwarehaus, das von sich selbst behaupten kann, unter der Last des Termindrucks
+                                                      nicht schon mindestens einmal ein Programm ausgeliefert zu haben, das eine unzureichende
+                                                      Testphase durchlaufen hat?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt aber auch eine Fehlergattung, die nicht das unplanmäßige Beenden des Programms
+                                                      nach sich zieht, sondern nur falsche Ergebnisse liefert: die logischen Fehler. Dies
+                                                      ist deshalb sehr unangenehm, weil solche Fehler oft sehr spät erkannt werden und weitreichende
+                                                      Konsequenzen haben können. Denken Sie einmal daran, welche Auswirkungen es haben könnte,
+                                                      wenn ein Finanz- und Buchhaltungsprogramm (FIBU) einen falschen Verkaufspreis ermitteln
+                                                      würde. Es kommt nicht zu einem Laufzeitfehler, der anzeigt, dass etwas nicht richtig
+                                                      abläuft. Solche Fehler können im schlimmsten Fall sogar die Existenz eines gesamten
+                                                      Unternehmens gefährden. Um dieses Dilemma zu vermeiden, muss die Software ausgiebig
+                                                      getestet werden, wobei der Debugger der Entwicklungsumgebung wesentliche Unterstützung
+                                                      bietet und somit das wichtigste Hilfsmittel ist.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Abschnitt wollen wir uns mit der Fehlergattung auseinandersetzen, die zum
+                                                      Auslösen einer Ausnahme zur Laufzeit führt und die verschiedensten Ursachen haben
+                                                      kann:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Anwender geben unzulässige Werte ein.</li>
+                                                      <li class="pgp">Es wird versucht, eine nicht vorhandene Datei zu öffnen.</li>
+                                                      <li class="pgp">Es wird versucht, eine Division durch »0« durchzuführen.</li>
+                                                      <li class="pgp">Beim Zugriff auf eine Objektmethode ist der Bezeichner der Objektvariablen noch nicht
+                                                         initialisiert.
+                                                      </li>
+                                                      <li class="pgp">Eine Netzwerkverbindung ist instabil.</li>
+                                                      <li class="pgp">...</li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Liste ist schier endlos lang. Aber allen Fehlern ist eines gemeinsam: Sie führen
+                                                      zum Absturz des Programms, wenn der auftretende Fehler nicht behandelt wird. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp57b107c0-13dc-4413-8357-e3c031d81b3c" name="dodtp57b107c0-13dc-4413-8357-e3c031d81b3c"></a><h3 class="t3"><span class="cfett">7.1.1    </span><span class="cfett"> Laufzeitfehler erkennen</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp83e50418-5328-4cea-8b3e-dfcd9c87b0f3"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp6ddce6dc-1df5-45d5-aa83-7d32850358ae"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9f0934e0-3360-4ce2-a65b-598f43ada1cd"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa1f801a0-4a98-4a2a-86d8-556133c8402e"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbf02d593-9c1e-4242-9252-46f4cd23489f"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp475e5173-bcef-40de-a2cc-d388e3c618b3"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing demonstriert einen typischen Laufzeitfehler und die daraus resultierenden
+                                                      Konsequenzen. Die Aufgabe, die das Programm ausführen soll, ist dabei simpel: Es soll
+                                                      eine Textdatei öffnen und deren Inhalt in die Konsole schreiben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">using System.IO;<br></br><span class="clistingfett">class Program </span>{<span class="clistingfett"><br xmlns="">  static void Main(string[] args) </span>{<br xmlns="">    StreamReader stream = new StreamReader(@"C:\Text.txt");<br xmlns="">    Console.WriteLine(stream.ReadToEnd());<br></br>    stream.Close();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.1  </span>Öffnen und Lesen einer Textdatei
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Beachten Sie bitte, dass ein Backslash in einer Zeichenfolge als Escape-Sequenz interpretiert
+                                                         wird. Um diese Interpretation aufzuheben, geben Sie entweder zwei aufeinanderfolgende
+                                                         Backslashs an oder stellen Sie, wie oben gezeigt, der Zeichenfolge ein »@«-Zeichen
+                                                         voran.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klassenbibliothek des .NET Frameworks bietet zum Öffnen einer Textdatei die Klasse
+                                                      <span class="clisting">StreamReader</span> im Namespace <span class="clisting">System.IO</span> an. Einer der Konstruktoren dieser Klasse erwartet den vollständigen Pfad zu der
+                                                      zu öffnenden Datei:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public StreamReader<a class="indexterm" id="dodtpa4ba3b90-3657-410a-9e97-b9c5af8c8f8e"></a><a class="indexterm" id="dodtp04ea00df-6c37-49d9-a8a7-ad76f8cf2a72"></a><a class="indexterm" id="dodtpbbcf1877-cfae-4243-bd52-135b93f22d90"></a><a class="indexterm" id="dodtp8c5254b5-21c6-4454-a009-5d56356e8a2f"></a>(string path);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Aus dem Datenstrom können mit <span class="clisting">Read</span> einzelne Zeichen gelesen werden, mit <span class="clisting">ReadLine</span> eine komplette Zeile. <span class="clisting">ReadToEnd</span> hingegen liest den ganzen Datenstrom vom ersten bis zum letzten Zeichen. Im Beispiel
+                                                      wird die letztgenannte Methode benutzt und die Rückgabe aus dem Datenstrom als Argument
+                                                      der <span class="clisting">WriteLine</span>-Methode der <span class="clisting">Console</span> übergeben. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Solange die angegebene Datei existiert, wird die Anwendung fehlerfrei ausgeführt.
+                                                      Wenn Sie dem Konstruktor der Klasse <span class="clisting">StreamReader</span> allerdings eine Zeichenfolge auf eine nicht vorhandene Datei übergeben, wird die
+                                                      Laufzeit der Anwendung mit einer Ausnahme (Exception) beendet und eine Fehlermeldung
+                                                      angezeigt (siehe Abbildung 7.1).
+                                                   </p>
+                                                   <p><a href="bilder/07_01.png" rel="lightbox" title="Anzeige der Exception in Visual Studio 2012"><img class="bild" border="1" src="bilderklein/klein07_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.1  </span>Anzeige der Exception in Visual Studio 2012
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sollte Ihnen der Hinweis auf die Ursache der Ausnahme nicht ausreichen, können Sie
+                                                      sich auch weitere Details dazu anzeigen lassen. Klicken Sie dazu auf den Link <span class="cscreenelement">Details anzeigen</span> im Ausnahmefenster. Daraufhin öffnet sich ein Dialog, dem Sie möglicherweise weitere
+                                                      interessante Details im Zusammenhang mit der Exception entnehmen können (siehe Abbildung
+                                                      7.2).
+                                                   </p>
+                                                   <p><a href="bilder/07_02.png" rel="lightbox" title="Details einer Exception"><img class="bild" border="1" src="bilderklein/klein07_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.2  </span>Details einer Exception
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fehler dieser Art müssen schon während der Programmierung erkannt und behandelt werden.
+                                                      Die Fehlerbehandlung hat die Zielsetzung, dem Anwender beispielsweise durch eine Eingabekorrektur
+                                                      die Fortsetzung des Programms zu ermöglichen oder &#8211; schlimmstenfalls &#8211; zumindest alle
+                                                      notwendigen Daten zu sichern, bevor das Programm ordentlich beendet wird.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpbf02d593-9c1e-4242-9252-46f4cd23489f" name="dodtpbf02d593-9c1e-4242-9252-46f4cd23489f"></a><h3 class="t3"><span class="cfett">7.1.2    </span><span class="cfett"> Die »try...catch«-Anweisung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpebc5d7a4-ab87-485e-95e2-0fea3caacfac"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb2ba7251-0cd5-4908-9514-6398af065ca2"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpdd108333-8e0b-4f10-bb7e-8b2b50ef5c7a"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf06be79c-9fbd-4866-bc5f-4f8e0fbfb04b"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp57b107c0-13dc-4413-8357-e3c031d81b3c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Programm wird sofort unplanmäßig beendet, wenn eine nicht behandelte Exception
+                                                      auftritt. Um auf eine auftretende Ausnahme zu reagieren und diese zu behandeln, benutzen
+                                                      Sie die <span class="clisting">try-catch</span>-Syntax, die wir uns nun zunächst in ihrer einfachsten Form ansehen wollen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <div class="listing"><pre class="prettyprint"><span class="clistingfett">try</span> {<br xmlns="">  [...]<br xmlns="">}<span class="clistingfett"><br xmlns="">catch</span>(Ausnahmetyp) {<br xmlns="">  [...]<br xmlns="">}<br xmlns="">[...]<br></pre></div>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">try</span>-Block beinhaltet zumindest die Anweisungen, die potenziell eine Ausnahme verursachen
+                                                      können. Tritt kein Laufzeitfehler auf, werden alle Anweisungen im <span class="clisting">try</span>-Block ausgeführt. Danach setzt das Programm hinter dem <span class="clisting">catch</span>-Block seine Arbeit fort. Verursacht eine der Anweisungen innerhalb des <span class="clisting">try</span>-Blocks jedoch einen Fehler, werden alle folgenden Anweisungen innerhalb dieses Blocks
+                                                      ignoriert, und der Programmablauf führt den Code im <span class="clisting">catch</span>-Anweisungsblock aus. Hier könnten beispielsweise Benutzereingaben gesichert oder
+                                                      Netzwerkverbindungen getrennt werden. Oft werden hier auch die Details der ausgelösten
+                                                      Ausnahme protokolliert. Nach der Abarbeitung des <span class="clisting">catch</span>-Blocks wird das Programm mit der Anweisung fortgesetzt, die dem <span class="clisting">catch</span>-Anweisungsblock folgt. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Ausnahme wird in einer OOP-Umgebung durch ein Objekt beschrieben. Im allgemeinsten
+                                                      Fall ist das der Typ <span class="clisting">Exception</span>, der als Parametertyp des <span class="clisting">catch</span>-Zweigs anzugeben ist. Es sei schon an dieser Stelle darauf hingewiesen, dass es sehr
+                                                      viele spezialisierte Ausnahmen gibt, um auf einen bestimmten Fehler spezifisch reagieren
+                                                      zu können.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Greifen wir noch einmal auf das Beispiel am Anfang dieses Kapitels zurück, in dem
+                                                      eine Datei geöffnet und an der Konsole ausgegeben werden soll. Das Beispiel soll nun
+                                                      um eine passende Ausnahmebehandlung ergänzt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">class Program </span>{<span class="clistingfett"><br xmlns="">  static void Main(string[] args) </span>{<br xmlns="">    StreamReader stream = null;<br xmlns="">    Console.Write("Welche Datei soll geöffnet werden? ... ");<br xmlns="">    string path = Console.ReadLine();<br></br>    // Fehlerbehandlung einleiten<br></br>    <span class="clistingfett">try</span> {<br></br>      // die folgende Anweisung kann zu einer Exception führen<br></br>      stream = new StreamReader(path);<br xmlns="">      Console.WriteLine(stream.ReadToEnd());<br xmlns="">      stream.Close();<br xmlns="">    }<br xmlns="">    <span class="clistingfett">catch</span>(Exception ex) {<br></br>      // Ausgabe einer Fehlermeldung<br></br>      Console.WriteLine(ex.Message);<br xmlns="">    }<br xmlns="">    Console.WriteLine("Nach der Exception-Behandlung");<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.2  </span>Komplette Fehlerbehandlung zum Öffnen einer Datei
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Starten Sie das Programm, und geben Sie nach der Aufforderung einen gültigen Zugriffspfad
+                                                      an, wird die Datei geöffnet und der Inhalt an der Konsole angezeigt. Das Programm
+                                                      wird bis zum <span class="clisting">catch</span>-Statement ausgeführt und verzweigt danach zu der Anweisung, die dem <span class="clisting">catch</span>-Block folgt, was durch eine Konsolenausgabe bestätigt wird. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist der Normalfall &#8211; oder ist vielleicht eher eine falsche Benutzereingabe als
+                                                      normal anzusehen? Wie dem auch sei, unser kleines Programm ist in der Lage, auch damit
+                                                      umzugehen. Die Anweisung, die eine Ausnahme im obigen Beispiel auslösen könnte, ist
+                                                      anscheinend der Aufruf des Konstruktors der Klasse <span class="clisting">StreamReader</span>, dem eine Pfadangabe als Argument übergeben wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">stream = new StreamReader(str);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei einer Ausnahme verzweigt der Programmablauf in den <span class="clisting">catch</span>-Block und führt die darin enthaltenen Anweisungen aus. Häufig wird man hier die Eigenschaft
+                                                      <span class="clisting">Message</span> des <span class="clisting">Exception</span>-Objekts abfragen, die eine benutzerfreundliche Fehlerbeschreibung liefert, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine(ex.Message);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach der Ausführung des <span class="clisting">catch</span>-Blocks wird das Programm ordnungsgemäß mit den sich daran anschließenden Anweisungen
+                                                      fortgesetzt. Damit haben wir unser Ziel erreicht: Obwohl ein Laufzeitfehler aufgetreten
+                                                      ist, kontrollieren wir weiterhin das Laufzeitverhalten. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbueberschrift">
+                                                         
+                                                         
+                                                         
+                                                         Hinweis
+                                                      </p>
+                                                      <p class="pbstandard">Sie müssen nicht unbedingt dem <span class="clisting">catch</span>-Zweig eine Exception angeben, wie das folgende Codefragment zeigt:
+                                                      </p>
+                                                      <div class="listing"><pre class="prettyprint">catch<br xmlns="">{<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                      <p class="pbstandard">Auch wenn die Variante jede Ausnahme abfängt und behandelt, können ausnahmespezifische
+                                                         Informationen nicht ausgewertet werden. Daher eignet sich diese allgemeine Form nur
+                                                         in wenigen Fällen und sollte in der Regel vermieden werden. 
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74" name="dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74"></a><h3 class="t3"><span class="cfett">7.1.3    </span><span class="cfett"> Behandlung mehrerer Exceptions</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbf02d593-9c1e-4242-9252-46f4cd23489f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Grund für eine Ausnahme kann vielfältig sein. Beispielsweise kann in unserem Listing
+                                                      bei dem Versuch, eine Datei zu öffnen, ein falscher Dateiname oder ein nicht vorhandenes
+                                                      Verzeichnis angegeben werden. Oder es wird eine leere Zeichenfolge übergeben. Alle
+                                                      diese Fehler lösen unterschiedliche Exceptions aus. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht werden Sie sich die Frage stellen, woher die Kenntnis stammt, welche Ausnahmen
+                                                      <span class="clisting"><a class="indexterm" id="dodtp3cd85721-e430-4e60-8cb9-014e06cb59e9"></a></span>beim Aufruf des Konstruktors der Klasse <span class="clisting">StreamReader</span> zumindest theoretisch ausgelöst werden können. Die Antwort ist sehr einfach: Die
+                                                      Angaben sind in der Dokumentation der entsprechenden Klasse zu finden. Ein Blick in
+                                                      die Dokumentation des in unserem Beispiel eingesetzten <span class="clisting">StreamReader</span>-Konstruktors verrät, dass dieser fünf unterschiedliche Ausnahmen auslösen kann: 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="clisting">ArgumentException</span><span class="clisting"><a class="indexterm" id="dodtp94c680b0-5bb5-439c-a42c-0bd67ee9f814"></a><a class="indexterm" id="dodtpe8d3578d-7e90-4a8c-a7c6-747f244a282d"></a></span> 
+                                                      </li>
+                                                      <li class="pgp"><span class="clisting">ArgumentNullException</span></li>
+                                                      <li class="pgp"><span class="clisting">FileNotFoundException</span><span class="clisting"><a class="indexterm" id="dodtpff55109c-af36-4604-b43e-2046cfb6d958"></a></span><a class="indexterm" id="dodtp375ddcad-6dd1-4f0b-9129-e4a2ff843389"></a></li>
+                                                      <li class="pgp"><span class="clisting">DirectoryNotFoundException</span><span class="clisting"><a class="indexterm" id="dodtp6b96009a-53f7-4678-8bcc-27293120109b"></a></span><a class="indexterm" id="dodtpfed3e600-c0f1-44ac-9d8c-76d293bd6a17"></a></li>
+                                                      <li class="pgp"><span class="clisting">IOException</span><span class="clisting"><a class="indexterm" id="dodtp1bc31de6-c69e-44f1-a12c-b34d18e3db37"></a></span><a class="indexterm" id="dodtp1a401391-f911-4ed3-bced-5d57cf071fbe"></a></li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausnahme <span class="clisting">ArgumentException</span> wird ausgelöst, wenn der Anwender an der Konsole nach der Aufforderung zur Eingabe
+                                                      des Pfades keine Angabe macht und das Programm fortsetzt. Eine ähnliche Ausnahme,
+                                                      <span class="clisting">ArgumentNullException</span>, würde bei der Übergabe eines nichtinitialisierten Strings auftreten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string path = null;<br xmlns="">StreamReader dataStream = new StreamReader(path);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Geben Sie einen nicht existenten Datei- oder Ordnernamen ein, kommt es zu einer Ausnahme
+                                                      vom Typ <span class="clisting">FileNotFoundException</span> bzw. <span class="clisting">DirectoryNotFoundException</span>. Der letzten in der Dokumentation aufgeführten Ausnahme, <span class="clisting">IOException</span>, kommt eine besondere Bedeutung zu, der wir uns gleich widmen werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Egal welchen Fehler Sie im Beispielcode oben auch provozieren, er wird immer behandelt.
+                                                      Das hängt damit zusammen, dass alle Ausnahmen durch Klassen beschrieben werden, die
+                                                      auf die gemeinsame Basis <span class="clisting">Exception</span> zurückzuführen sind (siehe Abbildung 7.3). Damit finden alle Ausnahmen im <span class="clisting">catch</span>-Zweig mit dem Parametertyp <span class="clisting">Exception</span> eine passende Behandlungsroutine. 
+                                                   </p>
+                                                   <p><a href="bilder/07_03.png" rel="lightbox" title="Die Hierarchie der Exceptions (Auszug)"><img class="bild" border="1" src="bilderklein/klein07_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.3  </span>Die Hierarchie der Exceptions (Auszug)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nur einen <span class="clisting">catch</span>-Zweig zu codieren hat einen Nachteil, wenn man auf bestimmte Ausnahmen speziell reagieren
+                                                      möchte. Um auf verschiedene Ausnahmen spezifisch reagieren zu können, geben wir mehrere
+                                                      <span class="clisting">catch</span>-Anweisungsblöcke an, von denen jeder auf einen bestimmten Ausnahmetyp reagiert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 7\TryCatchSample </span><br></br><span class="clistingfett">class Program</span> {<br xmlns="">  <span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">    StreamReader stream = null;<br xmlns="">    Console.Write("Welche Datei soll geöffnet werden? ... ");<br xmlns="">    string path = Console.ReadLine();<br xmlns="">    try {<br xmlns="">      stream = new StreamReader(path);<br xmlns="">      Console.WriteLine("--- Dateianfang ---");<br xmlns="">      Console.WriteLine(stream.ReadToEnd());<br xmlns="">      Console.WriteLine("--- Dateiende -----");<br xmlns="">      stream.Close();<br xmlns="">    }<br></br>    // Datei nicht gefunden<br></br>    catch (FileNotFoundException ex) {<br xmlns="">      Console.WriteLine(ex.Message);<br xmlns="">    } <br></br>    // Verzeichnis existiert nicht<br></br>    catch (DirectoryNotFoundException ex) {<br xmlns="">      Console.WriteLine(ex.Message);<br xmlns="">    }<br></br>    // Pfadangabe war 'null'<br></br>    catch (ArgumentNullException ex) {<br xmlns="">      Console.WriteLine(ex.Message);<br xmlns="">    }<br></br>    // Pfadangabe war leer ("")<br></br>    catch (ArgumentException ex) {<br xmlns="">      Console.WriteLine(ex.Message);<br xmlns="">    }<br></br>    // allgemeine Exception<br></br>    catch (Exception ex) {<br xmlns="">      Console.WriteLine(ex.Message);<br xmlns="">    }<br xmlns="">    Console.WriteLine("Nach der Exception-Behandlung");<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.3  </span>Beispielprogramm mit detaillierter Fehleranalyse
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jeder <span class="clisting">catch</span>-Zweig beschreibt nun einen bestimmten Ausnahmetyp. Beim Auftreten einer Ausnahme
+                                                      werden die <span class="clisting">catch</span>-Zweige so lange der Reihe nach angesteuert, bis der Typ gefunden wird, der die ausgelöste
+                                                      Ausnahme beschreibt. Anschließend wird der Programmablauf mit den Anweisungen fortgesetzt,
+                                                      die sich hinter dem letzten <span class="clisting">catch</span>-Zweig befinden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Beispiel oben wird demnach zuerst geprüft, ob der Exception eine nicht existierende
+                                                      Datei zugrunde liegt (<span class="clisting">FileNotFoundException</span>). Hat die Ausnahme eine andere Ursache, wird geprüft, ob dem Konstruktor ein ungültiges
+                                                      Verzeichnis übergeben wurde (<span class="clisting">DirectoryNotFoundException</span>). War das auch nicht der Fall, wird der aufgetretene Fehler mit <span class="clisting">ArgumentNullException</span> verglichen. Das setzt sich so lange fort, bis möglicherweise auch noch der letzte
+                                                      <span class="clisting">catch</span>-Zweig aufgerufen wird. Kann in diesem die Ausnahme auch nicht behandelt werden, gilt
+                                                      sie als unbehandelt und das Programm wird beendet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich plädiere ich dafür, in jeder Ausnahmebehandlung im letzten (oder vielleicht
+                                                      auch einzigen) <span class="clisting">catch</span>-Zweig den Typ <span class="clisting">Exception</span> anzugeben. Damit ist man als Entwickler immer auf der sicheren Seite, dass die Anwendung
+                                                      nicht unplanmäßig beendet wird (auch wenn der Anwender möglicherweise mit der Meldung
+                                                      »Unbekannter Fehler« konfrontiert werden muss). Verzichten wir auf den letzten <span class="clisting">catch</span>-Zweig im Beispiel <span class="ckursiv">TryCatchSample</span>, könnte nämlich trotz aller <span class="clisting">catch</span>-Zweige immer noch eine Ausnahme auftreten. Es ist die Methode <span class="clisting">ReadToEnd</span>, die eine <span class="clisting">OutOfMemoryException</span> wirft, falls die Datei mangels Speicher nicht komplett eingelesen werden kann. Mal
+                                                      ganz ehrlich, hätten Sie daran gedacht?
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c" name="dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c"></a><h3 class="t3"><span class="cfett">7.1.4    </span><span class="cfett"> Die Reihenfolge der »catch«-Zweige</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Abarbeitung der <span class="clisting">catch</span>-Zweige folgt dem »Ist-eine«-Prinzip der Vererbung. Daraus folgt, dass eine bestimmte
+                                                      Reihenfolge bei der Angabe der <span class="clisting">catch</span>-Zweige eingehalten werden muss, und die lautet: Ausgehend vom ersten bis hin zum
+                                                      letzten <span class="clisting">catch</span>-Zweig werden die angegebenen Ausnahmen immer allgemeiner. Sollten Sie diese Richtlinie
+                                                      nicht beachten, wird Visual Studio Sie darauf aufmerksam machen, weil dann Programmcode
+                                                      vorliegt, der nicht erreicht werden kann.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b" name="dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b"></a><h3 class="t3"><span class="cfett">7.1.5    </span><span class="cfett"> Ausnahmen in einer Methodenaufrufkette</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp796caf30-13b3-4aa9-8f35-d5d061db09e3"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp45ce06b3-1ee6-4902-95ea-0880f225783d"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Ausnahme muss in jedem Fall behandelt werden, um das laufende Programm vor dem
+                                                      Absturz zu bewahren. Kennzeichnend war bisher, dass wir eine Ausnahme in der Methode
+                                                      behandelten, in der sie auftrat. Das muss aber nicht unbedingt so sein.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Stellen Sie sich vor, der Code zum Öffnen einer Datei unseres Beispiels <span class="ckursiv">TryCatchSample</span> wäre nicht in <span class="clisting">Main</span>, sondern einer anderen Methode, nennen wir sie wieder <span class="clisting">DoSomething</span>, implementiert. Tatsächlich muss ein etwaig auftretender Fehler nicht in <span class="clisting">DoSomething</span> mit <span class="clisting">try-catch</span> behandelt werden, es kann auch in der Methode <span class="clisting">Main</span> geschehen, wie das folgende Codefragment zeigt: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">  try {<br xmlns="">    DoSomething();<br xmlns="">  }<br></br>  // Behandlung der Ausnahme<br></br>  catch (Exception ex) {<br xmlns="">    Console.WriteLine(ex.Message);<br xmlns="">  }<br xmlns="">}<br></br><span class="clistingfett">static void DoSomething()</span> {<br></br>  // hier wird eine Exception ausgelöst, die nicht behandelt wird<br></br>}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.4  </span>Laufzeitfehler in einem Aufrufstack
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird aus einer Methode heraus (hier <span class="clisting">Main</span>) eine zweite (hier <span class="clisting">DoSomething</span>) aufgerufen und tritt in letztgenannter eine Ausnahme auf, sucht die Laufzeitumgebung
+                                                      zunächst in der fehlerauslösenden Methode nach einer passenden Ausnahmebehandlung.
+                                                      Ist hier keine implementiert oder wird die Ausnahme von keinem der <span class="clisting">catch</span>-Zweige behandelt, wird die Ausnahme an den Aufrufer übergeben. Nimmt sich dieser
+                                                      des ausgelösten Fehlers an, ist den Anforderungen Genüge getan, und die Anwendung
+                                                      wird klaglos weiterlaufen, ansonsten gilt die Ausnahme als nicht behandelt und die
+                                                      Anwendung stürzt unweigerlich ab.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methodenaufrufkette darf auch durchaus noch mehr Stationen haben. Wichtig ist
+                                                      nur, dass spätestens der Auslöser der Aufrufkette auf die Exception reagiert.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp45ce06b3-1ee6-4902-95ea-0880f225783d" name="dodtp45ce06b3-1ee6-4902-95ea-0880f225783d"></a><h3 class="t3"><span class="cfett">7.1.6    </span><span class="cfett"> Ausnahmen werfen oder weiterleiten</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Praxis werden Sie häufig auf den Umstand treffen, dass in einer Komponente
+                                                      eine Ausnahme ausgelöst und mit <span class="clisting">try-catch</span> behandelt wird, die Ausnahme aber dennoch an den Aufrufer weitergeleitet werden muss.
+                                                      Das ist häufig der Fall, wenn Sie dem Anwender nicht direkt aus der auslösenden Komponente
+                                                      eine Information zukommen lassen können. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine Ausnahme an den Aufrufer weiterzuleiten oder ganz generell eine neue (auch
+                                                      benutzerdefinierte) Ausnahme auszulösen, wird das <span class="clisting">throw</span>-Statement benutzt, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">throw new XyzExcpetion();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wird in einem <span class="clisting">catch</span>-Block mit <span class="clisting">throw</span> eine Exception geworfen, muss diese vom Aufrufer der fehlerverursachenden Methode
+                                                      behandelt werden. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4" name="dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4"></a><h3 class="t3"><span class="cfett">7.1.7    </span><span class="cfett"> Die »finally«-Anweisung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc00c36bf-2c78-47f2-aea5-c9da99f7ca88"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp0982f6b4-28a8-482f-9da1-310e73100ee4"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp3901077a-f470-4b3c-87c6-e9d70630005a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp45ce06b3-1ee6-4902-95ea-0880f225783d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die strukturierte Fehlerbehandlung bietet optional noch eine weitere, bislang noch
+                                                      nicht erwähnte Klausel an, in der unterschiedliche Aufgaben erledigt werden können:
+                                                      die <span class="clisting">finally</span><span class="cfett"><a class="indexterm" id="dodtp57f26a86-a4b7-4775-a2b3-1067082514c0"></a></span>-Klausel, die unmittelbar dem letzten <span class="clisting">catch</span>-Block folgt, falls sie angegeben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">try {<br xmlns="">  [...]<br xmlns="">}<br xmlns="">catch(Exception ex) {<br xmlns="">  [...]<br xmlns="">}<br xmlns="">finally {<br xmlns="">  [...]<br xmlns="">}<br xmlns="">[...]<br xmlns=""><br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.5  </span>Fehlerbehandlung mit »finally«-Zweig
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Folgende Begleitumstände führen zur Abarbeitung der Anweisungen im <span class="clisting">finally</span>-Block:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Es wird keine Ausnahme ausgelöst: Der <span class="clisting">try</span>-Block wird komplett abgearbeitet, danach verzweigt das Programm zur <span class="clisting">finally</span>-Klausel und wird anschließend mit der Anweisung fortgesetzt, die dem <span class="clisting">finally</span>-Anweisungsblock folgt.
+                                                      </li>
+                                                      <li class="pgp">Es tritt eine Exception auf: Von der fehlerauslösenden Codezeile im <span class="clisting">try</span>-Block aus sucht die Laufzeitumgebung nach der passenden <span class="clisting">catch</span>-Klausel, führt diese aus und verzweigt zur <span class="clisting">finally</span>-Klausel. Anschließend wird die Anweisung ausgeführt, die dem <span class="clisting">finally</span>-Anweisungsblock folgt.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">finally</span>-Block wird demnach in jedem Fall ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten
+                                                      ist oder nicht. Diese Feststellung gilt auch für alle Anweisungen, die dem <span class="clisting">finally</span>-Block folgen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es gibt aber zwei Situationen, in denen der dem <span class="clisting">finally</span>-Block folgende Code nicht mehr ausgeführt wird:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Nehmen wir an, dass Sie nach der Behandlung der Ausnahme im <span class="clisting">catch</span>-Block die Methode verlassen wollen, weil die Anweisungen, die sich den <span class="clisting">catch</span>-Blöcken anschließen, nicht ausgeführt werden sollen. Sie werden dann im <span class="clisting">catch</span>-Anweisungsblock mit <span class="clisting">return</span> die Methode verlassen, z. B.:
+                                                      <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">catch(Exception ex) {<br xmlns="">  [...]<br xmlns="">  return;<br xmlns="">}<br></pre></div>
+                                                      In diesem Fall hat <span class="clisting">return</span> aber nicht die durchschlagende Konsequenz, die wir bisher von diesem Statement gewohnt
+                                                         sind. Die Methode wird nämlich nicht sofort verlassen, sondern es wird zunächst nach
+                                                         dem optionalen <span class="clisting">finally</span>-Block gesucht. Ist er vorhanden, wird er ausgeführt. Es kommt nicht mehr zu der Ausführung
+                                                         der Anweisungen, die dem <span class="clisting">finally</span>-Block folgen.
+                                                      </li>
+                                                      <li class="pgp">Die zweite Situation tritt im Zusammenhang mit dem <span class="clisting">throw</span>-Statement auf, das in einem <span class="clisting">catch</span>-Block die Weiterleitung einer Exception erzwingt. Auch hierbei wird nicht sofort
+                                                         die Exception geworfen, sondern erst nachdem <span class="clisting">finally</span> abgearbeitet worden ist.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">finally</span> gestattet es somit, diverse Operationen unabhängig davon auszuführen, ob eine Exception
+                                                      aufgetreten ist oder nicht. Dabei handelt es sich in der Regel um die Freigabe von
+                                                      Fremdressourcen, beispielsweise um das Schließen einer Datenbankverbindung oder um
+                                                      die Freigabe einer Datei. <span class="clisting">finally</span> ist nur sinnvoll im Zusammenhang mit <span class="clisting">throw</span> oder <span class="clisting">return</span> in einem <span class="clisting">catch</span>-Block, weil dann die dem <span class="clisting">finally</span> folgenden Anweisungen nicht mehr ausgeführt werden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp3901077a-f470-4b3c-87c6-e9d70630005a" name="dodtp3901077a-f470-4b3c-87c6-e9d70630005a"></a><h3 class="t3"><span class="cfett">7.1.8    </span><span class="cfett"> Die Klasse »Exception«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe4453647-e7ce-4d22-b3da-73aab09d561c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Basisklasse aller Ausnahmen bildet die Klasse <span class="clisting">Exception</span>, die zum Namespace <span class="clisting">System</span> gehört. Grundsätzlich sind alle Ausnahmentypen auf diese Klasse zurückzuführen. <span class="clisting">Exception</span> hat in der .NET-Klassenbibliothek nur zwei direkte Ableitungen, mit denen eine Unterscheidung
+                                                      zwischen system- und anwendungsdefinierten Ausnahmen vordefiniert wird: 
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die von <span class="clisting">Exception</span> abgeleitete Klasse <span class="clisting">SystemException</span> beschreibt alle Ausnahmen, die im Zusammenhang mit der <span class="ckursiv">Common Language Runtime</span> (CLR) stehen. Ausnahmen aus diesem Bereich lassen sich als schwerwiegende Ausnahmen
+                                                         interpretieren, die aber noch vom Programm behandelt werden können.
+                                                      </li>
+                                                      <li class="pgp">Die Klasse <span class="clisting">ApplicationException</span><span class="clisting"><a class="indexterm" id="dodtp6b551f6f-8809-4549-9948-daeb0f4fe56f"></a></span>, die ebenfalls direkt von <span class="clisting">Exception</span> abgeleitet ist, dient per Definition allen benutzerdefinierten Ausnahmeklassen als
+                                                         Basis. Allerdings wird diese »Vorschrift« inzwischen von Microsoft selbst aufgeweicht,
+                                                         weil erkannt worden ist, dass anwendungsspezifische Ausnahmen, die von <span class="clisting">ApplicationException</span> abgeleitet sind, keinen Vorteil gegenüber den Ausnahmen haben, die <span class="clisting">Exception</span> selbst ableiten.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Abbildung 7.3 weiter oben ist der Zusammenhang zwischen <span class="clisting">Exception</span>, <span class="clisting">SystemException</span> und <span class="clisting">ApplicationException</span> dargestellt. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um den Code, der eine Ausnahme behandelt, mit möglichst vielen guten Informationen
+                                                      über die Ursache zu versorgen, stellt die Basis <span class="clisting">Exception</span> eine Reihe von Eigenschaften bereit. In Tabelle 7.1 sind diese aufgeführt.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 7.1  </span>Die Eigenschaften der Basisklasse »Exception«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Eigenschaft
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Data</span><span class="clisting"><a class="indexterm" id="dodtpc456bc53-3235-4620-880e-84211ad29087"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Stellt zusätzliche Informationen zu der Ausnahme bereit.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">HelpLi</span><span class="clisting"><a class="indexterm" id="dodtp83e0197c-a37b-4a77-ac75-85028cc6451b"></a>nk<a class="indexterm" id="dodtpc216e44e-b7ca-423a-b8e0-fdd65cd4d6ac"></a><a class="indexterm" id="dodtp6fa10ee8-9203-4f30-bc3b-e50b0046d8df"></a><a class="indexterm" id="dodtp225ed873-3cfb-4382-b307-5834953f6d81"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Verweist auf eine Hilfedatei, die diese Ausnahme beschreibt.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">InnerException</span><span class="clisting"><a class="indexterm" id="dodtp7d8f34cd-fd2b-4c34-ba83-1acfa12349e5"></a><a class="indexterm" id="dodtp945de6cd-6f8b-4c3a-a761-1a45d32d3cf4"></a><a class="indexterm" id="dodtp58cf117e-5ea8-4926-820b-43cfd827b7a8"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Falls bei der Behandlung einer Ausnahme eine weitere Exception ausgelöst wird, beschreibt
+                                                                  diese Eigenschaft die neue (innere) Ausnahme. 
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Message</span><span class="clisting"><a class="indexterm" id="dodtpc1d4661c-43fd-44a2-8084-c87a08162b01"></a><a class="indexterm" id="dodtp786e695a-dc38-4053-84c0-5a4b78bbe9d8"></a><a class="indexterm" id="dodtp37966e61-0177-442b-827d-c258ea6942af"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert eine Zeichenfolge mit der Beschreibung des aktuellen Fehlers. Die Information
+                                                                  sollte so formuliert sein, dass sie auch von einem Anwender verstanden werden kann.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Source</span><span class="clisting"><a class="indexterm" id="dodtp82fe12f2-c936-421d-9f8b-d73f97502e16"></a><a class="indexterm" id="dodtpc5010686-163d-4809-91cd-b36e1685b539"></a><a class="indexterm" id="dodtpfaac1c9c-46aa-42dc-93dd-ae9d8c1544d4"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert einen String zurück, der die Anwendung angibt, in der die Ausnahme ausgelöst
+                                                                  worden ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">StackTrace</span><span class="clisting"><a class="indexterm" id="dodtp67840a9c-54ec-4e17-8930-2a6636f9e136"></a><a class="indexterm" id="dodtpe72b25cf-0346-4d86-b229-f5bf781983f6"></a><a class="indexterm" id="dodtp9b9f9c2d-905a-46b2-8a21-cfa96f162e39"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Beschreibt in einer Zeichenfolge die aktuelle Aufrufreihenfolge aller Methoden.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">TargetSite</span><span class="clisting"><a class="indexterm" id="dodtpe0f8c827-4fae-4676-acbc-f11e1a6ac4d1"></a><a class="indexterm" id="dodtpa60037c9-f848-4649-989f-e95091cff623"></a><a class="indexterm" id="dodtp0dc0b0b1-91ad-4357-8437-2f322a6f13bf"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liefert zahlreiche Informationen zu der Methode, in der die Ausnahme ausgelöst worden
+                                                                  ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir sollten uns die wichtigsten Eigenschaften nun etwas genauer ansehen.</p>
+                                                   <h4 class="t4"> Die Eigenschaft »Message«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die wohl am häufigsten ausgewertete Eigenschaft einer Ausnahme ist <span class="clisting">Message</span>. Diese Eigenschaft beschreibt dem Anwender in leicht verständlicher Form die Ursache
+                                                      der aufgetretenen Ausnahme. <span class="clisting">Message</span> ist schreibgeschützt, so dass Sie ihr nicht direkt einen Wert zuweisen können. Der
+                                                      einzige Weg, der Ausnahme eine spezifische Beschreibung mit auf den Weg zu geben,
+                                                      führt über den Konstruktor der Klasse. In Abschnitt 7.1.9 wird Ihnen das gezeigt.
+                                                   </p>
+                                                   <h4 class="t4"> Die Eigenschaft »StackTrace«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie Sie wissen, muss eine Ausnahme nicht unbedingt in der Methode behandelt werden,
+                                                      in der die Ausnahme aufgetreten ist. Diesem Umstand trägt <span class="clisting">StackTrace</span> Rechnung, denn diese Eigenschaft dokumentiert alle Methoden, die zum Zeitpunkt einer
+                                                      Ausnahme ausgeführt werden. An oberster Stelle ist dabei die Methode zu finden, die
+                                                      Auslöser der Exception ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu ein einfaches Beispiel. Aus <span class="clisting">Main</span> heraus wird die Methode <span class="clisting">DoSomething1</span> aufgerufen, die selbst <span class="clisting">DoSomething2</span> aufruft. In <span class="clisting">DoSomething2</span> wird eine Exception vom Typ <span class="clisting">ArgumentNullException</span> ausgelöst. Behandelt wird die Ausnahme im Initiator <span class="clisting">Main</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 7\StackTraceSample</span> <br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  try {<br xmlns="">    DoSomething1();<br xmlns="">  }<br xmlns="">  catch (Exception ex) {<br xmlns="">    Console.WriteLine(ex.StackTrace);      <br xmlns="">  }<br xmlns="">  Console.ReadLine();<br xmlns="">}<span class="clistingfett"><br xmlns="">static void DoSomething1() </span>{<br xmlns="">  DoSomething2();<br xmlns="">}<span class="clistingfett"><br xmlns="">static void DoSomething2() </span>{<br></br>  // hier wird die Exception ausgelöst<br></br>  throw new ArgumentNullException();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.6  </span>Beispiel zur Eigenschaft »StackTrace«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe an der Konsole sehen Sie in Abbildung 7.4.</p>
+                                                   <p><a href="bilder/07_04.png" rel="lightbox" title="Die Ausgabe der Eigenschaft »StackTrace« des Beispielcodes"><img class="bild" border="1" src="bilderklein/klein07_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.4  </span>Die Ausgabe der Eigenschaft »StackTrace« des Beispielcodes
+                                                   </p>
+                                                   <h4 class="t4"> Die Eigenschaft »Data«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Eigenschaft <span class="clisting">Data</span> ermöglicht, im Ausnahmeobjekt mehrere Zusatzinformationen an die Routine weiterzuleiten,
+                                                      die die Ausnahme behandelt. Die von <span class="clisting">Data</span> beschriebenen Informationen werden an ein Objekt weitergereicht, das die Schnittstelle
+                                                      <span class="clisting">IDictionary</span> implementiert. Um es genauer zu formulieren: Bei dem Objekt handelt es sich um eine
+                                                      Collection, ähnlich einem Array. Allerdings werden die Daten nicht indexbasiert gespeichert
+                                                      und ausgewertet, sondern mit Hilfe eines eindeutigen Keys, bei dem es sich meistens
+                                                      um eine Zeichenfolge handelt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">In Kapitel 8 werden wir uns mit den wichtigsten Collections noch genauer auseinandersetzen.</p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einträge in die von <span class="clisting">Data</span> referenzierte Liste erfolgen durch Aufruf der Methode <span class="clisting">Add</span>. Dieser Methode wird zuerst der eindeutige Key genannt, danach der zu speichernde
+                                                      Wert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Data</span> soll nicht die Eigenschaft <span class="clisting">Message</span> der Exception ersetzen, sondern dient vielmehr dazu, zusätzliche, meist detailliertere
+                                                      Informationen über die Ausnahme bereitzustellen. <span class="clisting">Data</span> wird beispielsweise häufig dazu benutzt, um der Fehlerbehandlung mitzuteilen, wann
+                                                      die Ausnahme aufgetreten ist, gewissermaßen liefert <span class="clisting">Data</span> dann einen <span class="ckursiv">TimeStamp</span>. Auch das wollen wir uns an einem Beispiel ansehen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 7\DataSample </span><br></br><span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">  try {<br xmlns="">    DoSomething();<br xmlns="">  }<br xmlns="">  catch(Exception ex) {<br xmlns="">    Console.WriteLine("Message: {0}", ex.Message);<br xmlns="">    Console.WriteLine("{0} {1}",<span class="clistingfett">ex.Data["Info"]</span>, <span class="clistingfett">ex.Data["Date"]</span>);<br xmlns="">  }<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></br><span class="clistingfett">static void DoSomething() </span>{<br xmlns="">  Exception ex = new Exception();<br xmlns="">  <span class="clistingfett">ex.Data.Add</span>("Info", "Datum/Zeit:");<br xmlns="">  <span class="clistingfett">ex.Data.Add</span>("Date", DateTime.Now);<br xmlns="">  throw ex;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.7  </span>Die Eigenschaft »Data« der Klasse »Exception«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">DoSomething</span> hat hier die Aufgabe, eine Ausnahme auszulösen. Dazu wird ein Objekt der Klasse <span class="clisting">Exception</span> erzeugt (es könnte aber auch ein beliebiger anderer Ausnahmetyp sein). Zwei zusätzliche
+                                                      Dateninformationen werden in den Keys <span class="ckursiv">Info</span> und <span class="ckursiv">Date</span> bereitgestellt. Die Namen der Keys sind frei gewählt. Während <span class="ckursiv">Info</span> nur eine allgemeine Beschreibung beinhaltet, wird in <span class="ckursiv">Date</span> das aktuelle Datum samt Uhrzeit gespeichert. Dazu wird die Eigenschaft <span class="clisting">Now</span> der Klasse <span class="clisting">DateTime</span> abgerufen. Beide Informationen stehen in der Fehlerbehandlung von <span class="clisting">Main</span> zur Verfügung und werden auch ausgewertet.
+                                                   </p>
+                                                   <h4 class="t4"> Die Eigenschaft »TargetSite«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Eigenschaft <span class="clisting">TargetSite</span> liefert zahlreiche Informationen über die Methode, die die Ausnahme verursacht hat.
+                                                      Dabei können Sie im Bedarfsfall sogar so weit gehen, sich Informationen über die Parameterliste
+                                                      und deren Typen, den Rückgabewert der Methode und vieles weitere zu besorgen. Im folgenden
+                                                      Codefragment wird das Beispiel des vorhergehenden Abschnitts zugrunde gelegt und der
+                                                      <span class="clisting">catch</span>-Zweig in <span class="clisting">Main</span> wie folgt geändert:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">catch(Exception ex) {<br xmlns="">  Console.WriteLine(<span class="clistingfett">ex.TargetSite.Name</span><span class="clisting">)</span>;<br xmlns="">  Console.WriteLine(<span class="clistingfett">ex.TargetSite</span><span class="clisting">)</span>;<br xmlns="">}<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.8  </span>Weiter gehende Information mit der Eigenschaft »TargetSite«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In die Ausgabe der Konsole werden die folgenden Informationen geschrieben:</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">DoSomething<br xmlns="">void DoSomething()</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Informationen, die <span class="clisting">TargetSite</span> liefern kann, sind noch deutlich vielfältiger, als unser Beispiel hier beschreibt.
+                                                      Sollten Sie sich dafür interessieren, lesen Sie bitte die Dokumentation.
+                                                   </p>
+                                                   <h4 class="t4"> Die Eigenschaft »HelpLink«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">TargetSite</span>, <span class="clisting">StackTrace</span> und <span class="clisting">Data</span> sind mit ihrem Informationsgehalt wohl eher dem Entwickler bei einer Fehleranalyse
+                                                      hilfreich, während die Eigenschaft <span class="clisting">Message</span> per Definition dem Anwender eine leicht verständliche Fehlerbeschreibung liefert.
+                                                      Möchten Sie dem Anwender über <span class="clisting">Message</span> hinaus zusätzliche Informationen bereitstellen, weisen Sie der Eigenschaft <span class="clisting">HelpLink</span> eine URL zu, die die Adresse eines Dokuments mit den entsprechenden Zusatzinformationen
+                                                      beschreibt. Wie Sie <span class="clisting">HelpLink</span> einsetzen, zeigt das folgende Listing.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">try {<br xmlns="">  DoSomething();<br xmlns="">}<br xmlns="">catch (Exception e) {<br xmlns="">  Console.WriteLine("Mehr Infos unter '{0}'", <span class="clistingfett">e.HelpLink</span>); <br xmlns="">}<br></br>public static void DoSomething() {<br xmlns="">  Exception ex = new Exception();<br xmlns="">  <span class="clistingfett">ex.HelpLink = "http://www.Tollsoft.de/Error712.htm";</span><br xmlns="">  throw ex;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.9  </span>Mit »HelpLink« dem Anwender eine weitere Informationsquelle nennen
+                                                   </p>
+                                                   <h4 class="t4"> Innere Exceptions</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nehmen wir an, Sie möchten innerhalb eines <span class="clisting">catch</span>-Blocks alle mit der Exception verbundenen Informationen in einer Datei protokollieren,
+                                                      beispielsweise in einer Datei mit dem Pfad <span class="ckursiv">C:\Log\Exception.txt</span>. Das Schreiben in Dateien ist genauso wie das Lesen grundsätzlich immer mit einem
+                                                      Ausnahmerisiko behaftet, da in diesem Zusammenhang eine weitere Ausnahme ausgelöst
+                                                      werden könnte. Was ist, wenn das Verzeichnis nicht mehr existiert oder die Datei gelöscht
+                                                      worden ist? Sie müssen folglich im <span class="clisting">catch</span>-Zweig, der die eigentlich aufgetretene Ausnahme behandelt, eine weitere, innere Ausnahmebehandlung
+                                                      codieren.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tritt während einer Ausnahmebehandlung eine andere Ausnahme auf (im Allgemeinen als
+                                                      »innere Ausnahme« bezeichnet), kann die Ausnahmebehandlung als gescheitert angesehen
+                                                      werden. Die ursprüngliche Ausnahme muss erneut ausgelöst und an den Aufrufer weitergeleitet
+                                                      werden. Dabei sollte zusätzlich die innere Ausnahme angegeben werden. Dazu dient die
+                                                      Eigenschaft <span class="clisting">InnerException</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns die Vorgehensweise an einem Codebeispiel an. Angenommen, es sei im Code
+                                                      versucht worden, durch die Zahl »0« zu dividieren. Den Gesetzen der gehobenen Mathematik
+                                                      nach ist das keine gültige mathematische Operation, und es wird die Ausnahme <span class="clisting">DivideByZeroException</span> ausgelöst. Nehmen wir zudem an, wir möchten die Ausnahme protokollieren. Dabei müssen
+                                                      wir berücksichtigen, dass auch das Schreiben in die Protokolldatei zu einer Ausnahme
+                                                      führen könnte.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<span class="clistingfett"><br xmlns="">catch</span>(DivideByZeroException ex) {<br xmlns="">  <span class="clistingfett">try</span> {<br xmlns="">    FileStream stream = File.Open(...);<br xmlns="">    [...]<br xmlns="">  }<br xmlns="">  <span class="clistingfett">catch</span>(Exception ex2) {<br xmlns="">    throw new DivideByZeroException(ex.Message, ex2)<br xmlns="">  }<br xmlns="">}<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.10  </span>Auslösen einer inneren Ausnahme
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zur Beschreibung einer inneren Exception müssen Sie nur den passenden Konstruktor
+                                                      der entsprechenden <span class="clisting">Exception</span>-Klasse aufrufen. Wie wir später noch sehen werden, sollte jede <span class="clisting">Exception</span>-Klasse (mindestens) vier Konstruktoren aufweisen. Eine Überladung nimmt dabei neben
+                                                      der Fehlerbeschreibung der äußeren Ausnahme auch die Referenz auf die neue, innere
+                                                      Ausnahme entgegen. Sollte das Öffnen der Protokolldatei fehlschlagen, wird die ursprüngliche
+                                                      (äußere) Exception an den Aufrufer weitergeleitet, der dann über die Auswertung der
+                                                      Eigenschaft <span class="clisting">InnerException</span> die Möglichkeit hat, auch die innere, tatsächliche Fehlerquelle auszuwerten.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe4453647-e7ce-4d22-b3da-73aab09d561c" name="dodtpe4453647-e7ce-4d22-b3da-73aab09d561c"></a><h3 class="t3"><span class="cfett">7.1.9    </span><span class="cfett"> Benutzerdefinierte Ausnahmen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa8e943d6-1b79-4c01-8165-75bab1307d38"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die .NET-Klassenbibliothek stellt sehr viele Ausnahmeklassen zur Verfügung, mit denen
+                                                      die üblichen Ausnahmen im Rahmen einer Anwendung abgedeckt werden. Sehr oft reichen
+                                                      die vordefinierten <span class="clisting">Exception</span>-Klassen jedoch nicht aus, weil anwendungsspezifische Umstände eine spezielle Ausnahme
+                                                      erfordern. In solchen Fällen ist man gezwungen, eigene Ausnahmeklassen bereitzustellen,
+                                                      die den folgenden Regeln entsprechen sollten:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Leiten Sie Ihre benutzerdefinierte Ausnahme von der Klasse <span class="clisting">Exception</span> oder <span class="clisting">ApplicationException</span> ab. Die ursprüngliche Idee von Microsoft, dass <span class="clisting">ApplicationException</span> die Basis aller benutzerdefinierten Ausnahmen darstellen soll, hat in der Praxis
+                                                         keine Vorteile gezeigt. Inzwischen empfiehlt auch Microsoft die Klasse <span class="clisting">Exception</span> als Basis.
+                                                      </li>
+                                                      <li class="pgp">Der Bezeichner jeder Ausnahme sollte mit <span class="clisting">Exception</span> enden. Das ist zwar keine zwingende Vorschrift, sondern nur eine Konvention. Aber
+                                                         sie hilft, den Code besser zu verstehen.
+                                                      </li>
+                                                      <li class="pgp">Sie sollten in jeder Ausnahmeklasse mindestens vier Konstruktoren vorsehen. Die Parameterlisten
+                                                         sollten dabei identisch mit den Parameterlisten der Konstruktoren von <span class="clisting">Exception</span> sein. Natürlich können Sie darüber hinaus auch weitere Konstruktoren codieren.
+                                                      </li>
+                                                      <li class="pgp">Die Ausnahmeklasse sollte mit dem Attribut <span class="clisting">Serializable</span> markiert werden, um die Ausnahme serialisierbar zu machen. (Anmerkung: Bisher haben
+                                                         wir über die Themen »Attribute« und den »Serialisierungsprozess« noch nicht gesprochen.
+                                                         Trotzdem gehört dieser Punkt unbedingt in die Liste der zu berücksichtigenden Kriterien.)
+                                                      </li>
+                                                   </ul>
+                                                   <h4 class="t4"> Benutzerdefinierte Ausnahmen im Projekt »GeometricObjects«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen nun eine benutzerdefinierte Ausnahme an einem Beispiel entwickeln. Dazu
+                                                      benutzen wir das Beispiel der <span class="clisting">Circle</span>-Klasse des Projekts <span class="ckursiv">GeometricObjects</span>. Wie Sie sich sicherlich noch erinnern, hatten wir festgelegt, dass die Übergabe
+                                                      an die Eigenschaft <span class="clisting">Radius</span> größer oder gleich 0 sein muss. Die Eigenschaftsmethode <span class="clisting">Radius</span> der Klasse <span class="clisting">Circle</span> löst das Ereignis <span class="clisting">InvalidMeasure</span> aus, wenn versucht wird, dem Radius einen negativen Wert zuzuweisen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist definitiv keine gute Lösung, denn beim Auftreten eines Fehlers sollte der
+                                                      Aufrufer gezwungen sein, diesen zu behandeln. Auf einen Event zu reagieren ist hingegen
+                                                      nur eine Option, die wahrgenommen werden kann oder auch nicht. Es gibt noch einen
+                                                      zweiten Punkt, den wir berücksichtigen müssen. Betrachten Sie dazu ein Codefragment,
+                                                      in dem einem <span class="clisting">Circle</span>-Objekt bei der Instanziierung ein negativer Radius übergeben wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Circle kreis = new Circle(-5);<br xmlns="">kreis.InvalidMeasure += kreis_InvalidMeasure;<br xmlns="">[...]<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.11  </span>Registrieren des Ereignishandlers für den Event »InvalidMeasure«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Bindung des Ereignishandlers an das Ereignis erfolgt erst, nachdem der Konstruktoraufruf
+                                                      beendet ist. Folglich kann das Ereignis auch nicht während des Konstruktoraufrufs
+                                                      ausgelöst werden, und der Aufrufer erhält keine Informationen, dass der übergebene
+                                                      Wert nicht akzeptiert werden konnte.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fehler sollten nicht zur Auslösung eines Ereignisses führen. Solche Lösungen sind nicht nur schlecht, sie sind sogar inakzeptabel. Ein Fehler muss immer das Auslösen einer Exception zur Folge haben, die behandelt werden muss. Allerdings, das sei an dieser Stelle bereits angedeutet, können Sie sehr wohl eine Kombination von Exception und Ereignis in Betracht ziehen. Dazu gibt es auch einige Beispiele in der .NET-Klassenbibliothek. Eine solche Lösung sei am Ende der Ausführungen auch unser Ziel. Doch der Reihe nach ...</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wollen wir eine eigene Ausnahme bereitstellen, die wir als <span class="clisting">InvalidMeasureException</span> bezeichnen. Um allen denkbaren Szenarien im Umfeld einer Ausnahme und deren möglichen
+                                                      Ableitungen zu entsprechen, sollten sich die vier Konstruktoren der Klasse <span class="clisting">Exception</span> auch in einer benutzerdefinierten Ausnahme wiederfinden. Visual Studio unterstützt
+                                                      Sie dabei mit einem Code-Snippet (siehe Abbildung 7.5).
+                                                   </p>
+                                                   <p><a href="bilder/07_05.png" rel="lightbox" title="Das Code-Snippet einer Ausnahme"><img class="bild" border="1" src="bilderklein/klein07_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.5  </span>Das Code-Snippet einer Ausnahme
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem Sie das Snippet eingefügt und den Standardbezeichner in <span class="clisting">InvalidMeasureException</span> umbenannt haben, steht das Gerüst der neuen Ausnahme. Es enthält vier Konstruktoren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[Serializable]<br xmlns="">public class InvalidMeasureException : Exception<br xmlns="">{<br xmlns="">  public InvalidMeasureException() { }<br xmlns="">  public InvalidMeasureException(string message) : base(message) { }<br xmlns="">  public InvalidMeasureException(string message, Exception inner) <br xmlns="">         : base(message, inner) { }<br xmlns="">  protected InvalidMeasureException(SerializationInfo info,<br xmlns="">         StreamingContext context) : base(info, context) { }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.12  </span>Vom »Exception«-Snippet erzeugter Code (Bezeichner bereits angepasst)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da in der Basisklasse <span class="clisting">Exception</span> jeweils ein gleich parametrisierter Konstruktor definiert ist, werden die Parameter
+                                                      mit <span class="clisting">base</span> an den gleich parametrisierten Konstruktor der Basisklasse weitergeleitet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben dem parameterlosen Konstruktor enthält die Klassendefinition zwei Konstruktoren,
+                                                      die in ihrer Parameterliste einen Parameter namens <span class="ckursiv">message</span> vom Typ <span class="clisting">String</span> definieren. Hierbei handelt es sich um die Zeichenfolge, die bei der Ausnahmebehandlung
+                                                      mit der Eigenschaft <span class="clisting">Message</span> abgerufen werden kann und eine kurze, leicht verständliche Beschreibung der Fehlerursache
+                                                      anzeigt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der vierte, mit <span class="clisting">protected</span> gekennzeichnete Konstruktor dient zusammen mit dem Attribut <span class="clisting">[Serializable]</span> der Objektserialisierung. Da weder das Thema der Attribute noch das der Serialisierung
+                                                      bisher behandelt worden ist, gehe ich auf diesen Konstruktor nicht näher ein. Um aber
+                                                      die Vollständigkeit unserer Klasse zu gewährleisten, ist der Konstruktor hier mit
+                                                      aufgeführt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es spricht nichts dagegen, die Klassendefinition noch um weitere Konstruktoren oder
+                                                      andere Member wie Eigenschaften und Methoden zu ergänzen. Das würde sich anbieten,
+                                                      wenn im Zusammenhang mit der Ausnahme weiter gehende Anforderungen gestellt werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausnahme <span class="clisting">InvalidMeasureException</span> soll ausgelöst werden, wenn die Überprüfung in der Eigenschaft <span class="clisting">Radius</span> die Unzulässigkeit des Wertes festgestellt hat. Nach dem aktuellen Stand der Klasse
+                                                      <span class="clisting">Circle</span> wird immer noch ein Ereignis ausgelöst &#8211; eine nicht akzeptable Lösung. Allerdings
+                                                      wollen wir das Ereignis nicht durch die Exception ersetzen, sondern stellen die folgenden
+                                                      Anforderungen an den Code:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Die Ausnahme wird in jeden Fall ausgelöst, wenn ein unzulässiger Wert zugewiesen werden
+                                                         soll.
+                                                      </li>
+                                                      <li class="pgp">Registriert der aufrufende Code einen Ereignishandler für <span class="clisting">InvalidMeasure</span>, muss die Ausnahme nicht behandelt werden. Stattdessen wird die Ausnahme in einer
+                                                         weiteren Eigenschaft des <span class="clisting">EventArgs</span>-Objekts bereitgestellt.
+                                                      </li>
+                                                      <li class="pgp">Wird kein Ereignishandler registriert, muss die Ausnahme behandelt werden.</li>
+                                                   </ul>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Diese Verhaltensweise, entweder ein Ereignis zu behandeln oder die ausgelöste Ausnahme,
+                                                         findet sich auch im .NET Framework wieder. Ein gutes Beispiel dafür ist in ADO.NET
+                                                         das Ereignis <span class="clisting">RowUpdated</span> des <span class="clisting">DataAdapter</span>-Objekts.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um die drei Forderungen zu erfüllen, müssen wir im ersten Schritt die Klasse <span class="clisting">InvalidMeasureEventArgs</span> überarbeiten. Sie wird um die schreibgeschützte Eigenschaft <span class="clisting">Error</span> vom Typ <span class="clisting">Exception</span> ergänzt. Außerdem erhält der Konstruktor einen dritten Parameter, der das <span class="clisting">Exception</span>-Objekt entgegennimmt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Ergänzte und geänderte InvalidMeasureEventArgs-Klasse<br></br>public class InvalidMeasureEventArgs : EventArgs {<br></br>  // Felder<br></br>  private Exception _Error;<br></br>  // Eigenschaften<br></br>  public Exception Error {<br xmlns="">    get { return _Error; }<br xmlns="">  }<br></br>  // Konstruktor<br></br>  public InvalidMeasureEventArgs(int invalidMeasure, <br xmlns="">                                 string propertyName, Exception error) {<br xmlns="">    _InvalidMeasure = invalidMeasure;<br xmlns="">    _Error = error;<br xmlns="">    if (propertyName == "" || propertyName == null)<br xmlns="">      _PropertyName = "[unknown]";<br xmlns="">    else <br xmlns="">      _PropertyName = propertyName;<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.13  </span>Die ergänzte Klasse »InvalidMeasureEventArgs«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im nächsten Schritt müssen wir die Eigenschaft <span class="clisting">Radius</span> anpassen. Ist der übergebene Wert unzulässig, wird zuerst ein Objekt der Ausnahme
+                                                      <span class="clisting">InvalidMeasureException</span> erzeugt, ein Zeitstempel an die Eigenschaft <span class="clisting">Data</span> übergeben und anschließend die geschützte Methode <span class="clisting">OnInvalidMeasure</span> aufgerufen, die für die Auslösung des Ereignisses sorgt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">// Überarbeitete Eigenschaft<br></br><span class="clistingfett">public virtual int Radius</span> {<br xmlns="">  get { return _Radius; }<br></br>  set {<br xmlns="">    if (value &gt;= 0)<br xmlns="">      _Radius = value;<br xmlns="">    else <br xmlns="">    {<br xmlns="">      InvalidMeasureException ex = new InvalidMeasureException<br xmlns="">                         ("Ein Radius von " + value + " ist nicht zulässig.");<br xmlns="">      ex.Data.Add("Time", DateTime.Now);<br xmlns="">      OnInvalidMeasure(new InvalidMeasureEventArgs(value, "Radius", ex));<br xmlns="">    }<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.14  </span>Änderung der Eigenschaft »Radius« in der Klasse »Circle«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Methode <span class="clisting">OnInvalidMeasure</span> der Klasse <span class="clisting">GeometricObject</span> wird noch der <span class="clisting">else</span>-Zweig ergänzt, in dem die Ausnahme geworfen wird, falls kein Ereignishandler registriert
+                                                      ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">protected void OnInvalidMeasure(InvalidMeasureEventArgs e)</span>{<br xmlns="">  if (InvalidMeasure != null)<br xmlns="">    InvalidMeasure(this, e);<br xmlns="">  else<br xmlns="">    throw e.Error;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.15  </span>Änderung der Methode »OnInvalidMeasure« in »GeometricObject«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Schluss bleibt noch, sich vom Erfolg der Implementierung zu überzeugen. Dazu dient
+                                                      der folgende Beispielcode, in dem beide Varianten einem Test unterzogen werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">class Program {<br></br>  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    Circle kreis1 = null;<br xmlns="">    Circle kreis2 = null;<br xmlns="">    try {<br xmlns="">      kreis1 = new Circle();<br xmlns="">      kreis1.InvalidMeasure += kreis_InvalidMeasure;<br xmlns="">      kreis1.Radius = -100;<br xmlns="">      kreis2 = new Circle(-89);<br xmlns="">      kreis2.Radius = -9;<br xmlns="">    }<br xmlns="">    catch (InvalidMeasureException ex){<br xmlns="">      Console.WriteLine("Im Catch-Block: " + ex.Message);<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br>  // der Ereignishandler<br></br>  <span class="clistingfett">static void kreis_InvalidMeasure(object sender, InvalidMeasureEventArgs e)</span> {<br xmlns="">    Console.WriteLine("Ereignishandler: " + e.Error.Message);<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.16  </span>Hauptprogramm zum Testen der Ausnahme
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Objekt <span class="ckursiv">kreis1</span> registriert das Ereignis <span class="clisting">InvalidMeasure</span>, während <span class="ckursiv">kreis2</span> auf diese Option verzichtet. Entsprechend wird auch auf die Ausnahme reagiert: Die
+                                                      Übergabe eines unzulässigen Radius an <span class="ckursiv">kreis1</span> führt zur Ausführung des Ereignishandlers, während das Objekt <span class="ckursiv">kreis2</span> die Exception behandeln muss.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">In der Gesamtlösung des Beispiels <span class="ckursiv">GeometricObjects</span> auf der Buch-DVD unter <span class="ckursiv">Beispiele\Kapitel 7\GeometricObjectsSolution_8</span> sind neben der Änderung an der Klasse <span class="clisting">Circle</span> auch die entsprechenden Änderungen an der Klasse <span class="clisting">Rectangle</span> vorgenommen worden.
+                                                      </p>
+                                                   </div><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs07_001.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="7  Fehlerbehandlung und Debugging"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_06_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_07_002.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

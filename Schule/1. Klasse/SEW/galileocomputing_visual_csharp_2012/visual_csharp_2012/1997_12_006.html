@@ -1,0 +1,746 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 12  Arbeiten mit Dateien und Streams">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 12  Arbeiten mit Dateien und Streams">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 12  Arbeiten mit Dateien und Streams</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="12_005.html">
+      <link rel="next" href="1997_13_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_12_005.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_13_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442" class="navnav">12 Arbeiten mit Dateien und Streams</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_001.html#dodtp593afa38-a7a4-4092-9027-ba9224b110b0" class="navnav">12.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_002.html#dodtp5807c494-461f-47af-9810-ad1247d28f95" class="navnav">12.2 Namespaces der Ein- bzw. Ausgabe</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_002.html#dodtpc5a77fbf-57da-4b66-8204-aa096282b5fc" class="navnav">12.2.1 Das Behandeln von Ausnahmen bei E/A-Operationen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_003.html#dodtp064dbc2d-7246-4bb7-ad87-82dec683fc8a" class="navnav">12.3 Laufwerke, Verzeichnisse und Dateien</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp3108c2d9-4260-4338-9323-2752bda0c966" class="navnav">12.3.1 Die Klasse »File«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp735aecaa-e98a-4ff9-bfa0-5e3b79e2df6f" class="navnav">12.3.2 Die Klasse »FileInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp72a5be52-a25d-415d-8cdb-42eca466b5a7" class="navnav">12.3.3 Die Klassen »Directory« und »DirectoryInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp6c418c80-1855-4e79-85c7-85a0b9b8186d" class="navnav">12.3.4 Die Klasse »Path«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp39d95f5b-2b6e-4f2f-a808-1dfbf8fbf249" class="navnav">12.3.5 Die Klasse »DriveInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_004.html#dodtpf4774ca1-5d30-401e-ab53-a1522c9a79ed" class="navnav">12.4 Die »Stream«-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp66d6ad86-e8aa-46e6-92b2-80b660235b4c" class="navnav">12.4.1 Die abstrakte Klasse »Stream«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5" class="navnav">12.4.2 Die von »Stream« abgeleiteten Klassen im Überblick</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp9c15c660-dc41-4b02-ab73-e6366d811075" class="navnav">12.4.3 Die Klasse »FileStream«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_005.html#dodtp5cef0fac-55ad-4133-8b08-1c845f427cdb" class="navnav">12.5 Die Klassen »TextReader« und »TextWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_005.html#dodtpb2003e06-cf60-4f3c-875b-4a7559147ac1" class="navnav">12.5.1 Die Klasse »StreamWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_005.html#dodtpdc7f8071-45f1-45c7-b86e-084bb216fc7b" class="navnav">12.5.2 Die Klasse »StreamReader«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_006.html#dodtp0fa82ba2-6a24-405c-9e81-959c71a9b500" class="navh">12.6 Die Klassen »BinaryReader« und »BinaryWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_006.html#dodtpe7821d9f-5076-4226-84dd-e7b7a74ffcab" class="navh">12.6.1 Komplexe binäre Dateien</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp0fa82ba2-6a24-405c-9e81-959c71a9b500" name="dodtp0fa82ba2-6a24-405c-9e81-959c71a9b500"></a><h2 class="t2"><span class="cfett">12.6    </span><span class="cfett"> Die Klassen »BinaryReader« und »BinaryWriter«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa9796647-3e97-4428-806a-a7cd96bb21db"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp4b3377a8-44ee-47d2-953e-7af64c699b2a"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe7821d9f-5076-4226-84dd-e7b7a74ffcab"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Daten werden in einer Datei byteweise gespeichert. Dieses Grundprinzip macht sich
+                                                      die Klasse <span class="clisting">FileStream</span> zunutze, indem sie Daten Byte für Byte in den Datenstrom schreibt oder aus einem
+                                                      solchen liest. Dazu werden Methoden angeboten, die entweder nur ein einzelnes Byte
+                                                      behandeln oder auf Basis eines Byte-Arrays operieren. Eine spezialisiertere Form der
+                                                      einfachen, byteweisen Vorgänge bieten uns die Klassen <span class="clisting">BinaryReader</span><span class="clisting"><a class="indexterm" id="dodtp5307d6f6-bfc9-45ac-b81e-57859eb29c65"></a></span> bzw. <span class="clisting">BinaryWriter</span><span class="cfett"><a class="indexterm" id="dodtp58a28ddc-db1d-48e9-b3df-4221d2b4627f"></a></span>. Mit <span class="clisting">BinaryReader</span><span class="clisting"><a class="indexterm" id="dodtpc44147ac-eb8f-4fd3-a863-9a4abc29f37e"></a></span> lesen Sie aus dem Datenstrom, mit <span class="clisting">BinaryWriter</span> schreiben Sie in einen solchen hinein. Das Besondere an den beiden Klassen ist die
+                                                      Behandlung der übergebenen oder ausgewerteten Daten. 
+                                                   </p>
+                                                   <h4 class="t4"> Die Methoden der Klassen »BinaryReader« und »BinaryWriter«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Fast schon erwartungsgemäß veröffentlicht die Klasse <span class="clisting">BinaryWriter</span> eine <span class="clisting">Write</span>-Methode, die vielfach überladen ist. Sie können dieser Methode einen beliebigen primitiven
+                                                      Typ als Argument übergeben, der mit der ihm eigenen Anzahl von Bytes in der Datei
+                                                      gespeichert wird. Ein <span class="clisting">int</span> schreibt sich demnach mit vier Bytes in eine Datei, ein <span class="clisting">long</span> mit acht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ähnliches gilt auch für die Methode <span class="clisting">Read</span>, der noch der Typ als Suffix angehängt wird, der gelesen wird, z. B. <span class="clisting">ReadByte</span>, <span class="clisting">ReadInt32</span>, <span class="clisting">ReadSingle</span> usw. <span class="ckursiv"><a class="indexterm" id="dodtp2fecc6f0-ab84-416b-90ed-c209cc9e4272"></a></span></p>
+                                                   <h4 class="t4"> Die Konstruktoren der Klassen »BinaryReader« und »BinaryWriter«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In den beiden Klassen <span class="clisting">BinaryReader</span><span class="clisting"><a class="indexterm" id="dodtpb3461464-af63-4009-9047-d9ffb0b66570"></a></span> und <span class="clisting">BinaryWriter</span> stehen Ihnen nur jeweils zwei Konstruktoren zur Verfügung. Dem ersten können Sie
+                                                      die Referenz auf ein Objekt vom Typ <span class="clisting">Stream</span> übergeben, dem zweiten zusätzlich noch eine <span class="clisting">Encoding</span>-Referenz.
+                                                   </p>
+                                                   <h4 class="t4"> Binäre Datenströme auswerten</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp672e7961-01b0-4e6a-81a1-4c107bfd9f70"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Aus einem Strom die Bytes auszulesen, ist kein Problem. Halten Sie aber nur die rohen
+                                                      Bytes in den Händen, werden diese in den meisten Fällen nur von geringem Nutzen sein.
+                                                      Das Problem ist, eine bestimmte Sequenz von Bytes in richtiger Weise zu interpretieren.
+                                                      Kennen Sie den Typ der Dateninformationen nicht, sind die Bytes praktisch wertlos.
+                                                      Betrachten Sie dazu das folgende Beispiel:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 12\BinaryReaderSample_1</span><br></br><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br></br>    // eine Datei erzeugen und einen Integer-Wert in die Datei schreiben<br></br>    FileStream fileStr = new FileStream(@"D:\Binfile.mic", FileMode.Create);<br xmlns="">    BinaryWriter binWriter = new BinaryWriter(fileStr);<br xmlns="">    int intArr = 500;<br xmlns="">    binWriter.Write(intArr);<br xmlns="">    binWriter.Close();<br></br>    // Datei öffnen und den Inhalt byteweise auslesen<br></br>    FileInfo fi = new FileInfo(@"D:\Binfile.mic");<br xmlns="">    FileStream fs = new FileStream(@"D:\Binfile.mic", FileMode.Open);<br xmlns="">    byte[] byteArr = new byte[fi.Length];<br></br>    // Datenstrom in ein Byte-Array einlesen<br></br>    fs.Read(byteArr, 0, (int)fi.Length);<br></br>    // Konsolenausgabe<br></br>    Console.Write("Interpretation als Byte-Array: ");<br xmlns="">    for (int i = 0; i &lt; fi.Length; i++)<br xmlns="">      Console.Write(byteArr[i] + " ");<br xmlns="">    Console.Write("\n\n");<br xmlns="">    fs.Close();<br></br>    // Dateiinhalt textuell auswerten<br></br>    StreamReader strReader = new StreamReader(@"D:\Binfile.mic");<br xmlns="">    Console.Write("Interpretation als Text: ");<br xmlns="">    Console.WriteLine(strReader.ReadToEnd());<br xmlns="">    strReader.Close();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.10  </span>Auswerten binärer Datenströme
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst wird ein Objekt vom Typ <span class="clisting">FileStream</span> erzeugt, um eine neue Datei anzulegen bzw. eine gleichnamige Datei zu überschreiben.
+                                                      Die Objektreferenz wird einem Konstruktor der Klasse <span class="clisting">BinaryWriter</span> übergeben. Die Methode <span class="clisting">Write</span> schreibt anschließend einen Integer mit dem Inhalt 500 in die Datei. Anschließend
+                                                      wird die Datei ausgelesen. Wir stellen uns dabei dumm und tun so, als wüssten wir
+                                                      nicht, von welchem Datentyp die in der Datei <span class="ckursiv">D:\Binfile.mic</span> gespeicherte Zahl ist. Also testen wir den Dateiinhalt, zuerst byteweise und danach
+                                                      auch noch zeichenorientiert, in der Hoffnung, ein sinnvolles Ergebnis zu erhalten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum byteweisen Lesen greifen wir auf die Klasse <span class="clisting">FileStream</span> zurück, lesen den Datenstrom aus der Datei in das Byte-Array <span class="ckursiv">byteArr</span> ein und geben dann die Elemente des Arrays an der Konsole aus:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Interpretation als Byte-Array: 244 1 0 0<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Unbedarfter wird vielleicht wegen der fehlerfreien Ausgabe in Verzückung geraten,
+                                                      wir wissen aber, dass es nicht das ist, was wir ursprünglich in die Datei geschrieben
+                                                      haben. Wie aber ist die Ausgabe zu interpretieren, die mit Sicherheit auf jedem Rechner
+                                                      genauso lauten wird?
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die vier Zahlen repräsentieren die vier Bytes aus der Datei. Dabei erfolgt die Anzeige
+                                                      vom Lower-Byte bis zum Higher-Byte. In die »richtige«, besser gesagt, gewohnte Reihenfolge
+                                                      gebracht müssten wir demnach
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">0 0 1 244<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">schreiben. Wir wissen, dass diese Bytes einen Integer beschreiben &#8211; und sie tun es
+                                                      auch, wenn wir uns nur die Bitfolge ansehen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">0000 0000 0000 0000 0000 0001 1111 0100<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Kombination aller Bits ergibt tatsächlich die Dezimalzahl 500. Ein Benutzer, der
+                                                      nicht weiß, wie die vier Bytes zu interpretieren sind, hat die Qual der Wahl: Handelt
+                                                      es sich um vier einzelne Bytes oder um zwei Integer oder vielleicht um eine Zeichenfolge?
+                                                      Letzteres testet unser Code ebenfalls, das Ergebnis der Ausgabe ist ernüchternd: Uns
+                                                      grinst ein Smiley mit ausgestreckter Zunge an. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ändern wir nun den Lesevorgang der Daten so ab, dass wir den Dateiinhalt tatsächlich
+                                                      als <span class="clisting">int</span> auswerten: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">FileStream fs = new FileStream(@"D:\Binfile.mic", FileMode.Open);<br xmlns="">BinaryReader br = new BinaryReader(fs);<br xmlns="">Console.WriteLine(br.ReadInt32());<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis wird diesmal mit der korrekten Ausgabe an der Konsole enden.</p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe7821d9f-5076-4226-84dd-e7b7a74ffcab" name="dodtpe7821d9f-5076-4226-84dd-e7b7a74ffcab"></a><h3 class="t3"><span class="cfett">12.6.1    </span><span class="cfett"> Komplexe binäre Dateien</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb50075b2-3524-40c1-b621-769e4d80a795"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Informationsgehalt binärer Dateien kann nur dann korrekt ausgewertet werden, wenn
+                                                      der Typ, den die Daten repräsentieren, bekannt ist. Im vorhergehenden Abschnitt haben
+                                                      Sie dazu ein kleines Beispiel gesehen. Binäre Dateien können aber mehr als nur einen
+                                                      einzigen Typ speichern, es können durchaus unterschiedliche Typen in beliebiger Reihenfolge
+                                                      sein. Um zu einem späteren Zeitpunkt auf die Daten zugreifen zu können, muss nur der
+                                                      strukturelle Aufbau der Datei &#8211; das sogenannte Dateiformat &#8211; der gespeicherten Informationen
+                                                      bekannt sein, ansonsten ist die Datei praktisch wertlos.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dateien unterscheiden sich im Dateiformat: Eine Bitmap-Datei wird die Informationen
+                                                      zu den einzelnen Pixeln anders speichern, als Word den Inhalt eines Dokuments speichert;
+                                                      eine JPEG-Datei unterscheidet sich wiederum von einer MPEG-Datei. Die Dateierweiterung
+                                                      ist als Kennzeichnung einer bestimmten Spezifikation anzusehen, nämlich als Spezifikation
+                                                      der Datenstruktur in der Datei. Praktisch alle Binärdateien werden sich in ihrem Dateiformat
+                                                      unterscheiden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns nun in einem etwas aufwendigeren Beispiel dem Thema komplexer Binärdateien
+                                                      nähern, um das Arbeiten mit solchen Dateien zu verstehen, ohne zugleich in zu viel
+                                                      Programmcode die Übersicht zu verlieren. Sie können das Konzept, das sich hinter diesem
+                                                      Beispiel verbirgt, in ähnlicher Weise auch auf andere bekannte Dateiformate anwenden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dazu geben wir uns zunächst eine Struktur vor, die ein <span class="clisting">Point</span>-Objekt beschreibt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public struct Point {<br xmlns="">   public int XPos {get; set;}<br xmlns="">   public int YPos {get; set;}<br xmlns="">   public long Color {get; set;}<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.11  </span>Definition der Struktur »Point« für das folgende Beispiel
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Typ <span class="clisting">Point</span> veröffentlicht drei Daten-Member: <span class="clisting">XPos</span> und <span class="clisting">YPos</span> jeweils vom Typ <span class="clisting">int</span> sowie <span class="clisting">Color</span> vom Typ <span class="clisting">long</span>. Nun wollen wir eine Klasse entwickeln, die in der Lage ist, die Daten vieler <span class="clisting">Point</span>-Objekte in einer Datei zu speichern und später auch wieder auszulesen. Außerdem soll
+                                                      eine Möglichkeit geschaffen werden, um auf die Daten eines beliebigen <span class="clisting">Point</span>-Objekts in der Datei zugreifen zu können.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die erste Überlegung ist, wie das Format einer Datei aussehen muss, um den gestellten
+                                                      Anforderungen zu entsprechen. Die Daten mehrerer <span class="clisting">Point</span>-Objekte hintereinander zu speichern, ist kein Problem. Stellen Sie sich aber nun
+                                                      vor, Sie würden versuchen, die Informationen des zehnten Punkts aus einer Datei zu
+                                                      lesen, in der nur die Daten für fünf Punkte enthalten sind. Das kann zu keinem erfolgreichen
+                                                      Ergebnis führen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen daher eine Information in die Datei schreiben, der wir die gespeicherte
+                                                      <span class="clisting">Point</span>-Anzahl entnehmen können. Der Typ dieser Information muss klar definiert sein, damit
+                                                      jedes Byte in der Datei eine klare Zuordnung erhält. Im Folgenden wird diese Information
+                                                      in einem <span class="clisting">int</span> gespeichert, und zwar am Anfang der Datei. 
+                                                   </p>
+                                                   <p><a href="bilder/12_05.png" rel="lightbox" title="Datei mit drei gespeicherten Point-Objekten"><img class="bild" border="1" src="bilderklein/klein12_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 12.5  </span>Datei mit drei gespeicherten Point-Objekten
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit haben wir die Spezifikation der binären Datei festgelegt. Die Auswertung der
+                                                      ersten vier Bytes liefert die Anzahl der gespeicherten <span class="clisting">Point</span>-Objekte, und die folgenden insgesamt 16 Byte großen Blöcke beschreiben jeweils einen
+                                                      Punkt. Wir könnten jetzt noch festlegen, dass Dateien dieses Typs beispielsweise die
+                                                      Dateierweiterung .<span class="ckursiv">pot</span> erhalten, aber eine solche Festlegung wird der Code des folgenden Beispiels nicht
+                                                      berücksichtigen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da wir uns nun auf ein Dateiformat geeinigt haben, wollen wir uns das weitere Vorgehen
+                                                      überlegen. Wir könnten die gesamte Programmlogik in <span class="clisting">Main</span> implementieren mit dem Nachteil, dass etwaige spätere Änderungen zu Komplikationen
+                                                      führen könnten. Besser ist es, sich das objektorientierte Konzept der Modularisierung
+                                                      in Erinnerung zu rufen. Deshalb wird eine Klasse definiert, deren Methoden die Dienste
+                                                      zur Initialisierung der <span class="ckursiv">Point</span>-Objekte, zum Speichern in einer Datei, zum Lesen der Datei und zur Ausgabe der Daten
+                                                      eines beliebigen <span class="clisting">Point</span>-Objekts zur Verfügung stellen. Der Name der Klasse sei <span class="clisting">PointReader</span>, die Bezeichner der Methoden lauten <span class="clisting">WriteToFile</span><span class="ckursiv">, </span><span class="clisting">GetFromFile</span><span class="ckursiv"> und </span><span class="clisting">GetPoint</span><span class="ckursiv">.</span></p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Grundsätzlich können Methoden als Instanz- oder Klassenmethoden veröffentlicht werden.
+                                                      Instanzmethoden würden voraussetzen, dass die Klasse <span class="clisting">PointReader</span> instanziiert wird. Das Objekt wäre dann an eine bestimmte Datei gebunden, die <span class="clisting">Point</span>-Objekte enthält. Statische Methoden sind flexibler einsetzbar, verlangen allerdings
+                                                      auch bei jedem Aufruf die Pfadangabe zu der Datei. In diesem Beispiel sollen die Methoden
+                                                      statisch sein. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Widmen wir uns der Methode <span class="clisting">WriteToFile</span>. Sie hat die Aufgabe, eine Datei zu generieren, die die Anforderungen unserer Spezifikation
+                                                      zur Speicherung von <span class="ckursiv">Point</span>-Objekten erfüllt. Die Pfadangabe muss der Methode als Argument übergeben werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie wird der Code in dieser Methode arbeiten? Zunächst muss eine <span class="clisting">int</span>-Zahl in die Datei geschrieben werden, die der Anzahl der <span class="clisting">Point</span>-Objektdaten entspricht. Danach werden <span class="clisting">Point</span> für <span class="clisting">Point</span> alle Objektdaten übergeben, bis das Array durchlaufen ist. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public static void WriteToFile(string path, Point[] array) </span>{<br xmlns="">  FileStream fileStr = new FileStream(path, FileMode.Create);<br xmlns="">  BinaryWriter binWriter = new BinaryWriter(fileStr);<br></br>  // Anzahl der Punkte in die Datei schreiben<br></br>  binWriter.Write(array.Length);  <br></br>  // die Point-Daten in die Datei schreiben    <br></br>  for(int i = 0; i &lt; array.Length; i++) {<br xmlns="">    binWriter.Write(array[i].XPos);<br xmlns="">    binWriter.Write(array[i].YPos);<br xmlns="">    binWriter.Write(array[i].Color);<br xmlns="">  }<br xmlns="">  binWriter.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.12  </span>»Point«-Daten in eine Datei schreiben
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Daten der <span class="clisting">Point</span>-Objekte sollen mit einer Instanz der Klasse <span class="clisting">BinaryWriter</span> in die Datei geschrieben werden. Dazu benötigen wir auch ein Objekt vom Typ <span class="clisting">FileStream</span>. Da alle Daten hintereinander in eine neue Datei geschrieben werden sollen, müssen
+                                                      wir <span class="clisting">FileStream</span> im Modus <span class="clisting">Create</span> öffnen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem wir die Referenz auf den <span class="clisting">FileStream</span> an den Konstruktor der <span class="clisting">BinaryWriter</span>-Klasse übergeben haben, wird die Anzahl der <span class="clisting">Points</span> in die Datei geschrieben. In einer Schleife greifen wir danach jedes <span class="clisting">Point</span>-Objekt im Array ab und schreiben die Daten nacheinander in die Datei. Zum Schluss
+                                                      muss der <span class="clisting">Writer</span> ordnungsgemäß geschlossen werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unsere Datei ist erzeugt, und nur mit dem Kenntnisstand der Spezifikation, wie die
+                                                      einzelnen Bytes zu interpretieren sind, liefern die Daten die richtigen Werte. Die
+                                                      Methode <span class="clisting">GetFromFile</span> zum Auswerten des Dateiinhalts muss sich an unsere Festlegung halten. Daher wird
+                                                      auch zuerst der Integer aus der Datei gelesen und daran anschließend die Daten der
+                                                      <span class="clisting">Point</span>-Objekte. Der Rückgabewert der Methode ist die Referenz auf ein intern erzeugtes <span class="clisting">Point</span>-Array.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public static Point[] GetFromFile(string path) </span>{<br xmlns="">  FileStream fs = new FileStream(path, FileMode.Open);<br xmlns="">  BinaryReader br = new BinaryReader(fs);<br></br>  // liest die ersten 4 Bytes aus der Datei, die die Anzahl der<br></br>  // Point-Objekte enthält<br></br>  int anzahl = br.ReadInt32();<br></br>  // Lesen der Daten aus der Datei<br></br>  Point[] arrPoint = new Point[anzahl];<br xmlns="">  for (int i = 0; i &lt; anzahl; i++) {<br xmlns="">    arrPoint[i].XPos = br.ReadInt32();<br xmlns="">    arrPoint[i].YPos = br.ReadInt32();<br xmlns="">    arrPoint[i].Color = br.ReadInt64();<br xmlns="">  }<br xmlns="">  br.Close();<br xmlns="">  return arrPoint;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.13  </span>Lesen der »Point«-Daten aus einer Datei
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da wir die Kontrolle über jedes einzelne gespeicherte Byte der Datei haben und dieses
+                                                      richtig zuordnen können, muss es auch möglich sein, die Daten eines beliebigen <span class="clisting">Point</span>-Objekts einzulesen. Dazu dient die Methode <span class="clisting">GetPoint</span>. Bei deren Aufruf wird zunächst die Pfadangabe übergeben und als zweites Argument
+                                                      die Position des <span class="clisting">Point</span>-Objekts in der Datei. Der Rückgabewert ist die Referenz auf das gefundene Objekt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public static Point GetPoint(string path, int pointNo) </span>{<br xmlns="">  FileStream fs = new FileStream(path, FileMode.Open);<br xmlns="">  int pos = 4 + (pointNo - 1) * 16;<br xmlns="">  BinaryReader br = new BinaryReader(fs);<br></br>  // Prüfen, ob der user eine gültige Position angegeben hat<br></br>  if (pointNo &gt; br.ReadInt32() || pointNo == 0) {<br xmlns="">    string message = "Unter der angegebenen Position ist";<br xmlns="">    message += " kein \nPoint-Objekt gespeichert.";<br xmlns="">    throw new PositionException(message);<br xmlns="">  }<br></br>  // den Zeiger positionieren<br></br>  fs.Seek(pos, SeekOrigin.Begin);<br></br>  // Daten des gewünschten Points einlesen<br></br>  Point savedPoint = new Point();<br xmlns="">  savedPoint.XPos = br.ReadInt32();<br xmlns="">  savedPoint.YPos = br.ReadInt32();<br xmlns="">  savedPoint.Color = br.ReadInt64();<br xmlns="">  br.Close();<br xmlns="">  return savedPoint;<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.14  </span>Einlesen eines bestimmten »Point«-Objekts
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die wesentliche Funktionalität der Methode steckt in der richtigen Positionierung
+                                                      der Zeigers, die aus der Angabe des Benutzers berechnet wird. Dabei muss berücksichtigt
+                                                      werden, dass am Dateianfang vier Bytes die Gesamtanzahl der Objekte in der Datei beschreiben
+                                                      und dass die Länge eines einzelnen <span class="clisting">Point</span>-Objekts 16 Byte beträgt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int pos = 4 + (pointNo - 1) * 16; <br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die so ermittelte Position wird der <span class="clisting">Seek</span>-Methode des <span class="clisting">BinaryReader</span>-Objekts übergeben. Die Positionsnummer des ersten Bytes in der Datei ist 0, daher
+                                                      verweist der Zeiger mit der Übergabe der Zahl 4 auf das fünfte Byte. Wir setzen in
+                                                      diesem Fall natürlich den Ursprung <span class="ckursiv">origin</span> des Zeigers auf den Anfang des Datenstroms.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">fs.Seek(pos, SeekOrigin.Begin)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Da damit gerechnet werden muss, dass der Anwender eine Position angibt, die keinem
+                                                      Objekt in der Datei entspricht, sollte eine Ausnahme ausgelöst werden. Diese ist benutzerdefiniert
+                                                      und heißt <span class="clisting">PositionException</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class PositionException : Exception </span>{<br xmlns="">   public PositionException() {}<br xmlns="">   public PositionException(string message) : base(message) {}<br xmlns="">   public PositionException(string message, Exception inner):base(message, inner){}<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.15  </span>Anwendungsspezifische Exception
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit ist unsere Klassendefinition fertig, und wir können abschließend die Implementierung
+                                                      testen. Dazu schreiben wir entsprechenden Testcode in die Methode <span class="clisting">Main</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 12\BinaryReaderSample_2</span><br></br><span class="clistingfett">public class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br></br>    // Point-Array erzeugen<br></br>    Point[] pArr = new Point[2];<br xmlns="">    pArr[0].XPos = 10;<br xmlns="">    pArr[0].YPos = 20;<br xmlns="">    pArr[0].Color = 310;<br xmlns="">    pArr[1].XPos = 40;<br xmlns="">    pArr[1].YPos = 50;<br xmlns="">    pArr[1].Color = 110;<br></br>    // Point-Array speichern<br></br>    PointReader.WriteToFile(@"D:\Test.pot",pArr);<br></br>    // gespeicherte Informationen aus der Datei einlesen<br></br>    Point[] x = PointReader.GetFromFile(@"D:\Test.pot");<br></br>    // alle eingelesenen Point-Daten ausgeben<br></br>    for(int i = 0; i &lt; 2; i++) {<br xmlns="">      Console.WriteLine("Point-Objekt-Nr.{0}", i + 1);<br xmlns="">      Console.WriteLine();<br xmlns="">      Console.WriteLine("p[{0}].XPos = {1}", i, x[i].XPos);<br xmlns="">      Console.WriteLine("p[{0}].YPos = {1}", i, x[i].YPos);<br xmlns="">      Console.WriteLine("p[{0}].Color = {1}", i, x[i].Color);<br xmlns="">      Console.WriteLine(new string('=',30));<br xmlns="">    }<br></br>    // einen bestimmten Point einlesen<br></br>    Console.Write("\nWelchen Punkt möchten Sie einlesen? ");<br xmlns="">    int position = Convert.ToInt32(Console.ReadLine());<br xmlns="">    try {<br xmlns="">      Point myPoint = PointReader.GetPoint(@"D:\Test.pot", position);<br xmlns="">      Console.WriteLine("p.XPos = {0}", myPoint.XPos);<br xmlns="">      Console.WriteLine("p.YPos = {0}", myPoint.YPos);<br xmlns="">      Console.WriteLine("p.Color = {0}", myPoint.Color);<br xmlns="">    }<br xmlns="">    catch(PositionException e) {<br xmlns="">      Console.WriteLine(e.Message);<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></br><br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.16  </span>Komplettes Beispielprogramm 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weil die <span class="clisting">Main</span>-Methode nur zum Testen der zuvor entwickelten Klasse dient, werden auch nur zwei
+                                                      <span class="clisting">Point</span>-Objekte erzeugt, die uns als Testgrundlage für die weiteren Operationen dienen. Außerdem
+                                                      ist die Datei, in die gespeichert wird, immer dieselbe. Für unsere Zwecke ist das
+                                                      völlig ausreichend. Nach dem Speichern mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">PointReader.WriteToFile(@"D:\Test.pot", pArr);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird die Datei sofort wieder eingelesen und die zurückgegebene Referenz einem neuen
+                                                      Array zugewiesen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Point[] x = PointReader.GetFromFile(@"D:\Test.pot");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In einer Schleife werden danach alle eingelesenen Objektdaten an der Konsole ausgegeben.
+                                                      
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Aufregender ist es hingegen, die Daten eines bestimmten Punktes zu erfahren. Dem Aufruf
+                                                      von <span class="clisting">GetPoint</span> wird neben der Pfadangabe auch noch die Position des <span class="clisting">Point</span>-Objekts in der Datei übergeben. Die Übergabe einer unzulässigen Position führt dazu,
+                                                      dass die spezifische Ausnahme <span class="clisting">PositionException</span> mit einer entsprechenden Fehlermeldung ausgelöst wird, andernfalls werden die korrekten
+                                                      Werte angezeigt. 
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs12_006.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="12  Arbeiten mit Dateien und Streams"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_12_005.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_13_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

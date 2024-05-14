@@ -1,0 +1,1095 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 32  ADO.NET &#8211; Das Command-Objekt">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 32  ADO.NET &#8211; Das Command-Objekt">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 32  ADO.NET &#8211; Das Command-Objekt</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="32_004.html">
+      <link rel="next" href="1997_33_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_32_004.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_33_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d" class="navnav">32 ADO.NET &#8211; Das Command-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_001.html#dodtp6ae286cd-0229-42af-a45b-b4ca78223ff6" class="navnav">32.1 Die Datenbankabfrage</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_002.html#dodtpd5648227-9fae-46d8-baf5-73b8d36240b6" class="navnav">32.2 Das SqlCommand-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtpc06ccb0e-6975-4d47-9a3e-a6feba32ec26" class="navnav">32.2.1 Erzeugen eines SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtpa4b03ad3-3d1b-4c41-a22e-7ab0cea25a78" class="navnav">32.2.2 Die Methode »CreateCommand« des Connection-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtp80339cb5-c129-4bcc-bbe0-7ac6e18a5f55" class="navnav">32.2.3 Ausführen des SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_002.html#dodtp41d098d5-8397-4152-b5aa-a12e8a6f58b8" class="navnav">32.2.4 Die Eigenschaft »CommandTimeout« des SqlCommand-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_003.html#dodtp48f78384-ecf6-4995-9155-1b4cb0e58879" class="navnav">32.3 Aktionsabfragen absetzen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp2ce3e9f7-bd8a-43ce-9ed4-653e624ddf51" class="navnav">32.3.1 Datensätze hinzufügen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp196a1d93-272a-48a4-b305-a0e0ee16c6dc" class="navnav">32.3.2 Datensätze löschen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtp75dd092c-5864-429b-acaa-1db18c24a6d9" class="navnav">32.3.3 Datensätze ändern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_003.html#dodtpe1f41d4b-db20-4fd7-898f-950d06263569" class="navnav">32.3.4 Abfragen, die genau ein Ergebnis liefern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_004.html#dodtp09887bcc-e95b-4db2-bd2d-f8469031e1f3" class="navnav">32.4 Das SqlDataReader-Objekt</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp6882cc3d-f783-430e-ab94-e0407918fcec" class="navnav">32.4.1 Datensätze einlesen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtpb14843da-12f1-4300-9ca3-f6d7dcb213e4" class="navnav">32.4.2 Schließen des SqlDataReader-Objekts</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp118c7a52-c46c-4cd7-a2c1-84912a4f918d" class="navnav">32.4.3 MARS (Multiple Active Resultsets)</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp18f564c0-462e-40e8-b964-fd5333536216" class="navnav">32.4.4 Batchabfragen mit »NextResult« durchlaufen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_004.html#dodtp5bce5631-8ad2-4d00-abb6-f26926c0f469" class="navnav">32.4.5 Das Schema eines SqlDataReader-Objekts untersuchen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_32_005.html#dodtp36a65484-5a09-4c30-8b79-6ad0b96fd635" class="navh">32.5 Parametrisierte Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525" class="navh">32.5.1 Parametrisierte Abfragen mit dem SqlClient-Datenprovider</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp291b6b14-3467-490d-b58c-8319dfeb7a89" class="navh">32.5.2 Die Klasse »SqlParameter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp55d1b3ff-4fa4-4802-ae13-f3cd77b93f39" class="navh">32.5.3 Asynchrone Abfragen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_32_005.html#dodtp05c465fc-74be-457b-b385-3cb4173fd089" class="navh">32.5.4 Gespeicherte Prozeduren (Stored Procedures)</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp36a65484-5a09-4c30-8b79-6ad0b96fd635" name="dodtp36a65484-5a09-4c30-8b79-6ad0b96fd635"></a><h2 class="t2"><span class="cfett">32.5    </span><span class="cfett"> Parametrisierte Abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpe22231a7-0aeb-4419-a797-6d50c80a207e"></a>Die Suche nach einem bestimmten Datensatz einer Tabelle wird durch die WHERE-Klausel
+                                                      einer SELECT-Abfrage bestimmt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT ProductName FROM Products WHERE ProductName='Tunnbröd'<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unstrittig ist, dass die Hartcodierung dieser Abfrage weder anwender- noch praxisgerecht
+                                                      ist. Was ist, wenn der Anwender nicht nach dem Artikel <span class="ckursiv">Tunnbröd</span> suchen möchte, sondern die Informationen über den Artikel <span class="ckursiv">Tofu</span> benötigt? Die Abfrage muss allgemeiner formuliert werden, und zwar so, dass der Anwender
+                                                      zur Laufzeit des Programms den Artikel beliebig bestimmen kann.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Lösung lautet: Wir müssen eine parametrisierte Abfrage formulieren. Berücksichtigen
+                                                      Sie bei den folgenden Ausführungen jedoch, dass die Wahl des .NET-Datenproviders maßgeblich
+                                                      die Syntax des SELECT-Statements und des Programmcodes einer parametrisierten Abfrage
+                                                      beeinflusst.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525" name="dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525"></a><h3 class="t3"><span class="cfett">32.5.1    </span><span class="cfett"> Parametrisierte Abfragen mit dem SqlClient-Datenprovider</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp291b6b14-3467-490d-b58c-8319dfeb7a89"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp36a65484-5a09-4c30-8b79-6ad0b96fd635"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist die Entscheidung auf den SqlClient-Datenprovider gefallen, könnte das Statement
+                                                      wie folgt lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT * FROM Products <br xmlns="">WHERE ProductName = @Productname OR CategoryID = @CatID<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.12  </span>Parametrisierte SQL-Abfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="ckursiv">@ProductName</span> und @<span class="ckursiv">CatID</span> sind benannte Parameter, denen das @-Zeichen vorangestellt wird. Dieses gilt jedoch
+                                                      nur im Zusammenhang mit dem SqlClient-Datenprovider. Die Datenprovider OleDb und Odbc
+                                                      unterstützen benannte Parameter nicht, sondern nur den generischen Parametermarker.
+                                                      Dabei handelt es sich um das Fragezeichen (?). Der Grund für diese Abweichung der
+                                                      Datenprovider ist sehr einfach: Während der OleDb- bzw. Odbc-Datenprovider eine datenbankunabhängige
+                                                      Syntax erlaubt, ist der SqlClient-Provider für den SQL Server gedacht, der benannte
+                                                      Parameter mit diesem Präfix unterstützt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Parameter einer parametrisierten Abfrage werden vom <span class="clisting">SqlCommand</span>-Objekt gesammelt. Dieses besitzt eine <span class="clisting">Parameters</span>-Auflistung<a class="indexterm" id="dodtpc73887ea-8c6d-450a-bd4a-11ea9aa1f766"></a>, der die einzelnen Parameter hinzugefügt werden. Verwenden Sie den SqlClient-Datenprovider,
+                                                      handelt es sich um den Typ <span class="clisting">SqlParameter</span><span class="clisting"><a class="indexterm" id="dodtpbc46a8f3-5a7e-4aec-8cc2-79a3688ed8a0"></a></span>. Sie können einen Parameter hinzufügen, indem Sie entweder die <span class="clisting">Add</span>-Methode der Auflistung oder die Methode <span class="clisting">AddWithValue</span><span class="clisting"><a class="indexterm" id="dodtpcf388495-0caf-48d1-b64c-1ecb917af5e3"></a></span> aufrufen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Beispiel <span class="ckursiv">ParametrisierteAbfrage</span> verwendet zum Hinzufügen die Methode <span class="clisting">AddWithValue</span>. Die beiden Parameter werden mit statischen Werten gefüllt. In der Praxis würden
+                                                      Sie die Werte dem Eingabestrom oder beispielsweise einem Eingabefeld entnehmen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\ParametrisierteAbfrage</span><br></br>static void Main(string[] args){<br xmlns="">  SqlConnection con = new SqlConnection("...");<br xmlns="">  string strSQL = "SELECT * FROM Products " +<br xmlns="">                  "WHERE ProductName = @Productname OR " +<br xmlns="">                         "CategoryID = @CatID";<br xmlns="">  SqlCommand cmd = new SqlCommand(strSQL, con);<br></br>  // Parameter hinzufügen und Werte übergeben<br></br>  cmd.Parameters.AddWithValue("@Productname", "Konbu");<br xmlns="">  cmd.Parameters.AddWithValue("@CatID", "1");<br xmlns="">  con.Open();<br xmlns="">  SqlDataReader rd = cmd.ExecuteReader();<br xmlns="">  while (rd.Read())<br xmlns="">    Console.WriteLine("{0,-5}{1,-35}{2}",<br xmlns="">               rd["ProductID"], rd["ProductName"], rd["UnitPrice"]);<br xmlns="">  rd.Close();<br xmlns="">  con.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.13  </span>Parametrisierte Abfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei benannten Parametern ist die Reihenfolge der Parameter innerhalb der <span class="clisting">Parameters</span>-Auflistung des <span class="clisting">SqlCommand</span>-Objekts unbedeutend.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei beiden Parametern handelt es sich in diesem Beispiel um Zeichenfolgen, die auch
+                                                      als solche an die Datenbank weitergeleitet werden. Sie können hier jeden Datentyp
+                                                      angeben, denn das zweite Argument von <span class="clisting">AddWithValue</span> ist vom Typ <span class="clisting">Object</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einen Haken kann der sehr einfache Einsatz der Methode <span class="clisting">AddWithValue</span> dennoch haben. Verwenden Sie bei der Wertübergabe einen ungeeigneten Datentyp, behandelt
+                                                      die Datenbank die im Parameter gespeicherte Information vielleicht nicht so, wie Sie
+                                                      es erwarten. Unter Umständen gibt der SQL Server sogar eine Ausnahme vom Typ <span class="clisting">SqlException</span><span class="clisting"><a class="indexterm" id="dodtp9625590c-858f-4d7b-be02-8f0cb2cf3feb"></a></span> zurück, weil der übermittelte Parameter mit der Typdefinition der entsprechenden
+                                                      Spalte nicht übereinstimmt. Sie können das sehr leicht selbst testen, indem Sie im
+                                                      Code des Beispiels anstelle des Artikelbezeichners <span class="ckursiv">Konbu</span> eine Integerzahl eintragen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Datenbank diese Verantwortung zu übertragen, ist keine gute Lösung. Der richtige
+                                                      Datentyp sollte zumindest weitgehend im Code des Clients sichergestellt sein. Dazu
+                                                      bietet sich die vielfach überladene Methode <span class="clisting">Add</span> an, die über den Parameterbezeichner hinaus auch den an die Datenbank übergebenen
+                                                      Datentyp steuert. Zudem gibt es noch die Möglichkeit, den Datentyp genauer zu spezifizieren.
+                                                      Beispielsweise können Zeichenfolgen eine unterschiedliche Länge aufweisen. Die Länge
+                                                      kann als drittes Übergabeargument bekannt gegeben werden. In unserem Beispiel oben
+                                                      könnten die beiden Anweisungen
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cmd.Parameters.AddWithValue("@Name", "Konbu");<br xmlns="">cmd.Parameters.AddWithValue("@CatID", 1);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">durch</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cmd.Parameters.Add("@Productname", SqlDbType.VarChar, 40).Value = "Konbu";<br xmlns="">cmd.Parameters.Add("@CatID", SqlDbType.Int).Value = 1;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ersetzt werden.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Übergeben Sie einem der beiden Parameter einen Integer-Wert, wird keine Ausnahme ausgelöst.
+                                                      Das Ergebnis sieht im ersten Moment ernüchternd aus und scheint der vorher gemachten
+                                                      Aussage zu widersprechen, dass die Methode <span class="clisting">Add</span> eine Typüberprüfung gewährleistet. Die Ursache ist allerdings einfach zu erklären:
+                                                      Die Integerzahl wird implizit als Zeichenfolge im Parameter eingetragen. Anders sieht
+                                                      es jedoch aus, wenn ein Parameter als Integer festgelegt wird und Sie versuchen, diesem
+                                                      eine Zeichenfolge zuzuweisen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cmd.Parameters.Add("@Param", SqlDbType.Int).Value = "White";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Aufruf von <span class="clisting">ExecuteReader</span> wird die Ausnahme <span class="clisting">FormatException</span> ausgelöst. Diese stammt nicht vom SQL Server, sondern wird von ADO.NET in der Clientanwendung
+                                                      ausgelöst. Damit haben wir ein Ziel erreicht: die Entlastung der Datenbank.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Der Datentyp, den Sie der <span class="clisting">Add</span>-Methode übergeben, stammt aus der Enumeration <span class="clisting">SqlDbType</span>. Die Mitglieder dieser Aufzählung beschreiben die Datentypen, die SQL Server standardmäßig
+                                                         bereitstellt.
+                                                      </p>
+                                                   </div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp291b6b14-3467-490d-b58c-8319dfeb7a89" name="dodtp291b6b14-3467-490d-b58c-8319dfeb7a89"></a><h3 class="t3"><span class="cfett">32.5.2    </span><span class="cfett"> Die Klasse »SqlParameter«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp55d1b3ff-4fa4-4802-ae13-f3cd77b93f39"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp898cb5b8-3e5e-48c9-bb37-399e13d04525"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpfebdf117-98aa-4d61-b5b5-ccfdf480016a"></a>Solange nicht ausdrücklich Parameter hinzugefügt werden, ist die <span class="clisting">Parameters</span>-Auflistung des <span class="clisting">SqlCommand</span>-Objekts leer. Die Referenz auf die Auflistung erhalten Sie über die Eigenschaft <span class="clisting">Parameters</span>. Ein Parameter wird unter Aufruf der Methode <span class="clisting">Add</span> oder <span class="clisting">AddWithValue</span> hinzugefügt. Alle anderen Methoden der Auflistung gleichen denen aller anderen üblichen
+                                                      Auflistungen von .NET: Mit <span class="clisting">Count</span> ruft man die Anzahl der Parameter ab, mit <span class="clisting">Remove</span> wird ein Parameter gelöscht usw.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">Add</span> ist vielfach überladen, <span class="clisting">AddWithValue</span> überhaupt nicht. Beiden ist aber eines gemeinsam: Der Rückgabewert ist die Referenz
+                                                      auf das hinzugefügte <span class="clisting">SqlParameter</span>-Objekt. Meistens können Sie den Rückgabewert ignorieren. Er ist dann interessant,
+                                                      wenn man die Eigenschaften des Parameters auswerten oder vor dem Absetzen des SQL-Kommandos
+                                                      ändern möchte.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Füllen des Parameters wird der Eigenschaft <span class="clisting">Value</span> des <span class="clisting">SqlParameter</span>-Objekts der entsprechende Wert zugewiesen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cmd.Parameters["@ParameterName"].Value = "Chai";<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie rufen den Indexer der <span class="clisting">SqlParameterCollection</span> auf und übergeben den Bezeichner des Parameters. Alternativ können Sie auch den Index
+                                                      des entsprechenden <span class="clisting">Parameter</span>-Objekts in der Auflistung verwenden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp55d1b3ff-4fa4-4802-ae13-f3cd77b93f39" name="dodtp55d1b3ff-4fa4-4802-ae13-f3cd77b93f39"></a><h3 class="t3"><span class="cfett">32.5.3    </span><span class="cfett"> Asynchrone Abfragen</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp05c465fc-74be-457b-b385-3cb4173fd089"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp291b6b14-3467-490d-b58c-8319dfeb7a89"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtp88875a97-ec32-4bfe-af87-5a8cf620eaa2"></a>Die Methoden <span class="clisting">ExecuteReader</span>, <span class="clisting">ExecuteNonQuery</span> oder <span class="clisting">ExecuteXmlReader</span> arbeiten synchron. Das bedeutet, dass die Anwendung erst dann weiterarbeiten kann,
+                                                      wenn der SQL Server die Anfrage verarbeitet und die erste Datenzeile der Ergebnismenge
+                                                      zurückliefert. Dauert diese Operation eine längere Zeit, wirkt die Clientanwendung
+                                                      wie eingefroren.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ADO.NET löst dieses Problem durch die Bereitstellung asynchroner Methoden. Ergänzt
+                                                      werden die synchronen Methoden durch jeweils ein Methodenpaar: Eine Methode hat das
+                                                      Präfix <span class="clisting">Begin</span>, die zweite das Präfix <span class="clisting">End</span>. Beispielsweise lauten die asynchronen Varianten von <span class="clisting">ExecuteReader BeginExecuteReader</span> und <span class="clisting">EndExecuteReader</span>, die wie folgt definiert sind:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public IAsyncResult BeginExecuteReader(IAsyncResult, Object)<br></br>public SqlDataReader EndExecuteReader(IAsyncResult)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">BeginExecuteReader</span> wird die asynchrone Operation gestartet. Der aufrufende Code wartet jedoch nicht
+                                                      darauf, bis das Resultat vorliegt, sondern führt die Anweisungen aus, die dem asynchronen
+                                                      Aufruf folgen. Es stellt sich nur noch die Frage, wie das Clientprogramm darüber informiert
+                                                      wird, dass die asynchrone Operation beendet ist, und wie die Ergebnismenge abgefragt
+                                                      werden kann. Dazu bieten sich zwei Möglichkeiten an:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Sie fragen in einer Schleife permanent ab, ob die asynchrone Operation bereits beendet
+                                                         ist. Dieses Verfahren wird als Polling bezeichnet.
+                                                      </li>
+                                                      <li class="pgp">Sie definieren eine Rückrufmethode (Callback-Methode), die aufgerufen wird, sobald
+                                                         das Ergebnis vorliegt.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beide Varianten werde ich Ihnen gleich an einem Beispiel vorstellen.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Asynchrone Operationen sind per Vorgabe nicht aktiviert. Damit das <span class="clisting">SqlConnection</span>-Objekt auch asynchrone Abfragen ermöglicht, muss die Verbindungszeichenfolge um
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Asynchronous Processing<a class="indexterm" id="dodtp04b05a8f-cf3b-4f51-951b-665d9b6c0c92"></a>=true<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ergänzt werden. Alternativ steht Ihnen auch die Eigenschaft <span class="clisting">AsynchronousProcessing</span> des <span class="clisting">SqlConnectionStringBuilder</span> zur Verfügung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit wir in den folgenden beiden Beispielprogrammen auch eine Verzögerung der SQL
+                                                      Server-Anfrage simulieren können, schreiben wir eine Batchabfrage, der wir als erste
+                                                      Anweisung WAITFOR DELAY übergeben. Dieser Anweisung teilen wir mit, wie lange die
+                                                      Batchabfrage blockiert werden soll, beispielsweise zwei Sekunden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">WAITFOR DELAY '00:00:02'<br></pre></div>
+                                                   <h4 class="t4"> Das Polling-Verfahren</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das erste asynchrone Beispielprogramm stellt das Polling-Verfahren vor. Sehen Sie
+                                                      sich zuerst den Beispielcode an.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\PollingSample</span><br></br><span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">  SqlConnection con = new SqlConnection("...;<br xmlns="">                      Asynchronous Processing=true");<br xmlns="">  string strSQL = "WAITFOR DELAY '00:00:01';SELECT * FROM Products";<br xmlns="">  SqlCommand cmd = new SqlCommand(strSQL, con);<br xmlns="">  con.Open();<br></br>  // Asynchroner Aufruf<br></br>  IAsyncResult result = cmd.BeginExecuteReader();<br xmlns="">  int counter = 0;<br xmlns="">  while (!result.IsCompleted) {<br xmlns="">    DoSomething(counter);<br xmlns="">    counter++;<br xmlns="">  }<br xmlns="">  Console.WriteLine("Das Ergebnis liegt vor: .....");<br xmlns="">  SqlDataReader rd = cmd.EndExecuteReader(result);<br xmlns="">  while(rd.Read())<br xmlns="">    Console.WriteLine(rd["ProductName"]);<br xmlns="">  Console.ReadLine();<br xmlns="">}<br></br><span class="clistingfett">static void DoSomething(int counter)</span> {<br xmlns="">  Console.WriteLine(counter);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.14  </span>Das Polling-Verfahren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beim Polling wird nicht darauf gewartet, bis das Vorliegen der Ergebnismenge der Clientanwendung
+                                                      signalisiert wird. Stattdessen wird in einer Schleife abgefragt, ob der Datenbankserver
+                                                      die Anfrage fertig bearbeitet hat. Der Aufruf der Methode <span class="clisting">BeginExecuteReader</span> liefert ein Objekt zurück, das die Schnittstelle <span class="clisting">IAsyncResult</span> implementiert. Dieses Objekt beschreibt den Status der asynchronen Abfrage, unter
+                                                      anderem durch die Eigenschaft <span class="clisting">IsCompleted</span>. Der Wert lautet <span class="clisting">false</span>, falls die Anfrage noch nicht beendet ist, ansonsten <span class="clisting">true</span>. Beachten Sie, dass in diesem Beispiel die parameterlose Methode <span class="clisting">BeginExecuteReader</span> eingesetzt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir werten im Beispielprogramm <span class="clisting">IsCompleted</span> aus. Solange die Ergebnismenge noch nicht vorliegt, wird von der Clientanwendung
+                                                      eine andere Aufgabe erledigt. Hierbei handelt es sich um den Aufruf der Methode <span class="ckursiv">DoSomething</span>, die einen einfachen Zählerstand in das Konsolenfenster schreibt. Ist die Anfrage
+                                                      an den Datenbankserver beendet, kann das Ergebnis geholt werden. Dazu dient die Methode
+                                                      <span class="clisting">EndExecuteReader</span>, die ihrerseits die Referenz auf ein <span class="clisting">SqlDataReader</span>-Objekt bereitstellt, das wir zur Ausgabe der Spalte <span class="ckursiv">ProductName</span> benutzen.
+                                                   </p>
+                                                   <h4 class="t4"> Bereitstellen einer Rückrufmethode</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Während beim Polling fortwährend geprüft wird, ob der Datenbankserver die Anfrage
+                                                      bearbeitet hat, wird durch das Bereitstellen einer Rückrufmethode auf das Signal der
+                                                      Datenbank gewartet, dass die Operation beendet ist. Das Signal ist der Aufruf einer
+                                                      Methode im Client, der sogenannten Rückrufmethode.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die »Adresse« der Rückrufmethode, die im folgenden Beispiel <span class="ckursiv">CallbackMethodSample</span> heißt, wird dem ersten Parameter der überladenen Methode <span class="clisting">BeginExecuteReader</span> übergeben. Es handelt sich dabei um einen Parameter vom Typ des Delegaten <span class="clisting">AsyncCallback</span>, der eine Rückrufmethode vorschreibt, die einen Parameter vom Typ <span class="clisting">IAsyncResult</span> hat und die ihrerseits selbst <span class="clisting">void</span> ist. <span class="clisting">BeginExecuteReader</span> definiert mindestens noch einen zweiten Parameter. Dieser ist vom Typ <span class="clisting">Object</span> und akzeptiert somit jedes beliebige Objekt. Das Objekt wird der Eigenschaft <span class="clisting">AsyncState</span> der <span class="clisting">IAsyncResult</span>-Schnittstelle zugewiesen und kann in der Callback-Methode abgerufen werden. Im Beispiel
+                                                      wird die Referenz auf das <span class="clisting">SqlCommand</span>-Objekt übergeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach Beendigung der asynchronen Operation wird die Rückrufmethode ausgeführt, aus
+                                                      der heraus <span class="clisting">EndExecuteReader</span> aufgerufen wird. Das dazu notwendige <span class="clisting">SqlCommand</span>-Objekt wurde dem zweiten Parameter der Methode <span class="clisting">BeginExecuteReader</span> übergeben und kann nach Auswertung der Eigenschaft <span class="clisting">AsyncState</span> des <span class="clisting">IAsyncResult</span>-Parameters und vorheriger Konvertierung benutzt werden. Danach steht auch der <span class="clisting">DataReader</span> zur Verfügung.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun aber das vollständige Beispiel:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\CallbackMethodSample</span><br></br><span class="clistingfett">class Program</span> {<br></br> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection("...;<br xmlns="">                        Asynchronous Processing=true");<br xmlns="">    string strSQL = "SELECT * FROM Products";<br xmlns="">    SqlCommand cmd = new SqlCommand(strSQL, con);<br xmlns="">    con.Open();<br></br>    // Delegaten initialisieren<br></br>    AsyncCallback callback = new AsyncCallback(CallbackMethod);<br></br>    // Asynchrone Operation starten<br></br>    cmd.BeginExecuteReader(callback, cmd);<br></br>    // Simulation eines asynchronen Szenarios<br></br>    for (int counter = 0; counter &lt; 100; counter++)<br xmlns="">    {<br xmlns="">        Console.WriteLine(new string('-', 50));<br xmlns="">        Console.WriteLine("Counter = {0}", counter);<br xmlns="">    }<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br></br> <span class="clistingfett"> static void CallbackMethod(IAsyncResult result)</span> {<br xmlns="">    SqlCommand cmd = (SqlCommand)result.AsyncState;<br></br>    // Ergenisliste holen<br></br>    SqlDataReader rd = cmd.EndExecuteReader(result);<br xmlns="">    while(rd.Read())<br xmlns="">      Console.WriteLine(rd["ProductName"]);<br xmlns="">    rd.Close();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.15  </span>Asynchrone Datenabfrage
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Konsolenausgabe des Beispielcodes ist in Abbildung 32.2 zu sehen. Es ist sehr
+                                                      schön zu erkennen, wie beide Operationen parallel ablaufen.
+                                                   </p>
+                                                   <p><a href="bilder/32_02.png" rel="lightbox" title="Die Ausgabe des Beispielprogramms »CallbackMethodSample«"><img class="bild" border="1" src="bilderklein/klein32_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.2  </span>Die Ausgabe des Beispielprogramms »CallbackMethodSample«
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp05c465fc-74be-457b-b385-3cb4173fd089" name="dodtp05c465fc-74be-457b-b385-3cb4173fd089"></a><h3 class="t3"><span class="cfett">32.5.4    </span><span class="cfett"> Gespeicherte Prozeduren (Stored Procedures)</span><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp57f14830-6b91-453c-8d49-4742aa3965a4"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei einer gespeicherten Prozedur (Stored Procedure) handelt es sich um eine Gruppe
+                                                      von SQL-Anweisungen, die kompiliert werden. Das hat einen entscheidenden Vorteil:
+                                                      Die Leistung verbessert sich deutlich, wenn die gespeicherte Prozedur ausgeführt wird,
+                                                      da die SQL-Anweisungen nicht bei jedem Aufruf neu kompiliert werden müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine gespeicherte Prozedur ist nicht schwierig zu verstehen. Wir wollen uns das an
+                                                      einem Beispiel ansehen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CREATE PROCEDURE SearchProducts<br xmlns="">(<br xmlns="">   @Price money,<br xmlns="">   @OrderedUnits smallint<br xmlns="">)<br xmlns="">AS<br xmlns="">   SELECT *<br xmlns="">   FROM Products<br xmlns="">   WHERE UnitPrice &lt; @Price AND UnitsOnOrder = @OrderedUnits<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.16  </span>Beispiel einer gespeicherten Prozedur
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese gespeicherte Prozedur beschreibt eine Auswahlabfrage, die alle Artikel der Tabelle
+                                                      <span class="ckursiv">Products</span> liefert, die eine bestimmte Preisgrenze unterschreiten und eine bestimmte Anzahl
+                                                      von Bestelleinheiten haben. Damit ist die Stored Procedure gleichbedeutend mit dem
+                                                      SqlClient-Datenprovider-Befehl:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">SELECT *<br xmlns="">FROM Products<br xmlns="">WHERE UnitPrice &lt; @Price AND UnitsOnOrder = @OrderedUnits<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Gespeicherte Prozeduren bieten sich besonders an, wenn ein Kommando sehr häufig ausgeführt
+                                                      werden soll. Sie sind nicht nur leistungsfähiger als normale SQL-Kommandos, sondern
+                                                      bieten darüber hinaus weiter gehende Möglichkeiten: Stored Procedures können Berechnungen
+                                                      ausführen, Ein- und Ausgabeparameter entgegennehmen (ähnlich Wert- und Referenzparametern)
+                                                      oder ein Resultat an den Aufrufer liefern.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mehr möchte ich Ihnen an dieser Stelle nicht zu den gespeicherten Prozeduren sagen.
+                                                      Es gibt viel Literatur zu diesem Thema, wenn Sie es vertiefen möchten. Ich werde Ihnen
+                                                      nachher an einem komplexeren Beispiel zeigen, wie gespeicherte Prozeduren, die die
+                                                      aufgeführten Features haben, mit ADO.NET-Code behandelt werden.
+                                                   </p>
+                                                   <h4 class="t4"> Gespeicherte Prozeduren in Visual Studio 2012 erstellen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein herkömmlicher SQL-Befehl wird vom Client gegen die Datenbank abgesetzt. Gespeicherte
+                                                      Prozeduren sind, soweit die Datenbank diese unterstützt, Elemente der Datenbank selbst,
+                                                      so wie beispielsweise die Tabellen oder Sichten. Wenn Sie wollen, können Sie sehr
+                                                      einfach aus Visual Studio 2012 heraus gespeicherte Prozeduren zu einer Datenbank hinzufügen.
+                                                      Öffnen Sie dazu den <span class="cscreenelement">Server-Explorer</span> in Visual Studio 2012. In diesem finden Sie den Knoten <span class="cscreenelement">Datenverbindungen</span>. Im Kontextmenü dieses Knotens wählen Sie <span class="cscreenelement">Verbindung hinzufügen</span>. Es öffnet sich ein Dialog, wie er in Abbildung 32.3 zu sehen ist. 
+                                                   </p>
+                                                   <p><a href="bilder/32_03.png" rel="lightbox" title="Dialog zum Hinzufügen einer Datenbankverbindung"><img class="bild" border="1" src="bilderklein/klein32_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.3  </span>Dialog zum Hinzufügen einer Datenbankverbindung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Tragen Sie im oberen Kombinationslistenfeld den Servernamen ein, auf dem die SQL Server-Datenbank
+                                                      installiert ist, zu der Sie Verbindung aufnehmen wollen. Per Vorgabe ist der Dialog
+                                                      bereits so voreingestellt, dass davon ausgegangen wird, es handle sich um SQL Server.
+                                                      Sie können die Verbindung natürlich auch zu einer anderen Datenbank aufbauen, müssen
+                                                      dann aber zuvor die eingetragene Datenquelle entsprechend anpassen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Haben Sie die Installationsvorgaben des SQL Servers unverändert übernommen, so ist
+                                                      die Windows-Authentifizierung eingestellt, und Sie brauchen, soweit Sie mit entsprechenden
+                                                      administrativen Rechten ausgestattet sind, keine Änderungen an den Anmeldeinformationen
+                                                      vorzunehmen. Anschließend wählen Sie die gewünschte Datenbank aus. Sie können die
+                                                      eingestellten Verbindungsdaten nun testen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Server-Explorer wird die neue Verbindung zur Datenbank eingetragen. Unter den datenbankspezifischen
+                                                      Knoten finden Sie nun auch <span class="ckursiv">Gespeicherte Prozeduren</span>. Klicken Sie dann im Kontextmenü des Knotens auf <span class="cscreenelement">Neue gespeicherte Prozedur hinzufügen</span>.
+                                                   </p>
+                                                   <p><a href="bilder/32_04.png" rel="lightbox" title="Eine gespeicherte Prozedur der Datenbank hinzufügen"><img class="bild" border="1" src="bilderklein/klein32_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.4  </span>Eine gespeicherte Prozedur der Datenbank hinzufügen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Code-Editor wird daraufhin ein weiteres Fenster geöffnet, in dem bereits die elementare
+                                                      Struktur der Stored Procedure vorgegeben ist. Eine gespeicherte Prozedur wird mit
+                                                      <span class="clisting">CREATE PROCEDURE</span> eingeleitet; dem schließt sich der Bezeichner an. Einige Teile der Struktur sind
+                                                      mit <span class="clisting">/*...*/</span> auskommentiert. Dazu gehört auch der Block, in dem die Parameter angegeben werden.
+                                                      Hinter <span class="clisting">AS</span> folgen die SQL-Anweisungen. Eine gespeicherte Prozedur wird mit dem optionalen <span class="clisting">RETURN</span>, das den Rückgabewert der gespeicherten Prozedur angibt, abgeschlossen.
+                                                   </p>
+                                                   <p><a href="bilder/32_05.png" rel="lightbox" title="Das Fenster einer neuen gespeicherten Prozedur im Code-Editor"><img class="bild" border="1" src="bilderklein/klein32_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.5  </span>Das Fenster einer neuen gespeicherten Prozedur im Code-Editor
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Als Erstes sollten Sie der Stored Procedure einen beschreibenden Namen geben, z. B.
+                                                      <span class="ckursiv">SearchProducts</span>. Parameter werden im Block zwischen <span class="clisting">CREATE PROCDURE</span> und <span class="clisting">AS</span> definiert. Dabei wird zuerst der Parametername angegeben, der das Präfix @ haben
+                                                      muss. Dahinter folgt der Datentyp. Mehrere Parameter in einer Stored Procedure werden
+                                                      durch ein Komma getrennt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig sind alle Parameter Eingabeparameter, die von der Stored Procedure zur
+                                                      Ausführung benötigt werden, selbst aber kein Resultat zurückliefern. Gespeicherte
+                                                      Prozeduren kennen aber auch Ausgabeparameter, die mit Referenzparametern vergleichbar
+                                                      sind. Diese liefern dem Aufrufer ein Ergebnis. Ausgabeparameter werden mit <span class="clisting">OUTPUT</span> gekennzeichnet.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nachdem der SQL-Code im Code-Editor eingetragen ist, können Sie die Stored Procedure
+                                                      speichern. Gespeichert wird die Stored Procedure allerdings nicht im Projekt, sondern
+                                                      in der Datenbank, was Sie auch sofort im Server-Explorer erkennen. Beim Speichervorgang
+                                                      wird die Syntax überprüft. Sollte die SQL-Syntax einen Fehler aufweisen, werden Sie
+                                                      mit einer Fehlermeldung darauf aufmerksam gemacht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit hört die Unterstützung von Visual Studio 2012 aber nicht auf. Sie können Ihre
+                                                      neue gespeicherte Prozedur auch in der Entwicklungsumgebung testen. Dazu sollte sich
+                                                      der Mauszeiger über dem Code-Fenster der Stored Procedure befinden. Öffnen Sie dann
+                                                      das Kontextmenü, und wählen Sie <span class="cscreenelement">Ausführen</span>. Es öffnet sich ein Dialog, wie in Abbildung 32.6 zu sehen ist, in dem Sie in der
+                                                      Spalte <span class="ckursiv">Wert</span> den Parametern die gewünschten Daten zuweisen.
+                                                   </p>
+                                                   <p><a href="bilder/32_06.png" rel="lightbox" title="Dialog, um den Parametern Werte zuzuweisen"><img class="bild" border="1" src="bilderklein/klein32_06.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.6  </span>Dialog, um den Parametern Werte zuzuweisen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie anschließend auf <span class="cscreenelement">OK</span> klicken, sehen Sie im Fenster <span class="cscreenelement">Ausgabe</span> das Ergebnis des Aufrufs, ähnlich wie in Abbildung 32.7 gezeigt.
+                                                   </p>
+                                                   <p><a href="bilder/32_07.png" rel="lightbox" title="Das Ergebnis des Aufrufs der Stored Procedure SearchProducts"><img class="bild" border="1" src="bilderklein/klein32_07.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 32.7  </span>Das Ergebnis des Aufrufs der Stored Procedure SearchProducts
+                                                   </p>
+                                                   <h4 class="t4"> Eine gespeicherte Prozedur aufrufen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die soeben entwickelte gespeicherte Prozedur <span class="ckursiv">SearchProducts</span> soll nun aufgerufen werden. Prinzipiell ist der Weg ähnlich dem, den wir beim Aufruf
+                                                      einer parametrisierten Abfrage beschritten haben. Es gibt aber einen ganz wichtigen
+                                                      Unterschied: Wir müssen dem <span class="clisting">SqlCommand</span>-Objekt ausdrücklich mitteilen, dass es kein SQL-Kommando, sondern eine gespeicherte
+                                                      Prozedur ausführen soll. Um dem Objekt den Typ eines Kommandos mitzuteilen, wird der
+                                                      Eigenschaft <span class="clisting">CommandType</span> die passende Information übergeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Eigenschaft ist vom Typ der gleichnamigen Enumeration, die angibt, wie das unter
+                                                      der Eigenschaft <span class="clisting">CommandText</span> angegebene Kommando zu interpretieren ist.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 32.1  </span>Die Mitglieder der Enumeration »CommandType«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">StoredProcedure</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CommandText</span> enthält den Namen einer gespeicherten Prozedur.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">TableDirect</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CommandText</span> enthält den Namen einer Tabelle.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Text</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">(Standard) <span class="clisting">CommandText</span> enthält ein SQL-Kommando.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Lautet die Einstellung <span class="clisting">CommandType.TableDirect</span>, können Sie der Eigenschaft einen Tabellennamen zuweisen. Das ist gleichwertig mit
+                                                         dem SQL-Befehl <span class="clisting">SELECT * FROM &lt;</span>Tabellenname<span class="clisting">&gt;</span>.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher haben wir die Eigenschaft <span class="clisting">CommandType</span> nicht benutzt, weil wir immer ein SQL-Kommando abgesetzt haben, das durch die Standardeinstellung
+                                                      <span class="clisting">Text</span> beschrieben wird. Da wir nun eine Stored Procedure ausführen wollen, müssen wir <span class="clisting">CommandType</span> den Wert <span class="clisting">CommandType.StoredProcedure</span> zuweisen. Das <span class="clisting">SqlCommand</span>-Objekt benutzt diese Information, um die Syntax für den Aufruf der gespeicherten
+                                                      Prozedur zu generieren.
+                                                   </p>
+                                                   <h4 class="t4"> Komplexe gespeicherte Prozeduren</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine gespeicherte Prozedur ist nicht immer so einfach aufgebaut wie <span class="ckursiv">SearchProducts</span>, die nur Datensätze als Ergebnis der Ausführung zurückliefert. Eine gespeicherte
+                                                      Prozedur kann sowohl über die Parameterliste als auch über <span class="clisting">RETURN</span> Werte an den Aufrufer zurückliefern. Dazu ein Beispiel:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">CREATE PROCEDURE GetProduct<br xmlns="">(<br xmlns="">  @id int,<br xmlns="">  @Artikel varchar(40) OUTPUT,<br xmlns="">  @Preis money OUTPUT<br xmlns="">)<br xmlns="">AS<br xmlns="">  SELECT @Artikel=ProductName, @Preis=UnitPrice<br xmlns="">  FROM Products<br xmlns="">  WHERE ProductID=@id<br xmlns="">RETURN @@ROWCOUNT<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.17  </span>Komplexe gespeicherte Prozedur
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Stored Procedure definiert neben dem Eingabeparameter <span class="ckursiv">@id</span> mit <span class="ckursiv">@Artikel</span> und <span class="ckursiv">@Preis</span> auch zwei Ausgabeparameter, denen beim Aufruf zwar kein Wert übergeben wird, die
+                                                      aber einen Wert zurückliefern. Der Rückgabewert <span class="ckursiv">@@ROWCOUNT</span> ist eine Systemfunktion von SQL Server, die die Anzahl der Zeilen angibt, auf die
+                                                      sich die letzte Anweisung ausgewirkt hat.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 32\KomplexeStoredProcedure</span><br></br><span class="clistingfett">class Program</span> {<br xmlns=""> <span class="clistingfett"> static void Main(string[] args)</span> {<br xmlns="">    SqlConnection con = new SqlConnection("...");<br></br>    // SqlCommand-Objekt definieren<br></br>    SqlCommand cmd = new SqlCommand();<br xmlns="">    cmd.Connection = con;<br xmlns="">    cmd.CommandType = CommandType.StoredProcedure;<br xmlns="">    cmd.CommandText = "GetProduct";<br></br>    // SqlParameter definieren<br></br>    cmd.Parameters.Add("@RetValue", SqlDbType.Int);<br xmlns="">    cmd.Parameters.Add("@id", SqlDbType.Int);<br xmlns="">    cmd.Parameters.Add("@Artikel", SqlDbType.VarChar, 40);<br xmlns="">    cmd.Parameters.Add("@Preis", SqlDbType.Money);<br xmlns="">    cmd.Parameters["@RetValue"].Direction = ParameterDirection.ReturnValue;<br xmlns="">    cmd.Parameters["@Artikel"].Direction = ParameterDirection.Output;<br xmlns="">    cmd.Parameters["@Preis"].Direction = ParameterDirection.Output;<br></br>    // Übergabewert angeben<br></br>    cmd.Parameters["@id"].Value = 1;<br xmlns="">    con.Open();<br xmlns="">    cmd.ExecuteNonQuery();<br></br>    // SqlParameterCollection auswerten<br></br>    if ((int)(cmd.Parameters["@RetValue"].Value) == 1) {<br xmlns="">      Console.WriteLine("Zuname: {0}", cmd.Parameters["@Artikel"].Value);<br xmlns="">      Console.WriteLine("Vorname:{0}", cmd.Parameters["@Preis"].Value);<br xmlns="">    }<br xmlns="">    Console.WriteLine("{0} Datensatz gefunden.",<br xmlns="">                        cmd.Parameters["@RetValue"].Value);<br xmlns="">    con.Close();<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 32.18  </span>Eine komplexe gespeicherte Prozedur aufrufen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im ersten Schritt wird nach dem Öffnen der Verbindung das <span class="clisting">SqlCommand</span>-Objekt definiert. Anschließend wird für jeden Parameter der gespeicherten Prozedur
+                                                      der Parameter-Auflistung ein <span class="clisting">SqlParameter</span>-Objekt hinzugefügt. Als Parameter wird auch der von <span class="clisting">RETURN</span> gelieferte Rückgabewert verstanden. Damit benötigt der Aufruf insgesamt vier Parameter-Objekte.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">SqlParameter</span> können ein unterschiedliches Verhalten haben. Dies muss ADO.NET wissen, um die gespeicherte
+                                                      Prozedur richtig zu verarbeiten. Standardmäßig beschreibt ein <span class="clisting">SqlParameter</span>-Objekt einen Eingabeparameter. Abweichungen davon müssen über die <span class="clisting">Direction</span>-Eigenschaft des <span class="clisting">Parameter</span>-Objekts festgelegt werden, die vom Typ <span class="clisting">ParameterDirection</span> ist, einer Enumeration mit vier Konstanten.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 32.2  </span>Mitglieder der Enumeration »ParameterDirection«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Input</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Parameter ist ein Eingabeparameter.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">InputOutput</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Parameter unterstützt sowohl die Eingabe als auch die Ausgabe.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Output</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Parameter ist ein Ausgabeparameter.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ReturnValue</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Der Parameter stellt einen Rückgabewert dar.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><a class="indexterm" id="dodtpbf4fd472-d4ff-4cfb-b904-f3f2c1e36c8e"></a>Jetzt muss die Parameterliste gefüllt werden, um das <span class="clisting">SqlCommand</span>-Objekt anschließend auszuführen. Dazu wird dem Parameter <span class="ckursiv">@id</span> die Spalte <span class="ckursiv">ProductID</span> zugewiesen, anhand derer der gesuchte Artikel identifiziert werden soll. Weil die
+                                                      gespeicherte Prozedur keine Datensatzliste zurückgibt, genügt der Aufruf der Methode
+                                                      <span class="clisting">ExecuteNonQuery</span> auf das <span class="clisting">SqlCommand</span>-Objekt. Das Ergebnis des Aufrufs kann danach ausgewertet werden, indem sowohl der
+                                                      Inhalt des Rückgabewertes als auch der Inhalt der Ausgabeparameter abgerufen werden.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs32_005.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="32  ADO.NET &#8211; Das Command-Objekt"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_32_004.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_33_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

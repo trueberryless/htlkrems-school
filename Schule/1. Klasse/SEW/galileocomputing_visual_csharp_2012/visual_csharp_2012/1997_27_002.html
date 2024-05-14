@@ -1,0 +1,637 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 27  Ereignisse in der WPF">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 27  Ereignisse in der WPF">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 27  Ereignisse in der WPF</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="27_001.html">
+      <link rel="next" href="1997_27_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_27_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_27_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905" class="navnav">27 Ereignisse in der WPF</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_27_001.html#dodtp649e0e74-773c-48d0-9ca5-4a84f29a36bc" class="navnav">27.1 Ereignishandler bereitstellen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_27_002.html#dodtp5cfd6376-b91c-46a0-834b-282a18b59beb" class="navh">27.2 Routing-Strategien</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_002.html#dodtpc85815f3-7d0b-4c0c-b9c4-b90bbf9ba1f2" class="navh">27.2.1 Der durchlaufene Elementbaum</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_002.html#dodtp0e584ef1-fc46-45ac-bc3f-dd19e0e9c6cd" class="navh">27.2.2 Beispielanwendung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_002.html#dodtp421ec4db-8db2-4048-8726-23ed76fbc3d0" class="navh">27.2.3 Sonderfall der Mausereignisse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_27_003.html#dodtp14d914b3-6107-4dd2-9720-535a0925c39e" class="navnav">27.3 Der Ereignishandler</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_003.html#dodtp0e2c0053-8493-4929-a3e6-5a67168f08a0" class="navnav">27.3.1 Die Klasse »RoutedEventArgs«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_003.html#dodtpf434e562-92c8-4c8a-82dc-6cbd4e992dcd" class="navnav">27.3.2 Die Quelle des Routing-Prozesses</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_003.html#dodtpda84df53-7d7f-4221-bfc1-c2a242d25663" class="navnav">27.3.3 Die Eigenschaft »Handled«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_003.html#dodtp8ecd119a-2116-4979-972e-13b0e8c62441" class="navnav">27.3.4 Registrieren und Deregistrieren eines Ereignishandlers mit Code</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_27_004.html#dodtpd9cfcc52-53d0-4d8a-8bdd-0ac8dbc5b8ed" class="navnav">27.4 Definition eines Routed Events</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_004.html#dodtpe9cd1cb8-668c-4acb-bc30-c7090baccc5a" class="navnav">27.4.1 Ereignisauslösung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_004.html#dodtpca32e586-9ca9-48ba-b016-7d03a2a4f5a9" class="navnav">27.4.2 Das Ereignis als Attached Event verwenden</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_004.html#dodtp995927e6-41cd-435a-b930-b1546bf22356" class="navnav">27.4.3 Unterdrückte Ereignisse</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_27_005.html#dodtpedd748a1-af67-4550-94e0-dbca7cb56d03" class="navnav">27.5 Mausereignisse in der WPF</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_005.html#dodtpa2899b45-b527-46e4-bacd-2d9fd953e0ff" class="navnav">27.5.1 Ziehen der Maus</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_005.html#dodtpf5d06687-7f80-4fee-bea4-2b1e72bc2509" class="navnav">27.5.2 Auswerten der Mausklicks</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_27_005.html#dodtp0b49e6fd-c825-4105-93a4-3a22a08a89d0" class="navnav">27.5.3 Capturing</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp5cfd6376-b91c-46a0-834b-282a18b59beb" name="dodtp5cfd6376-b91c-46a0-834b-282a18b59beb"></a><h2 class="t2"><span class="cfett">27.2    </span><span class="cfett"> Routing-Strategien</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp3bb40c45-baf2-46e2-82ac-478c19b48b0b"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc85815f3-7d0b-4c0c-b9c4-b90bbf9ba1f2"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch wenn es bis jetzt den Anschein hat, dass die Ereignisse in der WPF keine Besonderheiten
+                                                      bergen &#8211; dem ist nicht so. Der Grund ist, dass in einer WPF-Benutzeroberfläche die
+                                                      Elemente ineinander verschachtelt werden können, beispielsweise:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">&lt;Window&gt;<br xmlns="">  &lt;StackPanel&gt;<br xmlns="">    &lt;Button Height="110" Width="250" Margin="10"&gt;<br xmlns="">      &lt;StackPanel Orientation="Horizontal"&gt;<br xmlns="">        &lt;Image Source="smile.jpg" Stretch="None" /&gt;<br xmlns="">        &lt;Label VerticalAlignment="Center"&gt;Abbrechen&lt;/Label&gt;<br xmlns="">      &lt;/StackPanel&gt;<br xmlns="">    &lt;/Button&gt; <br xmlns="">    [...]<br xmlns="">  &lt;/StackPanel&gt;<br xmlns="">&lt;/Window&gt;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 27.3  </span>Verschachtelte Elemente im XAML-Code
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier enthält ein <span class="clisting">StackPanel</span> einen <span class="clisting">Button</span>, der seinerseits als Inhaltseigenschaft ein weiteres <span class="clisting">StackPanel</span> beschreibt. In diesem sind eine <span class="clisting">Image</span>- und eine <span class="clisting">Label</span>-Komponente horizontal angeordnet. Mit der Vorgabe dieser Struktur könnte zur Laufzeit
+                                                      das Folgende passieren: Der Anwender möchte auf den <span class="clisting">Button</span> klicken, trifft dabei aber das <span class="clisting">Label</span>. In herkömmlichen GUIs würde das <span class="clisting">Label</span> sein eigenes <span class="clisting">Click</span>-Ereignis auslösen, während der <span class="clisting">Button</span> keine Reaktion zeigt. Das gilt natürlich auch, wenn auf das <span class="clisting">Image</span> geklickt wird. Probleme dieser Art gibt es eigentlich in allen Benutzeroberflächen.
+                                                      Natürlich lässt sich im Falle unseres auf dem <span class="clisting">Button</span> positionierten <span class="clisting">Labels</span> auch in herkömmlichen GUIs das <span class="clisting">Click</span>-Ereignis der Schaltfläche auslösen, aber der Aufwand dafür ist nicht unerheblich.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um eine einfache Lösung zu ermöglichen, erweitert die WPF das traditionelle Konzept
+                                                      der Ereignisse um die Routed Events. Dabei müssen wir drei verschiedene Routing-Strategien
+                                                      unterscheiden:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">Direkte Events</span><span class="cfett"><a class="indexterm" id="dodtp254574af-3b5a-44e2-b92c-965860a21d3f"></a></span>: Als direkte Ereignisse werden die Ereignisse bezeichnet, die nur von dem Element,
+                                                         bei dem das Ereignis aufgetreten ist, ausgelöst werden. Direkte Ereignisse unterscheiden
+                                                         sich nicht von den sonst üblichen Ereignissen im .NET Framework. Das Ereignis <span class="clisting">Click</span> ist beispielsweise ein direkter Event.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">Tunneling-Events</span><span class="cfett"><a class="indexterm" id="dodtp8f7cc062-fe4b-4704-937e-1927bc1eeccf"></a></span>: Beim <span class="cfett">Tunneling</span><span class="cfett"><a class="indexterm" id="dodtp39b20055-0035-49be-99cd-75807878dfc5"></a></span> beginnt die Ereigniskette beim Wurzelelement. In der Regel wird es sich dabei um
+                                                         ein <span class="clisting">Window</span> handeln. Das Ereignis wird also zuerst im <span class="clisting">Window</span> ausgelöst und danach im nächsten untergeordneten Element. Von dort setzt sich die
+                                                         Ereignisauslösung im nächsten untergeordneten Element fort. In Listing 27.3 wäre das
+                                                         das <span class="clisting">StackPanel</span>. Das geschieht so lange, bis der eigentliche Auslöser erreicht ist. Tunneling-Events
+                                                         sind durch das Präfix <span class="clisting">Preview</span> gekennzeichnet.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">Bubbling-Events</span><span class="cfett"><a class="indexterm" id="dodtpe9a4a20a-9b92-4f8e-a0b2-b9fe86913ca3"></a></span>: Das Bubbling beschreibt genau die Umkehrung des Tunneling-Prinzips. Zuerst wird
+                                                         der Event in der eigentlichen Komponente ausgelöst, anschließend wird die Ereignisauslösung
+                                                         der Reihe nach an die übergeordneten Elemente im Elementbaum weitergereicht bis hin
+                                                         zum Wurzelelement.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei den Routed Events kommt es also zu einer klaren Abfolge von Ereignisauslösungen.
+                                                      Legen wir das Listing 27.3 von oben zugrunde, würde zuerst das Ereignis im <span class="clisting">Window</span> ausgelöst, anschließend im <span class="clisting">StackPanel</span> und dann im <span class="clisting">Button</span>. Da die Schaltfläche ihrerseits ein <span class="clisting">StackPanel</span> enthält, ist dieses der nächste Empfänger. Zuletzt kommt dann eventuell noch das
+                                                      <span class="clisting">Image</span> oder das <span class="clisting">Label</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ist die Kette der Tunneling-Events durchlaufen, geht es mit den Bubbling-Events in
+                                                      entgegengesetzter Richtung zurück. Also zuerst der Bubbling-Event im <span class="clisting">Image</span> oder <span class="clisting">Label</span>, dann folgt das innere <span class="clisting">StackPanel</span>, der <span class="clisting">Button</span>, das äußere <span class="clisting">StackPanel</span> und letztendlich das <span class="clisting">Window</span>. Abbildung 27.1 verdeutlicht den Zusammenhang. 
+                                                   </p>
+                                                   <p><a href="bilder/27_01.png" rel="lightbox" title="Elementbaum aus Listing 27.3 und Routed Events"><img class="bild" border="1" src="bilderklein/klein27_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 27.1  </span>Elementbaum aus Listing 27.3 und Routed Events
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es werden in der Kette alle Handler aufgerufen, die sich bei dem Ereignis registriert
+                                                      haben. Behandelt ein Element innerhalb des Elementbaums das aufgetretene Ereignis
+                                                      nicht, wird die Ereigniskette nicht unterbrochen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc85815f3-7d0b-4c0c-b9c4-b90bbf9ba1f2" name="dodtpc85815f3-7d0b-4c0c-b9c4-b90bbf9ba1f2"></a><h3 class="t3"><span class="cfett">27.2.1    </span><span class="cfett"> Der durchlaufene Elementbaum</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp0e584ef1-fc46-45ac-bc3f-dd19e0e9c6cd"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5cfd6376-b91c-46a0-834b-282a18b59beb"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der WPF wird zwischen dem visuellen Elementbaum (Visual Tree) und dem logischen
+                                                      Elementbaum (Logical Tree) unterschieden (siehe Kapitel 18). In der Regel wird von
+                                                      einem Routed Event der Visual Tree durchlaufen. Aus der Wortwahl können Sie entnehmen,
+                                                      dass das nicht immer so ist. Hintergrund ist, dass Routed Events nur von Komponenten
+                                                      ausgelöst werden können, die auf eine der folgenden Klassen zurückzuführen sind: <span class="clisting">UIElement</span>, <span class="clisting">UIElement3D</span><span class="clisting"><a class="indexterm" id="dodtpaac008b6-ccb7-4fc7-b090-abc1b92c8e16"></a></span> oder <span class="clisting">ContentElement</span><span class="clisting"><a class="indexterm" id="dodtp8e92ad9c-7298-41e8-b8d8-c5ebe6d567b9"></a></span>. <span class="clisting">ContentElement</span>-Instanzen gehören aber nicht zum Visual Tree, sondern zum Logical Tree. Somit wäre
+                                                      es nicht richtig, zu sagen, dass ausschließlich der Virtual Tree durchlaufen wird
+                                                      &#8211; obwohl das im überwiegenden Teil der Fälle so ist.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp0e584ef1-fc46-45ac-bc3f-dd19e0e9c6cd" name="dodtp0e584ef1-fc46-45ac-bc3f-dd19e0e9c6cd"></a><h3 class="t3"><span class="cfett">27.2.2    </span><span class="cfett"> Beispielanwendung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp421ec4db-8db2-4048-8726-23ed76fbc3d0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc85815f3-7d0b-4c0c-b9c4-b90bbf9ba1f2"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Routed Events wollen wir uns nun an einem Beispiel ansehen, dem das Codefragment
+                                                      von oben zugrunde liegt. Es werden hier die Ereignisse <span class="clisting">PreviewMouseRightButtonDown</span><span class="clisting"><a class="indexterm" id="dodtp5c27375c-b89e-4c4c-8da6-dd533a2db1ea"></a></span> (getunnelt) und <span class="clisting">MouseRightButtonDown</span><span class="clisting"><a class="indexterm" id="dodtp0e6a0e3f-fb09-43be-bddc-64c13f7be9fa"></a></span> (gebubbelt) behandelt, die beim Drücken der rechten Maustaste ausgelöst werden. Damit
+                                                      die Abfolge der Ereigniskette auch optisch sichtbar wird, enthält das <span class="clisting">Window</span> zusätzlich noch eine <span class="clisting">ListBox</span>, in der sich jeder ausgelöste Event einträgt. Der entsprechende Code dafür ist in
+                                                      der Code-Behind-Datei zu finden. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 27\RoutedEventSamples\Sample1</span><br></br>&lt;Window ...<br xmlns="">        PreviewMouseRightButtonDown="PreviewMouseRight"<br xmlns="">        MouseRightButtonDown="MouseRight"&gt;<br xmlns="">  &lt;StackPanel MouseRightButtonDown="MouseRight"<br xmlns="">              PreviewMouseRightButtonDown="PreviewMouseRight"&gt;<br xmlns="">    &lt;Button MouseRightButtonDown="MouseRight"<br xmlns="">            PreviewMouseRightButtonDown="PreviewMouseRight"&gt;<br xmlns="">      &lt;StackPanel Orientation="Horizontal" MouseRightButtonDown="MouseRight"<br xmlns="">                  PreviewMouseRightButtonDown="PreviewMouseRight"&gt;<br xmlns="">        &lt;Image MouseRightButtonDown="MouseRight"<br xmlns="">               PreviewMouseRightButtonDown="PreviewMouseRight"/&gt;<br xmlns="">        &lt;Label MouseRightButtonDown="MouseRight"<br xmlns="">             PreviewMouseRightButtonDown="PreviewMouseRight"&gt;<br xmlns="">                  Abbrechen<br xmlns="">        &lt;/Label&gt;<br xmlns="">      &lt;/StackPanel&gt;<br xmlns="">    &lt;/Button&gt; <br xmlns="">    &lt;ListBox x:Name="listBox1"&gt;&lt;/ListBox&gt;<br xmlns="">    &lt;Grid&gt;<br xmlns=""><br></br>      &lt;Grid.ColumnDefinitions&gt;<br xmlns="">        &lt;ColumnDefinition/&gt;<br xmlns="">        &lt;ColumnDefinition Width="120"/&gt;<br xmlns="">      &lt;/Grid.ColumnDefinitions&gt;<br xmlns="">      &lt;Button Click="Button_Click"&gt;Liste löschen&lt;/Button&gt;<br xmlns="">    &lt;/Grid&gt;<br xmlns="">  &lt;/StackPanel&gt;<br xmlns="">&lt;/Window&gt;<br></br>// Code in der Code-Behind-Datei<br></br><span class="clistingfett">private void MouseRight(object sender, MouseButtonEventArgs e)</span> {<br xmlns="">  listBox1.Items.Add(sender.ToString());<br xmlns="">}<br></br><span class="clistingfett">private void PreviewMouseRight(object sender, MouseButtonEventArgs e) </span>{<br xmlns="">  listBox1.Items.Add("Preview: " + sender.ToString());<br xmlns="">}<br></br><span class="clistingfett">private void Button_Click(object sender, RoutedEventArgs e)</span> {<br xmlns="">  listBox1.Items.Clear();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 27.4  </span>Demonstration der Routed Events
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Klicken auf das Image führt zu der in Abbildung 27.2 gezeigten Ausgabe.</p>
+                                                   <p><a href="bilder/27_02.png" rel="lightbox" title="Routed Events beim Klicken auf das Image mit der rechten Maustaste"><img class="bild" border="1" src="bilderklein/klein27_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 27.2  </span>Routed Events beim Klicken auf das Image mit der rechten Maustaste
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp421ec4db-8db2-4048-8726-23ed76fbc3d0" name="dodtp421ec4db-8db2-4048-8726-23ed76fbc3d0"></a><h3 class="t3"><span class="cfett">27.2.3    </span><span class="cfett"> Sonderfall der Mausereignisse</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp0e584ef1-fc46-45ac-bc3f-dd19e0e9c6cd"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Werden die beiden Ereignisse <span class="clisting">PreviewMouseRightButtonDown</span><span class="clisting"><a class="indexterm" id="dodtpac87772a-617f-4d5b-bf98-e9e6dd79d2b2"></a></span> und <span class="clisting">MouseRightButtonDown</span> durch die Paare <span class="clisting">PreviewMouseLeftButtonDown</span>/ <span class="clisting">MouseLeftButtonDown</span> bzw. <span class="clisting">PreviewMouseDown</span>/<span class="clisting">MouseDown</span> ersetzt, tritt ein seltsames Phänomen auf: Bei den gebubbelten Events wird der letzte
+                                                      Ereignishandleraufruf vom <span class="clisting">StackPanel</span> ausgeführt, das sich innerhalb des Buttons befindet. Alle anderen gebubbelten Events
+                                                      werden unterdrückt und nicht mehr ausgelöst. Offensichtlich wird die Ereigniskette
+                                                      an dieser Stelle unterbrochen (siehe Abbildung 27.3).
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ursache für diese Verhaltensweise ist, dass im Ereignis <span class="clisting">MouseLeftButtonDown</span> (und auch <span class="clisting">MouseLeftButtonUp</span>) das <span class="clisting">Click</span>-Ereignis ausgelöst wird. Dieses ersetzt <span class="clisting">MouseLeftButtonDown</span> und <span class="clisting">MouseLeftButtonUp</span> und unterbricht den Bubbling-Prozess, indem der ausgelöste Event als behandelt gekennzeichnet
+                                                      wird. Wie man dennoch die gebubbelte Ereigniskette weiter fortsetzen kann, werde ich
+                                                      Ihnen später noch zeigen.
+                                                   </p>
+                                                   <p><a href="bilder/27_03.png" rel="lightbox" title="Routed Events, wenn die Ereigniskette des »MouseDown-Events« durchlaufen wird"><img class="bild" border="1" src="bilderklein/klein27_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 27.3  </span>Routed Events, wenn die Ereigniskette des »MouseDown-Events« durchlaufen wird
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Beispielprogramm, dem Abbildung 27.3 zugrunde liegt, ist unter <span class="ckursiv">\Kapitel 27\RoutedEventSamples\Sample4</span> zu finden. Wie Sie den beschriebenen Effekt unterbinden können, wird in Abschnitt
+                                                      27.4.3 beschrieben.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs27_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="27  Ereignisse in der WPF"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_27_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_27_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

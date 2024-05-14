@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="f.schneider"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-10-08 09:47:26 AM"/>
+        <attribute name="created" value="Zi5zY2huZWlkZXI7Q09XLU8tMTg7MjAxOS0xMC0wODswODowMTo0MyBBTTsyODcw"/>
+        <attribute name="edited" value="Zi5zY2huZWlkZXI7Q09XLU8tMTg7MjAxOS0xMC0wODswODoyODoyNiBBTTsxOzI5ODg="/>
+        <attribute name="edited" value="Ri5TQ0hORUlERVI7Q09XLU8tMTg7MjAxOS0xMC0wODswOTo0NzoyNiBBTTsxOzI2NzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="platz" type="Integer" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <assign variable="platz" expression="0"/>
+            <assign variable="name" expression="&quot;&quot;"/>
+            <output expression="&quot;Wie hei&#223;en Sie?&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Welchen Platz haben Sie bei der Olympiade erreicht?&quot;" newline="True"/>
+            <input variable="platz"/>
+            <if expression="platz&gt;=7">
+                <then>
+                    <output expression="&quot;Sie sind nicht bei der Siegerehrung dabei, &quot;&amp;name&amp;&quot;!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="platz&gt;=4">
+                        <then>
+                            <output expression="&quot;Sie sind bei der Siegerehrung dabei, &quot;&amp;name&amp;&quot;,und erhalten einen Blumenstrau&#223;!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="platz=1">
+                                <then>
+                                    <output expression="&quot;Sie sind bei der Siegerehrung dabei und haben die Gold-Medaille gewonnen, &quot;&amp;name&amp;&quot;!&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="platz=2">
+                                        <then>
+                                            <output expression="&quot;Sie sind bei der Siegerehrung dabei und haben die Silber-Medaille gewonnen, &quot;&amp;name&amp;&quot;!&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="platz=3">
+                                                <then>
+                                                    <output expression="&quot;Sie sind bei der Siegerehrung dabei und haben die Bronze-Medaille gewonnen, &quot;&amp;name&amp;&quot;!&quot;" newline="True"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

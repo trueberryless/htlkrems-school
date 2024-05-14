@@ -1,0 +1,1422 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 11  LINQ">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 11  LINQ">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 11  LINQ</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="11_002.html">
+      <link rel="next" href="1997_12_001.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_11_002.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_12_001.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894" class="navnav">11 LINQ</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_001.html#dodtp1b6b0eed-6303-4be4-8697-d621c7c2619f" class="navnav">11.1 Was ist LINQ?</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_001.html#dodtp57ef377b-9fd0-442b-9112-d4c333f1bb3f" class="navnav">11.1.1 Verzögerte Ausführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_001.html#dodtpc02fe938-8752-4e1f-960f-a46246dcea5f" class="navnav">11.1.2 LINQ-Erweiterungsmethoden an einem Beispiel</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_002.html#dodtp0712318c-14ab-406a-8c90-4994b115ea99" class="navnav">11.2 LINQ to Objects</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_002.html#dodtpabc1b196-a63c-423f-a3e7-f17d4671f7c6" class="navnav">11.2.1 Musterdaten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_002.html#dodtp051bd023-221e-48a7-87fd-abaf24fca8ab" class="navnav">11.2.2 Die allgemeine LINQ-Syntax</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_11_003.html#dodtpb8f86eb9-307c-453b-b940-83e81ba865a8" class="navh">11.3 Die Abfrageoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c" class="navh">11.3.1 Übersicht der Abfrageoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpd556d050-54eb-419a-9cd3-41575bae4e2a" class="navh">11.3.2 Die »from«-Klausel</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp7c890ecf-d31b-4b7b-b367-9b500b73afc0" class="navh">11.3.3 Mit »where« filtern</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp6a326715-be87-4425-b902-3fda04857423" class="navh">11.3.4 Die Projektionsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba" class="navh">11.3.5 Die Sortieroperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp6006a3be-1c80-413d-92d8-8705f795f6a9" class="navh">11.3.6 Gruppieren mit »GroupBy«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpc8138909-0e17-458c-9da3-255b545dfa83" class="navh">11.3.7 Verknüpfungen mit »Join«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp9d3d8596-3745-41b7-8dac-48cd0c18a2c6" class="navh">11.3.8 Die Set-Operatoren-Familie</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpf273c0f9-8ff2-44c4-813c-0591776ce992" class="navh">11.3.9 Die Familie der Aggregatoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpcfee0c09-0424-4a84-b901-6ff824f695ce" class="navh">11.3.10 Quantifizierungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtpcb6db722-d7e4-47a2-bdf1-2a1c496ae3d9" class="navh">11.3.11 Aufteilungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp4d614679-ec8d-4166-9faa-7403c7e7b767" class="navh">11.3.12 Die Elementoperatoren</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_11_003.html#dodtp27e46362-bb79-4b42-872e-9a691cb97f37" class="navh">11.3.13 Die Konvertierungsoperatoren</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpb8f86eb9-307c-453b-b940-83e81ba865a8" name="dodtpb8f86eb9-307c-453b-b940-83e81ba865a8"></a><h2 class="t2"><span class="cfett">11.3    </span><span class="cfett"> Die Abfrageoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c" name="dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c"></a><h3 class="t3"><span class="cfett">11.3.1    </span><span class="cfett"> Übersicht der Abfrageoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd556d050-54eb-419a-9cd3-41575bae4e2a"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpb8f86eb9-307c-453b-b940-83e81ba865a8"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">LINQ stellt Ihnen zahlreiche Erweiterungsmethoden zur Verfügung, die auch als Abfrageoperatoren
+                                                      bezeichnet werden. Sie sind alle in der Klasse <span class="clisting">Enumerable</span> des Namespaces <span class="clisting">System.Linq</span> definiert. In Tabelle 11.1 sind alle LINQ-Abfrageoperatoren angegeben.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 11.1  </span>Die LINQ-Abfrageoperatoren
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Operatortyp
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Operator
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Aggregatoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Aggregate</span>, <span class="clisting">Average</span>, <span class="clisting">Count</span>, <span class="clisting">LongCount</span>, <span class="clisting">Min</span>, <span class="clisting">Max</span>, <span class="clisting">Sum</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Konvertierungsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Cast</span>, <span class="clisting">OfType</span>, <span class="clisting">ToArray</span>, <span class="clisting">ToDictionary</span>, <span class="clisting">ToList</span>, <span class="clisting">ToLookup</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Elementoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">DefaultIfEmpty</span>, <span class="clisting">ElementAt</span>, <span class="clisting">ElementAtOrDefault</span>, <span class="clisting"><br xmlns="">First</span>, <span class="clisting">FirstOrDefault</span>, <span class="clisting">Last</span>, <span class="clisting">LastOrDefault</span>, <span class="clisting">Single</span>, <span class="clisting"><br xmlns="">SingleOrDefault</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gleichheitsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">EqualAll</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Sequenzoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Empty</span>, <span class="clisting">Range</span>, <span class="clisting">Repeat</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gruppierungsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">GroupBy</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Join-Operatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Join</span>, <span class="clisting">GroupJoin</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Sortieroperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">OrderBy</span>, <span class="clisting">ThenBy</span>, <span class="clisting">OrderByDescending</span>, <span class="clisting">ThenByDescending</span>, <span class="clisting">Reverse</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Aufteilungsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Skip</span>, <span class="clisting">SkipWhile</span>, <span class="clisting">Take</span>, <span class="clisting">TakeWhile</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Quantifizierungsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">All</span>, <span class="clisting">Any</span>, <span class="clisting">Contains</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Restriktionsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Where</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Projektionsoperatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Select</span>, <span class="clisting">SelectMany</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Set-Operatoren</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Concat</span>, <span class="clisting">Distinct</span>, <span class="clisting">Except</span>, <span class="clisting">Intersect</span>, <span class="clisting">Union</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir werden im weiteren Verlauf des Kapitels auf viele der hier aufgeführten LINQ-Abfrageoperatoren
+                                                      genauer eingehen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpd556d050-54eb-419a-9cd3-41575bae4e2a" name="dodtpd556d050-54eb-419a-9cd3-41575bae4e2a"></a><h3 class="t3"><span class="cfett">11.3.2    </span><span class="cfett"> Die »from«-Klausel</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc5188c6d-2270-4766-9244-13058e368d08"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp7c890ecf-d31b-4b7b-b367-9b500b73afc0"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpafc29ff7-60ac-4aef-9777-b123d6e7233c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein LINQ-Abfrageausdruck beginnt mit der <span class="clisting">from</span>-Klausel. Diese gibt vor, welche Datenquelle abgefragt werden soll, und definiert
+                                                      eine lokale Bereichsvariable, die ein Element in der Datenquelle repräsentiert. Die
+                                                      Datenquelle muss entweder die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> oder <span class="clisting">IEnumerable</span> implementieren. Zu den abfragbaren Datenquellen zählen auch diejenigen, die sich
+                                                      auf <span class="clisting">IQueryable&lt;T&gt;</span> zurückführen lassen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Die LINQ-Abfragen arbeiten mit Methoden, die meist Sequenzen verwenden. Diese Objekte
+                                                         implementieren entweder die <span class="clisting">IEnumerable&lt;T&gt;</span>- oder die <span class="clisting">IQueryable&lt;T&gt;</span>-Schnittstelle. Es stellt sich oft die Frage nach dem Unterschied, weil in beiden
+                                                         Fällen die Methode <span class="clisting">GetEnumerator()</span> veröffentlicht wird. 
+                                                      </p>
+                                                      <p class="pbstandard">Mit <span class="clisting">IEnumerable&lt;T&gt;</span> kann man gut mit einer Datenstruktur im Speicher arbeiten. Die einzelnen Erweiterungsmethoden
+                                                         arbeiten im Prinzip wie sequenzielle Filter &#8211; das Ergebnis des ersten Filters ist
+                                                         der Input für den zweiten Filter usw. Mit einer externen Datenquelle will man so normalerweise
+                                                         nicht arbeiten, denn es wäre extrem ineffizient, zunächst eine ganze Tabelle in den
+                                                         Cache zu laden und diese als <span class="clisting">IEnumerable&lt;T&gt;</span> zu repräsentieren, um dann anschließend und auf der Ergebnisliste eine <span class="clisting">Where</span>-Filterbedingung anzuwenden. Deshalb arbeiten <span class="clisting">IQueryable&lt;T&gt;</span>-implementierende Objekte so, dass sie erst mal den kompletten Abfrageausdruck zusammenbauen,
+                                                         der dann als Ganzes gegen die Datenquelle abgesetzt wird. 
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Datenquelle und Bereichsvariable sind streng typisiert. Wenn Sie mit</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">from customer in customers <br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">das Array aller Kunden als Datenquelle angeben, ist die Bereichsvariable vom Typ <span class="clisting">Customer</span>. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Etwas anders ist der Sachverhalt, wenn die Datenquelle beispielsweise vom Typ <span class="clisting">ArrayList</span> ist. Wie Sie wissen, können in einer <span class="clisting">ArrayList</span> Objekte unterschiedlichsten Typs verwaltet werden. Um auch solche Datenquellen abfragen
+                                                      zu können, muss die Bereichsvariable explizit typisiert werden, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">ArrayList arr = new ArrayList();<br xmlns="">arr.Add(new Circle());<br xmlns="">arr.Add(new Circle());<br></br>var cust = from <span class="clistingfett">Circle kreis</span> in arr<br xmlns="">           select kreis;<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.11  </span>from-Klausel und ArrayList
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal kommt es vor, dass jedes Element einer Datenquelle seinerseits selbst eine
+                                                      Liste untergeordneter Elemente beschreibt. Ein gutes Beispiel dafür ist in unserer
+                                                      Anwendung zu finden, die unsere Musterdaten für dieses Kapitel bereitstellt. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">public class Customer </span>{<br xmlns="">  public string Name { get; set; }<br xmlns="">  public Cities City { get; set; }<br xmlns="">  public Order[] Orders { get; set; }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Jedem Kunden ist ein Array vom Typ <span class="clisting">Order</span> zugeordnet. Um die Bestellungen abzufragen, muss eine weitere <span class="clisting">from</span>-Klausel angeführt werden, die auf die Bestellliste des jeweiligen Kunden zugreift.
+                                                      Jede <span class="clisting">from</span>-Klausel kann separat mit <span class="clisting">where</span> gefiltert oder beispielsweise mit <span class="clisting">orderby</span> sortiert werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">var query = from customer in customers<br xmlns="">            where customer.Name == "Hans"<br xmlns="">            from order in customer.Orders<br xmlns="">            where order.Quantity &gt; 6<br xmlns="">            select new {order.OrderID, order.ProductID};<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.12  </span>Filtern einer untergeordneten Menge (Abfrage-Syntax)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Codefragment wird die Liste aller Kunden zuerst nach <span class="ckursiv">Hans</span> durchsucht. Die gefundene Dateninformation extrahiert anschließend die Bestellinformationen
+                                                      und beschränkt das Ergebnis auf alle Bestellungen von <span class="ckursiv">Hans</span>, die eine Bestellmenge &gt; 6 haben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es sei an dieser Stelle auch dieselbe Abfrage in Erweiterungsmethoden-Syntax gezeigt:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">var query = customers<br xmlns="">            .Where(c =&gt; c.Name == "Hans")<br xmlns="">            .<span class="clistingfett">SelectMany(c =&gt; c.Orders)</span><br xmlns="">            .Where(order =&gt; order.Quantity &gt; 6)<br xmlns="">            .Select(order =&gt; new { order.OrderID, order.ProductID});<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.13  </span>Untergeordnete Menge mit »SelectMany« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Enthält ein gefundenes Element eine Untermenge (hier werden die Bestellungen eines
+                                                      <span class="clisting">Customer</span>-Objekts durch ein Array beschrieben), benötigen wir den Operator <span class="clisting">SelectMany</span>. An diesem Beispiel können Sie erkennen, dass sich in manchen Fällen Abfrage-Syntax
+                                                      und Erweiterungsmethoden-Syntax doch deutlich unterscheiden.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp7c890ecf-d31b-4b7b-b367-9b500b73afc0" name="dodtp7c890ecf-d31b-4b7b-b367-9b500b73afc0"></a><h3 class="t3"><span class="cfett">11.3.3    </span><span class="cfett"> Mit »where« filtern</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp037b580c-33c3-4082-81f3-550607a713e9"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6a326715-be87-4425-b902-3fda04857423"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpd556d050-54eb-419a-9cd3-41575bae4e2a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Angenommen, Sie möchten alle Kunden auflisten, deren Wohnort <span class="ckursiv">Aachen</span> ist. Um eine Folge von Elementen zu filtern, verwenden Sie den <span class="clisting">Where</span>-Operator.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">var result = from cust in customers<br xmlns="">             where cust.City == Cities.Aachen<br xmlns="">             select cust;<br xmlns="">foreach (var item in result)<br xmlns="">  Console.WriteLine(item);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.14  </span>Die »where«-Klausel (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem <span class="clisting">Select</span>-Operator geben Sie das Element an, das in die Ergebnisliste aufgenommen werden soll.
+                                                      In diesem Fall ist das der Name jeder entsprechend durch den <span class="clisting">Where</span>-Operator gefundenen Person. Die Ergebnisliste wird in der <span class="clisting">foreach</span>-Schleife durchlaufen und an der Konsole ausgegeben. Sie werden <span class="ckursiv">Herbert</span> und <span class="ckursiv">Theo</span> in der Ergebnisliste finden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können die Abfrage-Syntax auch durch die Erweiterungsmethoden-Syntax ersetzen.
+                                                      Geben Sie dabei direkt das zu durchlaufende Array an. An der Codierung der Konsolenausgabe
+                                                      ändert sich nichts.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = customers<br xmlns="">             .Where( cust =&gt; cust.City == Cities.Aachen)<br xmlns="">             .Select(cust =&gt; cust.Name);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.15  </span>Die »where«-Klausel (Erweiterungsmethoden-Syntax)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Auch mehrere Filterkriterien zu berücksichtigen ist nicht weiter schwierig. Sie müssen
+                                                      nur den <span class="clisting">where</span>-Operator ergänzen und benutzen zur Formulierung des Filters die C#-spezifischen Operatoren.
+                                                      Im nächsten Codefragment werden alle noch nicht ausgelieferten Bestellungen gesucht,
+                                                      deren Bestellmenge größer 3 ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">var result = from order in orders<br xmlns="">             where order.Quantity &gt; 3 &amp;&amp; order.Shipped == false<br xmlns="">             select order.OrderID;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">oder:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"> var result = orders<br xmlns="">             .Where(order =&gt; order.Quantity &gt; 3 &amp;&amp; <br xmlns="">                    order.Shipped == false)<br xmlns="">             .Select(ord =&gt; ord.OrderID);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.16  </span>Mehrere Filterkriterien
+                                                   </p>
+                                                   <h4 class="t4"> Die Überladungen des Where-Operators</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie sich die .NET-Dokumentation des <span class="clisting">Where</span>-Operators ansehen, finden Sie die beiden folgenden Signaturen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static IEnumerable&lt;T&gt; <span class="clistingfett">Where</span>&lt;T&gt;(<br></br>       this IEnumerable&lt;T&gt; source,<br></br>       Func&lt;T, bool&gt; predicate<br></br>public static IEnumerable&lt;T&gt; <span class="clistingfett">Where</span>&lt;T&gt;(<br></br>       this IEnumerable&lt;T&gt; source,<br></br>       Func&lt;T, int, bool&gt; predicate<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die erste wird für Abfragen verwendet, wie wir sie weiter oben eingesetzt haben. Die
+                                                      <span class="clisting">IEnumerable&lt;T&gt;</span>-Collection wird dabei komplett gemäß den Filterkriterien durchsucht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der zweiten Signatur können Sie den Bereich der Ergebnisliste einschränken, und
+                                                      zwar anhand des nullbasierten Index, der als Integer angegeben wird. Nehmen wir an,
+                                                      Sie interessieren sich für alle Bestellungen, deren Bestellmenge &gt; 3 ist. Allerdings
+                                                      möchten Sie, dass die Ergebnisliste sich auf Indizes in der Datenquelle beschränkt,
+                                                      die &lt; 10 sind. Es werden demnach nur die Indizes 0 bis einschließlich 9 in der Datenquelle
+                                                      <span class="ckursiv">orders</span> berücksichtigt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">var result = orders<br xmlns="">             .Where((order, index) =&gt; order.Quantity &gt; 3 &amp;&amp; index &lt; 10)<br xmlns="">             .Select(ord =&gt; ord.OrderID, ord.ProductID, ord.Quantity});<br xmlns="">foreach (var item in result)<br xmlns="">  Console.WriteLine("{0,-5}{1,-5}{2}", <br xmlns="">                     item.OrderID, item.ProductID, item.Quantity);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.17  </span>Resultate mit »where« einschränken (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis wird mit den Bestellungen gebildet, die die <span class="clisting">OrderIDs</span> 3, 4, 5 und 10 haben. 
+                                                   </p>
+                                                   <h4 class="t4"> Wie funktioniert der »Where«-Operator?</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Betrachten wir noch einmal die folgende Anweisung:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = customers.Where(cust =&gt; cust.City == Cities.Aachen)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Where</span> ist eine Erweiterungsmethode der Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> und gilt auch für das Array vom Typ <span class="clisting">Customer</span>. Der Ausdruck 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">cust =&gt; cust.City == Cities.Aachen <br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ist ein Lambda-Ausdruck, im eigentlichen Sinne also der Delegat auf eine anonyme Methode.
+                                                      In der Definition des <span class="clisting">Where</span>-Operators wird dieser Delegate durch den Delegate
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Func&lt;T, bool&gt; predicate<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">beschrieben (siehe Definition von <span class="clisting">Where</span> weiter oben). Der generische Typparameter <span class="clisting">T</span> wird durch den Datentyp der Elemente in der zugrunde liegenden Collection beschrieben,
+                                                      die bekanntlich die Schnittstelle <span class="clisting">IEnumerable&lt;T&gt;</span> implementiert. In unserer Anweisung handelt es sich um <span class="clisting">Customer</span>-Objekte. Daher können wir bei korrekter Codierung innerhalb des Lambda-Ausdrucks
+                                                      auch auf die IntelliSense-Liste zurückgreifen. Der zweite Parameter teilt uns mit,
+                                                      von welchem Datentyp der Rückgabewert des Lambda-Ausdrucks ist. Hier wird ein boolescher
+                                                      Typ vorgegeben, denn über <span class="clisting">true</span> weiß LINQ, dass auf das untersuchte Element das Suchkriterium zutrifft und bei einer
+                                                      Rückgabe von <span class="clisting">false</span> eben nicht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Zusammenspiel zwischen den Lambda-Ausdrücken und Erweiterungsmethoden im Kontext
+                                                      generischer Typen und Delegates ist hier sehr gut zu erkennen. In ähnlicher Weise
+                                                      funktionieren auch viele andere Operatoren. Ich werde daher im Folgenden nicht jedes
+                                                      Mal erneut das komplexe Zusammenspiel der verschiedenen Operatoren erörtern.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp6a326715-be87-4425-b902-3fda04857423" name="dodtp6a326715-be87-4425-b902-3fda04857423"></a><h3 class="t3"><span class="cfett">11.3.4    </span><span class="cfett"> Die Projektionsoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp47d023e2-2ad8-41fc-80bc-3a29f0eb412a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Der »Select«-Operator</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">Select</span>-Operator macht die Ergebnisse der Abfrage über ein Objekt verfügbar, das die Schnittstelle
+                                                      <span class="clisting">IEnumerable&lt;T&gt;</span> implementiert, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = from order in orders<br xmlns="">             select order.OrderID;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">oder alternativ:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = orders.Select(order =&gt; order.OrderID);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Rückgabe ist in beiden Fällen eine Liste mit den Bestellnummern der in der Liste
+                                                      vertretenen Bestellungen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Soll der <span class="clisting">Select</span>-Operator eine Liste neu strukturierter Objekte liefern, müssen Sie einen anonymen
+                                                      Typ als Ergebnismenge definieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = from customer in customers<br xmlns="">             select new { customer.Name, customer.City };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hierbei wird auch von einer <span class="ckursiv">Selektion</span> gesprochen.
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »SelectMany«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">SelectMany</span> kommt dann zum Einsatz, wenn es sich bei den einzelnen Elementen in einer Elementliste
+                                                      um Arrays handelt, deren Einzelelemente von Interesse sind. In der Anwendung <span class="ckursiv">Musterdaten</span> trifft das auf alle Objekte vom Typ <span class="clisting">Customer</span> zu, weil die Bestellungen in einem Array verwaltet werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var query = customers<br xmlns="">            .Where(c =&gt; c.Name == "Hans")<br xmlns="">            .SelectMany(c =&gt; c.Orders)<br xmlns="">            .Where(order =&gt; order.Quantity &gt; 6)<br xmlns="">            .Select(order =&gt; new { order.OrderID, order.ProductID});<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.18  </span>Der Operator »SelectMany«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Listing 11.14 hatten wir bereits dieses Beispiel, so dass an dieser Stelle auf
+                                                      weitere Ausführungen verzichtet wird.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba" name="dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba"></a><h3 class="t3"><span class="cfett">11.3.5    </span><span class="cfett"> Die Sortieroperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6006a3be-1c80-413d-92d8-8705f795f6a9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp31a81c48-a668-4859-b6fa-1e286cb38fd7"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sortieroperatoren ermöglichen eine Sortierung von Elementen in Ausgabefolgen mit einer
+                                                      angegebenen Sortierrichtung. Mit dem Operator <span class="clisting">OrderBy</span><span class="clisting"><a class="indexterm" id="dodtpaa2f2fba-cc5f-4ac6-ac45-c0be3a3e1005"></a></span> können Sie auf- und absteigend sortieren, mit <span class="clisting">OrderByDescending</span><span class="clisting"><a class="indexterm" id="dodtp0dfe40ea-d62d-40ad-aa2d-ec48611026a0"></a></span> nur absteigend. Nachfolgend sehen Sie ein Beispiel für eine aufsteigende Sortierung.
+                                                      Dabei werden die Bestellmengen aller Bestellungen der Reihe nach in die Ergebnisliste
+                                                      geschrieben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">var result = from order in orders<br xmlns="">             <span class="clistingfett">orderby</span> order.Quantity<br xmlns="">             select new { order.OrderID, order.Quantity };<br xmlns="">foreach (var item in result)<br xmlns="">  Console.WriteLine("ID: {0,-3}{1}", item.OrderID, item.Quantity);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.19  </span>Sortieren mit »orderby« in Abfrage-Syntax (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns diese LINQ-Abfrage noch in der Erweiterungsmethoden-Syntax an:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = orders<br xmlns="">             .<span class="clistingfett">OrderBy</span>(order =&gt; order.Quantity)<br xmlns="">             .Select(order =&gt; new { order.OrderID, order.Quantity });<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.20  </span>Sortieren mit »OrderBy« in Erweiterungsmethoden-Syntax 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Durch die Ergänzung von <span class="clisting">descending</span> lässt sich auch eine absteigende Sortierung erzwingen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">orderby order.Quantity descending<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing zeigt, wie Sie mit dem Operator <span class="clisting">OrderByDescending</span> zum gleichen Ergebnis kommen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = orders<br xmlns="">             .OrderByDescending(order =&gt; order.Quantity)<br xmlns="">             .Select(order =&gt; new { order.OrderID, order.Quantity });<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.21  </span>Sortieren mit »OrderByDescending«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn Sie mehrere Sortierkriterien festlegen wollen, helfen Ihnen die beiden Operatoren
+                                                      <span class="clisting">ThenBy</span><span class="clisting"><a class="indexterm" id="dodtp85d5a424-4ead-4a38-aaaf-0fe99971b592"></a></span> beziehungsweise <span class="clisting">ThenByDescending</span><span class="clisting"><a class="indexterm" id="dodtp23cad03a-fcb5-47a6-9c5f-686fdcadad63"></a></span> weiter. Deren Einsatz setzt aber die vorhergehende Verwendung von <span class="clisting">OrderBy</span> oder <span class="clisting">OrderByDescending</span> voraus. Nehmen wir an, die erste Sortierung soll die Bestellmenge berücksichtigen
+                                                      und die zweite, ob die Bestellung bereits ausgeliefert ist. Der Programmcode dazu
+                                                      lautet:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">var result = orders<br xmlns="">             .OrderBy(order =&gt; order.Quantity)<br xmlns="">             .ThenBy(order =&gt; order.Shipped)<br xmlns="">             .Select(order =&gt;  new {order.OrderID, order.Quantity, order.Shipped });<br></br>foreach (var item in result)<br xmlns="">  Console.WriteLine("ProductID: {0,-3}Menge:{1,-4} Geliefert:{2}", <br xmlns="">             item.OrderID, item.Quantity, item.Shipped);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.22  </span>Mehrere Sortierkriterien (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal kann es vorkommen, dass Sie die gesamte Ergebnisliste in umgekehrter Reihenfolge
+                                                      benötigen. Hier kommt der Operator <span class="clisting">Reverse</span><span class="clisting"><a class="indexterm" id="dodtp6ff94df9-4f8b-43d3-be00-15a06df17073"></a></span> zum Einsatz, der am Ende auf die Ergebnisliste angewendet wird:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = orders<br xmlns="">             .Select(order =&gt; new {order.ProductID, order.Quantity })<br xmlns="">             .Reverse();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.23  </span>Ergebnisliste mit »Reverse« umkehren
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wie Sie wissen, werden einige Abfrageoperatoren als Schlüsselwörter von C# angeboten
+                                                      und gestatten die sogenannte Abfrage-Syntax. <span class="clisting">Reverse</span> und <span class="clisting">ThenBy</span> zählen nicht dazu. Möchten Sie die von einer Abfrage-Syntax gelieferte Ergebnismenge
+                                                      umkehren, können Sie sich eines kleinen Tricks bedienen. Sie schließen die Abfrage-Syntax
+                                                      in runde Klammern ein und können darauf den Punktoperator mit folgendem <span class="clisting">Reverse</span> angeben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = (from order in orders<br xmlns="">              select new {order.ProductID, order.Quantity })<br xmlns="">             .Reverse();<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.24  </span>Sortieren mit »OrderByDescending« (Abfrage-Syntax)
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp6006a3be-1c80-413d-92d8-8705f795f6a9" name="dodtp6006a3be-1c80-413d-92d8-8705f795f6a9"></a><h3 class="t3"><span class="cfett">11.3.6    </span><span class="cfett"> Gruppieren mit »GroupBy«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp90fb4b96-7bf7-4dde-a27b-2273c905aff4"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc8138909-0e17-458c-9da3-255b545dfa83"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp5898d6d0-7279-4807-86bf-2abc7d5dd2ba"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Manchmal ist es notwendig, Ergebnisse anhand spezifischer Kriterien zu gruppieren.
+                                                      Dazu dient der Operator <span class="clisting">GroupBy</span>. Machen wir uns das zuerst an einem Beispiel deutlich. Ausgangspunkt sei das Array
+                                                      mit <span class="clisting">Customer</span>-Objekten. Es sollen die Kunden (<span class="clisting">Customer</span>-Objekte) nach deren Wohnsitz (<span class="clisting">Cities</span>) gruppiert werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">var result = customers<br xmlns="">             .GroupBy(cust =&gt; cust.City);<br></br>foreach (IGrouping&lt;Cities, Customer&gt; temp in result) {<br xmlns="">  Console.WriteLine(new string('=', 40));<br xmlns="">  Console.WriteLine("Stadt: {0}", temp.Key);<br xmlns="">  Console.WriteLine(new string('-', 40));<br xmlns="">  foreach (var item in temp)<br xmlns="">    Console.WriteLine("       {0}", item.Name);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.25  </span>Gruppieren der Ergebnisliste (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ausgabe in der Konsole sehen Sie in Abbildung 11.1.</p>
+                                                   <p><a href="bilder/11_01.png" rel="lightbox" title="Die Ausgabe des Listings 11.26"><img class="bild" border="1" src="bilderklein/klein11_01.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 11.1  </span>Die Ausgabe des Listings 11.26
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Operator <span class="clisting">GroupBy</span> ist vielfach überladen. Sehen wir uns eine davon an:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static IEnumerable&lt;IGrouping&lt;K,T&gt;&gt; <span class="clistingfett">GroupBy</span>&lt;T,K&gt;(<br></br>   this IEnumerable&lt;T&gt; source, Func&lt;T,K&gt; keyselector);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle Überladungen geben dabei den Typ <span class="clisting">IEnumerable&lt;IGrouping&lt;K,T&gt;&gt;</span> zurück. Die Schnittstelle <span class="clisting">IGrouping&lt;K,T&gt;</span> ist eine spezialisierte Form von <span class="clisting">IEnumerable&lt;T&gt;</span>. Sie definiert die schreibgeschützte Eigenschaft <span class="clisting">Key</span>, die den Wert der zu bildenden Gruppe abruft.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public interface IGrouping&lt;K,T&gt; : IEnumerable&lt;T&gt; {<br xmlns="">   K key { get; }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Beispiel oben werden mittels <span class="ckursiv">key</span> die Städte aus dem generischen Typ <span class="clisting">K</span> (also <span class="clisting">Cities</span>) abgefragt. Betrachten wir nun die äußere Schleife:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">foreach (IGrouping&lt;Cities, Customer&gt; temp in result)<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen der Schnittstelle <span class="clisting">IGrouping</span> im ersten Typparameter in unserem Beispiel <span class="clisting">Cities</span> zuweisen<span class="cfett">,</span> den Datentyp des Elements, nach dem gruppiert werden soll. Der zweite Typparameter
+                                                      beschreibt den Typ des zu gruppierenden Elements. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die äußere Schleife durchläuft die einzelnen Gruppen und gibt als Resultat alle Elemente
+                                                      zurück, die zu der entsprechenden Gruppe gehören. In unserem Beispielcode wird diese
+                                                      Untergruppe mit der Variablen <span class="ckursiv">item</span> beschrieben. In der inneren Schleife werden anschließend alle Elemente von <span class="ckursiv">temp</span> erfasst und die gewünschten Informationen ausgegeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">GroupBy</span>-Operator kann auch in der Schreibweise der Abfrage-Syntax dargestellt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = from customer in customers<br xmlns="">             group customer by customer.City<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpc8138909-0e17-458c-9da3-255b545dfa83" name="dodtpc8138909-0e17-458c-9da3-255b545dfa83"></a><h3 class="t3"><span class="cfett">11.3.7    </span><span class="cfett"> Verknüpfungen mit »Join«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc950a17d-0ba1-4487-b3e4-22f26f1ee957"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9d3d8596-3745-41b7-8dac-48cd0c18a2c6"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6006a3be-1c80-413d-92d8-8705f795f6a9"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit dem <span class="clisting">Join</span>-Operator definieren Sie Beziehungen zwischen mehreren Auflistungen, ähnlich wie Sie
+                                                      in SQL mit dem gleichnamigen JOIN-Statement Tabellen miteinander in Beziehung setzen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In unseren Musterdaten liegen insgesamt 16 Bestellungen vor. Es soll nun für jede
+                                                      Bestellung die Bestellnummer des bestellten Artikels, die Bestellmenge und der Einzelpreis
+                                                      des Artikels ausgegeben werden. Die Listen der Produkte und Bestellungen spielen in
+                                                      diesem Fall eine entscheidende Rolle. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">Product[] products = Service.GetProducts();<br></br>var liste = orders<br xmlns="">            .Join(products,<br xmlns="">                  ord =&gt; ord.ProductID,<br xmlns="">                  prod =&gt; prod.ProductID, (a, b) =&gt; new {a.OrderID, <br xmlns="">                                                         a.ProductID,<br xmlns="">                                                         b.Price,<br xmlns="">                                                         a.Quantity<br xmlns="">                                                       });<br></br>foreach(var m in liste)<br xmlns="">  Console.WriteLine("Order: {0,-3} Product: {1} Menge: {2} Preis: {3}", <br xmlns="">   m.OrderID, m.ProductID, m.Quantity, m.Price);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.26  </span>Einsatz des »Join«-Operators (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">Join</span>-Operator ist überladen. In diesem Beispiel haben wir den folgenden benutzt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static IEnumerable&lt;V&gt; <span class="clistingfett">Join</span>&lt;T, U, V, K&gt;(<br></br>     this Enumerable&lt;T&gt; outer,<br></br>     IEnumerable&lt;U&gt; inner,<br></br>     Func&lt;T, K&gt; outerKeySelector,<br></br>     Func&lt;U, K&gt; innerKeySelector,<br></br>     Func&lt;T, U, V&gt; resultSelector);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Join</span> wird als Erweiterungsmethode der Liste definiert, auf die <span class="clisting">Join</span> aufgerufen wird. In unserem Beispiel ist es die durch <span class="ckursiv">orders</span> beschriebene Liste aller Bestellungen. Die innere Liste wird durch das erste Argument
+                                                      beschrieben und ist in unserem Beispielcode die Liste aller Produkte <span class="ckursiv">products</span>. Als zweites Argument erwartet <span class="clisting">Join</span> im Parameter <span class="ckursiv">outerKeySelector</span> das Schlüsselfeld der äußeren Liste (hier: <span class="ckursiv">orders</span>), das mit dem im dritten Argument angegebenen Schlüsselfeld der inneren Liste in
+                                                      Beziehung gesetzt wird.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im vierten Argument wird die Ergebnisliste festgelegt. Dazu werden zwei Parameter
+                                                      übergeben: Der erste projiziert ein Element der äußeren Liste, der zweite ein Element
+                                                      der inneren Liste in das Ergebnis der <span class="clisting">Join</span>-Abfrage.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie, dass in der Definition von <span class="clisting">Join</span> der generische Typ <span class="clisting">T</span> die äußere Liste beschreibt und der Typ <span class="clisting">U</span> die innere. Die Schlüssel (in unserem Beispiel werden dazu die Felder genommen),
+                                                      die die <span class="clisting">ProductID</span> beschreiben, verstecken sich hinter dem generischen Typ <span class="clisting">K</span>, die Ergebnisliste hinter <span class="clisting">V</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können eine <span class="clisting">Join</span>-Abfrage auch in Abfrage-Syntax notieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var liste = from ord in orders<br xmlns="">            join prod in products<br xmlns="">                 on ord.ProductID equals prod.ProductID<br xmlns="">            select new { ord.OrderID, ord.ProductID, <br xmlns="">                         prod.Price, ord.Quantity};<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.27  </span>Joins mit der Abfrage-Syntax 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Ergebnisliste sehen Sie in Abbildung 11.2.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie sollten darauf achten, dass Sie beim Vergleich links von <span class="clisting">equals</span> den Schlüssel der äußeren Liste angeben, rechts davon den der inneren. Wenn Sie beide
+                                                      vertauschen, erhalten Sie einen Compilerfehler.
+                                                   </p>
+                                                   <p><a href="bilder/11_02.png" rel="lightbox" title="Resultat der Join-Abfrage"><img class="bild" border="1" src="bilderklein/klein11_02.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 11.2  </span>Resultat der Join-Abfrage
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »GroupJoin«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Join</span> führt Daten aus der linken und rechten Liste genau dann zusammen, wenn die angegebenen
+                                                      Kriterien alle erfüllt sind. Ist eines oder sind mehrere der Kriterien nicht erfüllt,
+                                                      befindet sich kein Datensatz in der Ergebnismenge. Damit ist der <span class="clisting">Join</span>-Operator mit dem INNER JOIN-Statement einer SQL-Abfrage vergleichbar. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Suchen Sie ein Äquivalent zu einem LEFT OUTER JOIN oder RIGHT OUTER JOIN, hilft Ihnen
+                                                      der <span class="clisting">GroupJoin</span>-Operator weiter. Nehmen wir an, Sie möchten wissen, welche Bestellungen für die einzelnen
+                                                      Produkte vorliegen. Sie können die LINQ-Abfrage dann wie folgt definieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] products = Service.GetProducts();<br xmlns="">Customer[] customers = Service.GetCustomers();<br xmlns="">var liste = products<br xmlns="">            .<span class="clistingfett">GroupJoin</span>(customers.SelectMany(cust =&gt; cust.Orders),<br xmlns="">             prod =&gt; prod.ProductID,<br xmlns="">             ord =&gt; ord.ProductID,<br xmlns="">                   (a, b) =&gt; new { a.ProductID, Orders = b });<br xmlns="">foreach (var t in liste) {<br xmlns="">  Console.WriteLine("ProductID: {0}", t.ProductID, t.Orders);<br xmlns="">  foreach (var order in t.Orders)<br xmlns="">     Console.WriteLine("   OrderID: {0}", order.OrderID);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.28  </span>LEFT OUTER JOIN mit dem Operator »GroupJoin« 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">GroupJoin</span> arbeitet sehr ähnlich wie der <span class="clisting">Join</span>-Operator. Der Unterschied zwischen den beiden Operatoren besteht darin, was in die
+                                                      Ergebnismenge aufgenommen wird. Mit <span class="clisting">Join</span> sind es nur Daten, deren Schlüssel sowohl in der <span class="ckursiv">outer</span>-Liste als auch in der <span class="ckursiv">inner</span>-Liste vertreten sind. Findet <span class="clisting">Join</span> in der <span class="ckursiv">inner</span>-Liste kein passendes Element, wird das <span class="ckursiv">outer</span>-Element nicht in die Ergebnisliste aufgenommen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ganz anders ist das Verhalten von <span class="clisting">GroupJoin</span>. Dieser Operator nimmt auch dann ein Element aus der <span class="ckursiv">outer</span>-Liste in die Ergebnisliste auf, wenn keine entsprechenden Daten in <span class="ckursiv">inner</span> vorhanden sind. Sie können das sehr schön in Abbildung 11.3 sehen, denn der Artikel
+                                                      mit der <span class="clisting">ProductID=2</span> ist in keiner Bestellung zu finden.
+                                                   </p>
+                                                   <p><a href="bilder/11_03.png" rel="lightbox" title="Ergebnisliste der LINQ-Abfrage mit dem »GroupJoin«-Operator"><img class="bild" border="1" src="bilderklein/klein11_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 11.3  </span>Ergebnisliste der LINQ-Abfrage mit dem »GroupJoin«-Operator
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können den <span class="clisting">GroupJoin</span>-Operator auch in einem Abfrageausdruck beschreiben. Er wird mit <span class="clisting">join... into...</span> definiert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] products = Service.GetProducts();<br xmlns="">Customer[] customers = Service.GetCustomers();<br></br>var liste = from cust in customers<br xmlns="">            from ord in cust.Orders<br xmlns="">            select ord;<br></br>var expr = from prod in products<br xmlns="">           join custord in liste<br xmlns="">           on prod.ProductID equals custord.ProductID into allOrders<br xmlns="">           select new { prod.ProductID, Orders = allOrders};<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.29  </span>LEFT OUTER JOIN in der Abfrage-Syntax
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9d3d8596-3745-41b7-8dac-48cd0c18a2c6" name="dodtp9d3d8596-3745-41b7-8dac-48cd0c18a2c6"></a><h3 class="t3"><span class="cfett">11.3.8    </span><span class="cfett"> Die Set-Operatoren-Familie</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf273c0f9-8ff2-44c4-813c-0591776ce992"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6f36e40f-e91b-45f1-a500-cd19eae1384c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <h4 class="t4"> Der Operator »Distinct«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht kennen Sie die Wirkungsweise von DISTINCT bereits von SQL. In LINQ hat
+                                                      der <span class="clisting">Distinct</span>-Operator die gleiche Aufgabe: Er garantiert, dass in der Ergebnismenge ein Element
+                                                      nicht doppelt auftritt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string[] cities = {"Aachen", "Köln", "Bonn", "Aachen", "Bonn", "Hof"};<br xmlns="">var liste = (from p in cities select p).Distinct();<br xmlns="">foreach (string city in liste)<br xmlns="">   Console.WriteLine(city);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.30  </span>Der Operator »Distinct« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Im Array <span class="clisting">cities</span> kommen die beiden Städte Aachen und Bonn je zweimal vor. Der auf die Ergebnismenge
+                                                      angewendete <span class="clisting">Distinct</span>-Operator erkennt dies und sorgt dafür, dass jede Stadt nur einmal angezeigt wird.
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »Union«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">Union</span>-Operator verbindet zwei Listen miteinander. Dabei werden doppelte Vorkommen ignoriert.
+                                                      
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string[] cities = {"Aachen", "Bonn", "Aachen", "Frankfurt"};<br xmlns="">string[] namen = {"Peter", "Willi", "Hans"};<br></br>var listeCities = from c in cities<br xmlns="">                  select c;<br xmlns="">var listeNamen  = from n in namen<br xmlns="">                  select n;<br xmlns="">var listeComplete = listeCities.Union(listeNamen);<br></br>foreach (var p in listeComplete)<br xmlns="">  Console.WriteLine(p);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.31  </span>Der »Union«-Operator (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In der Ergebnisliste werden der Reihe nach Aachen, Köln, Bonn, Frankfurt, Peter, Willi und Hans erscheinen. </p>
+                                                   <h4 class="t4"> Der Operator »Intersect«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">Intersect</span>-Operator bildet eine Ergebnisliste aus zwei anderen Listen. In der Ergebnisliste
+                                                      sind aber nur die Elemente enthalten, die in beiden Listen gleichermaßen enthalten
+                                                      sind. <span class="clisting">Intersect</span> bildet demnach eine Schnittmenge ab.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">string[] cities1 = {"Aachen", "Köln", "Bonn", "Aachen", "Frankfurt"};<br xmlns="">string[] cities2 = {"Düsseldorf", "Bonn", "Bremen", "Köln"};<br></br>var listeCities1 = from c in cities1<br xmlns="">                   select c;<br xmlns="">var listeCities2  = from n in cities2<br xmlns="">                    select n;<br xmlns="">var listeComplete = listeCities1.<span class="clistingfett">Intersect</span>(listeCities2);<br></br>foreach (var p in listeComplete)<br xmlns="">  Console.WriteLine(p);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.32  </span>Der Operator »Intersect« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis wird durch die Städte <span class="ckursiv">Köln</span> und <span class="ckursiv">Bonn</span> gebildet.
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »Except«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Während <span class="clisting">Intersect</span> die Gemeinsamkeiten aufspürt, sucht der Operator <span class="clisting">Except</span> nach allen Elementen, durch die sich die Listen voneinander unterscheiden. Dabei
+                                                      sind nur die Elemente in der Ergebnisliste enthalten, die in der ersten Liste angegeben
+                                                      sind und in der zweiten Liste fehlen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Verwenden Sie in Listing 11.33 anstelle von <span class="clisting">Intersect</span> den Operator <span class="clisting">Except</span>, enthält die Ergebnisliste die Orte <span class="ckursiv">Aachen</span> und <span class="ckursiv">Frankfurt</span>.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf273c0f9-8ff2-44c4-813c-0591776ce992" name="dodtpf273c0f9-8ff2-44c4-813c-0591776ce992"></a><h3 class="t3"><span class="cfett">11.3.9    </span><span class="cfett"> Die Familie der Aggregatoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcfee0c09-0424-4a84-b901-6ff824f695ce"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpff8550bb-5ecf-4ea6-b37b-9ab2c9d57405"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">LINQ stellt mit <span class="clisting">Count</span>, <span class="clisting">LongCount</span>, <span class="clisting">Sum</span>, <span class="clisting">Min</span>, <span class="clisting">Max</span>, <span class="clisting">Average</span> und <span class="clisting">Aggregate</span> eine Reihe von Aggregatoperatoren zur Verfügung, um Berechnungen an Quelldaten durchzuführen.
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »Count« und »LongCount«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpca938cfd-44f1-42ef-b405-79ce81ab598d"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehr einfach einzusetzen sind die beiden Operatoren <span class="clisting">Count</span> und <span class="clisting">LongCount</span>. Beide unterscheiden sich dahingehend, dass <span class="clisting">Count</span> einen <span class="clisting">int</span> als Typ zurückgibt und <span class="clisting">LongCount</span> einen <span class="clisting">long</span>. Um <span class="clisting">Count</span> zu testen, wollen wir zuerst wissen, wie viele Bestellungen insgesamt eingegangen
+                                                      sind:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Order[] orders = Service.GetOrders();<br xmlns="">var anzahl = (from x in orders<br xmlns="">              select x).Count();<br xmlns="">Console.WriteLine("Anzahl der Bestellungen gesamt = {0}", anzahl);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.33  </span>Der Operator »Count« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alternativ können Sie auch Folgendes formulieren:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var anzahl = orders.Count();<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Ergebnis lautet 16.</p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Vielleicht interessiert uns auch, wie viele Bestellungen jeder einzelne Kunde aufgegeben
+                                                      hat. Wir müssen dann den folgenden Code schreiben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">var orderCounts = from c in customers<br xmlns="">                  select new { c.Name, OrderCount = c.Orders.Count() };<br xmlns="">foreach (var k in orderCounts)<br xmlns="">  Console.WriteLine("{0} - {1}", k.Name, k.OrderCount);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.34  </span>Anzahl der Elemente einer untergeordneten Menge (siehe Buch-DVD)
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »Sum«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Sum</span> ist grundsätzlich zunächst einmal sehr einfach einzusetzen. Der Operator liefert
+                                                      eine Summe als Ergebnis der LINQ-Abfrage. Im folgenden Codefragment wird die Summe
+                                                      aller Integer-Werte ermittelt, die das Array bilden. Das Ergebnis lautet 114.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int[] arr = new int[] { 1, 3, 7, 4, 99 };<br xmlns="">var sumInt = arr.Sum();<br xmlns="">Console.WriteLine("Integer-Summe = {0}", sumInt);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.35  </span>Der einfache Einsatz des Operators »Sum«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing ist nicht mehr so einfach. Hier soll der Gesamtbestellwert über
+                                                      alle Produkte für jeden Kunden ermittelt werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var allOrders = <br xmlns="">   from cust in customers<br xmlns="">   from ord in cust.Orders<br xmlns="">   join prod in products on ord.ProductID equals prod.ProductID<br xmlns="">   select new { cust.Name, ord.ProductID, <br xmlns="">                OrderAmount = ord.Quantity * prod.Price};<br></br>var summe = <br xmlns="">   from cust in customers<br xmlns="">   join ord in allOrders<br xmlns="">   on cust.Name equals ord.Name into custWithOrd<br xmlns="">   select new { cust.Name, TotalSumme = custWithOrd.Sum(s =&gt; s.OrderAmount) };<br></br>foreach(var s in summe)<br xmlns="">  Console.WriteLine("Name: {0,-7} Bestellsumme: {1}",<br xmlns="">                     s.Name, s.TotalSumme);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.36  </span>Der Operator »Sum« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Analysieren wir den Code schrittweise, und überlegen wir, was das Resultat des folgenden
+                                                      Abfrageteilausdrucks ist.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var allOrders = from cust in customers<br xmlns="">   from ord in cust.Orders<br xmlns="">   join prod in products on ord.ProductID equals prod.ProductID<br xmlns="">   select new { cust.Name, ord.ProductID, <br xmlns="">                OrderAmount = ord.Quantity * prod.Price };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zuerst ist es notwendig, die Bestellungen aus jedem <span class="clisting">Customer</span>-Objekt zu filtern. Danach wird ein Join gebildet, der die <span class="clisting">ProductIDs</span> aus den einzelnen Bestellungen eines Kunden mit der <span class="clisting">ProductID</span> aus der Liste der Artikel verbindet. Das Ergebnis ist eine Art Tabelle mit Spalten
+                                                      für den Besteller, die <span class="clisting">ProductID</span> und die Gesamtsumme für diesen Artikel, die anhand der Bestellmenge gebildet wurde
+                                                      (siehe Abbildung 11.4).
+                                                   </p>
+                                                   <p><a href="bilder/11_04.png" rel="lightbox" title="Bestellwert als Zwischenergebnis"><img class="bild" border="1" src="bilderklein/klein11_04.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 11.4  </span>Bestellwert als Zwischenergebnis
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun gilt es noch, die Ergebnisliste nach den Kunden zu gruppieren und dann die Gesamtsumme
+                                                      aller Bestellungen zu bilden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var summe = <br xmlns="">   from cust in customers<br xmlns="">   join ord in allOrders<br xmlns="">   on cust.Name equals ord.Name into custWithOrd<br xmlns="">   select new { cust.Name, <br xmlns="">        TotalSumme = custWithOrd.Sum(s =&gt; s.OrderAmount) };<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir sollten uns daran erinnern, dass der <span class="clisting">GroupJoin</span>-Operator (hier vertreten durch das Schlüsselwort <span class="clisting">join</span>) mit diesen Fähigkeiten ausgestattet ist. Es müssen zuerst die beiden Listen <span class="ckursiv">customers</span> und <span class="ckursiv">allOrders</span> zusammengeführt werden. Sie können sich das so vorstellen, dass die Gruppierung mit
+                                                      <span class="clisting">GroupJoin</span> zur Folge hat, dass für jeden <span class="clisting">Customer</span> eine eigene »Tabelle« erzeugt wird, in der alle seine Bestellungen beschrieben sind.
+                                                      Die Variable <span class="ckursiv">s</span> steht hier für ein Gruppenelement, letztendlich also für eine Bestellung. Die Gruppierung
+                                                      nach <span class="clisting">Customer</span>-Objekten gestattet es uns nun, mit dem Operator <span class="clisting">Sum</span> den Inhalt der Spalte <span class="clisting">OrderAmount</span> zu summieren. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Resultat der kompletten LINQ-Abfrage sehen Sie in Abbildung 11.5.</p>
+                                                   <p><a href="bilder/11_05.png" rel="lightbox" title="Ergebnis der Abfrage der Gesamtbestellsumme"><img class="bild" border="1" src="bilderklein/klein11_05.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 11.5  </span>Ergebnis der Abfrage der Gesamtbestellsumme
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »Min«, »Max« und »Average«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa788f607-5111-43f5-926e-9460fe02268a"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp5176a58e-6dcd-4a58-baa2-823c315f6e83"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Aggregatoperatoren <span class="clisting">Min</span> und <span class="clisting">Max</span> ermitteln den minimalen bzw. maximalen Wert in einer Datenliste, <span class="clisting">Average</span> das arithmetische Mittel. Der Einsatz der Operatoren ist sehr einfach, wie das folgende
+                                                      Codefragment exemplarisch an <span class="clisting">Max</span> zeigt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var max = (from p in products<br xmlns="">           select p.Price).<span class="clistingfett">Max()</span>;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das funktioniert aber auch nur, solange numerische Werte als Datenquelle vorliegen.
+                                                      Sie brauchen den Code nur wie folgt leicht zu ändern, um festzustellen, dass nun eine
+                                                      <span class="clisting">ArgumentException</span> geworfen wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var max = (from p in products<br xmlns="">           select new { p.Price }).<span class="clistingfett">Max()</span>;<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Meldung zu der Exception besagt, dass mindestens ein Typ die <span class="clisting">IComparable</span>-Schnittstelle implementieren muss. In der ersten funktionsfähigen Version des Codes
+                                                      stand in der Ergebnisliste ein numerischer Wert, der der Forderung entspricht. Im
+                                                      zweiten, fehlerverursachenden Codefragment hingegen wird ein anonymer Typ beschrieben,
+                                                      der die geforderte Schnittstelle nicht implementiert. Die Lösung dieser Problematik
+                                                      ist nicht schwierig. Die Operatoren sind alle so überladen, dass auch ein Selektor
+                                                      übergeben werden kann. Dazu geben Sie das gewünschte Element aus der Liste der Elemente,
+                                                      die den anonymen Typ bilden, als Bedingung an.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var max = (from p in products<br xmlns="">           select new { p.Price })<br xmlns="">           .Max(x =&gt; x.Price);<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcfee0c09-0424-4a84-b901-6ff824f695ce" name="dodtpcfee0c09-0424-4a84-b901-6ff824f695ce"></a><h3 class="t3"><span class="cfett">11.3.10    </span><span class="cfett"> Quantifizierungsoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpcb6db722-d7e4-47a2-bdf1-2a1c496ae3d9"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1258a360-8358-4983-9d78-9854031b0fb7"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beabsichtigen Sie, die Existenz von Elementen in einer Liste anhand von Bedingungen
+                                                      oder definierten Regeln zu überprüfen, helfen die Quantifizierungsoperatoren Ihnen
+                                                      weiter. 
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »Any«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Any</span> ist ein Operator, der ein Prädikat auswertet und einen booleschen Wert zurückliefert.
+                                                      Nehmen wir an, Sie möchten wissen, ob der Kunde <span class="ckursiv">Willi</span> auch das Produkt mit der <span class="clisting">ProductID = 7</span> bestellt hat. <span class="clisting">Any</span> hilft, das festzustellen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Customer[] customers = Service.GetCustomers();<br xmlns="">bool result = (from cust in customers<br xmlns="">               from ord in cust.Orders<br xmlns="">               where cust.Name == "Willi"<br xmlns="">               select new { ord.ProductID })<br xmlns="">               .Any(ord =&gt; ord.ProductID == 7);<br xmlns="">if (result)<br xmlns="">  Console.WriteLine("ProductID=7 ist enthalten");<br xmlns="">else<br xmlns="">  Console.WriteLine("ProductID=7 ist nicht enthalten");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.37  </span>Lising 11.38: Der Operator »Any« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Elemente werden so lange ausgewertet, bis der Operator auf ein Element stößt,
+                                                      das die Bedingung erfüllt. 
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »All«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Während <span class="clisting">Any</span> schon <span class="clisting">true</span> liefert, wenn für ein Element die Bedingung erfüllt ist, liefert der Operator <span class="clisting">All</span> nur dann <span class="clisting">true</span>, wenn alle untersuchten Elemente der Bedingung entsprechen. Möchten Sie beispielsweise
+                                                      feststellen, ob die Preise aller Produkte &gt; 3 sind, genügt die folgende LINQ-Abfrage:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">bool result = (from prod in products<br xmlns="">               select prod).All(p =&gt; p.Price &gt; 3);<br></pre></div><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpcb6db722-d7e4-47a2-bdf1-2a1c496ae3d9" name="dodtpcb6db722-d7e4-47a2-bdf1-2a1c496ae3d9"></a><h3 class="t3"><span class="cfett">11.3.11    </span><span class="cfett"> Aufteilungsoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp4d614679-ec8d-4166-9faa-7403c7e7b767"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2ea1e31b-b581-4af1-8a48-44026fffa95f"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">where</span> und <span class="clisting">select</span> filtern Sie eine Datenquelle nach vorgegebenen Kriterien. Das Ergebnis ist eine Datenmenge,
+                                                      die den vorgegebenen Kriterien entspricht. Möchten Sie nur eine Teilmenge der Datenquelle
+                                                      betrachten, ohne Filterkriterien einzusetzen, eignen sich die Aufteilungsoperatoren.
+                                                      
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »Take«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie könnten zum Beispiel daran interessiert sein, nur die ersten drei Produkte aus
+                                                      der Liste aller Produkte auszugeben. Mit dem <span class="clisting">Take</span>-Operator ist das sehr einfach zu realisieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = prods.Take(3);<br xmlns="">foreach (var prod in result)<br xmlns="">  Console.WriteLine(prod.ProductName);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir greifen in unserem Beispiel auf eine Datenquelle zu, die uns der Aufruf der Methode
+                                                      <span class="clisting">GetProducts</span> liefert. Natürlich kann die zu untersuchende Datenquelle zuvor durch einen anderen
+                                                      LINQ-Ausdruck gebildet werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              where prod.Price &gt; 3<br xmlns="">              select new { prod.ProductName, prod.Price }).<span class="clistingfett">Take(3)</span>;<br xmlns="">foreach (var prod in result)<br xmlns="">  Console.WriteLine("{0,-7}{1}", prod.ProductName, prod.Price);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.38  </span>Der Operator »Take« (siehe Buch-DVD)
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »TakeWhile«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Operator <span class="clisting">Take</span> basiert auf einem Integer als Zähler. Sehr ähnlich arbeitet auch <span class="clisting">TakeWhile</span>. Im Unterschied zum Operator <span class="clisting">Take</span> können Sie eine Bedingung angeben, die als Filterkriterium angesehen wird. <span class="clisting">TakeWhile</span> durchläuft die Datenquelle und gibt das gefundene Element zurück, wenn das Ergebnis
+                                                      der Bedingungsprüfung <span class="clisting">true</span> ist. Beendet wird der Durchlauf unter zwei Umständen:
+                                                   </p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Das Ende der Datenquelle ist erreicht.</li>
+                                                      <li class="pgp">Das Ergebnis einer Untersuchung lautet <span class="clisting">false</span>.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns das an einem Beispiel ansehen. Auch dabei wird als Quelle auf die Liste
+                                                      der Produkte zurückgegriffen. Das Prädikat sagt aus, dass die Produkte in der Ergebnisliste
+                                                      erfasst werden sollen, deren Preis höher als 3 ist:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .TakeWhile(n =&gt; n.Price &gt; 3);<br xmlns="">foreach (var prod in result)<br xmlns="">  Console.WriteLine("{0,-7}{1}", prod.ProductName, prod.Price);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.39  </span>Operationen mit »TakeWhile« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Es werden die folgenden Produkte angezeigt: <span class="ckursiv">Käse</span>, <span class="ckursiv">Wurst</span>, <span class="ckursiv">Obst</span>, <span class="ckursiv">Gemüse</span> und <span class="ckursiv">Fleisch</span>. Beachten Sie, dass in der Ergebnisliste das Produkt <span class="ckursiv">Pizza</span> nicht enthalten ist, da die Schleife beendet wird, ehe <span class="ckursiv">Pizza</span> einer Untersuchung unterzogen werden kann, weil das erste Produkt, das die Bedingung
+                                                      nicht mehr erfüllt (<span class="ckursiv">Süßwaren</span>, siehe die Liste der Produkte in Abschnitt 11.2.1), das Ende der Schleife erzwingt.
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »Skip« und »SkipWhile«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp37d99009-55ec-47e6-8708-d445e4aa38c5"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Take</span> und <span class="clisting">TakeWhile</span> werden um <span class="clisting">Skip</span> und <span class="clisting">SkipWhile</span> ergänzt. <span class="clisting">Skip</span> überspringt eine bestimmte Anzahl von Elementen in einer Datenquelle. Der verbleibende
+                                                      Rest bildet die Ergebnismenge. Um zum Beispiel die ersten beiden in der Liste enthaltenen
+                                                      Produkte aus der Ergebnisliste auszuschließen, codieren Sie die folgenden Anweisungen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .Skip(2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">SkipWhile</span> erwartet ein Prädikat. Die Elemente werden damit verglichen. Dabei werden die Elemente
+                                                      so lange übersprungen, wie das Ergebnis der Überprüfung <span class="clisting">true</span> liefert. Sobald eine Überprüfung <span class="clisting">false</span> ist, werden das betreffende Element und auch alle Nachfolgeelemente in die Ergebnisliste
+                                                      aufgenommen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Prädikat im folgenden Codefragment sucht in der Liste aller Produkte nach dem
+                                                      ersten Produkt, für das die Bedingung nicht gilt, dass der Preis &gt; 3 ist. Dieses und
+                                                      alle darauf folgenden Elemente werden in die Ergebnisliste geschrieben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .SkipWhile(x =&gt; x.Price &gt; 3 );<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ausgegeben werden folgende Produkte: <span class="ckursiv">Süßwaren</span>, <span class="ckursiv">Bier</span> und <span class="ckursiv">Pizza.</span></p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp4d614679-ec8d-4166-9faa-7403c7e7b767" name="dodtp4d614679-ec8d-4166-9faa-7403c7e7b767"></a><h3 class="t3"><span class="cfett">11.3.12    </span><span class="cfett"> Die Elementoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp27e46362-bb79-4b42-872e-9a691cb97f37"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp70a56e10-27a0-46c8-b54b-03ecf78dc09c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bisher lieferten uns alle Operatoren immer eine Ergebnismenge zurück. Möchten Sie
+                                                      aber aus einer Liste ein bestimmtes Element herausfiltern, stehen Ihnen zahlreiche
+                                                      weitere Operatoren zur Verfügung. Diesen wollen wir uns nun widmen.
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »First«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der <span class="clisting">First</span>-Operator sucht das erste Element in einer Datenquelle. Dabei kann es sich um das
+                                                      erste Element aus einer Liste handeln oder um das erste Element einer mit einem Prädikat
+                                                      gebildeten Ergebnisliste. Daraus können Sie den Schluss ziehen, dass der <span class="clisting">First</span>-Operator überladen ist. Das folgende Beispiel zeigt, wie einfach der Einsatz von
+                                                      <span class="clisting">First</span> ist. Aus der Gesamtliste aller Produkte soll nur das an erster Position stehende
+                                                      Produkt als Resultat zurückgeliefert werden.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName })<br xmlns="">              .<span class="clistingfett">First()</span>;<br xmlns="">Console.WriteLine("{0}", result.ProductName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.40  </span>Der Operator »First« (siehe Buch-DVD)
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Als Ergebnis wird <span class="ckursiv">Käse</span> an der Konsole ausgegeben. Vielleicht möchten Sie aber eine Liste aller Produkte
+                                                      haben, deren Preis kleiner 10 ist, und aus dieser Liste nur das erste Listenelement
+                                                      herausfiltern. Dazu können Sie mit einem Lambda-Ausdruck eine Bedingung formulieren,
+                                                      die als Argument an <span class="clisting">First</span> übergeben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .First(item =&gt; item.Price &lt; 10);<br xmlns="">Console.WriteLine("{0}", result.ProductName); <br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.41  </span>Der Operator »First« mit Filterung
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hier lautet das Produkt <span class="ckursiv">Wurst</span>. Dasselbe Resultat erreichen Sie natürlich auch, wenn Sie stattdessen die LINQ-Abfrage
+                                                      wie folgt formulieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">var result = (from prod in prods<br xmlns="">              where prod.Price &lt; 10<br xmlns="">              select new { prod.ProductName, prod.Price }).First();<br></pre></div>
+                                                   <h4 class="t4"> Der Operator »FirstOrDefault«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Versuchen Sie einmal, das letzte Beispiel mit dem Prädikat</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">item =&gt; item.Price &lt; 1<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">auszuführen. Sie werden eine Fehlermeldung erhalten, weil kein Produkt in der Datenquelle
+                                                      enthalten ist, das der genannten Bedingung entspricht. In solchen Fällen empfiehlt
+                                                      es sich, anstelle des Operators <span class="clisting">First</span> den Operator <span class="clisting">FirstOrDefault</span> zu benutzen. Wird kein Element gefunden, liefert der Operator <span class="clisting">default(T)</span> zurück. Handelt es sich um einen Referenztyp, ist das <span class="clisting">null</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">FirstOrDefault</span> liegt ebenfalls in zwei Überladungen vor. Sie können neben der parameterlosen Variante
+                                                      auch die parametrisierte Überladung benutzen, der Sie das gewünschte Prädikat übergeben.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .<span class="clistingfett">FirstOrDefault(item =&gt; item.Price &lt; 1)</span>;<br xmlns="">if (result == null)<br xmlns="">  Console.WriteLine("Kein Element entspricht der Bedingung.");<br xmlns="">else<br xmlns="">  Console.WriteLine("{0}", result.ProductName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.42  </span>Der Operator »FirstOrDefault« mit Filterung
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »Last« und »LastOrDefault«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa8c5d104-f656-4801-9238-5dfb9cdc95c5"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sicherlich können Sie sich denken, dass die beiden Operatoren <span class="clisting">Last</span> und <span class="clisting">LastOrDefault</span> Ergänzungen der beiden im Abschnitt zuvor behandelten Operatoren sind. Beide operieren
+                                                      auf die gleiche Weise wie <span class="clisting">First</span> und <span class="clisting">FirstOrDefault</span>, nur dass das letzte Element der Liste das Ergebnis bildet.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductName, prod.Price })<br xmlns="">              .<span class="clistingfett">LastOrDefault(item =&gt; item.Price &lt; 5)</span>;<br xmlns="">if (result == null)<br xmlns="">  Console.WriteLine("Kein Element entspricht der Bedingung.");<br xmlns="">else<br xmlns="">  Console.WriteLine("{0}", result.ProductName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.43  </span>Der Operator »LastOrDefault« mit Filterung
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »Single« und »SingleOrDefault«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf957c39e-dace-4006-964c-0463d858b720"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Alle bislang vorgestellten Elementoperatoren lieferten eine Ergebnismenge, aus der
+                                                      ein Element herausgelöst wurde: Entweder liefern sie das erste oder das letzte Element.
+                                                      Mit <span class="clisting">Single</span> bzw. <span class="clisting">SingleOrDefault</span> können Sie nach einem bestimmten, <span class="ckursiv">eindeutigen</span> Element Ausschau halten. Eindeutig bedeutet in diesem Zusammenhang, dass es kein
+                                                      Zwischenergebnis gibt, aus dem anschließend ein Element das Ergebnis bildet. In der
+                                                      Musterdaten-Anwendung ist beispielsweise das Feld <span class="ckursiv">ProductID</span> eindeutig, vergleichbar mit der Primärschlüsselspalte einer Datenbanktabelle.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">Single</span> und <span class="clisting">SingleOrDefault</span> können Sie nach einem eindeutig identifizierbaren Element suchen. Werden mehrere
+                                                      gefunden, wird eine <span class="clisting">InvalidOperationException</span> ausgelöst. Auch für dieses Operator-Pärchen gilt: Besteht die Möglichkeit, dass kein
+                                                      Element gefunden wird, sollten Sie den Operator <span class="clisting">SingleOrDefault</span> einsetzen, der ebenfalls <span class="clisting">default(T)</span> als Rückgabewert liefert und keine Ausnahme auslöst, wie das bei dem Einsatz von
+                                                      <span class="clisting">Single</span> der Fall wäre.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können beide Operatoren parameterlos aufrufen oder ein Prädikat angeben.</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductID, prod.ProductName })<br xmlns="">              .<span class="clistingfett">Single( p =&gt; p.ProductID == 2)</span>;<br xmlns="">if (result == null)<br xmlns="">  Console.WriteLine("Kein Element entspricht der Bedingung.");<br xmlns="">else<br xmlns="">  Console.WriteLine("{0}", result.ProductName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.44  </span>Der Operator »Single« mit Filterung
+                                                   </p>
+                                                   <h4 class="t4"> Die Operatoren »ElementAt« und »ElementOrDefault«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp5fa1694d-4ffb-4f06-8e82-b7fd8c51add0"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Möchten Sie ein bestimmtes Element aus einer Liste anhand seiner Position extrahieren,
+                                                      sollten Sie entweder die Methode <span class="clisting">ElementAt</span> oder die Methode <span class="clisting">ElementAtOrDefault</span> verwenden. <span class="clisting">ElementAtOrDefault</span> liefert wieder den Standardwert, falls der Index negativ oder größer als die Elementanzahl
+                                                      ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bekanntermaßen werden Listenelemente mit Indizes versehen. Den beiden Methoden übergeben
+                                                      Sie einfach nur den Index des gewünschten Elements aus der Liste. Sind Sie zum Beispiel
+                                                      am vierten Element aus einer Liste interessiert, übergeben Sie die Zahl 3 als Argument
+                                                      an <span class="clisting">ElementAt</span> oder <span class="clisting">ElementAtOrDefault</span>, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Product[] prods = Service.GetProducts();<br xmlns="">var result = (from prod in prods<br xmlns="">              select new { prod.ProductID, prod.ProductName})<br xmlns="">              .<span class="clistingfett">ElementAtOrDefault(3)</span>;<br xmlns="">if (result == null)<br xmlns="">   Console.WriteLine("Kein Element entspricht der Bedingung.");<br xmlns="">else<br xmlns="">  Console.WriteLine("{0}", result.ProductName);<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.45  </span>Der Operator »ElementAtOrDefault«
+                                                   </p>
+                                                   <h4 class="t4"> Der Operator »DefaultIfEmpty«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig liefert dieser Operator eine Liste von Elementen ab. Sollte die Liste
+                                                      jedoch leer sein, führt dieser Operator nicht sofort zu einer Exception. Stattdessen
+                                                      ist der Rückgabewert dann entweder <span class="clisting">default(T)</span> oder &#8211; falls Sie die überladene Fassung von <span class="clisting">DefaultIfEmpty</span> eingesetzt haben &#8211; ein spezifischer Wert.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">List&lt;string&gt; liste = new List&lt;string&gt;();<br xmlns="">liste.Add("Peter");<br xmlns="">liste.Add("Uwe");<br xmlns="">foreach (string tempStr in liste.<span class="clistingfett">DefaultIfEmpty</span>("leer")) {<br xmlns="">  Console.WriteLine(tempStr);<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.46  </span>Der Operator »DefaultIfEmpty«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In diesem Codefragment wird vorgegeben, dass bei einer leeren Liste die Zeichenfolge
+                                                      <span class="ckursiv">leer</span> das Ergebnis der Operation darstellt.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp27e46362-bb79-4b42-872e-9a691cb97f37" name="dodtp27e46362-bb79-4b42-872e-9a691cb97f37"></a><h3 class="t3"><span class="cfett">11.3.13    </span><span class="cfett"> Die Konvertierungsoperatoren</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpa786ecd8-471f-49d3-b00c-0a7125ad0968"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Konvertierungsoperatoren dienen dazu, eine Sequenz in eine andere Collection umzuwandeln.
+                                                      Insbesondere die Operatoren <span class="clisting">ToList</span> und <span class="clisting">ToArray</span> sind oft hilfreich, wenn die sofortige Ausführung einer Abfrage gewünscht wird und
+                                                      das Resultat zwischengespeichert werden soll. Das Abfrageergebnis ist eine Momentaufnahme
+                                                      der Daten. Dabei speichert <span class="clisting">ToList</span> das Abfrageergebnis in einer <span class="clisting">List&lt;T&gt;</span> und <span class="clisting">ToArray</span> in einem typisierten Array.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die beiden folgenden Listings zeigen den Einsatz der Methoden <span class="clisting">ToList</span> und <span class="clisting">ToArray</span>.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">IEnumerable&lt;string&gt; names = (Service.GetCustomers()<br xmlns="">                             .Select(cust =&gt;  cust.Name ).ToArray());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.47  </span>Die Konvertierungsmethode »ToArray«
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">List&lt;string&gt; customers = (Service.GetCustomers()<br xmlns="">                          .Select(cust =&gt; cust.Name).ToList());<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 11.48  </span>Die Konvertierungsmethode »ToList« 
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs11_003.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="11  LINQ"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_11_002.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_12_001.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

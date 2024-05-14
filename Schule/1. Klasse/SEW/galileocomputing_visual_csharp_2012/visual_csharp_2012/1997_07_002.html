@@ -1,0 +1,871 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 7  Fehlerbehandlung und Debugging">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 7  Fehlerbehandlung und Debugging">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 7  Fehlerbehandlung und Debugging</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="07_001.html">
+      <link rel="next" href="1997_07_003.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_07_001.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_07_003.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478" class="navnav">7 Fehlerbehandlung und Debugging</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_001.html#dodtp475e5173-bcef-40de-a2cc-d388e3c618b3" class="navnav">7.1 Laufzeitfehler behandeln</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp57b107c0-13dc-4413-8357-e3c031d81b3c" class="navnav">7.1.1 Laufzeitfehler erkennen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbf02d593-9c1e-4242-9252-46f4cd23489f" class="navnav">7.1.2 Die »try...catch«-Anweisung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbc0629a3-2b8c-494f-b422-fda1c70d3c74" class="navnav">7.1.3 Behandlung mehrerer Exceptions</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpbfefd6c3-ef90-4c6c-82c3-e9c6683c5f6c" class="navnav">7.1.4 Die Reihenfolge der »catch«-Zweige</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp1d30b910-54df-47dc-92ce-7c1ef3cf509b" class="navnav">7.1.5 Ausnahmen in einer Methodenaufrufkette</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp45ce06b3-1ee6-4902-95ea-0880f225783d" class="navnav">7.1.6 Ausnahmen werfen oder weiterleiten</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp89512caf-8bdf-4c25-9d7c-7faa076c32a4" class="navnav">7.1.7 Die »finally«-Anweisung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtp3901077a-f470-4b3c-87c6-e9d70630005a" class="navnav">7.1.8 Die Klasse »Exception«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_001.html#dodtpe4453647-e7ce-4d22-b3da-73aab09d561c" class="navnav">7.1.9 Benutzerdefinierte Ausnahmen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_002.html#dodtp38a43e10-de8f-40f7-9787-04abea14189a" class="navh">7.2 Debuggen mit Programmcode</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2" class="navh">7.2.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtpe5b5924d-4854-48ca-8dcf-f375fa2b87eb" class="navh">7.2.2 Die Klasse »Debug«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtpe1b9477a-c95e-43e2-842d-cce7a9ed7b02" class="navh">7.2.3 Die Klasse »Trace«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_002.html#dodtp216b19f0-bd9d-4e0e-9bcf-292ee1cdcbf6" class="navh">7.2.4 Bedingte Kompilierung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_07_003.html#dodtpc45667f3-2b6e-4749-a023-38c2d740cb99" class="navnav">7.3 Fehlersuche mit Visual Studio 2012</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtp4a442b80-337e-4d5f-90c1-524153ebfc81" class="navnav">7.3.1 Debuggen im Haltemodus</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtp84387642-bfd0-4b42-bb38-431cbbeed610" class="navnav">7.3.2 Das »Direktfenster«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_07_003.html#dodtpe9c778a3-b22d-4d9c-aa56-722fc69dac3b" class="navnav">7.3.3 Weitere Alternativen, um Variableninhalte zu prüfen</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp38a43e10-de8f-40f7-9787-04abea14189a" name="dodtp38a43e10-de8f-40f7-9787-04abea14189a"></a><h2 class="t2"><span class="cfett">7.2    </span><span class="cfett"> Debuggen mit Programmcode</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp089904f0-227e-445d-be99-37f81cee65f6"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2" name="dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2"></a><h3 class="t3"><span class="cfett">7.2.1    </span><span class="cfett"> Einführung</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe5b5924d-4854-48ca-8dcf-f375fa2b87eb"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp38a43e10-de8f-40f7-9787-04abea14189a"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In Abschnitt 7.1 haben wir uns mit Fehlern beschäftigt, die nach der erfolgreichen
+                                                      Kompilierung zur Laufzeit auftreten können und, falls sie nicht behandelt werden,
+                                                      unweigerlich zum Absturz des Programms führen. Vielleicht noch schlimmer sind Fehler,
+                                                      die weder vom Compiler erkannt werden noch einen Laufzeitfehler verursachen. Es sind
+                                                      die logischen Fehler, aus denen ein falsches oder zumindest unerwartetes Ergebnis
+                                                      resultiert. Um logische Fehler aufzuspüren, muss die Anwendung unter Zuhilfenahme
+                                                      des integrierten Debuggers untersucht werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das .NET Framework stellt Ihnen eine Reihe von Hilfsmitteln zur Verfügung, um den
+                                                      Programmcode zu debuggen. Die Spanne reicht von der einfachen Ausgabe von Meldungen
+                                                      im <span class="cscreenelement">Ausgabe</span>-Fenster bis zur Umleitung der Meldungen in eine Datei oder das Windows-Ereignisprotokoll.
+                                                      Dabei können Sie das Laufzeitverhalten einer Anwendung sowohl mit Programmcode als
+                                                      auch mit der Unterstützung von Visual Studio überprüfen. Wir werden in den nächsten
+                                                      Abschnitten auf alle Debugging-Techniken eingehen. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe5b5924d-4854-48ca-8dcf-f375fa2b87eb" name="dodtpe5b5924d-4854-48ca-8dcf-f375fa2b87eb"></a><h3 class="t3"><span class="cfett">7.2.2    </span><span class="cfett"> Die Klasse »Debug«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp90a8adbe-89ea-43db-bd3d-cf232f549c86"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp496573e7-a1b8-4b4f-bdf1-2a360003446c"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpe1b9477a-c95e-43e2-842d-cce7a9ed7b02"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp1607ae51-260c-40eb-b84a-6a1c82ff8aa2"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">In den vorangegangenen Beispielen haben wir uns sehr häufig eines Kommandos bedient,
+                                                      um beispielsweise den Inhalt von Variablen zu überprüfen. Es war die Methode <span class="clisting">WriteLine</span> der Klasse <span class="clisting">Console</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">int value = 12;<br xmlns="">Console.WriteLine(value);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Technik hat zur Folge, dass die Ausgabe an der Konsole unübersichtlich wird
+                                                      und zwischen den erforderlichen Programminformationen immer wieder Informationen zu
+                                                      finden sind, die im Grunde genommen nur dazu dienen, die Entwicklung zu unterstützen.
+                                                      Bevor ein solches Programm an den Kunden ausgeliefert wird, müssen die Testausgaben
+                                                      aus dem Programmcode gelöscht werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Entwicklungsumgebung bietet uns eine bessere Alternative an. Dazu wird die Ausgabe
+                                                      nicht in das Konsolenfenster geschrieben, sondern in das <span class="cscreenelement">Ausgabe</span>-Fenster von Visual Studio. Standardmäßig wird dieses Fenster am unteren Rand der
+                                                      Entwicklungsumgebung angezeigt. Sie können es sich anzeigen lassen, indem Sie im Menü
+                                                      <span class="cscreenelement">Ansicht</span> den Menüpunkt<span class="cfett"> </span><span class="cscreenelement">Ausgabe</span> wählen. 
+                                                   </p>
+                                                   <p><a href="bilder/07_06.png" rel="lightbox" title="Das Fenster »Ausgabe«"><img class="bild" border="1" src="bilderklein/klein07_06.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.6  </span>Das Fenster »Ausgabe«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie haben dieses Fenster wahrscheinlich schon häufig gesehen und aufmerksam seinen
+                                                      Inhalt gelesen, denn bei jeder Kompilierung werden hier Informationen ausgegeben,
+                                                      beispielsweise ob die Kompilierung fehlerfrei war. Das <span class="cscreenelement">Ausgabe</span>-Fenster zeigt uns aber nicht nur Informationen an, die der Compiler hineinschreibt,
+                                                      wir können auch eigene Meldungen in dieses Fenster umleiten.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Eine Debug-Information in das <span class="cscreenelement">Ausgabe</span>-Fenster zu schreiben, ist genauso einfach wie die Ausgabe an der Konsole. Wir müssen
+                                                      nur die Anweisung
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Console.WriteLine("...");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">durch</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.WriteLine("...");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ersetzen. <span class="clisting">Debug</span><span class="clisting"><a class="indexterm" id="dodtp50ca900d-401e-44f1-8781-b117e6aa3e8b"></a></span> ist eine nicht ableitbare Klasse des Namespaces <span class="clisting">System.Diagnostics</span><span class="cfett"><a class="indexterm" id="dodtpda096b2e-4012-4213-bea2-95616906f5f2"></a></span>, die ausschließlich statische Member bereitstellt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">Debug.WriteLine</span><span class="clisting"><a class="indexterm" id="dodtp36d3bd91-315c-46bb-8a02-30376bb890ad"></a><a class="indexterm" id="dodtpcbce208f-8672-4295-bcc3-e20d5521ec5f"></a></span> unterscheidet sich von der Methode <span class="clisting">Console.WriteLine</span> dahingehend, dass sie keine Formatierungsmöglichkeiten erlaubt. Um mehrere Informationen
+                                                      in einer gemeinsamen Zeichenfolge unterzubringen, müssen Sie daher den Verknüpfungsoperator
+                                                      »<span class="clisting">+</span>« benutzen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.WriteLine("Inhalt von value = " +  value);<br></pre></div>
+                                                   <h4 class="t4"> Programmablaufinformationen anzeigen</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard"><span class="clisting">Debug.WriteLine</span> ist mehrfach überladen und kann ein Argument vom Typ <span class="clisting">string</span> oder <span class="clisting">object</span> entgegennehmen. Eine parameterlose Überladung gibt es nicht.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static void WriteLine(object value);<br></br>public static void WriteLine(string message);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Optional können wir auch ein zweites <span class="clisting">string</span>-Argument übergeben, das eine detaillierte Beschreibung bereitstellt, die vor der
+                                                      eigentlichen Debug-Information ausgegeben wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static void WriteLine(object value, string category);<br></br>public static void WriteLine(string message, string category);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sehen wir uns das an einem Beispiel an. Die Anweisung</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.WriteLine("Inhalt von value = " + value, "Variable value");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird in das <span class="cscreenelement">Ausgabe</span>-Fenster 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Variable value: Inhalt von value = 34<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">schreiben &#8211; vorausgesetzt, der Inhalt von <span class="ckursiv">value</span> ist 34.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Neben <span class="clisting">WriteLine</span> sind in der Klasse <span class="clisting">Debug</span> noch weitere Methoden zur Ausgabe von Informationen definiert. Tabelle 7.2 gibt darüber
+                                                      Auskunft.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 7.2  </span>Ausgabemeth<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpb1150379-3cef-40d1-a9ee-c2167d0bb0ff"></a>oden der Klasse »Debug«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Methode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Write</span><span class="clisting"><a class="indexterm" id="dodtp009a60c3-bbc3-4ec4-adce-8e783353c1a0"></a><a class="indexterm" id="dodtpe1959e8b-ddbd-4ff5-a947-8c77b3ffe3d3"></a><a class="indexterm" id="dodtp28ed9b5f-ec45-424b-a515-60adb85969d3"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt Debug-Informationen ohne Zeilenumbruch.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">WriteLine</span><span class="clisting"><a class="indexterm" id="dodtp07ec459e-0dfa-4737-ae12-ee3dc6b450ae"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt Debug-Informationen mit Zeilenumbruch.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">WriteIf</span><span class="clisting"><a class="indexterm" id="dodtp459b1a60-0747-4017-9f9b-0b5068875d0d"></a><a class="indexterm" id="dodtp24373b35-c737-4378-9f5b-7ab3dfce9b71"></a><a class="indexterm" id="dodtp98024b80-038d-44ed-9a27-9cfa41a0b3b2"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt Debug-Informationen ohne Zeilenumbruch, wenn eine bestimmte Bedingung erfüllt
+                                                                  ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">WriteLineIf</span><span class="clisting"><a class="indexterm" id="dodtpb169284c-f0bc-4f3c-9a9d-887bbdaf754d"></a><a class="indexterm" id="dodtpfeb7950f-0d42-4d57-8a6c-7b2aa56cbed9"></a><a class="indexterm" id="dodtp16cc4ba6-85ab-401a-af2a-f032ff4a5e20"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt Debug-Informationen mit Zeilenumbruch, wenn eine bestimmte Bedingung erfüllt
+                                                                  ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die beiden zuletzt aufgeführten Methoden <span class="clisting">WriteIf</span> und <span class="clisting">WriteLineIf</span> schreiben nur dann Debug-Informationen, wenn eine vordefinierte Bedingung erfüllt
+                                                      ist. Damit lässt sich der Programmcode übersichtlicher gestalten. Beide Methoden sind
+                                                      genauso überladen wie <span class="clisting">Write</span> bzw. <span class="clisting">WriteLine</span>, erwarten jedoch im ersten Parameter zusätzlich einen booleschen Wert, z. B.:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public static void WriteIf(bool condition, string message);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Verdeutlichen wir uns den Einsatz an einem Beispiel. Um den Inhalt des Feldes <span class="ckursiv">value</span> zu testen, könnten wir in herkömmlicher Weise codieren:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">if (value == 77)<br xmlns="">  Debug.WriteLine("Inhalt von value ist 77");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">WriteLineIf</span> wird daraus eine Codezeile:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.WriteLineIf(value == 77, "Inhalt von value ist 77");<br></pre></div>
+                                                   <h4 class="t4"> Einrücken der Ausgabeinformation</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">Debug</span> stellt uns Eigenschaften und Methoden zur Verfügung, um die Debug-Ausgaben einzurücken.
+                                                      Mit der Methode <span class="clisting">Indent</span><span class="clisting"><a class="indexterm" id="dodtpd35a27a0-d644-4802-aefe-11db642c605a"></a></span> wird die Einzugsebene um eins erhöht, mit <span class="clisting">Unindent</span><span class="clisting"><a class="indexterm" id="dodtp1d1e33d7-f270-4457-98a0-dabcff21fdba"></a><a class="indexterm" id="dodtp254e6d1c-d54f-47f5-9a47-d27a1c3106a4"></a></span> um eins verringert. Standardmäßig beschreibt eine Einzugsebene vier Leerzeichen.
+                                                      Mit der Eigenschaft <span class="clisting">IndentSize</span> kann ein anderer Wert bestimmt werden. <span class="clisting">IndentLevel</span><span class="clisting"><a class="indexterm" id="dodtp785c91e8-acf8-481d-a49d-9bd65f6249f1"></a><a class="indexterm" id="dodtp5ee21f5d-f222-4ec7-ae26-9597e9fdc549"></a></span> erlaubt, eine bestimmte Einzugsebene festzulegen, ohne <span class="clisting">Indent</span><span class="clisting"><a class="indexterm" id="dodtp933a69a1-8075-479a-8840-00bb619c8431"></a></span> mehrfach aufrufen zu müssen. An einem Beispiel wollen wir uns noch die Auswirkungen
+                                                      ansehen. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.WriteLine("Ausgabe 1");<br xmlns="">Debug.Indent();<br xmlns="">Debug.WriteLine("Ausgabe 2");<br xmlns="">Debug.IndentLevel = 3;<br xmlns="">Debug.WriteLine("Ausgabe 3");<br xmlns="">Debug.Unindent();<br xmlns="">Debug.WriteLine("Ausgabe 4");<br xmlns="">Debug.IndentSize = 2;<br xmlns="">Debug.IndentLevel = 1;<br xmlns="">Debug.WriteLine("Ausgabe 5");<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.17  </span>Strukturierte Ausgabe im »Ausgabe«-Fenster
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Code führt zu folgender Ausgabe:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Ausgabe 1<br xmlns="">    Ausgabe 2<br xmlns="">            Ausgabe 3<br xmlns="">        Ausgabe 4<br xmlns="">  Ausgabe 5<br></pre></div>
+                                                   <h4 class="t4"> Die Methode »Assert«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp6d473484-1a9c-462a-a25b-db73d556a6f0"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Methode <span class="clisting">Assert</span><span class="clisting"><a class="indexterm" id="dodtpd8eea1e5-0800-4254-a693-ea390738b8b2"></a></span> können Sie eine Annahme prüfen, um beispielsweise unzulässige Zustände festzustellen.
+                                                      Die Methode zeigt eine Fehlermeldung an, wenn ein Ausdruck mit <span class="clisting">false</span> ausgewertet wird.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">Debug.Assert(value &gt;= 0, "value ist negativ");<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Hat die Eigenschaft <span class="ckursiv">value</span> einen Wert, der kleiner 0 ist, erscheint auf dem Bildschirm die in Abbildung 7.7
+                                                      gezeigte Nachricht.
+                                                   </p>
+                                                   <p><a href="bilder/07_07.png" rel="lightbox" title="Die Meldung der Methode »Debug.Assert«"><img class="bild" border="1" src="bilderklein/klein07_07.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.7  </span>Die Meldung der Methode »Debug.Assert«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Dialogfenster enthält neben der dem zweiten Parameter übergebenen Zeichenfolge
+                                                      auch Informationen darüber, in welcher Klasse und welcher Methode der Assertionsfehler
+                                                      aufgetreten ist. 
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpe1b9477a-c95e-43e2-842d-cce7a9ed7b02" name="dodtpe1b9477a-c95e-43e2-842d-cce7a9ed7b02"></a><h3 class="t3"><span class="cfett">7.2.3    </span><span class="cfett"> Die Klasse »Trace«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpa34a8cda-6355-4466-83d3-21890668be07"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpfe308eac-1e78-4e7c-bb10-20b4b4d86cd2"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp216b19f0-bd9d-4e0e-9bcf-292ee1cdcbf6"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp6fd47383-b58a-42e0-b629-9c875c46895d"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">Trace</span><span class="clisting"><a class="indexterm" id="dodtp904b85f7-b6e6-4ed4-9c89-9c1f57724de5"></a></span> unterscheidet sich in der Liste ihrer Eigenschaften und Methoden nicht von <span class="clisting">Debug</span>. Dennoch gibt es einen Unterschied, der sich nur bei einem Wechsel der Build-Konfiguration
+                                                      zwischen <span class="cfett">Release</span><span class="cfett"><a class="indexterm" id="dodtp30d33638-328c-4759-9693-e8e62969aab5"></a><a class="indexterm" id="dodtp37b1d41d-4172-4170-aa03-b61c77c00b47"></a></span> und <span class="cfett">Debug</span><span class="cfett"><a class="indexterm" id="dodtp8edd67df-313a-4b07-8b90-c15a10e4e547"></a><a class="indexterm" id="dodtp40632f1c-b464-4e1c-a86a-702fbf10dad6"></a></span> bemerkbar macht (siehe Abbildung 7.8).
+                                                   </p>
+                                                   <p><a href="bilder/07_08.png" rel="lightbox" title="Die Einstellung der Debug/Release-Build-Konfiguration"><img class="bild" border="1" src="bilderklein/klein07_08.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.8  </span>Die Einstellung der Debug/Release-Build-Konfiguration
+                                                   </p>
+                                                   <h4 class="t4"> Die Debug/Release-Konfiguration</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig ist bei jedem neuen Projekt die Konfiguration <span class="cscreenelement">Debug</span> eingestellt. Anweisungen, die auf den Klassen <span class="clisting">Debug</span> oder <span class="clisting">Trace</span> basieren, werden dann grundsätzlich immer bearbeitet. Wird jedoch die Konfiguration
+                                                      <span class="cscreenelement">Release</span> gewählt, ignoriert der C#-Compiler Aufrufe der Klasse <span class="clisting">Debug</span>, während Aufrufe auf <span class="clisting">Trace</span> weiterhin bearbeitet werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das ist aber noch nicht das Wesentlichste. Viel wichtiger ist die Tatsache, dass Aufrufe
+                                                      auf <span class="clisting">Trace</span> kompiliert werden &#8211; unabhängig davon, ob Sie die Konfiguration <span class="cscreenelement">Debug</span> oder <span class="cscreenelement">Release</span> eingestellt haben. Viele <span class="clisting">Trace</span>-Anweisungen vergrößern deshalb auch das DLL- bzw. EXE-Kompilat. Andererseits hat
+                                                      der Entwickler hier auch eine einfache Möglichkeit, bestimmte Zustände zu protokollieren,
+                                                      die sich zur Laufzeit einstellen und geprüft werden müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Unterhalb des Verzeichnisses, in dem sich die Quellcodedateien befinden, legt die
+                                                      Entwicklungsumgebung das Verzeichnis <span class="ckursiv">\bin</span> an, dem selbst je nach eingestellter Build-Konfiguration die beiden Verzeichnisse
+                                                      <span class="ckursiv">\Debug</span> und <span class="ckursiv">\Release</span> untergeordnet sind. Abhängig von der Konfigurationseinstellung wird das Kompilat
+                                                      der ausführbaren Datei in eines dieser beiden Unterverzeichnisse gespeichert.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Debug-Informationen, die beim Kompilieren generiert werden, sind in einer Datei mit
+                                                      der Dateierweiterung <span class="ckursiv">.pdb</span> im Verzeichnis gespeichert. Der Debugger nutzt die darin enthaltenen Informationen,
+                                                      um Variablennamen und andere Informationen während des Debuggens in einem sinnvollen
+                                                      Format anzuzeigen.
+                                                   </p><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp216b19f0-bd9d-4e0e-9bcf-292ee1cdcbf6" name="dodtp216b19f0-bd9d-4e0e-9bcf-292ee1cdcbf6"></a><h3 class="t3"><span class="cfett">7.2.4    </span><span class="cfett"> Bedingte Kompilierung</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp618c39a6-eb62-4947-98ae-fd2156007586"></a><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp053a3851-b2be-40b8-a696-6f959df8d294"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp2c620c45-5d00-4cc9-a30a-13c65158bd1c"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die bedingte Kompilierung ermöglicht es, Codeabschnitte oder Methoden nur dann zu
+                                                      kompilieren, wenn ein bestimmtes Symbol definiert ist. Üblicherweise werden bedingte
+                                                      Codeabschnitte dazu benutzt, während der Entwicklungsphase den Zustand der Anwendung
+                                                      zur Laufzeit zu testen. Bevor ein <span class="ckursiv">Release</span>-Build der Anwendung erstellt wird, wird das Symbol entfernt. Die Abschnitte, deren
+                                                      Code als bedingt kompilierbar gekennzeichnet ist, werden dann nicht kompiliert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der folgende Code zeigt ein Beispiel für bedingte Kompilierung:</p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">#define MYDEBUG<br xmlns="">using System;<br></br><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br xmlns="">    #if(MYDEBUG)<br xmlns="">      Console.WriteLine("In der #if-Anweisung");<br xmlns="">    #elif(TEST)<br xmlns="">      Console.WriteLine("In der #elif-Anweisung");<br xmlns="">    #endif<a class="indexterm" id="dodtpbe10476d-dd6a-488d-9645-1872f8ee86b6"></a><br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit der Präprozessordirektive <span class="clisting">#define</span><span class="clisting"><a class="indexterm" id="dodtp32dc352b-0d69-4f97-ba66-2664de05303e"></a></span> wird das Symbol MYDEBUG definiert. Symbole werden immer vor der ersten Anweisung
+                                                      festgelegt, die selbst keine <span class="clisting">#define</span>-Präprozessordirektive ist. Werte können den Symbolen nicht zugewiesen werden. Die
+                                                      Präprozessordirektive gilt nur in der Quellcodedatei, in der sie definiert ist, und
+                                                      wird nicht mit einem Semikolon abgeschlossen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">#if</span><span class="clisting"><a class="indexterm" id="dodtp569f503a-1973-4a45-8701-7796574e3264"></a><a class="indexterm" id="dodtp9e70bb85-d7c8-4f1b-8efd-6808376e2099"></a></span> oder <span class="clisting">#elif</span><span class="clisting"><a class="indexterm" id="dodtp9fa6c17d-3cfb-405b-8787-d79accd01ca5"></a><a class="indexterm" id="dodtp589e0d49-9b2c-4981-9fcf-8f39fdfa4f04"></a></span> wird das Vorhandensein des angegebenen Symbols getestet. Ist das Symbol definiert,
+                                                      liefert die Prüfung das Ergebnis <span class="clisting">true</span>, und der Code wird ausgeführt. <span class="clisting">#elif</span> ist die Kurzschreibweise für die beiden Anweisungen <span class="clisting">#else</span><span class="clisting"><a class="indexterm" id="dodtpadde6e3f-61d6-40a8-a2bc-0b43557c8404"></a></span> und <span class="clisting">#if</span>. Da im Beispielcode kein Symbol namens TEST definiert ist, wird die Ausgabe wie folgt
+                                                      lauten:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">In der #if-Anweisung<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Standardmäßig sind in C#-Projekten die beiden Symbole DEBUG und TRACE vordefiniert.
+                                                      Diese Vorgabe ist im Projekteigenschaftsfenster eingetragen (siehe Abbildung 7.9)
+                                                      und hat anwendungsweite Gültigkeit. Das Projekteigenschaftsfenster öffnen Sie, indem
+                                                      Sie im Projektmappen-Explorer den Knoten <span class="cscreenelement">Properties</span> doppelt anklicken. Sie können die Symbole löschen oder auch weitere hinzufügen, die
+                                                      ihrerseits alle durch ein Semikolon voneinander getrennt werden müssen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das Projekteigenschaftsfenster bietet darüber hinaus den Vorteil, dass sich die Symbole
+                                                      einer bestimmten <span class="ckursiv">Build</span>-Konfiguration zuordnen lassen. Wählen Sie in der Dropdown-Liste <span class="cscreenelement">Konfiguration</span> die <span class="ckursiv">Build</span>-Konfiguration aus, für welche die unter <span class="cscreenelement">Bedingte Kompilierungskonstanten</span> angegebenen Symbole gültig sein sollen. Wenn Sie beispielsweise keine <span class="clisting">#define</span>-Präprozessordirektive im Code angeben, dafür aber der <span class="clisting">Debug</span>-Konfiguration das Symbol DEBUG zugeordnet haben, wird der in <span class="clisting">#if - #endif</span><span class="clisting"><a class="indexterm" id="dodtpcc45aa72-b747-4fee-ba3e-29f32540907e"></a></span> eingeschlossene Code im <span class="ckursiv">Debug</span>-Build mitkompiliert, im <span class="ckursiv">Release</span>-Build jedoch nicht.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die im Projekteigenschaftsfenster definierten Konstanten gelten projektweit. Um in
+                                                      einer einzelnen Codedatei die Wirkung eines Symbols aufzuheben, müssen Sie das Symbol
+                                                      hinter der <span class="clisting">#undef</span><span class="clisting"><a class="indexterm" id="dodtp4905cf4f-f2c6-4414-9a9c-6cb0a6896d65"></a></span>-Direktive angeben.
+                                                   </p>
+                                                   <p><a href="bilder/07_09.png" rel="lightbox" title="Festlegung der Symbole im Projekteigenschaftsfenster"><img class="bild" border="1" src="bilderklein/klein07_09.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 7.9  </span>Festlegung der Symbole im Projekteigenschaftsfenster
+                                                   </p>
+                                                   <h4 class="t4"> Bedingte Kompilierung mit dem Attribut »Conditional«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp0be38aea-4a2d-4fe5-87e0-811cc9d88174"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Häufig ist es wünschenswert, eine komplette Methode als bedingt zu kompilierende Methode
+                                                      zu kennzeichnen. Hier hilft Ihnen .NET mit dem Attribut <span class="clisting">Conditional</span> aus dem Namespace <span class="clisting">System.Diagnostics</span> weiter.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="kasten">
+                                                      <p class="pbstandard">Und wieder muss ich Attribute erwähnen, ohne dass wir uns bisher diesem Thema gewidmet
+                                                         haben. Ich weiß, es ist nicht immer schön, auf Features zuzugreifen, die noch nicht
+                                                         behandelt worden sind. Ich mag das bei den Büchern, die ich lese, auch nicht. Nur
+                                                         leider lässt es sich nicht immer vermeiden, weil die Zahnrädchen des .NET Frameworks
+                                                         so komplex ineinandergreifen. Also noch einmal der Hinweis: In Kapitel 10 werde ich
+                                                         Ihnen alles Wissenswerte zu den Attributen erzählen.
+                                                      </p>
+                                                   </div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Damit eine komplette Methode als bedingt kompilierbar gekennzeichnet wird, muss das
+                                                      <span class="clisting">Conditional</span>-Attribut (wie im folgenden Beispiel gezeigt) vor dem Methodenkopf in eckigen Klammern
+                                                      angegeben werden. In den runden Klammern wird das Symbol als Zeichenfolge genannt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[Conditional("DEBUG")]<span class="clistingfett"><br xmlns="">public void ConditionalTest()</span> {<br xmlns="">  [...]<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 7.18  </span>Methode mit dem Attribut »Conditional«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Methode <span class="clisting">ConditionalTest</span> wird jetzt nur dann kompiliert, wenn das Symbol DEBUG gesetzt ist. Sie können auch
+                                                      mehrere Attribute mit unterschiedlichen Symbolen angeben. Kann eines der Symbole ausgewertet
+                                                      werden, wird die Methode ausgeführt. Anders als bedingter Code, der durch <span class="clisting">#if - #endif</span> eingeschlossen ist, wird eine Methode, der das <span class="clisting">Conditional</span>-Attribut angeheftet ist, immer kompiliert. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie müssen beachten, dass eine Methode mit einem <span class="clisting">Conditional</span>-Attribut immer den Rückgabetyp <span class="clisting">void</span> haben muss und nicht mit dem Modifizierer <span class="clisting">override</span> gekennzeichnet sein darf.
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs07_002.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="7  Fehlerbehandlung und Debugging"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_07_001.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_07_003.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,1476 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <meta name="title" content="Galileo Computing :: Visual C# 2012 - 12  Arbeiten mit Dateien und Streams">
+      <meta name="author" content="Andreas Kühnel">
+      <meta name="publisher" content="Galileo Press">
+      <meta name="copyright" content="© Galileo Press, Bonn 2013">
+      <meta name="Desription" content="Visual C# 2012 - Das umfassende Handbuch - 12  Arbeiten mit Dateien und Streams">
+      <meta name="robots" content="INDEX,FOLLOW">
+      <meta http-equiv="content-language" content="de">
+      <title>Galileo Computing :: Visual C# 2012 - 12  Arbeiten mit Dateien und Streams</title>
+      <link rel="stylesheet" type="text/css" href="common/galileo_open.css">
+      <link rel="stylesheet" type="text/css" href="common/prettify.css">
+      <link rel="stylesheet" type="text/css" media="screen" href="common/css/lightbox.css"><script type="text/javascript" src="common/js/prototype.js"></script><script src="common/js/scriptaculous.js?load=effects,builder"></script><script type="text/javascript" src="common/js/lightbox.js"></script><link rel="prev" href="12_003.html">
+      <link rel="next" href="1997_12_005.html"><script type="text/javascript" src="common/prettify.js"></script><script type="text/javascript" src="common/openwin.js"></script></head>
+   <body vlink="#000099" link="#000099" alink="#000099" onload="prettyPrint()">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+         <tr>
+            <td height="74" valign="bottom" colspan="2"><a href="https://www.galileo-press.de/openbook/?GPP=opvcs"><img src="common/galileocomputing_openbook.gif" width="200" height="56" border="0" alt="Galileo Computing < openbook &gt;" title="Galileo Computing < openbook &gt;"></a></td>
+            <td width="80" height="74"><a href="https://www.galileo-press.de/3243/?GPP=opvcs"><img src="common/galileocomputing.gif" border="0" alt="Galileo Computing - Professionelle Bücher. Auch für Einsteiger." title="Galileo Computing - Professionelle Bücher. Auch für Einsteiger."></a></td>
+         </tr>
+      </table>
+      <div align="right"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Professionelle Bücher. Auch für Einsteiger.</a></div><br><table class="tbl" border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tbody>
+            <tr>
+               <td width="190" valign="top">
+                  <table class="tbl1" border="0" cellpadding="3" cellspacing="0" width="190" align="left">
+                     <tbody>
+                        <tr>
+                           <td class="tbl2"><a class="nav" href="index.html">Inhaltsverzeichnis</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_00_001.html#dodtp98d144f0-bd8d-4de5-8086-32e7ca1478d7"> Vorwort zur 6. Auflage</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_01_001.html#dodtpf471901b-c92c-4256-b4a7-6c4233f40e97">1  Allgemeine Einführung in .NET</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_02_001.html#dodtpa6dfd9e4-6ebc-4240-b08a-4dd8e839b1e9">2  Grundlagen der Sprache C#</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_03_001.html#dodtpf766d18e-5ded-46aa-8e8e-625d86cb0d78">3  Das Klassendesign</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_04_001.html#dodtp1d1f07d4-0731-4e9c-8de8-d69493f7b393">4  Vererbung, Polymorphie und Interfaces</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_05_001.html#dodtp3fff44b2-cd1b-47b7-9a94-fbcb259a84b9">5  Delegates und Ereignisse</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_06_001.html#dodtpaccedd75-eaa3-4322-a479-e04396858096">6  Strukturen und Enumerationen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_07_001.html#dodtp77739224-c0d5-4b2a-9a3e-732e2dfca478">7  Fehlerbehandlung und Debugging</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_08_001.html#dodtp33cf4146-9c07-41aa-b128-fd667a737a33">8  Auflistungsklassen (Collections)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_09_001.html#dodtp066354eb-ea00-4a8d-aa5a-fa7bd96e026d">9  Generics &#8211; Generische Datentypen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_10_001.html#dodtp077ecd71-a5e8-46be-b6b5-6c31bc77dede">10  Weitere C#-Sprachfeatures</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_11_001.html#dodtp0c006063-d863-416e-b792-4cc39129b894">11  LINQ</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navh" href="#dodtp2bfdab07-505d-4323-9885-77a8e59fa442">12  Arbeiten mit Dateien und Streams</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_13_001.html#dodtp49638af0-00f8-407f-9740-7dbc1e723fee">13  Binäre Serialisierung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_14_001.html#dodtp7327df50-2f94-44ea-8c62-26cb1aae6058">14  XML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_15_001.html#dodtp61e706c0-d922-4db1-b2fb-cda3e1ff9a4c">15  Multithreading und die Task Parallel Library (TPL)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_16_001.html#dodtp1488d937-efc6-48e5-ba82-1547725215a5">16  Einige wichtige .NET-Klassen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_17_001.html#dodtp91f0667a-84db-4a4f-be78-6e8a0d8a3a2c">17  Projektmanagement und Visual Studio 2012</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_18_001.html#dodtp34972f67-6c1a-406f-a91d-ec8ff67058f9">18  Einführung in die WPF und XAML</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_19_001.html#dodtp2b691ef2-8859-4650-82c1-efe430ea7070">19  WPF-Layout-Container </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_20_001.html#dodtp7dad73d4-2c09-421f-a8d4-6a78c0a65acc">20  Fenster in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_21_001.html#dodtp193e3eb8-5130-4640-865a-fcdd743bac28">21  WPF-Steuerelemente</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_22_001.html#dodtp189c6448-45c3-4ee3-bf41-19ecfa0010d0">22  Elementbindungen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_23_001.html#dodtp5183a0da-5247-4a7c-ad83-22accc03224d">23  Konzepte von WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_24_001.html#dodtp0784a527-2ec1-411a-b5e4-add26ed79abb">24  Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_25_001.html#dodtp5c4c4699-998d-48a0-b449-ac86d57d6ddb">25  Weitere Möglichkeiten der Datenbindung</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_26_001.html#dodtp5591376e-61df-4e77-a551-681b9cc62287">26  Dependency Properties</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_27_001.html#dodtp00fbcc96-1850-421c-a0b4-f4f585913905">27  Ereignisse in der WPF</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_28_001.html#dodtp0b2d55e9-c350-4f4b-b729-796ab6e638ec">28  WPF-Commands</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_29_001.html#dodtp3d560bbc-9ede-4881-af9f-d9c24c8c5ae8">29  Benutzerdefinierte Controls</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_30_001.html#dodtp6f0f9b84-f8f1-405a-b963-d9c64c6cf3d4">30  2D-Grafik</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_31_001.html#dodtpe8718b27-0d2c-45fd-a030-421a21b5d151">31  ADO.NET &#8211; Verbindungsorientierte Objekte</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_32_001.html#dodtp5631780e-021d-4716-a880-7604e981153d">32  ADO.NET &#8211; Das Command-Objekt</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_33_001.html#dodtp3e44ce92-e1cb-4420-9294-a993f673d1e4">33  ADO.NET &#8211; Der SqlDataAdapter</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_34_001.html#dodtp02622bf1-44a0-453d-828f-5266aea64a96">34  ADO.NET &#8211; Daten im lokalen Speicher </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_35_001.html#dodtp44f9b504-b660-4f2e-bd26-072f4a498332">35  ADO.NET &#8211; Aktualisieren der Datenbank</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_36_001.html#dodtpd2ab99b1-a59b-43ef-abb1-e6775e3dddf5">36  Stark typisierte DataSets</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_37_001.html#dodtp97eab997-f0da-4739-b514-a73fccd2935a">37  Einführung in das ADO.NET Entity Framework</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_38_001.html#dodtp106a1823-39fd-4557-8819-0e6be4db7cce">38  Datenabfragen des Entity Data Models (EDM)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_39_001.html#dodtpcc04d69d-d046-42b7-a6f1-37c7e83c0276">39  Entitätsaktualisierung und Zustandsverwaltung </a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_40_001.html#dodtp6a9ab46f-1f4f-41d8-9ab8-bd419b300904">40  Konflikte behandeln</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="1997_41_001.html#dodtp160fa133-1df6-4ab9-a622-c56d87121c23">41  Plain Old CLR Objects (POCOs)</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="stichwort.html">Stichwort</a></td>
+                        </tr>
+                        <tr>
+                           <td><br><a class="navnav"><strong>Download:</strong></a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012.zip" class="navnav">- openbook, ca. 26,1 MB</a>
+                               <br><a href="http://download2.galileo-press.de/openbook/galileocomputing_visual_csharp_2012_beispiele.zip" class="navnav">- Beispiele, ca. 62,4 MB</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Buch bestellen</a></td>
+                        </tr>
+                        <tr>
+                           <td><a class="navnav" href="#kommentar">Ihre Meinung?</a><br><br></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+               <td width="10"><img src="common/spacer10.gif" width="10" height="10" alt="Spacer"></td>
+               <td width="85%" valign="top">
+                  <div style="line-height:100%">
+                     <div align="center">
+                        <table width="98%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                           <tbody>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%">
+                                                <div align="left"><a href="1997_12_003.html" class="navnav"> &lt;&lt; zurück</a></div>
+                                             </td>
+                                             <td width="49%">
+                                                <div align="center"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="navnav">Galileo Computing</a> / <a href="https://www.galileo-press.de/openbook/?GPP=opvcs" class="navnav">
+                                                      &lt;openbook&gt;</a> / <a href="index.html" class="navnav">Visual C# 2012</a></div>
+                                             </td>
+                                             <td width="25%">
+                                                <div align="right"><a href="1997_12_005.html" class="navnav">vor &gt;&gt; </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" valign="top">
+                                    <table width="100%" border="0" cellpadding="10" cellspacing="0" class="box">
+                                       <tbody>
+                                          <tr>
+                                             <td colspan="2"><a href="https://www.galileo-press.de/3243/?GPP=opvcs" class="buchtitel">Visual C# 2012</a><span class="autor"> von Andreas Kühnel</span><br><span class="untertitel">Das umfassende Handbuch</span></td>
+                                          </tr>
+                                          <tr>
+                                             <td valign="top" width="211">
+                                                <dl>
+                                                   <dt><a href="http://www.galileo-press.de/3243/?GPP=opvcs" class="navnav"><img src="common/9783836219976.png" border="0" alt="Buch: Visual C# 2012" title="Buch: Visual C# 2012"></a></dt>
+                                                   <dd><br><a href="http://www.galileo-press.de/3243/?GPP=opvcs"><span class="autor"><strong>Visual C# 2012</strong><br><pressinfo><strong>Galileo Computing</strong><br>1402 S., 6., aktualisierte und erweiterte Auflage 2013, geb., mit DVD<br>49,90 Euro, ISBN 978-3-8362-1997-6
+                                                            </pressinfo></span></a></dd>
+                                                </dl>
+                                             </td>
+                                             <td width="80%">
+                                                <table border="0">
+                                                   <tbody>
+                                                      <tr>
+                                                         <td valign="baseline"><img src="common/pfeil_u.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="3" class="kap"><strong><a href="1997_12_001.html#dodtp2bfdab07-505d-4323-9885-77a8e59fa442" class="navnav">12 Arbeiten mit Dateien und Streams</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_001.html#dodtp593afa38-a7a4-4092-9027-ba9224b110b0" class="navnav">12.1 Einführung</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_002.html#dodtp5807c494-461f-47af-9810-ad1247d28f95" class="navnav">12.2 Namespaces der Ein- bzw. Ausgabe</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_002.html#dodtpc5a77fbf-57da-4b66-8204-aa096282b5fc" class="navnav">12.2.1 Das Behandeln von Ausnahmen bei E/A-Operationen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_003.html#dodtp064dbc2d-7246-4bb7-ad87-82dec683fc8a" class="navnav">12.3 Laufwerke, Verzeichnisse und Dateien</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp3108c2d9-4260-4338-9323-2752bda0c966" class="navnav">12.3.1 Die Klasse »File«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp735aecaa-e98a-4ff9-bfa0-5e3b79e2df6f" class="navnav">12.3.2 Die Klasse »FileInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp72a5be52-a25d-415d-8cdb-42eca466b5a7" class="navnav">12.3.3 Die Klassen »Directory« und »DirectoryInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp6c418c80-1855-4e79-85c7-85a0b9b8186d" class="navnav">12.3.4 Die Klasse »Path«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_003.html#dodtp39d95f5b-2b6e-4f2f-a808-1dfbf8fbf249" class="navnav">12.3.5 Die Klasse »DriveInfo«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_004.html#dodtpf4774ca1-5d30-401e-ab53-a1522c9a79ed" class="navh">12.4 Die »Stream«-Klassen</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp66d6ad86-e8aa-46e6-92b2-80b660235b4c" class="navh">12.4.1 Die abstrakte Klasse »Stream«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5" class="navh">12.4.2 Die von »Stream« abgeleiteten Klassen im Überblick</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_004.html#dodtp9c15c660-dc41-4b02-ab73-e6366d811075" class="navh">12.4.3 Die Klasse »FileStream«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_005.html#dodtp5cef0fac-55ad-4133-8b08-1c845f427cdb" class="navnav">12.5 Die Klassen »TextReader« und »TextWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_005.html#dodtpb2003e06-cf60-4f3c-875b-4a7559147ac1" class="navnav">12.5.1 Die Klasse »StreamWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_005.html#dodtpdc7f8071-45f1-45c7-b86e-084bb216fc7b" class="navnav">12.5.2 Die Klasse »StreamReader«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline" colspan="2"><strong><a href="1997_12_006.html#dodtp0fa82ba2-6a24-405c-9e81-959c71a9b500" class="navnav">12.6 Die Klassen »BinaryReader« und »BinaryWriter«</a></strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"></td>
+                                                         <td valign="baseline" width="10"><img src="common/pfeil_rechts5.gif" width="10" height="10" border="0" alt="Pfeil"></td>
+                                                         <td valign="baseline"><strong><a href="1997_12_006.html#dodtpe7821d9f-5076-4226-84dd-e7b7a74ffcab" class="navnav">12.6.1 Komplexe binäre Dateien</a></strong></td>
+                                                      </tr>
+                                                   </tbody>
+                                                </table>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                    <table width="100%" cellpadding="20" cellspacing="0" border="0" bgcolor="#eeeeee">
+                                       <tbody>
+                                          <tr>
+                                             <td>
+                                                <div class="main"><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtpf4774ca1-5d30-401e-ab53-a1522c9a79ed" name="dodtpf4774ca1-5d30-401e-ab53-a1522c9a79ed"></a><h2 class="t2"><span class="cfett">12.4    </span><span class="cfett"> Die »Stream«-Klassen</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf24f82d3-f8fa-4411-ae35-ee066401845f"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp66d6ad86-e8aa-46e6-92b2-80b660235b4c"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a></h2>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Stream ist die abstrahierte Darstellung eines Datenflusses aus einer geordneten
+                                                      Abfolge von Bytes. Welcher Natur dieser Datenstrom ist &#8211; ob er aus einer Datei stammt,
+                                                      ob er die Eingabe eines Benutzers an der Tastatur enthält oder ob er möglicherweise
+                                                      aus einer Netzwerkverbindung bezogen wird &#8211; bleibt zunächst einmal offen. Die Beschaffenheit
+                                                      des Datenflusses hängt nicht nur von Sender und Empfänger ab, sondern auch ganz entscheidend
+                                                      vom Betriebssystem.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Entwickler soll seine Aufgabe unabhängig von diesen spezifischen Details lösen.
+                                                      E/A-Streams werden deshalb von Klassen beschrieben, die Allgemeingültigkeit garantieren.
+                                                      Das spielt insbesondere bei der Entwicklung von .NET-Anwendungen eine wesentliche
+                                                      Rolle, um die Plattformunabhängigkeit des Codes zu gewährleisten. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Streams dienen generell dazu, drei elementare Operationen ausführen zu können:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp">Dateninformationen müssen in einen Stream geschrieben werden. Nach welchem Muster
+                                                         das geschieht, wird durch den Typ des Streams vorgegeben.
+                                                      </li>
+                                                      <li class="pgp">Aus dem Datenstrom muss gelesen werden, ansonsten könnte man die Daten nicht weiterverarbeiten.
+                                                         Das Ziel kann unterschiedlich sein: Die Bytes können Variablen oder Arrays zugewiesen
+                                                         werden, sie könnten aber auch in einer Datenbank landen und zur Ausgabe an einem Peripheriegerät
+                                                         wie dem Drucker oder dem Monitor dienen.
+                                                      </li>
+                                                      <li class="pgp">Nicht immer ist es erforderlich, den Datenstrom vom ersten bis zum letzten Byte auszuwerten.
+                                                         Manchmal reicht es aus, erst ab einer bestimmten Position zu lesen. Man spricht dann
+                                                         vom wahlfreien Zugriff.
+                                                      </li>
+                                                   </ul>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nicht alle Datenströme können diese drei Punkte gleichzeitig erfüllen. Beispielsweise
+                                                      unterstützen Datenströme im Netzwerk nicht den wahlfreien Zugriff. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei den Streams werden grundsätzlich zwei Typen unterschieden:</p>
+                                                   <ul xmlns="http://www.w3.org/1999/xhtml">
+                                                      <li class="pgp"><span class="cfett">Base-Streams</span><span class="cfett"><a class="indexterm" id="dodtpf824b0f7-cdd6-4ebd-83ea-e74fd8e806f3"></a></span>, die direkt aus einem Strom Daten lesen oder in diesen hineinschreiben. Diese Vorgänge
+                                                         können z. B. in Dateien, im Hauptspeicher oder in einer Netzwerkverbindung enden.
+                                                      </li>
+                                                      <li class="pgp"><span class="cfett">Pass-Through-Streams</span><span class="cfett"><a class="indexterm" id="dodtp348d6358-6f06-44b9-8b5a-43ab7e5b76d4"></a> </span>ergänzen einen Base-Stream um spezielle Funktionalitäten. So können manche Streams
+                                                         verschlüsselt oder im Hauptspeicher gepuffert werden. Pass-Through-Streams lassen
+                                                         sich hintereinander in Reihe schalten, um so die Fähigkeiten eines Base-Streams zu
+                                                         erweitern. Auf diese Weise lassen sich sogar individuelle Streams konstruieren.
+                                                      </li>
+                                                   </ul><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp66d6ad86-e8aa-46e6-92b2-80b660235b4c" name="dodtp66d6ad86-e8aa-46e6-92b2-80b660235b4c"></a><h3 class="t3"><span class="cfett">12.4.1    </span><span class="cfett"> Die abstrakte Klasse »Stream«</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpf4774ca1-5d30-401e-ab53-a1522c9a79ed"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">Stream</span><span class="clisting"><a class="indexterm" id="dodtpbe89f8cf-7ba1-43fa-a6cf-dfa973513d71"></a></span> ist die abstrakte Basisklasse aller anderen <span class="clisting">Stream</span>-Klassen. Sie stellt alle fundamentalen Eigenschaften und Methoden bereit, die von
+                                                      den abgeleiteten Klassen geerbt werden und letztendlich deren Funktionalität ausmachen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die von der Klasse <span class="clisting">Stream</span> abgeleiteten Klassen unterstützen mit ihren Methoden nur Operationen auf Bytesequenzen.
+                                                      Da allein durch eine Bytesequenz noch keine Aussage darüber getroffen ist, welcher
+                                                      Datentyp sich hinter mehreren aufeinanderfolgenden Bytes verbirgt, muss der Inhalt
+                                                      eines solchen Stroms noch interpretiert werden. 
+                                                   </p>
+                                                   <h4 class="t4"> Die Eigenschaften der Klasse »Stream«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Streams stellen Schreib-, Lese- und Suchoperationen bereit. Allerdings unterstützt
+                                                      nicht jeder Stream gleichzeitig alle Operationen. Um in einem gegebenen Stream dessen
+                                                      Verhaltensweisen festzustellen, können Sie die Eigenschaften <span class="clisting">CanRead</span>, <span class="clisting">CanWrite</span> und <span class="clisting">CanSeek</span> abfragen, die einen booleschen Wert zurückliefern und damit Auskunft über die Charakteristik
+                                                      dieses <span class="clisting">Stream</span>-Objekts liefern. Die Eigenschaft <span class="clisting">Length</span> liefert die Länge des Streams und <span class="clisting">Position</span> die aktuelle Position innerhalb des Streams. Letztere wird allerdings nur von den
+                                                      Streams bereitgestellt, die auch die Positionierung mit der <span class="clisting">Seek</span>-Methode unterstützen.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 12.11  </span>Eigenschaften der abstrakten Klasse »Stream«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Eigenschaft
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CanRead</span><span class="clisting"><a class="indexterm" id="dodtp3f9dd55a-1061-4b93-8e57-97ad99c8f3c2"></a><a class="indexterm" id="dodtp296f10f9-0b2b-4ffb-96e3-ca1301f8cd68"></a><a class="indexterm" id="dodtpc86e77e1-377b-4ae8-be93-eb38cb0eaf58"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft in einer abgeleiteten Klasse einen Wert ab, der angibt, ob der aktuelle Stream
+                                                                  Lesevorgänge unterstützt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CanWrite</span><span class="clisting"><a class="indexterm" id="dodtpeaba1f54-e186-4399-a975-62290eca3ee2"></a><a class="indexterm" id="dodtp6f079f5a-c286-44f3-bf90-5d701416d04e"></a><a class="indexterm" id="dodtpb856048c-38cf-418d-8c8e-a81ab696bb68"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft in einer abgeleiteten Klasse einen Wert ab, der angibt, ob der aktuelle Stream
+                                                                  Schreibvorgänge unterstützt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CanSeek</span><span class="clisting"><a class="indexterm" id="dodtp025dd165-7a01-4689-a2a9-f6a3ae2d56fe"></a><a class="indexterm" id="dodtpfe6b0390-588a-4989-b461-986a941e3891"></a><a class="indexterm" id="dodtp912c11be-2633-4207-b641-50e7655a880a"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft in einer abgeleiteten Klasse einen Wert ab, der angibt, ob der aktuelle Stream
+                                                                  Suchvorgänge unterstützt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Length</span><span class="clisting"><a class="indexterm" id="dodtp0d77f0ad-9d97-4d6a-b33e-1eb25c51df7c"></a><a class="indexterm" id="dodtp8566c5d0-b6e1-4398-b93a-cef1051be8e3"></a><a class="indexterm" id="dodtp07186fa8-4bb2-43ff-a1c0-eb665a13f203"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft in einer abgeleiteten Klasse die Länge des Streams in Byte ab.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Position</span><span class="clisting"><a class="indexterm" id="dodtp40dfacb4-835e-4ef0-8805-84758128abfe"></a><a class="indexterm" id="dodtp88ba3503-c6eb-409c-a56a-9abe592b76fb"></a><a class="indexterm" id="dodtpc84074c9-55cb-4d17-a5a7-100a0a16ec89"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ruft in einer abgeleiteten Klasse die Position im aktuellen Stream ab oder legt diese
+                                                                  fest.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <h4 class="t4"> Die Methoden der Klasse »Stream«</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die wichtigsten Methoden aller <span class="clisting">Stream</span>-Klassen dürften <span class="clisting">Read</span>, <span class="clisting">Write</span> und <span class="clisting">Seek</span> sein. Sehen wir uns zunächst die Definitionen der beiden Methoden <span class="clisting">Read</span> und <span class="clisting">Write</span> an, die von jeder abgeleiteten Klasse überschrieben werden müssen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public abstract int Read<a class="indexterm" id="dodtp13c99f49-0cc4-4907-86ac-8b1062ff4bb5"></a><a class="indexterm" id="dodtpcd6ed0e8-838c-455a-a587-bc5d4faaa222"></a>(in byte[] buffer,int offset,int count);<br></br>public abstract void Write<a class="indexterm" id="dodtp7632809d-7888-4d8b-963d-2879a1c44588"></a><a class="indexterm" id="dodtpe049a9e2-bb69-4fc1-87cb-4e992ca7e5c8"></a>(byte[] buffer, int offset, int count);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Einem schreibenden Stream müssen Sie die Daten übergeben, die in den Datenstrom geschrieben
+                                                      werden sollen. Die <span class="clisting">Write</span>-Methode benutzt dazu den ersten Parameter, liest die Elemente byteweise ein und schreibt
+                                                      sie in den Strom. Der Empfänger des Datenstroms kann die Bytes mit <span class="clisting">Read</span> im ersten Parameter entnehmen. Der zweite Parameter <span class="ckursiv">offset</span> bestimmt die Position im Array, ab der der Lese- bzw. Schreibvorgang beginnen soll.
+                                                      Meistens wird hier die Zahl 0 eingetragen, d. h., die Operation greift auf das erste
+                                                      Array-Element zu &#8211; entweder lesend oder schreibend. Im dritten und letzten Parameter
+                                                      wird angegeben, wie viele Bytes gelesen oder geschrieben werden sollen. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Beachten Sie auch, dass <span class="clisting">Write</span> als Methode ohne Rückgabewert implementiert ist, während <span class="clisting">Read</span> einen <span class="clisting">int</span> liefert, dem Sie die Anzahl der gelesenen Bytes entnehmen können, die in den Puffer
+                                                      &#8211; also das Array &#8211; geschrieben worden sind. Der Rückgabewert ist 0, wenn das Ende
+                                                      des Streams erreicht ist. Er kann aber auch kleiner sein als im dritten Parameter
+                                                      angegeben, wenn weniger Bytes im Stream eingelesen werden.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die abstrakte Klasse <span class="clisting">Stream</span> definiert zwei weitere, ähnliche Methoden, die jedoch jeweils nur immer ein Byte
+                                                      aus dem Datenstrom lesen oder in diesen hineinschreiben: <span class="clisting">ReadByte</span> und <span class="clisting">WriteByte</span>. Beide Methoden sind parameterlos und setzen den Positionszeiger innerhalb des Streams
+                                                      um eine (Byte-)Position weiter. 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public virtual int ReadByte<a class="indexterm" id="dodtp1b2aa792-f472-4d31-91d5-84cac03a5af1"></a><a class="indexterm" id="dodtpe77f1c31-bef2-4022-afe7-49d96b3c47e6"></a><a class="indexterm" id="dodtp9f2131dd-76d4-4450-9fee-b876f62b924d"></a>();<br></br>public virtual void WriteByte<a class="indexterm" id="dodtp514204ec-c91e-4825-943f-07c7f29ae1cc"></a><a class="indexterm" id="dodtp3a17260b-db0c-4345-a2f8-284a1605882e"></a><a class="indexterm" id="dodtp3e686068-2963-4913-9529-be13ab2eb629"></a>(byte value);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Rückgabewert der <span class="clisting">ReadByte</span>-Methode ist &#8211;1, wenn das Ende des Datenstroms erreicht ist. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Um in einem Datenstrom ab einer vorgegebenen Position zu lesen oder zu schreiben,
+                                                      bietet sich die <span class="clisting">S</span><span class="clisting"><a class="indexterm" id="dodtp7d1d2194-92f3-4538-a028-c5bbfc539bdc"></a><a class="indexterm" id="dodtp09baf0dc-827e-4fea-9de4-665b8bfce6d5"></a>eek</span>-Methode an: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public abstract long Seek<a class="indexterm" id="dodtp3fc3e8bd-48e6-484f-bd4c-65033cdbc234"></a>(long offset, SeekOrigin origin);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit den beiden Parametern <span class="ckursiv">offset</span> und <span class="ckursiv">origin</span> wird der Startpunkt für den Positionszeiger im Stream festgelegt, ab dem weitere
+                                                      E/A-Operationen aktiv werden. <span class="ckursiv">offset</span> beschreibt die Verschiebung in Bytes ab der unter <span class="ckursiv">origin</span> festgelegten Ursprungsposition. <span class="ckursiv">origin</span> ist vom Typ der Aufzählung <span class="ckursiv">SeekOrigin</span>, in der die drei Konstanten aus Tabelle 12.12 definiert sind.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 12.12  </span>Konstantenliste der Aufzählung »SeekOrigin<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpf1c1d9b9-160d-4257-905a-1c6d15b015aa"></a>«<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpac3dc432-5436-4422-9eff-323028b9c24b"></a></p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Member
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Begin</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gibt den Anfang eines Streams an.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Current</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gibt die aktuelle Position innerhalb eines Streams an.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">End</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Gibt das Ende eines Streams an.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Mit <span class="clisting">SeekOrigin.Begin</span> wird der Positionszeiger auf das erste Byte des Datenstroms gesetzt, mit <span class="clisting">SeekOrigin.Current</span> behält er seine augenblickliche Position bei, und mit <span class="clisting">SeekOrigin.End</span> wird er auf das Byte gesetzt, das als Erstes den Bytes des vollständigen Streams
+                                                      folgt. Ausgehend von <span class="ckursiv">origin</span> wird durch Addition von <span class="ckursiv">offset</span> die gewünschte Startposition ermittelt.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein Stream, der einmal geöffnet worden ist und Daten in den Puffer geschrieben hat,
+                                                      sollte ordnungsgemäß mit <span class="clisting">Close</span><span class="clisting"><a class="indexterm" id="dodtpe858bd60-76a3-4c61-9560-b4215a6fb43f"></a></span> geschlossen werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie haben jetzt so viele Methoden im Schnelldurchlauf kennengelernt, dass alle erwähnten
+                                                      noch einmal in übersichtlicher tabellarischer Form zusammengefasst werden sollen (siehe
+                                                      Tabelle 12.13).
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 12.13  </span>Methoden der abstrakten Klasse »Stream«
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Methode
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Close</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schließt den aktuellen Stream und gibt alle dem aktuellen Stream zugeordneten Ressourcen
+                                                                  frei.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Read</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liest eine Folge von Bytes aus dem aktuellen Stream und setzt den Datenzeiger im Stream
+                                                                  um die Anzahl der gelesenen Bytes weiter.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">ReadByte</span><span class="clisting"><a class="indexterm" id="dodtpa46c5b89-196b-4544-b77c-0d08a91df0c1"></a><a class="indexterm" id="dodtp031e9447-0029-4fe6-b5d6-887b556449cb"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Liest ein Byte aus dem Stream und erhöht die Position im Stream um ein Byte. Der Rückgabewert
+                                                                  ist &#8211;1, wenn das Ende des Streams erreicht ist.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Seek</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Legt die Position im aktuellen Stream fest.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">Write</span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt eine Folge von Bytes in den aktuellen Stream und erhöht den Datenzeiger im
+                                                                  Stream um die Anzahl der geschriebenen Bytes.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">WriteByte</span><span class="clisting"><a class="indexterm" id="dodtpc2412f45-8dc2-414b-9e91-278f1a018efc"></a><a class="indexterm" id="dodtpf6612be9-1da0-492e-947f-8c2716fdfe06"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Schreibt ein Byte an die aktuelle Position im Stream und setzt den Datenzeiger um
+                                                                  eine Position im Stream weiter.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5" name="dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5"></a><h3 class="t3"><span class="cfett">12.4.2    </span><span class="cfett"> Die von »Stream« abgeleiteten Klassen im Überblick</span><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp9c15c660-dc41-4b02-ab73-e6366d811075"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtpc8e94adf-61f5-4b86-af70-7b568ed36eaa"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie haben in den vorherigen Ausführungen nur die wichtigsten Methoden und Eigenschaften
+                                                      der Klasse <span class="clisting">Stream</span> kennengelernt. Die bisherigen Aussagen sollten genügen, um eine Vorstellung davon
+                                                      zu erhalten, welche wesentlichen Verhaltensweisen an die abgeleiteten Klassen weitervererbt
+                                                      werden. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Den in Tabelle 12.14 aufgeführten Klassen dient <span class="clisting">Stream</span> als Basisklasse. Dabei ist die Tabelle nicht vollständig, sondern beinhaltet nur
+                                                      die wichtigsten Typen. Beachten Sie bitte, dass die verschiedenen ableitenden Klassen
+                                                      nicht alle demselben Namespace angehören.
+                                                   </p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 12.14  </span>Die von »Stream« abgeleiteten Klassen<a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp9faaf0ac-b2d5-476a-bfe0-ff89eb75bbf0"></a></p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Stream-Typ
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">BufferedStream</span><span class="clisting"><a class="indexterm" id="dodtpfbbb3643-4fbe-4b54-93da-df6ae16dcb02"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Klasse <span class="clisting">BufferedStream</span><span class="clisting"><a class="indexterm" id="dodtpf48a4e0a-ceef-477f-9596-7c54bb6b1ed7"></a></span> wird benutzt, um Daten eines anderen E/A-Datenstroms zu puffern. Ein Puffer ist ein
+                                                                  Block von Bytes im Arbeitsspeicher des Rechners, der dazu benutzt wird, den Datenstrom
+                                                                  zu cachen, um damit die Anzahl der Aufrufe an das Betriebssystem zu verringern. Dadurch
+                                                                  lässt sich insgesamt die Effizienz verbessern. Diese Klasse wird immer im Zusammenhang
+                                                                  mit anderen Klassen eingesetzt.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">CryptoStream</span><span class="clisting"><a class="indexterm" id="dodtp0031e338-4714-4233-87a1-2a221fb9a83f"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Daten, die nicht in ihrem Originalzustand in einen Strom geschrieben werden sollen,
+                                                                  lassen sich mit der Klasse <span class="clisting">CryptoStream</span> verschlüsseln. <span class="clisting">CryptoStream</span> wird immer zusammen mit einem anderen Stream kombiniert.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">FileStream</span><span class="clisting"><a class="indexterm" id="dodtp7777e780-bc56-46d3-a23b-06d848a25a78"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Diese Klasse wird dazu benutzt, um Daten in Dateien des Dateisystems <br xmlns="">zu schreiben. Eine Netzwerkverbindung kann ebenfalls das Ziel dieses Datenstroms sein.
+                                                                  
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">GZipStream</span><span class="clisting"><a class="indexterm" id="dodtp6f76b08e-8e17-4940-ad53-5b0080ea5fa4"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Mit den Methoden dieser Klasse können Sie Byteströme komprimieren und dekomprimieren.</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">MemoryStream</span><span class="clisting"><a class="indexterm" id="dodtpf5b485ad-8012-45e7-b36d-5fce1f2f0d40"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Meistens sind Dateien oder Netzwerkverbindungen das Ziel der Datenströme. Es kann
+                                                                  jedoch auch sinnvoll sein, Daten bewusst temporär in den Hauptspeicher zu schreiben
+                                                                  und sie später von dort wieder zu lesen. Viele Anwendungen arbeiten nach dem Prinzip,
+                                                                  Daten in eine temporäre Datei zu speichern. Ein <span class="clisting">MemoryStream</span> kann temporäre Dateien ersetzen und trägt damit zur Steigerung der Leistungsfähigkeit
+                                                                  einer Anwendung bei, da das Schreiben und Lesen in den Hauptspeicher um ein Vielfaches
+                                                                  schneller ist als das Schreiben auf die Festplatte.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext"><span class="clisting">NetworkStream</span><span class="clisting"><a class="indexterm" id="dodtp6f5321ab-d0bd-4b76-9963-874df8318e72"></a><a class="indexterm" id="dodtpd7b2194f-d65d-4f8e-93a7-3ccc61e3d15d"></a></span></p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ein Datenfluss, der auf der Klasse <span class="clisting">NetworkStream</span> basiert, sendet die Daten basierend auf Sockets. Das Besondere an diesem Datenstrom
+                                                                  ist, dass er nur die Fähigkeit hat, Daten vollständig in den Strom zu schreiben oder
+                                                                  aus diesem zu lesen. Der Zugriff auf beliebige Daten innerhalb des Stroms ist nicht
+                                                                  möglich.
+                                                               </p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table><br><div align="center"><a href="#top"><img src="common/jupiters.gif" border="0" alt="Galileo Computing - Zum Seitenanfang"></a></div><a id="dodtp9c15c660-dc41-4b02-ab73-e6366d811075" name="dodtp9c15c660-dc41-4b02-ab73-e6366d811075"></a><h3 class="t3"><span class="cfett">12.4.3    </span><span class="cfett"> Die Klasse »FileStream«</span><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtpc89ba89d-d936-45e8-9f3c-2c3241220972"></a><a xmlns="http://www.w3.org/1999/xhtml" href="#"><img src="common/down.gif" width="15" height="15" border="0" alt="Zur nächsten Überschrift"></img></a><a xmlns="http://www.w3.org/1999/xhtml" href="#dodtp11a971fe-5f88-474f-93d0-18fc19dfc9f5"><img src="common/top.gif" width="15" height="15" border="0" alt="Zur vorigen Überschrift"></img></a></h3>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Klasse <span class="clisting">FileStream</span> ist die universellste Klasse und erscheint damit in vielen Anwendungsfällen am geeignetsten.
+                                                      Sie hat die Fähigkeit, sowohl byteweise aus einer Datei zu lesen als auch byteweise
+                                                      in eine Datei zu schreiben. Außerdem kann ein Positionszeiger auf eine beliebige Position
+                                                      innerhalb des Streams gesetzt werden. Ein <span class="clisting">FileStream</span> puffert die Daten, um die Ausführungsgeschwindigkeit zu erhöhen. Die Größe des Puffers
+                                                      beträgt standardmäßig 8 KByte.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die <span class="clisting">FileStream</span><span class="cfett"><a class="indexterm" id="dodtp3c0cf292-9b86-4eac-817d-d6f71aaf5bc9"></a></span>-Klasse bietet eine Reihe von Konstruktoren an, um dem Objekt bestimmte Verhaltensweisen
+                                                      und Eigenschaften mit auf den Lebensweg zu geben:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public FileStream(string, FileMode);<br></br>public FileStream(string, FileMode, FileAccess);<br></br>public FileStream(string, FileMode, FileAccess, FileShare);<br></br>public FileStream(string, FileMode, FileAccess, FileShare, int);<br></br>public FileStream(string, FileMode, FileAccess, FileShare, int, bool);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Sie können ein <span class="clisting">FileStream</span>-Objekt erzeugen, indem Sie im ersten Parameter eine Pfadangabe als Zeichenfolge übergeben.
+                                                      Der Parameter <span class="clisting">FileMode</span> beschreibt, wie das Betriebssystem die Datei öffnen soll (<span class="clisting">FileMode.Append</span>, <span class="clisting">FileMode.Create</span>, <span class="clisting">FileMode.CreateNew</span> ...). <span class="clisting">FileAccess</span> hingegen gibt an, wie auf die Datei zugegriffen werden darf (<span class="clisting">FileAccess.Read</span>, <span class="clisting">FileAccess.Write</span> oder <span class="clisting">FileAccess.ReadWrite</span>). Sie haben diese Typen bereits im Abschnitt zur Klasse <span class="clisting">File</span> kennengelernt (siehe auch die Tabellen 12.2 und 12.3). Der Parameter vom Typ <span class="clisting">FileShare</span> gibt an, ob ein gemeinsamer Zugriff auf die Datei möglich ist oder nicht (siehe auch
+                                                      Tabelle 12.4).
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Puffer, in den ein <span class="clisting">FileStream</span> die Daten zur Steigerung der Leistungsfähigkeit schreibt, ist standardmäßig 8 KByte
+                                                      groß. Mit dem Parameter vom Typ <span class="clisting">int</span> können Sie die Größe des Puffers bei der Instanziierung beeinflussen. Mit dem letzten
+                                                      Parameter vom Typ <span class="clisting">bool</span> kann noch angegeben werden, ob das Objekt asynchrone Zugriffe unterstützen soll.
+                                                      
+                                                   </p>
+                                                   <h4 class="t4"> Das Schreiben in einen »FileStream«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtped0720ee-4144-49b9-8495-174fbb506496"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Das folgende Listing demonstriert, wie mit einem <span class="clisting">FileStream</span>-Objekt Daten in eine Datei geschrieben werden:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">  byte[] arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};<br xmlns="">  string path = @"D:\Testfile.txt";<br xmlns="">  FileStream fs = new FileStream(path, FileMode.Create);<br xmlns="">  fs.Write(arr, 0, arr.Length);<br xmlns="">  fs.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.4  </span>Schreiben in eine Datei mit einem »FileStream«-Objekt
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zunächst wird ein <span class="clisting">Byte</span>-Array deklariert und mit insgesamt zehn Zahlen initialisiert. In der zweiten Anweisung
+                                                      wird der Name der Datei festgelegt, in die das Array geschrieben werden soll.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Bei der Instanziierung des <span class="clisting">FileStream</span>-Objekts werden dem Konstruktor im ersten Argument der Pfad und die Datei bekannt
+                                                      gegeben, auf der der Stream operieren soll. Die Fähigkeiten dieses Streams beschreibt
+                                                      das zweite Argument: Die Konstante <span class="clisting">FileMode.Create</span> teilt dem Konstruktor mit, dass das <span class="clisting">FileStream</span>-Objekt eine neue Datei erzeugen kann oder, falls im angegebenen Pfad bereits eine
+                                                      gleichnamige Datei existiert, diese überschreiben soll. Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">fs.Write(arr, 0, arr.Length);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">wird der Inhalt des Arrays <span class="ckursiv">arr</span> dem <span class="clisting">Stream</span>-Objekt übergeben. Die Syntax der Methode <span class="clisting">Write</span> der Klasse <span class="clisting">FileStream</span> lautet wie folgt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public void Write(byte[] array, int offset, int count);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dabei haben die drei Parameter die folgende Bedeutung:</p>
+                                                   <table width="100%" border="0" cellspacing="1" cellpadding="3">
+                                                      <caption class="tabunter">
+                                                         <p class="ptabellenunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Tabelle 12.15  </span>Die Parameter der Methode »Write« eines »FileStream«-Objekts
+                                                         </p>
+                                                      </caption>
+                                                      <tbody>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">
+                                                               
+                                                               
+                                                               
+                                                               Parameter
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenkopf">Beschreibung
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">array</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Ein Byte-Array, in das die übergebenen Daten gelesen werden</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">offset</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Indexposition im Array, an der die Leseoperation beginnen soll</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                         <tr xmlns="http://www.w3.org/1999/xhtml">
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">count</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                            <td class="tabellenzelle">
+                                                               <p class="tabellentext">Die Anzahl der zu lesenden Bytes</p>
+                                                               
+                                                               
+                                                            </td>
+                                                            
+                                                            
+                                                         </tr>
+                                                         
+                                                         
+                                                      </tbody>
+                                                   </table>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Der Schreibvorgang des Beispiels startet mit dem ersten Array-Element. Das sagt der
+                                                      zweite Parameter der <span class="clisting">Write</span>-Methode aus. Die Anzahl der zu schreibenden Bytes bestimmt der dritte Parameter &#8211;
+                                                      in unserem Beispiel werden alle Array-Elemente dem Datenstrom zugeführt. Zum Schluss
+                                                      wird der <span class="clisting">FileStream</span> mit der Methode <span class="clisting">Close</span> geschlossen. 
+                                                   </p>
+                                                   <h4 class="t4"> Das Lesen aus einem »FileStream«</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp63aa2e76-803e-49e6-b063-9e66615691f3"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen uns nun auch vom Erfolg unserer Bemühungen überzeugen und die Datei auswerten.
+                                                      Dazu wird der Programmcode des Listings 12.4 wie folgt ergänzt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">static void Main(string[] args)</span> {<br xmlns="">  [...]<br xmlns="">  byte[] arrRead = new byte[10];<br xmlns="">  fs.Read(arrRead, 0, 10);<br xmlns="">  for (int i = 0; i &lt; arr.Length; i++)<br xmlns="">    Console.WriteLine(arrRead[i]); <br xmlns="">  fs.Close();<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.5  </span>Lesen einer Datei mit einem »FileStream«-Objekt
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir deklarieren ein weiteres Array (<span class="ckursiv">arrRead</span>), in das wir das Ergebnis der Leseoperation hineinschreiben. Da uns bekannt ist,
+                                                      wie viele Byte-Elemente sich in unserer Datei befinden (wie unfair), können wir die
+                                                      Array-Grenze schon im Voraus festlegen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nun kommt es zum Aufruf der <span class="clisting">Read</span>-Methode. Zuerst wollen wir uns wieder die Syntax dieser Methode anschauen:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public override int Read(in byte[] array, int offset, int count);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Parameter sind denen der <span class="clisting">Write</span>-Methode sehr ähnlich. Das <span class="clisting">FileStream</span>-Objekt, auf dem die <span class="clisting">Read</span>-Methode aufgerufen wird, repräsentiert eine bestimmte Datei. Diese wurde bereits
+                                                      über den Konstruktor bekannt gegeben. Aus der Datei werden die Daten in das Array
+                                                      eingelesen, das durch den Parameter <span class="ckursiv">array</span> beschrieben wird. Der erste Array-Index, der der Schreiboperation zur Verfügung steht,
+                                                      wird im Parameter <span class="ckursiv">offset</span> angegeben, die Anzahl der aus dem <span class="clisting">FileStream</span> zu lesenden Bytes im dritten Parameter <span class="ckursiv">count</span>.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir wollen den ersten Byte-Wert aus dem Datenstrom in das mit 0 indizierte Element
+                                                      des Arrays <span class="ckursiv">arrRead</span> schreiben und geben das im zweiten Parameter bekannt. Die Gesamtanzahl der zu lesenden
+                                                      Bytes teilen wir dem dritten Parameter mit. In einer Schleife wird danach das eingelesene
+                                                      Array durchlaufen und an der Konsole ausgegeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Starten Sie nun die Laufzeit des Programms, wird die Enttäuschung groß sein und Sie
+                                                      an den eigenen Programmierfähigkeiten zweifeln lassen! Denn bedauerlicherweise werden
+                                                      nicht die Zahlenwerte ausgegeben, die wir in die Datei geschrieben haben, sondern
+                                                      nur Nullen. Haben wir etwas falsch gemacht, und wenn ja, wie ist das zu erklären?
+                                                   </p>
+                                                   <h4 class="t4"> Der Positionszeiger</h4>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Schreib- bzw. Leseposition in einem Datenstrom wird durch einen Positionszeiger
+                                                      beschrieben. Schließlich muss der Strom wissen, auf welchem Byte die folgende Operation
+                                                      ausgeführt werden soll. Bei der Instanziierung eines <span class="clisting">Stream</span>-Objekts verweist der Zeiger zunächst auf das erste Byte im Stream. Mit dem Aufruf
+                                                      der <span class="clisting">Write</span>-Methode wird ein Wert daher genau an diese Position geschrieben. Anschließend wird
+                                                      der Positionszeiger auf die folgende Byte-Position verschoben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Dieser Vorgang wiederholt sich bei jedem Schreibvorgang, von denen es in unserem Beispiel
+                                                      zehn gibt, nämlich für jedes zu schreibende Array-Element einen. Am Ende, wenn wir
+                                                      unsere zehn Bytes in den Strom geschrieben haben, verweist der Positionszeiger auf
+                                                      das folgende, nun elfte Byte im Stream (siehe Abbildung 12.3). 
+                                                   </p>
+                                                   <p><a href="bilder/12_03.png" rel="lightbox" title="Der Positionszeiger in einem »Stream«-Objekt"><img class="bild" border="1" src="bilderklein/klein12_03.png" alt="Abbildung"></a></p>
+                                                   <p class="pbildunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Abbildung 12.3  </span>Der Positionszeiger in einem »Stream«-Objekt
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Genau das verursacht nun ein Problem. Wir rufen auf dem <span class="clisting">FileStream</span>-Objekt die <span class="clisting">Read</span>-Methode auf und lesen ab der Position, die aktuell durch den Datenzeiger beschrieben
+                                                      wird. Das ist aber die elfte Stelle im Datenstrom &#8211; und nicht die erste, wie wir es
+                                                      eigentlich erwartet haben bzw. wie es hätte sein sollen.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Kommen wir nun zur Lösung. <span class="clisting">FileStream</span> beerbt die Klasse <span class="clisting">Stream</span> und hat daher auch eine <span class="clisting">Seek</span>-Methode, mit der wir den Positionszeiger beliebig einstellen können:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">public override long Seek<a class="indexterm" id="dodtp3fe83ddf-b9e5-47a8-98ae-9852263eb2a7"></a>(long offset, SeekOrigin origin);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir überlegen uns, wohin wir den Ursprung des Positionszeigers verlegen wollen &#8211; natürlich
+                                                      an den Anfang des Datenstroms. Also muss der zweite Parameter der <span class="clisting">Seek</span>-Methode auf 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">origin = SeekOrigin.Begin<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">festgelegt werden (siehe dazu auch Tabelle 12.13). Nun geben wir im ersten Argument
+                                                      den tatsächlichen und endgültigen Startpunkt des Positionszeigers bezogen auf den
+                                                      im zweiten Parameter definierten Ursprung an. Er lautet 0, denn schließlich wollen
+                                                      wir den Zeiger auf die erste Position des Datenstroms setzen.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">[...]<br xmlns="">fs.Write(arr, 0, arr.Length);<br xmlns="">[...]<br xmlns="">fs.Seek(0, SeekOrigin.Begin);<br xmlns="">fs.Read(arrRead, 0, 10);<br xmlns="">[...]<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Natürlich wäre es auch möglich, zunächst das <span class="clisting">FileStream</span>-Objekt zu schließen und es danach neu zu instanziieren. Damit hätten wir wieder einen
+                                                      Positionszeiger, der auf das erste Byte im Stream zeigt. 
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wenn wir nach der Ergänzung mit <span class="clisting">Seek</span> das Programm noch einmal starten, wird das Ergebnis wie erwartet ausgegeben.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Zum Schluss wollen wir noch einmal den gesamten Code zusammenfassen. </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 12\FileStreamSample</span><br></br><span class="clistingfett">class Program </span>{<span class="clistingfett"><br xmlns="">  static void Main(string[] args) </span>{<br xmlns="">    byte[] arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};<br xmlns="">    string path = "D:\\Testfile.txt";<br></br>    // Stream öffnen<br></br>    FileStream fs = new FileStream(path, FileMode.Create);<br></br>    // in den Stream schreiben<br></br>    fs.Write(arr, 0, arr.Length);<br xmlns="">    byte[] arrRead = new byte[10];<br></br>    // Positionszeiger auf den Anfang des Streams setzen<br></br>    fs.Seek(0, SeekOrigin.Begin);<br></br>    // Stream lesen<br></br>    fs.Read(arrRead, 0, 10);<br xmlns="">    for (int i = 0; i &lt; arr.Length; i++)<br xmlns="">      Console.WriteLine(arrRead[i]);<br xmlns="">    Console.ReadLine();<br></br>    // FileStream schließen<br></br>    fs.Close();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.6  </span>Das komplette Beispiel des Einsatzes der Klasse »FileStream«
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Wir müssen nicht zwangsläufig das komplette Byte-Array vom ersten bis zum letzten
+                                                      Element in die Datei schreiben. Mit
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">fs.Write(arr, 2, arr.Length - 2);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">ist das erste zu schreibende Element dasjenige, das die Zahl 30 enthält (entsprechend
+                                                      dem Index 2). Wenn wir allerdings den dritten Parameter, der die Anzahl der zu lesenden
+                                                      Bytes angibt, nicht entsprechend anpassen, wird über das Ende des Arrays hinaus gelesen,
+                                                      was zu der Exception <span class="clisting">ArgumentException</span> führt.
+                                                   </p>
+                                                   <h4 class="t4"> Eine Textdatei mit »FileStream« lesen</h4><a xmlns="http://www.w3.org/1999/xhtml" class="indexterm" id="dodtp3dfaecb7-bcd6-47b5-9ca4-fdbd90edbed6"></a><p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Obwohl es spezialisierte Klassen zum Lesen und Schreiben in eine Textdatei gibt, lässt
+                                                      sich das auch mit einem <span class="clisting">FileStream</span>-Objekt realisieren. Wir wollen uns das im Folgenden ansehen: 
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint"><span class="clistingfett">// Beispiel: ..\Kapitel 12\TextdateiMitFileStream</span><br></br><span class="clistingfett">class Program </span>{<br xmlns="">  <span class="clistingfett">static void Main(string[] args) </span>{<br></br>    // Benutzereingabe anfordern<br></br>    Console.Write("Geben Sie die zu öffnende Datei an: ");;<br xmlns="">    string strFile = Console.ReadLine();<br></br>    // prüfen, ob die angegebene Datei existiert<br></br>    if (! File.Exists(strFile)) {<br xmlns="">      Console.WriteLine("Die Datei {0} existiert nicht!", strFile);<br xmlns="">      Console.ReadLine();<br xmlns="">      return;<br xmlns="">    }<br></br>    // Datei öffnen<br></br>    FileStream fs = File.Open(strFile, FileMode.Open);<br></br>    // Byte-Array, in das die Daten aus dem Datenstrom eingelesen werden<br></br>    byte[] puffer = new Byte[fs.Length];<br></br>    // die Zeichen aus der Datei lesen und in das Array<br></br>    // schreiben, der Lesevorgang beginnt mit dem ersten Zeichen<br></br>    fs.Read(puffer, 0, (int)fs.Length);<br></br>    // das Byte-Array elementweise einlesen und jedes Array-Element<br></br>    // in Char konvertieren<br></br>    for (int i = 0; i &lt; fs.Length; i++)<br xmlns="">      Console.Write(Convert.ToChar(puffer[i]));<br xmlns="">    Console.ReadLine();<br xmlns="">  }<br xmlns="">}<br></pre></div>
+                                                   <p class="plistingunter"><span xmlns="http://www.w3.org/1999/xhtml" class="nummerierung">Listing 12.7  </span>Textdatei mit einem »FileStream«-Objekt einlesen
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Nach dem Start der Laufzeitumgebung wird der Benutzer dazu aufgefordert, den Pfad
+                                                      zu einer Textdatei anzugeben. Diesmal beschreiten wir allerdings einen anderen Weg
+                                                      und rufen den Konstruktor nicht direkt auf, sondern die Methode <span class="clisting">Open</span> der Klasse <span class="clisting">File</span>:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">FileStream fs = File.Open(strFile, FileMode.Open);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Diese Anweisung funktioniert tadellos, weil der Rückgabewert der <span class="clisting">File.Open</span>-Methode die Referenz auf eine <span class="clisting">FileStream</span>-Instanz liefert. Gegen den Weg über einen <span class="clisting">FileStream</span>-Konstruktor, der diese Möglichkeit auch bietet, ist grundsätzlich auch nichts einzuwenden.
+                                                      Im folgenden Schritt wird das Byte-Array <span class="ckursiv">puffer</span> deklariert und mit einer Kapazität initialisiert, die der Größe der Datei entspricht:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">byte[] puffer = new Byte[fs.Length];<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Die Größe der Datei besorgen wir uns mit der Eigenschaft <span class="clisting">Length</span> der Klasse <span class="clisting">FileStream</span>, die uns die Größe des Datenstroms liefert. Daran schließt sich die Leseoperation
+                                                      mit <span class="clisting">Read</span> an, die den Inhalt der Textdatei byteweise liest und in das Array <span class="ckursiv">puffer</span> schreibt:
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">fs.Read(puffer, 0, (int)fs.Length);<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Weil der dritte Parameter der <span class="clisting">Read</span>-Methode ein Datum vom Typ <span class="clisting">int</span> erwartet und die Eigenschaft <span class="clisting">Length</span> einen <span class="clisting">long</span> liefert, müssen wir noch in den richtigen Datentyp konvertieren.
+                                                   </p>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Ein <span class="clisting">FileStream</span>-Objekt arbeitet grundsätzlich nur auf der Basis von Bytes, es weiß nichts von dem
+                                                      tatsächlichen Typ, der sich im Datenstrom verbirgt. Eine Textdatei enthält aber Zeichen,
+                                                      die, als ANSI-Zeichen interpretiert, erst den wirklichen Informationsgehalt liefern.
+                                                      Deshalb müssen wir jedes einzelne Byte des Streams in einen <span class="clisting">char</span>-Typ konvertieren. Das geschieht in einer Schleife, die alle Bytes des Arrays abgreift,
+                                                      konvertiert und danach an der Konsole ausgibt.
+                                                   </p>
+                                                   <div xmlns="http://www.w3.org/1999/xhtml" class="listing"><pre class="prettyprint">for (int i = 0; i &lt; fs.Length; i++)<br xmlns="">  Console.Write(Convert.ToChar(puffer[i]));<br></pre></div>
+                                                   <p xmlns="http://www.w3.org/1999/xhtml" class="pstandard">Würde den Daten aus der Datei ein anderer Typ zugrunde liegen, beispielsweise <span class="clisting">int</span> oder <span class="clisting">float</span>, müsste dieser Zieldatentyp angegeben werden. Wissen Sie nicht, welcher Typ in der
+                                                      Datei gespeichert ist, können Sie mit dem Inhalt praktisch nichts anfangen. 
+                                                   </p><br><hr><a name="kommentar"></a><h3>Ihr Kommentar</h3>
+                                                   <p>Wie hat Ihnen das &lt;openbook&gt; gefallen? Wir freuen uns immer über Ihre freundlichen
+                                                      und kritischen Rückmeldungen.
+                                                   </p>
+                                                   <!--<form action="http://www.galileo-press.de/feedback/openbook" method="post" style="text-align: center; margin-top: 10px;"><input type="hidden" name="openbookurl" value="https://www.galileo-press.de/openbook/?GPP=opvcs12_004.html"><input type="hidden" name="buchtitel" value="Visual C# 2012"><input type="hidden" name="Kapitel" value="12  Arbeiten mit Dateien und Streams"><table border="0">
+                                                         <tbody>
+                                                            <tr>
+                                                               <td><label for="name">Name</label><br></td>
+                                                               <td><input type="text" name="name" id="name" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td><label for="email">E-Mail</label><br></td>
+                                                               <td><input type="text" name="email" id="email" size="40"><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td valign="top"><label for="comment">Ihr Kommentar</label><br></td>
+                                                               <td><textarea name="comment" id="comment" rows="10" cols="40"></textarea><br></td>
+                                                            </tr>
+                                                            <tr>
+                                                               <td></td>
+                                                               <td><input type="submit" value="Kommentar absenden"></td>
+                                                            </tr>
+                                                         </tbody>
+                                                      </table>
+                                                   </form>--><a href="https://www.galileo-press.de/feedback/produkt/3243/">>> Zum Feedback-Formular</a>
+                                                </div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td width="100%" class="start" colspan="1" height="22" align="center">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="25%"><a href="1997_12_003.html" class="navnav"> &lt;&lt; zurück</a></td>
+                                             <td width="49%">
+                                                <div align="center"><a class="navnav" href="#">&lt;top&gt;</a></div>
+                                             </td>
+                                             <td align="right" width="25%">
+                                                <div align="right"><a href="1997_12_005.html" class="navnav">vor &gt;&gt;
+                                                      </a></div>
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </td>
+               <td width="10" valign="top"></td>
+               <td width="160" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="160">
+                  <tbody><tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">
+                  &nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs" class="autor">
+                  <strong>Zum Katalog</strong></a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2">
+                  <img src="common/leer.gif" border="0" height="1" width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><a href="https://www.galileo-press.de/3243/?GPP=opvcs">
+                  <img src="common/1997.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Visual C# 2012" title="Zum Katalog: Visual C# 2012">
+                  <br><br><strong>Visual C# 2012</strong><br><img src="common/pfeil_rechts5.gif" border="0"
+                  alt="">Jetzt bestellen</a><br /><br />
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Ihre Meinung?</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td>Wie hat Ihnen das &lt;openbook&gt; gefallen?<br><a href="#kommentar"><img src="common/pfeil_rechts5.gif"
+                  border="0" alt="">Ihre Meinung</a>
+                  <br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2">&nbsp;<a href="https://www.galileo-press.de/?GPP=opvcs"
+                  class="autor"><strong>Buchempfehlungen</strong></a></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3175/?GPP=opvcs">
+                  <img src="common/1954.png" width="113" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Professionell entwickeln mit Visual C# 2012"><br><br><br><br><br><br>&nbsp;Professionell<br>&nbsp;entwickeln mit<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3179/?GPP=opvcs">
+                  <img src="common/1956.png" width="118" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Presentation Foundation 4.5"><br><br><br><br><br><br><br>&nbsp;Windows Presentation<br>&nbsp;Foundation 4.5<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3196/?GPP=opvcs">
+                  <img src="common/1968.png" width="111" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Windows Store Apps mit XAML und C#"><br><br><br><br><br><br><br>&nbsp;Windows Store Apps<br>&nbsp;mit XAML und C#<br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3189/?GPP=opvcs">
+                  <img src="common/1960.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in Visual C# 2012"><br><br><br><br><br><br><br>&nbsp;Einstieg in<br>&nbsp;Visual C# 2012</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/3214/?GPP=opvcs">
+                  <img src="common/1967.png" width="110" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Einstieg in WPF 4.5"><br><br><br><br><br><br><br>&nbsp;Einstieg in WPF 4.5</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2853/?GPP=opvcs">
+                  <img src="common/1756.png" width="121" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: Schrödinger programmiert C++"><br><br><br><br><br><br><br>&nbsp;Schrödinger<br>&nbsp;programmiert C++</a><br><br></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td><td valign="top">
+                  <a href="http://www.galileo-press.de/2824/?GPP=opvcs">
+                  <img src="common/1732.png" width="109" height="90" border="0" align="left" hspace="4"
+                  vspace="8" alt="Zum Katalog: C++11 programmieren"><br><br><br><br><br><br><br>&nbsp;C++11 programmieren</a><br><br></td>
+                  </tr>
+                  </table></td>
+                  </tr>
+                  <tr>
+                  <td><img src="common/leer.gif" height="2" width="1" border="0" /></img></td>
+                  </tr>
+                  <tr>
+                  <td>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                  <td class="start" height="20" colspan="2"><span class="autor"><strong>&nbsp;Shopping</strong></span></td>
+                  </tr>
+                  <tr>
+                  <td valign="top" class="tbl4" width="2"><img src="common/leer.gif" border="0" height="1"
+                  width="1"></td>
+                  <td valign="top">
+                  <table cellspacing="3">
+                  <tr>
+                  <td><b>Versandkostenfrei</b> bestellen in Deutschland und &Ouml;sterreich<br><a href="https://www.galileo-press.de/hilfe/bestellung_6?GPP=opvcs"><img
+                  src="common/pfeil_rechts5.gif" border="0" alt="Info">Info</a><br><br></td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </table>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  <br><br><hr align="center" width="70%"><br><div align="center">
+                  <p class="standard"><b>Copyright © Galileo Press 2013</b><br>Für Ihren privaten Gebrauch
+                  dürfen Sie die Online-Version natürlich ausdrucken. Ansonsten unterliegt das &lt;openbook&gt;
+                  denselben Bestimmungen, wie die gebundene Ausgabe: Das Werk einschließlich aller seiner
+                  Teile ist urheberrechtlich geschützt. Alle Rechte vorbehalten einschließlich der Vervielfältigung,
+                  Übersetzung, Mikroverfilmung sowie Einspeicherung und Verarbeitung in elektronischen
+                  Systemen.</p><br><a href="https://www.galileo-press.de/">[Galileo Computing]</a><br><br>Galileo
+                  Press, Rheinwerkallee 4, 53227 Bonn, Tel.: 0228.42150.0, Fax 0228.42150.77, <a href="mailto:info@galileo-press.de">info@galileo-press.de</a></div><br><br>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

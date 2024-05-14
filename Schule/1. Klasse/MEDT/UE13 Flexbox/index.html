@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Übung Nr 13 flexbox</title>
+		<style>
+			.flex-container{
+				display: flex;
+			}
+			.border{
+				background-color: #ffebe6;
+				border: 1px solid red;
+				padding: 6px 8px 6px 8px;
+				margin: 5px;
+			}
+			.border2{
+				border: 5px #9E0707 solid;
+				padding: 5px;
+			}
+			.flex-end{
+				justify-content: flex-end;
+			}
+			.center{
+				justify-content: center;
+			}
+			.between{
+				justify-content: space-between;
+			}
+			.around{
+				justify-content: space-around;
+			}
+			div.border2{
+				font-size: 20px;
+			}
+			.border3{
+				border: 6px white;
+				background-color: #2DD710;
+				margin: 5px;
+				border-radius: 3px;
+				text-align: center;
+			}
+			.row-reverse{
+				flex-direction: row-reverse;
+			}
+			.column{
+				flex-direction: column;
+			}
+			.column-reverse{
+				flex-direction: column-reverse;
+			}
+			div.height{
+				height: 200px;
+			}
+			.align-flex-start{
+				align-items: flex-start;
+			}
+			.align-flex-end{
+				align-items: flex-end;
+			}
+			.align-center{
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Flexbox 1 - flexilber Container</h1>
+		<div class="flex-container">
+			<div class="border"><b>1</b></div>
+			<div class="border"><b>2</b></div>
+			<div class="border"><b>3</b></div>
+			<div class="border"><b>4</b></div>
+			<div class="border"><b>5</b></div>
+		</div>
+		<section class="flex-container">
+			<!-- Section Elemente werden durch Flexbox über die gesamte Monitorbreite verteilt. -->
+			<section class="border"><h3>Flexbox</h3>Flexbox ist eine modere und einfache Möglichkeit, responsive und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen wie <code>position, float</code> oder <code>clear</code> nutzen zu müssen.</section>
+			<section class="border"><h3>Was kann Flexbox?</h3>Flexbox verzichtet auf feste Breiten, wobei sich das flexible Element an den tatsächlich verfügbaren Platz anpasst, indem es die Leerräume zwischen den Elementen gleichmäßig verteilt.</section>
+			<section class="border"><h3>flexibler Container</h3>flexbox benötigt nur einen CSS-Regalsatz:<p><pre><code>.flex-container        (display: flex;)</code></pre></section>
+		</section>
+		<br>
+		<hr>
+		<br>
+		<div class="border2 flex-container">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container flex-end">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container center">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container between">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container around">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div class="flex-container">
+			<div class="border3">I'm box 1</div>
+			<div class="border3">I'm box 2</div>
+			<div class="border3">I'm box 3</div>
+			<div class="border3">I'm box 4</div>
+		</div>
+		<div class="flex-container row-reverse">
+			<div class="border3">I'm box 1</div>
+			<div class="border3">I'm box 2</div>
+			<div class="border3">I'm box 3</div>
+			<div class="border3">I'm box 4</div>
+		</div>
+		<div class="flex-container column">
+			<div class="border3">I'm box 1</div>
+			<div class="border3">I'm box 2</div>
+			<div class="border3">I'm box 3</div>
+			<div class="border3">I'm box 4</div>
+		</div>
+		<br>
+		<div class="flex-container column-reverse">
+			<div class="border3">I'm box 1</div>
+			<div class="border3">I'm box 2</div>
+			<div class="border3">I'm box 3</div>
+			<div class="border3">I'm box 4</div>
+		</div>
+		<br>
+		<hr>
+		<br>
+		<div class="border2 flex-container height align-flex-start">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container height align-flex-end">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container height align-center">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container height align-flex-start">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container height align-center">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+		<div class="border2 flex-container height">
+			<div class="border2">1</div>
+			<div class="border2">2</div>
+			<div class="border2">3</div>
+			<div class="border2">4</div>
+			<div class="border2">5</div>
+		</div>
+
+
+
+	</body>
+</html>
