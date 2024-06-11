@@ -1,0 +1,29 @@
+@using Model.Entities
+
+@if (Movie != null)
+{
+    <h3>@Movie.Name</h3>
+    @if (DisplayDetail)
+    {
+        <h3>@Movie.Description</h3>
+    }
+    else
+    {
+        <h3>@Movie.ShortDescription</h3>
+    }
+}
+else
+{
+    <p>No Data</p>
+}
+
+
+@code {
+
+    [Parameter]
+    public Movie? Movie { get; set; }
+    
+    [Parameter]
+    public bool DisplayDetail { get; set; }
+
+}

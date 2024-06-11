@@ -1,0 +1,166 @@
+ -- -------------------------------------------------------------------------------------- --
+ --   1.Beispiel: XSLT Grundlagen
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, zur Transformation der euro.xml Datei. Die Ausgabedatei
+ hat folgende Struktur (position.xml) Datei wird im Beispiel definiert.
+
+ Befehle: 
+    
+    <xsl:with-param> : Ordnet Kontextelementen eine Konstante zu.
+ 
+ 
+ INPUT:    sport.xml
+ PROZESS:  catalog.xsl
+ OUTPUT:   catalog.xml
+ 
+ 
+ <?xml version="1.0" encoding="UTF-8"?>
+ <catalog>
+    <node name="sports">
+        <node name="snow-sports">
+            <node name="skiing">
+                <leaf name="ski-run" par="3"/>
+                <leaf name="slalom" par="3"/>
+                <leaf name="super-g" par="3"/>
+                <leaf name="ski-jumping" par="3"/>
+                <leaf name="cross-country-skiing" par="3"/>
+            </node>
+            <node name="bob-sport">
+                <leaf name="bob" par="3"/>
+                <leaf name="skeleton" par="3"/>
+            </node>
+            <leaf name="snowboard" par="2"/>
+            <leaf name="ice-skating" par="2"/>
+        </node>
+        <node name="summer-sports">
+            <node name="ball-games">
+                <node name="baseball">
+                    <leaf name="basball" par="4"/>
+                    <leaf name="softball" par="4"/>
+                </node>
+                <leaf name="handball" par="3"/>
+            </node>
+            <node name="martial-arts">
+                <leaf name="boxing" par="3"/>
+                <leaf name="judo" par="3"/>
+                <leaf name="karate" par="3"/>
+            </node>
+            <node name="cycling">
+                <leaf name="track" par="3"/>
+                <leaf name="bmx" par="3"/>
+                <leaf name="mountain-bike" par="3"/>
+            </node>
+            <leaf name="skateboard" par="2"/>
+        </node>
+    </node>
+</catalog>
+ 
+ 
+ -- -------------------------------------------------------------------------------------- --
+ --   2.Beispiel: XSLT Grundlagen
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, das die npm.xml Datei transformiert. 
+ 
+ INPUT:    npm.xml
+ PROZESS:  term.xsl
+ OUTPUT:   term.xml
+ 
+ <!-- npm.xml -->
+ <?xml version="1.0" encoding="UTF-8"?>
+ <npm-term>
+    <or>
+        <and>
+            <term>A</term>
+            <or>
+                <term>B</term>
+                <not>
+                    <term>C</term>
+                </not>
+            </or>
+        </and>
+        <term>A<term>
+    </or>
+ </npm-term>
+ 
+ In der npn.xml Datei werden logische Terme in Polnischer Notation dargestellt. Die polnische Notation
+ ist eine in der Informatik und der mathematischen Logik verwendete klammerfreie Schreibweise für Formeln, 
+ bei der der Operator vor seinen Operanden geschrieben wird: 
+ 
+ z.B.: Operator Operand1 Operand2
+ 
+ Hinweis: Kommandozeileninterpreter sind ein prominentes Beispiel für die Verwendung der polnischen 
+          Notation in der Informatik: 
+          
+          Befehl Operator1 Operator2 ... OperatorN
+
+ <!-- term.xml -->
+ <?xml version="1.0" encoding="UTF-8"?>
+ <term>((A and (B or  !(C))) or A)</term>
+ 
+ 
+ Hinweis: 
+ 
+ I) Das <npm-term> Element beinhaltet immer ein Element. Mögliche Elemente sind: 
+  
+    * <or>
+    * <and> 
+    * <term>
+    * <not>
+            
+    
+ II) <and> und <or> Elemente beinhalten 2 der folgenden Elemente:
+               
+     * <or>
+     * <and> 
+     * <term>
+     * <not>
+  
+  
+ III) <not> Elemente beinhalten eines der folgenden Elemente:
+               
+      * <or>
+      * <and> 
+      * <term>
+      * <not>
+         
+  
+
+ Schreiben Sie ein XSLT Stylesheet das einen beliebigen logischen Term in polnischer Notaion erfolgreich in die 
+ gewöhnliche Darstellung transformieren kann. Beachten Sie dabei dass die Struktur der Input Datei nicht bekannt ist.
+ Sie können jedoch davon ausgehen dass der Term in polnischer Notatin als XML Datei vorliegt.
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+@page "/movies"
+@page "/movies/{MovieId:int?}"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+@inject IRepository<Movie> MovieRepository;
+
+<h3>MoviePage</h3>
+
+@if (Movies.Any())
+{
+   @foreach (var m in Movies)
+   {
+      <MovieComponent Movie="@m"/>
+   }
+}
+else
+{
+   <MovieComponent Movie="@movie"/>
+}
+
+@code {
+   private List<Movie> Movies = new List<Movie>();
+   private Movie movie;
+
+   [Parameter] 
+   public int? MovieId { get; set; }
+
+   protected override void OnInitialized()
+   {
+      if (MovieId.HasValue)
+      {
+         movie = MovieRepository.Read(MovieId.Value);
+      }
+      else
+      {
+         Movies = MovieRepository.ReadAll();
+      }
+   }
+}

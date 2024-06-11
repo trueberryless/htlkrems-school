@@ -1,0 +1,106 @@
+ -- -------------------------------------------------------------------------------------- --
+ --   1.Beispiel: XSLT Grundlagen
+ -- -------------------------------------------------------------------------------------- --
+ Schreiben Sie ein XSLT Stylesheet, zur Transformation der graph.xml Datei. Die Ausgabedatei
+ hat folgende Struktur (network.xml) Datei wird im Beispiel definiert.
+ 
+ 
+ INPUT:    graph.xml
+ PROZESS:  network.xsl
+ OUTPUT:   network.xml
+ 
+ 
+<?xml version="1.0" encoding="UTF-8"?>
+<graph id="G" edgedefault="directed">
+    <node id="n0">
+        <neighbors>
+            <node id="n2"/>
+        </neighbors>
+        <paths>
+            <path>
+                <edge source="n0" target="n2"/>
+                <edge source="n2" target="n3"/>
+                <edge source="n3" target="n5"/>
+                <edge source="n5" target="n7"/>
+            </path>
+        </paths>
+    </node>
+    <node id="n1">
+        <neighbors>
+            <node id="n2"/>
+        </neighbors>
+        <paths>
+            <path>
+                <edge source="n1" target="n2"/>
+                <edge source="n2" target="n3"/>
+                <edge source="n3" target="n5"/>
+                <edge source="n5" target="n7"/>
+                <edge source="n3" target="n4"/>
+                <edge source="n4" target="n6"/>
+                <edge source="n6" target="n5"/>
+            </path>
+        </paths>
+    </node>
+    <node>...</node>
+    <node id="n3">
+        <neighbors>
+            <node id="n5"/>
+            <node id="n4"/>
+        </neighbors>
+        <paths>
+            <path>
+                <edge source="n3" target="n5"/>
+                <edge source="n5" target="n7"/>
+            </path>
+            <path>
+                <edge source="n3" target="n4"/>
+                <edge source="n4" target="n6"/>
+                <edge source="n6" target="n8"/>
+            </path>
+        </paths>
+    </node>
+    <node>...</node>
+</graph>
+
+ 
+ 
+ 
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
