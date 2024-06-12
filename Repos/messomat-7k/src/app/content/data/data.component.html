@@ -1,0 +1,109 @@
+<div style="padding: 2rem">
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="Overview">
+      <div style="padding: 2rem">
+        <ngx-charts-line-chart
+          [view]="[1525, 400]"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Seconds'"
+          [yAxisLabel]="'°C and %'"
+          [yScaleMin]="-20"
+          [yScaleMax]="100"
+          [timeline]="true"
+          [results]="lineChartData"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-line-chart>
+
+        <ngx-charts-bar-vertical
+          [view]="[1525, 300]"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Seconds'"
+          [yAxisLabel]="'°C and %'"
+          [results]="barChartData"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </mat-tab>
+    <mat-tab label="Temperature">
+      <div style="padding: 2rem">
+        <ngx-charts-line-chart
+          [view]="[1525, 700]"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Seconds'"
+          [yAxisLabel]="'°C'"
+          [yScaleMin]="-20"
+          [yScaleMax]="50"
+          [timeline]="true"
+          [results]="tempLineChartData"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-line-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Humidity">
+      <div style="padding: 2rem">
+        <ngx-charts-line-chart
+          [view]="[1525, 700]"
+          [legend]="true"
+          [showXAxisLabel]="true"
+          [showYAxisLabel]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xAxisLabel]="'Seconds'"
+          [yAxisLabel]="'%'"
+          [yScaleMin]="0"
+          [yScaleMax]="100"
+          [timeline]="true"
+          [results]="humiLineChartData"
+          (select)="onSelect($event)"
+          (activate)="onActivate($event)"
+          (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-line-chart>
+      </div>
+    </mat-tab>
+    <mat-tab label="Settings">
+      <div style="padding: 2rem">
+        <h1>Turn off</h1>
+        <mat-slide-toggle
+          [checked]="isOn"
+          [hideIcon]="true"
+          (change)="setOnOff($event)"
+        ></mat-slide-toggle>
+        <h1 style="margin-top: 2rem">Time Interval</h1>
+        <mat-grid-list cols="3" rowHeight="2:1" style="width: 10rem">
+          <mat-grid-tile>slow</mat-grid-tile>
+          <mat-grid-tile>
+            <mat-slide-toggle
+              [checked]="sendMode"
+              [hideIcon]="true"
+              [disabled]="!isOn"
+              (change)="setSendMode($event)"
+            ></mat-slide-toggle
+          ></mat-grid-tile>
+          <mat-grid-tile>fast</mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
