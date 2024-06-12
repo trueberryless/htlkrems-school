@@ -1,0 +1,12 @@
+<div style="padding: 2rem">
+  <mat-list [class.mat-elevation-z8]="false">
+    @for (log of logs; track log) {
+    <mat-list-item>
+      <span matListItemLine>Temperature: {{ log.temperature }}°C</span>
+      <span matListItemLine>Humidity: {{ log.humidity }}%</span>
+      <span matListItemLine>Timestamp: {{ log.timestamp }}</span>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    }
+  </mat-list>
+</div>

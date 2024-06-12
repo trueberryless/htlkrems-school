@@ -1,0 +1,9 @@
+```mermaid
+sequenceDiagram
+  Embed->>Vis-App:<STX>DATE23|HU40|SN1|<ETX>
+  Vis-App->>Embed:<ACK>
+  Embed->>Vis-App:<STX>DATE22|HU40|SN2|<ETX>
+  Embed->>Vis-App:<STX>DATE22|HU40|SN2|<ETX>
+  Embed->>Vis-App:<STX>DATE22|HU40|SN2|<ETX>
+  Embed->>Embed:CriticalError!!!
+```
