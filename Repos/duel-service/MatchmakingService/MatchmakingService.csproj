@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Mapster" Version="7.4.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.14" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Clients\Clients.csproj" />
+      <ProjectReference Include="..\DTOs\DTOs.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="MongoDB.Bson">
+        <HintPath>..\..\..\..\..\..\..\.nuget\packages\mongodb.bson\2.22.0\lib\netstandard2.1\MongoDB.Bson.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
