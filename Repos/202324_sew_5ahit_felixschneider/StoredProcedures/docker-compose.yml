@@ -1,0 +1,17 @@
+version: '3'
+name: insy-mysql-plsql
+
+services:
+  mysql:
+    image: mysql:8.0.30
+    environment:
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - 127.0.0.1:3306:3306
+
+    volumes:
+      - mysql-volume:/var/lib/mysql
+
+volumes:
+  mysql-volume:

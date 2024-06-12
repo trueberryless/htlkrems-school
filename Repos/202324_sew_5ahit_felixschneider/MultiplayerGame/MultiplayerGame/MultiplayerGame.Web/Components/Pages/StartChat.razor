@@ -1,0 +1,23 @@
+﻿@page "/chat"
+@using MultiplayerGame.Web.Components.Services
+@inject MatchmakingChat Matchmaking
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Chat</PageTitle>
+
+<div class="p-4">
+    <h1>Wanna chat with somebody?</h1>
+
+    <button @onclick="JoinGame">Find chatter!</button>
+</div>
+
+@code {
+
+    void JoinGame()
+    {
+        var (chatGuid, chatterGuid) = Matchmaking.JoinChat();
+        NavigationManager.NavigateTo($"chat/{chatGuid}/{chatterGuid}");
+    }
+
+}

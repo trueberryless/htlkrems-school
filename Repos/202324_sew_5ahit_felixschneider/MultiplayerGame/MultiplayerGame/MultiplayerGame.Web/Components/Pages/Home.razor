@@ -1,0 +1,23 @@
+﻿@page "/"
+@using MultiplayerGame.Web.Components.Services
+@inject Matchmaking Matchmaking
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<div class="p-4">
+    <h1>Hello, world!</h1>
+
+    <button @onclick="JoinGame">Play Game!</button>
+</div>
+
+@code {
+
+    void JoinGame()
+    {
+        var (gameGuid, playerGuid) = Matchmaking.JoinGame();
+        NavigationManager.NavigateTo($"game/{gameGuid}/{playerGuid}");
+    }
+
+}

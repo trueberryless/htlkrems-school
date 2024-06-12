@@ -1,0 +1,134 @@
+﻿@page "/"
+@using Messaging
+@using Model.Entities.Todos
+@inject ITodoRepository TodoRepository
+@inject Message Message
+
+@if (!SettingsProvider.DeveloperKnowsAboutSettingsProvider)
+{
+    <MudContainer Class="mt-8 my-login-container">
+        <MudStack Spacing="4">
+            <h1>Hello, dear friend!</h1>
+            <p>
+                If you're the developer, please go to @nameof(View) / @nameof(Services) / @nameof(SettingsProvider).
+                <br/>
+                We promise, you'll like it there.
+            </p>
+        </MudStack>
+    </MudContainer>
+}
+else if (Todos != null)
+{
+    <AuthorizeView>
+        <Authorized>
+            <MudContainer Class="mt-8 my-login-container">
+                <MudStack Spacing="4">
+                    <MudText Typo="Typo.h3">ToDos</MudText>
+                    @foreach (var todo in Todos)
+                    {
+                        if (todo.Completed)
+                        {
+                            <style>    
+                                @(".todo-" + todo.Id + "-checkbox") {
+                                    text-decoration: line-through;
+                                }                                
+                            </style>
+                        }
+                        
+                        <MudCheckBox
+                            T="bool"
+                            Checked="todo.Completed"
+                            CheckedChanged="async (b) => await SaveTodoCompleted(todo, b)"
+                            Color="Color.Primary"
+                            KeyboardEnabled="false"
+                            Class="@("todo-" + todo.Id + "-checkbox")">
+
+                            <MudGrid Justify="Justify.SpaceBetween" Style="width: 100%">
+                                <MudItem>
+
+                                    <MudTextField
+                                        T="string"
+                                        Value="@todo.Name"
+                                        ValueChanged="async (s) => await SaveTodoName(todo, s)"
+                                        Placeholder="Todo"
+                                        Label="" Variant="Variant.Text"
+                                        Margin="Margin.Dense">
+                                    </MudTextField>
+
+                                </MudItem>
+                                <MudItem>
+
+                                    <MudFab
+                                        Color="Color.Secondary"
+                                        StartIcon="@Icons.Material.Filled.Delete"
+                                        Size="Size.Small"
+                                        OnClick="async () => await DeleteTodo(todo)"/>
+                                    
+                                </MudItem>
+                            </MudGrid>
+
+
+                        </MudCheckBox>
+                    }
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="async () => await AddTodo()">Add Todo</MudButton>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" OnClick="async () => await GenerateReport()">Generate Report</MudButton>
+                </MudStack>
+            </MudContainer>
+        </Authorized>
+    </AuthorizeView>
+}
+
+@code {
+
+    public List<Todo> Todos { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (!(await UserService.IsAuthenticated()))
+            NavigationManager.NavigateTo(NavigationProvider["Login"].Link);
+
+        Todos = await TodoRepository.ReadAsync(t => t.UserId == UserService.CurrentUser!.Id);
+    }
+
+    protected async Task AddTodo()
+    {
+        await TodoRepository.CreateAsync(new Todo() { User = UserService.CurrentUser! });
+        Todos = await TodoRepository.ReadAsync(t => t.UserId == UserService.CurrentUser!.Id);
+    }
+
+    protected async Task SaveTodoCompleted(Todo todo, bool newValue)
+    {
+        todo.Completed = newValue;
+        await TodoRepository.UpdateAsync(todo);
+    }
+
+    protected async Task SaveTodoName(Todo todo, string newValue)
+    {
+        todo.Name = newValue;
+        await TodoRepository.UpdateAsync(todo);
+    }
+
+    protected async Task DeleteTodo(Todo todo)
+    {
+        await TodoRepository.DeleteAsync(todo);
+        Todos = await TodoRepository.ReadAsync(t => t.UserId == UserService.CurrentUser!.Id);
+    }
+
+    protected async Task GenerateReport()
+    {
+        await Message.GenerateReport(Todos);
+        Snackbar.Add("Report Generation started...");
+    }
+
+}
+
+<style>
+    .mud-input-control>.mud-input-control-input-container>div.mud-input.mud-input-text {
+        margin-top: 5px;
+    }
+
+    .mud-input.mud-input-underline:before,
+    .mud-input.mud-input-underline:after {
+        border: none !important;
+    }
+</style>

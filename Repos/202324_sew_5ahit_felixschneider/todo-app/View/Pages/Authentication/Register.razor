@@ -1,0 +1,198 @@
+﻿@page "/register"
+@using Model.Entities.Authentication.Models
+@using Model.Entities.Email
+
+<PageTitle>Register</PageTitle>
+
+<MudContainer Class="mt-8">
+    <MudStack Spacing="4">
+        <h1 class="ms-4 mb-12">Sign Up</h1>
+
+        @if (!SettingsProvider.UserCanRegister)
+        {
+            <MudAlert Severity="Severity.Error">
+                We are sorry, but registrations are currently disabled!
+            </MudAlert>
+        }
+
+        else
+        {
+            @if (SettingsProvider.NewUsersNeedToBeConfirmedByAdmins)
+            {
+                <MudAlert Severity="Severity.Info">
+                    Each new user must be approved by an administrator. 
+                    This means you'll have to wait to log in until you receive a confirmation email.
+                </MudAlert>
+            }
+            
+            <div @onkeydown="@TryRegister">
+                <MudForm @ref="_form">
+                    @if (_error is not null)
+                    {
+                        <MudAlert Severity="Severity.Error" ShowCloseIcon="true" CloseIconClicked="() => _error = null">
+                            @(_error)
+                        </MudAlert>
+                    }
+
+                    <MudTextField
+                        T="string"
+                        InputMode="InputMode.text" InputType="InputType.Text" Immediate="true"
+                        Counter="32" MaxLength="32"
+                        Variant="Variant.Outlined"
+                        Label="Username"
+                        @bind-Value="RegUser.Username"
+                        For="() => RegUser.Username"/>
+
+                    <MudTextField
+                        T="string"
+                        InputMode="InputMode.text" InputType="InputType.Text" Immediate="true"
+                        Counter="50" MaxLength="50"
+                        Variant="Variant.Outlined"
+                        Label="Email"
+                        @bind-Value="RegUser.Email"
+                        For="() => RegUser.Email"/>
+
+                    <MudTextField
+                        T="string"
+                        InputMode="InputMode.text" InputType="_passwordInputType" Immediate="true"
+                        Variant="Variant.Outlined"
+                        Label="Password" HelperText="Choose a strong password | Min 8 chars"
+                        Adornment="Adornment.End"
+                        AdornmentIcon="@_passwordInputIcon" OnAdornmentClick="ShowPwd"
+                        @bind-Value="RegUser.LoginPassword"
+                        For="() => RegUser.LoginPassword"/>
+
+                    @if (SettingsProvider.NewUsersNeedToBeConfirmedByAdmins)
+                    {
+                        <br/><br/>
+                        <MudTextField
+                            T="string"
+                            InputMode="InputMode.text" InputType="InputType.Text" Immediate="true"
+                            Variant="Variant.Outlined"
+                            Label="Message for admin" HelperText="Tell the admins who you are. Therefore, it is easier for them to decide whether to accept your registration or not."
+                            @bind-Value="RegUser.MessageForAdmin"
+                            For="() => RegUser.MessageForAdmin"/>
+                    }
+                </MudForm>
+            </div>
+
+            <MudOverlay @bind-Visible="_isRegistering" DarkBackground="true" AutoClose="false" Absolute="true" Style="position: fixed; top: 0; bottom: 0; left: 0; right: 0;">
+                <MudProgressCircular Color="Color.Primary" Indeterminate="true" Size="Size.Large" StrokeWidth="5"/>
+            </MudOverlay>
+
+            <MudCardActions>
+                <MudButton ButtonType="ButtonType.Button" Variant="Variant.Filled" Color="Color.Primary" OnClick="async () => await HandleRegisterAsync()">
+                    Register
+                </MudButton>
+                <MudSpacer/>
+                <a href="@NavigationProvider["Login"].Link">
+                    <MudText Typo="Typo.subtitle1">
+                        Already have an account?
+                    </MudText>
+                </a>
+            </MudCardActions>
+        }
+
+    </MudStack>
+</MudContainer>
+
+@code {
+    bool _isRegistering;
+    MudForm _form = null!;
+    string? _error;
+
+    bool _isShow;
+    string _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+    InputType _passwordInputType = InputType.Password;
+
+    User RegUser { get; } = new();
+
+    void ShowPwd()
+    {
+        if (_isShow)
+        {
+            _isShow = false;
+            _passwordInputIcon = Icons.Material.Filled.VisibilityOff;
+            _passwordInputType = InputType.Password;
+        }
+        else
+        {
+            _isShow = true;
+            _passwordInputIcon = Icons.Material.Filled.Visibility;
+            _passwordInputType = InputType.Text;
+        }
+    }
+
+    async void TryRegister(KeyboardEventArgs e)
+    {
+        if (e.Code is "Enter" or "NumpadEnter")
+            await HandleRegisterAsync();
+    }
+
+    async Task HandleRegisterAsync()
+    {
+        try
+        {
+            if (!await _form.IsFormValidAsync()) return;
+            _isRegistering = true;
+            
+            if (SettingsProvider.NewUsersNeedToBeConfirmedByAdmins)
+            {
+                RegUser.Active = false;
+                await UserService.RegisterAsync(RegUser);
+                await EmailService.SendEmail(TemplateType.ADMIN_USER_APPROVAL, await RoleRepository.GetAllUsersWithRole("Admin"));
+            }
+            else
+            {
+                await UserService.RegisterAsync(RegUser);
+                await UserService.LoginAsync(new LoginModel(RegUser.Email, RegUser.LoginPassword));
+            }
+
+            var userRole = (await RoleRepository.ReadAsync(e => e.Identifier == "User")).FirstOrDefault();
+            if (userRole != null) await RoleClaimRepository.CreateAsync(new RoleClaim() { User = RegUser, Role = userRole });
+
+            NavigationManager.NavigateTo(NavigationProvider["Root"].Link);
+        }
+        catch (DuplicateEmailException)
+        {
+            _error = "Email already exists!";
+            Snackbar.Add($"Email already exists!", Severity.Error);
+        }
+        catch (LoginException)
+        {
+            _error = "Invalid email or password!";
+            Snackbar.Add($"Invalid email of password!", Severity.Error);
+        }
+        catch (TaskCanceledException)
+        {
+            Logger.LogInformation("Login canceled");
+        }
+        catch (OperationCanceledException)
+        {
+            Logger.LogInformation("Login canceled");
+        }
+        catch (EmailSendingException)
+        {
+            await UserRepository.DeleteAsync(RegUser);
+            Logger.LogError("Email couldn't be sent!");
+            Snackbar.Add($"An email couldn't be sent. Please try again later when a developer fixed the issue...", Severity.Error);
+        }
+        catch (Exception e)
+        {
+            Logger.LogCritical("Login failed: {Message} \n", e.Message);
+            Logger.LogCritical("Login failed: {StackTrace} \n", e.StackTrace);
+        }
+        finally
+        {
+            _isRegistering = false;
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+        if (await UserService.IsAuthenticated())
+            NavigationManager.NavigateTo(NavigationProvider["Root"].Link);
+    }
+
+}

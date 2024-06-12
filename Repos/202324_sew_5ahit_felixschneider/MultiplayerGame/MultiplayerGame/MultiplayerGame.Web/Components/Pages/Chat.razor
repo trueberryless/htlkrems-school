@@ -1,0 +1,204 @@
+﻿@page "/chat/{ChatGuidString}/{ChatterGuidString}"
+@using MultiplayerGame.Web.Components.Services
+@inject MatchmakingChat Matchmaking
+@rendermode InteractiveServer
+
+@if (_chat != null)
+{
+    @if (_chat.ChatterOne == _chatterGuid)
+    {
+        <PageTitle>Chatter 1</PageTitle>
+    }
+    else
+    {
+        <PageTitle>Chatter 2</PageTitle>
+    }
+
+    @if (_chat.ChattersReady())
+    {
+        <div id="chat-container">
+            <div id="chat-messages">
+                @for (int i = _chat.Status.Messages.Count - 1; i >= 0; i--)
+                {
+                    var message = _chat.Status.Messages[i];
+                    var showMetaInfo = i == 0 || (_chat.Status.Messages[i - 1].Chatter != message.Chatter)
+                                              || (message.Posted - _chat.Status.Messages[i - 1].Posted).TotalMinutes > 5;
+                    var showNewDay = i == 0 || (message.Posted.Date != _chat.Status.Messages[i - 1].Posted.Date);
+
+                    <div class="message @(showMetaInfo ? "with-meta-info" : "")">
+                        @if (showNewDay)
+                        {
+                            <div class="meta-info">
+                                <div class="date-centered">@message.Posted.ToLongDateString()</div>
+                            </div>
+                        }
+                        @if (showMetaInfo)
+                        {
+                            <div class="meta-info">
+                                @if (@message.Chatter == _chatterGuid)
+                                {
+                                    <span class="chatter-name chatter-you">You</span>
+                                }
+                                else
+                                {
+                                    <span class="chatter-name chatter-them">Them</span>
+                                }
+                                <span class="timestamp">@message.Posted.ToString("HH:mm:ss")</span>
+                            </div>
+                        }
+                        <div class="message-content">@message.Content</div>
+                    </div>
+                }
+            </div>
+            <div id="chat-input">
+                <input type="text" @bind="newMessage" @onkeyup="HandleKeyDown"/>
+                <button @onclick="SendMessage">Send</button>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="p-4">Waiting for the other chatter...</p>
+    }
+}
+else
+{
+    <p class="p-4">Sometimes you end up at the wrong place at the wrong time...</p>
+}
+
+@code {
+    [Parameter] public string ChatGuidString { get; set; }
+    [Parameter] public string ChatterGuidString { get; set; }
+
+    private Guid _chatterGuid;
+    private ChatController? _chat;
+
+    private string newMessage = "";
+
+    protected override void OnParametersSet()
+    {
+        _chat = Matchmaking.Chat(Guid.Parse(ChatGuidString));
+        _chatterGuid = Guid.Parse(ChatterGuidString);
+
+
+        if (_chat != null) _chat.UpdateClients += HandleUpdateClients;
+    }
+
+    private async void HandleUpdateClients(object sender, EventArgs e)
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    private void HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !e.ShiftKey)
+        {
+            SendMessage();
+        }
+    }
+
+    private void SendMessage()
+    {
+        if (!string.IsNullOrWhiteSpace(newMessage))
+        {
+            _chat.Status.Messages.Add(new Message
+            {
+                Chatter = _chatterGuid, // Replace with actual chatter name
+                Content = newMessage,
+                Posted = DateTime.Now
+            });
+            newMessage = "";
+        }
+    }
+
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #chat-container {
+        max-width: 100%;
+        margin: 0px auto;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Set a fixed height for the chat container */
+    }
+
+    #chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        height: 500px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .message {
+        padding-inline: 10px;
+        border-radius: 5px;
+    }
+    
+    .message-content {
+        word-wrap: break-word;
+    }
+    
+    .with-meta-info {
+        margin-top: 15px;
+        padding-top: 0;
+    }
+    
+    .meta-info {
+        font-size: 0.8em;
+        color: #888;
+        margin-bottom: 5px;
+    }
+    
+    .date-centered {
+        font-weight: 900;
+        text-align: center;
+    }
+    
+    .chatter-name {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+    
+    .chatter-you {
+        color: #06357a;
+    }
+    
+    .chatter-them {
+        color: #d2691e;
+    }
+    
+    .timestamp {
+        float: right;
+    }
+    
+    #chat-input {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        display: flex;
+    }
+    
+    #chat-input input {
+        flex: 1;
+        padding: 5px;
+    }
+    
+    #chat-input button {
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+    }
+</style>

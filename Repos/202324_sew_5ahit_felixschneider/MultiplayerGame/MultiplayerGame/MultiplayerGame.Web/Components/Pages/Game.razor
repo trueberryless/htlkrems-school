@@ -1,0 +1,143 @@
+﻿@page "/game/{GameGuidString}/{PlayerGuidString}"
+@using MultiplayerGame.Web.Components.Services
+@inject Matchmaking Matchmaking
+@rendermode InteractiveServer
+
+<div class="p-4">
+    @if (_game != null)
+    {
+        @if (_game.PlayerOne == _playerGuid)
+        {
+            <PageTitle>Player 1</PageTitle>
+        }
+        else
+        {
+            <PageTitle>Player 2</PageTitle>
+        }
+
+        @if (_game.PlayersReady())
+        {
+            @if (_game.Status.PlayerOneWon == null)
+            {
+                <div style="position: relative; margin-top: 8rem">
+                    <div style="display: flex; justify-content: space-between; position: absolute; inset: 0; user-select: none">
+                        <div style="width: 2rem; height: 40rem; border-radius: 1000000px; background-color: #fb8500; user-select: none"></div>
+                        <div style="width: 2rem; height: 40rem; border-radius: 1000000px; background-color: #023047; user-select: none"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; position: relative">
+                        <button @onclick="ClickCircleOne" style="width: @(_game.Status.PlayerOneCircleSize)rem; height: 40rem; border-radius: 1000000px; background-color: #ffb703; display: flex; justify-content: center; align-items: center; font-family: 'Bauhaus 93'; font-size: 4rem; color: black;">
+                            @if (_game.PlayerOne == _playerGuid && _game.Status.PlayerOneCircleSize > 20)
+                            {
+                                <p>Click</p>
+                            }
+                        </button>
+                        <button @onclick="ClickCircleTwo" style="width: @(_game.Status.PlayerTwoCircleSize)rem; height: 40rem; border-radius: 1000000px; background-color: #219ebc; display: flex; justify-content: center; align-items: center; font-family: 'Bauhaus 93'; font-size: 4rem; color: white;">
+                            @if (_game.PlayerTwo == _playerGuid && _game.Status.PlayerTwoCircleSize > 20)
+                            {
+                                <p>Click</p>
+                            }
+                        </button>
+                    </div>
+                </div>
+            }
+            else if (_game.Status.PlayerOneWon == true)
+            {
+                <p>Player One Won!</p>
+
+                <button @onclick="Revanche">Revanche</button>
+            }
+            else if (_game.Status.PlayerOneWon == false)
+            {
+                <p>Player Two Won!</p>
+
+                <button @onclick="Revanche">Revanche</button>
+            }
+
+
+            @if (_game.Status.Created.AddSeconds(3) > DateTime.Now)
+            {
+                <div style="position: absolute; inset: 0; backdrop-filter: brightness(20%) blur(6px); z-index: 100000; display: flex; justify-content: center; align-items: center; font-family: 'Bauhaus 93'; font-size: 20rem; color: white; user-select: none">
+                    @(((_game.Status.Created.AddSeconds(3) - DateTime.Now).TotalSeconds).ToString("N2"))
+                </div>
+            }
+        }
+        else
+        {
+            <p>Waiting for the other player...</p>
+        }
+    }
+    else
+    {
+        <p>This game has unfortunately been deleted...</p>
+    }
+</div>
+
+
+@code {
+    [Parameter] public string GameGuidString { get; set; }
+    [Parameter] public string PlayerGuidString { get; set; }
+
+    private Guid _playerGuid;
+    private GameController? _game;
+
+    protected override void OnParametersSet()
+    {
+        _game = Matchmaking.Game(Guid.Parse(GameGuidString));
+        _playerGuid = Guid.Parse(PlayerGuidString);
+        if (_game != null) _game.Status.Created = DateTime.Now;
+
+        if (_game != null) _game.UpdateClients += HandleUpdateClients;
+    }
+
+    private async void HandleUpdateClients(object sender, EventArgs e)
+    {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    private void ClickCircleOne()
+    {
+        if (_game == null) return;
+
+        if (_game.PlayerOne == _playerGuid)
+        {
+            _game.Status.PlayerOneCircleSize = Math.Max((int)Math.Floor(_game.Status.PlayerOneCircleSize / 1.1), 2);
+            if (_game.Status.PlayerOneCircleSize <= 2)
+            {
+                _game.Status.PlayerOneWon = true;
+            }
+        }
+        else
+        {
+            _game.Status.PlayerOneCircleSize = Math.Min((int)Math.Ceiling(_game.Status.PlayerOneCircleSize * 1.15), 40);
+        }
+    }
+
+    private void ClickCircleTwo()
+    {
+        if (_game == null) return;
+
+        if (_game.PlayerOne == _playerGuid)
+        {
+            _game.Status.PlayerTwoCircleSize = Math.Min((int)Math.Ceiling(_game.Status.PlayerTwoCircleSize * 1.15), 40);
+        }
+        else
+        {
+            _game.Status.PlayerTwoCircleSize = Math.Max((int)Math.Floor(_game.Status.PlayerTwoCircleSize / 1.1), 2);
+            if (_game.Status.PlayerTwoCircleSize <= 2)
+            {
+                _game.Status.PlayerOneWon = false;
+            }
+        }
+    }
+
+    private void Revanche()
+    {
+        if (_game == null) return;
+        _game.Status.PlayerOneCircleSize = 40;
+        _game.Status.PlayerTwoCircleSize = 40;
+        _game.Status.Created = DateTime.Now;
+        _game.Status.PlayerOneWon = null;
+    }
+
+}
+
