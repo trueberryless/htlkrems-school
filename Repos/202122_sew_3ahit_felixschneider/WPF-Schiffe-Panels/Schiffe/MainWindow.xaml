@@ -1,0 +1,378 @@
+﻿<Window x:Class="Schiffe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Schiffe"
+        mc:Ignorable="d"
+        Title="Alle meine Schiffe" Height="450" Width="1000">
+    <Window.Resources>
+        <local:EnumIntConverterHafen x:Key="EnumIntConverterHafen"/>
+        <local:EnumIntConverterFlagge x:Key="EnumIntConverterFlagge"/>
+        <local:EnumIntConverterSegelmaterial x:Key="EnumIntConverterSegelmaterial"/>
+        <local:EnumIntConverterFarbe x:Key="EnumIntConverterFarbe"/>
+        <local:EnumIntConverterMarke x:Key="EnumIntConverterMarke"/>
+    </Window.Resources>
+    <TabControl>
+        <TabItem Header="Dampfschiffe">
+            <TabItem.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:DampfschiffeVM/>
+            </TabItem.DataContext>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="15">
+                    <Label>Allgemein</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Name</Label>
+                        <TextBox Text="{Binding ActiveDampfschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Länge [m]</Label>
+                        <TextBox Text="{Binding ActiveDampfschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Baujahr</Label>
+                        <DatePicker Text="{Binding ActiveDampfschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200"></DatePicker>
+                    </StackPanel>
+                    <Label Margin="0 15 0 0">Spezifisch</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>CO2-Ausstoß [CCF]</Label>
+                        <TextBox Text="{Binding ActiveDampfschiff.CO2Ausstoss, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Passagiere</Label>
+                        <TextBox Text="{Binding ActiveDampfschiff.Passagiere, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Command="{Binding DeleteCmdDampfschiffe}" Content="Delete" Margin="60 30 20 30" Width="80" Height="20"/>
+                        <Button  Command="{Binding AddCmdDampfschiffe}" Content="Add" Margin="20 30 60 30" Width="80" Height="20"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="15" Width="200">
+                    <ListView ItemsSource="{Binding AllDampfschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedDampfschiff}" DisplayMemberPath="Name"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/dampfschiff.jfif"/>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Fischereischiffe">
+            <TabItem.Resources>
+                <Style TargetType="WrapPanel">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:FischereischiffeVM/>
+            </TabItem.DataContext>
+            <WrapPanel Orientation="Vertical">
+                <WrapPanel Margin="15"  Orientation="Vertical">
+                    <Label>Allgemein</Label>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Name</Label>
+                        <TextBox Text="{Binding ActiveFischereischiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Länge [m]</Label>
+                        <TextBox Text="{Binding ActiveFischereischiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Baujahr</Label>
+                        <DatePicker Text="{Binding ActiveFischereischiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200"></DatePicker>
+                    </WrapPanel>
+                    <Label Margin="0 15 0 0">Spezifisch</Label>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Netzgröße [m²]</Label>
+                        <TextBox Text="{Binding ActiveFischereischiff.Netzgroesse, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Kapazität (Fische)</Label>
+                        <TextBox Text="{Binding ActiveFischereischiff.Fischlagerkapazitaet, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal">
+                        <Button Command="{Binding DeleteCmdFischereischiffe}" Content="Delete" Margin="60 30 20 30" Width="80" Height="20"/>
+                        <Button Command="{Binding AddCmdFischereischiffe}" Content="Add" Margin="20 30 60 30" Width="80" Height="20"/>
+                    </WrapPanel>
+                </WrapPanel>
+                <WrapPanel Margin="15" Width="200">
+                    <ListView ItemsSource="{Binding AllFischereischiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedFischereischiff}" DisplayMemberPath="Name"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/fischereischiff.jpg"/>
+                </WrapPanel>
+            </WrapPanel>
+        </TabItem>
+        <TabItem Header="Frachtschiffe">
+            <TabItem.Resources>
+                <Style TargetType="DockPanel">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:FrachtschiffeVM/>
+            </TabItem.DataContext>
+            <DockPanel DockPanel.Dock="Left">
+                <DockPanel DockPanel.Dock="Left" Margin="15">
+                    <Label DockPanel.Dock="Top">Allgemein</Label>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                        <Label>Name</Label>
+                        <TextBox Text="{Binding ActiveFrachtschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                        <Label>Länge [m]</Label>
+                        <TextBox Text="{Binding ActiveFrachtschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                        <Label>Baujahr</Label>
+                        <DatePicker Text="{Binding ActiveFrachtschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200"></DatePicker>
+                    </DockPanel>
+                    <Label DockPanel.Dock="Top" Margin="0 15 0 0">Spezifisch</Label>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                        <Label>Fährt von</Label>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ActiveFrachtschiff.RouteVon, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        <Slider IsSnapToTickEnabled="True" Value="{Binding ActiveFrachtschiff.RouteVon, Converter={StaticResource EnumIntConverterHafen}, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
+                        <Label>nach</Label>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ActiveFrachtschiff.RouteNach, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        <Slider IsSnapToTickEnabled="True" Value="{Binding ActiveFrachtschiff.RouteNach, Converter={StaticResource EnumIntConverterHafen}, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <Button Command="{Binding DeleteCmdFrachtschiffe}" Content="Delete" Margin="60 25 20 30" Width="80" Height="20"/>
+                        <Button Command="{Binding AddCmdFrachtschiffe}" Content="Add" Margin="20 25 60 30" Width="80" Height="20"/>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Left" Margin="15" Width="200">
+                    <ListView ItemsSource="{Binding AllFrachtschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedFrachtschiff}" DisplayMemberPath="Name"/>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/frachtschiff.jpg"/>
+                </DockPanel>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Raumschiffe">
+            <TabItem.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:RaumschiffeVM/>
+            </TabItem.DataContext>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="15">
+                    <Label>Allgemein</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Name</Label>
+                        <TextBox Text="{Binding ActiveRaumschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Länge [m]</Label>
+                        <TextBox Text="{Binding ActiveRaumschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Baujahr</Label>
+                        <DatePicker Text="{Binding ActiveRaumschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200"></DatePicker>
+                    </StackPanel>
+                    <Label Margin="0 15 0 0">Spezifisch</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>max. Geschw. [m/s]</Label>
+                        <TextBox Text="{Binding ActiveRaumschiff.MaxGeschwindigkeit, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Anzahl Laserkanonen</Label>
+                        <TextBox Text="{Binding ActiveRaumschiff.AnzahlLaserkanonen, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Flügelanzahl</Label>
+                        <TextBox Text="{Binding ActiveRaumschiff.AnzahlFluegel, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Command="{Binding DeleteCmdRaumschiffe}" Content="Delete" Margin="60 30 20 30" Width="80" Height="20"/>
+                        <Button Command="{Binding AddCmdRaumschiffe}" Content="Add" Margin="20 30 60 30" Width="80" Height="20"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Margin="15" Width="200">
+                    <ListView ItemsSource="{Binding AllRaumschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRaumschiff}" DisplayMemberPath="Name"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/raumschiff.jpg"/>
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Ruderschiffe">
+            <TabItem.Resources>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:RuderschiffeVM/>
+            </TabItem.DataContext>
+            <Grid Margin="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="4*" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0">Allgemein</Label>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right">Name</Label>
+                            <TextBox Text="{Binding ActiveRuderschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200" Grid.Column="1"></TextBox>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right">Länge [m]</Label>
+                            <TextBox Text="{Binding ActiveRuderschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200" Grid.Column="1"></TextBox>
+                        </Grid>
+                        <Grid Grid.Row="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right">Baujahr</Label>
+                            <DatePicker Text="{Binding ActiveRuderschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200" Grid.Column="2"></DatePicker>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0">Spezifisch</Label>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right">Ruderanzahl</Label>
+                            <TextBox Text="{Binding ActiveRuderschiff.Ruderanzahl, UpdateSourceTrigger=PropertyChanged}" Width="200" Grid.Column="1"></TextBox>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" HorizontalAlignment="Right">Flagge</Label>
+                            <TextBlock Grid.Column="1" Text="{Binding ActiveRuderschiff.Flagge, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Width="100"/>
+                            <Slider IsSnapToTickEnabled="True" Grid.Column="2" Value="{Binding ActiveRuderschiff.Flagge, Converter={StaticResource EnumIntConverterFlagge}, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Command="{Binding DeleteCmdRuderschiffe}" Content="Delete" Margin="60 30 20 30" Width="80" Height="20" Grid.Column="0"/>
+                        <Button Command="{Binding AddCmdRuderschiffe}" Content="Add" Margin="20 30 60 30" Width="80" Height="20" Grid.Column="1"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <ListView ItemsSource="{Binding AllRuderschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedRuderschiff}" DisplayMemberPath="Name"/>
+                </Grid>
+                <Grid Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/ruderschiff.jpg"/>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Segelschiffe">
+            <TabItem.DataContext>
+                <local:SegelschiffeVM/>
+            </TabItem.DataContext>
+            <Canvas>
+                <Label Canvas.Left="15" Canvas.Top="20">Allgemein</Label>
+                <Label Canvas.Left="93" Canvas.Top="51">Name</Label>
+                <TextBox Text="{Binding ActiveSegelschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="26" Canvas.Left="135" Canvas.Top="51"></TextBox>
+                <Label Canvas.Left="72" Canvas.Top="87">Länge [m]</Label>
+                <TextBox Text="{Binding ActiveSegelschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="26" Canvas.Left="135" Canvas.Top="87"></TextBox>
+                <Label Canvas.Left="85" Canvas.Top="123">Baujahr</Label>
+                <DatePicker Text="{Binding ActiveSegelschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200" Canvas.Left="135" Canvas.Top="125"></DatePicker>
+                <Label Margin="0 15 0 0" Canvas.Left="15" Canvas.Top="154">Spezifisch</Label>
+                <Label Canvas.Left="48" Canvas.Top="200">Segelhöhe [m]</Label>
+                <TextBox Text="{Binding ActiveSegelschiff.Segelhoehe, UpdateSourceTrigger=PropertyChanged}" Width="200" Height="26" Canvas.Left="135" Canvas.Top="200"></TextBox>
+                <Label Canvas.Left="53" Canvas.Top="236">Segelmaterial</Label>
+                <TextBlock TextWrapping="Wrap" Text="{Binding ActiveSegelschiff.Segelmaterial, UpdateSourceTrigger=PropertyChanged}" Width="100" Canvas.Left="135" Canvas.Top="241"/>
+                <Slider IsSnapToTickEnabled="True" Value="{Binding ActiveSegelschiff.Segelmaterial, Converter={StaticResource EnumIntConverterSegelmaterial}, UpdateSourceTrigger=PropertyChanged}" Width="100" Canvas.Left="240" Canvas.Top="240"/>
+                <Button Command="{Binding DeleteCmdSegelschiffe}" Content="Delete" Width="80" Height="20" Canvas.Left="75" Canvas.Top="302"/>
+                <Button Command="{Binding AddCmdSegelschiffe}" Content="Add" Width="80" Height="20" Canvas.Left="195" Canvas.Top="302"/>
+                <ListView ItemsSource="{Binding AllSegelschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedSegelschiff}" DisplayMemberPath="Name" Canvas.Left="365" Canvas.Top="20"/>
+                <Image Height="250" Width="250" Source="img/segelschiff.jpg" Canvas.Left="627" Canvas.Top="78"/>
+            </Canvas>
+        </TabItem>
+        <TabItem Header="Spielzeugschiffe">
+            <TabItem.Resources>
+                <Style TargetType="WrapPanel">
+                    <Setter Property="Margin" Value="0 5"/>
+                </Style>
+            </TabItem.Resources>
+            <TabItem.DataContext>
+                <local:SpielzeugschiffeVM/>
+            </TabItem.DataContext>
+            <WrapPanel Orientation="Vertical">
+                <WrapPanel Margin="15"  Orientation="Vertical">
+                    <Label>Allgemein</Label>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Name</Label>
+                        <TextBox Text="{Binding ActiveSpielzeugschiff.Name, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Länge [cm]</Label>
+                        <TextBox Text="{Binding ActiveSpielzeugschiff.Laenge, UpdateSourceTrigger=PropertyChanged}" Width="200"></TextBox>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Baujahr</Label>
+                        <DatePicker Text="{Binding ActiveSpielzeugschiff.Baujahr, UpdateSourceTrigger=PropertyChanged}" SelectedDate="{x:Static sys:DateTime.Now}" Width="200"></DatePicker>
+                    </WrapPanel>
+                    <Label Margin="0 15 0 0">Spezifisch</Label>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Farbe</Label>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ActiveSpielzeugschiff.Farbe, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        <Slider IsSnapToTickEnabled="True" Value="{Binding ActiveSpielzeugschiff.Farbe, Converter={StaticResource EnumIntConverterFarbe}, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label>Marke</Label>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding ActiveSpielzeugschiff.Marke, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                        <Slider IsSnapToTickEnabled="True" Value="{Binding ActiveSpielzeugschiff.Marke, Converter={StaticResource EnumIntConverterMarke}, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal">
+                        <Button Command="{Binding DeleteCmdSpielzeugschiffe}" Content="Delete" Margin="60 30 20 30" Width="80" Height="20"/>
+                        <Button Command="{Binding AddCmdSpielzeugschiffe}" Content="Add" Margin="20 30 60 30" Width="80" Height="20"/>
+                    </WrapPanel>
+                </WrapPanel>
+                <WrapPanel Margin="15" Width="200">
+                    <ListView ItemsSource="{Binding AllSpielzeugschiffe, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedSpielzeugschiff}" DisplayMemberPath="Name"/>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Height="250" Width="250" Source="img/spielzeugschiff.jpg"/>
+                </WrapPanel>
+            </WrapPanel>
+        </TabItem>
+    </TabControl>
+</Window>

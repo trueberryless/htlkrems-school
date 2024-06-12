@@ -1,0 +1,27 @@
+﻿<Window x:Class="WPF_Grundlagen.WindowTextBlock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Grundlagen"
+        mc:Ignorable="d"
+        Title="WindowTextBlock" Height="450" Width="800">
+    <WrapPanel>
+        <TextBlock Name="tblFile" HorizontalAlignment="Center" Margin="50,50,50,50" TextWrapping="Wrap" Text="Hallo, neues Fenster!" VerticalAlignment="Center" TextAlignment="Justify"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,100,0,0" TextTrimming="CharacterEllipsis" Foreground="Red" TextWrapping="Wrap" VerticalAlignment="Center">
+            some random text, lol <Span FontWeight="Bold">Felix</Span>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,200,0,0" TextTrimming="CharacterEllipsis" Foreground="Green" TextWrapping="Wrap" VerticalAlignment="Center">
+            some random text, lol <Span FontStyle="Italic">Felix</Span> <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.wpf-tutorial.com/dialogs/the-messagebox/">Das ist ein Link!</Hyperlink>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,300,0,0" TextTrimming="CharacterEllipsis" Foreground="BlueViolet" TextWrapping="Wrap" VerticalAlignment="Center">
+            some random text, lol <Span TextDecorations="Underline">Felix</Span>
+        </TextBlock>
+        <Label Content="_Name:" HorizontalAlignment="Left" Margin="329,141,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="382,154,0,0" TextWrapping="Wrap" Text="Name" Name="txbName" VerticalAlignment="Top" Width="120"/>
+        
+        <Label Content="_Name:" HorizontalAlignment="Left" Margin="329,200,0,0" VerticalAlignment="Top"/>        
+        <TextBox HorizontalAlignment="Left" Margin="382,200,0,0" TextWrapping="Wrap" Text="Name" Name="txbMail" VerticalAlignment="Top" Width="120"/>
+
+    </WrapPanel>
+</Window>
