@@ -1,0 +1,41 @@
+﻿@page "/cinemas"
+@page "/cinemas/{CinemaId:int?}"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+@inject IRepository<Cinema> CinemaRepository;
+
+<PageTitle>Cinemas</PageTitle>
+
+<h3>Cinemas</h3>
+
+@if (Cinemas.Any())
+{
+    @foreach (var c in Cinemas)
+    {
+        <CinemaComponent Cinema="@c" />
+    }
+}
+else
+{
+    <CinemaComponent Cinema="@Cinema" />
+}
+
+@code {
+    private List<Cinema> Cinemas = new();
+    private Cinema Cinema;
+
+    [Parameter]
+    public int? CinemaId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (CinemaId.HasValue)
+        {
+            Cinema = await CinemaRepository.ReadAsync(CinemaId.Value);
+        }
+        else
+        {
+            Cinemas = await CinemaRepository.ReadAllAsync();
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿@using Model.Entities
+@using Microsoft.AspNetCore.Server.Kestrel.Core
+
+@if (Movie != null)
+{
+    <h4>@Movie.Name</h4>
+    if (DisplayDetail)
+    {
+        <div>@Movie.Description</div>
+    }
+    else
+    {
+        <div>@Movie.ShortDescription</div>
+    }
+}
+else
+{
+    <span>No Data!</span>
+}
+
+@code {
+    [Parameter]
+    public Movie? Movie { get; set; }
+
+    [Parameter]
+    public bool DisplayDetail { get; set; }
+}

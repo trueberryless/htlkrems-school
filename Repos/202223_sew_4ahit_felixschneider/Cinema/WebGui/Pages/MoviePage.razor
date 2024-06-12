@@ -1,0 +1,39 @@
+﻿@page "/movies"
+@page "/movies/{MovieId:int?}"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IRepository<Movie> MovieRepository
+
+<h3>MoviePage</h3>
+
+@if (Movies.Any())
+{
+    @foreach (var m in Movies)
+    {
+        <MovieComponent Movie="@m" DisplayDetail="false"/>
+    }
+}
+else
+{
+    <MovieComponent Movie="@Movie" DisplayDetail="true"/>
+}
+
+@code {
+    private List<Movie> Movies = new();
+    private Movie Movie;
+
+    [Parameter]
+    public int? MovieId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (MovieId.HasValue)
+        {
+            Movie = await MovieRepository.ReadAsync(MovieId.Value);
+        }
+        else
+        {
+            Movies = await MovieRepository.ReadAllAsync();
+        }
+    }
+}

@@ -1,0 +1,42 @@
+﻿@page "/books"
+@page "/books/{BookId:int}"
+
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@inject IRepository<Book> BookRepository
+
+@if (Book != null)
+{
+    <BookComponent Book="@Book"/>
+}
+else if (Books.Any())
+{
+    @foreach (var book in Books)
+    {
+        <BookCompone Book="@book"/>
+    }
+}
+else {
+    <p>Loading...</p>
+}
+
+@code {
+    [Parameter]
+    public int? BookId { get; set; }
+    
+    public Book? Book { get; set; }
+
+    public List<Book> Books { get; set; } = new();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (BookId.HasValue)
+        {
+            Book = await BookRepository.ReadAsync(BookId.Value);
+        }
+        else
+        {
+            Books = await BookRepository.ReadAsync(0, 10);
+        }
+    }
+}

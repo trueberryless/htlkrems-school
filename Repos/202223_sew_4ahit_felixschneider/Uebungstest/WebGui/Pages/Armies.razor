@@ -1,0 +1,25 @@
+﻿@page "/Armies/ArmyId:int?"
+
+@inject IRepository<Unit> UnitRepository;
+<h3>Armies</h3>
+
+<ArmyComponent Units="@UnitList"></ArmyComponent>
+
+<button class="btn-danger"><a href="/">Abbrechen</a></button>
+
+@code {
+    public List<Unit> UnitList { get; set; }
+
+    [Parameter]
+    public int? ArmyId { get; set; }
+    
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        if (ArmyId.HasValue)
+        {
+            UnitList = UnitRepository.Read(u => u.ArmyId == ArmyId);
+        }
+    }
+
+}

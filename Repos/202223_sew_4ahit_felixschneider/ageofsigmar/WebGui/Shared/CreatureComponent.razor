@@ -1,0 +1,23 @@
+﻿@using Model.Entities
+
+<h5 class="text-info">@Creature.Name</h5>
+<p>@Creature.Description</p>
+<table class="table table-sm table-hover">
+    <tr>
+        <td class="text-info">Body</td>
+        <td>@Creature.Body</td>
+    </tr>
+    <tr>
+        <td class="text-info">Mind</td>
+        <td>@Creature.Mind</td>
+    </tr>
+    <tr>
+        <td class="text-info">Soul</td>
+        <td>@Creature.Soul</td>
+    </tr>
+</table>
+
+@code {
+    [Parameter]
+    public Creature Creature { get; set; }
+}

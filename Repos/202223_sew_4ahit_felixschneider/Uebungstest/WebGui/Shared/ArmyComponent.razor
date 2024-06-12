@@ -1,0 +1,28 @@
+﻿<h3>ArmyComponent</h3>
+
+<table>
+    <thead>
+    <tr class="">
+        <th>Meeple</th>
+        <th>Row</th>
+        <th>Column</th>
+        <th>Icon</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var unit in UnitList)
+    {
+        <tr>
+            <th>@unit.Type</th>
+            <th>@unit.Row</th>
+            <th>@unit.Column</th>
+            <th><img src="@unit.ImageURL"/></th>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    [Parameter]
+    public List<Unit> UnitList { get; set; }
+}

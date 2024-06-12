@@ -1,0 +1,15 @@
+﻿namespace Heist;
+
+public enum ELog
+{
+    BRIBE_BANK_EMPLOYEE,
+    BUY_GETAWAY_CAR,
+    GET_BANK_PLAN,
+    HIRE_CREW,
+    ENTER_BANK,
+    ROB_COUNTER_1,
+    ROB_COUNTER_2,
+    ROB_COUNTER_3,
+    LEAVE_BANK,
+    LOOSE_POLICE
+}

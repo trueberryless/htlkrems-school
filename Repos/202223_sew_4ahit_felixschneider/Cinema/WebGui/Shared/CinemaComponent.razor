@@ -1,0 +1,16 @@
+﻿@using Model.Entities
+@using Microsoft.AspNetCore.Server.Kestrel.Core
+
+@if (Cinema != null)
+{
+    <h4>@Cinema.Label</h4>
+}
+else
+{
+    <span>No Data!</span>
+}
+
+@code {
+    [Parameter]
+    public Cinema? Cinema { get; set; }
+}

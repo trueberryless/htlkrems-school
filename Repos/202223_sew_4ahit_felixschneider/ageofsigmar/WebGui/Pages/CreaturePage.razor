@@ -1,0 +1,31 @@
+﻿@page "/creature/{CreatureId:int}"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+
+@inject IRepository<Creature> CreatureRepository;
+
+@if (Creature != null)
+{
+    <CreatureComponent Creature="@Creature"></CreatureComponent>
+}
+else
+{
+    <p>No data ...</p>
+}
+
+@code {
+    
+    [Parameter]
+    public int? CreatureId { get; set; }
+    
+    public Creature Creature { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (CreatureId.HasValue)
+        {
+            Creature = CreatureRepository.Read(CreatureId.Value);
+        }
+    }
+
+}

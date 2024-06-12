@@ -1,0 +1,51 @@
+﻿@page "/Main"
+@using Model.Entities
+@using Domain.Repositories.Interfaces
+@inject IRepository<Movie> MovieRepository;
+@inject IRepository<Cinema> CinemaRepository;
+
+<div class="background-blue">
+    <h3>@cinema.Label</h3>
+    <p>Das Kinoprogramm in Österreich mit allen Neutstarts, Filmen, DVDs, dem Filmquiz und vielen Stars, News, Fotos und Insider-Infos: alles rund ums Kino bei Cinemaplexx Krems</p>
+    <hr/>
+    <p>Besuchen Sie uns und lassen Sie sich verzaubern.</p>
+    <p>@cinema.Address?.ToString()</p>
+</div>
+
+@foreach (var movie in movies)
+{
+    <div class="card">
+        <h4 class="lightblue">@movie.Name</h4>
+        <p>@movie.ShortDescription</p>
+        <p>@movie.Duration min</p>
+    </div>
+}
+
+<style>
+    .card {
+        width: 30%;
+        border: 1px solid grey;
+        padding: 2em;
+    }
+    
+    .lightblue {
+        color: lightblue;
+    }
+    
+    .background-blue {
+        background:  cadetblue;
+        padding: 2em;
+        margin-bottom: 4em;
+    }
+</style>
+
+@code {
+    private Cinema cinema;
+    private List<Movie> movies;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        cinema = await CinemaRepository.ReadAsync(1);
+        movies = await MovieRepository.ReadAllAsync();
+    }
+}
