@@ -1,0 +1,393 @@
+<div style="margin: 2rem">
+  <mat-grid-list cols="9" rowHeight="80px" gutterSize="10px">
+    <mat-grid-tile [colspan]="3">
+      <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input
+          matInput
+          [ngModel]="filterValue"
+          (keyup)="applyFilter($event)"
+          placeholder="{{ currentPlaceholder }}"
+          #input
+        />
+        @if(!(filterValue == "" || filterValue == null)) {
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="clearFilter()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        }
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Classes</mat-label>
+        <mat-select
+          (selectionChange)="applyClasses($event)"
+          [(ngModel)]="currentClasses"
+          [formControl]="formControlClasses"
+          multiple
+        >
+          <mat-select-trigger>
+            {{formControlClasses.value?.[0]?.shortName || ''}}
+            @if ((formControlClasses.value?.length || 0) > 1) {
+            <span class="example-additional-selection">
+              (+{{ (formControlClasses.value?.length || 0) - 1 }}
+              {{ formControlClasses.value?.length === 2 ? "other" : "others" }})
+            </span>
+            }
+          </mat-select-trigger>
+          @for (classes of allClasses; track classes) {
+          <mat-option [value]="classes">{{ classes.shortName }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select
+          (selectionChange)="applyCategories($event)"
+          [(ngModel)]="currentCategories"
+          [formControl]="formControlCategories"
+          multiple
+        >
+          <mat-select-trigger>
+            {{formControlCategories.value?.[0] || ''}}
+            @if ((formControlCategories.value?.length || 0) > 1) {
+            <span class="example-additional-selection">
+              (+{{ (formControlCategories.value?.length || 0) - 1 }}
+              {{
+                formControlCategories.value?.length === 2 ? "other" : "others"
+              }})
+            </span>
+            }
+          </mat-select-trigger>
+          @for (category of allCategories; track category) {
+          <mat-option [value]="category">{{ category }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Severity</mat-label>
+        <mat-select
+          (selectionChange)="applySeverities($event)"
+          [(ngModel)]="currentSeverities"
+          [formControl]="formControlSeverities"
+          multiple
+        >
+          <mat-select-trigger>
+            {{formControlSeverities.value?.[0] || ''}}
+            @if ((formControlSeverities.value?.length || 0) > 1) {
+            <span class="example-additional-selection">
+              (+{{ (formControlSeverities.value?.length || 0) - 1 }}
+              {{
+                formControlSeverities.value?.length === 2 ? "other" : "others"
+              }})
+            </span>
+            }
+          </mat-select-trigger>
+          @for (severity of allSeverities; track severity) {
+          <mat-option [value]="severity">{{ severity }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Voltage Level</mat-label>
+        <mat-select
+          (selectionChange)="applyVoltages($event)"
+          [(ngModel)]="currentVoltages"
+          [formControl]="formControlVoltages"
+          multiple
+        >
+          <mat-select-trigger>
+            {{formControlVoltages.value?.[0] == -1 ? "no voltage" : formControlVoltages.value?.[0].toFixed(1) + "kV" || ''}}
+            @if ((formControlVoltages.value?.length || 0) > 1) {
+            <span class="example-additional-selection">
+              (+{{ (formControlVoltages.value?.length || 0) - 1 }}
+              {{
+                formControlVoltages.value?.length === 2 ? "other" : "others"
+              }})
+            </span>
+            }
+          </mat-select-trigger>
+          @for (voltage of allVoltages; track voltage) {
+          <mat-option [value]="voltage">{{
+            voltage == -1 ? "no voltage" : voltage.toFixed(1) + "kV"
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button
+        mat-stroked-button
+        color="warn"
+        (click)="resetFilter()"
+        class="reset-filter"
+      >
+        Reset filter
+      </button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <mat-label>Show Columns</mat-label>
+        <mat-select
+          (selectionChange)="applyDisplayedColumns($event)"
+          [(ngModel)]="displayedColumns"
+          [formControl]="formControlDisplayColumns"
+          multiple
+        >
+          <mat-select-trigger>
+            {{formControlDisplayColumns.value?.[0].charAt(0).toUpperCase() + formControlDisplayColumns.value?.[0].slice(1) || ''}}
+            @if ((formControlDisplayColumns.value?.length || 0) > 1) {
+            <span class="example-additional-selection">
+              (+{{ (formControlDisplayColumns.value?.length || 0) - 1 }}
+              {{
+                formControlDisplayColumns.value?.length === 2
+                  ? "other"
+                  : "others"
+              }})
+            </span>
+            }
+          </mat-select-trigger>
+          @for (column of allDisplayedColumns; track column) {
+          <mat-option [value]="column">{{
+            column.charAt(0).toUpperCase() + column.slice(1)
+          }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-paginator
+    [length]="resultsLength"
+    [pageSizeOptions]="[10, 25, 100]"
+    aria-label="Select page of GitHub search results"
+  ></mat-paginator>
+
+  <div class="example-container">
+    @if (isLoadingResults || noData) {
+    <div class="example-loading-shade">
+      @if (isLoadingResults) {
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      } @if (noData) {
+      <div class="example-rate-limit-reached">No data</div>
+      }
+    </div>
+    }
+
+    <div class="example-table-container">
+      <table
+        mat-table
+        [dataSource]="data"
+        class="example-table"
+        matSort
+        multiTemplateDataRows
+      >
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+          <td mat-cell *matCellDef="let row">{{ getModelObject(row).name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+          <td mat-cell *matCellDef="let row">
+            <mat-chip
+              highlighted="True"
+              [style.background-color]="categoryColors[row.category]"
+              >{{ row.category }}</mat-chip
+            >
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="severity">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Severity</th>
+          <td mat-cell *matCellDef="let row">
+            <mat-chip
+              highlighted="True"
+              [style.background-color]="severityColors[row.severity]"
+              >{{ row.severity }}</mat-chip
+            >
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="message">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Message</th>
+          <td mat-cell *matCellDef="let row" class="message-column-text">
+            {{ row.message }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+          <td mat-cell *matCellDef="let row">{{ row.__typename }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="class">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Class</th>
+          <td mat-cell *matCellDef="let row">
+            {{ getModelObject(row).className.shortName }}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expand">
+          <th mat-header-cell *matHeaderCellDef aria-label="row actions">
+            &nbsp;
+          </th>
+          <td mat-cell *matCellDef="let row">
+            <button
+              mat-icon-button
+              aria-label="expand row"
+              (click)="
+                expandedRow = expandedRow === row ? null : row;
+                $event.stopPropagation()
+              "
+            >
+              @if (expandedRow === row) {
+              <mat-icon>keyboard_arrow_up</mat-icon>
+              } @else {
+              <mat-icon>keyboard_arrow_down</mat-icon>
+              }
+            </button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+          <td
+            mat-cell
+            *matCellDef="let row"
+            [attr.colspan]="displayedColumns.length"
+            (click)="expandedRow = expandedRow === row ? null : row"
+          >
+            <div
+              class="example-element-detail"
+              [@detailExpand]="row == expandedRow ? 'expanded' : 'collapsed'"
+            >
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+                "
+              >
+                <table class="details-table">
+                  <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>
+                      {{ getModelObject(row).name }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Class:</strong></td>
+                    <td style="padding-bottom: 0">
+                      {{ getModelObject(row).className.shortName }}
+
+                      <br />
+
+                      {{
+                        getModelObject(row).className.fullName?.replaceAll(
+                          ".",
+                          ".\u200B"
+                        )
+                      }}
+                    </td>
+                  </tr>
+                  @if (row.referencedNode?.container?.nominalVoltage != null ||
+                  row.referencedContainer?.nominalVoltage != null ||
+                  row.referencedEquipment?.container?.nominalVoltage != null) {
+                  <tr>
+                    <td><strong>Voltage:</strong></td>
+                    <td>
+                      {{
+                        (row.referencedNode?.container?.nominalVoltage?.toFixed(
+                          1
+                        ) ??
+                          row.referencedContainer?.nominalVoltage?.toFixed(1) ??
+                          row.referencedEquipment?.container?.nominalVoltage?.toFixed(
+                            1
+                          ) ??
+                          "") +
+                          (row.referencedNode?.container?.nominalVoltage !=
+                            null ||
+                          row.referencedContainer?.nominalVoltage != null ||
+                          row.referencedEquipment?.container?.nominalVoltage !=
+                            null
+                            ? "kV"
+                            : "")
+                      }}
+                    </td>
+                  </tr>
+                  }
+                </table>
+                <table class="details-table">
+                  <tr>
+                    <td><strong>Model Object GUID:</strong></td>
+                    <td>
+                      {{ getModelObject(row).guid }}
+                    </td>
+                  </tr>
+                  @if (row.referencedNode != null) {
+                  <tr>
+                    <td><strong>Node GUID:</strong></td>
+                    <td>
+                      {{ row.referencedNode.guid }}
+                    </td>
+                  </tr>
+                  }
+                  <tr>
+                    <td><strong>Finding GUID:</strong></td>
+                    <td>
+                      {{ row.guid }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td style="text-align: end">
+                      <button
+                        (click)="showGraph(row)"
+                        style="
+                          color: #26a8a8;
+                          background: none;
+                          border: none;
+                          padding: 0;
+                          font: inherit;
+                          cursor: pointer;
+                          outline: inherit;
+                        "
+                      >
+                        Go to Graph →
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          class="example-element-row"
+          [class.example-expanded-row]="expandedRow === row"
+          (click)="expandedRow = expandedRow === row ? null : row"
+        ></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: ['expandedDetail']"
+          class="example-detail-row"
+        ></tr>
+      </table>
+    </div>
+  </div>
+</div>

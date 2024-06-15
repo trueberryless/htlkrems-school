@@ -1,0 +1,84 @@
+@use "@angular/material" as mat;
+
+html,
+body {
+  height: 100%;
+  --mat-option-selected-state-label-text-color: #fff;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include mat.core();
+
+$md-siemens: (
+  50: #e0f3f3,
+  100: #b3e0e0,
+  200: #80cccc,
+  300: #4db8b8,
+  400: #26a8a8,
+  500: #009999,
+  600: #009191,
+  700: #008686,
+  800: #007c7c,
+  900: #006b6b,
+  A100: #9affff,
+  A200: #67ffff,
+  A400: #34ffff,
+  A700: #1affff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$my-primary: mat.define-palette($md-siemens, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme-light: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+$my-theme-dark: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+@include mat.all-component-colors($my-theme-dark);
+
+.light {
+  @include mat.all-component-colors($my-theme-light);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}

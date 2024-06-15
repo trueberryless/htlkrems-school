@@ -1,0 +1,42 @@
+\chapter{Webapplikation Angular}
+\label{chp:frontend}
+
+Der Prototyp verfügt über eine verlässliche, schnelle Webapplikation, welche mit Angular entwickelt worden ist. \emph{Angular} ist ein von Google entwickeltes Framework zur einfachen Erstellung von skalierbaren und performanten Webapplikationen. Die Erlernung der Grundlagen des Frameworks ist im Vergleich zu anderen JavaScript-Frameworks deutlich einfacher. Die Grundprinzipien umfassen das Verständnis eines Komponenten, das Routing von Angular bei einer Single Page Application und Dependency Injection im Allgemeinen. Da die detaillierten Funktionalität von Angular bereits im Architekturkapitel besprochen worden sind, gehen wir hier nicht mehr näher darauf ein. Stattdessen wird dieses Kapitel die Funktionalität unsere Webapplikation im Näheren behandeln. \cite{AngularFeatures,AngularComponents,AngularDI}
+
+Die Angular Applikation hat eine Ordnerstruktur des in der Abbildung \ref{fig:AngularDirectoryStructurePrototype} zu sehenden Aufbaues. Wie Sie sehen können, gibt es auf Root-Ebene einige Konfigurationsdateien, darunter \wordindoublequotes{angular.json}, \wordindoublequotes{tsconfig.json} und \wordindoublequotes{nginx.conf}. Diese Dateien enthalten Basiskonfigurationen der Webapplikation, wie zum Beispiel Definitionen für bestimmte CLI Kommandos, Moduloptionen und verschiedene Entrypoints für die kompilierten HTML-Dateien. Im \wordindoublequotes{/app}-Ordner befinden sich dann die Dateien für die Komponenten. Wie Sie anhand des Ordners \wordindoublequotes{navigation} in Abbildung \ref{fig:AngularDirectoryStructurePrototype2} sehen können, besteht jeder Komponent aus HTML, Typescript, CSS und Spezifikationsdatei. Wir haben die Applikation in vier Komponenten aufgeteilt, die Navigation umschließt je nach Seite immer eine andere Komponente, entweder das Dashboard, die Tabelle oder den Graphen.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.75\linewidth]{content/img/Empire/Frontend/Angular_Directory_Structure_Prototype_1.png}
+        \caption{Ordnerstruktur Root-Ebene}
+        \label{fig:AngularDirectoryStructurePrototype1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.65\linewidth]{content/img/Empire/Frontend/Angular_Directory_Structure_Prototype_2.png}
+        \caption{Ordnerstruktur des \wordindoublequotes{/src}-Ordners}
+        \label{fig:AngularDirectoryStructurePrototype2}
+    \end{subfigure}
+    \caption{Ordnerstruktur der Webapplikation (Angular)}
+    \label{fig:AngularDirectoryStructurePrototype}
+\end{figure}
+\FloatBarrier
+
+Das Auffälligste bei diesem Teil des Prototypen ist die konsistente Umsetzung des Corporate Designs von Siemens. Die ikonische türkise -- manche Menschen würden auch einfach blau oder grün dazu sagen -- Unternehmensfarbe zieht sich dank Angular Theme durch die gesamte Webapplikation. Angefangen beim Logo, über die Anwendungsleiste am oberen Bildschirmrand bis hin zu den Ladebalken und ähnlichem ist alles in dem typischen Siemens-Türkis gehalten. Diese Entscheidung ist bewusst getroffen worden, da die Farbe sofort auf das Unternehmen selbst referenziert. Einen Teil dieses Designs dürfen Sie in Abbildung \ref{fig:AngularSneakPeak} genießen.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{content/img/Empire/Frontend/Angular_Sneak_Peak.png}
+    \caption{Sneak Peak unserer Angular Applikation}
+    \label{fig:AngularSneakPeak}
+\end{figure}
+\FloatBarrier
+
+\faInfoCircle\hspace{2mm}In der Entwicklungsphase des Prototypen sind anonymisierte Testdaten verwendet worden, da Clemens und Felix rechtlich gesehen keine Kundendaten sehen dürfen.
+
+\input{8_webapp/1_overview}
+\input{8_webapp/2_table}
+\input{8_webapp/3_graph}
+\input{8_webapp/4_darkmode}

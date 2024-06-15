@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar
+      style="display: flex; justify-content: center; align-items: center"
+    >
+      <img
+        src="assets/siemens.png"
+        alt="Siemens"
+        style="width: calc(69px * 2)"
+      />
+    </mat-toolbar>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a
+      >
+      <a mat-list-item routerLink="/findings" routerLinkActive="active"
+        >Findings</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <fa-icon [icon]="menuIcon"></fa-icon>
+      </button>
+      <span style="margin-left: 15px">GNA Networkanalysis</span>
+      <span class="example-spacer"></span>
+      <div (click)="toggleDarkMode()" class="darkModeSwitch">
+        <fa-icon *ngIf="!isDarkMode" [icon]="darkModeIcon"></fa-icon>
+        <fa-icon *ngIf="isDarkMode" [icon]="lightModeIcon"></fa-icon>
+      </div>
+    </mat-toolbar>
+    <app-alert></app-alert>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

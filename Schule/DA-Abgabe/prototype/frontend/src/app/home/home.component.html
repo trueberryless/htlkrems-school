@@ -1,0 +1,62 @@
+<div style="margin: 2rem">
+  <h1>Dashboard</h1>
+  <div style="gap: 2rem; display: flex; flex-wrap: wrap">
+    @if (classPercentages != null) {
+    <div style="margin-top: 2rem; gap: 2rem; display: flex; width: 40%">
+      <mat-card style="display: inline-block; width: 100%">
+        <mat-card-header>
+          <mat-card-title>Classes</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-doughnut
+            [labels]="classNames"
+            [data]="classPercentages"
+          ></app-doughnut>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    } @if (categoryPercentages != null) {
+    <div style="margin-top: 2rem; gap: 2rem; display: flex; width: 40%">
+      <mat-card style="display: inline-block; width: 100%">
+        <mat-card-header>
+          <mat-card-title>Categories</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-doughnut
+            [labels]="categoryNames"
+            [data]="categoryPercentages"
+          ></app-doughnut>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    } @if (severityPercentages != null) {
+    <div style="margin-top: 2rem; gap: 2rem; display: flex; width: 40%">
+      <mat-card style="display: inline-block; width: 100%">
+        <mat-card-header>
+          <mat-card-title>Severities</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-doughnut
+            [labels]="severityNames"
+            [data]="severityPercentages"
+          ></app-doughnut>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    } @if (voltagePercentages != null) {
+    <div style="margin-top: 2rem; gap: 2rem; display: flex; width: 40%">
+      <mat-card style="display: inline-block; width: 100%">
+        <mat-card-header>
+          <mat-card-title>Voltages</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-doughnut
+            [labels]="voltageNames"
+            [data]="voltagePercentages"
+          ></app-doughnut>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    }
+  </div>
+</div>

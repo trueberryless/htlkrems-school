@@ -1,0 +1,44 @@
+%============================================== %
+% definiert das Aussehen der Kopf und Fusszeilen
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fusszeilenfelder bereinigen
+
+\chead{
+\begin{tabular}{| >{\centering\arraybackslash}m{3.5cm} | p{4.5cm} p{7.65cm}|}
+\hline
+  \rule{0pt}{4ex} %vertikaler Abstand
+  \multirow{2.5}{*}{\includegraphics[width=2.87cm]{figures/krems.pdf}} & 
+  \multicolumn{2}{c|}{\textbf{HÖHERE TECHNISCHE BUNDES - LEHRANSTALT}} \\[-0.1cm]  & \multicolumn{2}{c|}{\textbf{Krems}} \\
+  \cline{2-3} \rule{0pt}{2.8ex}
+    & Abteilung: & \textbf{Informationstechnologie} \\ % [-0.1cm]
+    & Ausbildungsschwerpunkt: &  \\      
+\hline
+\end{tabular}
+}
+
+% \chead{
+% \begin{tabular}{| >{\centering\arraybackslash}m{3.5cm} | p{4.5cm} p{7.65cm}|}
+% \hline
+%   \rule{0pt}{4ex} %vertikaler Abstand
+%   \multirow{-1.5}{*}{\includegraphics[width=2.87cm]{figures/krems.pdf}} & 
+%   \multicolumn{2}{c|}{\textbf{HÖHERE TECHNISCHE BUNDES - LEHRANSTALT}} \\[-0.1cm]  & \multicolumn{2}{c|}{\textbf{Krems}} \\
+%   \cline{2-3} \rule{0pt}{2.8ex}
+%     & Abteilung: & \textbf{Informationstechnologie} \\ % [-0.1cm]
+%     % & Ausbildungsschwerpunkt: &  \\      
+% \hline
+% \end{tabular}
+% }
+
+\fancyfoot[R]{Seite \thepage{} von \ref{TotPages}} %Fußzeile Seitenzahl
+\renewcommand*{\chapterpagestyle}{fancy} %auch Kapitelseiten haben
+\renewcommand{\headrulewidth}{0pt} %Linie unter Kopfzeile entfernen
+\setcounter{page}{2} %Pagecounter bei 2 beginnen lassen (wegen Titelblatt)
+%============================================== %
+
+%benennt Quellcodelistings von "Listing" auf "Quellcode" um
+\renewcommand*\lstlistingname{Quellcode}
+\pagenumbering{arabic}
+
+\definecolor{delim}{RGB}{20,105,176}
+\definecolor{numb}{RGB}{21,150,135}
+\definecolor{string}{rgb}{0.64,0.08,0.08}

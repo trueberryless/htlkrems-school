@@ -1,0 +1,49 @@
+\section{Benutzerfreundlichkeit und Performance}
+
+Die Wirksamkeit einer Anwedung hängt nicht nur von deren Benutzerfreundlichkeit, sondern auch von deren Performance ab. Benutzerfreundlichkeit (auch \emph{Usability}) ist die Leichtigkeit, mit den Daten interagieren zu können, und orientiert sich im Idealfall an den Denkweisen des Benutzers. Die Effektivität einer Applikation wird demnach stark von ihrer intuitiven Benutzerbarkeit beeinflusst. \cite{richter1997usability,krug2018think}
+
+Diese Sektion befasst sich mit den drei Begriffen Intuitivität, Interaktivität und Performance im Kontext des \emph{UI-Designs}.
+
+\subsection{Intuitivität}
+
+Benutzer manifestieren die Erwartung, Applikationen ohne Konsultation von Gebrauchsanweisungen und Handbüchern bedienen zu können. Diese Eigenschaft einer Anwendung nennt sich Intuitivität und ist ein Grundsatz moderner Programmsysteme. Intuitivität minimiert die Lernmenge initiativ erheblich. \cite{mardita2017intuitive}
+
+Als Beispiel nehme ich nun die Filterung von Daten her. Benutzer wollen mithilfe der Filterung schneller an die Daten kommen. Aus diesem Grund sollte die Filterung nicht unnötig kompliziert sein, sodass Benutzer zuerst die Filterungsmöglichkeiten verstehen müssen, um diese richtig anwenden zu können. Als Designer dieser Filter muss man sich deswegen einige Fragen stellen: \cite{filter2023vassilatos}
+
+\begin{itemize}
+    \item Welche \textbf{Datentypen} sind in meinen Daten enthalten? Boolische Werte können viel intuitiver mittels Ein-Aus-Schalter, als mit Checkboxen, gefiltert werden. 
+    \item Welche Daten wird der Benutzer am \textbf{häufigsten filtern}? Der Status eines Paketes ist interessanter als der aktuelle Standort.
+    \item Wo soll ich die Filtermöglichkeiten \textbf{platzieren}? Je nachdem, ob die Filter seitlich oder direkt bei den Datenkomponenten angezeigt werden, kann man den Platz unterschiedlich nutzen und unterbewusst verdeutlichen, zu welchen Komponenten die Filter eigentlich gehören.
+    \item Zu welchen \textbf{Zeitpunkt}en sollen die Daten neu geladen werden? Während sich für langsame Webseiten ein \wordindoublequotes{Anwenden}-Button über alle Filtermöglichkeiten eignet, können einfachere Filter direkt angewandt werden.
+\end{itemize}
+
+Es gibt natürlich noch weitere \wordindoublequotes{best-practice} Tipps, wie zum Beispiel bestimmte Voreinstellungen, welcher der Benutzer öfters brauchen kann. Wie die Filterung schlussendlich gestaltet wird, hängt ganz von den Daten ab. \cite{filter2023vassilatos}
+
+Ein weiterer wichtiger Bestandteil einer barrierefreien Benutzeroberfläche sind \emph{Icons}, da diese Informationen visuell vermitteln und nicht an eine bestimmte Sprache gebunden sind. Somit müssen Benutzer die Systemsprache nicht zwingen verstehen, um eine Anwendung zu bedienen. Dies ist besonders bei Anwendungen für ein internationales Publikum von großer Bedeutung. Eine hohe Priorität hat deswegen die überlegte Auswahl eines verständlichen Iconsets. \cite{icons2024hahn}
+
+Ein weit verbreiteter Mythos des Navigationsdesigns ist die \wordindoublequotes{Three-Click Rule}. Die Grundrichtlinie dieser Regel beschränkt die Anzahl an Klicks oder Eingaben jeglicher Art auf drei, um zu jedem Bereich im Programmsystem zu gelangen. Jedoch stellte sich bei detaillierteren Untersuchungen heraus, dass die Anzahl von Klicks alleine weder Einfluss auf die Benutzerzufriedenheit noch die Erfolgsrate der Applikation hat. Kritik äußert sich demnach aufgrund der Vernachlässigung der kontextuellen Komplexität und individuellen Benutzerziele. \cite{laubheimer2019myth,wright2010myth}
+
+Als nächstes wird die Interaktivität einer Webseite besprochen und welche Auswirkungen diese auf die Benutzererfahrung hat.
+
+\subsection{Interaktivität}
+
+Interaktivität beschreibt eine Eigenschaft eines Inhalts, den Benutzer dazu zu verleiten, sich mit dem Inhalt auseinander zu setzen. Auch wenn das ein wenig geschwollen klingt, trifft diese Beschreibung die Grundidee von Interaktivität recht gut. Der Benutzer ist nicht einfach ein Betrachter des Inhaltes, sondern viel mehr Teil des Prozesses. Es kann sich bei Interaktivität um einfache Hyperlinks, online Quizze, Videos oder sogar Virtual Reality handeln. Wie eine Studie zeigt, bevorzugen 45 Prozent der Menschen interaktive Inhalte. Dies ist unter anderem auch ein Grund, warum Menschen gerne Videospiele spielen, da die Interaktivität dort besonders hoch ist. \cite{interactive2020Ediger}
+
+\begin{quote}
+    \say{Interaktivität ist das Potenzial eines technischen Einzelmediums oder einer Kommunikationssituation, das interaktive Kommunikation begünstigt, also den Prozess der Interaktion.} - \textit{Christoph Neuberger}
+    \cite{neuberger2007interaktivitat}
+\end{quote}
+
+Die Integration effektiver Filter- und Suchfunktionen in Datenvisualisierungssystemen spielt eine Schlüsselrolle bei der Optimierung der Benutzererfahrung und der gezielten Extraktion relevanter Informationen. Untersuchungen haben deutlich gemacht, dass die gezielte Implementierung von sorgfältig gestalteten Filteroptionen in Datenvisualisierungssystemen die Nutzerbefähigung zur gezielten Suche nach spezifischen Datenpunkten oder Mustern in hohem Maße verbessert. Dies resultiert wiederum in einer signifikanten Steigerung der Effizienz innerhalb des Datenmanagements. \cite{morville2010search}
+
+Eine wichtige Komponente ist die Anpassungsfähigkeit der Filter, um unterschiedlichen Anforderungen gerecht zu werden. Die Möglichkeit, Filterkriterien zu kombinieren oder anpassbare Parameter festzulegen, ermöglicht eine feinere Steuerung und eine präzisere Datenauswahl. Dies trägt dazu bei, dass Benutzer ihre Anfragen flexibel an die Komplexität des Datensatzes anpassen können. \cite{shneiderman1996eyes}
+
+Forschungen von Shneiderman et al. betonen die Bedeutung von \emph{Dynamic Queries}, einer Technik, bei der Benutzer unmittelbares Feedback zu ihren Filteranfragen erhalten. Diese Echtzeit-Rückmeldung erleichtert Benutzern eine explorative Analyse. Des Weiteren haben Studien gezeigt, dass die Integration von Vorschlägen während der Eingabe (Autovervollständigung) und die Verwendung von Synonymen die Benutzerfreundlichkeit der Suchfunktionen verbessern. Diese Erkenntnisse verdeutlichen die Relevanz einer kontinuierlichen Forschung und Weiterentwicklung von Filter- und Suchmechanismen, um den sich ständig ändernden Anforderungen der Benutzer gerecht zu werden. \cite{morville2010search,ahlberg1992dynamic}
+
+\subsection{Performance}
+
+Die Effizienz von Webanwendungen spielt eine entscheidende Rolle in der Gestaltung einer ansprechenden Benutzererfahrung. Zahlreiche Studien haben sich mit der Leistungsoptimierung von Webseiten befasst und zeigen, dass eine schnellere Ladezeit einen unmittelbaren Einfluss auf die Zufriedenheit und Interaktion der Nutzer hat. In diesem Zusammenhang präsentiert eine umfassende Untersuchung von Souders, wie die Minimierung von HTTP-Anfragen, das effiziente \emph{Caching} von Ressourcen und die Reduzierung von DNS-Lookups als kritische Elemente für die Optimierung der Webseitenleistung gelten. \cite{souders2008high}
+
+Besonders relevant für die Verbesserung der Benutzerfreundlichkeit sind Optimierungstechniken wie \emph{Lazy Loading} und \emph{Indexing}. Lazy Loading ermöglicht es, Ressourcen nur dann zu laden, wenn sie vom Nutzer angefordert werden, was die Interaktivität beschleunigen kann. In Bezug darauf zeigen Forschungen auf, dass eine effiziente Indexierung von Inhalten die Navigation und den Zugriff auf relevante Informationen für die Nutzer erheblich verbessert. \cite{sharma2020usability,hogan2014speed,jorgensen1996index,barnum2004index}
+
+Aktuelle Studien von Hogan zeigen, dass die Optimierung von HTML, CSS und Bilddateien sowie die Verbesserung der Performance unter Berücksichtigung der steigenden Prozentwerte der mobilen Internetnutzung von besonders hoher Wichtigkeit sind. Diese Erkenntnisse betonen die Bedeutung von Leistungsoptimierungstechniken in der Webentwicklung und vor allem auch in der mobilen Appentwicklung und verdeutlichen, wie diese direkte Auswirkungen auf die Benutzerfreundlichkeit haben können. Die ganzheitliche Berücksichtigung von Aspekten wie Minimierung von HTTP-Anfragen, effizientes Ressourcen-Caching, Lazy Loading und Indexing kann somit als Schlüssel zur Schaffung einer optimalen Nutzererfahrung dienen. \cite{hogan2014speed}

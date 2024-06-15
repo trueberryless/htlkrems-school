@@ -1,0 +1,31 @@
+version: '3'
+name: 'ndfa-backend'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: 'ndfa'
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "ndfa"]
+      interval: 20s
+      timeout: 15s
+      retries: 5
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+
+  backend:
+    build: .
+    ports:
+      - '127.0.0.1:8080:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/ndfa
+      - SPRING_AUTOCONFIGURE_EXCLUDE=org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+    depends_on:
+      postgres:
+        condition: "service_healthy"
+
+volumes:
+  postgresql_data:

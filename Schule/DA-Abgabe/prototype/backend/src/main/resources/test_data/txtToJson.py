@@ -1,0 +1,5 @@
+f = open("240212-0917_modelObjects.txt")
+l = f.readlines()
+lc = list(map(lambda x: x[:-1], l))
+jsonlist = list(map(lambda x: json.loads(x),lc))
+json.dump(jsonlist, open('240212-0917_modelObjects.json', 'w'), indent=2)

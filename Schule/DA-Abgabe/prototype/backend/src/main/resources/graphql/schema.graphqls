@@ -1,0 +1,186 @@
+type Query {
+    findings(input: FindingInput!): FindingsMaybe!,
+    modelObjects(input: ModelObjectInput!): ModelObjectResult!
+    containers: ContainerResult
+    categories: [String!]!
+    severities: [String!]!
+    classesOfFindings: [ClassNameInfo!]!
+    voltagesOfFindings: [Float!]!
+    categoryPercentages: [CategoryPercentage!]!
+    severityPercentages: [SeverityPercentage!]!
+    classPercentages: [ClassPercentage!]!
+    voltagePercentages: [VoltagePercentage!]!
+}
+
+# Dashboard
+
+type CategoryPercentage {
+    category: String!
+    percentage: Float!
+}
+
+type SeverityPercentage {
+    severity: String!
+    percentage: Float!
+}
+
+type ClassPercentage {
+    className: ClassNameInfo!
+    percentage: Float!
+}
+
+type VoltagePercentage {
+    voltage: Float!
+    percentage: Float!
+}
+
+
+# Findings
+
+input FindingInput {
+    limit: Int!
+    offset: Int!
+    sorting: SortFinding!
+    direction: SortDirection = ASC
+    filter: String
+    categories: [String!]
+    severities: [String!]
+    classes: [String!]
+    voltages: [Float!]
+}
+
+
+enum SortDirection {
+    ASC
+    DSC
+}
+
+enum SortFinding {
+    GUID
+    TYPE
+    SEVERITY
+    CATEGORY
+    MESSAGE
+    CLASS
+}
+
+type ClassNameInfo {
+    shortName: String!
+    fullName: String!
+}
+
+union FindingsMaybe = FindingsResult | Error
+
+type FindingsResult {
+    result: [Finding!]
+    pageInfo: PageInfo
+}
+
+type PageInfo {
+    position: Int!
+    count: Int!
+}
+
+interface Finding {
+    guid: ID!
+    category: String!
+    severity: String!
+    message: String!
+}
+
+type NodeFinding implements Finding {
+    guid: ID!
+    category: String!
+    severity: String!
+    message: String!
+    referencedNode: ModelObjectInfo
+}
+
+type ContainerFinding implements Finding {
+    guid: ID!
+    category: String!
+    severity: String!
+    message: String!
+    referencedContainer: ContainerInfo
+}
+
+type EquipmentFinding implements Finding {
+    guid: ID!
+    category: String!
+    severity: String!
+    message: String!
+    referencedEquipment: ModelObjectInfo
+}
+
+type AttachmentFinding implements Finding {
+    guid: ID!
+    category: String!
+    severity: String!
+    message: String!
+    referencedNode: ModelObjectInfo
+    referencedEquipment: ModelObjectInfo
+}
+
+type ContainerInfo {
+    guid: ID!
+    name: String
+    nominalVoltage: Float
+    className: ClassNameInfo
+}
+
+type ModelObjectInfo {
+    guid: ID!
+    name: String
+    className: ClassNameInfo
+    container: ContainerInfo
+}
+
+# Container
+
+type Container {
+    guid: ID!,
+    name: String!,
+    className: String!,
+    nominalVoltage: Float,
+    subContainer: [SubContainer!]!,
+}
+
+type SubContainer {
+    guid: ID!,
+    included: Boolean!
+}
+
+type ContainerResult {
+    result: [Container!]!
+}
+# ModelObject
+
+type ModelObject {
+    guid: ID!
+    name: String!
+    className: ClassNameInfo!
+    container: ContainerInfo!
+    connections: [Connection!]!
+}
+
+type Connection {
+    guid: ID!,
+    modelObjectGuid: ID!,
+    included: Boolean!
+}
+
+input ModelObjectInput {
+    modelObjectsToLoad: [ID!]!
+    modelObjectsToIgnore: [ID!]!
+    depth: Int!
+}
+
+type ModelObjectResult {
+    result : [ModelObject!]!
+}
+
+# Error
+type Error {
+    cause: String!
+    detailedMessage: String!
+}

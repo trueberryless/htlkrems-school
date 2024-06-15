@@ -1,0 +1,43 @@
+
+\documentclass[
+fontsize=12pt,
+twoside=true,
+a4paper,
+bibliography=totoc, 		%Literaturverzeichnis ins IV
+listof=totoc,				%Abb. & Tab. verz. ins IV
+toc=bibliographynumbered, 	%Literaturverzeichnis im IV nummerieren
+listof=numbered
+]{scrreprt}
+
+\input{setup/packages}
+\input{setup/commands}
+\input{setup/environments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3.ABTEILUNGEN
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Abteilungsregeln / Vorschriften hier eintragen !
+\hyphenation{gleich-zeitig para-meter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 4.ANFANG des DOKUMENTES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\input{setup/pagestyle}
+\input{0_prelude/0_section}
+%erstellt das Inhaltsverzeichnis
+\tableofcontents
+\input{1_preamble/0_section}
+\input{2_introduction/0_section}
+\input{3_message_propagation/0_section}
+\input{4_graphtheorie/0_section}
+\input{5_visualisation/0_section}
+\input{6_architecture/0_section}
+\input{7_backend/0_section}
+\input{8_webapp/0_section}
+\input{9_assessment/0_section}
+\input{10_summary/0_section}
+\input{setup/appendixSetup}
+\input{11_appendix/0_section}
+\end{document}

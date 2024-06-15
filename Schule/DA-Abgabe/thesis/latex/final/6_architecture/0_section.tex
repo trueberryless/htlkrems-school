@@ -1,0 +1,24 @@
+\chapter{Architektur des Prototypen}
+\label{chp:architecture}
+
+
+% Warum für Framework / Technologie entschieden?
+% - GraphQL wegen Graph Daten
+% - Springframework wegen einfacher Entwicklung
+
+% Mockup für API entwickeln, um parallele Programmierung des Front- und Backend zu ermöglichen (Projektmanagement)
+
+Unser Prototyp verarbeitet die Daten von Siemens auf eine performante Art und Weise. Zuerst werden die Fehlerdaten im ausfallsicheren Messaging System Kafka von Apache geschrieben. Diese Nachrichten werden anschließend vom Backend-System, welches aus einer relationalen Datenbank (PostgreSQL) und dem Java Spring Framework besteht, verarbeitet. Außerdem stellt das Backend diese Daten mittels GraphQL-API zur Verfügung. Somit kann das Frontend, welches mit Angular implementiert worden ist, die Daten via Abfragen visualisieren.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{content/img/Architecture/Architecture.jpg}
+    \caption{Übersicht der Architektur unseres Prototypen}
+    \label{fig:OverviewArchitektur}
+\end{figure}
+
+In diesem Kapitel werden die einzelnen Komponenten dieser Service-Oriented-Architecture (kurz SOA) im Detail beschrieben und erläutert.
+
+\input{6_architecture/1_backend}
+\newpage
+\input{6_architecture/2_frontend}

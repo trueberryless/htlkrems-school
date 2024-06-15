@@ -1,0 +1,17 @@
+\section{Ausführung des Prototypen}
+
+Die Ausführung unserer Applikation kann mithilfe der Dateien auf dem USB-Stick und der \emph{Docker Engine} durchgeführt werden. Hierfür muss man einfach in das Verzeichnis \textbf{prototype/} wechseln und den Befehl des Quellcodes \ref{lst:RunApplicationDocker} ausführen.
+
+\begin{lstlisting}[language={bash},caption={Applikation ausführen mittels Docker Compose},label={lst:RunApplicationDocker},captionpos=b]
+cd .\prototype\
+docker compose up -d
+\end{lstlisting}
+
+Damit anschließend auch Testdaten in der Datenbank verfügbar sind, muss ein Powershell-Script ausgeführt werden. Die Anweisung dafür ist im Quellcode \ref{lst:RunApplicationPowershellScript} zu finden.
+
+\begin{lstlisting}[language={bash},caption={Testdaten in PostgreSQL einspielen},label={lst:RunApplicationPowershellScript},captionpos=b]
+cd .\prototype\test_data\
+powershell.exe .\run_insert.ps1
+\end{lstlisting}
+
+Die Dauer der Verarbeitung des Einfügeprozesses der Testdaten des Stromnetzmodells beträgt in etwa fünf Minuten.

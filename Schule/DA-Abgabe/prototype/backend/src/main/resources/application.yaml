@@ -1,0 +1,31 @@
+logging:
+  level:
+    org.springframework:
+      data: INFO
+      jdbc.core.JdbcTemplate: DEBUG
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: password
+    username: user
+    url: jdbc:postgresql://localhost:5432/ndfa
+  graphql:
+    graphiql:
+      enabled: true
+    cors:
+      allowed-origins: "*"
+  kafka:
+    bootstrap-servers: "${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}"
+    consumer:
+      auto-offset-reset: earliest
+      group-id: "ndfa"
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      max-poll-records: 10000
+  #autoconfigure:
+  #  exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+app:
+  fileLoader:
+    #findingsJsonFile: "/home/clemens/schule/diplomarbeit/backend/src/main/resources/test_data/240212-0917_findings_full.json"
+    #modelObjectsJsonFile: "/home/clemens/schule/diplomarbeit/backend/src/main/resources/test_data/240212-0917_modelObjects.json"
+    #modelObjectsJsonFile: "/home/clemens/schule/diplomarbeit/backend/src/main/resources/test_data/test_remove.json"

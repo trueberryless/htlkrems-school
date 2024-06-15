@@ -1,0 +1,8 @@
+\chapter{Backend-System}
+\label{chp:backend}
+
+Das Backend, entwickelt im Java Spring Framework, übernimmt die Verarbeitung der empfangenen Daten. Mithilfe von \emph{Kafka for Spring Framework} werden die Daten von Apache Kafka abgerufen und an das Backend übergeben. Danach werden die Daten in eine \emph{PostgreSQL} Datenbank persistiert, mittels dem \emph{Spring Data JDBC} Module von dem \emph{Spring Framework}. Damit die Daten auch verwendet werden können, werden sie über eine \emph{GraphQL} Schnittstelle zur Verfügung gestellt. In diesem Kapitel wird über die Lösungsansätze für Probleme, welche während der Implementierung im Prototyp aufgetreten sind, berichtet.
+
+
+\input{7_backend/1_apache_kafka}
+\input{7_backend/2_database}

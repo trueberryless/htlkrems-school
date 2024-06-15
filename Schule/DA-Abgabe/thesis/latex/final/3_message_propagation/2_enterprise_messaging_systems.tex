@@ -1,0 +1,194 @@
+\section{Enterprise Messaging Systems}
+
+Messaging-Systeme bieten eine hervorragende Lösung für die Kommunikation in verteilten Systemen, wie es im Kapitel \ref{kommunikationstechnikenInVerteilteSysteme} dargelegt ist. In diesem Kapitel wird auf den Aufbau und die Funktionsweise von solchen Nachrichten-Systemen eingegangen. \cite{curryMessageOrientedMiddleware2004}
+
+Durch ein Messaging System sind Sender (\emph{Publisher}) und Empfänger (\emph{Consumer}) stark entkoppelt, da sie über einen gemeinsamen Vermittler – dem Messaging-System – kommunizieren. Die Sender müssen Nachrichten an das Messaging System übertragen und die Empfänger erhalten die Nachrichten vom Nachrichten-System. \cite{curryMessageOrientedMiddleware2004}
+
+Damit die Nachrichten nicht durcheinander geraten, wird pro Anwendungsfall ein Kommunikationskanal (\emph{Queue}) definiert, über welchen sich die Kommunikationspartner austauschen können. Wie viele Sender oder Empfänger es in einem Kanal gibt, ist völlig beliebig. Beispielsweise könnte es in einem Monitoringsystem mehrere Sensoren geben, welche als Publisher ihre gemessenen Daten einem Kanal übertragen. Auf der anderen Seite könnte es einen Consumer geben, welcher die Daten in eine Datenbank schreibt und einen zweiten, welcher die Daten für die Auswertung entgegennimmt. In der Abbildung \ref{fig:beispeilSensorenMessagingSysteme} ist dieses Beispiel visualisiert. \cite{curryMessageOrientedMiddleware2004}
+
+Zusätzlich kann das Messaging System Nachrichten validieren, speichern, transformieren und durch vordefinierte Regeln an die geeigneten Empfänger weiterleiten (\emph{Routen}). Dadurch wird ein einheitlicher und zuverlässiger Weg für die Kommunikation ermöglicht. \cite{curryMessageOrientedMiddleware2004}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{content/img/Research/Message_Services/beispeilSensorenMessagingSysteme.png}
+    \caption{Ein Beispiel für ein verteiltes System mit ein zentrales Messaging System}
+    \label{fig:beispeilSensorenMessagingSysteme}
+\end{figure}
+\FloatBarrier
+
+\subsection{Enterprise Service Bus}
+
+Organisationen stehen oft vor der Herausforderung, verschiedene Technologien und Protokolle in das verteilte System integrieren zu müssen, um eine effektive Kommunikation und Interaktion zwischen ihren Systemen zu ermöglichen. In diesem Kontext spielen Messaging-Systeme eine entscheidende Rolle, da sie als Bindeglied zwischen den verschiedenen Komponenten dienen und den reibungslosen Austausch von Informationen unterstützen. \cite{menge2007enterprise}
+
+Die Verwendung verschiedener Protokolle wie REST, SOAP, JMX, AMQP oder RPC in einem verteilten System kann zu einer hohen Komplexität führen. Insbesondere wenn es darum geht, diese Protokolle miteinander zu verknüpfen. Hier kommt der \emph{Enterprise Service Bus (ESB)} ins Spiel. Ein ESB fungiert als zentrale Kompatibilitätsschicht, die es ermöglicht, verschiedene Systeme und Protokolle nahtlos miteinander zu verbinden. \cite{menge2007enterprise}
+
+Diese Integration kann durch verschiedener Adapter realisiert werden, die Protokolle auf andere konvertieren. Dadurch kann der ESB die Interoperabilität zwischen Systemen erleichtern. Dies ermöglicht eine effiziente Integration von bestehenden Systemen sowie die Anbindung von Systemen, die an bestimmte Protokolle gebunden sind. Trotz seiner Vorteile erfordert die Implementierung und Wartung eines ESB jedoch einen erheblichen Aufwand, um den unterschiedlichen Kommunikationsanforderungen der Protokolle gerecht zu werden. In der Abbildung \ref{fig:enterpriseMessagingBus} ist ein einfaches Anwendungsbeispiel eines ESBs dargestellt. \cite{toshevLearningRabbitMQBuild2016,menge2007enterprise}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{content/img/Research/Message_Services/esb.png}
+    \caption{Ein einfacher Enterprise Service Bus}
+    \label{fig:enterpriseMessagingBus}
+\end{figure}
+\FloatBarrier
+
+\subsection{Nachrichten}
+
+Das Konzept der Nachricht bildet das Herzstück der Kommunikation innerhalb eines Messaging-Systems. Eine Nachricht besteht in der Regel aus verschiedenen Bestandteilen, die ihre Struktur und Funktionalität definieren. Typischerweise umfasst eine Nachricht die folgenden Elemente: \cite{toshevLearningRabbitMQBuild2016}
+
+\begin{itemize}
+	\item \textbf{Header} -- Der \emph{Header} einer Nachricht enthält wichtige Metadaten, die für die Verarbeitung und Weiterleitung der Nachricht entscheidend sind. Dazu gehören Informationen wie das Encoding der Nachricht, Routing-Informationen zur Bestimmung des Zielorts der Nachricht und möglicherweise auch sicherheitsrelevante Daten, die für die Authentifizierung und Autorisierung relevant sind.
+
+	\item \textbf{Body} -- Der \emph{Body} einer Nachricht enthält die eigentlichen Daten, die übermittelt werden sollen. Dies können beispielsweise Textnachrichten, strukturierte Daten im JSON- oder XML-Format, Binärdaten oder Daten in anderen Formaten sein. Dies kommt ganz auf die Anforderungen und den Zweck der Nachricht an. Jedoch sollte vermerkt werden, dass die Menge der Daten im Body gering gehalten werden sollte, damit verhindert wird, dass das Messaging System überladen wird. Wenn Daten von mehreren Gigabyte verschickt werden müssen, wäre die Übertragung eines Links für den Zugriff auf ein externes Speichersystem, wo die Daten sich befinden, die optimale Lösung.
+\end{itemize}
+
+Die Kombination aus Header und Body ermöglicht es, Informationen effizient und strukturiert innerhalb des Messaging-Systems zu transportieren. Dadurch wird eine zuverlässige und effiziente Kommunikation innerhalb des Messaging-Systems gewährleistet.
+
+\subsection{Queues}
+
+Die \emph{Message Queue} ist ein essenzieller Teil des Messaging-Systems. Sie bieten die Funktionalität, Nachrichten für einen bestimmten Anwendungsfall im Messaging System zu speichern. Die Sender reihen Nachrichten in die Queue ein und die Empfänger nehmen die Nachrichten über die Queue entgegen, wie es in der Darstellung \ref{fig:messagingQueueMOM} zu erkennen ist. \cite{curryMessageOrientedMiddleware2004}
+
+Die standardmäßigen Queues folgen dem \emph{First-In, First-Out (FIFO)} Prinzip. Das bedeutet, dass diejenigen Nachrichten zuerst bearbeitet werden, welche als Erstes in die Queue eingefügt worden sind. Dies gewährleistet eine vorhersehbare Abwicklung der Nachrichten, wodurch eine ordnungsgemäße Kommunikation zwischen den verschiedenen Komponenten des Systems ermöglicht wird. \cite{curryMessageOrientedMiddleware2004}
+
+Die Sender und Empfänger können dabei völlig unabhängig voneinander mit der Queue interagieren. Dies bedeutet, dass Sender Nachrichten in die Queue senden können, ohne sich um die Verfügbarkeit der Empfänger kümmern zu müssen. Gleichzeitig können Empfänger Nachrichten aus der Queue abrufen und verarbeiten, ohne auf direkte Interaktion mit den Sendern angewiesen zu sein. \cite{curryMessageOrientedMiddleware2004}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/img/Research/Message_Services/messagingQueueMOM.png}
+    \caption{Eine Queue  \cite{curryMessageOrientedMiddleware2004}}
+    \label{fig:messagingQueueMOM}
+\end{figure}
+\FloatBarrier
+
+Es können viele Parameter von einer Queue konfiguriert werden, hierzu zählen unter anderen:
+
+\begin{itemize}
+	\item Der Name der Queue
+	\item Die Größe der Queue
+	\item Der Sortieralgorithmus für die Nachrichten
+	% \item Der Schwellenwert für die Sicherung von Nachrichten
+\end{itemize}
+
+Eine spezielle Art der Queue sind die \emph{Dead-Message Queues}, sie beinhalten Nachrichten, welche nicht zugestellt werden konnten. 
+Typischerweise beinhalten diese Queues Nachrichten, die im Body kein gültiges Format oder eine ungültige Ziel-Queue haben. Der Zweck einer Dead-Message Queue besteht darin, Nachrichten aufzubewahren, die nicht erfolgreich verarbeitet werden konnten, damit sie später untersucht und möglicherweise erneut bearbeitet werden können. 
+Durch die Verwendung einer Dead-Message Queue können Messaging-Systeme eine bessere Fehlerbehandlung und -toleranz bieten, da sie es ermöglicht, fehlgeschlagene Nachrichten zu isolieren und separat zu behandeln.
+\cite{curryMessageOrientedMiddleware2004}
+
+\subsection{Message Broker und Cluster}
+
+Die Kernkomponente eines Messaging Systems ist der \emph{Message Broker}, dieser erhält die Nachrichten der Services und leitet sie anschließen zu den Ziel-Services weiter. Der Broker übernimmt unter anderen folgende Aufgaben: \cite{narkhedeKafkaDefinitiveGuide2017}
+
+\begin{itemize}
+	\item \textbf{Erhalt der Nachrichten} – Der Broker empfängt eingehende Nachrichten von den Services und sorgt für das zuverlässige Senden an die Ziel-Services.
+	\item \textbf{Speichern der Nachrichten} – Der Broker kann Nachrichten vorübergehend speichern, um sicherzustellen, dass sie nicht verloren gehen, falls ein Ziel-Service vorübergehend nicht verfügbar ist.
+	\item \textbf{Routing von Nachrichten} – Der Broker leitet eingehende Nachrichten an die entsprechenden Ziel-Services weiter, basierend auf definierten Routing-Regeln oder -Kriterien.
+\end{itemize}
+
+Um Ausfallsicherheit und Skalierbarkeit zu gewährleisten, können Messaging Systems in \emph{Clustern} betrieben werden, die aus mehreren Message-Brokern bestehen. Diese Cluster ermöglichen die Replikation und Verteilung von Nachrichten über mehrere Broker hinweg. Es gibt zwei gängige Architekturen für Messaging-Cluster: \cite{narkhedeKafkaDefinitiveGuide2017}
+
+\begin{itemize}
+	\item \textbf{Master-Slave} – In dieser Architektur sind die Broker in \emph{Master} und \emph{Slave} unterteilt. Der Master-Broker übernimmt die Hauptaufgaben der Nachrichtenverarbeitung und -verteilung, während die Slave-Broker als Backup dienen und im Falle eines Ausfalls des Masters einspringen können.
+	\item \textbf{Peer-to-Peer} – Hier haben alle Broker im Cluster denselben Status und jede Nachricht wird in mehreren Brokern repliziert und gespeichert. Dadurch wird eine höhere Redundanz und Ausfallsicherheit erreicht, da jede Nachricht mehrere Kopien in verschiedenen Brokern hat.
+\end{itemize}
+
+
+\subsection{Kommunikationmodelle}
+
+Ein Messaging System verendet eines oder mehrere Kommunikationsmodelle, welche die Grundlage für die Kommunikation der zu verbindenden Systeme definiert. \cite{curryMessageOrientedMiddleware2004}
+
+\subsubsection{Point-to-Point}
+
+In einem \emph{Point-to-Point} Kommunikationsmodell gibt es nur einen Sender und einen Empfänger pro Nachricht. Im Fall, dass es mehrere potenzielle Empfänger für eine bestimmte Nachricht gibt, kann nur ein einziger sie tatsächlich erhalten. In diesem Szenario werden die Empfänger manchmal als \emph{Competing-Consumers} bezeichnet, da sie um den Empfang der Nachricht konkurrieren. Dieses Modell ist in der Abbildung \ref{fig:point-to-pointMOM} dargestellt. \cite{curryMessageOrientedMiddleware2004}
+
+Dieses Modell bietet einige nützliche Anwendungsfälle. Zum Beispiel kann es für eine einfache Form des \emph{Load Balancings} verwendet werden, indem die Nachrichten auf mehrere potenzielle Empfänger aufgeteilt werden. Auf diese Weise können Arbeitslasten gleichmäßig auf mehrere Systeme oder Prozesse verteilt werden, um die Gesamtleistung und Effizienz zu verbessern. \cite{curryMessageOrientedMiddleware2004}
+
+Ein Real-World Szenario könnte wie folgt aussehen: Die Prüfung auf Viren in Dateien sollte über das Messaging System auf mehrere Server verteilt werden. Dazu wird der Link zu der Datei von einem Producer in eine spezielle Queue geschickt. Eine Gruppe von Scan-Servern steht bereit, um die eingehenden Links zu den Dateien zu empfangen und sie auf Viren zu überprüfen. Der Broker wird diese Nachricht einem dieser Server weiterleiten und somit den Scan-Vorgang starten.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/img/Research/Message_Services/point-to-pointMOM.png}
+    \caption{Das Point-to-Point Messaging Model \cite{curryMessageOrientedMiddleware2004}}
+    \label{fig:point-to-pointMOM}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Publish-Subscribe}
+
+Im \emph{Publish-Subscribe Modell} werden Nachrichten mittels Nachrichten-Thema (\emph{Topics}) gruppiert. Beispielsweise könnten Sie für jeden Anwendungsfall ein Topic erstellen. Services, welche Nachrichten zu einem bestimmten Thema erhalten möchten, melden sich für den Erhalt der Nachrichten an (\emph{subscribe}). Wenn Sender die zu übertragende Information an Topics senden (\emph{publish}), werden immer alle Subscriber des Themas die Nachricht erhalten. Dieses Verhalten kann auch in der Abbildung \ref{fig:publish-subscribeMOM} erkannt werden. 
+Außerdem gibt es keine Einschränkungen hinsichtlich der Rollen, die ein Service einnehmen kann. Ein Service kann sowohl Subscriber und Publisher sein. \cite{curryMessageOrientedMiddleware2004}
+
+Ein anschauliches Beispiel wäre ein Benutzeraktivitäten-Tracking-System, welches aus einem Publisher und zwei Subscribern besteht. Der Producer, welcher die Aktivität des Benutzers sammelt,  verschickt die Informationen zu einem bestimmten Topic. Die zwei Empfänger des Topics verarbeiten diese Nachrichten, wobei der eine die Aktivitäten in eine Datenbank speichert und der andere diese für ein Empfehlungssystem auswertet. \cite{curryMessageOrientedMiddleware2004}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/img/Research/Message_Services/publish-subscribeMOM.png}
+    \caption{Das Publish-Subscribe Messaging Model  \cite{curryMessageOrientedMiddleware2004}}
+    \label{fig:publish-subscribeMOM}
+\end{figure}
+\FloatBarrier
+
+\subsection{Konsummodus}
+
+Dieser Aspekt der Kommunikation trifft nur auf die Empfänger zu und beschreibt, wie die Empfänger die Daten erhalten. Im Wesentlichen gibt es in diesem Zusammenhang zwei verschiedene Verbrauchsmodi, welche in dem folgenden Kapitel erklärt werden. Die Wahl des richtigen Modus ist entsprechend den Anforderungen, die das verteilte System erfüllen sollte, zu treffen.
+
+\subsubsection{Push}
+
+In \emph{Push-Modus} verteilt das Messaging System selber die Nachrichten an die Empfänger. Das heißt immer, wenn eine neue Nachricht beim Broker ankommt, wird diese direkt an den Empfängern weitergeleitet. Dieser Modus hat eine sehr hohe Echtzeit-Performance, da die zu übertragende Information ohne Verzögerung an die Empfänger weitergeleitet wird.
+
+In diesem Modus besteht das Problem, dass der Message-Broker nicht über die Information verfügt, ob der Empfänger überhaupt in der Lage ist, weitere Nachrichten anzunehmen. Der Empfänger könnte überlastet werden, wenn in kurzer Zeit sehr viele Nachrichten übertragen werden, weil der Empfänger selbst nicht steuern kann, wie viele Nachrichten ihm zugeschickt werden. Um diese Problematik zu lösen, benötigen Sie einen \emph{Flow-Control} Mechanismus, damit die Übertragungsrate geregelt werden kann.  
+\cite{curryMessageOrientedMiddleware2004,fuFairComparisonMessage2021}
+
+\subsubsection{Pull}
+
+Im \emph{Pull-Modus} muss der Nachrichtenempfänger immer beim Messaging System nach neuen Nachrichten fragen. Auf diese Weise kann der Empfänger die Verarbeitung von Nachrichten in Übereinstimmung mit seiner eigenen Kapazität steuern. Jedoch muss der Empfänger in einem geeigneten Zeitintervall diese Abfragen durchführen, um eine hohe Latenz zu vermeiden. Wenn dieses Intervall zu niedrig gewählt worden ist, werden die Message Broker durch diese vielen Anfragen jedoch selbst sehr stark belastet. Darüber hinaus ermöglichen diese Abfragen die Implementierung einer unkomplizierten Form von Lastenausgleich (Load Balancing), da jeder Empfänger eine Nachricht nur dann entgegennimmt, wenn er über die entsprechende Kapazität verfügt. \cite{curryMessageOrientedMiddleware2004,fuFairComparisonMessage2021}
+
+\subsection{Quality-of-Service Garantien}
+
+Damit die Operation eines verteilten Systems zuverlässig funktioniert, muss ein Messaging System bestimmte Garantien zusichern. Jedoch haben gewisse Garantien einen negativen Effekt auf die Performance des Systems. Beispielsweise wird für die Ordnung der Nachrichten in einem Cluster-System viel Rechenleistung benötigt. 
+\cite{fuFairComparisonMessage2021}
+
+\subsubsection{Zustellungsgarantien}
+
+Um eine zuverlässige Übertragung zwischen Consumer und Producer zu gewährleisten, sind verschiedene Strategien für die Nachrichtenübertragung verfügbar: \cite{fuFairComparisonMessage2021}
+
+\begin{itemize}
+	\item \textbf{At-Most-Once} – Hier wird eine Nachricht höchstens einmal übertragen. Es besteht jedoch die Möglichkeit, dass die Nachricht während des Übertragungsvorgangs verloren geht.
+	\item \textbf{At-Least-Once} –  Diese Methode stellt sicher, dass eine Nachricht mindestens einmal vollständig übertragen wird. Es kann jedoch vorkommen, dass eine Nachricht mehrmals übertragen wird, um sicherzustellen, dass sie erfolgreich empfangen wurde.
+	\item \textbf{Exactly-Once} – Bei dieser Strategie wird garantiert, dass jede Nachricht genau einmal übertragen wird. Dadurch wird sichergestellt, dass Duplikate vermieden werden und keine Nachrichten verloren gehen.
+\end{itemize}
+
+Die meisten Messaging-Systeme bieten die At-Most-Once oder At-Least-Once Garantie. Die Exactly-Once wird durch ihre Komplexität nur von manchen Message-Systemen angeboten. \cite{fuFairComparisonMessage2021}
+
+Eine weitere Garantie, welche durch Messaging Systems erreicht werden kann, ist die \emph{disk-based Retention}, also die Speicherung der Nachrichten auf der Festplatte. Dies bringt einen großen Vorteil mit sich, weil Nachrichten über einen längeren Zeitraum im Messaging System aufbewahrt werden können. Da die Messages auf der Festplatte persistiert werden und sich nicht nur im RAM befinden, kann kein Datenverlust auftreten. Es kann zum Beispiel während Wartungsarbeiten an den Empfängern trotzdem sichergestellt werden, dass keine Nachrichten verloren gehen. \cite{narkhedeKafkaDefinitiveGuide2017}
+
+\subsubsection{Sortierungsgarantien}
+
+Ein weiter wichtige Aspekt ist die Reihenfolge der Nachrichten, jedoch hat diese Garantie nur bei Cluster-Systemen Relevanz. Denn in einem Cluster ist die Synchronisierung der Ordnung über mehrere Broker hinweg sehr ressourcenintensiv. Die folgenden Strategien für die Nachrichtenordnung sind in der Praxis üblich: \cite{fuFairComparisonMessage2021}
+
+\begin{itemize}
+	\item \textbf{No-Ordering} – Bei dieser Strategie gibt es keine festgelegte Sortierung für die Nachrichten. Dies ermöglicht eine maximale Performance, da keine Ressourcen für die Synchronisierung der Nachrichten verwendet werden.
+	\item \textbf{Partition-Ordering} - Nachrichten werden innerhalb eines einzelnen Brokers geordnet, aber es gibt keine Garantie für die Sortierung über mehrere Broker hinweg. Diese Strategie bietet eine gewisse Ordnung, ohne die Performance übermäßig zu beeinträchtigen.
+	\item \textbf{Global-Ordering} - Hier werden die Nachrichten über den gesamten Cluster hinweg geordnet. Dies bietet maximale Konsistenz, aber es geht auf die Kosten der Performance, da die Synchronisierung der Nachrichtensortierung zwischen den Brokern sehr aufwendig sein kann.
+\end{itemize}
+
+Wenn die Sortierungsgarantie \emph{Global-Ordering} aus Performancegründen nicht angewendet werden kann, ist es erforderlich, die Kommunikation der Services so zu gestalten, dass die Reihenfolge der Nachrichten keine Bedeutung hat. Jedoch kann diese Anforderung in der Umsetzung erhebliche Probleme verursachen. Die Synchronisierung von Aktionen und die Gewährleistung der Konsistenz der Daten können erschwert werden, da keine garantierte Reihenfolge der Nachrichten vorhanden ist. Dies erfordert eine sorgfältige Planung und Implementierung, um sicherzustellen, dass die Services trotz fehlender globaler Ordnung effizient und zuverlässig funktionieren. \cite{fuFairComparisonMessage2021}
+
+\subsection{Protokoll für die Kommunikation mit dem Broker}
+
+Das Protokoll zwischen dem Produer/Consumer und dem Message-Broker bildet die Grundlage des Informationsaustausches und hat eine sehr wichtige Bedeutung, da es die Funktionen des Messaging-Systemes definiert und eingrenzt. Die Kommunikationsstandards können in zwei Gruppen einteilt werden: in die open-source Protokolle und die closed-source Protokolle. Folgende weit verbreitete Protokolle werden zu den open-source Protokollen gezählt: \emph{AMQP}, \emph{XMPP}, \emph{REST} und \emph{STOMP}.  Die open-source Messaging-Protokolle sind den closed-source Protokollen in dem Aspekt Kopplung überlegen, da sie durch die offene Standardisierung die Abhängigkeit zu einem bestimmten Messaging System aufheben. Closed-source Protokolle sind oft Produkte von veränderten open-source Protokollen oder völlig neue geschaffene Kommunikationsdefinitionen, welche nur für bestimmte Systeme gedacht sind. \cite{fuFairComparisonMessage2021}
+
+\subsection{Latenz und Durchsatz}
+
+Der Begriff Latenz beschreibt die Zeit, die es benötigt, Nachrichten zwischen zwei Endpunkten über das Messaging System zu übertragen. Die folgenden Punkte haben den größten Einfluss auf diese Übertragungszeit: \cite{fuFairComparisonMessage2021}
+
+\begin{itemize}
+	\item Die Dauer für die Metadaten-Verarbeitung eines Pakets, wie zum Beispiel die Validierung oder das Routing.
+	\item Die Zeit, welche für die Replikation eines Pakets in Anspruch genommen wird. Dieser Aspekt trifft insbesondere auf Messaging Systeme, welche in einer Cluster-Architektur arbeiten, zu.
+	\item Die Speicherzugriffsverzögerung, welche durch die Methode und Ort des Zugriffs bestimmt ist. Zum Beispiel sind der Zugriffe auf RAM-gespeicherte Daten weniger zeitintensiv als Datenzugriffe auf eine Festplatte.
+	\item Weitere Verzögerungen werden durch die Einhaltung der \emph{Quality-of-Service} Garantien erzwungen, wie beispielsweise die Ordnungsgarantien, welche einen besonders negativen Effekt haben.
+\end{itemize}
+
+\emph{Low Latency Messaging Services} minimieren diese Aspekte und können dadurch eine annähernde Echtzeitübertragung ermöglichen.
+
+Der Durchsatz steht für die Menge an Daten, welche pro Zeiteinheit über das Messaging System übermittelt werden können. Damit die höchsten Durchsatzraten erreicht werden können, müssen die oben angeführten Punkte natürlich minimiert werden, aber es gibt noch einen weiteren Lösungsansatz: \emph{Batch-Processing}. 
+In dieser Methode werden mehrere Nachrichten gesammelt und auf einmal übertragen, damit wird der Overhead erheblich reduziert. Jedoch ist diese Technik bekannt für den Kompromiss zwischen Durchsatz und Latenz. Denn um mehrere Nachrichten auf einmal übertragen zu können, muss gewartet werden, bis entsprechend viele Nachrichten angekommen sind. Deswegen können Sie bei manchen Messaging-Systemen, wie zum Beispiel Kafka \cite{narkhedeKafkaDefinitiveGuide2017}, je nach Anwendungsfall bestimmen, wie viele Nachrichten akkumuliert werden sollen. \cite{fuFairComparisonMessage2021}
