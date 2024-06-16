@@ -1,0 +1,35 @@
+name: Update README with Repo Size
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    update-readme:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Get Repository Size
+              id: repo-size
+              env:
+                  GITHUB_TOKEN: ${{ secrets.PUBLIC_GITHUB_TOKEN }}
+              run: |
+                  repo_size=$(curl -H "Authorization: token $GITHUB_TOKEN" \
+                    -s "https://api.github.com/repos/${{ github.repository }}" \
+                    | jq '.size')
+                  echo "::set-output name=size::$repo_size"
+
+            - name: Update README
+              id: update-readme
+              run: |
+                  size_kb=${{ steps.repo-size.outputs.size }}
+                  size_mb=$(echo "scale=2; $size_kb / 1024" | bc)
+                  sed -i "s/<!-- REPO_SIZE -->/${size_mb} MB/" README.md
+
+            - uses: stefanzweifel/git-auto-commit-action@v4
+              with:
+                  commit_message: update README.md (automated)
